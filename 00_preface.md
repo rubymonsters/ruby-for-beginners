@@ -18,22 +18,16 @@ An incomplete list of what's definitely missing:
 
 * Go through the whole thing and mark things that aren't absolutely required to
   know as "bonus" sections, e.g. "Operators are methods"
-
 * Check and re-think the order of topics. Some are Ruby language basics, some are
   tips and advice about tooling, searching, and general reflections on
   programming. We used about the same order of language basics, but then just
   anecdotally threw in other topics. I'm not sure how to best structure this
   in a book-style online resource.
-
 * Somehow split up the chapter "Classes and objects"
-
-* Add exercises, or link to appropriate external exercises. At the least add
-  the mailbox and formatter exercise.
-
+* Add exercises, or link to appropriate external exercises.
 * Add more topics that walk through the rest of the beginners curriculum, like
   using ERB to render a static HTML file, basics of HTTP, and building a
   Sinatra app that serves the same HTML.
-
 * Add a chapter about Ruby (e.g. optimized for happiness)
 * Add editor tips (shortcuts, syntax highlighting)
 * Add most common exception messages
@@ -43,6 +37,7 @@ An incomplete list of what's definitely missing:
 Notes:
 
 * Mention comments
+* Mention omitting curly braces for hashes on method calls
 * Mention arguments vs parameters
 * Mention that calling methods is also referred as "sending messages", and `send`
 * Mention splat operator for assignment and arguments
