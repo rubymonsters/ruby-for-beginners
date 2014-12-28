@@ -4,7 +4,7 @@ our curriculum currently works: building on our experiences with what worked
 well, or not so well, in 4 different beginners groups that we have run over the
 course of about 2.5 years.
 
-I ended up writing down about 100,000 characters of text.
+I ended up writing down about 115,000 characters of text.
 
 I'll put this on GitHub hoping that others might be interested to help improve
 and complete it, so we can hopefully use this as a framework for future
@@ -42,7 +42,7 @@ An incomplete list of what's definitely missing:
 
 Notes:
 
-* Explain "flow of execution", mention that classes go first, using them last, mention comments
+* Mention comments
 * Mention arguments vs parameters
 * Mention that calling methods is also referred as "sending messages", and `send`
 * Mention splat operator for assignment and arguments
