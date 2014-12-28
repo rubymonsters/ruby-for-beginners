@@ -47,7 +47,7 @@ a method accepts a number of arguments. And instead of "output" we use the term
 Let's define a simple method that takes a number, adds the number `2` to it,
 and returns the result:
 
-```
+```ruby
 def add_two(number)
   number + 2
 end
@@ -70,7 +70,7 @@ Let's walk through this method definition step by step:
 
 Now we can use (we say "call") this method like so:
 
-```
+```ruby
 puts add_two(3)
 ```
 
@@ -124,21 +124,21 @@ value `5` by parentheses when calling our method `add_two(3)`.
 That's right. In Ruby, when you call (use) a method, you can omit the
 parentheses. So these lines do exactly the same:
 
-```
+```ruby
 puts "Hello!"
 puts("Hello!")
 ```
 
 And so do these:
 
-```
+```ruby
 add_two 2
 add_two(2)
 ```
 
 And all of these:
 
-```
+```ruby
 puts add_two 2
 puts add_two(2)
 puts(add_two 2)
@@ -157,7 +157,7 @@ not add empty parenthese, but omit them.
 
 So the idiomatic way to write the line above is:
 
-```
+```ruby
 puts add_two(2)
 ```
 
@@ -180,7 +180,7 @@ can be `format_email`.
 
 With this first task solved, you can already write the method:
 
-```
+```ruby
 def format_email
 end
 ```
@@ -198,7 +198,7 @@ needs the email.
 
 So you can now add the argument list to the method:
 
-```
+```ruby
 def format_email(email)
 end
 ```
@@ -209,7 +209,7 @@ the method body. How can you transform the email into some formatted text?
 You'd add a new line between `def` and `end`, and indent it by two spaces
 (hit `tab`), and start typing:
 
-```
+```ruby
 def format_email(email)
   ...
 end

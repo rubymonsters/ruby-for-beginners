@@ -18,7 +18,7 @@ thing, which is an object (in this case, a number).
 The second line then refers to the number, by using this name, and prints it
 out to the screen:
 
-```
+```ruby
 number = 2 + 3 * 4
 puts number
 ```
@@ -52,7 +52,7 @@ is pretty convenient.
 If you assign different values to the same variable, then assignments that
 happen later will simply overwrite previous ones. Like so:
 
-```
+```ruby
 number = 4
 number = number * 3
 puts number + 2

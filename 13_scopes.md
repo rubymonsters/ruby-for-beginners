@@ -25,7 +25,7 @@ visible in this scope. Outside of it, they are unknown.
 
 Consider this code:
 
-```
+```ruby
 def add_two(number)
   number + 2
 end
@@ -53,7 +53,7 @@ We have silently skipped over the fact that, in Ruby, both local variable
 names and method names, are written the same way: they're just plain words.
 For example, here:
 
-```
+```ruby
 number = 2
 puts number
 ```
@@ -62,7 +62,7 @@ puts number
 
 However, here:
 
-```
+```ruby
 def number
   2
 end
@@ -84,7 +84,7 @@ Makes sense?
 
 Let's look at another example.
 
-```
+```ruby
 number = 1
 
 def add_to(number)

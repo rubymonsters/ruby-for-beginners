@@ -38,7 +38,7 @@ and the full text in its entirety.
 In Ruby there are a couple, flexible ways to create strings, but the most simple,
 and most used way is to simply enclose some characters in quotes:
 
-```
+```ruby
 "This is one string!"
 'And this is another one.'
 ```
@@ -79,6 +79,13 @@ they read well. Instead they are unique identifiers, like numbers, or bar
 codes. While strings represent data that can change, symbols represent uniq
 values, which are static.
 
+And more technically, if you use strings that contain the same text in your
+code multiple times, then a new string object will be created every time. E.g.
+if you do `puts "Hello!"` 10 times then 10 actual string objects will be
+created (and then discarded, because they're not being used any longer). On the
+other hand, if you'd use symbols for this and do `puts :hello` 10 times, then
+only one single symbol will be created, and re-used.
+
 If you find this confusing, don't worry. You'll understand symbols better once
 you get to use some of them in your code.
 
@@ -94,7 +101,7 @@ bag that you can throw things in: The bag itself is a thing (an object), too.
 An array is created by separating values by commas, and enclosing this list
 with square brackets, like so:
 
-```
+```ruby
 ["A string", 1, :some_symbol, 2]
 ```
 
@@ -110,7 +117,7 @@ one is to retrieve a certain element by the way of referring to it by position:
 
 In Ruby, you can do this with square brackets like so:
 
-```
+```ruby
 words = ["one", "two", "three"]
 puts words[1]
 ```
@@ -146,7 +153,7 @@ Hashes work pretty much like this. You can create a hash by pointing a key
 to a value with `=>`, separate these key/value pairs with commas, and enclose
 the whole thing with curly braces. This is how it looks:
 
-```
+```ruby
 { "one" => "eins", "two" => "zwei", "three" => "drei" }
 ```
 
@@ -158,7 +165,7 @@ Now, how to actually look up the value that is associated with the key `"one"`?
 Just like with arrays you use sqare brackets, but instead of passing a number
 indicating the position you now pass the key. Like so:
 
-```
+```ruby
 dictionary = { "one" => "eins", "two" => "zwei", "three" => "drei" }
 puts dictionary["one"]
 ```
@@ -170,7 +177,7 @@ returns it. This value will be passed to `puts` which outputs it to the screen.
 You can use any kind of object as keys, and you can store any kind of object
 as values. So, for example, these are all valid hashes, too:
 
-```
+```ruby
 { 1 => "eins", 2 => "zwei", 3 => "drei" }
 { :one => "eins", :two => "zwei", :three => "drei" }
 { :de => { :one => "eins", :two => "zwei", :three => "drei" } }
@@ -197,7 +204,7 @@ and many programmers love to use it, because it takes a little less space.
 
 It looks like this:
 
-```
+```ruby
 { one: "eins", two: "zwei", three: "drei" }
 ```
 
@@ -211,7 +218,7 @@ groups while we learn what hashes are and how you can use them.
 
 For now you can simply remember that these two hashes are exactly the same:
 
-```
+```ruby
 { :one => "eins", :two => "zwei", :three => "drei" }
 { one: "eins", two: "zwei", three: "drei" }
 ```

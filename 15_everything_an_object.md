@@ -11,7 +11,7 @@ almost everything, and that's good enough to know for now.
 You can see this when you open IRB in your terminal and ask a string or array
 for their class:
 
-```
+```ruby
 $ irb
 > "this is a string".class
 => String
@@ -24,7 +24,7 @@ That means that the sentence following sentence is true: In Ruby, "a string"
 
 Yeah, we knew that already. However, you can also ask the same question in Ruby:
 
-```
+```ruby
 $ irb
 > "this is a string".is_a?(String)
 => true
@@ -36,7 +36,7 @@ it is an instance of the class `String`. You can do this for any object. E.g.
 
 Even more interesting, you can also ask a class for its class:
 
-```
+```ruby
 $ irb
 > String.class
 => Class
@@ -61,14 +61,14 @@ called on the object `"this is a string"`.
 In Ruby, methods are called on objects by using a dot, like so:
 
 
-```
+```ruby
 object.method
 ```
 
 If we need to pass arguments to the method we call, then we add parantheses,
 and separate the arguments by comma:
 
-```
+```ruby
 object.method(an_argument, another_argument)
 ```
 
@@ -79,7 +79,7 @@ That's right, `methods` is a method defined on all objects. When you call it
 then it will return an array of symbols, which are the method names. It makes
 sense to sort this array, so it's easier to read:
 
-```
+```ruby
 $ irb
 > 1.methods.sort
 => [:*, :+, :-, :/, :between?, :even?, :odd?, :zero?]
@@ -104,13 +104,13 @@ the dots in `2 + 3 * 4`?
 
 The trick is: Ruby adds them for you, silently. If you write the following code:
 
-```
+```ruby
 number = 2 + 3 * 4
 ```
 
 Then Ruby will translate this to the following:
 
-```
+```ruby
 number = 2.+(3.*(4))
 ```
 
@@ -131,14 +131,14 @@ And this operator also is a method!
 
 So we could write the statement above as:
 
-```
+```ruby
 number=(2.+(3.*(4)))
 ```
 
 Of course this looks even more weird. And so Ruby again adds a little bit of
 syntax sugar so we can just write
 
-```
+```ruby
 number = 2 + 3 * 8
 ```
 
@@ -151,7 +151,7 @@ that end with a question mark `?`. This makes them read like a question, so
 we can ask a number if it is even or odd:
 numbers:
 
-```
+```ruby
 $ irb
 > 5.odd?
 => true
@@ -162,7 +162,7 @@ $ irb
 
 Or you can ask the number if it's between two other numbers:
 
-```
+```ruby
 > 5.between?(1, 10)
 => true
 
@@ -207,7 +207,7 @@ Another example is the method `sort` on arrays. This method does not actually
 sort the array that it is called on. Instead it returns a *new* array with the
 same values, but in a sorted order:
 
-```
+```ruby
 array = [3, 2, 1]
 p array.sort
 p array
@@ -233,7 +233,7 @@ Another example is the method `sort!` on arrays. Different from the method
 `sort` (without an exclamation mark), this method tells the array to sort
 itself:
 
-```
+```ruby
 array = [3, 2, 1]
 array.sort!
 p array

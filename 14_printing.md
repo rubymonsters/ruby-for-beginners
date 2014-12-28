@@ -19,7 +19,7 @@ close as possible to the code that you use to create the object.
 
 This becomes more clear when we try it in IRB:
 
-```
+```ruby
 $ irb
 > puts 5.inspect
 5
@@ -42,7 +42,7 @@ us. That's the method `p`.
 
 It is implemented like so:
 
-```
+```ruby
 def p(object)
   puts object.inspect
 end
@@ -57,7 +57,7 @@ it tells you exactly what the thing is that you are looking at.
 For example when you pass an array to `puts` then it will output each of the
 objects on a separate line:
 
-```
+```ruby
 $ irb
 > something = [1, 2, 3]
 > puts something
@@ -69,7 +69,7 @@ $ irb
 Also, the output for numbers and strings that contain numbers is exactly the
 same when you use `puts`:
 
-```
+```ruby
 $ irb
 > puts 123
 123
@@ -89,3 +89,4 @@ Ruby basics programming exercises :)
 
 On the other hand `p` is useful when you are trying to understand what your
 code does, e.g. when you are trying to figure out a certain error.
+

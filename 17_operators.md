@@ -16,7 +16,7 @@ are also defined on other objects, like strings and arrays.
 
 Try this it yourself in IRB:
 
-```
+```ruby
 $ irb
 > "<3" + "!"
 => "<3!"
@@ -34,7 +34,7 @@ times.
 
 The same works for arrays:
 
-```
+```ruby
 $ irb
 > [1, 2] + [3, 4]
 => [1, 2, 3, 4]
@@ -82,7 +82,7 @@ The operator `not` simply returns the negated, opposite value. `not true`
 returns `false`, and `not false` returns `true. Therefor, the following
 statements are the same:
 
-```
+```ruby
 puts "Always true" if not false
 puts "Always true" unless false
 ```
@@ -133,7 +133,7 @@ you'll expect it. Open IRB and try a few combinations on numbers and strings.
 Comparison operators most often are used in order to formulate conditions
 in `if` statements. Like so:
 
-```
+```ruby
 number = 20
 puts "#{number} is greater than 10." if number > 10
 ```

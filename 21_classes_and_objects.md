@@ -27,7 +27,7 @@ Let's start creating this class, step by step.
 
 In Ruby, you define a class like this:
 
-```
+```ruby
 class Person
 end
 ```
@@ -50,7 +50,7 @@ Ok, back to our class `Person`.
 After defining the class, we can now already use it to create a new, concrete
 person instance, an object from it. Like so:
 
-```
+```ruby
 Person.new
 ```
 
@@ -58,7 +58,7 @@ That's right. `new` is a method, and it is defined on the *class* itself
 (which, as you might remember, is also an object). This method creates a new
 instance of the class, and returns it. Therefor we can also output it:
 
-```
+```ruby
 p Person.new
 ```
 
@@ -80,7 +80,7 @@ initial data. In our case, we want the person to know it's own name.
 
 We can do this like so:
 
-```
+```ruby
 class Person
   def initialize(name)
   end
@@ -110,7 +110,7 @@ that you passed to `new` on to the method `initialize`.
 
 So we can now create a new person instance by calling:
 
-```
+```ruby
 Person.new("Ada")
 ```
 
@@ -130,7 +130,7 @@ So, now that you understand how the string that we pass to the method `new`
 ends up being passed to the new object's `initialize` method, we can start
 improving `initialize`, so it actually does something with the string:
 
-```
+```ruby
 class Person
   def initialize(name)
     @name = name
@@ -160,7 +160,7 @@ know your name, your email address, and your email password.
 If you now create, and output a person instance, you'll see that Ruby prints
 out the instance variable, too:
 
-```
+```ruby
 person = Person.new("Ada")
 p person
 ```
@@ -192,7 +192,7 @@ the question "What's your name?".
 
 And it is as simple as this:
 
-```
+```ruby
 class Person
   def initialize(name)
     @name = name
@@ -206,7 +206,7 @@ end
 
 Before we discuss what this does, let's look at how we can use our new method:
 
-```
+```ruby
 person = Person.new("Ada")
 puts person.name
 ```
@@ -249,7 +249,7 @@ we want to be able to tell the person object about its email password later.
 
 We can do this like so:
 
-```
+```ruby
 class Person
   def initialize(name)
     @name = name
@@ -275,7 +275,7 @@ have been called an "instance variable writer".)
 
 Now, we can use the attribute writer like so:
 
-```
+```ruby
 person = Person.new("Ada")
 person.password=("super secret password")
 p person
@@ -292,7 +292,7 @@ Hmmm, that method call looks a little weird though, doesn't it?
 Remember what we've said above about the syntax sugar that Ruby adds for the
 assignment operator `=`? The same works for attribute writers:
 
-```
+```ruby
 person = Person.new("Ada")
 person.password = "super secret password"
 ```
@@ -307,7 +307,7 @@ We think this is pretty cool.
 
 But hold on. Lets have another look the class definition that we have so far:
 
-```
+```ruby
 class Person
   def initialize(name)
     @name = name
@@ -358,7 +358,7 @@ From now on we are going to omit the `initialize` and `name` methods, indicate
 the omission with the comment `# ...`, and just keep the `password=` attribute
 writer:
 
-```
+```ruby
 require 'digest'
 
 class Person
@@ -397,7 +397,7 @@ it.
 
 If now run the following code:
 
-```
+```ruby
 person = Person.new("Ada")
 person.password = "super secret"
 puts person.encrypted_password

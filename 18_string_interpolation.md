@@ -4,7 +4,7 @@ As mentioned above you can stick strings together by using the `+` operator.
 
 Consider the following code:
 
-```
+```ruby
 name = "Ada"
 puts "Hello, " + name + "!"
 ```
@@ -17,7 +17,7 @@ usually preferred over concating strings with `+`.
 
 This method is called "string interpolation", and this is how it looks:
 
-```
+```ruby
 name = "Ada"
 puts "Hello, #{name}!"
 ```
@@ -31,7 +31,31 @@ evaluate the piece of Ruby code `name`. It finds that this is a variable, so it
 returns the value of the variable, which is the string `"Ada"`. It then embeds
 this string into the surrounding string, replacing the bit `#{name}`.
 
-So, why do people prefer this?
+And now we can finally explain the difference between strings created with
+single and double quotes:
+
+String interpolation only works with double quotes.
+
+That means that:
+
+```ruby
+puts "Interpolation works in double quoted strings: #{1 + 2}."
+puts 'And it does not work in single quoted strings: #{1 + 2 }.'
+```
+
+will print out:
+
+```ruby
+Interpolation works in double quoted strings: 3.
+And it does not work in single quoted strings: #{1 + 2 }.
+```
+
+If you type the code above in your editor, and syntax highlighting for Ruby
+code is used, it should highlight the code in the double quoted string, so it
+gives you a visual clue about the interpolation.
+
+
+So, why do people prefer string interpolation?
 
 First of all, again, it's a few less letters to type. In our example, that's
 just 5 characters, no big deal. However, consider a longer string, that is

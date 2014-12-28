@@ -10,8 +10,8 @@ When this text, the one that you are reading right now, was written, the author
 used the language English trying to come up with an adequate solution to the
 problem "How can I best start learning to program?". Reading this text you also
 use the language English. If you think about what you are doing right now, you
-will notice that you do not think about English as a language at all. Right?
-Instead you "use" the language in order to figure out what this author might be
+will notice that you do not *think* about English as a language at all. Right?
+Instead you *use* the language in order to figure out what this author might be
 talking about, and what that might mean to you.
 
 Try to remember when you last walked up the stairs. Walking up the stairs is a
@@ -30,10 +30,10 @@ knees and ankles while trying to maintain your balance and get up to the next
 step.
 
 Programming is very much the same. As programmers, while we program, we do
-not think about the programming language, and how to use it. Instead we simply
-use it, and think about very different things, such as the problem that we are
-trying to solve, how we can make things easier for fellow programmers, how
-to best suit the needs of our users, or customers, and so on.
+not *think* about the programming language, and how to use it. Instead we
+simply *use* it, and meanwhile think about very different things, such as the
+problem we are trying to solve, how we can make things easier for fellow
+programmers, how to best suit the needs of our users, or customers, and so on.
 
 When you start learning to program you will first learn about the basic
 concepts of the programming language. And you sometimes may feel slightly
@@ -51,3 +51,13 @@ about the concepts that you are using.
 Over time, while you repeat basic concepts of Ruby over and over again (by the
 way of doing excercises, and writing code) you will notice that things become
 very natural, and this probably will happen much quicker than you think.
+
+*At first, you will not understand anything. It'll be weird, just like with
+learning any human language. You will struggle with words, and not know what
+symbols are what, and it'll all be very confusing. Then one day BANG your brain
+will snap and you will suddenly "get it." If you keep doing the exercises and
+keep trying to understand them, you will get it.* from the great book [Learn
+Ruby The Hard Way](http://learnrubythehardway.org/book/intro.html) by Zed Shaw.
+
+TODO add advice to never copy and paste code, instead type it, and format
+it well

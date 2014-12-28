@@ -15,7 +15,7 @@ reuse in many classes, but we want to keep them in a central place.
 
 Let's have a look at this pretty artificial code:
 
-```
+```ruby
 module Cream
   def cream?
     true
@@ -62,7 +62,7 @@ And we want to keep the exact way *how* we encrypt things in one place. Why?
 Anyhow. Here's how we can create a meaningful module for our application,
 and use it in the class `Person`:
 
-```
+```ruby
 require 'digest'
 
 module Encryption

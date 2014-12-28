@@ -11,7 +11,7 @@ instead we'll just look at how this is used in praxis:
 
 Remember how we can receive a value associated with a key from a hash?
 
-```
+```ruby
 dictionary = { :one => "eins", :two => "zwei", :three => "drei" }
 p dictionary[:one]
 ```
@@ -19,7 +19,7 @@ p dictionary[:one]
 This will print out `"eins"`. However, what happens if we try to receive
 the value for a key that has not been defined on the hash?
 
-```
+```ruby
 dictionary = { :one => "eins", :two => "zwei", :three => "drei" }
 p dictionary[:four]
 ```
@@ -55,7 +55,7 @@ However, what happens when we use methods as conditions that do not return
 
 For example, consider the following:
 
-```
+```ruby
 dictionary = { :one => "eins", :two => "zwei", :three => "drei" }
 key = :four
 
@@ -76,7 +76,7 @@ true", and that means `false`.
 
 Now, lets use a key that actually is defined:
 
-```
+```ruby
 dictionary = { :one => "eins", :two => "zwei", :three => "drei" }
 key = :one
 

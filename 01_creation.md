@@ -13,3 +13,10 @@ come into existence. Next you would go ahead and define "Users can create
 tweets, and they can follow each other". And from now on, every time new users
 are created in the little universe that is your application, these users will
 have the ability to tweet and follow each other.
+
+TODO Talk about:
+
+* Writing code is creative. Close to art, design, architecture, philosophy.
+* Heidegger: "language is the house of being"
+* all you need is a computer, internet connection and time
+* Building fun applications, or useful little tools (Debbie's lunch roulette)

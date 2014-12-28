@@ -1,3 +1,5 @@
+
+Of course, everything said above also applies to ourselves :)
 # Your tools
 
 When you start learning programming in Ruby you'll need three tools: A text
@@ -36,7 +38,7 @@ For Sublime Text you can do the following: In the menu item "Sublime Text" go
 to "Preferences" and select "Settings - User". This opens up a configuration
 file, that you can edit just like any other file. Make sure it looks like this:
 
-```
+```json
 {
   "tab_size": 2,
   "translate_tabs_to_spaces": true
@@ -136,7 +138,7 @@ for exploring the language Ruby and things that come built in.
 
 For example:
 
-```
+```ruby
 $ irb
 > puts "Hello world!"
 Hello world!

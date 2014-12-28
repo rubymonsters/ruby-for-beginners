@@ -9,7 +9,7 @@ true.
 All practical programming languages have some way of expressing this, and in
 Ruby it looks like so:
 
-```
+```ruby
 number = 5
 
 if number.between?(1, 10)
@@ -58,7 +58,7 @@ There *must* be an `if` branch, there *can* be many `elsif` branches, and there
 One particularly nice feature in Ruby is that we can append the `if` statement
 to the code on the `if` branch if it's just a single line. So instead of this:
 
-```
+```ruby
 if number.odd?
   puts "The number is odd."
 end
@@ -66,7 +66,7 @@ end
 
 we can also write:
 
-```
+```ruby
 puts "The number is odd." if number.odd?
 ```
 
@@ -78,7 +78,7 @@ Also, next to `if` Ruby also knows a statement `unless` for when we want to do
 something if the condition does *not* evaluate to true. And again, we can also
 append the `unless` statement to the end of the line, so these two are the same:
 
-```
+```ruby
 unless number.odd?
   puts "The number is not odd."
 end
@@ -96,7 +96,7 @@ value returned by the statement that was last evaluated.
 
 For example, instead of this:
 
-```
+```ruby
 if number.even?
   puts "The number is even."
 else
@@ -107,7 +107,7 @@ end
 we can also assign the return value of the `if` statement to a variable, and
 then output it:
 
-```
+```ruby
 message = if number.even?
   "The number is even."
 else
@@ -121,7 +121,7 @@ Also, for the same reason, if we define a method that contains nothing but a
 single `if`/`else` statement, the method will, again, return the last statement
 evaluated:
 
-```
+```ruby
 def message(number)
   if number.even?
     "The number is even."

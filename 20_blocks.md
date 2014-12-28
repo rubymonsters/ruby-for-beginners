@@ -21,7 +21,7 @@ when the method is called.
 
 Let's have a look at an example:
 
-```
+```ruby
 5.times do
   puts "Oh, hello from inside a block!"
 end
@@ -73,7 +73,7 @@ syntax, which uses curly braces for defining a block.
 
 These two statements do exactly the same:
 
-```
+```ruby
 5.times do
   puts "Oh, hello!"
 end
@@ -97,7 +97,7 @@ arrays and hashes. Let's have a look at some examples with arrays.
 In our example above our block did not accept an argument. A block that accepts
 an argument looks like this:
 
-```
+```ruby
 [1, 2, 3, 4, 5].each do |number|
   puts "This is the number #{number}."
 end
@@ -105,7 +105,7 @@ end
 
 And, again, this is the same as:
 
-```
+```ruby
 [1, 2, 3, 4, 5].each { |number| puts "This is the number #{number}." }
 ```
 
@@ -137,7 +137,7 @@ block.
 
 Here's an example that does that:
 
-```
+```ruby
 p [1, 2, 3, 4, 5].collect { |number| number + 1 }
 ```
 
@@ -156,7 +156,7 @@ what the method does.)
 Here's another example that uses the return value of the block, can you guess
 what it does?
 
-```
+```ruby
 p [1, 2, 3, 4, 5].select { |number| number.odd? }
 ```
 
