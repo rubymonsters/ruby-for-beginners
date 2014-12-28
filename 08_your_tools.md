@@ -45,6 +45,33 @@ file, that you can edit just like any other file. Make sure it looks like this:
 }
 ```
 
+Also, we recommend to enable auto-saving your files. This will automatically
+save your changes when you switch to another application (like your terminal),
+and protect you from the mistake of forgetting to save:
+
+```json
+{
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true
+  "save_on_focus_lost": true
+}
+```
+
+Whenever you open a new file, make sure to save it with a filename that ends
+with `.rb` first. This will tell the editor that you want this to be a Ruby
+file and it will start highlighting your code as Ruby code, and enable other
+Ruby specific editor features. Alternatively, select "Ruby" in the extensions
+menu at the bottom right.
+
+Some keyboard shortcut that are extremely useful to know are:
+
+* In order to indent or unindent a single, or multiple lines of code, select
+  them and hit `tab` or `shift-tab` respectively.
+* In order to comment a single, or multiple lines of code, select them, and
+  hit `cmd-/` on Mac OSX, or `ctrl-/` on Linux/Windows.
+* Cut out code with `cmd-x`/`ctrl-x`, copy code with `cmd-c`/`ctrl-c`, and
+  paste it with `cmd-v`/`ctrl-v`
+
 #### Terminal
 
 Every operating system comes with some kind of terminal application built in,

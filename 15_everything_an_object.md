@@ -123,26 +123,34 @@ Ruby just adds a little bit of sytax in order to make it easier to read and
 write for us. This is something called "syntax sugar" (no kidding), because it
 makes the language more sweet.
 
-But there's another little fun secret here, that we have so far silently kept
-to ourselves:
-
-As mentioned before `=` also is an operator, called the "assignment operator".
-And this operator also is a method!
-
-So we could write the statement above as:
+Btw, the same is true for other things. For example, for the array and hash
+syntax that uses square brackets `[]` for reading and writing:
 
 ```ruby
-number=(2.+(3.*(4)))
+array = [1, 2, 3]
+array[3] = 4
+puts array[3]
+
+hash = { :one => 'eins', :two => 'zwei' }
+hash[:three] = 'drei'
+puts hash[:three]
 ```
 
-Of course this looks even more weird. And so Ruby again adds a little bit of
-syntax sugar so we can just write
+Translates to these method calls:
 
 ```ruby
-number = 2 + 3 * 8
+array = [1, 2, 3]
+array.[]=(3, 4)
+puts(array[3])
+
+hash = { :one => 'eins', :two => 'zwei' }
+hash.[]=(:three, 'drei')
+puts(hash[:three])
 ```
 
-instead.
+Knowing this can be useful when you want to write classes that look and feel
+similar to arrays or hashes, but behave different.
+
 
 #### Predicate methods
 

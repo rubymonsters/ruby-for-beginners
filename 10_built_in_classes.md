@@ -129,8 +129,28 @@ Funnily, this will print out `two`, and not `one`. Hu? The reason for that is:
 The first position in an array is 0, not 1. So the position 1 refers to the
 second element, not the first one.
 
-(In programming books and the Ruby documentation you'll find the word "index"
-being used instead of "position" in this context.)
+In programming books and the Ruby documentation you'll find the word "index"
+being used instead of "position" in this context.
+
+In order to add an element to an existing array you can use the "shovel"
+operator `<<`, like so:
+
+```ruby
+words = ["one", "two", "three"]
+words << "four"
+puts words[3]
+```
+
+This prints out `four`. You can also set an element to a given index, like
+so:
+
+```ruby
+words = ["one", "two", "three"]
+words[3] = "four"
+puts words[3]
+```
+
+This also prints out `four`.
 
 On formatting: Note that there are no spaces inside the square brackets,
 and there's one space after each comma.

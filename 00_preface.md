@@ -16,6 +16,9 @@ the same order as we've introduced them on Mondays.
 
 An incomplete list of what's definitely missing:
 
+* Go through the whole thing and mark things that aren't absolutely required to
+  know as "bonus" sections, e.g. "Operators are methods"
+
 * Check and re-think the order of topics. Some are Ruby language basics, some are
   tips and advice about tooling, searching, and general reflections on
   programming. We used about the same order of language basics, but then just
@@ -39,12 +42,9 @@ An incomplete list of what's definitely missing:
 
 Notes:
 
-* Mention comments
-* Explain "flow of execution", mention that classes go first, using them last
-* Mention that calling methods is also referred as "sending messages", and `send`
-* Mention "iterating" and iterators
-* Mention shovel operator `<<`
+* Explain "flow of execution", mention that classes go first, using them last, mention comments
 * Mention arguments vs parameters
+* Mention that calling methods is also referred as "sending messages", and `send`
 * Mention splat operator for assignment and arguments
 
 Recommended reading:

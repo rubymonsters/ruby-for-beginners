@@ -195,3 +195,8 @@ one method per potentially useful criteria, Ruby only has to implement one
 single, generic method for arrays: `select`. Ruby can let you, as a programmer,
 take over control, and allow you to specify the criteria that is used to select
 elements in any way you like.
+
+Methods on arrays and hashes that take a block are also called iterators.
+We say they "iterate over the array", meaning that these methods take each
+element of the array and do something with it.
+
