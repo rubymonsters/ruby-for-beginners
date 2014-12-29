@@ -1,20 +1,17 @@
 # Blocks
 
-*A method, but without a name*
+*Like methods, but without a name*
 
 Blocks are one of the things programmers absolutely love about Ruby. They are
 an extremely powerful feature that allows us to write very flexible code. At
 the same time, they read very well, and they are used all over the place.
 
-However, blocks are also a language feature that take a little while to get
-used to. Often times they are one of the hardest thing to understand for
-programmers that come from languages that do not have blocks.
-
 So, what is a block?
 
 A block, essentially, is the same thing as a method, except they do not have a
 name: That means a block is a piece of code, it can accept input in form of
-arguments, and it will return a value, but it does not have a name.
+arguments (if it needs any), and it will return a value, but it does not have a
+name.
 
 Moreover, blocks can only be created by the way of passing them to a method
 when the method is called.
@@ -29,8 +26,9 @@ end
 
 As you can see `times` is a method that is defined on numbers: `5.times` calls
 the method `times` on the number `5`. Now, when this method is called the only
-thing passed is this anonymous piece of code between `do` and `end`. There are
-no objects passed as arguments, instead it passes a block.
+thing passed is a block: that is the anonymous piece of code between `do` and
+`end`. There are no objects passed as arguments to the method `times`, instead
+it passes a block.
 
 The method `times` is implemented in such a way that it simply calls the block
 5 times, and thus, when you run the code, it will print out the message `"Oh,
@@ -59,12 +57,14 @@ as the value that you know.
 You'd go ahead and follow the instructions on the paper, and thus print out the
 message, 5 times, because `5` is the value that you know.
 
-This is roughly how the method `times` on numbers works, and how blocks work.
+This is pretty much how the method `times` on numbers works, and how blocks
+work: `times` takes the block (the instructions), and runs it as many times
+as the value of the number.
 
 To summarize: Methods can not only accept input in the form of objects passed
 as arguments.  They can also accept this one special piece of input, which is
 an anonymous block of code. And they can then call (execute) this block of code
-in order to do something useful with it.
+in order to do useful things with it.
 
 ##### Alternative syntaxes
 
@@ -81,12 +81,13 @@ end
 5.times { puts "hello!" }
 ```
 
-So when do you use one or the other? In the Ruby community there's a convention
-to use curly braces, if you have a single line block, and it fits on the same
-line (as, in our example, it does). Whenever you need to have more than one
-line in your block, then you use the syntax using `do` and `end`. Sometimes
-people also would use the `do` and `end` syntax when they feel it makes the
-code more readable.
+So, when do you use one or the other?
+
+In the Ruby community there's a convention to use curly braces, if you have a
+single line block and it fits nicely on the same line (as, in our example, it
+does). Whenever you need to have more than one line in your block, then you
+use the syntax using `do` and `end`. Sometimes people also would use the `do`
+and `end` syntax when they feel it makes the code more readable.
 
 
 ##### Block arguments
@@ -99,14 +100,14 @@ an argument looks like this:
 
 ```ruby
 [1, 2, 3, 4, 5].each do |number|
-  puts "This is the number #{number}."
+  puts "Number #{number} was passed to the block"
 end
 ```
 
 And, again, this is the same as:
 
 ```ruby
-[1, 2, 3, 4, 5].each { |number| puts "This is the number #{number}." }
+[1, 2, 3, 4, 5].each { |number| puts "Number #{number} was passed to the block" }
 ```
 
 It is unknown to us why Matz has chosen to not enclose the argument list of
@@ -114,7 +115,7 @@ a block with round parentheses just like method argument lists. Instead, Ruby
 wants us to use vertical bars (we call them "pipes").
 
 So, for blocks, `do |number|` is the same that is `def add_two (number)` for a
-method definition, except that the method also wants a name while a block is
+method definition, except that the method wants a name while a block is
 anonymous.
 
 Now, when you run the code example above, you'll see the message printed out
@@ -147,6 +148,11 @@ the given block for each of the elements, and collects each of the return
 values returned by the block. The resulting array is then returned by the
 method `collect`, and printed to the screen.
 
+In other words, the method `collect` uses the block as a transformer. It takes
+each element of the array, passes it to the block in order to transform it
+to something else, and then keeps all the transformed values in a *new* array
+that the method `collect` then eventually returns.
+
 (Note that the method `collect` has an alias, which is `map`. These are exactly
 the same methods. Many programmers prefer `map` over `collect` because it is
 shorter, and also more commonly used in other languages. However, in our study
@@ -160,7 +166,11 @@ what it does?
 p [1, 2, 3, 4, 5].select { |number| number.odd? }
 ```
 
-Let's walk through this step by step:
+In this case, the method `select` uses the block in a different way: as a
+filter, or criterion, to select values out of the array, and then return a new
+array with the selected values.
+
+Let's walk through this step by step, under the microscope:
 
 * We create an array `[1, 2, 3, 4, 5]`.
 * We then call the method `select` on it, and pass our block.
@@ -173,7 +183,7 @@ Let's walk through this step by step:
   `1` is odd, this will return `true`.
 * Since this is the only, and thus, last statement in the body of our block,
   our block also will return `true` to the method `select`. `select` therefor
-  will keep the number `1`.
+  will *keep* the number `1`.
 * It then calls the block, passing the number `2`. Of course, because this
   is not an odd number, the method `odd?` and therfor our block will return
   `false` back the the method `select`. There for it discards this element.
@@ -182,18 +192,32 @@ Let's walk through this step by step:
 * The method `select` then returns this array and Ruby will pass this return
   value to the method `p`, which prints the array out to the screen.
 
+Thus, the code above prints out `[1, 3, 5]`.
+
+Here's another example of a method that uses the block as a criterion:
+
+```ruby
+p [1, 2, 3, 4, 5].detect { |number| number.even? }
+```
+
+Again, `detect` will pass each of the elements of the array to the block, one
+by one, and check the return value of the block. However, as soon as the block
+returns something truthy, the method `detect` will return the current object
+itself. Therefor, this will print out `2`: the first number in the array
+that is even.
+
 In Ruby there are a lot more methods that accept blocks, and they do very
 different things.
 
-However, they have one thing in common: By accepting a block from you as a
-programmer, the method can pass control to you. This principle is called
-"inversion of control".
+However, they have one thing in common: By the way of accepting a block, from
+you as a programmer, the method can pass control to you. This principle is
+called "inversion of control".
 
 For example, instead of having to define lots of methods like `select_odd`,
 `select_even`, `select_lesser_than`, `select_greater_than` and so on, defining
 one method per potentially useful criteria, Ruby only has to implement one
 single, generic method for arrays: `select`. Ruby can let you, as a programmer,
-take over control, and allow you to specify the criteria that is used to select
+take over control, and allow you to specify the criterion is used to select
 elements in any way you like.
 
 Methods on arrays and hashes that take a block are also called iterators.

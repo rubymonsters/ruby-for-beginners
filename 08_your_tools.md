@@ -1,5 +1,3 @@
-
-Of course, everything said above also applies to ourselves :)
 # Your tools
 
 When you start learning programming in Ruby you'll need three tools: A text
@@ -32,7 +30,8 @@ you like to use some of the powerful oldschool tools from the early times of
 Unix, VIM and Emacs. These are all great editors to use.
 
 Whatever editor you use, you want it to insert 2 spaces when you hit the "tab"
-key. Make sure your editor is configured to do this.
+key, i.e. when you want to indent your code. Make sure your editor is
+configured to do this.
 
 For Sublime Text you can do the following: In the menu item "Sublime Text" go
 to "Preferences" and select "Settings - User". This opens up a configuration
@@ -52,7 +51,7 @@ and protect you from the mistake of forgetting to save:
 ```json
 {
   "tab_size": 2,
-  "translate_tabs_to_spaces": true
+  "translate_tabs_to_spaces": true,
   "save_on_focus_lost": true
 }
 ```
@@ -63,28 +62,28 @@ file and it will start highlighting your code as Ruby code, and enable other
 Ruby specific editor features. Alternatively, select "Ruby" in the extensions
 menu at the bottom right.
 
-Some keyboard shortcut that are extremely useful to know are:
+Some keyboard shortcuts that are extremely useful to know are:
 
 * In order to indent or unindent a single, or multiple lines of code, select
   them and hit `tab` or `shift-tab` respectively.
 * In order to comment a single, or multiple lines of code, select them, and
   hit `cmd-/` on Mac OSX, or `ctrl-/` on Linux/Windows.
-* Cut out code with `cmd-x`/`ctrl-x`, copy code with `cmd-c`/`ctrl-c`, and
-  paste it with `cmd-v`/`ctrl-v`
+* Cut out code with `cmd-x`, copy code with `cmd-c`, and paste it with
+  `cmd-v` on Mac OSX, on Linux/Windows use the `ctrl` key instead.
 
 #### Terminal
 
 Every operating system comes with some kind of terminal application built in,
 and they'll be fine to use for us.
 
-A terminal is an application that doesn't do much more but provide a window
-to run another program, a shell. A shell is a text based program, so it does
-not have a window, and thus needs a terminal to be run on your graphical user
-interface.
+A terminal is an application that doesn't do much more but provide a window to
+run another program, called a "shell". A shell is a text based program, so it
+does not have a window, and thus needs the terminal to be run on your graphical
+user interface.
 
 A shell is an interactive program that waits for you to type a command and hit
-enter (or "return"). It will then run the command, display any output, and then
-sit and wait for you to type the next command.
+enter (or "return"). It will then run the command, display any output, and
+then, again, sit and wait for you to type the next command.
 
 This is how working with computers was done in early times before there was the
 idea of a graphical user interface that has things like clickable icons,
@@ -105,9 +104,15 @@ your new home. You want to be as comfortable reading and writing in your
 terminal as in any other application.
 
 Once you have started the terminal program you will see your shell's prompt,
-and can start typing commands. You'll want to learn at least the command `cd`
-which allows you to navigate to a particular directory (where you have stored
-your code), and the command `ls` which lists the contents of a directory.
+and can start typing commands.
+
+You'll want to learn at least the command `cd` which allows you to navigate to
+a particular directory (where you have stored your code), and the command `ls`
+which lists the contents of a directory.
+
+Also learn how to use the command line completion using `tab`: For example,
+type `cd`, space, and the first two or so letters of the directory you want to,
+then hit `tab`. The shell will complete the rest of the directory name for you.
 
 #### Ruby runtime
 
@@ -145,7 +150,7 @@ workflow:
 In order to switch back and forth between apps quickly you can use the keyboard
 shortcut `cmd-tab` on Mac OSX, and `alt-tab` on Ubuntu and Windows.
 
-In your shell you can use the "cursor up" key to go through your last used
+In your shell you can use the `cursor up` key to go through your last used
 commands: you don't have to type `ruby hello.rb` again. Just hit "cursor up"
 and then enter to run it again.
 

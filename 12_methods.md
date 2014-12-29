@@ -6,17 +6,15 @@ Everything in programming is about data, and doing interesting things with it.
 If you think about Twitter, it essentially takes some 140 characters of text
 (which is data) from users and displays it to other users.
 
-So far you have learned about some of the most important types of data in Ruby:
-numbers, strings and symbols, and two structures that can be used to store
-them: arrays and hashes. You have also learned that you can stick names on
-things, by the way of assigning them to variables. All of this was about the
-"data" part.
+You have already learned about some of the most important types of data in
+Ruby: numbers and strings, as well as two structures that can be used to store
+them: arrays and hashes. That's about the "data" part.
 
 Methods are about the "doing interesting things" part. Methods are all about
 encapsulating some bits of behaviour, so that it can be applied to different
-bits of data easily. Some examples for methods do things like: sorting an
-array, reading a CSV file, sending an email, signing in on Facebook. There are
-even methods that define other methods, but we digress.
+bits of data easily. For example there methods that do things like: sorting an
+array, reading a CSV file, sending an email, signing in on Facebook, sending
+a Tweet.
 
 There are four things that constitute a method:
 
@@ -92,24 +90,33 @@ puts add_two(3)
 * We are now back outside of the method. The method call has returned the
   number `5`, and it will be passed to `puts`, which prints it to the screen.
 
+On formatting: Note that
+
+* There are no spaces before, and inside the parentheses that define the
+  argument list.
+* The method body is indented by exactly two spaces.
+* The keyword `end` sits on the same level as the keyword `def`.
+
 
 #### On return values
 
-In Ruby, methods can always only return one single thing (object). This thing
-can be anything, but a method can only return one thing. In order to return
-a bunch of things from a method we can return an array that holds then things
-that we are interested in.
+In Ruby, methods always return exactly one single thing (object). This thing
+can be anything, but a method can only return one thing, and it also always
+return something. In order to return a bunch of things from a method at once we
+can return an array that holds the things that we are interested in (but the
+array itself is just one object).
 
 Also, in Ruby we do not have to use the statement `return`, as in other
 languages. This is extremely convenient, but it is also something we need to
 learn:
 
 If we don't do anything else, then Ruby will return the value that was returned
-from the last evaluated statement.
+from the last evaluated statement. Most often, this is the last line in the
+method body.
 
-This is important to understand. Please read that last sentence again: If we
-don't do anything else, then Ruby will return the value that was returned from
-the last evaluated statement.
+This is important to understand. Please read that sentence again: If we don't
+do anything else, then Ruby will return the value that was returned from the
+last evaluated statement.
 
 In our example above the last evaluated statement is the expression `number + 2`.
 This statement returns the number `5`, and that is why the value returned by
@@ -123,8 +130,8 @@ about this case.
 #### On parentheses
 
 If you have read carefully, you may have noticed that we said on the line
-`puts number` above `puts` was a method. And then later we've enclosed the
-value `5` by parentheses when calling our method `add_two(3)`.
+`puts number` above `puts` is a method call. And then later we've enclosed the
+value `5` by parentheses when calling the method `add_two(3)`.
 
 That's right. In Ruby, when you call (use) a method, you can omit the
 parentheses. So these lines do exactly the same:
@@ -157,8 +164,8 @@ you can just stick with the convention we are using at our study groups, which
 is:
 
 Use parentheses for all method calls that take arguments, except for the
-methods `puts` and `p`. If a method does not take any arguments, then do
-not add empty parenthese, but omit them.
+methods `puts` and `p` (and later: `require` and `include`). Also: if a method
+does not take any arguments, then do not add empty parenthese, omit them.
 
 So the idiomatic way to write the line above is:
 
@@ -176,14 +183,15 @@ When you need to add some new functionality to your program you'll often times
 find yourself thinking "I should add a method for this": methods encapsulate
 behaviour.
 
-Now, ask yourself "What is it that this method should do?". The answer to this
-gives you a hint for a good method name.
+Now, the first thing you should ask yourself is: "What is it that this method
+should do?". The answer to this gives you a hint for a good method name.
 
 Let's say you are working on an application that deals with emails, and the
 thing you are trying to accomplish is formatting an email. So your method name
 can be `format_email`.
 
-With this first task solved, you can already write the method:
+With this first task solved, knowing the method name, you can already write the
+method:
 
 ```ruby
 def format_email
@@ -198,7 +206,7 @@ The next question to ask is: "Does this method need to be given any information
 in order to do it's thing?". The answer to this question specifies the method's
 arguments list.
 
-In our example, the answer probably is that in order to format an email, it
+In our example, the answer probably is that, in order to format an email, it
 needs the email.
 
 So you can now add the argument list to the method:
@@ -227,10 +235,10 @@ Even though this might seem trivial at first, we recommend you get into this
 habit, too.
 
 Many editors help you formatting things. For example, when you are on a line
-that starts with `def`, and at the end of the line hit return, Sublime will
-already indent the next line for you by 2 spaces. If you now type `end`, then
-Sublime will notice that you are closing the method, and outdent this again,
-so `def` and `end` sit on the same level. Smart, isn't it?
+that starts with `def something`, and at the end of the line hit return,
+Sublime will already indent the next line for you by 2 spaces. If you now type
+`end`, then Sublime will notice that you are closing the method, and outdent
+this again, so `def` and `end` sit on the same level. Smart, isn't it?
 
 Also, if you type an opening parentheses `(`, then Sublime will add a closing
 one `)`, too, but keep your cursor placed between them, so you can type the
@@ -240,16 +248,19 @@ argument list where it belongs.
 #### Flow of execution
 
 One of the things we, as programmers, have assimilated so much that we forget
-to explain it to beginners is how Ruby goes through your program.
+to explain to beginners is how, and in what exact order, Ruby goes through your
+program. This is called the "flow of execution", or "control flow".
 
 When you execute a Ruby file with the `ruby` runtime then this program (also
 called an "interpreter") will read your Ruby code, and start executing it line
 by line, from top to bottom.
 
 Let's look at our example from above, and how the Ruby control flow flows
-through it under the microscope. For convenience we've now added line numbers,
-like your editor does. We have also added parentheses for the method call to
-`puts`, even though in praxis we recommend against this:
+through it under the microscope.
+
+For convenience we've now added line numbers, like your editor does. We have
+also added parentheses for the method call to `puts`, to make this more
+obvious, even though in praxis we recommend against this:
 
 ```ruby
 1 | def add_two(number)
@@ -260,22 +271,22 @@ like your editor does. We have also added parentheses for the method call to
 ```
 
 Ruby starts on line 1, and finds our method definition, so it will read all
-of it, until it finds the `end` keyword on line 3. It does nothing but define
-this method, and keep it in memory so it can be used from now on.
+of it, until it finds the `end` keyword on line 3. For now it does nothing but
+define this method, and keep it in memory so it can be used from now on.
 
 Now, on line 5, Ruby finds that we are using the word `puts` and sees that
 we are trying to pass something to it, so this must be a method call.
 
 In order to call a method Ruby needs to first evaluate the values that we want
-to pass to the method. So Ruby now looks at what's between the parentheses,
-and finds the method call `add_two(3)`.
+to pass. So Ruby now looks at what's between the parentheses, and finds another
+method call `add_two(3)`.
 
-Again, in order to actually call this method Ruby needs to first evaluate the
-values that we want to pass.
+Again, in order to actually call the method `add_two` Ruby needs to first
+evaluate the values that we want to pass.
 
 In this case this is the number `3`, so Ruby will create this object (an
-instance of the class `Fixnum`). Now it is ready to actually call the method
-`add_two`, passing the object just created.
+instance of the class `Fixnum`). Now it is finally ready to actually call the
+method `add_two`, passing the object just created.
 
 Now, for the first time, Ruby starts to deviate from the default flow of
 execution, which simply goes from top to bottom. Instead, since we are calling
@@ -286,15 +297,16 @@ In this moment, since we are entering a method that has an argument, Ruby
 also defines a local variable `number`, and assigns the object that was
 passed, the number `3`, to this variable.
 
-Now Ruby is ready to evaluate line 2. Again it finds that we are using the
-operator `+`, on the value that is assigned to the variable `number`. In order
-to do that Ruby first evaluates the thing that is on the right hand side of the
-operator, which in our example, again, is a number. Ruby will therefor create
-the number (an instance of the class `Fixnum`), this time with the value `2`.
+Now Ruby is ready to evaluate line 2. It finds that we are using the operator
+`+`, on the value that is assigned to the variable `number`, which is `3`. In
+order to do that Ruby first evaluates the thing that is on the right hand side
+of the operator, which in our example, again, is a number. Ruby will therefor
+create the number (an instance of the class `Fixnum`), this time with the value
+`2`.
 
 Ruby is now ready to evaluate the operator, and add the number `2` to the
-number `3`, which is assigned to `number`. This operation returns a new number
-(an instance of the class `Fixnum`), which is `5`.
+number `3`. This operation returns a new number (an instance of the class
+`Fixnum`), which is `5`.
 
 Ruby recognizes that the method body has ended, and so it returns from the
 method `add_two`, with the return value `5`, because this was the return value

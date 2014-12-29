@@ -3,7 +3,7 @@
 #### nil
 
 We have briefly mentioned that in Ruby there is an object that represents
-"nothing": this object is `nil`.
+"nothing": the object `nil`.
 
 That's right. "Nothing" is a special thing in Ruby (as well as in many other
 languages). We could ramble on the philosophical implications of this, but
@@ -25,7 +25,12 @@ p dictionary[:four]
 ```
 
 This will print out `nil`. Remember that every method call always will return
-*some* value. In this case this value is `nil`, representing "nothing".
+*some* value? In cases where there's nothing to return, it will return `nil`,
+which represents nothing :)
+
+In Ruby, `nil`, nothing, is something else than, for example `0` is, which
+represents *something*, or `""`, an empty string, `[]`, an empty array, and so
+on.
 
 
 #### true and false
@@ -39,16 +44,25 @@ and arrays, like `3.odd?`, `"a string".start_with?("a")`, or `[1, 2, 3].include?
 These objects also have classes, and you can check that in IRB: `nil.class`,
 `true.class` and `false.class`.
 
-For some reason that we don't know, Matz has decided to call these classes
-`NilClass, `TrueClass` and `FalseClass`, instead of `Nil`, `True` and `False`.
+For some reason that we don't know Matz has decided to call these classes
+`NilClass`, `TrueClass` and `FalseClass`, instead of `Nil`, `True` and `False`.
 If you ever meet him at a conference then ask him :)
 
 
 #### Truthiness and falsiness
 
 Now, when we talked about `if` statements we used methods that actually return
-`true` and `false` values, like the `odd?` method does on numbers. Comparison
-operators like `==`, `<` and `>` also return `true` and `false`.
+`true` and `false` values, like the `odd?` method on numbers does. Comparison
+operators like `==`, `<` and `>` also return `true` and `false`, as in:
+
+```ruby
+number = 3
+if number >= 5
+  puts "The number #{number} is greater than 5, or equal to 5"
+else
+  puts "The number #{number} is lesser than 5"
+end
+```
 
 However, what happens when we use methods as conditions that do not return
 `true` or `false`, but something else, for example a string, number, or `nil`?
@@ -71,8 +85,8 @@ not defined. Is `nil` equivalent to `true` or `false`? Or will this raise
 an error?
 
 If you run the code above then you see that Ruby will execute the `else`
-branch. That means Ruby actually considers `nil` to be equivalent to "not
-true", and that means `false`.
+branch. That means Ruby actually considers `nil` to be equivalent to `not
+true`, that is, `false`.
 
 Now, lets use a key that actually is defined:
 
@@ -95,8 +109,8 @@ If you run the code then you'll see that Ruby now executes the `if` branch, and
 considers the condition (i.e. the string `"eins"`) to be equivalent to `true`.
 
 Think about this for second: Ruby considers *everything* to be equivalent to
-`true` that is not `false` or `nil`. Put the other way around, Ruby only
-considers something to be equivalent to false if it is either `false` or `nil`.
+`true` that is *not* `false` or `nil`. Put the other way around, Ruby only
+considers `nil` to be equivalent to `false`.
 
 Because "is equivalent to true" or "is equivalent to false" is quite a clunky
 thing to repeat so often the programming community has come up with terms for

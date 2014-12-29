@@ -11,19 +11,20 @@ However.
 Also always try to put things into perspective. Whatever you hear, try to
 understand, compare to other opinions, and judge for yourself.
 
-As in any other field, developers (as much as any other person) will always
+As in any other field, developers, as much as any other person, will always
 give answers based on *their* own perspective, based on *their* own experience,
 and based on what *they* think is a helpful answer to you. Now, being a great
 Ruby developer ("knowing your stuff") and being a great Ruby coach ("giving the
 right advice") are not the same thing.
 
-Developers who have never coached, or are new at coaching, might: overload you
-with information. They know all this stuff, and, as said before, they aren't
-even fully aware of it. They just *use* the language, and all these features.
+Developers who have never coached, or are new at coaching, might, for example,
+overload you with information. They know all this stuff, and, as said before,
+they aren't even fully aware of it. They just *use* the language, and all these
+features.
 
-Now, when asked, they explain things to you, and may suddenly remember that ...
-"Oh, right, and then there's also this other language feature, and that one,
-and another one!" They may be excited to explain all the things at once,
+Now, when asked, they explain things to you, and may suddenly remember: "Oh,
+right, and then there's also this other language feature, and that one, and
+another one, and ...!" They may be excited to explain all the things at once,
 without noticing that, at this particular point, you actually wouldn't need to
 know them all.
 
@@ -39,12 +40,12 @@ process. Often times it makes sense to start practicing with an older solution
 that worked well enough a couple years ago, feel some of the pains that it
 caused, and only then try using the latest, more modern solution.
 
-Developers tend to be excited about their preferences, and will happily explain
-at lengths why one solution works better for them than another.  Often times
-you can learn a lot from listening to these explanations.  However, keep in
-mind that this doesn't necessarily mean a tool that's great for day to day work
-for an experienced programmer also is a tool that's great for learning to
-program.
+Developers tend to be excited about their current preferences, about things
+they've learned just recently, and will happily explain at lengths why one
+solution works better for them than another. Often times you can learn a lot
+from listening to these explanations. However, keep in mind that this doesn't
+necessarily mean a tool that's great for day to day work for an experienced
+programmer also is a tool that's great for learning to program.
 
 On top of all this, there's also the problem that the tools that we use, over
 time, become more and more optimized for advanced users. New features are being
@@ -66,8 +67,8 @@ Here are a few examples of decisions we made for our study groups:
   learn what a hash is, and how it is used, this is quite a bit of information
   to process. The new hash syntax puts an extra burden on you, and raises extra
   questions that just aren't required to be answered in order to understand
-  what a hash, how it can be used, and why it is useful. We do mention the new
-  syntax, but we do not use it, and explain why.
+  what a hash is, how it can be used, and why it is useful. We do mention the
+  new syntax, but we do not use it, and explain why.
 
 * We purposefully ignore tons of language features, such as lambdas, splats,
   class level methods, class variables, and so on in our beginners groups for
@@ -86,4 +87,16 @@ Here are a few examples of decisions we made for our study groups:
   there is no additional setup required. Later on, once you've written a good
   bunch of tests, it is a great idea to then learn RSpec, and try that one
   for a while.
+
+* One example of technology improving, adding features optimized for more
+  advanced users, and thus making it harder to understand for newcomers is the
+  aforementioned new hash syntax, at a rather small scale. Other examples are:
+  Rails' `resources` macro in routes (it is much easier to understand the whole
+  concept if you type out these 7 routes yourself), and Rails' migrations
+  (they've gone, for good reasons, from being numbered to being timestamped,
+  making the naming choice `migrate:up` and `migrate:down` harder to
+  understand; and they've introduced the method `change`, replacing the methods
+  `up` and `down`)
+
+
 

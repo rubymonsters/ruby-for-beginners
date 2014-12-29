@@ -15,9 +15,10 @@ look at another method first, which is `inspect`.
 
 The method `inspect` is available on any object in Ruby. It returns a string
 that is a representation of the object itself: a representation that is as
-close as possible to the code that you use to create the object.
+close as possible to the code that you use to create the object. So `inspect`
+is useful to inspect objects, duh :)
 
-This becomes more clear when we try it in IRB:
+This becomes more clear when you try it in IRB:
 
 ```ruby
 $ irb
@@ -32,15 +33,15 @@ $ irb
 ```
 
 As you can see the string returned from `inspect` is exactly the same as the
-Ruby code that we used to create the object.
+Ruby code that we used to create the object. That is really convenient.
 
-Now, typing `puts something.inspect` is quite a bit of work to do. That's
+However, typing `puts something.inspect` is quite a bit of work to do. That's
 12 characters to type next to the object itself!
 
-Therefor, Ruby has a method to make our lives easier, and does this work for
-us. That's the method `p`.
+Therefor Ruby has a method to make our lives easier, and do this work for us.
+That's the method `p`.
 
-It is implemented like so:
+This method is implemented like so:
 
 ```ruby
 def p(object)
@@ -48,9 +49,9 @@ def p(object)
 end
 ```
 
-Whenever you are trying to figure out what a certain line of code does,
-what's assigned to a variable, and so on we recommend to use `p` because
-it tells you exactly what the thing is that you are looking at.
+Whenever you are trying to figure out what a certain line of code does, what's
+assigned to a variable, or what a method call returns, we recommend to use `p`
+because it tells you exactly what the thing that you are looking at is.
 
 `puts` on the other hand tries to be smart.
 
@@ -77,15 +78,15 @@ $ irb
 123
 ```
 
-It is therefor not clear from the output whether the object that you are looking
-it is an array that contains numbers, or an array that contains strings, or just
-a long string that contains linebreaks.
+From the output of `puts` it is therefor not clear whether the object that you
+are looking it is an array that contains numbers, or an array that contains
+strings, or just a long string that contains linebreaks.
 
 In short, `puts` is useful when you are writing a program that is supposed to
 actually output something to the screen. Like, this could be a command line
 tool that you write in order to make your own life easier at your job, and that
-is helpful at automating some repetitive work. Or it is useful in solving
-Ruby basics programming exercises :)
+is helpful at automating some repetitive work. Or it is useful in Ruby
+programming exercises :)
 
 On the other hand `p` is useful when you are trying to understand what your
 code does, e.g. when you are trying to figure out a certain error.

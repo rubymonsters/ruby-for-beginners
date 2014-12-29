@@ -61,19 +61,19 @@ puts number + 2
 This, again, would output `14`. Let's walk through it:
 
 * The first line assigns the number `4` to the variable `number`, creating that
-  variable
+  variable.
 * The second line multiplies the value that is assigned to the variable
-  `number` (which is `4`) by `3`, and then assigns the result (which is `12`)
-  to the variable `number`.
+  `number` (which is `4`) by the number `3`, and then assigns the result (which
+  is `12`) to the variable `number`.
 * The third line adds the value `2` to the value assigned to the variable
   `number` (which is now `12`). The result of this operation (which is `14`) is
   then passed to `puts` which prints it out to the screen.
 
 Of course, no one would actually write this exact code in praxis since you can
-simply do all this in just one line instead. But sometimes you'll find or write
-code that assigns an initial value to a variable, and then keeps working on it
-on a few more lines. This sometimes is useful to break up long lines, and make
-code more readable.
+simply do all this in just one line instead: `puts 2 + 3 * 4`. But sometimes
+you'll find or write code that assigns an initial value to a variable, and then
+keeps working on it on a few more lines. This sometimes is useful to break up
+long lines, and make code more readable.
 
 As mentioned earlier, Ruby has different kinds of variables. The kind of
 variable used above is called a "local variable", and it's the one used most

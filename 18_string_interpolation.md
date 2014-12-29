@@ -12,8 +12,8 @@ puts "Hello, " + name + "!"
 This, of course, will output the message `Hello, Ada!`.
 
 Glueing strings together like this works, and you can do it. However, there is
-another method of accomplishing the same, and it is very widely used, and
-usually preferred over concating strings with `+`.
+another method of accomplishing the same, and it is widely used, and usually
+preferred over concating strings with `+`.
 
 This method is called "string interpolation", and this is how it looks:
 
@@ -28,8 +28,8 @@ the string surrounding it.
 
 In other words, when Ruby finds the bit `#{name}` in this string, then it will
 evaluate the piece of Ruby code `name`. It finds that this is a variable, so it
-returns the value of the variable, which is the string `"Ada"`. It then embeds
-this string into the surrounding string, replacing the bit `#{name}`.
+returns the value of the variable, which is the string `"Ada"`. So it embeds it
+into the surrounding string, replacing the `#{name}` bit.
 
 And now we can finally explain the difference between strings created with
 single and double quotes:
@@ -40,14 +40,14 @@ That means that:
 
 ```ruby
 puts "Interpolation works in double quoted strings: #{1 + 2}."
-puts 'And it does not work in single quoted strings: #{1 + 2 }.'
+puts 'And it does not work in single quoted strings: #{1 + 2}.'
 ```
 
 will print out:
 
 ```ruby
 Interpolation works in double quoted strings: 3.
-And it does not work in single quoted strings: #{1 + 2 }.
+And it does not work in single quoted strings: #{1 + 2}.
 ```
 
 If you type the code above in your editor, and syntax highlighting for Ruby
@@ -67,21 +67,20 @@ less clutter, and all spaces used actually represent spaces that are part of
 the string.
 
 One other, albeit pretty neglectable reason is, that string interpolation
-actually uses slightly less resources: The code `"Hello, #{name}!"` creates one
-single string, and then embeds another, existing string into it, which is the
-string `"Ada"`.
+actually uses less resources: The code `"Hello, #{name}!"` creates one single
+string, and then embeds another, existing string into it, which is the string
+`"Ada"`.
 
 The code `"Hello, " + name + "!"` on the other hand is, as you saw above,
 equivalent to the code `"Hello, ".+(name.+("!"))`. That means it creates the
-string `"!"`, and passes it to the method `+` on `name`.  `name` also contains
-a string, and `+` returns a *new* string, which is, in our example, `"Ada!"`,
-now this string is passed to the method `+` on `"Hello, "`, again, generating a
+string `"!"`, and passes it to the method `+` on `name`. `name` also contains a
+string, and `+` returns a *new* string, which is, in our example, `"Ada!"`.
+Now this string is passed to the method `+` on `"Hello, "`, again, generating a
 *new* string, `"Hello, Ada!"`.
 
 So, in our example, with string interpolation there are only two strings
 involved. Whereas with string concatenation there are 4 different strings
 created, even though only 2 of them are interesting to us.
 
-We recommend you pick whatever method works best for you for now. You can
-easily ignore the fact that string concatenation produces a few wasted objects,
-and the rest is a matter of style.
+We recommend you get used to using string interpolation, just because this
+is what most developers use.

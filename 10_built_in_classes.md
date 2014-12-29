@@ -44,25 +44,27 @@ and most used way is to simply enclose some characters in quotes:
 ```
 
 Both of these are good to use. Technically they are almost the same, except for
-one important feature called "string interpolation".
+one important feature called "string interpolation", which we'll explain later.
 
 (The reason why text, in the context of programming languages, is not referred
 to as "text", but instead with the slightly odd term "string" is a historical,
-and technical one. In early programming languages strings were implemented as
-lists of characters, and programmers had to deal with them as such. Once
-languages started to add built-in abstractions for this concept, these were
-named "string" resembling the way programmers had thought about text before: as
-characters lined up on strings. Nowadays, in Ruby, you can just think about
-strings as text.)
+and technical one: In early programming languages strings were implemented as
+lists of characters, and programmers had to deal with them as such. One had
+to take care of nasty things such as manually managing the length of the
+character list. Once languages started to make things easier for developers,
+and add built-in abstractions for this concept, these were named "string",
+resembling the way programmers had thought about text before: as characters
+lined up on strings. Nowadays, in Ruby, you can just think about strings as
+text.)
 
 #### Symbols
 
 *Symbols are like strings, except they are code.*
 
-This is a rather strange concept, to be honest, and we only introduce it this
-early because symbols are used to often and widely that you'll very likely find
-them used in code elsewhere. For your first steps in learning programming we
-wouldn't necessarily need them.
+Symbols are a rather strange concept, to be honest, and we only introduce them
+this early because symbols are used so often and widely that you'll very likely
+find them used in code elsewhere. For your first steps in learning programming
+we wouldn't necessarily need them.
 
 Symbols are written like this: `:something`. I.e. there is a word that is
 preceeded by a colon. This means that normally symbols do not contain spaces.
@@ -76,7 +78,7 @@ used as keys in hashes (see below).
 
 Another way of looking at symbols is that they aren't really text, even though
 they read well. Instead they are unique identifiers, like numbers, or bar
-codes. While strings represent data that can change, symbols represent uniq
+codes. While strings represent data that can change, symbols represent unique
 values, which are static.
 
 And more technically, if you use strings that contain the same text in your
@@ -96,10 +98,16 @@ While numbers, strings, and symbols all represent simple, primitive things,
 arrays are more interesting, and very useful. They are things that store (or
 "hold") other things.
 
-You can think of an array as a collection or list of things, or better yet, a
-bag that you can throw things in: The bag itself is a thing (an object), too.
+You can think of an array as a collection or list of things, or better yet, as
+a bag that you can throw things in: The bag itself is a thing (an object), too.
 An array is created by separating values by commas, and enclosing this list
 with square brackets, like so:
+
+```ruby
+[1, 2, 3]
+```
+
+Or:
 
 ```ruby
 ["A string", 1, :some_symbol, 2]
@@ -110,6 +118,11 @@ string, a number, a symbol, and another number.
 
 Note that in Ruby you can store any kind of object in an array, and that arrays
 always keep their order (unless do something to change it).
+
+Note that in Ruby arrays always keep their order (unless you do something to
+change the order), and you can store any kind of objects in arrays. For
+example, you can also store arrays in an array: that's a 2-dimensional array,
+like a table that has many rows, and each row has many cells ("things").
 
 Arrays can be used in a lot of different, and useful ways, but the most basic
 one is to retrieve a certain element by the way of referring to it by position:
@@ -132,8 +145,8 @@ second element, not the first one.
 In programming books and the Ruby documentation you'll find the word "index"
 being used instead of "position" in this context.
 
-In order to add an element to an existing array you can use the "shovel"
-operator `<<`, like so:
+In order to add an element to an existing array you can use the operator `<<`,
+called "shovel" operator, like so:
 
 ```ruby
 words = ["one", "two", "three"]
@@ -141,8 +154,9 @@ words << "four"
 puts words[3]
 ```
 
-This prints out `four`. You can also set an element to a given index, like
-so:
+This prints out `four`.
+
+You can also set an element to a specific index, like so:
 
 ```ruby
 words = ["one", "two", "three"]
@@ -166,7 +180,7 @@ thing by another thing. We say: we look up a value from a hash using a key.
 Or one could say: "Please get me the value that is associated with this key."
 
 Imagine a real dictionary that translates from English to German. When you
-look up the English word "Hello" then you'll find the German "Hallo". When
+look up the English word "hello" then you'll find the German "Hallo". When
 you look up "one" then you'll find "eins", and so on.
 
 Hashes work pretty much like this. You can create a hash by pointing a key
@@ -231,10 +245,13 @@ It looks like this:
 Using this syntax we tell Ruby that we want the keys to be symbols.
 
 Hmmmm? We just learned that symbols are defined by prepending a word with a
-colon like `:one`, right? Well, yes. We found this new syntax pretty confusing
-for beginners: It is slightly less explicite and obvious, and you have to learn
-another piece of information. That's why we simply ignore it in our study
-groups while we learn what hashes are and how you can use them.
+colon like `:one`, right? Well, yes, that's just how it works: If you define
+a hash using this syntax, then you'll get a hash that has symbols as keys.
+
+We found the new syntax pretty confusing for beginners: It is slightly less
+explicite and obvious, and you have to learn another piece of information.
+That's why we simply ignore it in our study groups while we learn what hashes
+are and how you can use them.
 
 For now you can simply remember that these two hashes are exactly the same:
 

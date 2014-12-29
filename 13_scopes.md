@@ -15,11 +15,11 @@ else." (slightly modified to use our own terminology)
 
 You can think about a scope as of a sphere, a bubble, or a room (with no
 windows, and doors closed): Certain names, like variable names, are "known" and
-"visible" inside of the room. Other names, know and visible in other rooms are
+"visible" inside of the room. Other names, know and visible in another room are
 not known in this room, but only in the other room.
 
 Every time there is a method call, and the flow of execution enters the
-method's block, it enters a new scope, or "room". Things that are "local" to
+method's body, it enters a new scope, or "room". Things that are "local" to
 this method's scope (i.e. things that are "inside" of the room), are *only*
 visible in this scope. Outside of it, they are unknown.
 
@@ -103,11 +103,11 @@ variable `number`, but this variable is then never used: the only other line in
 the outer scope is the last line `puts add_to(3)`, and this line does not use
 the variable `number`.
 
-Instead, when the flow of execution enters the method `add_to` Ruby will create
-a new empty local scope, and it will define a new local variable `number` which
-gets the number `3` assigned that was passed to the method. This new variable
-`number` is *local* to the method's scope, and therefor is a different variable
-than the one on the very first line, in the outer scope.
+Instead, when the control flow enters the method `add_to` Ruby will create a
+new empty local scope, and it will define a new local variable `number` which
+is assigned the number `3` that was passed to the method. This new variable
+`number` is *local* to the method's scope, and therefor this is a *different*
+variable than the one on the very first line, in the outer scope.
 
 We found the following a good metaphor for scopes:
 
@@ -120,3 +120,8 @@ according to the argument list from the method definition. In our example that
 is the argument name `number`. From now on, in this room, there's a known local
 variable that has a value assigned: The number `3` with the post-it note
 `number` on it.
+
+In our example, the outer scope and the scope of the method `add_two`, are
+two different rooms, and there are two different post-it notes sticked on
+two different numbers, which just happen to have the same name on them.
+

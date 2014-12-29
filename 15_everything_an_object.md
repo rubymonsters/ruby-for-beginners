@@ -3,8 +3,9 @@
 In Ruby everything is an object: Numbers are objects, strings, arrays and
 hashes are objects. Even classes are objects.
 
-Well, actually this is not completely true: not *everything* is an object, but
-almost everything, and that's good enough to know for now.
+Well, although Rubyist like saying this, it actually is not completely true:
+not *everything* is an object, but almost everything, and that's good enough to
+know for now.
 
 #### Objects have classes
 
@@ -19,10 +20,11 @@ $ irb
 => Array
 ```
 
-That means that the sentence following sentence is true: In Ruby, "a string"
-*is a* String.
+That means that the following sentence is true: In Ruby, `"a string"` *is a*
+`String`.
 
-Yeah, we knew that already. However, you can also ask the same question in Ruby:
+Yeah, we kinda knew that already. However, you can also ask the same question
+in Ruby:
 
 ```ruby
 $ irb
@@ -32,9 +34,10 @@ $ irb
 
 So, the actual string knows that it *is a* `String`, which in Ruby means that
 it is an instance of the class `String`. You can do this for any object. E.g.
-`1.is_a?(Numeric)` also returns `true`.
+`1.is_a?(Numeric)`, and `[1, 2, 3].is_a?(Array)` also return `true`. We think
+this is pretty cool.
 
-Even more interesting, you can also ask a class for its class:
+Even more interesting, you can also ask a *class* for its class:
 
 ```ruby
 $ irb
@@ -42,21 +45,28 @@ $ irb
 => Class
 ```
 
-There's a class named `Class`, and the class `String` *is a* `Class`.
+There's a class named `Class`, and the class `String` is an object that *is a*
+`Class`.
 
-While this knowledge might not be super useful in praxis most of the time, it
-is kinda cool to see how in Ruby, where everything is an object, even classes
-are objects, and have their own class.
+Ok, this might get a little confusing, when you think about it too hard.
+However, while this might not be super useful in praxis, it is kinda cool to
+see how in Ruby, where everything is an object, even classes are objects, and
+have their own class.
 
-So let's move on to more practical things.
+But let's move back to more practical things.
 
 
 #### Calling methods
 
-Objects have methods, allowing us to do interesting stuff with them.
+Objects have methods attached to them, allowing us to do interesting stuff with
+them. An object's methods are like things that a person can *do*. Like we can
+ask a person for their name, and they will "return" their name to us. Or we
+can ask them to prepare, and bring a cup of tea for us. Or we could ask them
+to remember a phone number, or email password.
 
-We used methods in the example above: `class` and `is_a?` are methods that we
-called on the object `"this is a string"`.
+As Rubyists we actually say that we "talk to objects". And we do so by calling
+methods on them. We used methods in the example above: `class` and `is_a?` are
+methods that we called on objects like the string `"this is a string"`.
 
 In Ruby, methods are called on objects by using a dot, like so:
 
@@ -65,7 +75,7 @@ In Ruby, methods are called on objects by using a dot, like so:
 object.method
 ```
 
-If we need to pass arguments to the method we call, then we add parantheses,
+If we need to pass arguments to the method we call, then we add parentheses,
 and separate the arguments by comma:
 
 ```ruby
@@ -75,9 +85,10 @@ object.method(an_argument, another_argument)
 If you are curious what methods are defined on a certain object, then you can
 quickly pop into IRB and ask the object for its methods.
 
-That's right, `methods` is a method defined on all objects. When you call it
-then it will return an array of symbols, which are the method names. It makes
-sense to sort this array, so it's easier to read:
+That's right, `methods` is a method defined on all objects (just like `class`,
+and `is_a?`). When you call it then it will return an array of symbols, which
+are all of the method names that the object has. It makes sense to sort this
+array, so it's easier to read:
 
 ```ruby
 $ irb
@@ -85,9 +96,9 @@ $ irb
 => [:*, :+, :-, :/, :between?, :even?, :odd?, :zero?]
 ```
 
-If you do this, you'll see that the object `1` actually has a lot more method
-names. We have stripped the array down a little, because we want to talk about
-some of these methods.
+If you do this yourself, you'll see that the object `1` actually has a lot more
+methods. We have stripped the array down a little, because we want to talk
+about some of these methods.
 
 
 #### Operators are methods
@@ -141,11 +152,11 @@ Translates to these method calls:
 ```ruby
 array = [1, 2, 3]
 array.[]=(3, 4)
-puts(array[3])
+puts(array.[](3))
 
 hash = { :one => 'eins', :two => 'zwei' }
 hash.[]=(:three, 'drei')
-puts(hash[:three])
+puts(hash.[](:three))
 ```
 
 Knowing this can be useful when you want to write classes that look and feel
@@ -157,7 +168,6 @@ similar to arrays or hashes, but behave different.
 In the method list above you can also see that in Ruby we can have methods
 that end with a question mark `?`. This makes them read like a question, so
 we can ask a number if it is even or odd:
-numbers:
 
 ```ruby
 $ irb
@@ -178,16 +188,18 @@ Or you can ask the number if it's between two other numbers:
 => false
 ```
 
-Methods that end with a question mark return either `true` or `false`, and
-they are called "predicate methods".
+Methods that end with a question mark are called "predicate methods". And they
+return either `true` or `false`.
 
-If you look at the methods that are defined on strings and arrays, then
-you'll find a bunch of method names that look like they are doing exactly
-what they describe.
+#### Lots of other methods
+
+If you look at the methods that are defined on strings and arrays, then you'll
+find quite a bunch of method names that look like they are doing exactly what
+their names describe.
 
 For example, some of the things you can do with strings are:
 
-* `"a string".capitalize` returns `A string`, with the first letter uppercased.
+* `"a string".capitalize` returns `"A string"`, with the first letter uppercased.
 * `"a string".length` returns `8`, which is the length of the string.
 * `"a string".start_with?("a")` returns `true`, because the string starts with an `"a"`.
 * `"a string".include?("s")` returns `true`, because the string contains the character `"s"`.
@@ -199,6 +211,14 @@ Some examples for useful methods on arrays are:
 * `[1, 1, 1, 2].uniq` returns a new array with duplicate elements removed: `[1, 2]`.
 * `[1, 2, 3].join(", ")` returns a string `"1, 2, 3"`.
 * `[1, 2, 3].include?(2)` returns true because the array contains the number `2`.
+
+How do you find all these methods?
+
+The quickest way to find a certain method for an object often is to just ask
+Google: "ruby array sort". That will point you to the Ruby documentation.
+Another way is to read through all the methods for the class on the respective
+Ruby documentation page. And of course, you can also read through the method
+names returned by `[1, 2, 3].methods.sort`.
 
 
 #### Questions and commands
@@ -227,7 +247,9 @@ array is still the same.
 Often times questions need another bit of information passed. E.g., we can ask
 a string "Do you start with this character?", and we'll need to pass the
 character that we are talking about: `"a string".start_with?("a")`. The answer
-to this question will be `true`.
+to this question will be `true`. Or if we ask an array if it includes a certain
+element, then of course we need to pass that element, as in `[1, 2,
+3].include?(1)`
 
 The other role that a method can play is being responsible for executing a
 certain command.
@@ -235,7 +257,7 @@ certain command.
 For example in Rails applications objects that can be stored to the database
 have a method `save`. Of course, the purpose of this method is to save the
 object to the database. E.g. `user.save` would save some changes that we've
-made to the user before, like, maybe we gave them a new password.
+made to the user before, like, maybe we have given them a new password.
 
 Another example is the method `sort!` on arrays. Different from the method
 `sort` (without an exclamation mark), this method tells the array to sort
@@ -254,4 +276,4 @@ Another example for a method that is a command is the method `puts`. All it
 does is print something to the screen, and it always returns `nil`.
 
 Whenever you think about adding a new method to your code it makes sense to
-think about the role the method should have. Is it a question, or a command?
+think about the role the method should have. Is it a question? Or a command?
