@@ -216,9 +216,9 @@ called "inversion of control".
 For example, instead of having to define lots of methods like `select_odd`,
 `select_even`, `select_lesser_than`, `select_greater_than` and so on, defining
 one method per potentially useful criteria, Ruby only has to implement one
-single, generic method for arrays: `select`. Ruby can let you, as a programmer,
-take over control, and allow you to specify the criterion is used to select
-elements in any way you like.
+single, generic method for arrays: `select`. That way Ruby can let you, as a
+programmer, take over control, and allow you to specify the criterion is used
+to select elements in any way you like.
 
 Methods on arrays and hashes that take a block are also called iterators.
 We say they "iterate over the array", meaning that these methods take each

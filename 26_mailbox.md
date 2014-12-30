@@ -1,7 +1,8 @@
 # The mailbox exercise
 
 The mailbox exercise is a milestone in the beginners group curriculum, and it
-may take a little bit longer to complete it.
+may take a little bit longer to complete it. That is fine, and, to some extend,
+the point.
 
 Fill in and complete the following class definitions.
 
@@ -55,3 +56,18 @@ You are allowed to add as many methods to the classes `Email`, `Mailbox` and
 `MailboxTextFormatter` as you deem useful. In your final solution you are not
 allowed to change any of the code outside (after) the class definitions. For
 debugging purposes, you can, of course, change all the code you want :)
+
+If you do this exercise in one of our study groups then best do it together
+with someone else. We found pairs to work best, and a three person team would
+be better than doing it on your own.
+
+Try to come up with a working solution first. It doesn't matter how elegant,
+generic, or pretty it is. Whatever produces the required output is find for a
+first solution.
+
+Then, later, look at your code, and try to improve it by cleaning up everything
+that you don't like, or deam ugly.
+
+Eventually, one goal to aim at would be: Adding another column to the table
+only requires mimimal changes, e.g. changes to one or two places in your
+formatter class.
