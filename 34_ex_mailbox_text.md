@@ -1,4 +1,4 @@
-# The mailbox exercise
+# Exercise: The Mailbox Text Formatter
 
 The mailbox exercise is a milestone in the beginners group curriculum, and it
 may take a little bit longer to complete it. That is fine, and, to some extend,
@@ -28,9 +28,9 @@ class MailboxTextFormatter
 end
 
 emails = [
-  Email.new("Homework this week", { :from => "Ferdous", :date => "2014-12-01" }),
-  Email.new("Keep on coding! :)", { :from => "Dajana", :date => "2014-12-01" }),
-  Email.new("Re: Homework this week", { :from => "Ariane", :date => "2014-12-02" })
+  Email.new("Homework this week", { :date => "2014-12-01", :from => "Ferdous" }),
+  Email.new("Keep on coding! :)", { :date => "2014-12-01", :from => "Dajana" }),
+  Email.new("Re: Homework this week", { :date => "2014-12-02", :from => "Ariane" })
 ]
 mailbox = Mailbox.new("Ruby Study Group", emails)
 formatter = MailboxTextFormatter.new(mailbox)

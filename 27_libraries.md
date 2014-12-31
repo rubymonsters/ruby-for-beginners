@@ -1,4 +1,4 @@
-#### Bonus: Using Libraries
+# Bonus: Using Libraries
 
 Our `Person` class does not define an attribute accessor method for its
 password, and thus, others cannot ask and retrieve it.
