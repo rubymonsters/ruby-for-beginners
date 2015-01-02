@@ -14,6 +14,9 @@ writing expressive, readable code.
 
 TODO add a list of good and bad examples for class, method, and variable names
 
-var1, var_2
-variable, array, emails_list, emaillist
+Bad names:
 
+var, var1, var_2
+variable, array
+emails_list, emaillist, emailList
+emlslst
