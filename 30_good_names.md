@@ -13,3 +13,7 @@ like a recipe or other instructional prosa. Ruby is particularly great for
 writing expressive, readable code.
 
 TODO add a list of good and bad examples for class, method, and variable names
+
+var1, var_2
+variable, array, emails_list, emaillist
+

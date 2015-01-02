@@ -32,13 +32,15 @@ Now change your code so that you get the following output:
 ["One <3", "Three <3<3<3", "Five <3<3<3<3<3"]
 ```
 
-Now change your code so that you get the following output (hint: again, that's now a string, not an array):
+Now change your code so that you get the following output (hint: again, that's
+now a string, not an array):
 
 ```
 One <3, Three <3<3<3, Five <3<3<3<3<3
 ```
 
-Now change your code so that you get the following output, using the newline character `"\n"`:
+Now change your code so that you get the following output, using the newline
+character `"\n"`:
 
 ```
 One <3
@@ -46,7 +48,8 @@ Three <3<3<3
 Five <3<3<3<3<3
 ```
 
-Now change your code so that you get the following output:
+Now change your code so that you get the following output, aligning the second
+column:
 
 ```
 One   <3
@@ -54,4 +57,5 @@ Three <3<3<3
 Five  <3<3<3<3<3
 ```
 
-
+Tip: As you may guess, strings have a method that is helpful for this. Ask
+Google: "ruby string align".
