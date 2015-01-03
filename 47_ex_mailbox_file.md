@@ -13,3 +13,4 @@ program generates the file that we are after.
 
 Opening that file in the browser should then render something like this:
 
+![image](https://cloud.githubusercontent.com/assets/2208/5602614/5ac2058c-935a-11e4-9c01-7ff9ec3b66cb.png)

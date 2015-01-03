@@ -96,5 +96,3 @@ On formatting: Note that
   argument list.
 * The method body is indented by exactly two spaces.
 * The keyword `end` sits on the same level as the keyword `def`.
-
-
