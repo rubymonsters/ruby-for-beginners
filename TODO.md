@@ -20,5 +20,6 @@ Notes:
 * Fix arguments vs parameters
 * Mention comments
 * Mention omitting curly braces for hashes on method calls
-* Mention that calling methods is also referred as "sending messages", and `send`
-* Mention splat operator for assignment and arguments
+* Bonus: calling methods is also referred as "sending messages", the method `send`
+* Bonus: default arguments
+* Bonus: splat operator for assignment and arguments

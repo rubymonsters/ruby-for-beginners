@@ -17,58 +17,61 @@ and based on what *they* think is a helpful answer to you. Now, being a great
 Ruby developer ("knowing your stuff") and being a great Ruby coach ("giving the
 right advice") are not the same thing.
 
-Developers who have never coached, or are new at coaching, might, for example,
-overload you with information. They know all this stuff, and, as said before,
-they aren't even fully aware of it. They just *use* the language, and all these
-features.
+Developers who have never coached, or are new at coaching, tend to, for
+example, overload you with information. They know all this stuff, and, as said
+before, they aren't even fully aware of it. They just *use* the language, and
+all these features.
 
-Now, when asked, they explain things to you, and may suddenly remember: "Oh,
-right, and then there's also this other language feature, and that one, and
-another one, and ...!" They may be excited to explain all the things at once,
-without noticing that, at this particular point, you actually wouldn't need to
-know them all.
+Now, when asked to explain things, and may suddenly remember: "Oh, right, and
+then there's also this other language feature, and that one, and another one,
+and ...!" They may be excited to explain all the things at once, without
+realizing that, at this particular point, you actually wouldn't need to know
+them all at once.
 
-Also, they might present you a conclusion, and omit the learning process. In
+Also, they might present a conclusion, and omit the learning process. In
 programming, as much as in any other field, there's rarely any silver-bullet.
 There always are alternative solutions, with different advantages and
-downsides. Often times it's hard to fully understand things unless one tries a
+downsides. Often times it's hard to fully understand them unless one tries a
 particular solution and sticks with it for a while.
 
 On top of this, whatever is considered a "good" solution by the community at
 any point of time, always is the conclusion of a decades evolutionary learning
-process. Often times it makes sense to start practicing with an older solution
-that worked well enough a couple years ago, feel some of the pains that it
-caused, and only then try using the latest, more modern solution.
+process. Often times it makes sense to start practicing with an older, and
+simpler solution that worked well enough a couple years ago, experience some of
+the problems that it caused, and only then try using the latest, more modern
+solution.
 
-Developers tend to be excited about their current preferences, about things
-they've learned just recently, and will happily explain at lengths why one
-solution works better for them than another. Often times you can learn a lot
-from listening to these explanations. However, keep in mind that this doesn't
-necessarily mean a tool that's great for day to day work for an experienced
-programmer also is a tool that's great for learning to program.
+Developers often tend to be excited about their current preferences, about
+things they've learned just recently, and will happily explain at lengths why
+one solution works better for them than another. Often times you can learn a
+lot from listening to these explanations. However, keep in mind that this
+doesn't necessarily mean a tool that's great for day to day work for an
+experienced programmer also is a tool that's great for learning to program.
 
 On top of all this, there's also the problem that the tools that we use, over
 time, become more and more optimized for advanced users. New features are being
 added that make our day to day work easier, and over the years, up to date
 documentation, and tutorials will focus on these features.
 
-While that's great for advanced users, it's actually bad for beginners, as you
+While that's great for advanced users, it's sometimes bad for beginners, as you
 now not only need to understand the basic concept, you also need to understand
-this additional feature on top of it.
+this additional, more abstract feature that sits on top of it.
 
 A good coach will try and adjust to these things, but doing so also is a skill
 that needs to be learned. Try to give feedback, and help your coaches improve.
 
 Of course, everything said above also applies to ourselves :)
 
-Here are a few examples of decisions we made for our study groups:
+Here are a few examples of decisions we made for our study groups. Don't worry
+if you don't understand what we're talking about at this point. You'll fully
+understand them once we get there in the study group.
 
-* We use the old syntax for hashes in beginners groups. Why? When you first
-  learn what a hash is, and how it is used, this is quite a bit of information
-  to process. The new hash syntax puts an extra burden on you, and raises extra
+* We use the old syntax for hashes in beginners groups: When you first learn
+  what a hash is, and how it is used, this is quite a bit of information to
+  process. The new hash syntax puts an extra burden on you, and raises extra
   questions that just aren't required to be answered in order to understand
   what a hash is, how it can be used, and why it is useful. We do mention the
-  new syntax, but we do not use it, and explain why.
+  new syntax, and explain why we do not use it.
 
 * We purposefully ignore tons of language features, such as lambdas, splats,
   class level methods, class variables, and so on in our beginners groups for
