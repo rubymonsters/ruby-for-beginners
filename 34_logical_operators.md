@@ -17,21 +17,21 @@ So, only the expression `true and true` is also `true`. All of the expressions
 `true and false`, `false and true`, `false and false` evaluate to `false`.
 
 If you think about this, and come up with English sentences, then this will
-make a lot of sense. "At the restaurant I'll have a tomato soup IF it is vegan
-AND they still have some."
+make a lot of sense: *At the restaurant I'll have a tomato soup IF it is vegan
+AND they still have some.*
 
 The operator `or` on the other hand returns `true` if at least one of the
 values is `true`. So, only if both values are `false`, the operator returns
 `false`.
 
-That's why it is logically correct to answer the question "Would you like tea
-or coffee for breakfeast?" with "Yes, please." IF you'd like either tea, or
-coffee, or both. You'd only say "Hell, no!" if you'd like an orange juice
-instead.
+That's why it is logically correct to answer the question *Would you like tea
+or coffee for breakfeast?* with *Yes, please.* IF you'd like either tea, or
+coffee, or both. You'd only say *Hell, no!* if you'd like an orange juice
+instead :)
 
 The operator `not` simply returns the negated, opposite value. `not true`
 returns `false`, and `not false` returns `true`. Therefor, the following
-statements are the same:
+lines of code are the same:
 
 ```ruby
 puts "Always true" if not false

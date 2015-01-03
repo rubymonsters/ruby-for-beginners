@@ -1,8 +1,9 @@
 # Predicate methods
 
-In the method list above you can also see that in Ruby we can have methods
-that end with a question mark `?`. This makes them read like a question, so
-we can ask a number if it is even or odd:
+In the list of method names for numbers you have seen that in Ruby we can have
+methods that end with a question mark `?`. This makes them read like a question.
+
+For example, we can ask a number if it is even or odd:
 
 ```ruby
 $ irb

@@ -1,8 +1,9 @@
 # Lots of other methods
 
-If you look at the methods that are defined on strings and arrays, then you'll
-find quite a bunch of method names that look like they are doing exactly what
-their names describe.
+If you look at the methods that are defined on strings and arrays (e.g. run
+`[].methods.sort` or `{}.methods.sort` in IRB), then you'll find quite a bunch
+of method names that look like they are doing exactly what their names
+describe.
 
 For example, some of the things you can do with strings are:
 

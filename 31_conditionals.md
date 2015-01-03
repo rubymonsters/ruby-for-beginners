@@ -21,8 +21,9 @@ else
 end
 ```
 
-You can probably guess what it does, and how it works, but let's walk through
-it one by one:
+You can probably guess what it does, and how it works, can't you?
+
+Let's walk through it one by one:
 
 * If you run this code it will print out `The number is between 1 and 10`,
   because the number assigned to the variable `number` on the first line is

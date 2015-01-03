@@ -1,6 +1,6 @@
 # Operators are methods
 
-As you can see a number has methods named like the arithmetic operators `+`,
+As you have seen a number has methods named like the arithmetic operators `+`,
 `-`, `*`, and `/`. That's right! Interesting.
 
 If you think about this, it makes sense: If everything is an object then
@@ -28,11 +28,18 @@ other method. The code above is valid Ruby code, and both lines do exactly the
 same.
 
 Ruby just adds a little bit of sytax in order to make it easier to read and
-write for us. This is something called "syntax sugar" (no kidding), because it
-makes the language more sweet.
+write for us: It allows us to write `number = 2 + 3 * 4` instead of `number =
+2.+(3.*(4))`, which is a pretty nasty thing to type.
 
-Btw, the same is true for other things. For example, for the array and hash
-syntax that uses square brackets `[]` for reading and writing:
+This is something called "syntax sugar", because it makes the language more
+sweet (no kidding).
+
+Btw, this works the same way for other things, too.
+
+For example, you have learned about the array and hash syntax that uses square
+brackets `[]` for reading and writing.
+
+Ruby translates this code:
 
 ```ruby
 array = [1, 2, 3]
@@ -44,7 +51,7 @@ hash[:three] = 'drei'
 puts hash[:three]
 ```
 
-Translates to these method calls:
+to these method calls:
 
 ```ruby
 array = [1, 2, 3]

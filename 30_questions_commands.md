@@ -1,6 +1,6 @@
 # Questions and commands
 
-Generally speaking, methods play one of two roles. They either answer a question,
+Generally speaking, methods play one of two roles: They either answer a question,
 or they perform a command.
 
 For example, if we have a `user` object, and users have a name, then we would
@@ -18,11 +18,11 @@ p array.sort
 p array
 ```
 
-This will output `[1, 2, 3]` and then `[3, 2, 1]`, which means the original
+This will output `[1, 2, 3]` and then `[3, 2, 1]`. So we see that the original
 array is still the same.
 
 Often times questions need another bit of information passed. E.g., we can ask
-a string "Do you start with this character?", and we'll need to pass the
+a string *Do you start with this character?*, and we'll need to pass the
 character that we are talking about: `"a string".start_with?("a")`. The answer
 to this question will be `true`. Or if we ask an array if it includes a certain
 element, then of course we need to pass that element, as in `[1, 2,
@@ -31,10 +31,10 @@ element, then of course we need to pass that element, as in `[1, 2,
 The other role that a method can play is being responsible for executing a
 certain command.
 
-For example in Rails applications objects that can be stored to the database
-have a method `save`. Of course, the purpose of this method is to save the
-object to the database. E.g. `user.save` would save some changes that we've
-made to the user before, like, maybe we have given them a new password.
+For example in Rails objects that can be stored to the database have a method
+`save`. Of course, the purpose of this method is to save the object to the
+database. E.g. `user.save` would save some changes that we've made to the user
+before, like, maybe we have given them a new password.
 
 Another example is the method `sort!` on arrays. Different from the method
 `sort` (without an exclamation mark), this method tells the array to sort

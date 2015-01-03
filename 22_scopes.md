@@ -9,9 +9,9 @@ local. Local to what? Where?
 Since we have now talked about methods, we can also discuss another important
 concept: scopes.
 
-Wikipedia says: "In programming, the scope of a name is the part of a program
+Wikipedia says: *"In programming, the scope of a name is the part of a program
 where the name is valid: where the name can be used to refer to something
-else." (slightly modified to use our own terminology)
+else."* (slightly modified to match our own terminology)
 
 You can think about a scope as of a sphere, a bubble, or a room (with no
 windows, and doors closed): Certain names, like variable names, are "known" and
@@ -73,16 +73,16 @@ puts number
 way: `puts number`
 
 This is because Ruby, when it executes a program, evaluates one statement after
-another and when it encounters a plain word like `number` then it will first
+another. And when it encounters a plain word like `number` then it will first
 check if, within the current scope, it knows a local variable with the same
 name. If so, it will use the value that is associated to this variable. If
 there's no local variable with this name, then it will look for a method. If
 there's also no method with this name it will then raise the error message
-`undefined local variable or method `number'`.
+`undefined local variable or method 'number'`.
 
-Makes sense?
+Does that make sense?
 
-Let's look at another example.
+Let's look at another example:
 
 ```ruby
 number = 1
@@ -104,22 +104,22 @@ the outer scope is the last line `puts add_to(3)`, and this line does not use
 the variable `number`.
 
 Instead, when the control flow enters the method `add_to` Ruby will create a
-new empty local scope, and it will define a new local variable `number` which
-is assigned the number `3` that was passed to the method. This new variable
+new local scope, and it will define a new local variable `number` which is
+assigned the number `3` that was passed to the method. This new variable
 `number` is *local* to the method's scope, and therefor this is a *different*
 variable than the one on the very first line, in the outer scope.
 
 We found the following a good metaphor for scopes:
 
-When Ruby enters a method, then that's like it enters a shiny, new, empty room
-in a house. With her, she brings the objects that are passed as arguments to
-the method call. In the example above it brings an object that is number `3`.
+When Ruby enters a method, then that's like she enters a shiny, new room in a
+house. With her, she brings the objects that are passed as arguments to the
+method call. In the example above she brings an object that is the number `3`.
 
-Now, as soon as Ruby enters the method, it sticks post-it notes on the objects,
-according to the argument list from the method definition. In our example that
-is the argument name `number`. From now on, in this room, there's a known local
-variable that has a value assigned: The number `3` with the post-it note
-`number` on it.
+Now, as soon as Ruby enters the method, she sticks post-it notes on the
+objects, according to the argument list from the method definition. In our
+example that is the name `number`. So from now on, in this room, there's a
+known local variable that has a value assigned: The number `3` with the post-it
+note `number` on it.
 
 In our example, the outer scope and the scope of the method `add_two`, are
 two different rooms, and there are two different post-it notes sticked on

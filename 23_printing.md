@@ -11,7 +11,7 @@ to figure out what a program is doing, why it is doing it, and what a certain
 error might be about.
 
 This method is the method `p`. In order to understand `p` better, we want to
-look at another method first, which is `inspect`.
+look at another method first, which is the method `inspect`.
 
 The method `inspect` is available on any object in Ruby. It returns a string
 that is a representation of the object itself: a representation that is as
@@ -38,7 +38,7 @@ Ruby code that we used to create the object. That is really convenient.
 However, typing `puts something.inspect` is quite a bit of work to do. That's
 12 characters to type next to the object itself!
 
-Therefor Ruby has a method to make our lives easier, and do this work for us.
+Therefor Ruby has a method to make our lifes easier, and does this work for us.
 That's the method `p`.
 
 This method is implemented like so:
@@ -78,8 +78,8 @@ $ irb
 123
 ```
 
-From the output of `puts` it is therefor not clear whether the object that you
-are looking it is an array that contains numbers, or an array that contains
+From the output of `puts` it often times is not clear whether the object that
+you are looking it is an array that contains numbers, or an array that contains
 strings, or just a long string that contains linebreaks.
 
 In short, `puts` is useful when you are writing a program that is supposed to

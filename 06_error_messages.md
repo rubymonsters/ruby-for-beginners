@@ -2,7 +2,7 @@
 
 *Your new best friends*
 
-As programmers we want to build things that work. When we do excercizes we want
+As programmers we want to build things that work. When we do exercises we want
 to figure out the solution to the given problem. Seeing error messages therefor
 has a negative connotation to it: we haven't managed to get it right! Right?
 

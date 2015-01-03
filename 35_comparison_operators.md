@@ -16,9 +16,9 @@ not have to be (and most often, as in our examples) are not the same objects.
 E.g. while evaluating the expression `"A" == "A"` Ruby will actually create two
 different string objects which both contain a single character `A`.
 
-(In praxis this is almost always what you want. For the rare case when you
+In praxis this is almost always what you want. For the rare case when you
 actually need to check if two objects are the same object there's the method
-`equal?`: `"A".equal?("A")` would return `false`.)
+`equal?`: `"A".equal?("A")` would return `false`.
 
 Other comparison operators are: lesser `<` , lesser or equal `<=`, greater `>`,
 and greater or equal `>=`. They also work on numbers and strings, in the way
@@ -31,3 +31,7 @@ in `if` statements. Like so:
 number = 20
 puts "#{number} is greater than 10." if number > 10
 ```
+
+The most funny operator in Ruby is `<=>`, because it's called the spaceship
+operator. No kidding :) It is rather rarely used, and it is useful for
+implementing custom ways of sorting things.

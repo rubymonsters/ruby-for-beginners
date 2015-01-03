@@ -20,10 +20,10 @@ things that are required to run a Ruby program in this environment.
 
 #### Text editor
 
-For our study groups we recommend using Sublime Text as a text editor, which
-you can download and run on Mac OSX, Ubuntu, or Windows. This is an editor that
-has been specifically designed for writing code, comes with a lot of great
-tools, and it can be customized easily.
+For our study groups we recommend using [Sublime Text](http://www.sublimetext.com)
+as a text editor, which you can download and run on Mac OSX, Ubuntu, or
+Windows. This is an editor that has been specifically designed for writing
+code, comes with a lot of great tools, and it can be customized easily.
 
 Other text editors that might be worth looking at are Atom, Textmate 2, and, if
 you like to use some of the powerful oldschool tools from the early times of
@@ -111,8 +111,12 @@ a particular directory (where you have stored your code), and the command `ls`
 which lists the contents of a directory.
 
 Also learn how to use the command line completion using `tab`: For example,
-type `cd`, space, and the first two or so letters of the directory you want to,
-then hit `tab`. The shell will complete the rest of the directory name for you.
+type `cd`, space, and the first two or so letters of the directory you want to
+navigate to, then hit `tab`.  The shell will complete the rest of the directory
+name for you. If nothing happens, then there are multiple directory names
+starting with the same few letters. In this case hit `tab` twice, quickly after
+another, and your shell will display a list of choices. Type the next letter
+and hit `tab` again.
 
 #### Ruby runtime
 
@@ -151,7 +155,7 @@ In order to switch back and forth between apps quickly you can use the keyboard
 shortcut `cmd-tab` on Mac OSX, and `alt-tab` on Ubuntu and Windows.
 
 In your shell you can use the `cursor up` key to go through your last used
-commands: you don't have to type `ruby hello.rb` again. Just hit "cursor up"
+commands: you don't have to type `ruby hello.rb` again. Just hit `cursor up`
 and then enter to run it again.
 
 #### IRB
@@ -166,7 +170,7 @@ since this is a Ruby shell, it will expect that you type Ruby code instead of
 system commands.
 
 IRB is pretty handy for quickly trying something out, and it is a great tool
-for exploring the language Ruby and things that come built in.
+for exploring the language Ruby, and things that come built in.
 
 For example:
 
@@ -187,7 +191,7 @@ interactive Ruby shell.
 The second line is a piece of Ruby code. When you type this line and hit enter
 then Ruby will execute the code, and print out the text "Hello world!".
 
-It will then also print out the return value for this statement, which, in this
+It will then also print out the return value for this statement, which in this
 case is `nil`. This is something that you can simply ignore for the time being.
 
 On the last line you see IRB again waiting for input with a prompt.

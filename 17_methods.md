@@ -27,8 +27,8 @@ Not all methods actually want any input (because they don't need any), and not
 always do we care about the output that a method returns.
 
 Imagine a vending machine where you can chip in some money, press some buttons,
-and the machine will spin a few gears and wheels and spit out the chocolate bar
-you were after.
+and the machine will spin a few gears and wheels, and spit out the chocolate
+bar you were after.
 
 If the vending machine was a method, then your money, as well as the buttons
 you press are the input. The way the machine internally spins certain mechanics
@@ -37,10 +37,12 @@ Although this would be an odd thing to mention to a non-programmer, we could
 say that a vending machine is a way to "transform" money and data into
 chocolate.
 
-Methods are a lot like that. They take some input, do something with it, and
-return a result. Instead of using the term "input" in programming we say that
-a method accepts a number of arguments. And instead of "output" we use the term
-"return value": the thing that we get back from the method.
+Methods are a lot like that:
+
+They take some input, do something with it, and return a result. Instead of
+using the term "input" in programming we say that a method accepts a number of
+arguments. And instead of "output" we use the term "return value": the thing
+that we get back from the method.
 
 Let's define a simple method that takes a number, adds the number `2` to it,
 and returns the result:
@@ -90,9 +92,40 @@ puts add_two(3)
 * We are now back outside of the method. The method call has returned the
   number `5`, and it will be passed to `puts`, which prints it to the screen.
 
-On formatting: Note that
+On formatting:
 
 * There are no spaces before, and inside the parentheses that define the
   argument list.
 * The method body is indented by exactly two spaces.
 * The keyword `end` sits on the same level as the keyword `def`.
+
+Note:
+
+We are slightly simplifying terminology here, and conflate two terms that
+normally would be defined separately: We simply use the term "argument"
+for both the variable names that are defined in the arguments list of the
+method definition, and the value that is passed as part of the method call.
+
+In programming, normally the "argument list" is called a "parameter list"
+instead, and a single variable name on it is called a "parameter". On the
+other hand, only the objects passed when calling the method are referred
+to as "arguments".
+
+E.g. in the code:
+
+```ruby
+def add_two(number)
+  number + 2
+end
+
+puts add_two(3)
+```
+
+the word `number` in the first line is a "parameter", whereas `3` in the
+last line is an "argument".
+
+We found making this distinction in our beginners classes unnecessary
+confusing, and thus ignore it. We simply call both these things "arguments",
+and point out that they create a local variable inside of the method body.
+
+So, now you know :)

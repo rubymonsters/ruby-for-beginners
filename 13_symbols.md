@@ -7,15 +7,18 @@ this early because symbols are used so often and widely that you'll very likely
 find them used in code elsewhere. For your first steps in learning programming
 we wouldn't necessarily need them.
 
-Symbols are written like this: `:something`. I.e. there is a word that is
-preceeded by a colon. This means that normally symbols do not contain spaces.
-Instead, if we have symbols that consist of multiple words we would concatenate
-them with underscores, like so: `:another_funny_symbol`.
+Symbols are written like this: `:something`
 
-So when to use strings, and when to use symbols? There's actually no perfectly
-clear line or definition. One rule of thumb is that if the text at hand is
-"data", then use a string. If it's code, then use a symbol, especially when
-used as keys in hashes (see below).
+I.e. there is a word that is preceeded by a colon. This means that normally
+symbols do not contain spaces. Instead, if we have symbols that consist of
+multiple words we would concatenate them with underscores, like so:
+`:another_funny_symbol`
+
+So when to use strings, and when to use symbols?
+
+There's actually no perfectly clear line or simple definition. One rule of
+thumb is that if the text at hand is "data", then use a string. If it's code,
+then use a symbol, especially when used as keys in hashes (see below).
 
 Another way of looking at symbols is that they aren't really text, even though
 they read well. Instead they are unique identifiers, like numbers, or bar

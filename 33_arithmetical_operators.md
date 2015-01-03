@@ -1,8 +1,18 @@
 # Arithmetical operators
 
 For numbers, the operators `+` and `*` obviously mean the mathematical
-operations of adding and multiplying two numbers. However, these methods
-are also defined on other objects, like strings and arrays.
+operations of adding and multiplying two numbers. Of course there are other
+arithmetical operators. Here's a full list:
+
+* `+` - addition
+* `-` - subtraction
+* `*` - multiplication
+* `/` - division
+* `**` - exponentiation
+* `%` - modulus (the rest of a devision, e.g. `5 % 2` returns `1`)
+
+However, some of these methods are also defined on other objects, like strings
+and arrays.
 
 Try it yourself in IRB:
 
