@@ -24,8 +24,9 @@ is still empty. We'll add some code to it in a bit.
 On formatting: the method definition is indented by one level, that is, 2
 spaces. We do this in order to signalize that the method `initialize` belongs
 to the class `Person`. Everything between the line `class Person` and the
-final line `end` is called the "class body", and just like method bodies, and
-bodies of `if` and `else` branches we indent them by one more level.
+final line `end` is called the "class body", and just like method bodies, block
+bodies, and bodies of `if` and `else` branches we indent them by one more
+level.
 
 The important bit to learn for you about the method `initialize` is that it is
 a special method with a special meaning in Ruby:

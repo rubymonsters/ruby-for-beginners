@@ -1,4 +1,4 @@
-# Classes
+# Writing classes
 
 *Finally, our first own class*
 
@@ -48,7 +48,7 @@ variable and method names we use underscores, and keep everything lowercase:
 
 Ok, back to our class `Person`.
 
-Since we've define a full, valid class, we can now already use it to create a
+Since we've defined a full, valid class, we can now already use it to create a
 new, concrete person instance, an object from it. Like so:
 
 ```ruby
@@ -73,9 +73,10 @@ The output will seem a little bit weird, and technical at first:
 
 The format `#<...>` tells you that this object is not a simple thing like a
 number, string, or array. Instead, it just tells you the name of the class,
-`Person`, and the internal id that Ruby has assigned to this object. Every
-object has its own, unique, internal object id, and when I ran this code on
-my computer, Ruby has assigned the id `0x007fb2fbe50910`. If you run it, you'll
-get a different one. In praxis, most of the time, you can simply ignore this
-id.
+`Person`, and the internal id that Ruby has assigned to this object.
+
+Every object has its own, unique, internal object id, and when I ran this code
+on my computer, Ruby has assigned the id `0x007fb2fbe50910`. If you run it,
+you'll get a different one. In praxis, most of the time, you can simply ignore
+this id.
 
