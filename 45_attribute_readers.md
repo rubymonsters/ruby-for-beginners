@@ -26,18 +26,21 @@ class Person
 end
 ```
 
-Before we discuss what this does, let's look at how we can use our new method:
+Before we discuss what this does, let's look at how we can use our new method.
+We can now call the method on the person object, like this:
 
 ```ruby
 person = Person.new("Ada")
 puts person.name
 ```
 
-So this prints the name `Ada`, that's what we want: we can now create a new
+So this prints the name `Ada`, and that's what we want: we can create a new
 person object, passing a name to it. Once that person has been created we are
 able to ask for its name, and we'll get the name back.
 
-How does this work, exactly? Let's walk through it, step by step:
+How does this work, exactly, under the microscope?
+
+Let's walk through it, step by step:
 
 * On the first line, the object that ends up being assigned to the variable
   `person` is an initialized, new instance of the class `Person`. By
@@ -58,10 +61,11 @@ How does this work, exactly? Let's walk through it, step by step:
   which is then passed to `puts`, which prints it out.
 
 Methods that do nothing else but return a value assigned to an instance
-variable with the same name are very common. In fact they are so common that
-there's a word for them: they are called "attribute readers". By "attribute"
-the Ruby community means an instance variable, so an attribute reader is a
-method that reads an instance variable.
+variable with the same name are very common.
+
+In fact they are so common that there's a word for them: they are called
+"attribute readers". By "attribute" the Ruby community means an instance
+variable, so an attribute reader is a method that reads an instance variable.
 
 We don't know why the community has chosen to use the term "attribute" here:
 It would be much less confusing to use the term "instance variable reader"

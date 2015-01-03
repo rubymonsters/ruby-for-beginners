@@ -28,13 +28,13 @@ final line `end` is called the "class body", and just like method bodies, block
 bodies, and bodies of `if` and `else` branches we indent them by one more
 level.
 
-The important bit to learn for you about the method `initialize` is that it is
-a special method with a special meaning in Ruby:
+The important bit to learn for you is: the method `initialize` is a special
+method with a special meaning in Ruby:
 
-Whenever you call the method `new` on a class, as in `Person.new`, this class
+Whenever you call the method `new` on a class, as in `Person.new`, the class
 will create a new instance of itself. It will then, internally, call the method
-`initialize` on the new object. Doing so it will simply pass all the arguments
-that you passed to `new` on to the method `initialize`.
+`initialize` on the new object. Doing so it will simply *pass all the
+arguments* that you passed to `new` *on to* the method `initialize`.
 
 So we can now create a new person instance by calling:
 
@@ -42,13 +42,16 @@ So we can now create a new person instance by calling:
 Person.new("Ada")
 ```
 
-The name `'Ada'` of course refers to Ada Lovelace, the worlds [first computer
+and the string `"Ada"` will be passed on to our `initialize` method, and end
+up being assigned to the local variable `name`.
+
+The name `"Ada"` of course refers to Ada Lovelace, the worlds [first computer
 programmer](http://en.wikipedia.org/wiki/Ada_Lovelace) :)
 
 To recap, when you call `new` on the class `Person`, and pass the string
 `"Ada"` then the method `new` will create a new instance of the class, and call
 `initialize` on it, passing the same argument list, which in our case is the
-single string `"Ada"`, as in `object.initialize("Ada")`.
+single string `"Ada"`: as in `object.initialize("Ada")`.
 
 When we create a new instance of a class by the way of calling the method `new`
 on that class, we also say that we "instantiate" that object: By calling

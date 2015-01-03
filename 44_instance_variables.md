@@ -14,18 +14,20 @@ class Person
 end
 ```
 
-Again, this introduces a new concept: `@name` is a new type of variable, called
-an "instance variable". The body of the `initialize` method now does nothing
-else but assign the value of the local variable `name` to an instance variable
-`@name`.
+This introduces another new concept: `@name` is a new type of variable, called
+an "instance variable".
+
+The body of the `initialize` method now does nothing else but assign the value
+of the local variable `name` to an instance variable `@name`.
 
 You remember how we said that each method has it's own local scope, which is
 created when the method is called, and populated with local variables from the
 arguments list. You have also learned that this scope is erased, and thrown
-away when Ruby exits and returns from the method. And local variables that are
-visible in one method are not visible in other methods: they are local.
+away when Ruby exits the method body and returns from the method. And that
+local variables that are visible in one method are not visible in other
+methods: they are local.
 
-Now, every *object* also has its own scope.
+Now, the thing is: Every *object* also has its own scope.
 
 An object's scope is populated with instance variables, in the moment we assign
 something to them. And they are visible *everywhere* in the object, that is, in
@@ -34,7 +36,7 @@ every method that the object has.
 You can think of the object's scope as your own knowledge, or memories. For
 example, you know your name, your email address, and your email password.
 You keep this knowledge around, and you can use it. Likewise, an object keeps
-its instance variables around, as long as they exist.
+its instance variables around, as long as the object exists.
 
 On top of this, the object's scope also contains the object's method names.
 That is to say, the object knows about its own methods, and it can call them,

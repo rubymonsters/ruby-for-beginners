@@ -18,7 +18,7 @@ somewhere else, prepare the pizza, bake it, put it on a nice plate, and finally
 give (return) it to you.
 
 However, you don't really care about any of these details. You are hungry, and
-waiting for the pizza. All the exact steps involved are something that I keep
+just want the pizza. All the exact steps involved are something that I keep
 private to me, and maybe they've been our family's best kept secret for
 generations.
 
@@ -28,20 +28,20 @@ They'll let you order a pizza, and other things. But they won't tell you the
 exact ingredients of their tomato souce, or how they manage to make this damn
 great pizza dough.
 
-In our example it makes sense to make the method `encrypt` private.
+In our `Person` example it makes sense to make the method `encrypt` private.
 
-Currently, if you run the following code, even though it makes little sense, it
-will execute just fine:
+Currently, if you run the following code it will execute just fine, even though
+it makes little sense:
 
 ```ruby
 person = Person.new("Ada")
 p person.encrypt("some other secret")
 ```
 
-Why would a person encrypt some arbitrary string, and return it? This is
-something that the person object should keep private. The restaurant wouldn't
-turn flour, water, olive oil and other ingredients into pizza dough for
-everyone else either.
+Why would a person encrypt some arbitrary string for someone else, and return
+it? This is something that the person object should keep private. The
+restaurant wouldn't turn flour, water, olive oil and other ingredients into
+pizza dough for everyone else either.
 
 We can make the method `encrypt` private like so:
 
@@ -55,6 +55,10 @@ module Encryption
 end
 ```
 
+The keyword `private` tells Ruby that all methods defined from now on, are
+supposed to be private. They can be called from within the object (from other
+methods that the class defines), but not from outside.
+
 If you now try to call the method it will raise an error:
 
 ```ruby
@@ -67,3 +71,5 @@ This will print the error message:
 ```
 private method `encrypt' called for #<Person:0x007fa179863770 @name="Ada">
 ```
+
+Nice. Does this make sense?
