@@ -3,18 +3,20 @@
 *Finally, our first own class*
 
 Since in Ruby "everything is an object", we have worked with objects quite a
-bit already. We've created numbers, strings, arrays, and hashes. We have also
-looked at their class names by calling, e.g. `"a string".class`, and we have
-explored some other methods that these objects have. We have also talked about
-how you can define your own methods, and how you can call them, passing
-arguments, and blocks.
+bit already.
+
+We've created numbers, strings, arrays, and hashes. We have also looked at
+their class names by calling, e.g. `"a string".class`, and we have explored
+some other methods that these objects have. We have also talked about how you
+can define your own methods, and how you can call them, passing arguments, and
+blocks.
 
 That means we now have all the tools that we need to finally learn how to
 define and use your own classes. And this is where things suddenly become even
 more fun!
 
-You can think of objects as having two things: They know "stuff", and they can
-"do something" with stuff (their own stuff, as well as the stuff that gets
+You can think of objects as having two things: They know *stuff*, and they can
+*do something* with stuff (their own stuff, as well as the stuff that gets
 passed to them).
 
 Imagine you were an object that is an instance of the class `Person`. Well, in

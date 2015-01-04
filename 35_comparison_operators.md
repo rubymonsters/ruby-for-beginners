@@ -7,18 +7,19 @@ example `1 == 1 * 1` will return `true`, because the numbers on both sides
 represent the same value. The expression `"A" == "A"` also returns `true`
 because both strings have the same value.
 
-Likewise, two arrays are considered the same when they contain the same
-elements, in the same order. For example `[1, 2] == [1, 2]` will return `true`,
-but `[1, 2] == [2, 3]` and `[1, 2] == [2, 1]` both will return `false`.
+Likewise, two arrays are equivalent when they contain the same elements, in the
+same order. For example `[1, 2] == [1, 2]` will return `true`, but `[1, 2] ==
+[2, 3]` and `[1, 2] == [2, 1]` both will return `false`.
 
-Note that we say "considered the same" because technically the two objects do
-not have to be (and most often, as in our examples) are not the same objects.
-E.g. while evaluating the expression `"A" == "A"` Ruby will actually create two
-different string objects which both contain a single character `A`.
+Note that we say "considered the same" and "equivalent" because technically the
+two objects do not have to be (and most often, as in our examples) are not the
+same objects.  E.g. while evaluating the expression `"A" == "A"` Ruby will
+actually create two different string objects which both contain a single
+character `A`.
 
 In praxis this is almost always what you want. For the rare case when you
 actually need to check if two objects are the same object there's the method
-`equal?`: `"A".equal?("A")` would return `false`.
+`equal?`. E.g., `"A".equal?("A")` returns `false`.
 
 Other comparison operators are: lesser `<` , lesser or equal `<=`, greater `>`,
 and greater or equal `>=`. They also work on numbers and strings, in the way

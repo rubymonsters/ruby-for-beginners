@@ -25,18 +25,19 @@ end
 ```
 
 As you can see `times` is a method that is defined on numbers: `5.times` calls
-the method `times` on the number `5`. Now, when this method is called the only
-thing passed is a block: that is the anonymous piece of code between `do` and
-`end`. There are no objects passed as arguments to the method `times`, instead
-it passes a block.
+the method `times` on the number `5`.
 
-The method `times` is implemented in such a way that it simply calls the block
-5 times, and thus, when you run the code, it will print out the message `"Oh,
-hello from inside a block!"` 5 times.
+Now, when this method is called the only thing passed is a block: that is the
+anonymous piece of code between `do` and `end`. There are no objects passed as
+arguments to the method `times`, instead it just passes a block.
 
-The code almost reads like an English sentence "Five time do output this
-message", right? It does, and that's one of the reasons why Rubyists love
-blocks so much.
+The method `times` is implemented in such a way that it simply calls (executes)
+the block 5 times, and thus, when you run the code, it will print out the
+message `"Oh, hello from inside a block!"` 5 times.
+
+The code almost reads like an English sentence *Five times do output this
+message*, right? It does, and that's one of the reasons why Rubyists love
+using blocks.
 
 One of the things that seem rather hard to grasp about blocks is that
 
@@ -55,7 +56,7 @@ screen: "Oh, hello!"`, and I ask you to execute this instruction as many times
 as the value that you know.
 
 You'd go ahead and follow the instructions on the paper, and thus print out the
-message, 5 times, because `5` is the value that you know.
+message. You repeat this 5 times, because `5` is the value that you know.
 
 This is pretty much how the method `times` on numbers works, and how blocks
 work: `times` takes the block (the instructions), and runs it as many times
@@ -66,3 +67,4 @@ as arguments.  They can also accept this one special piece of input, which is
 an anonymous block of code. And they can then call (execute) this block of code
 in order to do useful things with it.
 
+Let's look at some other aspects of how blocks work next.

@@ -73,14 +73,14 @@ understand them once we get there in the study group.
   what a hash is, how it can be used, and why it is useful. We do mention the
   new syntax, and explain why we do not use it.
 
-* We purposefully ignore tons of language features, such as lambdas, splats,
-  class level methods, class variables, and so on in our beginners groups for
-  quite a while. Our goal is to get to the point where you can write a simple
-  Sinatra application while fully understanding everything you use in terms of
-  Ruby language features. We found this is the point where it starts getting
-  more and more exciting for most students: You can now build their own web
-  applications, and understand what you're doing. For this, many language
-  features simply aren't required.
+* We purposefully ignore tons of language features, such as for and while
+  loops, lambdas, splats, class level methods, class variables, and so on in
+  our beginners groups for quite a while. Our goal is to get to the point where
+  you can write a simple Sinatra application while fully understanding
+  everything you use in terms of Ruby language features. We found this is the
+  point where it starts getting more and more exciting for most students: You
+  can now build their own web applications, and understand what you're doing.
+  For this, many language features simply aren't required.
 
 * We use the test framework that is integrated into Ruby on Rails, instead of
   RSpec, another, more modern framework that is preferred by many (but not all)
