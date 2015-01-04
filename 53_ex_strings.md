@@ -1,2 +1,0 @@
-# Exercise: Working with strings
-
