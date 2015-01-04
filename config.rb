@@ -6,7 +6,7 @@ set :js_dir, 'themes/' + data.book.theme.downcase + '/javascripts'
 set :images_dir, 'images'
 set :source, 'source'
 
-page "/sitemap.xml", :layout => false
+page "/sitemap.xml", layout: false
 
 ignore(/themes\/(?!#{data.book.theme.downcase}).*/)
 config.ignored_sitemap_matchers[:layout] = proc { |file|
@@ -37,7 +37,7 @@ helpers do
       return page.data.title # Frontmatter title
     elsif page.url == '/'
       return data.book.title
-    elsif match = page.render({:layout => false, :no_images => true}).match(/<h.+>(.*?)<\/h1>/)
+    elsif match = page.render(layout: false, no_images: true).match(/<h.+>(.*?)<\/h1>/)
       return match[1] + ' | ' + data.book.title
     else
       filename = page.url.split(/\//).last.gsub('%20', ' ').titleize

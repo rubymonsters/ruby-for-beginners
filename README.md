@@ -5,7 +5,8 @@
 This book has been written after we have run 4 beginners groups at our [Ruby
 Monstas groups](https://github.com/rubymonsters) in Berlin.
 
-You can read it online at [Ruby For Beginners](http://rubymonsters.github.io/learning_ruby).
+You can read it online [here](http://rubymonsters.github.io/ruby-for-beginners)
+and you can find the source code [here](https://github.com/rubymonsters/ruby-for-beginners).
 
 This book is built using [middleman](http://middlemanapp.com).
 
