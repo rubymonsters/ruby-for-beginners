@@ -100,6 +100,3 @@ understand them once we get there in the study group.
   making the naming choice `migrate:up` and `migrate:down` harder to
   understand; and they've introduced the method `change`, replacing the methods
   `up` and `down`)
-
-
-

@@ -11,5 +11,6 @@ and you can find the source code [here](https://github.com/rubymonsters/ruby-for
 This book is built using [middleman](http://middlemanapp.com).
 
 The source code is kept on the master branch, which ignores the `build` directory.
-The `build` directory contains another git repository which should be pushed to
-the `gh-pages` branch in order to deploy changes to the site.
+The `build` directory is `.gitignored` and should contain another git
+repository which can be pushed to the `gh-pages` branch in order to deploy
+changes to the site.

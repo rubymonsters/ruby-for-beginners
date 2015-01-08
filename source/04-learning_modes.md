@@ -11,12 +11,12 @@ they want.
 
 Some want to fully understand what a certain line of code does, and why.
 Others don't care that much about the details, and want their code to produce
-the right things instead. They might memoize what worked, and understand things
+the right things instead. They might memorize what worked, and understand things
 more fully later.
 
 Some understand concepts in logical ways, and go precisely by their definitions.
 Others understand things better by coming up with good analogies and metaphors.
-And yet others tend to simply memoize things and how they get used.
+And yet others tend to simply memorize things and how they get used.
 
 Therefor there is no one true path or one-fits-all approach to learning
 programming. Try different things, and pay attention what works well for you,
@@ -25,6 +25,9 @@ what is the most fun to you, and keeps you motivated.
 If you find it hard to keep motivated working through a certain online tutorial,
 or if you have a hard time to fully understand what an excercise is about, then
 try to pick a different approach, or talk to your study group.
+
+Consider meeting with others during the week, have some coffee and cake, and
+hang out, reading some more in this book, or doing a few exercises together.
 
 Also, consider to join local programming events, like meetups, hackdays, or a
 conference once in a while. That gives you a broader perspective, even if you

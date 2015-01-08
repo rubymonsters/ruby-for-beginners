@@ -1,8 +1,9 @@
 # Arrays
 
 While numbers, strings, and symbols all represent simple, primitive things,
-arrays are more interesting, and very useful. They are things that store (or
-"hold") other things.
+arrays are more interesting, and very useful.
+
+Arrays are things that store (or "hold") other things.
 
 You can think of an array as a collection or list of things. Or better yet, as
 a bag that you can throw things in: The bag itself is a thing (an object), too.

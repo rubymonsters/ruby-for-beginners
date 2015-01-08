@@ -6,7 +6,7 @@ E.g. your name, represented in Ruby, is a string. The title of this text is a
 string, and so is this paragraph, and the full text in its entirety.
 
 In Ruby there are a couple, flexible ways to create strings, but the most simple,
-and most used way is to simply enclose some characters in quotes:
+and most common way is to simply enclose some characters in quotes:
 
 ```ruby
 "This is one string!"
