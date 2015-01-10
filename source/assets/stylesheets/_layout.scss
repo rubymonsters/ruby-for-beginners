@@ -8,7 +8,7 @@ body > div {
   padding: 3rem 6.250rem;
 }
 
-main {
+article {
   position: relative;
   display: -webkit-flex-item;
   display: flex-item;
@@ -111,7 +111,7 @@ body > .page-nav {
   }
 }
 
-main .page-nav {
+article .page-nav {
   margin-top: 2rem;
 
   a {

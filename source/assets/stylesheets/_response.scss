@@ -16,13 +16,13 @@ html {
 
 @media screen and (max-width: $tablet-2) {
   body > .page-nav { display: none; }
-  main > .page-nav { display: block; }
+  article > .page-nav { display: block; }
   body > div { padding: 3rem 3rem 6.250rem 3rem; }
   .menu { display: block; }
   .toc { display: none; }
 }
 
 @media screen and (min-width: $tablet-2) {
-  main > .page-nav { display: none; }
+  article > .page-nav { display: none; }
   .menu { display: none; }
 }
