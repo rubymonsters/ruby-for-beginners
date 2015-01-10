@@ -82,7 +82,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://yourname.github.io/example-book/21-writing_methods.html</loc>
+      <loc>http://yourname.github.io/example-book/exercises/15-mailbox_erb.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -214,6 +214,22 @@
       <priority>0.5</priority>
     </url>
     <url>
+      <loc>http://yourname.github.io/example-book/test.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://yourname.github.io/example-book/</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://yourname.github.io/example-book/exercises/16-mailbox_sinatra.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://yourname.github.io/example-book/exercises/16-ex_mailbox_sinatra.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
       <loc>http://yourname.github.io/example-book/exercises/01-numbers.html</loc>
       <priority>0.5</priority>
     </url>
@@ -254,6 +270,10 @@
       <priority>0.5</priority>
     </url>
     <url>
+      <loc>http://yourname.github.io/example-book/exercises/11-mailbox_text.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
       <loc>http://yourname.github.io/example-book/exercises/12-mailbox_html.html</loc>
       <priority>0.5</priority>
     </url>
@@ -266,23 +286,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://yourname.github.io/example-book/exercises/15-mailbox_erb.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://yourname.github.io/example-book/exercises/16-ex_mailbox_sinatra.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://yourname.github.io/example-book/exercises/16-mailbox_sinatra.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://yourname.github.io/example-book/</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://yourname.github.io/example-book/exercises/11-mailbox_text.html</loc>
+      <loc>http://yourname.github.io/example-book/21-writing_methods.html</loc>
       <priority>0.5</priority>
     </url>
 </urlset>
