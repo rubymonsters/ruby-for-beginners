@@ -1,0 +1,193 @@
+body > div {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 3rem 6.250rem;
+}
+
+main {
+  position: relative;
+  display: -webkit-flex-item;
+  display: flex-item;
+  max-width: 55rem;
+  vertical-align: top;
+
+  h1:first-child {
+    margin-top: 0;
+  }
+}
+
+.toc {
+  display: -webkit-flex-item;
+  display: flex-item;
+  position: relative;
+  padding: 1rem 4rem 0 0;
+  vertical-align: top;
+  font-size: 0.875rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul ul {
+    margin: 0.5rem 0 0 1rem;
+  }
+
+  li {
+    line-height: 1.2rem;
+    padding: 2px 0 8px 0;
+  }
+
+  a, span {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  &.overlay {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 7em;
+    width: 100%;
+    background-color: white;
+
+    h1 {
+      display: block;
+    }
+  }
+}
+
+body > .page-nav {
+  position: fixed;
+  display: table;
+  height: 100%;
+  width: 6.250em;
+
+  &:first-of-type { left:  0; }
+  &:last-of-type  { right: 0; }
+
+  a {
+    display: table-cell;
+    height: 100%;
+    width: 100%;
+
+    vertical-align: middle;
+    font-family: 'FontAwesome';
+    font-size: 0;
+    color: #ccc;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+
+    &:hover:before {
+      color: #444;
+    }
+
+    &.previous:before {
+      content: "\f104";
+      left: 0;
+      font-size: 5rem;
+    }
+    &.next:before {
+      content: "\f105";
+      right: 0;
+      font-size: 5rem;
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+main .page-nav {
+  margin-top: 2rem;
+
+  a {
+    position: absolute;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    background-color: $red;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 0;
+      height: 0;
+      border: 0 solid $red;
+    }
+
+    &.previous {
+      margin: 0 20px 0 15px;
+      padding: 0 5px 0 17px;
+
+      &:before {
+        left: -30px;
+        border-color: rgba(0, 0, 0, 0);
+        border-right-color: $red;
+        border-width: 20px 15px;
+      }
+      &:after {
+        right: -20px;
+        border-width: 20px 10px;
+        border-radius: 0 4px 4px 0;
+      }
+    }
+
+    &.next {
+      right: 0;
+      margin: 0 30px 0 20px;
+      padding: 0 17px 0 5px;
+
+      &:before {
+        left: -20px;
+        border-width: 20px 10px;
+        border-radius: 4px 0 0 4px;
+      }
+
+      &:after {
+        right: -30px;
+        border-color: rgba(0, 0, 0, 0);
+        border-left-color: $red;
+        border-width: 20px 15px;
+      }
+    }
+  }
+}
+
+.menu {
+  position: relative;
+  margin-bottom: 3em;
+}
+
+.menu a {
+  padding-left: 1.25rem;
+}
+
+.menu a:before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 0px;
+  width: 36px;
+  height: 28px;
+  border-top: 17px double #000;
+  border-bottom: 6px solid #000;
+  border-color: #ccc;
+}

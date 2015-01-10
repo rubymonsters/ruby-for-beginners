@@ -1,8 +1,8 @@
 require 'middleman-navtree'
 
-set :layouts_dir, 'themes/' + data.book.theme.downcase + '/layouts'
-set :css_dir, 'themes/' + data.book.theme.downcase + '/stylesheets'
-set :js_dir, 'themes/' + data.book.theme.downcase + '/javascripts'
+set :layouts_dir, '/layouts'
+set :css_dir, 'assets/stylesheets'
+set :js_dir, 'assets/javascripts'
 set :images_dir, 'images'
 set :source, 'source'
 
@@ -24,10 +24,10 @@ activate :minify_javascript
 activate :asset_hash
 
 activate :navtree do |options|
-  options.ignore_files = ['readme.md', 'README.md', 'readme.txt', 'license.md', 'CNAME', 'robots.txt', 'humans.txt', '404.md']
-  options.ignore_dir = ['themes']   # All the config directories are automatically ignored.
+  options.ignore_files = ['CNAME', '404.md']
+  options.ignore_dir = ['assets', 'layouts']
   options.promote_files = ['index.md']
-  options.home_title = 'Front Page'
+  options.home_title = 'Ruby For Beginners'
   options.ext_whitelist = ['.md', '.markdown', '.mkd']
 end
 

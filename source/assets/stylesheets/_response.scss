@@ -1,0 +1,28 @@
+$tablet-1: 700px;
+$tablet-2: 900px;
+$tablet-3: 1024px;
+$desktop: 1200px;
+
+$font-s: 0.875rem; // 14px
+$font-m: 1rem;     // 16px
+$font-l: 1.125rem; // 18px
+
+html {
+  font-size: $font-s;
+  @media screen and (min-width: $tablet-2) { font-size: $font-s; }
+  @media screen and (min-width: $tablet-3) { font-size: $font-m; }
+  @media screen and (min-width: $desktop)  { font-size: $font-l; }
+}
+
+@media screen and (max-width: $tablet-2) {
+  body > .page-nav { display: none; }
+  main > .page-nav { display: block; }
+  body > div { padding: 3rem 3rem 6.250rem 3rem; }
+  .menu { display: block; }
+  .toc { display: none; }
+}
+
+@media screen and (min-width: $tablet-2) {
+  main > .page-nav { display: none; }
+  .menu { display: none; }
+}
