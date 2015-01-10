@@ -58,3 +58,7 @@ different order, and from a different angle.
 * [Codecademy](http://www.codecademy.com)
 * [Code School](http://www.codeschool.com)
 * [Odin Project](http://www.theodinproject.com/ruby-programming)
+
+#### Resources for coaches
+
+* [Tips for coaching a programming study group](http://coaching.rubymonstas.org)
