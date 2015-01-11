@@ -76,18 +76,34 @@ all of that into a class <code>EmailsCsvStore</code>. This class should take a f
 and have a method <code>read</code>, which returns the emails array.</p>
 
 <p>In the end that part of the code should read:</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">EmailsCsvStore</span>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Email</span>
+  <span class="c1"># your class from the last exercise</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Mailbox</span>
+  <span class="c1"># your class from the last exercise</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">MailboxHtmlFormatter</span>
+  <span class="c1"># your class from the last exercise</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">EmailsCsvStore</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="c1"># fill in this method</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">read</span>
+    <span class="c1"># fill in this method</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 <span class="n">store</span> <span class="o">=</span> <span class="no">EmailsCsvStore</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'emails.csv'</span><span class="p">)</span>
 <span class="n">emails</span> <span class="o">=</span> <span class="n">store</span><span class="p">.</span><span class="nf">read</span>
 <span class="n">mailbox</span> <span class="o">=</span> <span class="no">Mailbox</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ruby Study Group"</span><span class="p">,</span> <span class="n">emails</span><span class="p">)</span>
-<span class="n">formatter</span> <span class="o">=</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="no">MailboxHtmlFormatter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">mailbox</span><span class="p">)</span>
+
+<span class="c1"># your code from the last exercise, writing the file</span>
 </code></pre>
 
         <nav class="page-nav"><a class="previous" href="13-mailbox_file.html">Previous</a></nav>
