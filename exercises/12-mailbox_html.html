@@ -30,17 +30,21 @@
         <h1>The Mailbox Html Formatter</h1>
 
 <p>One question that may have come up while working on the mailbox text formatter
-exercise is: Why would we have a separate class for formatting the ASCII table,
-that is, a plain text table that uses characters like <code>+</code>, <code>-</code>, and <code>|</code>.</p>
+exercise is:</p>
+
+<p>Why would we have a separate class for formatting the ASCII table (that is, a
+plain text table that uses characters like <code>+</code>, <code>-</code>, and <code>|</code>)?</p>
 
 <p>The reason is: We want each one of our classes to encapsulate one concept that
 is useful in our application. We also say: each one of our classes should be
-<em>concerned</em> with one responsibility. An email vaguely resembles the concept of
-an analog letter, written on paper: some message is being sent from one person
-to another. Nowadays everyone knows what an email is: it stores all information
-about this particular message. The same is true for mailboxes, which are being
-used to store a bunch of emails. Formatting a number of emails in order to be
-displayed on a text based terminal is a very different concept, and concern.</p>
+<em>concerned</em> with one responsibility.</p>
+
+<p>An email vaguely resembles the concept of an analog letter, written on paper:
+some message is being sent from one person to another. Nowadays everyone knows
+what an email is: it stores all information about this particular message. The
+same is true for mailboxes, which are being used to store a bunch of emails.
+Formatting a number of emails in order to be displayed on a text based terminal
+is a very different concept, and concern.</p>
 
 <p>Therefor it makes a lot of sense to have three different classes implement each
 one of these concepts, or concerns.</p>
@@ -50,7 +54,7 @@ one other advantage is: We can now easily implement other formatter classes
 that format our emails in a different way, suitable to be displayed on other
 mediums.</p>
 
-<p>That&rsquo;s what this exercise is about: We want to display our mailbox contents
+<p>And that&rsquo;s what this exercise is about: We want to display our mailbox contents
 in HTML, the format that browsers like to use. This will be our first step
 towards learning how to build a web application.</p>
 
@@ -59,13 +63,13 @@ remember when we get to talk about the architecture that Rails use to structure
 and separate concerns, called &ldquo;model, view, controller&rdquo;.</p>
 
 <ul>
-<li>The two classes <code>Email</code> and <code>Mailbox</code> in your application are models: they
+<li>The two classes <code>Email</code> and <code>Mailbox</code> in your application are <em>models</em>: they
 are concerned with modelling those &ldquo;real-world&rdquo; things that your users are
-concerned with. They want to work with emails.</li>
-<li>The class <code>MailboxTextFormatter</code> on the other hand is a view: It is used in
+interested in: they want to work with emails.</li>
+<li>The class <code>MailboxTextFormatter</code> on the other hand is a <em>view</em>: It is used in
 order to generate a certain representation, in a format that is suitable to a
 certain medium (the terminal, in our case).</li>
-<li>You don&rsquo;t have a controller class so far, but the little bit of code at the
+<li>You don&rsquo;t have a <em>controller</em> class so far, but the little bit of code at the
 end of the file does what a controller usually would do: it generates some
 models (the emails, and the mailbox objects) and passes them to the view (the
 formatter) in order to be rendered into something that can then be returned
@@ -75,23 +79,15 @@ and displayed.</li>
 <p>Ok, now to our exercise. We will basically start over with the same code again,
 except that our formatter class now will be called <code>MailboxHtmlFormatter</code>:</p>
 <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Email</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-    <span class="vi">@subject</span> <span class="o">=</span> <span class="n">subject</span>
-    <span class="vi">@headers</span> <span class="o">=</span> <span class="n">headers</span>
-  <span class="k">end</span>
+  <span class="c1"># your class from the last exercise</span>
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Mailbox</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">emails</span><span class="p">)</span>
-    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
-    <span class="vi">@emails</span> <span class="o">=</span> <span class="n">emails</span>
-  <span class="k">end</span>
+  <span class="c1"># your class from the last exercise</span>
 <span class="k">end</span>
 
-<span class="k">class</span> <span class="nc">MailboxTextFormatter</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">mailbox</span><span class="p">)</span>
-    <span class="vi">@mailbox</span> <span class="o">=</span> <span class="n">mailbox</span>
-  <span class="k">end</span>
+<span class="k">class</span> <span class="nc">MailboxHtmlFormatter</span>
+  <span class="c1"># fill in this class body</span>
 <span class="k">end</span>
 
 <span class="n">emails</span> <span class="o">=</span> <span class="p">[</span>
@@ -155,10 +151,11 @@ to say that manually writing HTML isn&rsquo;t very popular amonst most programme
 Therefor there are quite a few tools that make our lives easier. And your task
 is to write such a tool.</p>
 
-<p>Also, this exercise should actually be easier for you to complete. You already
-have a bunch of practice in iterating over emails, and working with arrays and
-strings. And this time, you don&rsquo;t need to deal with the maximum length of
-strings per column. You can just interpolate things together.</p>
+<p>Also, this exercise should actually be easier for you to complete than the
+previous one. You already have a bunch of practice in iterating over emails,
+and working with arrays and strings. And this time, you don&rsquo;t need to deal with
+the maximum length of strings per column. You can just interpolate things
+together.</p>
 
         <nav class="page-nav"><a class="previous" href="11-mailbox_text.html">Previous</a></nav>
         <nav class="page-nav"><a class="next" href="13-mailbox_file.html">Next</a></nav>
