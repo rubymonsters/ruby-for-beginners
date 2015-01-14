@@ -69,5 +69,5 @@ variable, so an attribute reader is a method that reads an instance variable.
 
 We don't know why the community has chosen to use the term "attribute" here:
 It would be much less confusing to use the term "instance variable reader"
-instead. Mabye the simple reason is that programmers don't like to type more
-than necessary, and this spares 8 characters. Who knows :)
+instead. Maybe the simple reason is that programmers don't like to type more
+than necessary, and this saves 8 characters. Who knows :)

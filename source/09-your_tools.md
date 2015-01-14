@@ -44,7 +44,7 @@ file, that you can edit just like any other file. Make sure it looks like this:
 }
 ```
 
-Also, we recommend to enable auto-saving your files. This will automatically
+Also, we recommend enabling auto-saving your files. This will automatically
 save your changes when you switch to another application (like your terminal),
 and protect you from the mistake of forgetting to save:
 
@@ -132,7 +132,7 @@ following and hit enter, in order to execute the code:
 ruby hello.rb
 ```
 
-This will tell the `ruby` runtime to interpret the content of the file
+This will tell the `ruby` runtime to interpret the contents of the file
 `hello.rb` as Ruby code, and execute it.
 
 #### Programming workflow
@@ -160,10 +160,10 @@ and then enter to run it again.
 
 #### IRB
 
-One other tool that is worth mentioning, and that comes with your Ruby runtime
+One other tool that is worth mentioning, and that comes with your Ruby runtime,
 is `irb`. You can start it by typing `irb` in your shell and hitting enter.
 
-Its name abbreviates "Interactive Ruby Shell", and yes, it is another kind of
+Its name is short for "Interactive Ruby Shell", and yes, it is another kind of
 shell: Just like the shell running in your terminal `irb` is also a program
 that interactively waits for you to type something, and hit enter. However,
 since this is a Ruby shell, it will expect that you type Ruby code instead of
@@ -184,7 +184,7 @@ Hello world!
 
 The first line starts the IRB program. Notice how the "prompt" indicator
 changes. The prompt will look a little different depending on your system and
-shell configuration, but often times `$` is used to indicate that this is a
+shell configuration, but often `$` is used to indicate that this is a
 system shell prompt, while `>` is used by IRB to indicate that this is an
 interactive Ruby shell.
 

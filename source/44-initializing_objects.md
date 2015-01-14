@@ -3,7 +3,7 @@
 *In the moment of birth*
 
 In order to make our class a little bit more useful, we want to be able to give
-it some initial data. In our case, we want the person to know it's own name.
+it some initial data. In our case, we want the person to know its own name.
 
 We can do this like so:
 
@@ -22,10 +22,10 @@ accepts a single argument, which is called `name`. At the moment, this method
 is still empty. We'll add some code to it in a bit.
 
 On formatting: the method definition is indented by one level, that is, 2
-spaces. We do this in order to signalize that the method `initialize` belongs
+spaces. We do this in order to signal that the method `initialize` belongs
 to the class `Person`. Everything between the line `class Person` and the
 final line `end` is called the "class body", and just like method bodies, block
-bodies, and bodies of `if` and `else` branches we indent them by one more
+bodies, and bodies of `if` and `else` branches, we indent them by one more
 level.
 
 The important bit to learn for you is: the method `initialize` is a special
@@ -45,7 +45,7 @@ Person.new("Ada")
 and the string `"Ada"` will be passed on to our `initialize` method, and end
 up being assigned to the local variable `name`.
 
-The name `"Ada"` of course refers to Ada Lovelace, the worlds [first computer
+The name `"Ada"` of course refers to Ada Lovelace, the world's [first computer
 programmer](http://en.wikipedia.org/wiki/Ada_Lovelace) :)
 
 To recap, when you call `new` on the class `Person`, and pass the string

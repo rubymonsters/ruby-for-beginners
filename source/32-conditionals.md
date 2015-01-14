@@ -2,7 +2,7 @@
 
 *If this is true, then do that. Otherwise do something else.*
 
-Often times we want to check for a certain condition, and then based on it, do
+Often we want to check for a certain condition, and then based on it, do
 either one thing or another. Or we want to do something only if a condition is
 true.
 
@@ -28,7 +28,7 @@ Let's walk through it one by one:
 * If you run this code it will print out `The number is between 1 and 10`,
   because the number assigned to the variable `number` on the first line is
   `5`, and for this number the method call `number.between?(1, 10)` returns
-  `true`. Ruby therefor will execute the code in the `if` branch: The `if`
+  `true`. Ruby will therefore execute the code in the `if` branch: The `if`
   branch is the block of code that comes after the line with the `if`
   statement, and that is indented by two spaces. Once it is done executing
   the `if` branch Ruby will simply ignore the rest of the statement.
@@ -36,17 +36,17 @@ Let's walk through it one by one:
 * If you change the number `5` on the first line to `15`, and run the code
   again, then it will print out `The number is between 11 and 20`. In this
   case Ruby will, again, first check the first condition `number.between?(1,
-  10)`, but this time this method call returns `false`. Therefor, Ruby will
+  10)`, but this time this method call returns `false`. Therefore, Ruby will
   ignore the `if` branch, and check the next condition on the `elsif` line:
   `number.between?(11, 20)`. Now, this method call returns true, because `5` is
-  between `11` and `20`. Ruby will therefor execute the `elsif` branch, and
+  between `11` and `20`. Ruby will therefore execute the `elsif` branch, and
   print out this message. Again, once it is done executing the `elsif` branch
   Ruby will ignore the rest of the statement.
 
 * If you now change the number `15` to `25`, and run the code again, then it
   will print out `The number is bigger than 20`. Again, Ruby will first check
   the first condition, and find it returns `false`. It will check the second
-  condition, which now also returns `false`. Therefor Ruby will then execute
+  condition, which now also returns `false`. Therefore Ruby will then execute
   the `else` branch, and print out that message.
 
 The `elsif` and `else` statements and branches are optional: you don't need to
@@ -79,7 +79,7 @@ which not only saves us two lines, it also reads great!
 
 ##### Unless
 
-Also, next to `if` Ruby also knows a statement `unless` for when we want to do
+Also, as well as `if` Ruby also knows a statement `unless` for when we want to do
 something if the condition does *not* apply (evaluate to true). And again, we
 can also append the `unless` statement to the end of the line, so these two are
 the same:

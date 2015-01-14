@@ -38,7 +38,7 @@ Ruby code that we used to create the object. That is really convenient.
 However, typing `puts something.inspect` is quite a bit of work to do. That's
 12 characters to type next to the object itself!
 
-Therefor Ruby has a method to make our lifes easier, and does this work for us.
+Therefore Ruby has a method to make our lifes easier, and does this work for us.
 That's the method `p`.
 
 This method is implemented like so:

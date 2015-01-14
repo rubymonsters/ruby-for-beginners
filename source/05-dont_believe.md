@@ -25,32 +25,32 @@ all these features.
 Now, when asked to explain things, and may suddenly remember: "Oh, right, and
 then there's also this other language feature, and that one, and another one,
 and ...!" They may be excited to explain all the things at once, without
-realizing that, at this particular point, you actually wouldn't need to know
+realizing that, at this particular point, you actually don't need to know
 them all at once.
 
 Also, they might present a conclusion, and omit the learning process. In
-programming, as much as in any other field, there's rarely any silver-bullet.
-There always are alternative solutions, with different advantages and
-downsides. Often times it's hard to fully understand them unless one tries a
+programming, as much as in any other field, there's rarely any silver bullet.
+There are always alternative solutions, with different advantages and
+downsides. Often it's hard to fully understand them unless one tries a
 particular solution and sticks with it for a while.
 
 On top of this, whatever is considered a "good" solution by the community at
-any point of time, always is the conclusion of a decades evolutionary learning
-process. Often times it makes sense to start practicing with an older, and
+any point of time, is always the conclusion of a decades-long evolutionary learning
+process. Often it makes sense to start practicing with an older and
 simpler solution that worked well enough a couple years ago, experience some of
 the problems that it caused, and only then try using the latest, more modern
 solution.
 
 Developers often tend to be excited about their current preferences, about
 things they've learned just recently, and will happily explain at lengths why
-one solution works better for them than another. Often times you can learn a
+one solution works better for them than another. Often you can learn a
 lot from listening to these explanations. However, keep in mind that this
 doesn't necessarily mean a tool that's great for day to day work for an
-experienced programmer also is a tool that's great for learning to program.
+experienced programmer is also a tool that's great for learning to program.
 
 On top of all this, there's also the problem that the tools that we use, over
 time, become more and more optimized for advanced users. New features are being
-added that make our day to day work easier, and over the years, up to date
+added that make our day to day work easier, and over the years, up-to-date
 documentation, and tutorials will focus on these features.
 
 While that's great for advanced users, it's sometimes bad for beginners, as you

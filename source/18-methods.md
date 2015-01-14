@@ -13,7 +13,7 @@ them: arrays and hashes. That's about the "data" part.
 Methods are about the "doing interesting things" part. Methods are all about
 encapsulating some bits of behaviour, so that it can be applied to different
 bits of data easily. For example there methods that do things like: sorting an
-array, reading a CSV file, sending an email, signing in on Facebook, sending
+array, reading a CSV file, sending an email, signing in to Facebook, sending
 a Tweet.
 
 There are four things that constitute a method:
@@ -124,7 +124,7 @@ puts add_two(3)
 the word `number` in the first line is a "parameter", whereas `3` in the
 last line is an "argument".
 
-We found making this distinction in our beginners classes unnecessary
+We found making this distinction in our beginners classes unnecessarily
 confusing, and thus ignore it. We simply call both these things "arguments",
 and point out that they create a local variable inside of the method body.
 

@@ -10,7 +10,7 @@ We have briefly mentioned that in Ruby there is an object that represents
 That's right. "Nothing" is a thing in Ruby (as well as in many other
 languages), albeit a very special one. We could ramble on the philosophical
 implications of this, but instead we'll just look at how this is used in
-praxis:
+practice:
 
 Remember how we can receive a value associated with a key from a hash?
 
@@ -31,7 +31,7 @@ This will print out `nil`. Remember that every method call always will return
 *some* value? In cases where there's nothing to return, it will return `nil`,
 which represents nothing :)
 
-In Ruby, `nil`, nothing, is something else than, for example `0` is, which
+In Ruby, `nil`, nothing, is something else than, for example, `0`, which
 represents *something*. An empty string `""`, an empty array `[]`, or empty
 Hash `{}` also all represent *something*. So they're not `nil`.
 
@@ -64,7 +64,7 @@ number = 3
 if number >= 5
   puts "The number #{number} is greater than 5, or equal to 5"
 else
-  puts "The number #{number} is lesser than 5"
+  puts "The number #{number} is less than 5"
 end
 ```
 

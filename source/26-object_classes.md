@@ -41,7 +41,7 @@ There's a class named `Class`, and the class `String` is an object that *is a*
 `Class`.
 
 Ok, this might get a little confusing, when you think about it too hard, and to
-be honest, it might not be super useful in praxis. However, it is kinda cool to
+be honest, it might not be super useful in practice. However, it is kinda cool to
 see how in Ruby, where everything is an object, even classes are objects, and
 have their own class.
 

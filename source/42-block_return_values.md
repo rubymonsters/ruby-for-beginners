@@ -12,7 +12,7 @@ p [1, 2, 3, 4, 5].collect { |number| number + 1 }
 
 This will take the array of numbers, and transform it into *another* array.
 
-It does that by calling the method `collect` on the original array, which calls
+It does this by calling the method `collect` on the original array, which calls
 the given block for each of the elements, and collects each of the return
 values returned by the block. The resulting array is then returned by the
 method `collect`, and printed to the screen.
@@ -51,11 +51,11 @@ Let's walk through this step by step, under the microscope:
 * Inside our block we now call the method `odd?` on this number, and of course,
   because `1` is odd, this will return `true`.
 * Since this is the only, and thus, last statement in the body of our block,
-  our block also returns `true` to the method `select`. `select` therefor will
+  our block also returns `true` to the method `select`. `select` therefore will
   *keep* ("select") the number `1`.
 * It then calls the block again, this time passing the number `2`. Of course,
-  because this is not an odd number, the method `odd?` and therfor our block
-  will return `false` back the the method `select`. Therefor it *discards* this
+  because this is not an odd number, the method `odd?` and therfore our block
+  will return `false` back the the method `select`. Therefore it *discards* this
   element.
 * It keeps doing this for each of the remaining elements in the array, and
   eventually has this array: `[1, 3, 5]`
@@ -73,13 +73,13 @@ p [1, 2, 3, 4, 5].detect { |number| number.even? }
 Again, `detect` will pass each of the elements of the array to the block, one
 by one, and check the return value of the block. However, as soon as the block
 returns something truthy (something that is "equivalent to true"), the method
-`detect` will return the current object itself. Therefor, this will print out
+`detect` will return the current object itself. Therefore, this will print out
 `2`: the first number in the array that is even.
 
 In Ruby there are a lot more methods that accept blocks, and they do very
 different things.
 
-However, they have one thing in common: By the way of accepting a block, from
+However, they have one thing in common: By accepting a block, from
 you as a programmer, the method can pass control to you. This principle is
 called "inversion of control".
 
@@ -87,7 +87,7 @@ For example, instead of having to define lots of methods like `select_odd`,
 `select_even`, `select_lesser_than`, `select_greater_than` and so on, defining
 one method per potentially useful criterion, Ruby only has to implement one
 single, generic method for arrays: `select`, allowing you to flexibly specify
-the criterion in form of Ruby code: by the way of passing a block to the
+the criterion in form of Ruby code: by passing a block to the
 method. That way Ruby lets you, as a programmer, take over control, and specify
 what is used as a criterion to select elements.
 
@@ -123,7 +123,7 @@ argument, in addition to the element itself.
 Inside of the block we can then use it, and add the index to the number itself.
 
 For the first iteration it will call the block with `1` and `0`, since `0` is
-the first "position", that is, index. It therefor returns `1`. For the second
+the first "position", that is, index. It therefore returns `1`. For the second
 iteration it calls the block with `2` and `1`, and returns `3`, and so on.
 
 

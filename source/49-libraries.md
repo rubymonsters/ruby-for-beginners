@@ -1,16 +1,16 @@
 # Bonus: Using Libraries
 
 Our `Person` class does not define an attribute accessor method for its
-password, and thus, others cannot ask and retrieve it.
+password, and thus, others cannot ask for and retrieve it.
 
 However, our person object could freely give them an encrypted version of it.
 
-Actually, this is pretty similar to how authentication often times works in
+Actually, this is pretty similar to how authentication often works in
 real web applications:
 
 Applications do not store your actual password in plain text (hopefully!). That
 way, if, for some reason, they get hacked, attackers wouldn't have your actual
-password. Instead they store an ecrypted version of the password.
+password. Instead they store an encrypted version of the password.
 
 Anyhow, we now want to add a method `encrypted_password` to the `Person` class,
 which should return an *encrypted version* of the password that is stored in
@@ -24,7 +24,7 @@ So far, all the Ruby features and methods that we have used are available right
 away when the Ruby runtime `ruby` executes your code. However, Ruby also comes
 with a ton of functionality that is not available (loaded) right away. Instead
 it is stored in so called libraries (which are just Ruby files, too), and we
-can to load them manually, in order to make them available.
+have to load them manually, in order to make them available.
 
 To do this, we use the method `require`, and pass it the name of the library:
 
@@ -59,7 +59,7 @@ The library `digest` that we required includes a something called
 `Digest::SHA2`.
 
 In programming a "digest" is an algorithm to convert one string into another
-string in way so the original string cannot be recovered later. However
+string in a way so the original string cannot be recovered later. However
 digesting the same string will always result in the same other, unique string.
 There are a good bunch of algorithms that do this, and "sha2" is the name of
 one of them.

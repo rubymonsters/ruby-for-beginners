@@ -27,14 +27,14 @@ see in IRB) are all methods on numbers, and they can be called just like any
 other method. The code above is valid Ruby code, and both lines do exactly the
 same.
 
-Ruby just adds a little bit of sytax in order to make it easier to read and
+Ruby just adds a little bit of syntax in order to make it easier to read and
 write for us: It allows us to write `number = 2 + 3 * 4` instead of `number =
 2.+(3.*(4))`, which is a pretty nasty thing to type.
 
 This is something called "syntax sugar", because it makes the language more
 sweet (no kidding).
 
-Btw, this works the same way for other things, too.
+By the way, this works the same way for other things, too.
 
 For example, you have learned about the array and hash syntax that uses square
 brackets `[]` for reading and writing.
@@ -64,4 +64,4 @@ puts(hash.[](:three))
 ```
 
 Knowing this can be useful when you want to write classes that look and feel
-similar to arrays or hashes, but behave different.
+similar to arrays or hashes, but behave differently.

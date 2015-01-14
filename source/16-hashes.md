@@ -34,7 +34,7 @@ dictionary = { "one" => "eins", "two" => "zwei", "three" => "drei" }
 puts dictionary["one"]
 ```
 
-In this example `dictionary` is a hash defined on the first line. `["one"]`
+In this example, `dictionary` is a hash defined on the first line. `["one"]`
 looks up the value associated to the key `"one"`, which is `"eins"`. This value
 will be passed to `puts` which outputs it to the screen.
 
