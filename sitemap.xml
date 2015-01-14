@@ -82,7 +82,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/21-writing_methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/15-mailbox_erb.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -226,7 +226,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/15-mailbox_erb.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/01-numbers.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -282,7 +282,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/01-numbers.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/21-writing_methods.html</loc>
       <priority>0.5</priority>
     </url>
 </urlset>
