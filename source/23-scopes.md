@@ -2,7 +2,7 @@
 
 *Spheres of visibility, like rooms in a house*
 
-When we talked about variables we have mentioned that the most common type of a
+When we talked about variables we mentioned that the most common type of
 variable is the "local variable", without explaining any further why they are
 local. Local to what? Where?
 
@@ -15,7 +15,7 @@ else."* (slightly modified to match our own terminology)
 
 You can think about a scope as of a sphere, a bubble, or a room (with no
 windows, and doors closed): Certain names, like variable names, are "known" and
-"visible" inside of the room. Other names, know and visible in another room are
+"visible" inside of the room. Other names, known and visible in another room are
 not known in this room, but only in the other room.
 
 Every time there is a method call, and the flow of execution enters the
@@ -43,7 +43,7 @@ is created when the flow of execution enters the method.
 
 Outside of this scope, when the flow of execution has returned from the method
 the method's scope has been destroyed, and all local variables are gone. The
-local variable `number` is therefor not know, and Ruby raises an error saying
+local variable `number` is therefore not known, and Ruby raises an error saying
 `undefined local variable or method 'number'`.
 
 If you think about this error message for little bit, does it make sense to
@@ -106,12 +106,12 @@ the variable `number`.
 Instead, when the control flow enters the method `add_to` Ruby will create a
 new local scope, and it will define a new local variable `number` which is
 assigned the number `3` that was passed to the method. This new variable
-`number` is *local* to the method's scope, and therefor this is a *different*
+`number` is *local* to the method's scope, and therefore this is a *different*
 variable than the one on the very first line, in the outer scope.
 
 We found the following a good metaphor for scopes:
 
-When Ruby enters a method, then that's like she enters a shiny, new room in a
+When Ruby enters a method, then it's like she enters a shiny, new room in a
 house. With her, she brings the objects that are passed as arguments to the
 method call. In the example above she brings an object that is the number `3`.
 
@@ -122,6 +122,6 @@ known local variable that has a value assigned: The number `3` with the post-it
 note `number` on it.
 
 In our example, the outer scope and the scope of the method `add_two`, are
-two different rooms, and there are two different post-it notes sticked on
+two different rooms, and there are two different post-it notes stuck on
 two different numbers, which just happen to have the same name on them.
 

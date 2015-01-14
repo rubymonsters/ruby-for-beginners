@@ -9,7 +9,7 @@ arithmetical operators. Here's a full list:
 * `*` - multiplication
 * `/` - division
 * `**` - exponentiation
-* `%` - modulus (the rest of a devision, e.g. `5 % 2` returns `1`)
+* `%` - modulus (the rest of a division, e.g. `5 % 2` returns `1`)
 
 However, some of these methods are also defined on other objects, like strings
 and arrays.

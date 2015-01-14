@@ -4,7 +4,7 @@ As programmers we like to split up our tasks, and do one thing after another.
 This allows us to focus on one small task, and once we've solved it, we move on
 to the next one.
 
-When you need to add some new functionality to your program you'll often times
+When you need to add some new functionality to your program you'll often
 find yourself thinking "I should add a method for this": methods add behaviour.
 
 Now, the first thing you should ask yourself is: "What is it that this method
@@ -62,10 +62,10 @@ habit, too.
 Btw, good editors help you formatting things. For example, when you are on a
 line that starts with `def something`, and at the end of the line hit return,
 Sublime will already indent the next line for you by 2 spaces. If you now type
-`end`, then Sublime will notice that you are closing the method, and outdent
+`end`, then Sublime will notice that you are closing the method, and dedent
 it again, so `def` and `end` sit on the same level. Smart, isn't it?
 
-Also, you'll notice that when you type an opening parentheses `(`, then Sublime
+Also, you'll notice that when you type an opening parenthesis `(`, then Sublime
 will add a closing one `)`, too, but keep your cursor placed between them, so
 you can type the argument list where it belongs.
 

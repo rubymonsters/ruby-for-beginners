@@ -1,6 +1,6 @@
 # Numbers
 
-Numbers simply are numbers. You create one by writing it: `12.34` is Ruby code
+Numbers are simply numbers. You create one by writing it: `12.34` is Ruby code
 and it represents the number twelve-point-three-four.
 
 Under the hood, for reasons that are mostly technical, there are actually

@@ -3,7 +3,7 @@
 Objects have methods attached to them, allowing us to do interesting stuff with
 them. An object's methods are like things that a person can *do*. Like we can
 ask a person for their name, and they will "return" their name to us. Or we
-can ask them to prepare, and bring a cup of tea for us. Or we could ask them
+can ask them to prepare and bring a cup of tea for us. Or we could ask them
 to remember a phone number, or email password.
 
 As Rubyists we actually say that we "talk to objects". And we do so by calling

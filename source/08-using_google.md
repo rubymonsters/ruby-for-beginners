@@ -5,7 +5,7 @@
 Whenever you have a question, and you're not sure where to start looking for an
 answer, simply go ahead and ask Google. Some other person most probably has had
 the same before, and often times you will find a helpful blog post, tutorial,
-documentation, or on community sites like Stack Overflow.
+documentation, or answer on community sites like Stack Overflow.
 
 Finding the right terms to type into Google might take some time. Experiment
 with this. If one question does not yield a helpful result on the first page,
@@ -24,10 +24,10 @@ good ones to look at, but these pages also often are very long. Look at the
 summary of the page on Google, and the highlighted terms, then go to the
 page and use your browser's search feature to find them on the page.
 
-Also, results on Stack Overflow often times are very worth reading. This is a
+Also, results on Stack Overflow are often very worthwhile to read. This is a
 programming community site where people with all kinds of experience levels
 post questions, which then will be answered by others. People can rank answers
-and the best ranked answer appears at the top. Often times it is worth skimming
+and the best ranked answer appears at the top. Often it is worth skimming
 through most of the answers, as sometimes the question asked is just slightly
-different from your's, but still someone suggests solution that might be
+different from yours, but still someone suggests a solution that might be
 similar to the one you are looking for.

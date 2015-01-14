@@ -46,7 +46,7 @@ Each of these three operators comes in two versions:
 
 The difference between them has to do with what is called "operator precedence".
 
-From math you know that in `1 + 2 * 3` evaluates to `7`, not `9`. This is
+From math you know that `1 + 2 * 3` evaluates to `7`, not `9`. This is
 because the multiplication `*` operator binds stronger, and precedes the
 addition operator `+`. In other words `1 + 2 * 3` is same as `1 + (2 * 3)`, and
 not the same as `(1 + 2) * 3`.

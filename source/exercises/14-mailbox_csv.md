@@ -1,11 +1,11 @@
 # Reading from a CSV file
 
 So far our program has all the email data hardcoded. Obviously that's not a
-very useful for a realworld program.
+very useful for a real world program.
 
 Let's change this to read our data from an external data source instead.
 
-One very simple, and pretty popular way to store data to files is using the
+One very simple and pretty popular way to store data to files is using the
 format CSV. This stands for "comma separated values" (although, most of the
 times semicolons are used as a separator), and it is something that
 spreadsheets can read and export. Being able to work with CSV can be pretty

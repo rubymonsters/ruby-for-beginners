@@ -1,13 +1,13 @@
 # Programming is creation
 
-*Things coming to live*
+*Things coming to life*
 
 Programming is creation. Whenever you run a program a little universe is
-created, things come to live and interact with each other, according to the
+created, things come to life and interact with each other, according to the
 rules that you, as their creator, defined.
 
 Imagine you build an application like Twitter. Then you, as a developer, would
-say things like "There be users! And there be tweets!", in the programming
+say things like "Let there be users! And let there be tweets!", in the programming
 language of your choice, and once your application starts these things will
 come into existence. Next you would go ahead and define "Users can create
 tweets, and they can follow each other". And from now on, every time new users
