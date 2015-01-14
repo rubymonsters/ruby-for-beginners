@@ -8,23 +8,15 @@ Fill in and complete the following class definitions.
 
 ```ruby
 class Email
-  def initialize(subject, headers)
-    @subject = subject
-    @headers = headers
-  end
+  # your class from the last exercise
 end
 
 class Mailbox
-  def initialize(name, emails)
-    @name = name
-    @emails = emails
-  end
+  # your class from the last exercise
 end
 
 class MailboxTextFormatter
-  def initialize(mailbox)
-    @mailbox = mailbox
-  end
+  # fill in this class body
 end
 
 emails = [

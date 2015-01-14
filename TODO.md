@@ -23,3 +23,7 @@ Notes:
 * Bonus: calling methods is also referred as "sending messages", the method `send`
 * Bonus: default arguments
 * Bonus: splat operator for assignment and arguments
+
+
+If local scopes are like rooms in a house, then instance variables are visible
+in every room in the house.

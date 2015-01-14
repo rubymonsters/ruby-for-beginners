@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,600,400);
+
 ::-moz-selection { color: white; background: $red; text-shadow: none; }
 ::selection      { color: white; background: $red; text-shadow: none; }
 
@@ -19,7 +21,7 @@ html, body {
 body {
   position: relative;
   background: #fff;
-  font-family: 'Helvetica Neue', helvetica, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', helvetica, sans-serif;
   line-height: 1.5;
   color: #333;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
@@ -27,11 +29,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Helvetica Neue', helvetica, sans-serif;
   font-weight: normal;
   margin: 1rem 0;
 }
-h1 { font-size: 2.250rem; } // 36px
+h1 { font-size: 2.750rem; margin-bottom: 2rem; } // 36px
 h2 { font-size: 1.50rem;  } // 24px
 h3 { font-size: 1.313rem; } // 21px
 h4 { font-size: 1.125rem; font-weight: bold; } // 18px

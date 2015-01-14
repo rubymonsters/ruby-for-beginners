@@ -1,7 +1,8 @@
 # Reading from a CSV file
 
-So far our program has all the email data hardcoded. Obviously that's not a
-very useful for a real world program.
+So far our program has all the email data hardcoded: All the data is baked
+right into our code. Everytime you run it, it will display all the same emails.
+Obviously that's not a very useful for a real world program.
 
 Let's change this to read our data from an external data source instead.
 
@@ -50,17 +51,33 @@ and have a method `read`, which returns the emails array.
 In the end that part of the code should read:
 
 ```ruby
+class Email
+  # your class from the last exercise
+end
+
+class Mailbox
+  # your class from the last exercise
+end
+
+class MailboxHtmlFormatter
+  # your class from the last exercise
+end
+
 class EmailsCsvStore
   def initialize(filename)
+    # fill in this method
   end
 
   def read
+    # fill in this method
   end
 end
 
 store = EmailsCsvStore.new('emails.csv')
 emails = store.read
 mailbox = Mailbox.new("Ruby Study Group", emails)
-formatter = ...
+formatter = MailboxHtmlFormatter.new(mailbox)
+
+# your code from the last exercise, writing the file
 ```
 

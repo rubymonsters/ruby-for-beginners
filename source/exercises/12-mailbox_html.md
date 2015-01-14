@@ -1,12 +1,16 @@
 # The Mailbox Html Formatter
 
 One question that may have come up while working on the mailbox text formatter
-exercise is: Why would we have a separate class for formatting the ASCII table,
-that is, a plain text table that uses characters like `+`, `-`, and `|`.
+exercise is:
+
+Why would we have a separate class for formatting the ASCII table (that is, a
+plain text table that uses characters like `+`, `-`, and `|`)?
 
 The reason is: We want each one of our classes to encapsulate one concept that
 is useful in our application. We also say: each one of our classes should be
-*concerned* with one responsibility. An email vaguely resembles the concept of
+*concerned* with one responsibility. 
+
+An email vaguely resembles the concept of
 an analog letter, written on paper: some message is being sent from one person
 to another. Nowadays everyone knows what an email is: it stores all information
 about this particular message. The same is true for mailboxes, which are
@@ -21,7 +25,7 @@ one other advantage is: We can now easily implement other formatter classes
 that format our emails in a different way, suitable to be displayed in other
 media.
 
-That's what this exercise is about: We want to display our mailbox contents
+And that's what this exercise is about: We want to display our mailbox contents
 in HTML, the format that browsers like to use. This will be our first step
 towards learning how to build a web application.
 
@@ -29,13 +33,13 @@ Before we get to that, we'd like to point out one other aspect, that you'll
 remember when we get to talk about the architecture that Rails use to structure
 and separate concerns, called "model, view, controller".
 
-* The two classes `Email` and `Mailbox` in your application are models: they
+* The two classes `Email` and `Mailbox` in your application are *models*: they
   are concerned with modelling those "real-world" things that your users are
-  concerned with. They want to work with emails.
-* The class `MailboxTextFormatter` on the other hand is a view: It is used in
+  interested in: they want to work with emails.
+* The class `MailboxTextFormatter` on the other hand is a *view*: It is used in
   order to generate a certain representation, in a format that is suitable to a
   certain medium (the terminal, in our case).
-* You don't have a controller class so far, but the little bit of code at the
+* You don't have a *controller* class so far, but the little bit of code at the
   end of the file does what a controller usually would do: it generates some
   models (the emails, and the mailbox objects) and passes them to the view (the
   formatter) in order to be rendered into something that can then be returned
@@ -46,23 +50,15 @@ except that our formatter class now will be called `MailboxHtmlFormatter`:
 
 ```ruby
 class Email
-  def initialize(subject, headers)
-    @subject = subject
-    @headers = headers
-  end
+  # your class from the last exercise
 end
 
 class Mailbox
-  def initialize(name, emails)
-    @name = name
-    @emails = emails
-  end
+  # your class from the last exercise
 end
 
-class MailboxTextFormatter
-  def initialize(mailbox)
-    @mailbox = mailbox
-  end
+class MailboxHtmlFormatter
+  # fill in this class body
 end
 
 emails = [
@@ -123,15 +119,16 @@ Your goal is to complete the code in a way so it outputs the following:
 </html>
 ```
 
-Does that look scary? A little bit, maybe. At the very least it's probably fair
+Does that look scary? A little bit, maybe. It's probably fair
 to say that manually writing HTML isn't very popular amonst most programmers.
 Therefore there are quite a few tools that make our lives easier. And your task
 is to write such a tool.
 
-Also, this exercise should actually be easier for you to complete. You already
-have a bunch of practice in iterating over emails, and working with arrays and
-strings. And this time, you don't need to deal with the maximum length of
-strings per column. You can just interpolate things together.
+Also, this exercise should actually be easier for you to complete than the
+previous one. You already have a bunch of practice in iterating over emails,
+and working with arrays and strings. And this time, you don't need to deal with
+the maximum length of strings per column. You can just interpolate things
+together.
 
 
 

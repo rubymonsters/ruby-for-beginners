@@ -11,6 +11,7 @@ the last line: instead of passing the HTML to `puts` you should be passing it
 to a different method (which you will need to find), so that running your
 program generates the file that we are after.
 
-Opening that file in the browser should then render something like this:
+When you open that file in a text editor you should see the same HTML. When
+you open it in your browser it should look like this:
 
 ![image](https://cloud.githubusercontent.com/assets/2208/5602614/5ac2058c-935a-11e4-9c01-7ff9ec3b66cb.png)
