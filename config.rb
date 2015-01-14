@@ -1,4 +1,4 @@
-require 'middleman-navtree'
+require 'middleman_toc'
 
 set :layouts_dir, '/layouts'
 set :css_dir, 'assets/stylesheets'
@@ -22,14 +22,7 @@ activate :relative_assets
 activate :minify_css
 activate :minify_javascript
 activate :asset_hash
-
-activate :navtree do |options|
-  options.ignore_files = ['CNAME', '404.md']
-  options.ignore_dir = ['assets', 'layouts']
-  options.promote_files = ['index.md']
-  options.home_title = 'Ruby For Beginners'
-  options.ext_whitelist = ['.md', '.markdown', '.mkd']
-end
+activate :toc
 
 helpers do
   def discover_page_title(page = current_page)

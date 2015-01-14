@@ -15,23 +15,33 @@
   </head>
 
   <body>
-    <nav class="page-nav"><%= previous_link(data.tree) %></nav>
-    <nav class="page-nav"><%= next_link(data.tree) %></nav>
+    <nav class="page-nav"><%= previous_link %></nav>
+    <nav class="page-nav"><%= next_link %></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-          <%= tree_to_html(data.tree) %>
+          <%= toc %>
         </ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
         <%= yield %>
-        <nav class="page-nav"><%= previous_link(data.tree) %></nav>
-        <nav class="page-nav"><%= next_link(data.tree) %></nav>
+        <nav class="page-nav"><%= previous_link %></nav>
+        <nav class="page-nav"><%= next_link %></nav>
       </article>
     </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonsters">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
 
     <%= javascript_include_tag "/assets/javascripts/modernizr" %>
     <%= javascript_include_tag "/assets/javascripts/monstas" %>

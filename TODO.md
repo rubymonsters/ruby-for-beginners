@@ -24,6 +24,9 @@ Notes:
 * Bonus: default arguments
 * Bonus: splat operator for assignment and arguments
 
+Preface: Explain how the curriculum works (major milestones). Explain in more
+detail that everyone's supposed to go at their own pace, and not doing homework
+is completely acceptable.
 
 If local scopes are like rooms in a house, then instance variables are visible
 in every room in the house.

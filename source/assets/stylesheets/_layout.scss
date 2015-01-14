@@ -191,3 +191,25 @@ article .page-nav {
   border-bottom: 6px solid #000;
   border-color: #ccc;
 }
+
+footer {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer ul {
+  display: inline-block;
+  margin: 0;
+}
+
+footer li {
+  display: inline-block;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #999;
+  text-decoration: none;
+}
+
