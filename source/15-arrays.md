@@ -42,13 +42,13 @@ words = ["one", "two", "three"]
 puts words[1]
 ```
 
-The bit `words[1]` means: from the array `words` get the element at position
+`words[1]` means: from the array `words` get the element at position
 `1`. `puts` will then print this value out to the screen. (`puts` stands for
 "(out-) put string".)
 
 Funnily, this will print out `two`, and not `one`.
 
-Hu? The reason for that is: The first position in an array is 0, not 1. So the
+Huh? The reason for this is: The first position in an array is 0, not 1. So the
 position 1 refers to the second element, not the first one.
 
 In programming books and the Ruby documentation you'll often find the word

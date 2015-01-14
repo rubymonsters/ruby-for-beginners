@@ -9,17 +9,17 @@ is useful in our application. We also say: each one of our classes should be
 *concerned* with one responsibility. An email vaguely resembles the concept of
 an analog letter, written on paper: some message is being sent from one person
 to another. Nowadays everyone knows what an email is: it stores all information
-about this particular message. The same is true for mailboxes, which are being
+about this particular message. The same is true for mailboxes, which are
 used to store a bunch of emails. Formatting a number of emails in order to be
 displayed on a text based terminal is a very different concept, and concern.
 
-Therefor it makes a lot of sense to have three different classes implement each
+Therefore it makes a lot of sense to have three different classes implement each
 one of these concepts, or concerns.
 
-Aside from being comprehensible, and mapping to concepts that we already know,
+Aside from being comprehensible and mapping to concepts that we already know,
 one other advantage is: We can now easily implement other formatter classes
-that format our emails in a different way, suitable to be displayed on other
-mediums.
+that format our emails in a different way, suitable to be displayed in other
+media.
 
 That's what this exercise is about: We want to display our mailbox contents
 in HTML, the format that browsers like to use. This will be our first step
@@ -125,7 +125,7 @@ Your goal is to complete the code in a way so it outputs the following:
 
 Does that look scary? A little bit, maybe. At the very least it's probably fair
 to say that manually writing HTML isn't very popular amonst most programmers.
-Therefor there are quite a few tools that make our lives easier. And your task
+Therefore there are quite a few tools that make our lives easier. And your task
 is to write such a tool.
 
 Also, this exercise should actually be easier for you to complete. You already

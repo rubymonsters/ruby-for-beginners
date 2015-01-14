@@ -20,7 +20,7 @@ an "instance variable".
 The body of the `initialize` method now does nothing else but assign the value
 of the local variable `name` to an instance variable `@name`.
 
-You remember how we said that each method has it's own local scope, which is
+You remember how we said that each method has its own local scope, which is
 created when the method is called, and populated with local variables from the
 arguments list. You have also learned that this scope is erased, and thrown
 away when Ruby exits the method body and returns from the method. And that
@@ -61,6 +61,6 @@ will then print it out:
 As you can see that includes the instance variable `@name` with the value
 `"Ada"`.
 
-You can think of this as that you, as a programmer, create this new person, and
+You can think of this as you, as a programmer, creating this new person, and
 in the moment of its creation, its birth, you also give it a name. Which kind
-of is, how it works with real people, too, isn't it?
+of how it works with real people, too, isn't it?

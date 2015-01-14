@@ -26,7 +26,7 @@ Using this syntax everything between the opening `#{` and closing `}` bits is
 evaluated as Ruby code, and the result of this evaluation will be *embedded
 into* the string surrounding it.
 
-In other words, when Ruby finds the bit `#{name}` in this string, then it will
+In other words, when Ruby finds `#{name}` in this string, then it will
 evaluate the piece of Ruby code `name`. It finds that this is a variable, so it
 returns the value of the variable, which is the string `"Ada"`. So it embeds it
 into the surrounding string `"Hello, #{name}!"`, by replacing `#{name}`.
@@ -57,15 +57,15 @@ gives you a visual clue about the interpolation.
 
 So, why do people prefer string interpolation?
 
-First of all, again, it's a few less letters to type. In our example, that's
-just 5 characters, no big deal. However, consider a longer string, that is
+First of all, again, it's slightly fewer letters to type. In our example, that's
+just 5 characters, no big deal. However, consider a longer string, which is
 constructed using three, four, or more variables. Now this extra space quickly
 adds up, and things wouldn't nicely fit on a single line anymore.
 
-Also, many people find that the syntax reads a better. There's a little bit
+Also, many people find that the syntax reads a bit better. There's a little bit
 less clutter, making it a little bit easier to see what's going on.
 
-One other, albeit pretty neglectable reason is, that string interpolation
+One other, albeit pretty negligible reason is, that string interpolation
 actually uses less resources:
 
 * The code `"Hello, #{name}!"` creates one single new string object, and then
@@ -84,7 +84,7 @@ not used any more. We're only interested in the final result `"Hello, Ada!"`.
 We recommend you get used to using string interpolation, just because this
 is what most developers use.
 
-#### Escpae sequences
+#### Escape sequences
 
 There's one other little difference between single and double-quoted string
 that we should mention while we're at it.

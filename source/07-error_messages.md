@@ -3,20 +3,20 @@
 *Your new best friends*
 
 As programmers we want to build things that work. When we do exercises we want
-to figure out the solution to the given problem. Seeing error messages therefor
+to figure out the solution to the given problem. Seeing error messages therefore
 has a negative connotation to it: we haven't managed to get it right! Right?
 
-Well, yes. But also, no. Errors can also indicate progress. Often times error
+Well, yes. But also, no. Errors can also indicate progress. Often error
 messages indicate that we've done the right first step, and now have to figure
 out the right next step.
 
 Whenever you find an error message printed on your terminal, don't fret.
-Instead, appreciate it. Read it carefully. Ruby is trying to give you a hand,
+Instead, appreciate it. Read it carefully. Ruby is trying to give you a hand
 and help. Normally an error message tells you exactly what went wrong in your
 code, and where. Once you've understood what has happened look at your code and
 try to understand why it happened, and how you can fix it.
 
-Often times, when you fixed one thing, you'll get a different error message.
+Often, when you fixed one thing, you'll get a different error message.
 That's progress. Rinse and repeat until your code does what you want.
 
 For a beginner Ruby error messages can sometimes be hard to read. There are

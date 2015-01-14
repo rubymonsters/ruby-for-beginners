@@ -27,7 +27,7 @@ puts number
 
 This will output the number `14`.
 
-In praxis, instead of saying that we "give the name `number` to the result",
+In practice, instead of saying that we "give the name `number` to the result",
 we usually say that we "assign the result to the variable `number`". From then
 on we can say that "the variable number is assigned 14" (in our example).
 
@@ -44,7 +44,7 @@ value Ruby will first look at the right hand side, and evaluate the expression
 `number`. Since this is a variable, the expression simply evaluates to the
 value that was assigned to the variable on the first line.
 
-In Ruby, variables are created the moment you use them, by the way of assigning
+In Ruby, variables are created the moment you use them, by way of assigning
 something to them. You don't need to declare them as in other languages, which
 is pretty convenient.
 
@@ -68,7 +68,7 @@ This, again, would output `14`. Let's walk through it:
   `number` (which is now `12`). The result of this operation (which is `14`) is
   then passed to `puts` which prints it out to the screen.
 
-Of course, no one would actually write this exact code in praxis since you can
+Of course, no one would actually write this exact code in practice since you can
 simply do all this in just one line instead: `puts 2 + 3 * 4`. But sometimes
 you'll find or write code that assigns an initial value to a variable, and then
 keeps working on it on a few more lines. This sometimes is useful to break up

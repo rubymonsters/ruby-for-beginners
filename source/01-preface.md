@@ -3,20 +3,20 @@
 Read this book at your own pace, and do exercises at your own pace.
 
 We recommend reading at least a page a day (ideally more), and taking some more
-time at least once a week next to the weekly meeting on Mondays. It often helps
-to meet with others, have some coffee and cake, and hang out, reading some more
-in this book, or doing a few exercises together.
+time at least once a week in addition to the weekly meeting on Mondays. It often
+helps to meet with others, have some coffee and cake, and hang out, reading some
+more of this book, or doing a few exercises together.
 
 Read the book from beginning to end, and do exercises as you like. If you'd
-rather like to jump right in, you can also skip over the introductional
-chapters, jump to the chapter "Your tools", and read the introductional
+prefer to jump right in, you can also skip over the introductory
+chapters, jump to the chapter "Your tools", and read the introductory
 chapters later. If you already feel familiar with your editor and terminal, and
 know how to use `ruby` to execute a Ruby file, then you can skip over the
 chapter "Your tools", too.
 
 Take notes about whatever questions come up during the week, things that you
-don't understand, and everything else worth mentioning (like, epiphanies that
-you have, or things that you found interesting). Bring your notes to the study
+don't understand, and everything else worth mentioning (for example, epiphanies
+that you have, or things that you found interesting). Bring your notes to the study
 group so we can talk about them in the group.
 
 Please help us improve this book for others: Whenever you find something
@@ -29,7 +29,7 @@ use a lot, later on.)
 ## Resources
 
 We recommend looking at, reading, and working through other resources as well,
-as much as you can. Every beginners book puts things a little different, in a
+as much as you can. Every beginners book puts things a little differently, in a
 different order, and from a different angle.
 
 #### Overview

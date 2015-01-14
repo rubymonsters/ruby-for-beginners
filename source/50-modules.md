@@ -2,15 +2,15 @@
 
 It now makes sense to introduce another language feature in Ruby: modules.
 
-In Ruby, modules are somewhat similar to clases: they are things that hold
-methods, just like classes do. However modules can not be instantiated. I.e.,
-it is not possible to create objects from it. And modules, other than classes,
-therefor do not have a method `new`.
+In Ruby, modules are somewhat similar to classes: they are things that hold
+methods, just like classes do. However, modules can not be instantiated. I.e.,
+it is not possible to create objects from it. And modules, unlike classes,
+therefore do not have a method `new`.
 
 So, what are modules useful for?
 
 Modules can be included into classes, and this makes their methods available on
-the class, just as if we'd copy and paste these methods over to the class
+the class, just as if we'd copied and pasted these methods over to the class
 definition.
 
 This is useful if we have methods that we want to reuse in certain classes, but
@@ -35,8 +35,8 @@ p cookie.cream?
 ```
 
 We still haven't been able to come up with a better minimal example of a module
-and class that makes more sense than this. And we fully admit that this is code
-rather weird. However, it's good enough to quickly explain how modules work :)
+and class that makes more sense than this. And we fully admit that this code
+is rather weird. However, it's good enough to quickly explain how modules work :)
 
 If you run this code it will output `true`. Why is that?
 
@@ -45,8 +45,8 @@ return the value `true`. Now, this module is included into the class `Cookie`.
 So, if we now instantiate a cookie, we can call the method `cream?` on it,
 and it will return the value `true`.
 
-Cool. Let's move on and use this for our `Person` class, which then hopefully
-will make more sense.
+Cool. Let's move on and use this for our `Person` class, which will hopefully
+then make more sense.
 
 Let's assume that our application has other classes that need to encrypt things.
 And we want to keep the exact way *how* we encrypt things, the *implementation*
@@ -103,5 +103,5 @@ the method `encrypted_password` much easier to read. Doesn't it?
 
 We refer to the process of moving some logic (code) from one method to another,
 new method as "extracting a method". In our case we have extracted the method
-`encrypt` from the method `encrypt_password`. Doing so methods usually become
-shorter, and more readable.
+`encrypt` from the method `encrypt_password`. When we do this, methods usually become
+shorter and more readable.

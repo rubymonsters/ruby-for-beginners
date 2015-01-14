@@ -79,6 +79,6 @@ number, string, or array. Instead, it just tells you the name of the class,
 
 Every object has its own, unique, internal object id, and when I ran this code
 on my computer, Ruby has assigned the id `0x007fb2fbe50910`. If you run it,
-you'll get a different one. In praxis, most of the time, you can simply ignore
+you'll get a different one. In practice, most of the time, you can simply ignore
 this id.
 

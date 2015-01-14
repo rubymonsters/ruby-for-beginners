@@ -22,8 +22,8 @@ probably wouldn't even be able to describe it properly. However, we have somehow
 managed to learn this ability and we can now use it.
 
 The point I am trying to make here is: When you last walked up the stairs
-you have been thinking about all sorts of things. Maybe you've been on the phone
-with someone, searched your keys in your pockets, and thought about looking for
+you were thinking about all sorts of things. Maybe you were on the phone
+with someone, searching for your keys in your pockets, and thinking about looking for
 a nice introduction to programming online ... maybe you did all of this at the
 same time. Whatever it was, you did not think about how exactly to bend your
 knees and ankles while trying to maintain your balance and get up to the next
@@ -48,8 +48,8 @@ language, or skill, is a lot about repetition: You basically brainwash yourself
 into being able to form meaningful "sentences" (code) without having to think
 about the concepts that you are using.
 
-Over time, while you repeat basic concepts of Ruby over and over again (by the
-way of doing excercises, and writing code) you will notice that things become
+Over time, while you repeat basic concepts of Ruby over and over again (by
+way of doing exercises and writing code) you will notice that things become
 very natural, and this probably will happen much quicker than you think.
 
 *At first, you will not understand anything. It'll be weird, just like with

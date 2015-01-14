@@ -21,7 +21,7 @@ p array
 This will output `[1, 2, 3]` and then `[3, 2, 1]`. So we see that the original
 array is still the same.
 
-Often times questions need another bit of information passed. E.g., we can ask
+Often questions need another bit of information passed. E.g., we can ask
 a string *Do you start with this character?*, and we'll need to pass the
 character that we are talking about: `"a string".start_with?("a")`. The answer
 to this question will be `true`. Or if we ask an array if it includes a certain

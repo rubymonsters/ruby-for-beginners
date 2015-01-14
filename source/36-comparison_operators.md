@@ -17,12 +17,12 @@ same objects.  E.g. while evaluating the expression `"A" == "A"` Ruby will
 actually create two different string objects which both contain a single
 character `A`.
 
-In praxis this is almost always what you want. For the rare case when you
+In practice this is almost always what you want. For the rare case when you
 actually need to check if two objects are the same object there's the method
 `equal?`. E.g., `"A".equal?("A")` returns `false`.
 
-Other comparison operators are: lesser `<` , lesser or equal `<=`, greater `>`,
-and greater or equal `>=`. They also work on numbers and strings, in the way
+Other comparison operators are: less than `<` , less than or equal `<=`, greater than `>`,
+and greater than or equal `>=`. They also work on numbers and strings, in the way
 you'll expect it. Open IRB and try a few combinations on numbers and strings.
 
 Comparison operators most often are used in order to formulate conditions

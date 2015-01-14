@@ -1,7 +1,7 @@
 # The Mailbox Text Formatter
 
 The mailbox exercise is a milestone in the beginners group curriculum, and it
-may take a little bit longer to complete it. That is fine, and, to some extend,
+may take a little bit longer to complete it. That is fine, and, to some extent,
 the point.
 
 Fill in and complete the following class definitions.
@@ -62,12 +62,12 @@ with someone else. We found pairs to work best, and a three person team would
 be better than doing it on your own.
 
 Try to come up with a working solution first. It doesn't matter how elegant,
-generic, or pretty it is. Whatever produces the required output is find for a
+generic, or pretty it is. Whatever produces the required output is fine for a
 first solution.
 
 Then, later, look at your code, and try to improve it by cleaning up everything
 that you don't like, or deam ugly.
 
-Eventually, one goal to aim at would be: Adding another column to the table
+Eventually, one goal to aim for would be: Adding another column to the table
 only requires mimimal changes, e.g. changes to one or two places in your
 formatter class.

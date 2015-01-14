@@ -12,7 +12,7 @@ through it under the microscope.
 
 For convenience we've now added line numbers, like your editor does. We have
 also added parentheses for the method call to `puts`, to make this more
-obvious, even though in praxis we recommend against this:
+obvious, even though in practice we recommend against this:
 
 ```ruby
 1 | def add_two(number)
@@ -53,7 +53,7 @@ passed, the number `3`, to this variable.
 Now Ruby is ready to evaluate line 2. It finds that we are using the operator
 `+`, on the value that is assigned to the variable `number`, which is `3`. In
 order to do that Ruby first evaluates the thing that is on the right hand side
-of the operator, which in our example, again, is a number. Ruby will therefor
+of the operator, which in our example, again, is a number. Ruby will therefore
 create the number (an instance of the class `Fixnum`), this time with the value
 `2`.
 
