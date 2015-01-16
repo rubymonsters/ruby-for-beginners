@@ -97,9 +97,27 @@ code:before, code:after {
     font-weight: bold;
   }
 
-  .active a {
+  ul {
+    display: none;
+  }
+
+  ul.active {
+    display: block;
+  }
+
+  li.active a {
     color: $red;
-    font-weight: bold;
+  }
+
+  li.directory:before {
+    content: '+';
+    position: absolute;
+    left: -1rem;
+    color: #ccc;
+  }
+
+  li.directory.active:before {
+    content: '-';
   }
 
   a:hover {

@@ -34,12 +34,12 @@ article {
   }
 
   ul ul {
-    margin: 0.5rem 0 0 1rem;
+    margin: 0rem 0 0 1rem;
   }
 
   li {
     line-height: 1.2rem;
-    padding: 2px 0 8px 0;
+    padding: 0 0 0.5rem 0;
   }
 
   a, span {
@@ -94,7 +94,7 @@ body > .page-nav {
       color: #444;
     }
 
-    &.previous:before {
+    &.prev:before {
       content: "\f104";
       left: 0;
       font-size: 5rem;
@@ -133,7 +133,7 @@ article .page-nav {
       border: 0 solid $red;
     }
 
-    &.previous {
+    &.prev {
       margin: 0 20px 0 15px;
       padding: 0 5px 0 17px;
 

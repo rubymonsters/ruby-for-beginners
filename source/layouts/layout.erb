@@ -15,21 +15,19 @@
   </head>
 
   <body>
-    <nav class="page-nav"><%= previous_link %></nav>
-    <nav class="page-nav"><%= next_link %></nav>
+    <nav class="page-nav"><%= prev_page %></nav>
+    <nav class="page-nav"><%= next_page %></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
-        <ul>
-          <%= toc %>
-        </ul>
+        <%= toc %>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
         <%= yield %>
-        <nav class="page-nav"><%= previous_link %></nav>
-        <nav class="page-nav"><%= next_link %></nav>
+        <nav class="page-nav"><%= prev_page %></nav>
+        <nav class="page-nav"><%= next_page %></nav>
       </article>
     </div>
 
@@ -39,6 +37,7 @@
         <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
         <li><a href="https://twitter.com/rubymonsters">Twitter</a></li>
         <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
         <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
       </ul>
     </footer>
