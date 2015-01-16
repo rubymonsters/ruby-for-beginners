@@ -110,39 +110,43 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus-1/28-operator_methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus_1/28-operator_methods.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus-1/29-predicate_methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus_1/29-predicate_methods.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus-1/30-other_methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus_1/30-other_methods.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus-1/31-questions_commands.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus_1/31-questions_commands.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus-1/32-conditionals.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus_1/32-conditionals.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus-1/33-operators.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus_1/33-operators.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus-1/34-arithmetical_operators.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus_1/34-arithmetical_operators.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus-1/35-logical_operators.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus_1/35-logical_operators.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus-1/36-comparison_operators.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus_1/36-comparison_operators.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/26-bonus_1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -206,6 +210,10 @@
       <priority>0.5</priority>
     </url>
     <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/48-bonus_2.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/52-good_names.html</loc>
       <priority>0.5</priority>
     </url>
@@ -263,10 +271,6 @@
     </url>
     <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/53-exercises/67-mailbox_erb.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/53-exercises/68-ex_mailbox_sinatra.html</loc>
       <priority>0.5</priority>
     </url>
     <url>

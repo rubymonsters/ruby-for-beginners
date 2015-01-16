@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Built-in classes | Ruby for Beginners</title>
+    <title>Arithmetical operators | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-a94f55ea.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-a94f55ea.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/10-object_oriented_programming.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/11-built_in_classes/12-numbers.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/26-bonus_1/33-operators.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/26-bonus_1/35-logical_operators.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -35,8 +35,8 @@
   </ul>
   <li class=""><a href="/09-your_tools.html">Your tools</a></li>
   <li class=""><a href="/10-object_oriented_programming.html">Object-oriented programming</a></li>
-  <li class="active directory"><a href="/11-built_in_classes.html">Built-in classes</a></li>
-  <ul class="active">
+  <li class="directory"><a href="/11-built_in_classes.html">Built-in classes</a></li>
+  <ul>
       <li class=""><a href="/11-built_in_classes/12-numbers.html">Numbers</a></li>
       <li class=""><a href="/11-built_in_classes/13-strings.html">Strings</a></li>
       <li class=""><a href="/11-built_in_classes/14-symbols.html">Symbols</a></li>
@@ -59,14 +59,14 @@
       <li class=""><a href="/25-everything_an_object/27-object_methods.html">Calling methods</a></li>
   </ul>
   <li class="directory"><a href="/26-bonus_1.html">Methods &amp; Operators (bonus)</a></li>
-  <ul>
+  <ul class="active">
       <li class=""><a href="/26-bonus_1/28-operator_methods.html">Operators are methods</a></li>
       <li class=""><a href="/26-bonus_1/29-predicate_methods.html">Predicate methods</a></li>
       <li class=""><a href="/26-bonus_1/30-other_methods.html">Lots of other methods</a></li>
       <li class=""><a href="/26-bonus_1/31-questions_commands.html">Questions and commands</a></li>
       <li class=""><a href="/26-bonus_1/32-conditionals.html">Conditionals</a></li>
       <li class=""><a href="/26-bonus_1/33-operators.html">Operators</a></li>
-      <li class=""><a href="/26-bonus_1/34-arithmetical_operators.html">Arithmetical operators</a></li>
+      <li class="active"><a href="/26-bonus_1/34-arithmetical_operators.html">Arithmetical operators</a></li>
       <li class=""><a href="/26-bonus_1/35-logical_operators.html">Logical operators</a></li>
       <li class=""><a href="/26-bonus_1/36-comparison_operators.html">Comparison operators</a></li>
   </ul>
@@ -116,27 +116,55 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Built-in classes</h1>
+        <h1>Arithmetical operators</h1>
 
-<p>Ruby comes with lots of things already baked in, and provides you with tons
-of tools to use, and hit the road running.</p>
-
-<p>We will only look at some of the most widely used types of &ldquo;things&rdquo;, that is,
-classes, and look at some of the ways they can be used. These are:</p>
+<p>For numbers, the operators <code>+</code> and <code>*</code> obviously mean the mathematical
+operations of adding and multiplying two numbers. Of course there are other
+arithmetical operators. Here&rsquo;s a full list:</p>
 
 <ul>
-<li>Numbers</li>
-<li>Strings</li>
-<li>Symbols</li>
-<li>Arrays</li>
-<li>Hashes</li>
+<li><code>+</code> - addition</li>
+<li><code>-</code> - subtraction</li>
+<li><code>*</code> - multiplication</li>
+<li><code>/</code> - division</li>
+<li><code>**</code> - exponentiation</li>
+<li><code>%</code> - modulus (the rest of a division, e.g. <code>5 % 2</code> returns <code>1</code>)</li>
 </ul>
 
-<p>A little later we will then also talk about 3 more types, which are: true,
-false, and nil (nothing).</p>
+<p>However, some of these methods are also defined on other objects, like strings
+and arrays.</p>
 
-        <nav class="page-nav"><a href="/10-object_oriented_programming.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/11-built_in_classes/12-numbers.html" class="next">Next</a></nav>
+<p>Try it yourself in IRB:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"&lt;3"</span> <span class="o">+</span> <span class="s2">"!"</span>
+<span class="o">=&gt;</span> <span class="s2">"&lt;3!"</span>
+
+<span class="o">&gt;</span> <span class="s2">"&lt;3"</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="s2">"&lt;3&lt;3&lt;3"</span>
+</code></pre>
+
+<p>As you can see, these operators mean something different for strings. But they
+also make sense, don&rsquo;t they?</p>
+
+<p>Adding one string to another just means that they will be concatenated into one
+longer string. And multiplying a string by a number means repeating it as many
+times.</p>
+
+<p>The same works for arrays:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre>
+
+<p>Again, adding two arrays means combining them into one big array. And
+multiplying an array with a number means getting a big array with the original
+elements repeated.</p>
+
+        <nav class="page-nav"><a href="/26-bonus_1/33-operators.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/26-bonus_1/35-logical_operators.html" class="next">Next</a></nav>
       </article>
     </div>
 
@@ -151,7 +179,7 @@ false, and nil (nothing).</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
   </body>
 </html>
