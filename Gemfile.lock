@@ -1,9 +1,3 @@
-PATH
-  remote: ~/Development/play/middleman-toc
-  specs:
-    middleman-toc (0.0.1)
-      titleize
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,6 +83,8 @@ GEM
     middleman-syntax (2.0.0)
       middleman-core (~> 3.2)
       rouge (~> 1.0)
+    middleman-toc (0.0.1)
+      titleize
     minitest (5.5.0)
     multi_json (1.10.1)
     padrino-helpers (0.12.4)
@@ -138,5 +134,5 @@ DEPENDENCIES
   middleman
   middleman-livereload
   middleman-syntax
-  middleman-toc!
+  middleman-toc
   redcarpet
