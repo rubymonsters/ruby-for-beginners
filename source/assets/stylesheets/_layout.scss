@@ -34,12 +34,15 @@ article {
   }
 
   ul ul {
-    margin: 0rem 0 0 1rem;
+    margin: 0.5rem 0 0 1rem;
   }
 
   li {
     line-height: 1.2rem;
     padding: 0 0 0.5rem 0;
+  }
+  li:last-of-type {
+    padding: 0;
   }
 
   a, span {

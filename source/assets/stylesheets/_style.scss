@@ -97,15 +97,15 @@ code:before, code:after {
     font-weight: bold;
   }
 
-  ul {
+  li ul {
     display: none;
   }
 
-  ul.active {
+  li.expanded ul {
     display: block;
   }
 
-  li.active a {
+  li.active > a {
     color: $red;
   }
 
@@ -116,7 +116,7 @@ code:before, code:after {
     color: #ccc;
   }
 
-  li.directory.active:before {
+  li.directory.expanded:before {
     content: '-';
   }
 
