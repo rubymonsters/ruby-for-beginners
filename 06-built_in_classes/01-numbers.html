@@ -122,11 +122,43 @@
 and it represents the number twelve-point-three-four.</p>
 
 <p>Under the hood, for reasons that are mostly technical, there are actually
-different kinds of numbers. For example there are integer numbers (those
-without a comma and decimal places), and depending on their size there are two
-kinds of them. For floating point numbers there are even more. Unless you are
-super curious, you can perfectly ignore all of that for now, and just think of
-numbers as numbers.</p>
+different kinds of numbers:</p>
+
+<p>For example there are integer numbers (those without a comma and decimal
+places), and depending on their size there are two kinds of them. For floating
+point numbers there are even more. Unless you are super curious, you can
+perfectly ignore all of that for now, and just think of numbers as numbers.</p>
+
+<p>However, when you do calculations with numbers, keep in mind that integer
+numbers (&ldquo;integers&rdquo;) and floating point numbers (&ldquo;floats&rdquo;) are different.</p>
+
+<p>If you do a calculation that starts with an integer you&rsquo;ll eventually always
+get an integer back:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+</code></pre>
+
+<p>And if you start the expression with a float then you&rsquo;ll get a float back:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
+</code></pre>
+
+<p>This is important when you do a division:</p>
+<pre class="highlight ruby"><code><span class="vg">$irb</span>
+<span class="o">&gt;</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">1</span>
+</code></pre>
+
+<p>As you can see any decimal places will be just cut off, since the result needs
+to be an integer number.</p>
+
+<p>However, if you start with a float:</p>
+<pre class="highlight ruby"><code><span class="vg">$irb</span>
+<span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">5</span>
+</code></pre>
 
         <nav class="page-nav"><a href="/06-built_in_classes.html" class="prev">Previous</a></nav>
         <nav class="page-nav"><a href="/06-built_in_classes/02-strings.html" class="next">Next</a></nav>

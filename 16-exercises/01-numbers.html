@@ -118,21 +118,58 @@
         <nav class="menu"><a href="#"></a></nav>
         <h1>Working with Numbers</h1>
 
+<p>In order to start <code>irb</code> open your terminal and type <code>irb</code>, then hit the
+<code>return</code> key (<code>enter</code>). In order to quit <code>irb</code> again (and get back to your
+system shell prompt) you can type <code>exit</code> or press <code>ctrl-d</code>, which does the
+same.</p>
+
+<h2>Exercise 1.1</h2>
+
+<p>In <code>irb</code>, calcluate:</p>
+
 <ul>
-<li>In <code>irb</code>, calculate how many seconds have passed since the beginning of the
-year.</li>
+<li>How many hours are in a year.</li>
+<li>How many minutes are in a decade?</li>
+<li>How many seconds old are you?</li>
 </ul>
 
-<p>Note: At the moment, the following exercises require reading up until the
-chapter &ldquo;Object Methods&rdquo;:</p>
+<h2>Exercise 1.2</h2>
+
+<p>What do you think happens when you combine the following floats and integers?</p>
+
+<p>Try computing these in <code>irb</code>:</p>
 
 <ul>
-<li>Look through the <a href="http://ruby-doc.org/core-2.1.5/Fixnum.html">documentation for integer</a>
-numbers (called <code>Fixnum</code>) and find the methods that tell if a number is odd
-or even.</li>
-<li>In <code>irb</code>, use these methods to find out if certain numbers are odd or even.
-Numbers like <code>0, 1, 2, 99, -502</code> etc.</li>
+<li><code>3.0 / 2</code></li>
+<li><code>3 / 2.0</code></li>
+<li><code>4 ** 2.0</code></li>
+<li><code>4.1 % 2</code></li>
 </ul>
+
+<p>Is the result a float or an integer?</p>
+
+<h2>Exercise 1.3</h2>
+
+<p>Methods are a way of &ldquo;doing something with an object&rdquo;. E.g. in Ruby, numbers
+have two methods that allow you to check whether the number is odd or even.</p>
+
+<p>Look through the <a href="http://ruby-doc.org/core-2.1.5/Fixnum.html">documentation for integer</a>
+numbers (called <code>Fixnum</code>) and find the methods that tell if a number is odd or
+even.</p>
+
+<h2>Exercise 1.4</h2>
+
+<p>In <code>irb</code>, use these methods to find out if certain numbers are odd or even.
+Numbers like <code>0, 1, 2, 99, -502</code> etc.</p>
+
+<p>Hint: You can use a method by appending a dot <code>.</code> and then the method name
+to the object. E.g. <code>-99.abs</code> uses (we also say: &ldquo;calls&rdquo;) the method <code>abs</code> on
+the number <code>-99</code>.  Try for yourself what it does, and google for &ldquo;ruby abs&rdquo; to
+find <a href="http://ruby-doc.org/core-2.0/Numeric.html#method-i-abs">the documentation</a>
+for this method.</p>
+
+<p>Credits: The exercises 1.1 and 1.2 are taken from <a href="http://www.ruby-doc.org/docs/Tutorial/part_01/first_steps.html">Introduction to
+Ruby</a>.</p>
 
         <nav class="page-nav"><a href="/16-exercises.html" class="prev">Previous</a></nav>
         <nav class="page-nav"><a href="/16-exercises/02-strings.html" class="next">Next</a></nav>

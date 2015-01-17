@@ -143,9 +143,11 @@ quickly pop into IRB and ask the object for its methods.</p>
 <p>That&rsquo;s right, <code>methods</code> is a method defined on all objects (just like <code>class</code>,
 and <code>is_a?</code>).</p>
 
-<p>When you call it then it will return an array of symbols, which are all of the
-method names that the object has. It makes sense to sort this array, so it is
-easier to read:</p>
+<p>When you call it then it will <em>return</em> an array of symbols, which are all of
+the method names that the object has. It makes sense to sort this array, so it
+is easier to read. <code>sort</code> is a method that is defined on arrays. So we can
+call the method <code>sort</code> on the array that is returned by the method <code>methods</code>,
+like so:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="nf">methods</span><span class="p">.</span><span class="nf">sort</span>
 <span class="o">=&gt;</span> <span class="p">[:</span><span class="o">*</span><span class="p">,</span> <span class="p">:</span><span class="o">+</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="p">,</span> <span class="ss">:/</span><span class="p">,</span> <span class="ss">:between?</span><span class="p">,</span> <span class="ss">:even?</span><span class="p">,</span> <span class="ss">:odd?</span><span class="p">,</span> <span class="ss">:zero?</span><span class="p">]</span>

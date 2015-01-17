@@ -118,6 +118,8 @@
         <nav class="menu"><a href="#"></a></nav>
         <h1>The Mailbox Html Formatter</h1>
 
+<h2>Separation of concerns</h2>
+
 <p>One question that may have come up while working on the mailbox text formatter
 exercise is:</p>
 
@@ -126,17 +128,19 @@ plain text table that uses characters like <code>+</code>, <code>-</code>, and <
 
 <p>The reason is: We want each one of our classes to encapsulate one concept that
 is useful in our application. We also say: each one of our classes should be
-<em>concerned</em> with one responsibility. </p>
+<em>concerned</em> with one responsibility.</p>
 
-<p>An email vaguely resembles the concept of
-an analog letter, written on paper: some message is being sent from one person
-to another. Nowadays everyone knows what an email is: it stores all information
-about this particular message. The same is true for mailboxes, which are
-used to store a bunch of emails. Formatting a number of emails in order to be
-displayed on a text based terminal is a very different concept, and concern.</p>
+<p>An email vaguely resembles the concept of an analog letter, written on paper:
+some message is being sent from one person to another. Nowadays everyone knows
+what an email is: it stores all information about this particular message. The
+same is true for mailboxes, which are used to store a bunch of emails.
+Formatting a number of emails in order to be displayed on a text based terminal
+is a very different concept, and concern.</p>
 
 <p>Therefore it makes a lot of sense to have three different classes implement each
-one of these concepts, or concerns.</p>
+one of these concepts, or concerns. And it even makes <em>so</em> much sense that it is
+called a design principle in programming: The principle of <a href="http://www.wikiwand.com/en/Separation_of_concerns">separation of
+concerns</a>.</p>
 
 <p>Aside from being comprehensible and mapping to concepts that we already know,
 one other advantage is: We can now easily implement other formatter classes
@@ -146,6 +150,8 @@ media.</p>
 <p>And that&rsquo;s what this exercise is about: We want to display our mailbox contents
 in HTML, the format that browsers like to use. This will be our first step
 towards learning how to build a web application.</p>
+
+<h2>Model, View, Controller</h2>
 
 <p>Before we get to that, we&rsquo;d like to point out one other aspect, that you&rsquo;ll
 remember when we get to talk about the architecture that Rails use to structure
@@ -164,6 +170,11 @@ models (the emails, and the mailbox objects) and passes them to the view (the
 formatter) in order to be rendered into something that can then be returned
 and displayed.</li>
 </ul>
+
+<p>If this doesn&rsquo;t make a whole lot of sense to you at the moment, don&rsquo;t worry.
+You&rsquo;ll understand it more once we build our first Rails application.</p>
+
+<h2>Exercise 12.1</h2>
 
 <p>Ok, now to our exercise. We will basically start over with the same code again,
 except that our formatter class now will be called <code>MailboxHtmlFormatter</code>:</p>

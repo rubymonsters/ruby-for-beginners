@@ -118,6 +118,10 @@
         <nav class="menu"><a href="#"></a></nav>
         <h1>Truthiness</h1>
 
+<h2>Exercise 8.1</h2>
+
+<p>Make a new file <code>8_1-truthiness.rb</code>, and dd the following lines:</p>
+
 <p>This exercise is about validating what we&rsquo;ve learned about truthyness.</p>
 
 <p>You have the following array:</p>
@@ -150,19 +154,22 @@ calling <code>sub(/:.*&gt;/, &quot;&gt;&quot;)</code> on whatever <code>inspect<
 
 <p>Your table should now look like this:</p>
 <pre class="highlight plaintext"><code>value     | true == value
-true      | [true|false]
-false     | [true|false]
-0         | [true|false]
-1         | [true|false]
-""        | [true|false]
-[]        | [true|false]
-#&lt;Object&gt; | [true|false]
-#&lt;Class&gt;  | [true|false]
-#&lt;Module&gt; | [true|false]
+true      | true
+false     | false
+0         | true
+1         | true
+""        | true
+[]        | true
+#&lt;Object&gt; | true
+#&lt;Class&gt;  | true
+#&lt;Module&gt; | true
 </code></pre>
 
-<p>Bonus: Change your code so that it outputs the following table, filling each cell
-with the result that <code>==</code> returns for each combination.</p>
+<h2>Bonus: Exercise 8.2</h2>
+
+<p>Copy your file to a new file <code>8_2-truthiness.rb</code>, and change your code so that
+it outputs the following table. Fill each cell with the result that <code>==</code>
+returns for each combination.</p>
 <pre class="highlight plaintext"><code>          | true      | false      | 0          | 1          | ""         | []         | #&lt;Object&gt; | #&lt;Class&gt;  | #&lt;Module&gt;
 true      |           |            |            |            |            |            |           |           |
 false     |           |            |            |            |            |            |           |           |

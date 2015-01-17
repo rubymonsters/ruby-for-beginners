@@ -146,6 +146,56 @@ programmers had thought about text before: as characters lined up on strings.</p
 <p>Luckily, nowadays, in Ruby and any other modern language, you can just think
 about strings as text.</p>
 
+<h3>Things you can do with strings</h3>
+
+<p>Here are a few things you can do with strings.</p>
+
+<p>For example, you can glue them together by using <code>+</code>. We also call this
+<a href="http://www.wikiwand.com/en/Concatenation">concatenation</a>.</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"snow"</span> <span class="o">+</span> <span class="s2">"ball"</span>
+<span class="o">=&gt;</span> <span class="s2">"snowball"</span>
+
+<span class="o">&gt;</span> <span class="s2">"hi "</span> <span class="o">+</span> <span class="s2">"hi "</span> <span class="o">+</span> <span class="s2">"hi"</span>
+<span class="o">=&gt;</span> <span class="s2">"hihihi"</span>
+</code></pre>
+
+<p>The last operation can also be done by using <code>*</code>, like so:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"hi"</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="s2">"hihihi"</span>
+</code></pre>
+
+<p>I.e. multiplying a string by a number in Ruby means repeating the string as
+many times.</p>
+
+<p>The following examples are worth noting, too:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"1"</span> <span class="o">+</span> <span class="s2">"1"</span> <span class="o">+</span> <span class="s2">"1"</span>
+<span class="o">=&gt;</span> <span class="s2">"111"</span>
+
+<span class="o">&gt;</span> <span class="s2">"1"</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="s2">"111"</span>
+</code></pre>
+
+<p>This demonstrates that Ruby behaves the same for strings that contain nothing
+but numbers.</p>
+
+<p>Some other things that you can do with strings that you can try yourself in
+<code>irb</code>:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="s2">"hello"</span><span class="p">.</span><span class="nf">upcase</span>
+<span class="o">=&gt;</span> <span class="s2">"HELLO"</span>
+
+<span class="o">&gt;</span> <span class="s2">"hello"</span><span class="p">.</span><span class="nf">capitalize</span>
+<span class="o">=&gt;</span> <span class="s2">"Hello"</span>
+
+<span class="o">&gt;</span> <span class="s2">"hello"</span><span class="p">.</span><span class="nf">length</span>
+<span class="o">=&gt;</span> <span class="mi">5</span>
+
+<span class="o">&gt;</span> <span class="s2">"hello"</span><span class="p">.</span><span class="nf">reverse</span>
+<span class="o">=&gt;</span> <span class="s2">"olleh"</span>
+</code></pre>
+
         <nav class="page-nav"><a href="/06-built_in_classes/01-numbers.html" class="prev">Previous</a></nav>
         <nav class="page-nav"><a href="/06-built_in_classes/03-symbols.html" class="next">Next</a></nav>
       </article>

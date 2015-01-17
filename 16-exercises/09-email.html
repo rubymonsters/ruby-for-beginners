@@ -118,8 +118,11 @@
         <nav class="menu"><a href="#"></a></nav>
         <h1>The Email class</h1>
 
-<p>Write a class <code>Email</code> that has a <code>subject</code>, <code>date</code>, and <code>from</code> attribute. Make
-it so that these attributes can be populated through <code>new</code> and <code>initialize</code>.</p>
+<h2>Exercise 9.1</h2>
+
+<p>In a new file <code>09-1_email.rb</code> write a class <code>Email</code> that has a <code>subject</code>,
+<code>date</code>, and <code>from</code> attribute. Make it so that these attributes can be populated
+through <code>new</code> and <code>initialize</code>.</p>
 
 <p>The following code</p>
 <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Email</span>
@@ -139,10 +142,14 @@ From:    Ferdous
 Subject: Homework this week
 </code></pre>
 
-<p>Once you have this class, change it so that the <code>initialize</code> method now takes
-a <code>subject</code> string, and a <code>headers</code> hash. This is then more in line with how
-actual emails are stored in the real world: the values <code>date</code> and <code>from</code> are
-stored on a hash, which is called the &ldquo;email headers&rdquo;.</p>
+<h2>Exercise 9.2</h2>
+
+<p>Once you have this class, copy your file to <code>09-2_email.rb</code>.</p>
+
+<p>Change your class so that the <code>initialize</code> method now takes a <code>subject</code> string,
+and a <code>headers</code> hash. This is then more in line with how actual emails are
+stored in the real world: the values <code>date</code> and <code>from</code> are stored on a hash,
+which is called the &ldquo;email headers&rdquo;.</p>
 
 <p>Doing so, in the code above the only line you should change is the one that
 instantiates the email object, which should now read:</p>
