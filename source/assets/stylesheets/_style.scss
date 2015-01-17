@@ -126,3 +126,10 @@ code:before, code:after {
   }
 }
 
+// overwrite the default from syntax because we want to use bash prompts `$`,
+// but still also highlight as Ruby code
+.highlight .err {
+  color: #000;
+  font-weight: normal;
+  background-color: transparent;
+}

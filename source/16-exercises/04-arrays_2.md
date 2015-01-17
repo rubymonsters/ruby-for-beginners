@@ -1,14 +1,15 @@
 # Working with Arrays (2)
 
 Note: At the moment these exercises require reading up until "Block return values".
+You should know how to use the method `collect` on arrays.
 
 Before you get started, make sure you have your text editor and terminal open, and
 you have navigated to your exercises directory in the terminal. E.g. `cd
 ~/ruby-for-beginners/exercises`.
 
-## Exercise 2.1
+## Exercise 4.1
 
-Create a new, empty file. Save it as `arrays_1_2.rb`. Fill in the following line:
+Create a new, empty file. Save it as `04_1-arrays.rb`. Fill in the following line:
 
 ```ruby
 words = ["one", "two", "three", "four", "five"]
@@ -22,9 +23,9 @@ So that you get the following output:
 ["one", "three", "five"]
 ```
 
-## Exercise 2.2
+## Exercise 4.2
 
-Copy your file to a new file: `cp arrays_2_1.rb arrays_2_2.rb`, then open this
+Copy your file to a new file: `cp 04_1-arrays.rb 04_2-arrays.rb`, then open this
 new file.
 
 Now change your code so that you get the following output:
@@ -33,9 +34,11 @@ Now change your code so that you get the following output:
 ["One", "Three", "Five"]
 ```
 
-## Exercise 2.3
+Hint: Google for `ruby string uppercase first letter`
 
-Copy your file to a new file: `cp arrays_2_2.rb arrays_2_3.rb`, then open this
+## Exercise 4.3
+
+Copy your file to a new file: `cp 04_2-arrays.rb 04_3-arrays.rb`, then open this
 new file.
 
 Now change your code so that you get the following output:
@@ -44,9 +47,11 @@ Now change your code so that you get the following output:
 ["One <3", "Three <3", "Five <3"]
 ```
 
-## Exercise 2.4
+Hint: Use string interpolation for this.
 
-Copy your file to a new file: `cp arrays_2_3.rb arrays_2_4.rb`, then open this
+## Exercise 4.4
+
+Copy your file to a new file: `cp 04_3-arrays.rb 04_4-arrays.rb`, then open this
 new file.
 
 Now change your code so that you get the following output:
@@ -55,12 +60,24 @@ Now change your code so that you get the following output:
 ["One <3", "Three <3<3<3", "Five <3<3<3<3<3"]
 ```
 
+Hint:
+
+## Exercise 4.5
+
+Copy your file to a new file: `cp 04_4-arrays.rb 04_5-arrays.rb`, then open this
+new file.
+
 Now change your code so that you get the following output (hint: again, that's
 now a string, not an array):
 
 ```
 One <3, Three <3<3<3, Five <3<3<3<3<3
 ```
+
+## Exercise 4.6
+
+Copy your file to a new file: `cp 04_5-arrays.rb 04_6-arrays.rb`, then open this
+new file.
 
 Now change your code so that you get the following output, using the newline
 character `"\n"`:
@@ -70,6 +87,11 @@ One <3
 Three <3<3<3
 Five <3<3<3<3<3
 ```
+
+## Exercise 4.7
+
+Copy your file to a new file: `cp 04_6-arrays.rb 04_7-arrays.rb`, then open this
+new file.
 
 Now change your code so that you get the following output, aligning the second
 column:
