@@ -1,7 +1,10 @@
 # The Email class
 
-Write a class `Email` that has a `subject`, `date`, and `from` attribute. Make
-it so that these attributes can be populated through `new` and `initialize`.
+## Exercise 9.1
+
+In a new file `09-1_email.rb` write a class `Email` that has a `subject`,
+`date`, and `from` attribute. Make it so that these attributes can be populated
+through `new` and `initialize`.
 
 The following code
 
@@ -25,10 +28,14 @@ From:    Ferdous
 Subject: Homework this week
 ```
 
-Once you have this class, change it so that the `initialize` method now takes
-a `subject` string, and a `headers` hash. This is then more in line with how
-actual emails are stored in the real world: the values `date` and `from` are
-stored on a hash, which is called the "email headers".
+## Exercise 9.2
+
+Once you have this class, copy your file to `09-2_email.rb`.
+
+Change your class so that the `initialize` method now takes a `subject` string,
+and a `headers` hash. This is then more in line with how actual emails are
+stored in the real world: the values `date` and `from` are stored on a hash,
+which is called the "email headers".
 
 Doing so, in the code above the only line you should change is the one that
 instantiates the email object, which should now read:

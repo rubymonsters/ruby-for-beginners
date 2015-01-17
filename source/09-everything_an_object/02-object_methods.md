@@ -30,9 +30,11 @@ quickly pop into IRB and ask the object for its methods.
 That's right, `methods` is a method defined on all objects (just like `class`,
 and `is_a?`).
 
-When you call it then it will return an array of symbols, which are all of the
-method names that the object has. It makes sense to sort this array, so it is
-easier to read:
+When you call it then it will *return* an array of symbols, which are all of
+the method names that the object has. It makes sense to sort this array, so it
+is easier to read. `sort` is a method that is defined on arrays. So we can
+call the method `sort` on the array that is returned by the method `methods`,
+like so:
 
 ```ruby
 $ irb

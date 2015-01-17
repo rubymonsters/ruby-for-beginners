@@ -1,6 +1,6 @@
 # Reading from a CSV file
 
-So far our program has all the email data hardcoded: All the data is baked
+So far our program has all the email data *hardcoded*: All the data is baked
 right into our code. Everytime you run it, it will display all the same emails.
 Obviously that's not a very useful for a real world program.
 
@@ -12,6 +12,8 @@ times semicolons are used as a separator), and it is something that
 spreadsheets can read and export. Being able to work with CSV can be pretty
 handy: just write a little Ruby script, and filter that data, or work with it
 otherwise.
+
+## Exercise 14.1
 
 Building on the same code from the last exercises, your objective is to
 read the email data from a file `emails.csv`. This file should be stored

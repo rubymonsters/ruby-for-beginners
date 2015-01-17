@@ -1,10 +1,13 @@
 # The Mailbox Text Formatter
 
-The mailbox exercise is a milestone in the beginners group curriculum, and it
-may take a little bit longer to complete it. That is fine, and, to some extent,
-the point.
+The mailbox text formatter exercise is a milestone in the beginners group
+curriculum, and it may take a little bit longer to complete it. That is fine,
+and, to some extent, the point :)
 
-Fill in and complete the following class definitions.
+## Exercise 11.1
+
+Make a new file `11-1_mailbox_text.rb`. Fill in and complete the following
+class definitions:
 
 ```ruby
 class Email

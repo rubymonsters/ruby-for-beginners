@@ -1,5 +1,9 @@
 # Truthiness
 
+## Exercise 8.1
+
+Make a new file `8_1-truthiness.rb`, and dd the following lines:
+
 This exercise is about validating what we've learned about truthyness.
 
 You have the following array:
@@ -38,19 +42,22 @@ Your table should now look like this:
 
 ```
 value     | true == value
-true      | [true|false]
-false     | [true|false]
-0         | [true|false]
-1         | [true|false]
-""        | [true|false]
-[]        | [true|false]
-#<Object> | [true|false]
-#<Class>  | [true|false]
-#<Module> | [true|false]
+true      | true
+false     | false
+0         | true
+1         | true
+""        | true
+[]        | true
+#<Object> | true
+#<Class>  | true
+#<Module> | true
 ```
 
-Bonus: Change your code so that it outputs the following table, filling each cell
-with the result that `==` returns for each combination.
+## Bonus: Exercise 8.2
+
+Copy your file to a new file `8_2-truthiness.rb`, and change your code so that
+it outputs the following table. Fill each cell with the result that `==`
+returns for each combination.
 
 ```
           | true      | false      | 0          | 1          | ""         | []         | #<Object> | #<Class>  | #<Module>

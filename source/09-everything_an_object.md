@@ -7,5 +7,3 @@ Well, although Rubyist like saying this, it isn't actually completely true:
 not *everything* is an object, but almost everything, and that's good enough to
 know for now.
 
-We are going to walk through a few things you can do with objects, and their
-methods, and discuss a couple different types of methods.

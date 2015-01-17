@@ -1,5 +1,7 @@
 # The Mailbox Html Formatter
 
+## Separation of concerns
+
 One question that may have come up while working on the mailbox text formatter
 exercise is:
 
@@ -8,17 +10,19 @@ plain text table that uses characters like `+`, `-`, and `|`)?
 
 The reason is: We want each one of our classes to encapsulate one concept that
 is useful in our application. We also say: each one of our classes should be
-*concerned* with one responsibility. 
+*concerned* with one responsibility.
 
-An email vaguely resembles the concept of
-an analog letter, written on paper: some message is being sent from one person
-to another. Nowadays everyone knows what an email is: it stores all information
-about this particular message. The same is true for mailboxes, which are
-used to store a bunch of emails. Formatting a number of emails in order to be
-displayed on a text based terminal is a very different concept, and concern.
+An email vaguely resembles the concept of an analog letter, written on paper:
+some message is being sent from one person to another. Nowadays everyone knows
+what an email is: it stores all information about this particular message. The
+same is true for mailboxes, which are used to store a bunch of emails.
+Formatting a number of emails in order to be displayed on a text based terminal
+is a very different concept, and concern.
 
 Therefore it makes a lot of sense to have three different classes implement each
-one of these concepts, or concerns.
+one of these concepts, or concerns. And it even makes *so* much sense that it is
+called a design principle in programming: The principle of [separation of
+concerns](http://www.wikiwand.com/en/Separation_of_concerns).
 
 Aside from being comprehensible and mapping to concepts that we already know,
 one other advantage is: We can now easily implement other formatter classes
@@ -28,6 +32,8 @@ media.
 And that's what this exercise is about: We want to display our mailbox contents
 in HTML, the format that browsers like to use. This will be our first step
 towards learning how to build a web application.
+
+## Model, View, Controller
 
 Before we get to that, we'd like to point out one other aspect, that you'll
 remember when we get to talk about the architecture that Rails use to structure
@@ -44,6 +50,11 @@ and separate concerns, called "model, view, controller".
   models (the emails, and the mailbox objects) and passes them to the view (the
   formatter) in order to be rendered into something that can then be returned
   and displayed.
+
+If this doesn't make a whole lot of sense to you at the moment, don't worry.
+You'll understand it more once we build our first Rails application.
+
+## Exercise 12.1
 
 Ok, now to our exercise. We will basically start over with the same code again,
 except that our formatter class now will be called `MailboxHtmlFormatter`:
