@@ -9,20 +9,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby for Beginners</title>
+    <title>Variables | Ruby for Beginners</title>
 
     <link href="assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/06-built_in_classes/05-hashes.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/08-methods.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active"><a href="/index.html">Ruby For Beginners</a></li>
+  <li><a href="/index.html">Ruby For Beginners</a></li>
   <li><a href="/01-preface.html">Preface</a></li>
   <li><a href="/02-creation.html">Programming is creation</a></li>
   <li class="directory"><a href="/03-learning_to_program.html">Learning to program</a>
@@ -43,7 +43,7 @@
       <li><a href="/06-built_in_classes/04-arrays.html">Arrays</a></li>
       <li><a href="/06-built_in_classes/05-hashes.html">Hashes</a></li>
   </ul></li>
-  <li><a href="/07-variables.html">Variables</a></li>
+  <li class="active"><a href="/07-variables.html">Variables</a></li>
   <li class="directory"><a href="/08-methods.html">Methods</a>
   <ul>
       <li><a href="/08-methods/01-return_values.html">Return values</a></li>
@@ -116,18 +116,90 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Variables</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p><em>Naming things</em></p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>In order to refer to the &ldquo;things&rdquo; (objects) that our program deals with we want
+to assign names to them.</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>Every practical programming language has a feature to do this, called
+variables. This is basically the same concept that you might know from math,
+although in Ruby there are different kinds of variables (which you will learn
+about later).</p>
 
-        <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+<p>In the following example the first line calculates the result of the operation
+<code>2 + 3 * 4</code> and sticks the name <code>number</code> on the result. Doing so it creates
+a variable: a name that refers to something (an object, in our case a number).</p>
+
+<p>Think of it like a post-it note with the name <code>number</code> written on it, and stuck
+on the actual thing, which is an object (in this case, a number).</p>
+
+<p>The second line then refers to the number that was the result of the
+calculation, by using the variable name, and prints the result to the screen:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="nb">puts</span> <span class="n">number</span>
+</code></pre>
+
+<p>This will output the number <code>14</code>.</p>
+
+<p>In practice, instead of saying that we &ldquo;give the name <code>number</code> to the result&rdquo;,
+we usually say that we &ldquo;assign the result to the variable <code>number</code>&rdquo;. From then
+on we can say that &ldquo;the variable number is assigned 14&rdquo; (in our example).</p>
+
+<p>The operator <code>=</code> is called the assignment operator. It simply does that: It
+assigns the value on the right side to the variable given on the left side.</p>
+
+<p>Note that, in order to assign the value on the right, Ruby needs to evaluate
+the expression <code>2 + 3 * 4</code> first. This evaluation will return the value <code>14</code>,
+which is then assigned to the variable <code>number</code>.</p>
+
+<p>On the second line something similar happens: <code>puts</code> expects to be handed a
+value that it can then actually output to the screen. In order to pass that
+value Ruby will first look at the right hand side, and evaluate the expression
+<code>number</code>. Since this is a variable, the expression simply evaluates to the
+value that was assigned to the variable on the first line.</p>
+
+<p>In Ruby, variables are created the moment you use them, by way of assigning
+something to them. You don&rsquo;t need to declare them as in other languages, which
+is pretty convenient.</p>
+
+<p>If you assign different values to the same variable, then assignments that
+happen later will simply overwrite previous ones. Like so:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="nb">puts</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+</code></pre>
+
+<p>This, again, would output <code>14</code>. Let&rsquo;s walk through it:</p>
+
+<ul>
+<li>The first line assigns the number <code>4</code> to the variable <code>number</code>, creating that
+variable.</li>
+<li>The second line multiplies the value that is assigned to the variable
+<code>number</code> (which is <code>4</code>) by the number <code>3</code>, and then assigns the result (which
+is <code>12</code>) to the variable <code>number</code>.</li>
+<li>The third line adds the value <code>2</code> to the value assigned to the variable
+<code>number</code> (which is now <code>12</code>). The result of this operation (which is <code>14</code>) is
+then passed to <code>puts</code> which prints it out to the screen.</li>
+</ul>
+
+<p>Of course, no one would actually write this exact code in practice since you can
+simply do all this in just one line instead: <code>puts 2 + 3 * 4</code>. But sometimes
+you&rsquo;ll find or write code that assigns an initial value to a variable, and then
+keeps working on it on a few more lines. This sometimes is useful to break up
+long lines, and make code more readable.</p>
+
+<p>As mentioned earlier, Ruby has different kinds of variables. The kind of
+variable used above is called a &ldquo;local variable&rdquo;, and it&rsquo;s the one used most
+often. You will learn about another type of variables later when we talk about
+classes and objects.</p>
+
+<p>On formatting: Note that there are spaces around the assignment operator <code>=</code>
+as well as the arithmetical operators <code>+</code> and <code>*</code>.</p>
+
+        <nav class="page-nav"><a href="/06-built_in_classes/05-hashes.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/08-methods.html" class="next">Next</a></nav>
       </article>
     </div>
 

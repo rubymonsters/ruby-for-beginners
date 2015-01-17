@@ -9,20 +9,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby for Beginners</title>
+    <title>Return values | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/08-methods.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/08-methods/02-parentheses.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active"><a href="/index.html">Ruby For Beginners</a></li>
+  <li><a href="/index.html">Ruby For Beginners</a></li>
   <li><a href="/01-preface.html">Preface</a></li>
   <li><a href="/02-creation.html">Programming is creation</a></li>
   <li class="directory"><a href="/03-learning_to_program.html">Learning to program</a>
@@ -44,9 +44,9 @@
       <li><a href="/06-built_in_classes/05-hashes.html">Hashes</a></li>
   </ul></li>
   <li><a href="/07-variables.html">Variables</a></li>
-  <li class="directory"><a href="/08-methods.html">Methods</a>
+  <li class="directory expanded"><a href="/08-methods.html">Methods</a>
   <ul>
-      <li><a href="/08-methods/01-return_values.html">Return values</a></li>
+      <li class="active"><a href="/08-methods/01-return_values.html">Return values</a></li>
       <li><a href="/08-methods/02-parentheses.html">Parentheses</a></li>
       <li><a href="/08-methods/03-writing_methods.html">Writing a new method</a></li>
       <li><a href="/08-methods/04-control_flow.html">Flow of execution</a></li>
@@ -116,18 +116,45 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Return values</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p>In Ruby, methods always return exactly one single thing (object).</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>This object can be anything, but a method can only return one thing, and it
+also always returns <em>something</em>. In order to return a bunch of things from a
+method at once we can return an array that holds the things that we are
+interested in (but the array itself is just one object).</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>Also, in Ruby we do not have to use the statement <code>return</code>, as in other
+languages. This is extremely convenient, but it is also something we need to
+learn:</p>
 
-        <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+<p>If we don&rsquo;t do anything else, then a method will return the value that was
+returned from the last evaluated statement. Most often, this is the last line
+in the method body.</p>
+
+<p>This is important to understand. Please read that sentence again: If we don&rsquo;t
+do anything else, then <em>a method will return the value that was returned from
+the last evaluated statement</em>.</p>
+
+<p>In our example method</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">end</span>
+
+<span class="nb">p</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<p>the last evaluated statement is the expression <code>number + 2</code>. In our example
+this expression returns the number <code>5</code>, and that is why the value returned by
+our method also is <code>5</code>.</p>
+
+<p>If, in certain cases, we do want to &ldquo;return&rdquo; from the method early, then we can
+still do this using the <code>return</code> statement. For now, you don&rsquo;t need to worry
+about this case.</p>
+
+        <nav class="page-nav"><a href="/08-methods.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/08-methods/02-parentheses.html" class="next">Next</a></nav>
       </article>
     </div>
 
@@ -142,7 +169,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
   </body>
 </html>

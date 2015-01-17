@@ -9,20 +9,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby for Beginners</title>
+    <title>Attribute writers | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/13-writing_classes/03-attribute_readers.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/13-writing_classes/05-state_and_behaviour.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active"><a href="/index.html">Ruby For Beginners</a></li>
+  <li><a href="/index.html">Ruby For Beginners</a></li>
   <li><a href="/01-preface.html">Preface</a></li>
   <li><a href="/02-creation.html">Programming is creation</a></li>
   <li class="directory"><a href="/03-learning_to_program.html">Learning to program</a>
@@ -78,12 +78,12 @@
       <li><a href="/12-bonus_1/09-comparison_operators.html">Comparison operators</a></li>
       <li><a href="/12-bonus_1/10-nothing_and_truth.html">Nothingness and the truth</a></li>
   </ul></li>
-  <li class="directory"><a href="/13-writing_classes.html">Writing classes</a>
+  <li class="directory expanded"><a href="/13-writing_classes.html">Writing classes</a>
   <ul>
       <li><a href="/13-writing_classes/01-initializing_objects.html">Initializing objects</a></li>
       <li><a href="/13-writing_classes/02-instance_variables.html">Instance variables</a></li>
       <li><a href="/13-writing_classes/03-attribute_readers.html">Attribute readers</a></li>
-      <li><a href="/13-writing_classes/04-attribute_writers.html">Attribute writers</a></li>
+      <li class="active"><a href="/13-writing_classes/04-attribute_writers.html">Attribute writers</a></li>
       <li><a href="/13-writing_classes/05-state_and_behaviour.html">State and behaviour</a></li>
   </ul></li>
   <li class="directory"><a href="/14-bonus_2.html">Bonus: Advanced Topics</a>
@@ -116,18 +116,85 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Attribute writers</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p><em>Setting information</em></p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>Imagine in our application a person not only needs a name, but also a password.
+However, let&rsquo;s also imagine that, at the time of the creation of a new person
+object, this password is not yet known. (Who would give a toddler an email
+password anyway?)</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>Instead we want to be able to tell the person object about its email password
+later.</p>
 
-        <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+<p>We can do this like so:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">password</span><span class="o">=</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+    <span class="vi">@password</span> <span class="o">=</span> <span class="n">password</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>As you can see, the method <code>password=</code> does nothing else but take a single
+argument (called <code>password</code>) and assign the value of this local variable to the
+instance variable <code>@password</code>.</p>
+
+<p>This method&rsquo;s structure looks exactly the same as the method <code>initialize</code>,
+doesn&rsquo;t it? Execpt that <code>initialize</code> is called whenever you call <code>new</code> on the
+class. Our new method <code>password=</code> needs to be called on the object itself,
+once it has been created.</p>
+
+<p>Again, because this kind of method is used so often, there&rsquo;s another name for
+it: it&rsquo;s an attribute writer. (And again, we think it should have been called
+an &ldquo;instance variable writer&rdquo; instead.)</p>
+
+<p>Now, we can use the attribute writer like so:</p>
+<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">password</span><span class="o">=</span><span class="p">(</span><span class="s2">"super secret"</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">person</span>
+</code></pre>
+
+<p>If you execute this, then it will print out:</p>
+<pre class="highlight plaintext"><code>#&lt;Person:0x007fb61c1edcf8 @name="Ada", @password="super secret"&gt;
+</code></pre>
+
+<p>So, yeah, we can see that, after calling <code>person.password=(&quot;super secret&quot;)</code>
+the object now has an instance variable defined, i.e., the person now knows
+their password, too.</p>
+
+<p>That method call looks a little odd though, doesn&rsquo;t it?</p>
+
+<p>Remember what we&rsquo;ve said above about the syntax sugar that Ruby adds for the
+assignment operator <code>=</code>?</p>
+
+<p>Exactly the same works for attribute writers, that is, methods that end with an
+equals sign <code>=</code>.</p>
+
+<p>That&rsquo;s right. So we can also write this instead:</p>
+<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">password</span> <span class="o">=</span> <span class="s2">"super secret"</span>
+</code></pre>
+
+<p>And this reads just so much better, doesn&rsquo;t it?</p>
+
+<p>Just remember that, under the hood, when running your code, Ruby translates the
+line <code>person.password = &quot;something&quot;</code> to <code>person.password=(&quot;something&quot;)</code>, and
+this simply calls the method <code>password=</code>, passing the value on the right hand
+side as an argument: it&rsquo;s just another method :)</p>
+
+<p>We think this is pretty cool.</p>
+
+        <nav class="page-nav"><a href="/13-writing_classes/03-attribute_readers.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/13-writing_classes/05-state_and_behaviour.html" class="next">Next</a></nav>
       </article>
     </div>
 
@@ -142,7 +209,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
   </body>
 </html>

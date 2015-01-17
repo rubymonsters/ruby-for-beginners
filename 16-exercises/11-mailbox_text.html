@@ -9,20 +9,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby for Beginners</title>
+    <title>The Mailbox Text Formatter | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/10-mailbox.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/12-mailbox_html.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active"><a href="/index.html">Ruby For Beginners</a></li>
+  <li><a href="/index.html">Ruby For Beginners</a></li>
   <li><a href="/01-preface.html">Preface</a></li>
   <li><a href="/02-creation.html">Programming is creation</a></li>
   <li class="directory"><a href="/03-learning_to_program.html">Learning to program</a>
@@ -93,7 +93,7 @@
       <li><a href="/14-bonus_2/03-private_methods.html">Bonus: Private methods</a></li>
   </ul></li>
   <li><a href="/15-good_names.html">Using the right words</a></li>
-  <li class="directory"><a href="/16-exercises.html">Exercises</a>
+  <li class="directory expanded"><a href="/16-exercises.html">Exercises</a>
   <ul>
       <li><a href="/16-exercises/01-numbers.html">Working with Numbers</a></li>
       <li><a href="/16-exercises/02-strings.html">Working with Strings</a></li>
@@ -105,7 +105,7 @@
       <li><a href="/16-exercises/08-truthiness.html">Truthiness</a></li>
       <li><a href="/16-exercises/09-email.html">The Email class</a></li>
       <li><a href="/16-exercises/10-mailbox.html">The Mailbox class</a></li>
-      <li><a href="/16-exercises/11-mailbox_text.html">The Mailbox Text Formatter</a></li>
+      <li class="active"><a href="/16-exercises/11-mailbox_text.html">The Mailbox Text Formatter</a></li>
       <li><a href="/16-exercises/12-mailbox_html.html">The Mailbox Html Formatter</a></li>
       <li><a href="/16-exercises/13-mailbox_file.html">Storing our HTML to a file</a></li>
       <li><a href="/16-exercises/14-mailbox_csv.html">Reading from a CSV file</a></li>
@@ -116,18 +116,70 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>The Mailbox Text Formatter</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p>The mailbox exercise is a milestone in the beginners group curriculum, and it
+may take a little bit longer to complete it. That is fine, and, to some extent,
+the point.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>Fill in and complete the following class definitions.</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Email</span>
+  <span class="c1"># your class from the last exercise</span>
+<span class="k">end</span>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<span class="k">class</span> <span class="nc">Mailbox</span>
+  <span class="c1"># your class from the last exercise</span>
+<span class="k">end</span>
 
-        <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+<span class="k">class</span> <span class="nc">MailboxTextFormatter</span>
+  <span class="c1"># fill in this class body</span>
+<span class="k">end</span>
+
+<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ferdous"</span> <span class="p">}),</span>
+  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Keep on coding! :)"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Dajana"</span> <span class="p">}),</span>
+  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Re: Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-02"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ariane"</span> <span class="p">})</span>
+<span class="p">]</span>
+<span class="n">mailbox</span> <span class="o">=</span> <span class="no">Mailbox</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ruby Study Group"</span><span class="p">,</span> <span class="n">emails</span><span class="p">)</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="no">MailboxTextFormatter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">mailbox</span><span class="p">)</span>
+
+<span class="nb">puts</span> <span class="n">formatter</span><span class="p">.</span><span class="nf">format</span>
+</code></pre>
+
+<p>Your goal is to complete the code in a way so it outputs the following:</p>
+<pre class="highlight plaintext"><code>Mailbox: Ruby Study Group
+
++------------+---------+------------------------+
+| Date       | From    | Subject                |
++------------+---------+------------------------+
+| 2014-12-01 | Ferdous | Homework this week     |
+| 2014-12-01 | Dajana  | Keep on coding! :)     |
+| 2014-12-02 | Ariane  | Re: Homework this week |
++------------+---------+------------------------+
+</code></pre>
+
+<p>You are allowed to add as many methods to the classes <code>Email</code>, <code>Mailbox</code> and
+<code>MailboxTextFormatter</code> as you deem useful. In your final solution you are not
+allowed to change any of the code outside (after) the class definitions. For
+debugging purposes, you can, of course, change all the code you want :)</p>
+
+<p>If you do this exercise in one of our study groups then best do it together
+with someone else. We found pairs to work best, and a three person team would
+be better than doing it on your own.</p>
+
+<p>Try to come up with a working solution first. It doesn&rsquo;t matter how elegant,
+generic, or pretty it is. Whatever produces the required output is fine for a
+first solution.</p>
+
+<p>Then, later, look at your code, and try to improve it by cleaning up everything
+that you don&rsquo;t like, or deam ugly.</p>
+
+<p>Eventually, one goal to aim for would be: Adding another column to the table
+only requires mimimal changes, e.g. changes to one or two places in your
+formatter class.</p>
+
+        <nav class="page-nav"><a href="/16-exercises/10-mailbox.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/16-exercises/12-mailbox_html.html" class="next">Next</a></nav>
       </article>
     </div>
 
@@ -142,7 +194,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
   </body>
 </html>

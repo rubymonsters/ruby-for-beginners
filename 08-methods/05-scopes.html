@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Scopes | Ruby for Beginners</title>
+
+    <link href="../assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <nav class="page-nav"><a href="/08-methods/04-control_flow.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/08-methods/06-printing.html" class="next">Next</a></nav>
+
+    <div>
+      <nav class="toc">
+        <h1>Contents</h1>
+        <ul>
+  <li><a href="/index.html">Ruby For Beginners</a></li>
+  <li><a href="/01-preface.html">Preface</a></li>
+  <li><a href="/02-creation.html">Programming is creation</a></li>
+  <li class="directory"><a href="/03-learning_to_program.html">Learning to program</a>
+  <ul>
+      <li><a href="/03-learning_to_program/01-learning_modes.html">Learning modes</a></li>
+      <li><a href="/03-learning_to_program/02-dont_believe.html">Don&rsquo;t believe everything we say</a></li>
+      <li><a href="/03-learning_to_program/03-formatting_code.html">Formatting your code</a></li>
+      <li><a href="/03-learning_to_program/04-error_messages.html">Reading error messages</a></li>
+      <li><a href="/03-learning_to_program/05-using_google.html">Using Google</a></li>
+  </ul></li>
+  <li><a href="/04-your_tools.html">Your tools</a></li>
+  <li><a href="/05-object_oriented_programming.html">Object-oriented programming</a></li>
+  <li class="directory"><a href="/06-built_in_classes.html">Built-in classes</a>
+  <ul>
+      <li><a href="/06-built_in_classes/01-numbers.html">Numbers</a></li>
+      <li><a href="/06-built_in_classes/02-strings.html">Strings</a></li>
+      <li><a href="/06-built_in_classes/03-symbols.html">Symbols</a></li>
+      <li><a href="/06-built_in_classes/04-arrays.html">Arrays</a></li>
+      <li><a href="/06-built_in_classes/05-hashes.html">Hashes</a></li>
+  </ul></li>
+  <li><a href="/07-variables.html">Variables</a></li>
+  <li class="directory expanded"><a href="/08-methods.html">Methods</a>
+  <ul>
+      <li><a href="/08-methods/01-return_values.html">Return values</a></li>
+      <li><a href="/08-methods/02-parentheses.html">Parentheses</a></li>
+      <li><a href="/08-methods/03-writing_methods.html">Writing a new method</a></li>
+      <li><a href="/08-methods/04-control_flow.html">Flow of execution</a></li>
+      <li class="active"><a href="/08-methods/05-scopes.html">Scopes</a></li>
+      <li><a href="/08-methods/06-printing.html">Printing things</a></li>
+  </ul></li>
+  <li class="directory"><a href="/09-everything_an_object.html">Everything is an object</a>
+  <ul>
+      <li><a href="/09-everything_an_object/01-object_classes.html">Objects have classes</a></li>
+      <li><a href="/09-everything_an_object/02-object_methods.html">Calling methods</a></li>
+  </ul></li>
+  <li><a href="/10-string_interpolation.html">String interpolation</a></li>
+  <li class="directory"><a href="/11-blocks.html">Blocks</a>
+  <ul>
+      <li><a href="/11-blocks/01-block_syntax.html">Alternative block syntaxes</a></li>
+      <li><a href="/11-blocks/02-block_arguments.html">Block arguments</a></li>
+      <li><a href="/11-blocks/03-block_return_values.html">Block return values</a></li>
+  </ul></li>
+  <li class="directory"><a href="/12-bonus_1.html">Bonus: Methods &amp; Operators</a>
+  <ul>
+      <li><a href="/12-bonus_1/01-operator_methods.html">Operators are methods</a></li>
+      <li><a href="/12-bonus_1/02-predicate_methods.html">Predicate methods</a></li>
+      <li><a href="/12-bonus_1/03-other_methods.html">Lots of other methods</a></li>
+      <li><a href="/12-bonus_1/04-questions_commands.html">Questions and commands</a></li>
+      <li><a href="/12-bonus_1/05-conditionals.html">Conditionals</a></li>
+      <li><a href="/12-bonus_1/06-operators.html">Operators</a></li>
+      <li><a href="/12-bonus_1/07-arithmetical_operators.html">Arithmetical operators</a></li>
+      <li><a href="/12-bonus_1/08-logical_operators.html">Logical operators</a></li>
+      <li><a href="/12-bonus_1/09-comparison_operators.html">Comparison operators</a></li>
+      <li><a href="/12-bonus_1/10-nothing_and_truth.html">Nothingness and the truth</a></li>
+  </ul></li>
+  <li class="directory"><a href="/13-writing_classes.html">Writing classes</a>
+  <ul>
+      <li><a href="/13-writing_classes/01-initializing_objects.html">Initializing objects</a></li>
+      <li><a href="/13-writing_classes/02-instance_variables.html">Instance variables</a></li>
+      <li><a href="/13-writing_classes/03-attribute_readers.html">Attribute readers</a></li>
+      <li><a href="/13-writing_classes/04-attribute_writers.html">Attribute writers</a></li>
+      <li><a href="/13-writing_classes/05-state_and_behaviour.html">State and behaviour</a></li>
+  </ul></li>
+  <li class="directory"><a href="/14-bonus_2.html">Bonus: Advanced Topics</a>
+  <ul>
+      <li><a href="/14-bonus_2/01-libraries.html">Bonus: Using Libraries</a></li>
+      <li><a href="/14-bonus_2/02-modules.html">Bonus: Modules</a></li>
+      <li><a href="/14-bonus_2/03-private_methods.html">Bonus: Private methods</a></li>
+  </ul></li>
+  <li><a href="/15-good_names.html">Using the right words</a></li>
+  <li class="directory"><a href="/16-exercises.html">Exercises</a>
+  <ul>
+      <li><a href="/16-exercises/01-numbers.html">Working with Numbers</a></li>
+      <li><a href="/16-exercises/02-strings.html">Working with Strings</a></li>
+      <li><a href="/16-exercises/03-arrays_1.html">Working with Arrays (1)</a></li>
+      <li><a href="/16-exercises/04-arrays_2.html">Working with Arrays (2)</a></li>
+      <li><a href="/16-exercises/05-nested_arrays.html">Working with nested arrays</a></li>
+      <li><a href="/16-exercises/06-hashes_1.html">Working with hashes (1)</a></li>
+      <li><a href="/16-exercises/07-hashes_2.html">Working with hashes (2)</a></li>
+      <li><a href="/16-exercises/08-truthiness.html">Truthiness</a></li>
+      <li><a href="/16-exercises/09-email.html">The Email class</a></li>
+      <li><a href="/16-exercises/10-mailbox.html">The Mailbox class</a></li>
+      <li><a href="/16-exercises/11-mailbox_text.html">The Mailbox Text Formatter</a></li>
+      <li><a href="/16-exercises/12-mailbox_html.html">The Mailbox Html Formatter</a></li>
+      <li><a href="/16-exercises/13-mailbox_file.html">Storing our HTML to a file</a></li>
+      <li><a href="/16-exercises/14-mailbox_csv.html">Reading from a CSV file</a></li>
+      <li><a href="/16-exercises/15-mailbox_erb.html">Generating HTML using ERB</a></li>
+      <li><a href="/16-exercises/16-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
+  </ul></li>
+</ul>
+      </nav>
+      <article>
+        <nav class="menu"><a href="#"></a></nav>
+        <h1>Scopes</h1>
+
+<p><em>Spheres of visibility, like rooms in a house</em></p>
+
+<p>When we talked about variables we mentioned that the most common type of
+variable is the &ldquo;local variable&rdquo;, without explaining any further why they are
+local. Local to what? Where?</p>
+
+<p>Since we have now talked about methods, we can also discuss another important
+concept: scopes.</p>
+
+<p>Wikipedia says: <em>&ldquo;In programming, the scope of a name is the part of a program
+where the name is valid: where the name can be used to refer to something
+else.&rdquo;</em> (slightly modified to match our own terminology)</p>
+
+<p>You can think about a scope as of a sphere, a bubble, or a room (with no
+windows, and doors closed): Certain names, like variable names, are &ldquo;known&rdquo; and
+&ldquo;visible&rdquo; inside of the room. Other names, known and visible in another room are
+not known in this room, but only in the other room.</p>
+
+<p>Every time there is a method call, and the flow of execution enters the
+method&rsquo;s body, it enters a new scope, or &ldquo;room&rdquo;. Things that are &ldquo;local&rdquo; to
+this method&rsquo;s scope (i.e. things that are &ldquo;inside&rdquo; of the room), are <em>only</em>
+visible in this scope. Outside of it, they are unknown.</p>
+
+<p>Consider this code:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">number</span>
+</code></pre>
+
+<p>The line <code>puts add_two(2)</code> will output <code>5</code>, but the line <code>puts number</code> will
+then raise an error.</p>
+
+<p>This is because the variable <code>number</code> that is assigned the number <code>3</code> when we
+call the method is a <em>local</em> variable. It is local to the method&rsquo;s scope. It
+is created when the flow of execution enters the method.</p>
+
+<p>Outside of this scope, when the flow of execution has returned from the method
+the method&rsquo;s scope has been destroyed, and all local variables are gone. The
+local variable <code>number</code> is therefore not known, and Ruby raises an error saying
+<code>undefined local variable or method &#39;number&#39;</code>.</p>
+
+<p>If you think about this error message for little bit, does it make sense to
+you?</p>
+
+<p>We have silently skipped over the fact that, in Ruby, both local variable
+names and method names, are written the same way: they&rsquo;re just plain words.
+For example, here:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">puts</span> <span class="n">number</span>
+</code></pre>
+
+<p><code>number</code> is a local variable, and it is used in the line <code>puts number</code>.</p>
+
+<p>However, here:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">number</span>
+  <span class="mi">2</span>
+<span class="k">end</span>
+<span class="nb">puts</span> <span class="n">number</span>
+</code></pre>
+
+<p><code>number</code> is the name of a method. And it can be used (called) in the exact same
+way: <code>puts number</code></p>
+
+<p>This is because Ruby, when it executes a program, evaluates one statement after
+another. And when it encounters a plain word like <code>number</code> then it will first
+check if, within the current scope, it knows a local variable with the same
+name. If so, it will use the value that is associated to this variable. If
+there&rsquo;s no local variable with this name, then it will look for a method. If
+there&rsquo;s also no method with this name it will then raise the error message
+<code>undefined local variable or method &#39;number&#39;</code>.</p>
+
+<p>Does that make sense?</p>
+
+<p>Let&rsquo;s look at another example:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">add_to</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">add_to</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<p>What do you think the output will be? Will it be <code>3</code>, or <code>5</code>? Something else?</p>
+
+<p>If you run the code you will see that it&rsquo;s <code>5</code>.</p>
+
+<p>The reason for that is that we do assign the number <code>1</code> in the outer scope to a
+variable <code>number</code>, but this variable is then never used: the only other line in
+the outer scope is the last line <code>puts add_to(3)</code>, and this line does not use
+the variable <code>number</code>.</p>
+
+<p>Instead, when the control flow enters the method <code>add_to</code> Ruby will create a
+new local scope, and it will define a new local variable <code>number</code> which is
+assigned the number <code>3</code> that was passed to the method. This new variable
+<code>number</code> is <em>local</em> to the method&rsquo;s scope, and therefore this is a <em>different</em>
+variable than the one on the very first line, in the outer scope.</p>
+
+<p>We found the following a good metaphor for scopes:</p>
+
+<p>When Ruby enters a method, then it&rsquo;s like she enters a shiny, new room in a
+house. With her, she brings the objects that are passed as arguments to the
+method call. In the example above she brings an object that is the number <code>3</code>.</p>
+
+<p>Now, as soon as Ruby enters the method, she sticks post-it notes on the
+objects, according to the argument list from the method definition. In our
+example that is the name <code>number</code>. So from now on, in this room, there&rsquo;s a
+known local variable that has a value assigned: The number <code>3</code> with the post-it
+note <code>number</code> on it.</p>
+
+<p>In our example, the outer scope and the scope of the method <code>add_two</code>, are
+two different rooms, and there are two different post-it notes stuck on
+two different numbers, which just happen to have the same name on them.</p>
+
+        <nav class="page-nav"><a href="/08-methods/04-control_flow.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/08-methods/06-printing.html" class="next">Next</a></nav>
+      </article>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
+        <li><a href="https://twitter.com/rubymonsters">Twitter</a></li>
+        <li><a href="https://github.com/rubymonsters">GitHub</a></li>
+        <li><a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="license cc:license">License</a></li>
+        <li><a href="http://foundation.travis-ci.org/imprint/">Imprint</a></li>
+      </ul>
+    </footer>
+
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -9,20 +9,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby for Beginners</title>
+    <title>Block arguments | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/11-blocks/01-block_syntax.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/11-blocks/03-block_return_values.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active"><a href="/index.html">Ruby For Beginners</a></li>
+  <li><a href="/index.html">Ruby For Beginners</a></li>
   <li><a href="/01-preface.html">Preface</a></li>
   <li><a href="/02-creation.html">Programming is creation</a></li>
   <li class="directory"><a href="/03-learning_to_program.html">Learning to program</a>
@@ -59,10 +59,10 @@
       <li><a href="/09-everything_an_object/02-object_methods.html">Calling methods</a></li>
   </ul></li>
   <li><a href="/10-string_interpolation.html">String interpolation</a></li>
-  <li class="directory"><a href="/11-blocks.html">Blocks</a>
+  <li class="directory expanded"><a href="/11-blocks.html">Blocks</a>
   <ul>
       <li><a href="/11-blocks/01-block_syntax.html">Alternative block syntaxes</a></li>
-      <li><a href="/11-blocks/02-block_arguments.html">Block arguments</a></li>
+      <li class="active"><a href="/11-blocks/02-block_arguments.html">Block arguments</a></li>
       <li><a href="/11-blocks/03-block_return_values.html">Block return values</a></li>
   </ul></li>
   <li class="directory"><a href="/12-bonus_1.html">Bonus: Methods &amp; Operators</a>
@@ -116,18 +116,50 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Block arguments</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p>Blocks make even more sense on methods that are defined on collections like
+arrays and hashes.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>Let&rsquo;s have a look at some examples with arrays.</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>In our previous example that used the method <code>times</code> our block did not accept
+an argument. A block that accepts an argument looks like this:</p>
+<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">number</span><span class="si">}</span><span class="s2"> was passed to the block"</span>
+<span class="k">end</span>
+</code></pre>
 
-        <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+<p>And, again, this is the same as:</p>
+<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span> <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">number</span><span class="si">}</span><span class="s2"> was passed to the block"</span> <span class="p">}</span>
+</code></pre>
+
+<p>It is unknown to us why Matz has chosen to not enclose the argument list of
+a block with round parentheses just like method argument lists. Instead, Ruby
+wants us to use vertical bars (we call them &ldquo;pipes&rdquo;).</p>
+
+<p>So, for blocks, <code>do |number|</code> is the same that is <code>def add_two (number)</code> for a
+method definition, except that the method wants a name while a block is
+anonymous: <code>|number|</code> and <code>(number)</code> both are argument lists. The first one
+is used for blocks, the second one for methods.</p>
+
+<p>Now, when you run the code example above, you&rsquo;ll see the message printed out
+for each of the numbers contained in the array.</p>
+
+<p>Does that make sense? Again, our code almost reads like an English sentence:</p>
+
+<p><em>With this array for each of its elements, naming it <code>number</code>, output the
+following message.</em></p>
+
+<p>The method <code>each</code> is defined on arrays, and it does just this:</p>
+
+<p>It takes each of the elements in the array, and calls the block, passing the
+element as an argument. The block can then do whatever you like it to do with
+the element. In our case we interpolate it into a string and print it out to
+the screen.</p>
+
+        <nav class="page-nav"><a href="/11-blocks/01-block_syntax.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/11-blocks/03-block_return_values.html" class="next">Next</a></nav>
       </article>
     </div>
 
@@ -142,7 +174,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
   </body>
 </html>

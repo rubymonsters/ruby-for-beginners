@@ -9,20 +9,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby for Beginners</title>
+    <title>Flow of execution | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/08-methods/03-writing_methods.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/08-methods/05-scopes.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active"><a href="/index.html">Ruby For Beginners</a></li>
+  <li><a href="/index.html">Ruby For Beginners</a></li>
   <li><a href="/01-preface.html">Preface</a></li>
   <li><a href="/02-creation.html">Programming is creation</a></li>
   <li class="directory"><a href="/03-learning_to_program.html">Learning to program</a>
@@ -44,12 +44,12 @@
       <li><a href="/06-built_in_classes/05-hashes.html">Hashes</a></li>
   </ul></li>
   <li><a href="/07-variables.html">Variables</a></li>
-  <li class="directory"><a href="/08-methods.html">Methods</a>
+  <li class="directory expanded"><a href="/08-methods.html">Methods</a>
   <ul>
       <li><a href="/08-methods/01-return_values.html">Return values</a></li>
       <li><a href="/08-methods/02-parentheses.html">Parentheses</a></li>
       <li><a href="/08-methods/03-writing_methods.html">Writing a new method</a></li>
-      <li><a href="/08-methods/04-control_flow.html">Flow of execution</a></li>
+      <li class="active"><a href="/08-methods/04-control_flow.html">Flow of execution</a></li>
       <li><a href="/08-methods/05-scopes.html">Scopes</a></li>
       <li><a href="/08-methods/06-printing.html">Printing things</a></li>
   </ul></li>
@@ -116,18 +116,78 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Flow of execution</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p>One of the things we, as programmers, have assimilated so much that we forget
+to explain to beginners is how, and in what exact order, Ruby goes through your
+program. This is called the &ldquo;flow of execution&rdquo;, or &ldquo;control flow&rdquo;.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>When you execute a Ruby file with the <code>ruby</code> runtime then it will read your
+Ruby code, and start executing it line by line, from top to bottom.</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>Let&rsquo;s look at our example from above, and how the Ruby control flow goes
+through it under the microscope.</p>
 
-        <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+<p>For convenience we&rsquo;ve now added line numbers, like your editor does. We have
+also added parentheses for the method call to <code>puts</code>, to make this more
+obvious, even though in practice we recommend against this:</p>
+<pre class="highlight ruby"><code><span class="mi">1</span> <span class="o">|</span> <span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="mi">2</span> <span class="o">|</span>   <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="mi">3</span> <span class="o">|</span> <span class="k">end</span>
+<span class="mi">4</span> <span class="o">|</span>
+<span class="mi">5</span> <span class="o">|</span> <span class="nb">puts</span><span class="p">(</span><span class="n">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</code></pre>
+
+<p>Ruby starts on line 1, and finds our method definition, starting with the
+keyword <code>def</code>, so it will read all of it, until it finds the keyword <code>end</code> on
+line 3. For now it does nothing but define this method, and keep it in memory
+so it can be used from now on.</p>
+
+<p>Now, on line 5, Ruby finds that we are using the word <code>puts</code>, and it sees that
+we are trying to pass something to it, so this must be a method call.</p>
+
+<p>In order to call a method Ruby needs to first evaluate the values that we want
+to pass. So Ruby now looks at what&rsquo;s between the parentheses, and finds another
+method call <code>add_two(3)</code>.</p>
+
+<p>Again, in order to actually call the method <code>add_two</code> Ruby needs to first
+evaluate the values that we want to pass.</p>
+
+<p>In this case this is the number <code>3</code>, so Ruby will create this object (an
+instance of the class <code>Fixnum</code>). Now it is finally ready to actually call the
+method <code>add_two</code>, passing the number just created.</p>
+
+<p>Now, for the first time, Ruby starts to deviate from the default flow of
+execution, which simply goes from top to bottom. Instead, since we are calling
+a method, Ruby now enters the method body that we have defined for the method
+<code>add_two</code> before: the control flow now jumps to line 2.</p>
+
+<p>In this moment, since we are entering a method that has an argument, Ruby
+also defines a local variable <code>number</code>, and assigns the object that was
+passed, the number <code>3</code>, to this variable.</p>
+
+<p>Now Ruby is ready to evaluate line 2. It finds that we are using the operator
+<code>+</code>, on the value that is assigned to the variable <code>number</code>, which is <code>3</code>. In
+order to do that Ruby first evaluates the thing that is on the right hand side
+of the operator, which in our example, again, is a number. Ruby will therefore
+create the number (an instance of the class <code>Fixnum</code>), this time with the value
+<code>2</code>.</p>
+
+<p>Ruby is now ready to evaluate the operator, and add the number <code>2</code> to the
+number <code>3</code>. This operation returns a new number (an instance of the class
+<code>Fixnum</code>), which is <code>5</code>.</p>
+
+<p>Ruby recognizes that the method body has ended, and so it returns from the
+method <code>add_two</code>, with the return value <code>5</code>, because this was <em>the return value
+of the statement that was evaluated last</em>.</p>
+
+<p>This is now the second time that Ruby makes a jump: the control flow jumps
+back to line 5. Ruby is now done evaluating the method call <code>add_two(3)</code>, and
+this method call has returned the object <code>5</code>. Ruby can now finally call the
+method <code>puts</code> passing the object <code>5</code>, which it will then print out.</p>
+
+        <nav class="page-nav"><a href="/08-methods/03-writing_methods.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/08-methods/05-scopes.html" class="next">Next</a></nav>
       </article>
     </div>
 
@@ -142,7 +202,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
   </body>
 </html>

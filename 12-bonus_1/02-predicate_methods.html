@@ -9,20 +9,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby for Beginners</title>
+    <title>Predicate methods | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/12-bonus_1/01-operator_methods.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/12-bonus_1/03-other_methods.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active"><a href="/index.html">Ruby For Beginners</a></li>
+  <li><a href="/index.html">Ruby For Beginners</a></li>
   <li><a href="/01-preface.html">Preface</a></li>
   <li><a href="/02-creation.html">Programming is creation</a></li>
   <li class="directory"><a href="/03-learning_to_program.html">Learning to program</a>
@@ -65,10 +65,10 @@
       <li><a href="/11-blocks/02-block_arguments.html">Block arguments</a></li>
       <li><a href="/11-blocks/03-block_return_values.html">Block return values</a></li>
   </ul></li>
-  <li class="directory"><a href="/12-bonus_1.html">Bonus: Methods &amp; Operators</a>
+  <li class="directory expanded"><a href="/12-bonus_1.html">Bonus: Methods &amp; Operators</a>
   <ul>
       <li><a href="/12-bonus_1/01-operator_methods.html">Operators are methods</a></li>
-      <li><a href="/12-bonus_1/02-predicate_methods.html">Predicate methods</a></li>
+      <li class="active"><a href="/12-bonus_1/02-predicate_methods.html">Predicate methods</a></li>
       <li><a href="/12-bonus_1/03-other_methods.html">Lots of other methods</a></li>
       <li><a href="/12-bonus_1/04-questions_commands.html">Questions and commands</a></li>
       <li><a href="/12-bonus_1/05-conditionals.html">Conditionals</a></li>
@@ -116,18 +116,33 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Predicate methods</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p>In the list of method names for numbers you have seen that in Ruby we can have
+methods that end with a question mark <code>?</code>. This makes them read like a question.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>For example, we can ask a number if it is even or odd:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">odd?</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">even?</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+</code></pre>
 
-        <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+<p>Or you can ask the number if it&rsquo;s between two other numbers:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+</code></pre>
+
+<p>Methods that end with a question mark are called &ldquo;predicate methods&rdquo;. And they
+return either <code>true</code> or <code>false</code>.</p>
+
+        <nav class="page-nav"><a href="/12-bonus_1/01-operator_methods.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/12-bonus_1/03-other_methods.html" class="next">Next</a></nav>
       </article>
     </div>
 
@@ -142,7 +157,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
   </body>
 </html>

@@ -9,20 +9,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby for Beginners</title>
+    <title>Methods | Ruby for Beginners</title>
 
     <link href="assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/07-variables.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/08-methods/01-return_values.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active"><a href="/index.html">Ruby For Beginners</a></li>
+  <li><a href="/index.html">Ruby For Beginners</a></li>
   <li><a href="/01-preface.html">Preface</a></li>
   <li><a href="/02-creation.html">Programming is creation</a></li>
   <li class="directory"><a href="/03-learning_to_program.html">Learning to program</a>
@@ -44,8 +44,8 @@
       <li><a href="/06-built_in_classes/05-hashes.html">Hashes</a></li>
   </ul></li>
   <li><a href="/07-variables.html">Variables</a></li>
-  <li class="directory"><a href="/08-methods.html">Methods</a>
-  <ul>
+  <li class="active directory expanded"><a href="/08-methods.html">Methods</a>
+  <ul class="active">
       <li><a href="/08-methods/01-return_values.html">Return values</a></li>
       <li><a href="/08-methods/02-parentheses.html">Parentheses</a></li>
       <li><a href="/08-methods/03-writing_methods.html">Writing a new method</a></li>
@@ -116,18 +116,142 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Methods</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p><em>A named block of code that takes input and returns output</em></p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>Everything in programming is about data, and doing interesting things with it.
+If you think about Twitter, it essentially takes some 140 characters of text
+(which is data) from users and displays it to other users.</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>You have already learned about some of the most important types of data in
+Ruby: numbers and strings, as well as two structures that can be used to store
+them: arrays and hashes. That&rsquo;s about the &ldquo;data&rdquo; part.</p>
 
-        <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+<p>Methods are about the &ldquo;doing interesting things&rdquo; part. Methods are all about
+encapsulating some bits of behaviour, so that it can be applied to different
+bits of data easily. For example there methods that do things like: sorting an
+array, reading a CSV file, sending an email, signing in to Facebook, sending
+a Tweet.</p>
+
+<p>There are four things that constitute a method:</p>
+
+<ul>
+<li>a name</li>
+<li>a block of code</li>
+<li>potentially accept some input</li>
+<li>returning some output</li>
+</ul>
+
+<p>Not all methods actually want any input (because they don&rsquo;t need any), and not
+always do we care about the output that a method returns.</p>
+
+<p>Imagine a vending machine where you can chip in some money, press some buttons,
+and the machine will spin a few gears and wheels, and spit out the chocolate
+bar you were after.</p>
+
+<p>If the vending machine was a method, then your money, as well as the buttons
+you press are the input. The way the machine internally spins certain mechanics
+is the block of code. And the product that it dispenses is the return value.
+Although this would be an odd thing to mention to a non-programmer, we could
+say that a vending machine is a way to &ldquo;transform&rdquo; money and data into
+chocolate.</p>
+
+<p>Methods are a lot like that:</p>
+
+<p>They take some input, do something with it, and return a result. Instead of
+using the term &ldquo;input&rdquo; in programming we say that a method accepts a number of
+arguments. And instead of &ldquo;output&rdquo; we use the term &ldquo;return value&rdquo;: the thing
+that we get back from the method.</p>
+
+<p>Let&rsquo;s define a simple method that takes a number, adds the number <code>2</code> to it,
+and returns the result:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>This <em>defines</em> a method. It does not <em>use</em> it, yet. You only build and place
+that vending machine, so it can be used later.</p>
+
+<p>Let&rsquo;s walk through this method definition step by step:</p>
+
+<ul>
+<li>On the first line the keyword <code>def</code> tells Ruby that you are about to define a
+new method.</li>
+<li>The next word <code>add_two</code> is the name that we want this method to have.</li>
+<li>The parentheses tell Ruby that we are about to define an argument list.</li>
+<li>The arguments list, in our case contains one argument which we&rsquo;d like to be
+know as <code>number</code>.</li>
+<li>The next line (indented by two spaces) is the block of code that the
+method encapsulates, also referred to as the &ldquo;method body&rdquo;.</li>
+<li>And the keyword <code>end</code> tells Ruby that we&quot;re done with the method body.</li>
+</ul>
+
+<p>Now we can use (we say &ldquo;call&rdquo;) this method like so:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<ul>
+<li>This will create an instance of the number <code>3</code>, and call the method we
+defined earlier <code>add_two</code>, passing the number to the method, as the argument
+<code>number</code>.</li>
+<li>When a method is used (called), then Ruby jumps into the method&rsquo;s body.
+So, we are now inside of the method body, and <code>number</code> is now a local
+variable with <code>3</code> assigned to it.</li>
+<li>Ruby will now execute the method body, which is the expression <code>number + 2</code>.
+Because <code>number</code> is assigned <code>3</code> (the value that we have passed to the method
+as an argument) this expression will evaluate to <code>5</code>.</li>
+<li>Since this line of code is the last line in the method body, the value <code>5</code>
+also will be returned from the method.</li>
+<li>We are now back outside of the method. The method call has returned the
+number <code>5</code>, and it will be passed to <code>puts</code>, which prints it to the screen.</li>
+</ul>
+
+<p>On formatting:</p>
+
+<ul>
+<li>There are no spaces before, and inside the parentheses that define the
+argument list.</li>
+<li>The method body is indented by exactly two spaces.</li>
+<li>The keyword <code>end</code> sits on the same level as the keyword <code>def</code>.</li>
+</ul>
+
+<p>Note:</p>
+
+<p>We are slightly simplifying terminology here, and conflate two terms that
+normally would be defined separately: We simply use the term &ldquo;argument&rdquo;
+for both the variable names that are defined in the arguments list of the
+method definition, and the value that is passed as part of the method call.</p>
+
+<p>In programming, normally the &ldquo;argument list&rdquo; is called a &ldquo;parameter list&rdquo;
+instead, and a single variable name on it is called a &ldquo;parameter&rdquo;. On the
+other hand, only the objects passed when calling the method are referred
+to as &ldquo;arguments&rdquo;.</p>
+
+<p>E.g. in the code:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<p>the word <code>number</code> in the first line is a &ldquo;parameter&rdquo;, whereas <code>3</code> in the
+last line is an &ldquo;argument&rdquo;.</p>
+
+<p>We found making this distinction in our beginners classes unnecessarily
+confusing, and thus ignore it. We simply call both these things &ldquo;arguments&rdquo;,
+and point out that they create a local variable inside of the method body.</p>
+
+<p>So, now you know :)</p>
+
+        <nav class="page-nav"><a href="/07-variables.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/08-methods/01-return_values.html" class="next">Next</a></nav>
       </article>
     </div>
 

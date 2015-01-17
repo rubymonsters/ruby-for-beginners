@@ -9,20 +9,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby for Beginners</title>
+    <title>Logical operators | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/12-bonus_1/07-arithmetical_operators.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/12-bonus_1/09-comparison_operators.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active"><a href="/index.html">Ruby For Beginners</a></li>
+  <li><a href="/index.html">Ruby For Beginners</a></li>
   <li><a href="/01-preface.html">Preface</a></li>
   <li><a href="/02-creation.html">Programming is creation</a></li>
   <li class="directory"><a href="/03-learning_to_program.html">Learning to program</a>
@@ -65,7 +65,7 @@
       <li><a href="/11-blocks/02-block_arguments.html">Block arguments</a></li>
       <li><a href="/11-blocks/03-block_return_values.html">Block return values</a></li>
   </ul></li>
-  <li class="directory"><a href="/12-bonus_1.html">Bonus: Methods &amp; Operators</a>
+  <li class="directory expanded"><a href="/12-bonus_1.html">Bonus: Methods &amp; Operators</a>
   <ul>
       <li><a href="/12-bonus_1/01-operator_methods.html">Operators are methods</a></li>
       <li><a href="/12-bonus_1/02-predicate_methods.html">Predicate methods</a></li>
@@ -74,7 +74,7 @@
       <li><a href="/12-bonus_1/05-conditionals.html">Conditionals</a></li>
       <li><a href="/12-bonus_1/06-operators.html">Operators</a></li>
       <li><a href="/12-bonus_1/07-arithmetical_operators.html">Arithmetical operators</a></li>
-      <li><a href="/12-bonus_1/08-logical_operators.html">Logical operators</a></li>
+      <li class="active"><a href="/12-bonus_1/08-logical_operators.html">Logical operators</a></li>
       <li><a href="/12-bonus_1/09-comparison_operators.html">Comparison operators</a></li>
       <li><a href="/12-bonus_1/10-nothing_and_truth.html">Nothingness and the truth</a></li>
   </ul></li>
@@ -116,18 +116,64 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Logical operators</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p>Logical operators are also, maybe more commonly, called boolean operators.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>The term &ldquo;boolean&rdquo; originates from the book &ldquo;The Mathemetical Analysis of
+Logic&rdquo; written by George Boole in 1847. Boolean logic has been fundamental in
+the development of computers, and programming, since at their core, computers
+are all about processing whether or not there is current flow: on vs off
+(true vs false).</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>If you are curious, feel encouraged to google and read up on this online, but
+for now, here, we can simply look at the 3 fundamental boolean operators and
+what they do: <code>and</code>, <code>or</code>, and <code>not</code>.</p>
 
-        <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+<p>The operator <code>and</code> returns <code>true</code> if, and only if, both values also are <code>true</code>.
+So, only the expression <code>true and true</code> is also <code>true</code>. All of the expressions
+<code>true and false</code>, <code>false and true</code>, <code>false and false</code> evaluate to <code>false</code>.</p>
+
+<p>If you think about this, and come up with English sentences, then this will
+make a lot of sense: <em>At the restaurant I&rsquo;ll have a tomato soup IF it is vegan
+AND they still have some.</em></p>
+
+<p>The operator <code>or</code> on the other hand returns <code>true</code> if at least one of the
+values is <code>true</code>. So, only if both values are <code>false</code>, the operator returns
+<code>false</code>.</p>
+
+<p>That&rsquo;s why it is logically correct to answer the question <em>Would you like tea
+or coffee for breakfeast?</em> with <em>Yes, please.</em> IF you&rsquo;d like either tea, or
+coffee, or both. You&rsquo;d only say <em>Hell, no!</em> if you&rsquo;d like an orange juice
+instead :)</p>
+
+<p>The operator <code>not</code> simply returns the negated, opposite value. <code>not true</code>
+returns <code>false</code>, and <code>not false</code> returns <code>true</code>. Therefor, the following
+lines of code are the same:</p>
+<pre class="highlight ruby"><code><span class="nb">puts</span> <span class="s2">"Always true"</span> <span class="k">if</span> <span class="n">not</span> <span class="kp">false</span>
+<span class="nb">puts</span> <span class="s2">"Always true"</span> <span class="k">unless</span> <span class="kp">false</span>
+</code></pre>
+
+<p>Each of these three operators comes in two versions:</p>
+
+<ul>
+<li><code>and</code> and <code>&amp;&amp;</code></li>
+<li><code>or</code> and <code>||</code></li>
+<li><code>not</code> and <code>!</code></li>
+</ul>
+
+<p>The difference between them has to do with what is called &ldquo;operator precedence&rdquo;.</p>
+
+<p>From math you know that <code>1 + 2 * 3</code> evaluates to <code>7</code>, not <code>9</code>. This is
+because the multiplication <code>*</code> operator binds stronger, and precedes the
+addition operator <code>+</code>. In other words <code>1 + 2 * 3</code> is same as <code>1 + (2 * 3)</code>, and
+not the same as <code>(1 + 2) * 3</code>.</p>
+
+<p>In Ruby, the operators <code>&amp;&amp;</code>, <code>||</code>, and <code>!</code> bind stronger than, and thus precede
+their fellows <code>and</code>, <code>or</code>, and <code>not</code>.</p>
+
+        <nav class="page-nav"><a href="/12-bonus_1/07-arithmetical_operators.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/12-bonus_1/09-comparison_operators.html" class="next">Next</a></nav>
       </article>
     </div>
 
@@ -142,7 +188,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
   </body>
 </html>

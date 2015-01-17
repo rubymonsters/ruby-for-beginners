@@ -9,20 +9,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ruby for Beginners</title>
+    <title>Attribute readers | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-dc57aea4.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/13-writing_classes/02-instance_variables.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/13-writing_classes/04-attribute_writers.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active"><a href="/index.html">Ruby For Beginners</a></li>
+  <li><a href="/index.html">Ruby For Beginners</a></li>
   <li><a href="/01-preface.html">Preface</a></li>
   <li><a href="/02-creation.html">Programming is creation</a></li>
   <li class="directory"><a href="/03-learning_to_program.html">Learning to program</a>
@@ -78,11 +78,11 @@
       <li><a href="/12-bonus_1/09-comparison_operators.html">Comparison operators</a></li>
       <li><a href="/12-bonus_1/10-nothing_and_truth.html">Nothingness and the truth</a></li>
   </ul></li>
-  <li class="directory"><a href="/13-writing_classes.html">Writing classes</a>
+  <li class="directory expanded"><a href="/13-writing_classes.html">Writing classes</a>
   <ul>
       <li><a href="/13-writing_classes/01-initializing_objects.html">Initializing objects</a></li>
       <li><a href="/13-writing_classes/02-instance_variables.html">Instance variables</a></li>
-      <li><a href="/13-writing_classes/03-attribute_readers.html">Attribute readers</a></li>
+      <li class="active"><a href="/13-writing_classes/03-attribute_readers.html">Attribute readers</a></li>
       <li><a href="/13-writing_classes/04-attribute_writers.html">Attribute writers</a></li>
       <li><a href="/13-writing_classes/05-state_and_behaviour.html">State and behaviour</a></li>
   </ul></li>
@@ -116,18 +116,77 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Attribute readers</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p><em>Asking for information</em></p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>Remember how we initially said that people have the ability to remember their
+name, and tell it, when asked?</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>We&rsquo;ve already implemented the first part of this. Our person instance now
+knows her name &ldquo;Ada&rdquo;.</p>
 
-        <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/01-preface.html" class="next">Next</a></nav>
+<p>Let&rsquo;s look at the second part. You also remember that methods are either
+questions or commands. We want to add a method that implements answering
+the question &ldquo;What&rsquo;s your name?&rdquo;.</p>
+
+<p>And it is as simple as this:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Before we discuss what this does, let&rsquo;s look at how we can use our new method.
+We can now call the method on the person object, like this:</p>
+<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">person</span><span class="p">.</span><span class="nf">name</span>
+</code></pre>
+
+<p>So this prints the name <code>Ada</code>, and that&rsquo;s what we want: we can create a new
+person object, passing a name to it. Once that person has been created we are
+able to ask for its name, and we&rsquo;ll get the name back.</p>
+
+<p>How does this work, exactly, under the microscope?</p>
+
+<p>Let&rsquo;s walk through it, step by step:</p>
+
+<ul>
+<li><p>On the first line, the object that ends up being assigned to the variable
+<code>person</code> is an initialized, new instance of the class <code>Person</code>. By
+&ldquo;intialized&rdquo; we mean that the method <code>initialize</code> has already been called,
+and it already has assigned the string <code>&quot;Ada&quot;</code> to the instance variable
+<code>@name</code>.</p></li>
+<li><p>Now this person object has the method <code>name</code>, as defined in the class
+definition of <code>Person</code> above, and in the second line we call this method:
+<code>person.name</code>.</p></li>
+<li><p>When the method <code>name</code> is called, it does nothing else but evaluate the
+instance variable <code>@name</code> from the object scope. Because this has previously
+been set to <code>&quot;Ada&quot;</code> it will return this string. And because this is the last
+line in the method <code>name</code> the method also will return this string.</p></li>
+<li><p>For that reason the method call <code>person.name</code> returns the string <code>&quot;Ada&quot;</code>,
+which is then passed to <code>puts</code>, which prints it out.</p></li>
+</ul>
+
+<p>Methods that do nothing else but return a value assigned to an instance
+variable with the same name are very common.</p>
+
+<p>In fact they are so common that there&rsquo;s a word for them: they are called
+&ldquo;attribute readers&rdquo;. By &ldquo;attribute&rdquo; the Ruby community means an instance
+variable, so an attribute reader is a method that reads an instance variable.</p>
+
+<p>We don&rsquo;t know why the community has chosen to use the term &ldquo;attribute&rdquo; here:
+It would be much less confusing to use the term &ldquo;instance variable reader&rdquo;
+instead. Maybe the simple reason is that programmers don&rsquo;t like to type more
+than necessary, and this saves 8 characters. Who knows :)</p>
+
+        <nav class="page-nav"><a href="/13-writing_classes/02-instance_variables.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/13-writing_classes/04-attribute_writers.html" class="next">Next</a></nav>
       </article>
     </div>
 
@@ -142,7 +201,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
   </body>
 </html>
