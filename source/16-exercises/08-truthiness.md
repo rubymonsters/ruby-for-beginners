@@ -2,9 +2,9 @@
 
 ## Exercise 8.1
 
-Make a new file `8_1-truthiness.rb`, and dd the following lines:
+Make a new file `8_1-truthiness.rb`, and add the following lines:
 
-This exercise is about validating what we've learned about truthyness.
+This exercise is about validating what we've learned about truthiness.
 
 You have the following array:
 

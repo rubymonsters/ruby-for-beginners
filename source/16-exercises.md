@@ -1,7 +1,10 @@
 # Exercises
 
-Before you get started with the exercises make sure you have your text editor and
-terminal open. In your terminal:
+If you haven't done the [try ruby](http://tryruby.org) course already, we
+recommend you do at least a couple lessons over there, too.
+
+Whenever you sit down to do some of the exercises in this book make sure you
+have your text editor and terminal open. In your terminal:
 
 * Create a new directory where you want to keep Ruby files for our exercises. For
   example: `~/ruby-for-beginners/exercises`. In
@@ -18,3 +21,8 @@ terminal open. In your terminal:
   directory you can run `ls`.
 
 TODO: check these instructions for Windows.
+
+<p class='credits'>
+  Credits: The exercises 1.1, 1.2, and 2.1 are taken from
+  <a href="http://www.ruby-doc.org/docs/Tutorial/part_01/first_steps.html">Introduction to Ruby</a>.
+<p>

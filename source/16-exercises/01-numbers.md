@@ -1,9 +1,9 @@
 # Working with Numbers
 
-In order to start `irb` simply open your terminal and type `irb`, then hit the
-`return` key (`enter`). In order to quit `irb` again (and get back to your system
-shell prompt) you can type `exit` or press `ctrl-d`, which does the same.
-
+In order to start `irb` open your terminal and type `irb`, then hit the
+`return` key (`enter`). In order to quit `irb` again (and get back to your
+system shell prompt) you can type `exit` or press `ctrl-d`, which does the
+same.
 
 ## Exercise 1.1
 
@@ -24,17 +24,25 @@ Try computing these in `irb`:
 * `4 ** 2.0`
 * `4.1 % 2`
 
-Is the answer a float or an integer?
+Is the result a float or an integer?
 
-Note: At the moment, the following exercises require reading up until the
-chapter "Object Methods":
+## Exercise 1.3
 
-* Look through the <a href="http://ruby-doc.org/core-2.1.5/Fixnum.html">documentation for integer</a>
-  numbers (called `Fixnum`) and find the methods that tell if a number is odd
-  or even.
-* In `irb`, use these methods to find out if certain numbers are odd or even.
-  Numbers like `0, 1, 2, 99, -502` etc.
+Methods are a way of "doing something with an object". E.g. in Ruby, numbers
+have two methods that allow you to check whether the number is odd or even.
 
-Credits: The exercises 1.1 and 1.2 are taken from [Introduction to
-Ruby](http://www.ruby-doc.org/docs/Tutorial/part_01/first_steps.html).
+Look through the <a href="http://ruby-doc.org/core-2.1.5/Fixnum.html">documentation for integer</a>
+numbers (called `Fixnum`) and find the methods that tell if a number is odd or
+even.
+
+## Exercise 1.4
+
+In `irb`, use these methods to find out if certain numbers are odd or even.
+Numbers like `0, 1, 2, 99, -502` etc.
+
+Hint: You can use a method by appending a dot `.` and then the method name
+to the object. E.g. `-99.abs` uses (we also say: "calls") the method `abs` on
+the number `-99`.  Try for yourself what it does, and google for "ruby abs" to
+find [the documentation](http://ruby-doc.org/core-2.0/Numeric.html#method-i-abs)
+for this method.
 

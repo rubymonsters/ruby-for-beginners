@@ -45,9 +45,6 @@ Person.new("Ada")
 and the string `"Ada"` will be passed on to our `initialize` method, and end
 up being assigned to the local variable `name`.
 
-The name `"Ada"` of course refers to Ada Lovelace, the world's [first computer
-programmer](http://en.wikipedia.org/wiki/Ada_Lovelace) :)
-
 To recap, when you call `new` on the class `Person`, and pass the string
 `"Ada"` then the method `new` will create a new instance of the class, and call
 `initialize` on it, passing the same argument list, which in our case is the

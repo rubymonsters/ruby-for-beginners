@@ -13,7 +13,7 @@ Create a new, empty file. Save it as `04_1-arrays.rb`. Fill in the following lin
 
 ```ruby
 words = ["one", "two", "three", "four", "five"]
-# ...
+# your code goes here
 p words
 ```
 

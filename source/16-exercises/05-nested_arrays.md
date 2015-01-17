@@ -17,7 +17,7 @@ numbers = [
   [4, 5, 6],
   [7, 8, 9]
 ]
-# ...
+# your code goes here
 p sums
 ```
 
@@ -39,7 +39,7 @@ numbers = [
   [2, 2, 2],
   [3, 2, 1]
 ]
-# ...
+# your code goes here
 lines.each { |line| puts line }
 ```
 

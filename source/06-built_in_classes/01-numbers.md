@@ -20,7 +20,7 @@ get an integer back:
 ```ruby
 $ irb
 > 1 + 2.0
-3
+=> 3
 ```
 
 And if you start the expression with a float then you'll get a float back:
@@ -28,7 +28,7 @@ And if you start the expression with a float then you'll get a float back:
 ```ruby
 $ irb
 > 1.0 + 2
-3.0
+=> 3.0
 ```
 
 This is important when you do a division:
@@ -36,7 +36,7 @@ This is important when you do a division:
 ```ruby
 $irb
 > 3 / 2
-1
+=> 1
 ```
 
 As you can see any decimal places will be just cut off, since the result needs
@@ -47,5 +47,5 @@ However, if you start with a float:
 ```ruby
 $irb
 > 3.0 / 2
-1.5
+=> 1.5
 ```

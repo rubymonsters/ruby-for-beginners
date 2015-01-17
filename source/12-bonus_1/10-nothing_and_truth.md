@@ -149,7 +149,7 @@ If you read this out loud, does it make sense to you?
 The code first looks up the translation from the `dictionary` hash. And then it
 says *If there's a translation, then use it. Otherwise do something else.*
 
-Ruby's concept of truthyness allows us to write our code in this concise way
+Ruby's concept of truthiness allows us to write our code in this concise way
 that almost reads like English. And that's one reason why many people love Ruby
 so much.
 

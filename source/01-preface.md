@@ -25,6 +25,8 @@ email the mailing list, or ideally [file an issue](https://github.com/rubymonste
 on this repository. (This also helps you get familiar with GitHub, which we'll
 use a lot, later on.)
 
+By using the name "Ada" in examples in this book we give credit to Ada
+Lovelace, the world's [first computer programmer](http://en.wikipedia.org/wiki/Ada_Lovelace) :)
 
 ## Resources
 

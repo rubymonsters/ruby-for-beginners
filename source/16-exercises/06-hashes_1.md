@@ -10,7 +10,7 @@ Make a new file `6_1-hashes.rb`, and fill in the following line:
 
 ```ruby
 dictionary = { :one => 'uno', :two => 'dos', :three => 'tres' }
-# ...
+# your code goes here
 ```
 
 So that it prints out `duo` (lowercase).

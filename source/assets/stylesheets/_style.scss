@@ -126,6 +126,12 @@ code:before, code:after {
   }
 }
 
+.credits {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: #999;
+}
+
 // overwrite the default from syntax because we want to use bash prompts `$`,
 // but still also highlight as Ruby code
 .highlight .err {

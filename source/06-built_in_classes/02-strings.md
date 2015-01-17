@@ -29,3 +29,63 @@ programmers had thought about text before: as characters lined up on strings.
 
 Luckily, nowadays, in Ruby and any other modern language, you can just think
 about strings as text.
+
+### Things you can do with strings
+
+Here are a few things you can do with strings.
+
+For example, you can glue them together by using `+`. We also call this
+[concatenation](http://www.wikiwand.com/en/Concatenation).
+
+```ruby
+$ irb
+> "snow" + "ball"
+=> "snowball"
+
+> "hi " + "hi " + "hi"
+=> "hihihi"
+```
+
+The last operation can also be done by using `*`, like so:
+
+```ruby
+$ irb
+> "hi" * 3
+=> "hihihi"
+```
+
+I.e. multiplying a string by a number in Ruby means repeating the string as
+many times.
+
+The following examples are worth noting, too:
+
+
+```ruby
+$ irb
+> "1" + "1" + "1"
+=> "111"
+
+> "1" * 3
+=> "111"
+```
+
+This demonstrates that Ruby behaves the same for strings that contain nothing
+but numbers.
+
+Some other things that you can do with strings that you can try yourself in
+`irb`:
+
+```ruby
+> "hello".upcase
+=> "HELLO"
+
+> "hello".capitalize
+=> "Hello"
+
+> "hello".length
+=> 5
+
+> "hello".reverse
+=> "olleh"
+```
+
