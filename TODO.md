@@ -17,7 +17,6 @@ An incomplete list of what's missing:
 
 Notes:
 
-* Fix arguments vs parameters
 * Mention comments
 * Mention omitting curly braces for hashes on method calls
 * Bonus: calling methods is also referred as "sending messages", the method `send`
