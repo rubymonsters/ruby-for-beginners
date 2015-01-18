@@ -1,8 +1,9 @@
-# Working with hashes (1)
+# Working with Hashes (1)
 
 Before you get started, make sure you have your text editor and terminal open,
 and you have navigated to your exercises directory in the terminal. E.g. `cd
 ~/ruby-for-beginners/exercises`.
+
 
 ## Exercise 6.1
 
@@ -13,26 +14,56 @@ dictionary = { :one => 'uno', :two => 'dos', :three => 'tres' }
 # your code goes here
 ```
 
-So that it prints out `duo` (lowercase).
+So that it prints out `dos`.
+
 
 ## Exercise 6.2
 
-Copy that file to a new file `cp 06-hashes_1-1.rb 06-hashes_1-2.rb`, and change your
-code so that it prints out the following. Do not use puts more than once.
+Make a new file `06-hashes_1-2.rb`, and fill in the following line:
 
+```ruby
+dictionary = { :one => 'uno', :two => 'dos', :three => 'tres' }
+# your code goes here
+puts dictionary[:four]
 ```
-Uno
-Dos
-Tres
-```
+
+So that it prints out `cuatro`.
+
 
 ## Exercise 6.3
 
 Copy that file to a new file `cp 06-hashes_1-2.rb 06-hashes_1-3.rb`, and change your
-code so that it prints out the following. Again, do not use puts more than
-once.
+code so that it prints out the following.
 
 ```
-Uno
-Tres
+Cuatro
+```
+
+
+## Exercise 6.4
+
+There is a method on hashes that allows to check if a certain key is defined on
+the hash.  Find that method by googling for "ruby hash key defined".
+
+Try this method in `irb` by creating a hash like the one above, calling the
+method and passing keys like `:one`, `:two`, `:four`, and `:ten`.
+
+
+## Exercise 6.5
+
+There is a method on hashes that flips keys and values. Find that method on the
+[Ruby documentation about hashes](http://www.ruby-doc.org/core-2.2.0/Hash.html)
+
+Make a new file `06-hashes_1-5.rb`, and fill in the following line using that
+method:
+
+```ruby
+dictionary = { :one => 'uno', :two => 'dos', :three => 'tres' }
+# your code goes here
+```
+
+This should then output:
+
+```
+{ 'uno' => :one, 'dos' => :two, 'tres' => :three }
 ```

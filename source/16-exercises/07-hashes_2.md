@@ -1,4 +1,4 @@
-# Working with hashes (2)
+# Working with Hashes (2)
 
 ## Exercise 7.1
 

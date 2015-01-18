@@ -1,4 +1,4 @@
-# The Email class
+# The Email Class
 
 ## Exercise 9.1
 

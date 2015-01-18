@@ -1,4 +1,4 @@
-# Storing our HTML to a file
+# Storing our HTML to a File
 
 ## Exercise 13.1
 

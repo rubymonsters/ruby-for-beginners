@@ -1,5 +1,7 @@
 # Hashes
 
+*Hashes are like dictionaries*
+
 Hashes are another very useful thing that can be used to store objects.
 
 Unlike arrays which are mere lists, hashes are like dictionaries: You can use
@@ -93,3 +95,6 @@ what it means. Simply remember that these two hashes are exactly the same:
 { :one => "eins", :two => "zwei", :three => "drei" }
 { one: "eins", two: "zwei", three: "drei" }
 ```
+
+Exercises: Now would be a good time to do some of the [exercises on
+arrays](/16-exercises/06-hashes_1.html).

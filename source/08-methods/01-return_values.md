@@ -2,10 +2,10 @@
 
 In Ruby, methods always return exactly one single thing (object).
 
-This object can be anything, but a method can only return one thing, and it
-also always returns *something*. In order to return a bunch of things from a
-method at once we can return an array that holds the things that we are
-interested in (but the array itself is just one object).
+The returned object can be anything, but a method can only return one thing,
+and it also *always returns something*. In order to return a bunch of things
+at once we can return an array that holds the things that we are interested in
+(but the array itself is just one object).
 
 Also, in Ruby we do not have to use the statement `return`, as in other
 languages. This is extremely convenient, but it is also something we need to
@@ -15,9 +15,10 @@ If we don't do anything else, then a method will return the value that was
 returned from the last evaluated statement. Most often, this is the last line
 in the method body.
 
-This is important to understand. Please read that sentence again: If we don't
-do anything else, then *a method will return the value that was returned from
-the last evaluated statement*.
+This is important to understand. Please read that sentence again:
+
+If we don't do anything else, then *a method will return the value that was
+returned from the last evaluated statement*.
 
 In our example method
 

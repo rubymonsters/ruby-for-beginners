@@ -1,5 +1,7 @@
 # Arrays
 
+*Arrays are like bags that contain things*
+
 While numbers, strings, and symbols all represent simple, primitive things,
 arrays are more interesting, and very useful.
 
@@ -77,3 +79,6 @@ This also prints out `four`.
 
 On formatting: Note that there are no spaces inside the square brackets,
 and there's one space after each comma.
+
+Exercises: Now would be a good time to do some of the [exercises on
+arrays](/16-exercises/03-arrays_1.html).

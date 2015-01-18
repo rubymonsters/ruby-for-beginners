@@ -1,4 +1,4 @@
-# Reading from a CSV file
+# Reading from a CSV File
 
 So far our program has all the email data *hardcoded*: All the data is baked
 right into our code. Everytime you run it, it will display all the same emails.

@@ -89,3 +89,5 @@ Some other things that you can do with strings that you can try yourself in
 => "olleh"
 ```
 
+Exercises: How about doing some of the [exercises on numbers](/16-exercises/02-strings.html)
+next?

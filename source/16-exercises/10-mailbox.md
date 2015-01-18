@@ -1,4 +1,4 @@
-# The Mailbox class
+# The Mailbox Class
 
 ## Exercise 10.1
 

@@ -49,16 +49,26 @@ So that you get the following output:
 [2, 4, 6, 8, 10]
 ```
 
+Hint: Read the documentation for the method `select` that you can use on arrays
+on the [Ruby documentation](http://www.ruby-doc.org/core-2.2.0/Array.html#method-i-select).
+
 ## Exercise 3.4
 
 Again, copy your last file to a new file: `cp 03-arrays_1-3.rb 03-arrays_1-4.rb`,
 then open this new file.
 
-Now change the code so that you get the following output:
+Now change the code that you just added so that you get the following output:
 
 ```ruby
 [10, 8, 6, 4, 2]
 ```
+
+Hint: The method `select` that you used in the last exercise returns an array.
+On this array (the return value) you can use another method, by, again, just
+appending a dot `.` and the method name to it, i.e., to the end of the line.
+
+Hint: There is another method that reverses the order of the array. You can
+find it by googling for "ruby array reverse".
 
 ## Exercise 3.5
 
@@ -71,7 +81,7 @@ Now change your code so that you get the following output:
 [10, 8, 4, 2]
 ```
 
-Find at least three different solutions for this last change.
+Bonus: Find at least three different solutions for this last change.
 
 
 

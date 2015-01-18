@@ -1,4 +1,4 @@
-# Working with nested arrays
+# Working with Nested Arrays
 
 Note: At the moment these exercises require reading up until "Block return values".
 You should know how to use the method `collect` on arrays.
