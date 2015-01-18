@@ -1,95 +1,149 @@
 require 'fileutils'
 
-class Source < Struct.new(:dir)
-  def renumber
-    check_filenames
-    detect_moved_files
+InvalidFilename = Class.new(StandardError)
 
-    # fix_references
-    # move_files
-  rescue => e
+class Paths < Struct.new(:dir)
+  def all
+    @all ||= find_all(dir)
+  end
+
+  private
+
+    def find_all(dir)
+      find(dir).inject([]) do |result, (path, ix)|
+        result << [path, ix]
+        result + find_all(path)
+      end
+    end
+
+    def find(dir)
+      paths = Dir["#{dir}/*.md"]
+      paths = paths.select { |path| path =~ /[\d]{2}-/ }
+      paths = paths.map { |path| path.sub('.md', '') }.uniq.sort
+      paths.map.with_index { |path, ix| [path, ix] }
+    end
+end
+
+class Source < Struct.new(:path, :number)
+  def validate!
+    raise InvalidFilename, "Invalid filename: #{basename}.md" unless basename =~ /^[\d]{2}-[\w_]+$/
+  end
+
+  def save
+    File.write(filename, content)
+  end
+
+  def move
+    source, target = "#{path}.md", "#{self.target}.md"
+    return if source == target
+    FileUtils.mv(source, target)
+    self.path = self.target
+  end
+
+  def exercise?
+    dir == 'exercises'
+  end
+
+  def content
+    @content ||= File.read(filename)
+  end
+
+  def target
+    path.sub(/(.*)[\d]{2}-/, "\\1#{formatted_number}-")
+  end
+
+  def dir
+    dirname.split('-').last
+  end
+
+  def name
+    path.split('-').last
+  end
+
+  def filename
+    "#{path}.md"
+  end
+
+  def dirname
+    File.dirname(path)
+  end
+
+  def basename
+    File.basename(path)
+  end
+
+  def formatted_number
+    number.to_s.rjust(2, '0')
+  end
+end
+
+class Fixes < Struct.new(:sources)
+  def apply(source)
+    [Hrefs, Headlines, Filenames].each do |fix|
+      fix.new(sources).apply(source)
+    end
+  end
+end
+
+class Hrefs < Struct.new(:sources)
+  def apply(source)
+    path, dir, name = source.path.sub('source/', ''), source.dir, source.name
+    sources.each do |source|
+      matches = source.content.match(%r(["\(]/([\d]{2}-#{dir}/?[\d]{2}-#{name}).html["\)]))
+      match = matches && matches.to_a.last
+      next unless match && match != path
+      source.content.gsub!(match, path)
+      source.save
+    end
+  end
+end
+
+class Headlines < Struct.new(:sources)
+  def apply(source)
+    return unless source.exercise?
+    source.content.gsub!(/([#]+ .+) [\d]+.([\d]+)/) do |match|
+      "#{$1} #{source.number}.#{$2}"
+    end
+    source.save
+  end
+end
+
+class Filenames < Struct.new(:sources)
+  def apply(source)
+    return unless source.exercise?
+    name, target = source.name, File.basename(source.target)
+    sources.each do |source|
+      source.content.gsub!(/[\d]{1,2}-#{name}-([\d]{1,2}).rb/) do |match|
+        "#{target}-#{$1}.rb"
+      end
+      source.save
+    end
+  end
+end
+
+class Sources < Struct.new(:dir)
+  def renumber
+    sources.each do |source|
+      source.validate!
+      fixes.apply(source)
+      source.move
+    end
+  rescue InvalidFilename => e
     puts e.message
   end
 
   private
 
-    def check_filenames
-      sources.each do |path|
-        basename = File.basename(path)
-        raise "Invalid filename: #{basename}.md" unless basename =~ /[\d]{2}-[\w_]+/
-      end
-    end
-
-    def detect_moved_files
-      sources.each do |path|
-        p path
-      end
-    end
-
-    def fix_references
-      sources.each do |path|
-        filename = "#{path}.md"
-        content = File.read(filename)
-        content = fix_links(content)
-        content = fix_exercise_refs(content)
-        File.write(filename, content)
-      end
-    end
-
-    def move_files
-      all.each do |source, target|
-        next if source == target
-        FileUtils.mv(source, target) if File.exists?(source)
-        FileUtils.mv("#{source}.md", "#{target}.md") if File.exists?("#{source}.md")
-      end
-    end
-
-    def fix_links(content)
-      changed.each do |source, target|
-        source = source.sub('source/', '')
-        target = target.sub('source/', '')
-        content.gsub!("/#{source}.html", "/#{target}.html")
-      end
-      content
-    end
-
-    def fix_exercise_refs(content)
-      changed.each do |source, target|
-        source = File.basename(source)
-        target = File.basename(target)
-        content.gsub!(/#{source}-([\d]{1,2}).rb/) { "#{target}-#{$1}.rb" }
-      end
-      content
-    end
-
-    def all
-      @all ||= renumbered_paths(dir)
-    end
-
-    def changed
-      all.select { |source, target| source != target }
+    def fixes
+      @fixes ||= Fixes.new(sources)
     end
 
     def sources
-      all.map(&:first)
-    end
-
-    def renumbered_paths(dir)
-      result = []
-      paths(dir).map.with_index do |path, number|
-        number = (number + 1).to_s.rjust(2, '0')
-        result << [path, path.sub(/(.*)[\d]{2}-/, "\\1#{number}-")]
-        result += renumbered_paths(path)
+      @sources ||= Paths.new(dir).all.map do |path, ix|
+        Source.new(path, ix + 1)
       end
-      result
-    end
-
-    def paths(dir)
-      paths = Dir["#{dir}/*.md"]
-      paths = paths.select { |path| path =~ /[\d]{2}-/ }
-      paths = paths.map { |path| path.sub('.md', '') }.uniq.sort
     end
 end
 
-source = Source.new('source')
-source.renumber
+sources = Sources.new('source')
+sources.renumber
