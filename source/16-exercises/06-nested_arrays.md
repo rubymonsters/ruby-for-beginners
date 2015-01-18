@@ -7,9 +7,9 @@ Before you get started, make sure you have your text editor and terminal open, a
 you have navigated to your exercises directory in the terminal. E.g. `cd
 ~/ruby-for-beginners/exercises`.
 
-## Exercise 5.1
+## Exercise 6.1
 
-Make a new file `05-nested_arrays-1.rb`, and fill in the following line:
+Make a new file `06-nested_arrays-1.rb`, and fill in the following line:
 
 ```ruby
 numbers = [
@@ -27,9 +27,9 @@ So that you get the following output:
 [6, 15, 24]
 ```
 
-## Exercise 5.2
+## Exercise 6.2
 
-Make a new file `05-nested_arrays-2.rb`, and fill in the following line:
+Make a new file `06-nested_arrays-2.rb`, and fill in the following line:
 
 Fill in the following line
 
