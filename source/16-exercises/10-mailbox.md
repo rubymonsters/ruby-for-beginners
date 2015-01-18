@@ -2,9 +2,10 @@
 
 ## Exercise 10.1
 
-Write a class that has a `name` and `emails` attribute. Make it so that the
-these attributes can be populated through the `initialize` method (`name`
-being a string, and `emails` being an array of `Email` instances).
+In a new file `10-mailbox-1.rb` Write a class that has a `name` and `emails`
+attribute. Make it so that the these attributes can be populated through the
+`initialize` method (`name` being a string, and `emails` being an array of
+`Email` instances).
 
 The following code
 

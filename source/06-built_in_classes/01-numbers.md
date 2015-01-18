@@ -49,3 +49,5 @@ $irb
 > 3.0 / 2
 => 1.5
 ```
+
+Exercises: How about doing some of the [exercises on numbers](/16-exercises/01-numbers.html).

@@ -9,7 +9,7 @@ you have navigated to your exercises directory in the terminal. E.g. `cd
 
 ## Exercise 5.1
 
-Make a new file `5_1-arrays.rb`, and fill in the following line:
+Make a new file `05-nested_arrays-1.rb`, and fill in the following line:
 
 ```ruby
 numbers = [
@@ -29,7 +29,7 @@ So that you get the following output:
 
 ## Exercise 5.2
 
-Make a new file `5_2-arrays.rb`, and fill in the following line:
+Make a new file `05-nested_arrays-2.rb`, and fill in the following line:
 
 Fill in the following line
 

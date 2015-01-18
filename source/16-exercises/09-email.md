@@ -2,7 +2,7 @@
 
 ## Exercise 9.1
 
-In a new file `09-1_email.rb` write a class `Email` that has a `subject`,
+In a new file `09-email-1.rb` write a class `Email` that has a `subject`,
 `date`, and `from` attribute. Make it so that these attributes can be populated
 through `new` and `initialize`.
 

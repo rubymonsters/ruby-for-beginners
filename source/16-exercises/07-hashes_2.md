@@ -2,7 +2,7 @@
 
 ## Exercise 7.1
 
-Make a new file `7_1-hashes.rb`, and dd the following lines:
+Make a new file `07-hashes_2-1.rb`, and dd the following lines:
 
 ```ruby
 languages = {
@@ -26,7 +26,7 @@ In Italian uno means one, duo means two, tres means three.
 
 ## Exercise 7.2
 
-Now, in a new file `7_2-hashes.rb`, with the same hashes from above, add code
+Now, in a new file `07-hashes_2-2.rb`, with the same hashes from above, add code
 that prints out the following table:
 
 ```
@@ -37,7 +37,7 @@ es uno dos tres
 
 ## Exercise 7.3
 
-Copy your file to a new file `cp 7_2-hashes.rb 7_3-hashes.rb` and change your
+Copy your file to a new file `cp 07-hashes_2-2.rb 07-hashes_2-3.rb` and change your
 code so that it aligns the table columns:
 
 ```
@@ -48,7 +48,7 @@ es uno  dos  tres
 
 ## Exercise 7.4
 
-Copy your file to a new file `cp 7_3-hashes.rb 7_4-hashes.rb` and change your
+Copy your file to a new file `cp 07-hashes_2-3.rb 07-hashes_2-4.rb` and change your
 code so that it adds delimiters:
 
 ```

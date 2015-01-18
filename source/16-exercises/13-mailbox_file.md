@@ -8,8 +8,8 @@ file, so that we can finally view it in an actual browser.
 Your objective is to write a file (using Ruby) that contains all the HTML
 from the last exercise.
 
-Building on the last exercise, copy your file to a new file `cp 12_1-mailbox-html.rb
-13_1-mailbox-file.rb`  and change the last line:
+Building on the last exercise, copy your file to a new file `cp 12-mailbox_html-1.rb
+13-mailbox_file-1.rb`  and change the last line:
 
 Instead of passing the HTML to `puts` you should be passing it to a different
 method, so that running your program writes the HTML file that we are after.

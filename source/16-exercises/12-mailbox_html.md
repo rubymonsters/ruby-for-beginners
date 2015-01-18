@@ -56,8 +56,11 @@ You'll understand it more once we build our first Rails application.
 
 ## Exercise 12.1
 
-Ok, now to our exercise. We will basically start over with the same code again,
-except that our formatter class now will be called `MailboxHtmlFormatter`:
+Ok, now to our exercise. We will  start over with the same code again, except
+that our formatter class now will be called `MailboxHtmlFormatter`.
+
+Copy your file `11-mailbox_text-1.rb` to `12-mailbox_html-1.rb` and change it
+like so. Then fill in the `MailboxHtmlFormatter` class.
 
 ```ruby
 class Email

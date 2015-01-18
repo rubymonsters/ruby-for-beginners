@@ -2,7 +2,7 @@
 
 ## Exercise 8.1
 
-Make a new file `8_1-truthiness.rb`, and add the following lines:
+Make a new file `08-truthiness-1.rb`, and add the following lines:
 
 This exercise is about validating what we've learned about truthiness.
 
@@ -55,7 +55,7 @@ false     | false
 
 ## Bonus: Exercise 8.2
 
-Copy your file to a new file `8_2-truthiness.rb`, and change your code so that
+Copy your file to a new file `08-truthiness-2.rb`, and change your code so that
 it outputs the following table. Fill each cell with the result that `==`
 returns for each combination.
 

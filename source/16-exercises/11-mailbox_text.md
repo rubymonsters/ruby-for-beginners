@@ -6,7 +6,7 @@ and, to some extent, the point :)
 
 ## Exercise 11.1
 
-Make a new file `11-1_mailbox_text.rb`. Fill in and complete the following
+Make a new file `11-mailbox_text-1.rb`. Fill in and complete the following
 class definitions:
 
 ```ruby

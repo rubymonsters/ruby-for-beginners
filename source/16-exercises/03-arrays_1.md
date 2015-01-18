@@ -6,7 +6,7 @@ and you have navigated to your exercises directory in the terminal. E.g. `cd
 
 ## Exercise 3.1
 
-Create a new, empty file. Save it as `03-1_arrays.rb`. Fill in the following
+Create a new, empty file. Save it as `03-arrays_1-1.rb`. Fill in the following
 line:
 
 ```ruby
@@ -14,7 +14,7 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # your code goes here
 ```
 
-So that, when you run your code (run `ruby 03-1_arrays.rb`), you get the
+So that, when you run your code (run `ruby 03-arrays_1-1.rb`), you get the
 following output:
 
 ```ruby
@@ -23,7 +23,7 @@ following output:
 
 ## Exercise 3.2
 
-Copy your file to a new file: `cp 03-1_arrays.rb 03-2_arrays.rb`, then open this
+Copy your file to a new file: `cp 03-arrays_1-1.rb 03-arrays_1-2.rb`, then open this
 new file.
 
 Add another line before the line that you just added, so that, when you run
@@ -35,7 +35,7 @@ your code, you get the following output:
 
 ## Exercise 3.3
 
-Make a new file `03-3_arrays.rb`, and fill in the following line:
+Make a new file `03-arrays_1-3.rb`, and fill in the following line:
 
 ```ruby
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -51,7 +51,7 @@ So that you get the following output:
 
 ## Exercise 3.4
 
-Again, copy your last file to a new file: `cp 03-3_arrays.rb 03-4_arrays.rb`,
+Again, copy your last file to a new file: `cp 03-arrays_1-3.rb 03-arrays_1-4.rb`,
 then open this new file.
 
 Now change the code so that you get the following output:
@@ -62,7 +62,7 @@ Now change the code so that you get the following output:
 
 ## Exercise 3.5
 
-Again, copy your last file to a new file: `cp 03-4_arrays.rb 03-5_arrays.rb`,
+Again, copy your last file to a new file: `cp 03-arrays_1-4.rb 03-arrays_1-5.rb`,
 then open this new file.
 
 Now change your code so that you get the following output:

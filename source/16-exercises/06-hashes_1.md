@@ -6,7 +6,7 @@ and you have navigated to your exercises directory in the terminal. E.g. `cd
 
 ## Exercise 6.1
 
-Make a new file `6_1-hashes.rb`, and fill in the following line:
+Make a new file `06-hashes_1-1.rb`, and fill in the following line:
 
 ```ruby
 dictionary = { :one => 'uno', :two => 'dos', :three => 'tres' }
@@ -17,7 +17,7 @@ So that it prints out `duo` (lowercase).
 
 ## Exercise 6.2
 
-Copy that file to a new file `cp 6_1-hashes.rb 6_2-hashes.rb`, and change your
+Copy that file to a new file `cp 06-hashes_1-1.rb 06-hashes_1-2.rb`, and change your
 code so that it prints out the following. Do not use puts more than once.
 
 ```
@@ -28,7 +28,7 @@ Tres
 
 ## Exercise 6.3
 
-Copy that file to a new file `cp 6_2-hashes.rb 6_3-hashes.rb`, and change your
+Copy that file to a new file `cp 06-hashes_1-2.rb 06-hashes_1-3.rb`, and change your
 code so that it prints out the following. Again, do not use puts more than
 once.
 
