@@ -125,22 +125,25 @@ Obviously that&rsquo;s not a very useful for a real world program.</p>
 <p>Let&rsquo;s change this to read our data from an external data source instead.</p>
 
 <p>One very simple and pretty popular way to store data to files is using the
-format CSV. This stands for &ldquo;comma separated values&rdquo; (although, most of the
-times semicolons are used as a separator), and it is something that
+format CSV. This stands for &ldquo;comma separated values&rdquo; (although, often times
+semicolons are used as a separator instead of commas), and it is something that
 spreadsheets can read and export. Being able to work with CSV can be pretty
 handy: just write a little Ruby script, and filter that data, or work with it
 otherwise.</p>
+
+<p>The first line in the code below <code>require &quot;csv&quot;</code> makes Ruby&rsquo;s CSV library
+available to your program so that you can then use the class <code>CSV</code>.</p>
 
 <h2>Exercise 14.1</h2>
 
 <p>Building on the same code from the last exercises, your objective is to
 read the email data from a file <code>emails.csv</code>. This file should be stored
 in the same directory as your Ruby program, and contain the following data:</p>
-<pre class="highlight plaintext"><code>Date;From;Subject
-2014-12-01;Ferdous;Homework this week
-2014-12-01;Dajana;Keep on coding! :)
-2014-12-02;Ariane;Re: Homework this week
-2014-12-11;Maria;I'm back in Berlin
+<pre class="highlight plaintext"><code>Date,From,Subject
+2014-12-01,Ferdous,Homework this week
+2014-12-01,Dajana,Keep on coding! :)
+2014-12-02,Ariane,Re: Homework this week
+2014-12-11,Maria,I'm back in Berlin
 </code></pre>
 
 <p>You can create that file by copying the four lines from above to your editor.</p>
@@ -149,7 +152,7 @@ in the same directory as your Ruby program, and contain the following data:</p>
 
 <ul>
 <li>Read the contents of a file to Ruby, as a string</li>
-<li>Parse this string as CSV</li>
+<li>Parse this string as CSV (google for &ldquo;ruby csv&rdquo; and/or look at the documentation)</li>
 <li>For each of the rows, ignoring the header line, create an <code>Email</code> instance</li>
 </ul>
 
@@ -167,7 +170,9 @@ all of that into a class <code>EmailsCsvStore</code>. This class should take a f
 and have a method <code>read</code>, which returns the emails array.</p>
 
 <p>In the end that part of the code should read:</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Email</span>
+<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s2">"csv"</span>
+
+<span class="k">class</span> <span class="nc">Email</span>
   <span class="c1"># your class from the last exercise</span>
 <span class="k">end</span>
 
@@ -196,6 +201,8 @@ and have a method <code>read</code>, which returns the emails array.</p>
 
 <span class="c1"># your code from the last exercise, writing the file</span>
 </code></pre>
+
+<p><a href="/solutions/14-mailbox_csv-1.rb" class="solution">Show solution</a></p>
 
         <nav class="page-nav"><a href="/16-exercises/13-mailbox_file.html" class="prev">Previous</a></nav>
         <nav class="page-nav"><a href="/16-exercises/15-mailbox_erb.html" class="next">Next</a></nav>
