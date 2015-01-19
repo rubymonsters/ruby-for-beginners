@@ -230,15 +230,15 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/04-arrays_2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/04-hashes_1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/05-nested_arrays.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/05-arrays_2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/06-hashes_1.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/06-nested_arrays.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -251,6 +251,10 @@
     </url>
     <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/09-email.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/10-mailbox.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -283,10 +287,6 @@
     </url>
     <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/10-mailbox.html</loc>
       <priority>0.5</priority>
     </url>
 </urlset>

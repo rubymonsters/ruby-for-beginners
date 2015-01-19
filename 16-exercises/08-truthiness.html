@@ -11,7 +11,7 @@
 
     <title>Truthiness | Ruby for Beginners</title>
 
-    <link href="../assets/stylesheets/monstas-79b86c92.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -98,17 +98,17 @@
       <li><a href="/16-exercises/01-numbers.html">Working with Numbers</a></li>
       <li><a href="/16-exercises/02-strings.html">Working with Strings</a></li>
       <li><a href="/16-exercises/03-arrays_1.html">Working with Arrays (1)</a></li>
-      <li><a href="/16-exercises/04-arrays_2.html">Working with Arrays (2)</a></li>
-      <li><a href="/16-exercises/05-nested_arrays.html">Working with nested arrays</a></li>
-      <li><a href="/16-exercises/06-hashes_1.html">Working with hashes (1)</a></li>
-      <li><a href="/16-exercises/07-hashes_2.html">Working with hashes (2)</a></li>
+      <li><a href="/16-exercises/04-hashes_1.html">Working with Hashes (1)</a></li>
+      <li><a href="/16-exercises/05-arrays_2.html">Working with Arrays (2)</a></li>
+      <li><a href="/16-exercises/06-nested_arrays.html">Working with Nested Arrays</a></li>
+      <li><a href="/16-exercises/07-hashes_2.html">Working with Hashes (2)</a></li>
       <li class="active"><a href="/16-exercises/08-truthiness.html">Truthiness</a></li>
-      <li><a href="/16-exercises/09-email.html">The Email class</a></li>
-      <li><a href="/16-exercises/10-mailbox.html">The Mailbox class</a></li>
+      <li><a href="/16-exercises/09-email.html">The Email Class</a></li>
+      <li><a href="/16-exercises/10-mailbox.html">The Mailbox Class</a></li>
       <li><a href="/16-exercises/11-mailbox_text.html">The Mailbox Text Formatter</a></li>
       <li><a href="/16-exercises/12-mailbox_html.html">The Mailbox Html Formatter</a></li>
-      <li><a href="/16-exercises/13-mailbox_file.html">Storing our HTML to a file</a></li>
-      <li><a href="/16-exercises/14-mailbox_csv.html">Reading from a CSV file</a></li>
+      <li><a href="/16-exercises/13-mailbox_file.html">Storing our HTML to a File</a></li>
+      <li><a href="/16-exercises/14-mailbox_csv.html">Reading from a CSV File</a></li>
       <li><a href="/16-exercises/15-mailbox_erb.html">Generating HTML using ERB</a></li>
       <li><a href="/16-exercises/16-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
   </ul></li>
@@ -120,18 +120,18 @@
 
 <h2>Exercise 8.1</h2>
 
-<p>Make a new file <code>8_1-truthiness.rb</code>, and add the following lines:</p>
+<p>Make a new file <code>08-truthiness-1.rb</code>, and add the following lines:</p>
 
 <p>This exercise is about validating what we&rsquo;ve learned about truthiness.</p>
 
 <p>You have the following array:</p>
-<pre class="highlight ruby"><code><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="kp">true</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="p">[],</span> <span class="no">Object</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span><span class="p">]</span>
+<pre class="highlight ruby"><code><span class="n">objects</span> <span class="o">=</span> <span class="p">[</span><span class="kp">true</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="p">[],</span> <span class="no">Object</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span><span class="p">]</span>
 </code></pre>
 
 <p>Add some code that outputs the following table. The last column should be
 filled in with by either <code>true</code> or <code>false</code> depending what the comparison (using
 <code>==</code>) with each value returns:</p>
-<pre class="highlight plaintext"><code>value                      | true == value
+<pre class="highlight plaintext"><code>object                     | true == value
 true                       | [true|false]
 false                      | [true|false]
 0                          | [true|false]
@@ -153,7 +153,7 @@ instances everytime you run your code.</p>
 calling <code>sub(/:.*&gt;/, &quot;&gt;&quot;)</code> on whatever <code>inspect</code> returns.</p>
 
 <p>Your table should now look like this:</p>
-<pre class="highlight plaintext"><code>value     | true == value
+<pre class="highlight plaintext"><code>object    | true == value
 true      | true
 false     | false
 0         | true
@@ -165,9 +165,11 @@ false     | false
 #&lt;Module&gt; | true
 </code></pre>
 
+<p><a href="/solutions/08-truthiness-1.rb" class="solution">Show solution</a></p>
+
 <h2>Bonus: Exercise 8.2</h2>
 
-<p>Copy your file to a new file <code>8_2-truthiness.rb</code>, and change your code so that
+<p>Copy your file to a new file <code>08-truthiness-2.rb</code>, and change your code so that
 it outputs the following table. Fill each cell with the result that <code>==</code>
 returns for each combination.</p>
 <pre class="highlight plaintext"><code>          | true      | false      | 0          | 1          | ""         | []         | #&lt;Object&gt; | #&lt;Class&gt;  | #&lt;Module&gt;
@@ -195,6 +197,8 @@ know how, google for &ldquo;ruby array add to beginning&rdquo;</li>
 <li>Join all rows with the string <code>&quot;\n&quot;</code> (newline), and output the result.</li>
 </ol>
 
+<p><a href="/solutions/08-truthiness-2.rb" class="solution">Show solution</a></p>
+
         <nav class="page-nav"><a href="/16-exercises/07-hashes_2.html" class="prev">Previous</a></nav>
         <nav class="page-nav"><a href="/16-exercises/09-email.html" class="next">Next</a></nav>
       </article>
@@ -212,6 +216,6 @@ know how, google for &ldquo;ruby array add to beginning&rdquo;</li>
     </footer>
 
     <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="../assets/javascripts/monstas-6918bd1b.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-b921150b.js" type="text/javascript"></script>
   </body>
 </html>
