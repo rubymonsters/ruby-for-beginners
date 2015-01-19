@@ -7,11 +7,14 @@ Obviously that's not a very useful for a real world program.
 Let's change this to read our data from an external data source instead.
 
 One very simple and pretty popular way to store data to files is using the
-format CSV. This stands for "comma separated values" (although, most of the
-times semicolons are used as a separator), and it is something that
+format CSV. This stands for "comma separated values" (although, often times
+semicolons are used as a separator instead of commas), and it is something that
 spreadsheets can read and export. Being able to work with CSV can be pretty
 handy: just write a little Ruby script, and filter that data, or work with it
 otherwise.
+
+The first line in the code below `require "csv"` makes Ruby's CSV library
+available to your program so that you can then use the class `CSV`.
 
 ## Exercise 14.1
 
@@ -20,11 +23,11 @@ read the email data from a file `emails.csv`. This file should be stored
 in the same directory as your Ruby program, and contain the following data:
 
 ```csv
-Date;From;Subject
-2014-12-01;Ferdous;Homework this week
-2014-12-01;Dajana;Keep on coding! :)
-2014-12-02;Ariane;Re: Homework this week
-2014-12-11;Maria;I'm back in Berlin
+Date,From,Subject
+2014-12-01,Ferdous,Homework this week
+2014-12-01,Dajana,Keep on coding! :)
+2014-12-02,Ariane,Re: Homework this week
+2014-12-11,Maria,I'm back in Berlin
 ```
 
 You can create that file by copying the four lines from above to your editor.
@@ -32,7 +35,7 @@ You can create that file by copying the four lines from above to your editor.
 In order to complete this exercise you'll need to find out how to:
 
 * Read the contents of a file to Ruby, as a string
-* Parse this string as CSV
+* Parse this string as CSV (google for "ruby csv" and/or look at the documentation)
 * For each of the rows, ignoring the header line, create an `Email` instance
 
 In other words, you should replace the following lines of code:
@@ -53,6 +56,8 @@ and have a method `read`, which returns the emails array.
 In the end that part of the code should read:
 
 ```ruby
+require "csv"
+
 class Email
   # your class from the last exercise
 end
@@ -83,3 +88,4 @@ formatter = MailboxHtmlFormatter.new(mailbox)
 # your code from the last exercise, writing the file
 ```
 
+<a href="/solutions/14-mailbox_csv-1.rb" class="solution">Show solution</a>
