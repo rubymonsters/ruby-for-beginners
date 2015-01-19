@@ -9,7 +9,7 @@ This exercise is about validating what we've learned about truthiness.
 You have the following array:
 
 ```ruby
-values = [true, false, 0, 1, "", [], Object.new, Class.new, Module.new]
+objects = [true, false, 0, 1, "", [], Object.new, Class.new, Module.new]
 ```
 
 Add some code that outputs the following table. The last column should be
@@ -17,7 +17,7 @@ filled in with by either `true` or `false` depending what the comparison (using
 `==`) with each value returns:
 
 ```
-value                      | true == value
+object                     | true == value
 true                       | [true|false]
 false                      | [true|false]
 0                          | [true|false]
@@ -41,7 +41,7 @@ calling `sub(/:.*>/, ">")` on whatever `inspect` returns.
 Your table should now look like this:
 
 ```
-value     | true == value
+object    | true == value
 true      | true
 false     | false
 0         | true
@@ -52,6 +52,9 @@ false     | false
 #<Class>  | true
 #<Module> | true
 ```
+
+<a href="/solutions/08-truthiness-1.rb" class="solution">Show solution</a>
+
 
 ## Bonus: Exercise 8.2
 
@@ -83,4 +86,5 @@ Tip: Break this up in sub-tasks:
 5. Add the table headers row.
 6. Join all rows with the string `"\n"` (newline), and output the result.
 
+<a href="/solutions/08-truthiness-2.rb" class="solution">Show solution</a>
 

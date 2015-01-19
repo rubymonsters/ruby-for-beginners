@@ -20,3 +20,5 @@ When you open this file in a text editor you should see the same HTML from
 the last exercise. When you open it in your browser it should look like this:
 
 ![image](https://cloud.githubusercontent.com/assets/2208/5602614/5ac2058c-935a-11e4-9c01-7ff9ec3b66cb.png)
+
+<a href="/solutions/13-mailbox_file-1.rb" class="solution">Show solution</a>

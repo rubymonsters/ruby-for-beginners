@@ -66,3 +66,5 @@ that you don't like, or deam ugly.
 Eventually, one goal to aim for would be: Adding another column to the table
 only requires mimimal changes, e.g. changes to one or two places in your
 formatter class.
+
+<a href="/solutions/11-mailbox_text-1.rb" class="solution">Show solution</a>

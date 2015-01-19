@@ -20,9 +20,12 @@ dictionary = {
 Now, at the end of the file, add code that prints out the following:
 
 ```
-In German eins means one, zwei means two, drei means three.
-In Italian uno means one, duo means two, tres means three.
+In German, eins means one, zwei means two, drei means three.
+In Spanish, uno means one, duo means two, tres means three.
 ```
+
+<a href="/solutions/07-hashes_2-1.rb" class="solution">Show solution</a>
+
 
 ## Exercise 7.2
 
@@ -35,6 +38,9 @@ en one two three
 es uno dos tres
 ```
 
+<a href="/solutions/07-hashes_2-2.rb" class="solution">Show solution</a>
+
+
 ## Exercise 7.3
 
 Copy your file to a new file `cp 07-hashes_2-2.rb 07-hashes_2-3.rb` and change your
@@ -46,13 +52,19 @@ en one  two  three
 es uno  dos  tres
 ```
 
+<a href="/solutions/07-hashes_2-3.rb" class="solution">Show solution</a>
+
+
 ## Exercise 7.4
 
 Copy your file to a new file `cp 07-hashes_2-3.rb 07-hashes_2-4.rb` and change your
 code so that it adds delimiters:
 
 ```
-de | eins | zwei | drei
-en | one  | two  | three
-es | uno  | dos  | tres
+| de | eins | zwei | drei  |
+| en | one  | two  | three |
+| es | uno  | dos  | tres  |
 ```
+
+<a href="/solutions/07-hashes_2-4.rb" class="solution">Show solution</a>
+

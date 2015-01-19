@@ -21,17 +21,21 @@ following output:
 5
 ```
 
+<a href="/solutions/03-arrays_1-1.rb" class="solution">Show solution</a>
+
 ## Exercise 3.2
 
 Copy your file to a new file: `cp 03-arrays_1-1.rb 03-arrays_1-2.rb`, then open this
 new file.
 
-Add another line before the line that you just added, so that, when you run
+Add another line *before the line that you just added*, so that, when you run
 your code, you get the following output:
 
 ```ruby
-6
+0
 ```
+
+<a href="/solutions/03-arrays_1-2.rb" class="solution">Show solution</a>
 
 ## Exercise 3.3
 
@@ -52,6 +56,8 @@ So that you get the following output:
 Hint: Read the documentation for the method `select` that you can use on arrays
 on the [Ruby documentation](http://www.ruby-doc.org/core-2.2.0/Array.html#method-i-select).
 
+<a href="/solutions/03-arrays_1-3.rb" class="solution">Show solution</a>
+
 ## Exercise 3.4
 
 Again, copy your last file to a new file: `cp 03-arrays_1-3.rb 03-arrays_1-4.rb`,
@@ -70,6 +76,8 @@ appending a dot `.` and the method name to it, i.e., to the end of the line.
 Hint: There is another method that reverses the order of the array. You can
 find it by googling for "ruby array reverse".
 
+<a href="/solutions/03-arrays_1-4.rb" class="solution">Show solution</a>
+
 ## Exercise 3.5
 
 Again, copy your last file to a new file: `cp 03-arrays_1-4.rb 03-arrays_1-5.rb`,
@@ -83,5 +91,6 @@ Now change your code so that you get the following output:
 
 Bonus: Find at least three different solutions for this last change.
 
+<a href="/solutions/03-arrays_1-5.rb" class="solution">Show solution</a>
 
 

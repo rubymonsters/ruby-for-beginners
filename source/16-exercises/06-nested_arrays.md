@@ -27,6 +27,9 @@ So that you get the following output:
 [6, 15, 24]
 ```
 
+<a href="/solutions/06-nested_arrays-1.rb" class="solution">Show solution</a>
+
+
 ## Exercise 6.2
 
 Make a new file `06-nested_arrays-2.rb`, and fill in the following line:
@@ -50,4 +53,6 @@ So that you get the following output:
 ** ** **
 *** ** *
 ```
+
+<a href="/solutions/06-nested_arrays-2.rb" class="solution">Show solution</a>
 

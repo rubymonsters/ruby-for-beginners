@@ -126,10 +126,20 @@ code:before, code:after {
   }
 }
 
+.solution {
+  font-size: 0.8rem;
+  color: #999;
+  text-decoration: none;
+}
+
 .credits {
   margin-top: 3rem;
   font-size: 0.8rem;
   color: #999;
+}
+
+.hidden {
+  display: none;
 }
 
 // overwrite the default from syntax because we want to use bash prompts `$`,

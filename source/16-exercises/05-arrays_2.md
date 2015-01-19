@@ -7,6 +7,7 @@ Before you get started, make sure you have your text editor and terminal open, a
 you have navigated to your exercises directory in the terminal. E.g. `cd
 ~/ruby-for-beginners/exercises`.
 
+
 ## Exercise 5.1
 
 Create a new, empty file. Save it as `05-arrays_2-1.rb`. Fill in the following line:
@@ -23,6 +24,9 @@ So that you get the following output:
 ["one", "three", "five"]
 ```
 
+<a href="/solutions/05-arrays_2-1.rb" class="solution">Show solution</a>
+
+
 ## Exercise 5.2
 
 Copy your file to a new file: `cp 05-arrays_2-1.rb 05-arrays_2-2.rb`, then open this
@@ -35,6 +39,9 @@ Now change your code so that you get the following output:
 ```
 
 Hint: Google for `ruby string uppercase first letter`
+
+<a href="/solutions/05-arrays_2-2.rb" class="solution">Show solution</a>
+
 
 ## Exercise 5.3
 
@@ -49,6 +56,9 @@ Now change your code so that you get the following output:
 
 Hint: Use string interpolation for this.
 
+<a href="/solutions/05-arrays_2-3.rb" class="solution">Show solution</a>
+
+
 ## Exercise 5.4
 
 Copy your file to a new file: `cp 05-arrays_2-3.rb 05-arrays_2-4.rb`, then open this
@@ -60,7 +70,8 @@ Now change your code so that you get the following output:
 ["One <3", "Three <3<3<3", "Five <3<3<3<3<3"]
 ```
 
-Hint:
+<a href="/solutions/05-arrays_2-4.rb" class="solution">Show solution</a>
+
 
 ## Exercise 5.5
 
@@ -73,6 +84,9 @@ now a string, not an array):
 ```
 One <3, Three <3<3<3, Five <3<3<3<3<3
 ```
+
+<a href="/solutions/05-arrays_2-5.rb" class="solution">Show solution</a>
+
 
 ## Exercise 5.6
 
@@ -88,6 +102,9 @@ Three <3<3<3
 Five <3<3<3<3<3
 ```
 
+<a href="/solutions/05-arrays_2-6.rb" class="solution">Show solution</a>
+
+
 ## Exercise 5.7
 
 Copy your file to a new file: `cp 05-arrays_2-6.rb 05-arrays_2-7.rb`, then open this
@@ -102,5 +119,7 @@ Three <3<3<3
 Five  <3<3<3<3<3
 ```
 
-Tip: As you may guess, strings have a method that is helpful for this. Ask
+Hint: As you may guess, strings have a method that is helpful for this. Ask
 Google: "ruby string align".
+
+<a href="/solutions/05-arrays_2-7.rb" class="solution">Show solution</a>

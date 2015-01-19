@@ -28,6 +28,8 @@ From:    Ferdous
 Subject: Homework this week
 ```
 
+<a href="/solutions/09-email-1.rb" class="solution">Show solution</a>
+
 ## Exercise 9.2
 
 Once you have this class, copy your file to `09-2_email.rb`.
@@ -45,3 +47,5 @@ email = Email.new("Keep on coding! :)", { :date => "2014-12-01", :from => "Ferdo
 ```
 
 Your program should now still produce the same output.
+
+<a href="/solutions/09-email-2.rb" class="solution">Show solution</a>

@@ -48,3 +48,5 @@ Date:    2014-12-02
 From:    Arianne
 Subject: Re: Homework this week
 ```
+
+<a href="/solutions/10-mailbox-1.rb" class="solution">Show solution</a>
