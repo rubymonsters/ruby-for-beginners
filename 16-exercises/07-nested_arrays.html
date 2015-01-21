@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Generating HTML using ERB | Ruby for Beginners</title>
+    <title>Working with Nested Arrays | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/14-mailbox_csv.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/06-arrays_2.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/08-hashes_2.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -99,34 +99,75 @@
       <li><a href="/16-exercises/02-strings.html">Working with Strings</a></li>
       <li><a href="/16-exercises/03-arrays_1.html">Working with Arrays (1)</a></li>
       <li><a href="/16-exercises/04-hashes_1.html">Working with Hashes (1)</a></li>
-      <li><a href="/16-exercises/05-arrays_2.html">Working with Arrays (2)</a></li>
-      <li><a href="/16-exercises/06-nested_arrays.html">Working with Nested Arrays</a></li>
-      <li><a href="/16-exercises/07-hashes_2.html">Working with Hashes (2)</a></li>
-      <li><a href="/16-exercises/08-truthiness.html">Truthiness</a></li>
-      <li><a href="/16-exercises/09-email.html">The Email Class</a></li>
-      <li><a href="/16-exercises/10-mailbox.html">The Mailbox Class</a></li>
-      <li><a href="/16-exercises/11-mailbox_text.html">The Mailbox Text Formatter</a></li>
-      <li><a href="/16-exercises/12-mailbox_html.html">The Mailbox Html Formatter</a></li>
-      <li><a href="/16-exercises/13-mailbox_file.html">Storing our HTML to a File</a></li>
-      <li><a href="/16-exercises/14-mailbox_csv.html">Reading from a CSV File</a></li>
-      <li class="active"><a href="/16-exercises/15-mailbox_erb.html">Generating HTML using ERB</a></li>
-      <li><a href="/16-exercises/16-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
+      <li><a href="/16-exercises/05-methods_1.html">Defining methods</a></li>
+      <li><a href="/16-exercises/06-arrays_2.html">Working with Arrays (2)</a></li>
+      <li class="active"><a href="/16-exercises/07-nested_arrays.html">Working with Nested Arrays</a></li>
+      <li><a href="/16-exercises/08-hashes_2.html">Working with Hashes (2)</a></li>
+      <li><a href="/16-exercises/09-truthiness.html">Truthiness</a></li>
+      <li><a href="/16-exercises/10-email.html">The Email Class</a></li>
+      <li><a href="/16-exercises/11-mailbox.html">The Mailbox Class</a></li>
+      <li><a href="/16-exercises/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
+      <li><a href="/16-exercises/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
+      <li><a href="/16-exercises/14-mailbox_file.html">Storing our HTML to a File</a></li>
+      <li><a href="/16-exercises/15-mailbox_csv.html">Reading from a CSV File</a></li>
+      <li><a href="/16-exercises/16-mailbox_erb.html">Generating HTML using ERB</a></li>
+      <li><a href="/16-exercises/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
   </ul></li>
 </ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Generating HTML using ERB</h1>
+        <h1>Working with Nested Arrays</h1>
 
-<p>ERB stands for &ldquo;Embedded Ruby&rdquo;, and it is a templating library. &ldquo;Templating&rdquo; in
-this context means that it makes it easy to write views, most of the time that
-is HTML. ERB also is the library that Rails uses for its views, by default, but
-it is possible, and sometimes pretty useful to use ERB outside of Rails, too.</p>
+<p>Note: At the moment these exercises require reading up until &ldquo;Block return values&rdquo;.
+You should know how to use the method <code>collect</code> on arrays.</p>
 
-<h2>Exercise 15.1</h2>
+<p>Before you get started, make sure you have your text editor and terminal open, and
+you have navigated to your exercises directory in the terminal. E.g. <code>cd
+~/ruby-for-beginners/exercises</code>.</p>
 
-        <nav class="page-nav"><a href="/16-exercises/14-mailbox_csv.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/16-exercises/16-mailbox_sinatra.html" class="next">Next</a></nav>
+<h2>Exercise 7.1</h2>
+
+<p>Make a new file <code>07-nested_arrays-1.rb</code>, and fill in the following line:</p>
+<pre class="highlight ruby"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="c1"># your code goes here</span>
+<span class="nb">p</span> <span class="n">sums</span>
+</code></pre>
+
+<p>So that you get the following output:</p>
+<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>
+</code></pre>
+
+<p><a href="/solutions/07-nested_arrays-1.rb" class="solution">Show solution</a></p>
+
+<h2>Exercise 7.2</h2>
+
+<p>Make a new file <code>07-nested_arrays-2.rb</code>, and fill in the following line:</p>
+
+<p>Fill in the following line</p>
+<pre class="highlight ruby"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="c1"># your code goes here</span>
+<span class="n">lines</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">line</span><span class="o">|</span> <span class="nb">puts</span> <span class="n">line</span> <span class="p">}</span>
+</code></pre>
+
+<p>So that you get the following output:</p>
+<pre class="highlight plaintext"><code>* ** ***
+** ** **
+*** ** *
+</code></pre>
+
+<p><a href="/solutions/07-nested_arrays-2.rb" class="solution">Show solution</a></p>
+
+        <nav class="page-nav"><a href="/16-exercises/06-arrays_2.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/16-exercises/08-hashes_2.html" class="next">Next</a></nav>
       </article>
     </div>
 

@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>The Mailbox Text Formatter | Ruby for Beginners</title>
+    <title>Truthiness | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/10-mailbox.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/16-exercises/12-mailbox_html.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/08-hashes_2.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/10-email.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -99,92 +99,109 @@
       <li><a href="/16-exercises/02-strings.html">Working with Strings</a></li>
       <li><a href="/16-exercises/03-arrays_1.html">Working with Arrays (1)</a></li>
       <li><a href="/16-exercises/04-hashes_1.html">Working with Hashes (1)</a></li>
-      <li><a href="/16-exercises/05-arrays_2.html">Working with Arrays (2)</a></li>
-      <li><a href="/16-exercises/06-nested_arrays.html">Working with Nested Arrays</a></li>
-      <li><a href="/16-exercises/07-hashes_2.html">Working with Hashes (2)</a></li>
-      <li><a href="/16-exercises/08-truthiness.html">Truthiness</a></li>
-      <li><a href="/16-exercises/09-email.html">The Email Class</a></li>
-      <li><a href="/16-exercises/10-mailbox.html">The Mailbox Class</a></li>
-      <li class="active"><a href="/16-exercises/11-mailbox_text.html">The Mailbox Text Formatter</a></li>
-      <li><a href="/16-exercises/12-mailbox_html.html">The Mailbox Html Formatter</a></li>
-      <li><a href="/16-exercises/13-mailbox_file.html">Storing our HTML to a File</a></li>
-      <li><a href="/16-exercises/14-mailbox_csv.html">Reading from a CSV File</a></li>
-      <li><a href="/16-exercises/15-mailbox_erb.html">Generating HTML using ERB</a></li>
-      <li><a href="/16-exercises/16-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
+      <li><a href="/16-exercises/05-methods_1.html">Defining methods</a></li>
+      <li><a href="/16-exercises/06-arrays_2.html">Working with Arrays (2)</a></li>
+      <li><a href="/16-exercises/07-nested_arrays.html">Working with Nested Arrays</a></li>
+      <li><a href="/16-exercises/08-hashes_2.html">Working with Hashes (2)</a></li>
+      <li class="active"><a href="/16-exercises/09-truthiness.html">Truthiness</a></li>
+      <li><a href="/16-exercises/10-email.html">The Email Class</a></li>
+      <li><a href="/16-exercises/11-mailbox.html">The Mailbox Class</a></li>
+      <li><a href="/16-exercises/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
+      <li><a href="/16-exercises/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
+      <li><a href="/16-exercises/14-mailbox_file.html">Storing our HTML to a File</a></li>
+      <li><a href="/16-exercises/15-mailbox_csv.html">Reading from a CSV File</a></li>
+      <li><a href="/16-exercises/16-mailbox_erb.html">Generating HTML using ERB</a></li>
+      <li><a href="/16-exercises/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
   </ul></li>
 </ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>The Mailbox Text Formatter</h1>
+        <h1>Truthiness</h1>
 
-<p>The mailbox text formatter exercise is a milestone in the beginners group
-curriculum, and it may take a little bit longer to complete it. That is fine,
-and, to some extent, the point :)</p>
+<h2>Exercise 9.1</h2>
 
-<h2>Exercise 11.1</h2>
+<p>Make a new file <code>09-truthiness-1.rb</code>, and add the following lines:</p>
 
-<p>Make a new file <code>11-mailbox_text-1.rb</code>. Fill in and complete the following
-class definitions:</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Email</span>
-  <span class="c1"># your class from the last exercise</span>
-<span class="k">end</span>
+<p>This exercise is about validating what we&rsquo;ve learned about truthiness.</p>
 
-<span class="k">class</span> <span class="nc">Mailbox</span>
-  <span class="c1"># your class from the last exercise</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">MailboxTextFormatter</span>
-  <span class="c1"># fill in this class body</span>
-<span class="k">end</span>
-
-<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ferdous"</span> <span class="p">}),</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Keep on coding! :)"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Dajana"</span> <span class="p">}),</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Re: Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-02"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ariane"</span> <span class="p">})</span>
-<span class="p">]</span>
-<span class="n">mailbox</span> <span class="o">=</span> <span class="no">Mailbox</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ruby Study Group"</span><span class="p">,</span> <span class="n">emails</span><span class="p">)</span>
-<span class="n">formatter</span> <span class="o">=</span> <span class="no">MailboxTextFormatter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">mailbox</span><span class="p">)</span>
-
-<span class="nb">puts</span> <span class="n">formatter</span><span class="p">.</span><span class="nf">format</span>
+<p>You have the following array:</p>
+<pre class="highlight ruby"><code><span class="n">objects</span> <span class="o">=</span> <span class="p">[</span><span class="kp">true</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="p">[],</span> <span class="no">Object</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span><span class="p">]</span>
 </code></pre>
 
-<p>Your goal is to complete the code in a way so it outputs the following:</p>
-<pre class="highlight plaintext"><code>Mailbox: Ruby Study Group
-
-+------------+---------+------------------------+
-| Date       | From    | Subject                |
-+------------+---------+------------------------+
-| 2014-12-01 | Ferdous | Homework this week     |
-| 2014-12-01 | Dajana  | Keep on coding! :)     |
-| 2014-12-02 | Ariane  | Re: Homework this week |
-+------------+---------+------------------------+
+<p>Add some code that outputs the following table. The last column should be
+filled in with by either <code>true</code> or <code>false</code> depending what the comparison (using
+<code>==</code>) with each value returns:</p>
+<pre class="highlight plaintext"><code>object                     | true == value
+true                       | [true|false]
+false                      | [true|false]
+0                          | [true|false]
+1                          | [true|false]
+""                         | [true|false]
+[]                         | [true|false]
+#&lt;Object:0x007fb3dc0ea1b8&gt; | [true|false]
+#&lt;Class:0x007fb3dc0e2cd8&gt;  | [true|false]
+#&lt;Module:0x007fb3dc0d9ea8&gt; | [true|false]
 </code></pre>
 
-<p>You are allowed to add as many methods to the classes <code>Email</code>, <code>Mailbox</code> and
-<code>MailboxTextFormatter</code> as you deem useful. In your final solution you are not
-allowed to change any of the code outside (after) the class definitions. For
-debugging purposes, you can, of course, change all the code you want :)</p>
+<p>You can use the method <code>inspect</code> in order to, for each of the values, get a
+representation that looks like the code.</p>
 
-<p>If you do this exercise in one of our study groups then best do it together
-with someone else. We found pairs to work best, and a three person team would
-be better than doing it on your own.</p>
+<p>Of course you will get different object ids for the object, class, and module
+instances everytime you run your code.</p>
 
-<p>Try to come up with a working solution first. It doesn&rsquo;t matter how elegant,
-generic, or pretty it is. Whatever produces the required output is fine for a
-first solution.</p>
+<p>So let&rsquo;s prettify this table by removing the object ids. You can do this
+calling <code>sub(/:.*&gt;/, &quot;&gt;&quot;)</code> on whatever <code>inspect</code> returns.</p>
 
-<p>Then, later, look at your code, and try to improve it by cleaning up everything
-that you don&rsquo;t like, or deam ugly.</p>
+<p>Your table should now look like this:</p>
+<pre class="highlight plaintext"><code>object    | true == value
+true      | true
+false     | false
+0         | true
+1         | true
+""        | true
+[]        | true
+#&lt;Object&gt; | true
+#&lt;Class&gt;  | true
+#&lt;Module&gt; | true
+</code></pre>
 
-<p>Eventually, one goal to aim for would be: Adding another column to the table
-only requires mimimal changes, e.g. changes to one or two places in your
-formatter class.</p>
+<p><a href="/solutions/09-truthiness-1.rb" class="solution">Show solution</a></p>
 
-<p><a href="/solutions/11-mailbox_text-1.rb" class="solution">Show solution</a></p>
+<h2>Bonus: Exercise 9.2</h2>
 
-        <nav class="page-nav"><a href="/16-exercises/10-mailbox.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/16-exercises/12-mailbox_html.html" class="next">Next</a></nav>
+<p>Copy your file to a new file <code>09-truthiness-2.rb</code>, and change your code so that
+it outputs the following table. Fill each cell with the result that <code>==</code>
+returns for each combination.</p>
+<pre class="highlight plaintext"><code>          | true      | false      | 0          | 1          | ""         | []         | #&lt;Object&gt; | #&lt;Class&gt;  | #&lt;Module&gt;
+true      |           |            |            |            |            |            |           |           |
+false     |           |            |            |            |            |            |           |           |
+0         |           |            |            |            |            |            |           |           |
+1         |           |            |            |            |            |            |           |           |
+""        |           |            |            |            |            |            |           |           |
+[]        |           |            |            |            |            |            |           |           |
+#&lt;Object&gt; |           |            |            |            |            |            |           |           |
+#&lt;Class&gt;  |           |            |            |            |            |            |           |           |
+#&lt;Module&gt; |           |            |            |            |            |            |           |           |
+</code></pre>
+
+<p>Tip: Break this up in sub-tasks:</p>
+
+<ol>
+<li>Write some code that collects an array of arrays containing all rows: An
+array <code>rows</code> that has many arrays, each of which holds 9 results (cells).</li>
+<li>Add the value&rsquo;s representation to the beginning to the row. If you don&rsquo;t
+know how, google for &ldquo;ruby array add to beginning&rdquo;</li>
+<li>Make sure each of the cells is 9 characters wide.</li>
+<li>Join each of the row with the string <code>&quot; | &quot;</code>.</li>
+<li>Add the table headers row.</li>
+<li>Join all rows with the string <code>&quot;\n&quot;</code> (newline), and output the result.</li>
+</ol>
+
+<p><a href="/solutions/09-truthiness-2.rb" class="solution">Show solution</a></p>
+
+        <nav class="page-nav"><a href="/16-exercises/08-hashes_2.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/16-exercises/10-email.html" class="next">Next</a></nav>
       </article>
     </div>
 

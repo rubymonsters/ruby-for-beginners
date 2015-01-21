@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Working with Hashes (2) | Ruby for Beginners</title>
+    <title>The Email Class | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/06-nested_arrays.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/16-exercises/08-truthiness.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/09-truthiness.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/11-mailbox.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -99,82 +99,72 @@
       <li><a href="/16-exercises/02-strings.html">Working with Strings</a></li>
       <li><a href="/16-exercises/03-arrays_1.html">Working with Arrays (1)</a></li>
       <li><a href="/16-exercises/04-hashes_1.html">Working with Hashes (1)</a></li>
-      <li><a href="/16-exercises/05-arrays_2.html">Working with Arrays (2)</a></li>
-      <li><a href="/16-exercises/06-nested_arrays.html">Working with Nested Arrays</a></li>
-      <li class="active"><a href="/16-exercises/07-hashes_2.html">Working with Hashes (2)</a></li>
-      <li><a href="/16-exercises/08-truthiness.html">Truthiness</a></li>
-      <li><a href="/16-exercises/09-email.html">The Email Class</a></li>
-      <li><a href="/16-exercises/10-mailbox.html">The Mailbox Class</a></li>
-      <li><a href="/16-exercises/11-mailbox_text.html">The Mailbox Text Formatter</a></li>
-      <li><a href="/16-exercises/12-mailbox_html.html">The Mailbox Html Formatter</a></li>
-      <li><a href="/16-exercises/13-mailbox_file.html">Storing our HTML to a File</a></li>
-      <li><a href="/16-exercises/14-mailbox_csv.html">Reading from a CSV File</a></li>
-      <li><a href="/16-exercises/15-mailbox_erb.html">Generating HTML using ERB</a></li>
-      <li><a href="/16-exercises/16-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
+      <li><a href="/16-exercises/05-methods_1.html">Defining methods</a></li>
+      <li><a href="/16-exercises/06-arrays_2.html">Working with Arrays (2)</a></li>
+      <li><a href="/16-exercises/07-nested_arrays.html">Working with Nested Arrays</a></li>
+      <li><a href="/16-exercises/08-hashes_2.html">Working with Hashes (2)</a></li>
+      <li><a href="/16-exercises/09-truthiness.html">Truthiness</a></li>
+      <li class="active"><a href="/16-exercises/10-email.html">The Email Class</a></li>
+      <li><a href="/16-exercises/11-mailbox.html">The Mailbox Class</a></li>
+      <li><a href="/16-exercises/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
+      <li><a href="/16-exercises/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
+      <li><a href="/16-exercises/14-mailbox_file.html">Storing our HTML to a File</a></li>
+      <li><a href="/16-exercises/15-mailbox_csv.html">Reading from a CSV File</a></li>
+      <li><a href="/16-exercises/16-mailbox_erb.html">Generating HTML using ERB</a></li>
+      <li><a href="/16-exercises/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
   </ul></li>
 </ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Working with Hashes (2)</h1>
+        <h1>The Email Class</h1>
 
-<h2>Exercise 7.1</h2>
+<h2>Exercise 10.1</h2>
 
-<p>Make a new file <code>07-hashes_2-1.rb</code>, and dd the following lines:</p>
-<pre class="highlight ruby"><code><span class="n">languages</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="ss">:de</span> <span class="o">=&gt;</span> <span class="s1">'German'</span><span class="p">,</span>
-  <span class="ss">:en</span> <span class="o">=&gt;</span> <span class="s1">'English'</span><span class="p">,</span>
-  <span class="ss">:es</span> <span class="o">=&gt;</span> <span class="s1">'Spanish'</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="ss">:de</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'eins'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'zwei'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'drei'</span> <span class="p">},</span>
-  <span class="ss">:en</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'one'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'two'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'three'</span> <span class="p">},</span>
-  <span class="ss">:es</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'uno'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'dos'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'tres'</span> <span class="p">}</span>
-<span class="p">}</span>
+<p>In a new file <code>10-email-1.rb</code> write a class <code>Email</code> that has a <code>subject</code>,
+<code>date</code>, and <code>from</code> attribute. Make it so that these attributes can be populated
+through <code>new</code> and <code>initialize</code>.</p>
+
+<p>The following code</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Email</span>
+  <span class="c1"># fill in this class body</span>
+<span class="k">end</span>
+
+<span class="n">email</span> <span class="o">=</span> <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Homework this week"</span><span class="p">,</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="s2">"Ferdous"</span><span class="p">)</span>
+
+<span class="nb">puts</span> <span class="s2">"Date:    </span><span class="si">#{</span><span class="n">email</span><span class="p">.</span><span class="nf">date</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">puts</span> <span class="s2">"From:    </span><span class="si">#{</span><span class="n">email</span><span class="p">.</span><span class="nf">from</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">puts</span> <span class="s2">"Subject: </span><span class="si">#{</span><span class="n">email</span><span class="p">.</span><span class="nf">subject</span><span class="si">}</span><span class="s2">"</span>
 </code></pre>
 
-<p>Now, at the end of the file, add code that prints out the following:</p>
-<pre class="highlight plaintext"><code>In German, eins means one, zwei means two, drei means three.
-In Spanish, uno means one, duo means two, tres means three.
+<p>should then output the following:</p>
+<pre class="highlight plaintext"><code>Date:    2014-12-01
+From:    Ferdous
+Subject: Homework this week
 </code></pre>
 
-<p><a href="/solutions/07-hashes_2-1.rb" class="solution">Show solution</a></p>
+<p><a href="/solutions/10-email-1.rb" class="solution">Show solution</a></p>
 
-<h2>Exercise 7.2</h2>
+<h2>Exercise 10.2</h2>
 
-<p>Now, in a new file <code>07-hashes_2-2.rb</code>, with the same hashes from above, add code
-that prints out the following table:</p>
-<pre class="highlight plaintext"><code>de eins zwei drei
-en one two three
-es uno dos tres
+<p>Once you have this class, copy your file to <code>09-2_email.rb</code>.</p>
+
+<p>Change your class so that the <code>initialize</code> method now takes a <code>subject</code> string,
+and a <code>headers</code> hash. This is then more in line with how actual emails are
+stored in the real world: the values <code>date</code> and <code>from</code> are stored on a hash,
+which is called the &ldquo;email headers&rdquo;.</p>
+
+<p>Doing so, in the code above the only line you should change is the one that
+instantiates the email object, which should now read:</p>
+<pre class="highlight ruby"><code><span class="n">email</span> <span class="o">=</span> <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Keep on coding! :)"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ferdous"</span> <span class="p">})</span>
 </code></pre>
 
-<p><a href="/solutions/07-hashes_2-2.rb" class="solution">Show solution</a></p>
+<p>Your program should now still produce the same output.</p>
 
-<h2>Exercise 7.3</h2>
+<p><a href="/solutions/10-email-2.rb" class="solution">Show solution</a></p>
 
-<p>Copy your file to a new file <code>cp 07-hashes_2-2.rb 07-hashes_2-3.rb</code> and change your
-code so that it aligns the table columns:</p>
-<pre class="highlight plaintext"><code>de eins zwei drei
-en one  two  three
-es uno  dos  tres
-</code></pre>
-
-<p><a href="/solutions/07-hashes_2-3.rb" class="solution">Show solution</a></p>
-
-<h2>Exercise 7.4</h2>
-
-<p>Copy your file to a new file <code>cp 07-hashes_2-3.rb 07-hashes_2-4.rb</code> and change your
-code so that it adds delimiters:</p>
-<pre class="highlight plaintext"><code>| de | eins | zwei | drei  |
-| en | one  | two  | three |
-| es | uno  | dos  | tres  |
-</code></pre>
-
-<p><a href="/solutions/07-hashes_2-4.rb" class="solution">Show solution</a></p>
-
-        <nav class="page-nav"><a href="/16-exercises/06-nested_arrays.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/16-exercises/08-truthiness.html" class="next">Next</a></nav>
+        <nav class="page-nav"><a href="/16-exercises/09-truthiness.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/16-exercises/11-mailbox.html" class="next">Next</a></nav>
       </article>
     </div>
 

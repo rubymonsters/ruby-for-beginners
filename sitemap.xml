@@ -234,51 +234,55 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/05-arrays_2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/05-methods_1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/06-nested_arrays.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/06-arrays_2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/07-hashes_2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/07-nested_arrays.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/08-truthiness.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/08-hashes_2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/09-email.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/09-truthiness.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/10-mailbox.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/10-email.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/11-mailbox_text.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/11-mailbox.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/12-mailbox_html.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/12-mailbox_text.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/13-mailbox_file.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/13-mailbox_html.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/14-mailbox_csv.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/14-mailbox_file.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/15-mailbox_erb.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/15-mailbox_csv.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/16-mailbox_sinatra.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/16-mailbox_erb.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/16-exercises/17-mailbox_sinatra.html</loc>
       <priority>0.5</priority>
     </url>
     <url>

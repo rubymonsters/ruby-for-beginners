@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Storing our HTML to a File | Ruby for Beginners</title>
+    <title>Defining methods | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/16-exercises/12-mailbox_html.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/16-exercises/14-mailbox_csv.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/04-hashes_1.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/06-arrays_2.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -99,50 +99,99 @@
       <li><a href="/16-exercises/02-strings.html">Working with Strings</a></li>
       <li><a href="/16-exercises/03-arrays_1.html">Working with Arrays (1)</a></li>
       <li><a href="/16-exercises/04-hashes_1.html">Working with Hashes (1)</a></li>
-      <li><a href="/16-exercises/05-arrays_2.html">Working with Arrays (2)</a></li>
-      <li><a href="/16-exercises/06-nested_arrays.html">Working with Nested Arrays</a></li>
-      <li><a href="/16-exercises/07-hashes_2.html">Working with Hashes (2)</a></li>
-      <li><a href="/16-exercises/08-truthiness.html">Truthiness</a></li>
-      <li><a href="/16-exercises/09-email.html">The Email Class</a></li>
-      <li><a href="/16-exercises/10-mailbox.html">The Mailbox Class</a></li>
-      <li><a href="/16-exercises/11-mailbox_text.html">The Mailbox Text Formatter</a></li>
-      <li><a href="/16-exercises/12-mailbox_html.html">The Mailbox Html Formatter</a></li>
-      <li class="active"><a href="/16-exercises/13-mailbox_file.html">Storing our HTML to a File</a></li>
-      <li><a href="/16-exercises/14-mailbox_csv.html">Reading from a CSV File</a></li>
-      <li><a href="/16-exercises/15-mailbox_erb.html">Generating HTML using ERB</a></li>
-      <li><a href="/16-exercises/16-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
+      <li class="active"><a href="/16-exercises/05-methods_1.html">Defining methods</a></li>
+      <li><a href="/16-exercises/06-arrays_2.html">Working with Arrays (2)</a></li>
+      <li><a href="/16-exercises/07-nested_arrays.html">Working with Nested Arrays</a></li>
+      <li><a href="/16-exercises/08-hashes_2.html">Working with Hashes (2)</a></li>
+      <li><a href="/16-exercises/09-truthiness.html">Truthiness</a></li>
+      <li><a href="/16-exercises/10-email.html">The Email Class</a></li>
+      <li><a href="/16-exercises/11-mailbox.html">The Mailbox Class</a></li>
+      <li><a href="/16-exercises/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
+      <li><a href="/16-exercises/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
+      <li><a href="/16-exercises/14-mailbox_file.html">Storing our HTML to a File</a></li>
+      <li><a href="/16-exercises/15-mailbox_csv.html">Reading from a CSV File</a></li>
+      <li><a href="/16-exercises/16-mailbox_erb.html">Generating HTML using ERB</a></li>
+      <li><a href="/16-exercises/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
   </ul></li>
 </ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Storing our HTML to a File</h1>
+        <h1>Defining methods</h1>
 
-<h2>Exercise 13.1</h2>
+<h2>Exercise 5.1</h2>
 
-<p>In this exercise our goal is to store the generated HTML for our mailbox to a
-file, so that we can finally view it in an actual browser.</p>
+<p>Write a method <code>greet</code> that takes a name, prepends <code>&quot;Hello &quot;</code>, and appends an
+exclamation mark <code>&quot;!&quot;</code>:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="c1"># your code goes here</span>
+<span class="k">end</span>
 
-<p>Your objective is to write a file (using Ruby) that contains all the HTML
-from the last exercise.</p>
+<span class="nb">puts</span> <span class="n">greet</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
+</code></pre>
 
-<p>Building on the last exercise, copy your file to a new file <code>cp 12-mailbox_html-1.rb
-13-mailbox_file-1.rb</code>  and change the last line:</p>
+<p>This should print out <code>Hello Ada!</code>.</p>
 
-<p>Instead of passing the HTML to <code>puts</code> you should be passing it to a different
-method, so that running your program writes the HTML file that we are after.
-In order to find that method try googling for &ldquo;ruby write file&rdquo;. Call this
-file <code>emails.html</code>.</p>
+<p><a href="/solutions/05-methods-1.rb" class="solution">Show solution</a></p>
 
-<p>When you open this file in a text editor you should see the same HTML from
-the last exercise. When you open it in your browser it should look like this:</p>
+<h2>Exercise 5.2</h2>
 
-<p><img alt="image" src="https://cloud.githubusercontent.com/assets/2208/5602614/5ac2058c-935a-11e4-9c01-7ff9ec3b66cb.png" /></p>
+<p>Once you&rsquo;ve implemented the method this should print out: <code>Hello Ada!</code>.</p>
 
-<p><a href="/solutions/13-mailbox_file-1.rb" class="solution">Show solution</a></p>
+<p>Now change your method so that instead of always using <code>&quot;Hello &quot;</code> it picks a
+random string from the array <code>[&quot;Hello&quot;, &quot;Hi&quot;, &quot;Ohai&quot;, &quot;ZOMG&quot;]</code>.</p>
 
-        <nav class="page-nav"><a href="/16-exercises/12-mailbox_html.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/16-exercises/14-mailbox_csv.html" class="next">Next</a></nav>
+<p>Every time you run the program it should print out either <code>&quot;Hello Ada!&quot;</code>, <code>&quot;Hi
+Ada!&quot;</code>, <code>&quot;Ohai Ada!&quot;</code>, or <code>&quot;ZOMG Ada!&quot;</code>.</p>
+
+<p>Hint: The method <code>shuffle</code> on arrays does, well, shuffle the array :) That
+means it changes the order of the elements in the array in a random way.</p>
+
+<p><a href="/solutions/05-methods-2.rb" class="solution">Show solution</a></p>
+
+<h2>Exercise 5.3</h2>
+
+<p>Write a method that converts a distance (a number) from miles to kilometers:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">miles_to_kilometers</span><span class="p">(</span><span class="n">miles</span><span class="p">)</span>
+  <span class="c1"># your code goes here</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">miles_to_kilometers</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</code></pre>
+
+<p>This should print out:</p>
+<pre class="highlight plaintext"><code>40.2336
+</code></pre>
+
+<p><a href="/solutions/05-methods-3.rb" class="solution">Show solution</a></p>
+
+<h2>Exercise 5.4</h2>
+
+<p>Write a method <code>leap_year?</code> that takes a year (a number), and calculates if it is a leap year.</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">leap_year?</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+  <span class="c1"># your code goes here</span>
+<span class="k">end</span>
+
+<span class="nb">p</span> <span class="n">leap_year?</span><span class="p">(</span><span class="mi">2012</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">leap_year?</span><span class="p">(</span><span class="mi">2015</span><span class="p">)</span>
+</code></pre>
+
+<p>This should print out:</p>
+<pre class="highlight plaintext"><code>true
+true
+false
+false
+</code></pre>
+
+<p>Hint: The operator <code>%</code> returns the rest of a division. E.g. <code>14 % 3</code> returns <code>2</code>.</p>
+
+<p>Bonus: Also make it so that the method returns <code>true</code> for the year <code>2000</code> and
+<code>false</code> for <code>1900</code> &hellip; because that&rsquo;s really the definition of leap years.</p>
+
+<p><a href="/solutions/05-methods-4.rb" class="solution">Show solution</a></p>
+
+        <nav class="page-nav"><a href="/16-exercises/04-hashes_1.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/16-exercises/06-arrays_2.html" class="next">Next</a></nav>
       </article>
     </div>
 

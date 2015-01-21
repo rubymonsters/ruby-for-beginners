@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Attribute readers | Ruby for Beginners</title>
+    <title>Working with Hashes (2) | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/13-writing_classes/02-instance_variables.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/13-writing_classes/04-attribute_writers.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/07-nested_arrays.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/16-exercises/09-truthiness.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -78,11 +78,11 @@
       <li><a href="/12-bonus_1/09-comparison_operators.html">Comparison operators</a></li>
       <li><a href="/12-bonus_1/10-nothing_and_truth.html">Nothingness and the truth</a></li>
   </ul></li>
-  <li class="directory expanded"><a href="/13-writing_classes.html">Writing classes</a>
+  <li class="directory"><a href="/13-writing_classes.html">Writing classes</a>
   <ul>
       <li><a href="/13-writing_classes/01-initializing_objects.html">Initializing objects</a></li>
       <li><a href="/13-writing_classes/02-instance_variables.html">Instance variables</a></li>
-      <li class="active"><a href="/13-writing_classes/03-attribute_readers.html">Attribute readers</a></li>
+      <li><a href="/13-writing_classes/03-attribute_readers.html">Attribute readers</a></li>
       <li><a href="/13-writing_classes/04-attribute_writers.html">Attribute writers</a></li>
       <li><a href="/13-writing_classes/05-state_and_behaviour.html">State and behaviour</a></li>
   </ul></li>
@@ -93,7 +93,7 @@
       <li><a href="/14-bonus_2/03-private_methods.html">Bonus: Private methods</a></li>
   </ul></li>
   <li><a href="/15-good_names.html">Using the right words</a></li>
-  <li class="directory"><a href="/16-exercises.html">Exercises</a>
+  <li class="directory expanded"><a href="/16-exercises.html">Exercises</a>
   <ul>
       <li><a href="/16-exercises/01-numbers.html">Working with Numbers</a></li>
       <li><a href="/16-exercises/02-strings.html">Working with Strings</a></li>
@@ -102,7 +102,7 @@
       <li><a href="/16-exercises/05-methods_1.html">Defining methods</a></li>
       <li><a href="/16-exercises/06-arrays_2.html">Working with Arrays (2)</a></li>
       <li><a href="/16-exercises/07-nested_arrays.html">Working with Nested Arrays</a></li>
-      <li><a href="/16-exercises/08-hashes_2.html">Working with Hashes (2)</a></li>
+      <li class="active"><a href="/16-exercises/08-hashes_2.html">Working with Hashes (2)</a></li>
       <li><a href="/16-exercises/09-truthiness.html">Truthiness</a></li>
       <li><a href="/16-exercises/10-email.html">The Email Class</a></li>
       <li><a href="/16-exercises/11-mailbox.html">The Mailbox Class</a></li>
@@ -117,77 +117,65 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Attribute readers</h1>
+        <h1>Working with Hashes (2)</h1>
 
-<p><em>Asking for information</em></p>
+<h2>Exercise 8.1</h2>
 
-<p>Remember how we initially said that people have the ability to remember their
-name, and tell it, when asked?</p>
-
-<p>We&rsquo;ve already implemented the first part of this. Our person instance now
-knows her name &ldquo;Ada&rdquo;.</p>
-
-<p>Let&rsquo;s look at the second part. You also remember that methods are either
-questions or commands. We want to add a method that implements answering
-the question &ldquo;What&rsquo;s your name?&rdquo;.</p>
-
-<p>And it is as simple as this:</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">name</span>
-    <span class="vi">@name</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<p>Make a new file <code>08-hashes_2-1.rb</code>, and dd the following lines:</p>
+<pre class="highlight ruby"><code><span class="n">languages</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">:de</span> <span class="o">=&gt;</span> <span class="s1">'German'</span><span class="p">,</span>
+  <span class="ss">:en</span> <span class="o">=&gt;</span> <span class="s1">'English'</span><span class="p">,</span>
+  <span class="ss">:es</span> <span class="o">=&gt;</span> <span class="s1">'Spanish'</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">:de</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'eins'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'zwei'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'drei'</span> <span class="p">},</span>
+  <span class="ss">:en</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'one'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'two'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'three'</span> <span class="p">},</span>
+  <span class="ss">:es</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'uno'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'dos'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'tres'</span> <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 
-<p>Before we discuss what this does, let&rsquo;s look at how we can use our new method.
-We can now call the method on the person object, like this:</p>
-<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">person</span><span class="p">.</span><span class="nf">name</span>
+<p>Now, at the end of the file, add code that prints out the following:</p>
+<pre class="highlight plaintext"><code>In German, eins means one, zwei means two, drei means three.
+In Spanish, uno means one, duo means two, tres means three.
 </code></pre>
 
-<p>So this prints the name <code>Ada</code>, and that&rsquo;s what we want: we can create a new
-person object, passing a name to it. Once that person has been created we are
-able to ask for its name, and we&rsquo;ll get the name back.</p>
+<p><a href="/solutions/08-hashes_2-1.rb" class="solution">Show solution</a></p>
 
-<p>How does this work, exactly, under the microscope?</p>
+<h2>Exercise 8.2</h2>
 
-<p>Let&rsquo;s walk through it, step by step:</p>
+<p>Now, in a new file <code>08-hashes_2-2.rb</code>, with the same hashes from above, add code
+that prints out the following table:</p>
+<pre class="highlight plaintext"><code>de eins zwei drei
+en one two three
+es uno dos tres
+</code></pre>
 
-<ul>
-<li><p>On the first line, the object that ends up being assigned to the variable
-<code>person</code> is an initialized, new instance of the class <code>Person</code>. By
-&ldquo;intialized&rdquo; we mean that the method <code>initialize</code> has already been called,
-and it already has assigned the string <code>&quot;Ada&quot;</code> to the instance variable
-<code>@name</code>.</p></li>
-<li><p>Now this person object has the method <code>name</code>, as defined in the class
-definition of <code>Person</code> above, and in the second line we call this method:
-<code>person.name</code>.</p></li>
-<li><p>When the method <code>name</code> is called, it does nothing else but evaluate the
-instance variable <code>@name</code> from the object scope. Because this has previously
-been set to <code>&quot;Ada&quot;</code> it will return this string. And because this is the last
-line in the method <code>name</code> the method also will return this string.</p></li>
-<li><p>For that reason the method call <code>person.name</code> returns the string <code>&quot;Ada&quot;</code>,
-which is then passed to <code>puts</code>, which prints it out.</p></li>
-</ul>
+<p><a href="/solutions/08-hashes_2-2.rb" class="solution">Show solution</a></p>
 
-<p>Methods that do nothing else but return a value assigned to an instance
-variable with the same name are very common.</p>
+<h2>Exercise 8.3</h2>
 
-<p>In fact they are so common that there&rsquo;s a word for them: they are called
-&ldquo;attribute readers&rdquo;. By &ldquo;attribute&rdquo; the Ruby community means an instance
-variable, so an attribute reader is a method that reads an instance variable.</p>
+<p>Copy your file to a new file <code>cp 08-hashes_2-2.rb 08-hashes_2-3.rb</code> and change your
+code so that it aligns the table columns:</p>
+<pre class="highlight plaintext"><code>de eins zwei drei
+en one  two  three
+es uno  dos  tres
+</code></pre>
 
-<p>We don&rsquo;t know why the community has chosen to use the term &ldquo;attribute&rdquo; here:
-It would be much less confusing to use the term &ldquo;instance variable reader&rdquo;
-instead. Maybe the simple reason is that programmers don&rsquo;t like to type more
-than necessary, and this saves 8 characters. Who knows :)</p>
+<p><a href="/solutions/08-hashes_2-3.rb" class="solution">Show solution</a></p>
 
-        <nav class="page-nav"><a href="/13-writing_classes/02-instance_variables.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/13-writing_classes/04-attribute_writers.html" class="next">Next</a></nav>
+<h2>Exercise 8.4</h2>
+
+<p>Copy your file to a new file <code>cp 08-hashes_2-3.rb 08-hashes_2-4.rb</code> and change your
+code so that it adds delimiters:</p>
+<pre class="highlight plaintext"><code>| de | eins | zwei | drei  |
+| en | one  | two  | three |
+| es | uno  | dos  | tres  |
+</code></pre>
+
+<p><a href="/solutions/08-hashes_2-4.rb" class="solution">Show solution</a></p>
+
+        <nav class="page-nav"><a href="/16-exercises/07-nested_arrays.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/16-exercises/09-truthiness.html" class="next">Next</a></nav>
       </article>
     </div>
 

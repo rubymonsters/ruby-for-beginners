@@ -99,18 +99,19 @@
       <li><a href="/16-exercises/02-strings.html">Working with Strings</a></li>
       <li><a href="/16-exercises/03-arrays_1.html">Working with Arrays (1)</a></li>
       <li><a href="/16-exercises/04-hashes_1.html">Working with Hashes (1)</a></li>
-      <li><a href="/16-exercises/05-arrays_2.html">Working with Arrays (2)</a></li>
-      <li><a href="/16-exercises/06-nested_arrays.html">Working with Nested Arrays</a></li>
-      <li><a href="/16-exercises/07-hashes_2.html">Working with Hashes (2)</a></li>
-      <li><a href="/16-exercises/08-truthiness.html">Truthiness</a></li>
-      <li><a href="/16-exercises/09-email.html">The Email Class</a></li>
-      <li><a href="/16-exercises/10-mailbox.html">The Mailbox Class</a></li>
-      <li><a href="/16-exercises/11-mailbox_text.html">The Mailbox Text Formatter</a></li>
-      <li><a href="/16-exercises/12-mailbox_html.html">The Mailbox Html Formatter</a></li>
-      <li><a href="/16-exercises/13-mailbox_file.html">Storing our HTML to a File</a></li>
-      <li><a href="/16-exercises/14-mailbox_csv.html">Reading from a CSV File</a></li>
-      <li><a href="/16-exercises/15-mailbox_erb.html">Generating HTML using ERB</a></li>
-      <li><a href="/16-exercises/16-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
+      <li><a href="/16-exercises/05-methods_1.html">Defining methods</a></li>
+      <li><a href="/16-exercises/06-arrays_2.html">Working with Arrays (2)</a></li>
+      <li><a href="/16-exercises/07-nested_arrays.html">Working with Nested Arrays</a></li>
+      <li><a href="/16-exercises/08-hashes_2.html">Working with Hashes (2)</a></li>
+      <li><a href="/16-exercises/09-truthiness.html">Truthiness</a></li>
+      <li><a href="/16-exercises/10-email.html">The Email Class</a></li>
+      <li><a href="/16-exercises/11-mailbox.html">The Mailbox Class</a></li>
+      <li><a href="/16-exercises/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
+      <li><a href="/16-exercises/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
+      <li><a href="/16-exercises/14-mailbox_file.html">Storing our HTML to a File</a></li>
+      <li><a href="/16-exercises/15-mailbox_csv.html">Reading from a CSV File</a></li>
+      <li><a href="/16-exercises/16-mailbox_erb.html">Generating HTML using ERB</a></li>
+      <li><a href="/16-exercises/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
   </ul></li>
 </ul>
       </nav>
@@ -120,7 +121,7 @@
 
 <p>If you have read carefully, you may have noticed that we said on the line
 <code>puts number</code> above that <code>puts</code> is a method call. And then later we&rsquo;ve enclosed the
-value <code>5</code> by parentheses when calling the method <code>add_two(3)</code>.</p>
+value <code>3</code> in parentheses when calling the method: <code>add_two(3)</code>.</p>
 
 <p>That&rsquo;s right: In Ruby, when you call (use) a method, you can omit the parentheses.</p>
 
@@ -149,7 +150,7 @@ is:</p>
 
 <p>Use parentheses for all method calls that take arguments, except for the
 methods <code>puts</code> and <code>p</code> (and later: <code>require</code> and <code>include</code>). Also: if a method
-does not take any arguments, then do not add empty parenthese, omit them.</p>
+does not take any arguments, then do not add empty parentheses, omit them.</p>
 
 <p>So the idiomatic way to write the line above is:</p>
 <pre class="highlight ruby"><code><span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
