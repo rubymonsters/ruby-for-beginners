@@ -1,3 +1,9 @@
+if(location.hostname == 'rubymonstas.org') {
+  var host = 'http://ruby-for-beginners.rubymonstas.org';
+  var path = location.pathname.replace('ruby-for-beginners/', '');
+  location.href = host + path;
+}
+
 window.onload = function() {
   var ajax = function(method, path) {
     var xhr = new XMLHttpRequest();
