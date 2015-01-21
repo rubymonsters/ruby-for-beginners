@@ -16,7 +16,7 @@ otherwise.
 The first line in the code below `require "csv"` makes Ruby's CSV library
 available to your program so that you can then use the class `CSV`.
 
-## Exercise 14.1
+## Exercise 15.1
 
 Building on the same code from the last exercises, your objective is to
 read the email data from a file `emails.csv`. This file should be stored
@@ -88,4 +88,4 @@ formatter = MailboxHtmlFormatter.new(mailbox)
 # your code from the last exercise, writing the file
 ```
 
-<a href="/solutions/14-mailbox_csv-1.rb" class="solution">Show solution</a>
+<a href="/solutions/15-mailbox_csv-1.rb" class="solution">Show solution</a>

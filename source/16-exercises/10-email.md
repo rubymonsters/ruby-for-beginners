@@ -1,8 +1,8 @@
 # The Email Class
 
-## Exercise 9.1
+## Exercise 10.1
 
-In a new file `09-email-1.rb` write a class `Email` that has a `subject`,
+In a new file `10-email-1.rb` write a class `Email` that has a `subject`,
 `date`, and `from` attribute. Make it so that these attributes can be populated
 through `new` and `initialize`.
 
@@ -28,9 +28,9 @@ From:    Ferdous
 Subject: Homework this week
 ```
 
-<a href="/solutions/09-email-1.rb" class="solution">Show solution</a>
+<a href="/solutions/10-email-1.rb" class="solution">Show solution</a>
 
-## Exercise 9.2
+## Exercise 10.2
 
 Once you have this class, copy your file to `09-2_email.rb`.
 
@@ -48,4 +48,4 @@ email = Email.new("Keep on coding! :)", { :date => "2014-12-01", :from => "Ferdo
 
 Your program should now still produce the same output.
 
-<a href="/solutions/09-email-2.rb" class="solution">Show solution</a>
+<a href="/solutions/10-email-2.rb" class="solution">Show solution</a>

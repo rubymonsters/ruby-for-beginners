@@ -114,10 +114,17 @@ class Filenames < Struct.new(:sources)
     name, target = source.name, File.basename(source.target)
     sources.each do |source|
       source.content.gsub!(/[\d]{1,2}-#{name}-([\d]{1,2}).rb/) do |match|
-        "#{target}-#{$1}.rb"
+        filename = "#{target}-#{$1}.rb"
+        move_solution(match, filename) unless match == filename
+        filename
       end
       source.save
     end
+  end
+
+  def move_solution(source, target)
+    dir = "source/solutions"
+    FileUtils.mv("#{dir}/#{source}", "#{dir}/#{target}") if File.exists?("#{dir}/#{source}")
   end
 end
 

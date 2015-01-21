@@ -4,9 +4,9 @@ The mailbox text formatter exercise is a milestone in the beginners group
 curriculum, and it may take a little bit longer to complete it. That is fine,
 and, to some extent, the point :)
 
-## Exercise 11.1
+## Exercise 12.1
 
-Make a new file `11-mailbox_text-1.rb`. Fill in and complete the following
+Make a new file `12-mailbox_text-1.rb`. Fill in and complete the following
 class definitions:
 
 ```ruby
@@ -67,4 +67,4 @@ Eventually, one goal to aim for would be: Adding another column to the table
 only requires mimimal changes, e.g. changes to one or two places in your
 formatter class.
 
-<a href="/solutions/11-mailbox_text-1.rb" class="solution">Show solution</a>
+<a href="/solutions/12-mailbox_text-1.rb" class="solution">Show solution</a>
