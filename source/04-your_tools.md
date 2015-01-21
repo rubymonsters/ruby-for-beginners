@@ -5,7 +5,7 @@ editor, a terminal, and a Ruby runtime.
 
 As a programmer you'll spend tons of time working with your text editor and
 terminal (or "in" them, as we say). It makes sense for you to learn how to use
-them, and how to customize them so you they fit your taste.
+them, and how to customize them so they fit your taste.
 
 There are also text editors that can integrate a terminal window, so you don't
 have to switch between applications. And there are online services that even

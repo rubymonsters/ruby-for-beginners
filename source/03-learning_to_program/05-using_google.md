@@ -4,8 +4,8 @@
 
 Whenever you have a question, and you're not sure where to start looking for an
 answer, simply go ahead and ask Google. Some other person most probably has had
-the same before, and often times you will find a helpful blog post, tutorial,
-documentation, or answer on community sites like Stack Overflow.
+the same question before, and often times you will find a helpful blog post,
+tutorial, documentation, or answer on community sites like Stack Overflow.
 
 Finding the right terms to type into Google might take some time. Experiment
 with this. If one question does not yield a helpful result on the first page,

@@ -65,7 +65,9 @@ words << "four"
 puts words[3]
 ```
 
-This prints out `four`.
+This prints out `four`: The string `"four"` has been "shoveled" into, that
+means, appended to the array. And since it now sits at position `3` we can
+access it using `words[3]`.
 
 You can also set an element to a specific index, like so:
 
