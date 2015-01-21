@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Alternative block syntaxes | Ruby for Beginners</title>
+    <title>Terminal | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/11-blocks.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/11-blocks/02-block_arguments.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/04-your_tools/01-text_editor.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/04-your_tools/03-ruby_runtime.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -33,10 +33,10 @@
       <li><a href="/03-learning_to_program/04-error_messages.html">Reading error messages</a></li>
       <li><a href="/03-learning_to_program/05-using_google.html">Using Google</a></li>
   </ul></li>
-  <li class="directory"><a href="/04-your_tools.html">Your tools</a>
+  <li class="directory expanded"><a href="/04-your_tools.html">Your tools</a>
   <ul>
       <li><a href="/04-your_tools/01-text_editor.html">Text Editor</a></li>
-      <li><a href="/04-your_tools/02-terminal.html">Terminal</a></li>
+      <li class="active"><a href="/04-your_tools/02-terminal.html">Terminal</a></li>
       <li><a href="/04-your_tools/03-ruby_runtime.html">Ruby runtime</a></li>
       <li><a href="/04-your_tools/04-workflow.html">Programming workflow</a></li>
       <li><a href="/04-your_tools/05-irb.html">Interactive Ruby</a></li>
@@ -66,9 +66,9 @@
       <li><a href="/09-everything_an_object/02-object_methods.html">Calling methods</a></li>
   </ul></li>
   <li><a href="/10-string_interpolation.html">String interpolation</a></li>
-  <li class="directory expanded"><a href="/11-blocks.html">Blocks</a>
+  <li class="directory"><a href="/11-blocks.html">Blocks</a>
   <ul>
-      <li class="active"><a href="/11-blocks/01-block_syntax.html">Alternative block syntaxes</a></li>
+      <li><a href="/11-blocks/01-block_syntax.html">Alternative block syntaxes</a></li>
       <li><a href="/11-blocks/02-block_arguments.html">Block arguments</a></li>
       <li><a href="/11-blocks/03-block_return_values.html">Block return values</a></li>
   </ul></li>
@@ -124,34 +124,55 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Alternative block syntaxes</h1>
+        <h1>Terminal</h1>
 
-<p>As well as the syntax shown before, using <code>do</code> and <code>end</code>, Ruby comes with an
-alternative syntax, which uses curly braces for defining a block.</p>
+<p>Every operating system comes with some kind of terminal application built in,
+and they&rsquo;ll be fine to use for us.</p>
 
-<p>These two statements do exactly the same:</p>
-<pre class="highlight ruby"><code><span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
-  <span class="nb">puts</span> <span class="s2">"Oh, hello!"</span>
-<span class="k">end</span>
+<p>A terminal is an application that doesn&rsquo;t do much more but provide a window to
+run another program, called a &ldquo;shell&rdquo;. A shell is a text based program, so it
+does not have a window, and thus needs the terminal to be run on your graphical
+user interface.</p>
 
-<span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s2">"hello!"</span> <span class="p">}</span>
-</code></pre>
+<p>A shell is an interactive program that waits for you to type a command and hit
+enter (or &ldquo;return&rdquo;). It will then run the command, display any output, and
+then, again, sit and wait for you to type the next command.</p>
 
-<p>Both statements define a block, which is passed to the method <code>times</code>. And
-both blocks contain a single line of code.</p>
+<p>This is how working with computers was done in early times before there was the
+idea of a graphical user interface that has things like clickable icons,
+windows, and a mouse in order to use them. Instead, everything was done by the
+way of typing commands.</p>
 
-<p>So, when do you use one or the other syntax?</p>
+<p>While this might take a little while for you to get used to, you&rsquo;ll discover
+why many programmers feel that working with the shell helps them be so much
+more productive and get simple things done so much quicker than using a mouse
+and a graphical interface.</p>
 
-<p>In the Ruby community there&rsquo;s the convention to use curly braces if you have a
-single line block and it fits nicely on the same line (as, in our example, it
-does).</p>
+<p>The default settings for most terminal applications that come built in to
+operating systems are quite poor, unfortunately. For example the Terminal.app
+on Mac OSX opens a tiny little mini window with a very small font. You want
+make sure to make the window much (much!) bigger, and find the settings to pick
+a bigger font size. As a programmer, the terminal (along with your editor) is
+your new home. You want to be as comfortable reading and writing in your
+terminal as in any other application.</p>
 
-<p>Whenever you need to have more than one line in your block, then you use the
-syntax using <code>do</code> and <code>end</code>. Sometimes people also use the <code>do</code> and <code>end</code>
-syntax when they feel it makes the code more readable.</p>
+<p>Once you have started the terminal program you will see your shell&rsquo;s prompt,
+and can start typing commands.</p>
 
-        <nav class="page-nav"><a href="/11-blocks.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/11-blocks/02-block_arguments.html" class="next">Next</a></nav>
+<p>You&rsquo;ll want to learn at least the command <code>cd</code> which allows you to navigate to
+a particular directory (where you have stored your code), and the command <code>ls</code>
+which lists the contents of a directory.</p>
+
+<p>Also learn how to use the command line completion using <code>tab</code>: For example,
+type <code>cd</code>, space, and the first two or so letters of the directory you want to
+navigate to, then hit <code>tab</code>.  The shell will complete the rest of the directory
+name for you. If nothing happens, then there are multiple directory names
+starting with the same few letters. In this case hit <code>tab</code> twice, quickly after
+another, and your shell will display a list of choices. Type the next letter
+and hit <code>tab</code> again.</p>
+
+        <nav class="page-nav"><a href="/04-your_tools/01-text_editor.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/04-your_tools/03-ruby_runtime.html" class="next">Next</a></nav>
       </article>
     </div>
 

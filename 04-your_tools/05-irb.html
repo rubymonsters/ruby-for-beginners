@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Alternative block syntaxes | Ruby for Beginners</title>
+    <title>Interactive Ruby | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/11-blocks.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/11-blocks/02-block_arguments.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/04-your_tools/04-workflow.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/05-object_oriented_programming.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -33,13 +33,13 @@
       <li><a href="/03-learning_to_program/04-error_messages.html">Reading error messages</a></li>
       <li><a href="/03-learning_to_program/05-using_google.html">Using Google</a></li>
   </ul></li>
-  <li class="directory"><a href="/04-your_tools.html">Your tools</a>
+  <li class="directory expanded"><a href="/04-your_tools.html">Your tools</a>
   <ul>
       <li><a href="/04-your_tools/01-text_editor.html">Text Editor</a></li>
       <li><a href="/04-your_tools/02-terminal.html">Terminal</a></li>
       <li><a href="/04-your_tools/03-ruby_runtime.html">Ruby runtime</a></li>
       <li><a href="/04-your_tools/04-workflow.html">Programming workflow</a></li>
-      <li><a href="/04-your_tools/05-irb.html">Interactive Ruby</a></li>
+      <li class="active"><a href="/04-your_tools/05-irb.html">Interactive Ruby</a></li>
   </ul></li>
   <li><a href="/05-object_oriented_programming.html">Object-oriented programming</a></li>
   <li class="directory"><a href="/06-built_in_classes.html">Built-in classes</a>
@@ -66,9 +66,9 @@
       <li><a href="/09-everything_an_object/02-object_methods.html">Calling methods</a></li>
   </ul></li>
   <li><a href="/10-string_interpolation.html">String interpolation</a></li>
-  <li class="directory expanded"><a href="/11-blocks.html">Blocks</a>
+  <li class="directory"><a href="/11-blocks.html">Blocks</a>
   <ul>
-      <li class="active"><a href="/11-blocks/01-block_syntax.html">Alternative block syntaxes</a></li>
+      <li><a href="/11-blocks/01-block_syntax.html">Alternative block syntaxes</a></li>
       <li><a href="/11-blocks/02-block_arguments.html">Block arguments</a></li>
       <li><a href="/11-blocks/03-block_return_values.html">Block return values</a></li>
   </ul></li>
@@ -124,34 +124,48 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Alternative block syntaxes</h1>
+        <h1>Interactive Ruby</h1>
 
-<p>As well as the syntax shown before, using <code>do</code> and <code>end</code>, Ruby comes with an
-alternative syntax, which uses curly braces for defining a block.</p>
+<p>One other tool that is worth mentioning, and that comes with your Ruby runtime,
+is <code>irb</code>. You can start it by typing <code>irb</code> in your shell and hitting enter.</p>
 
-<p>These two statements do exactly the same:</p>
-<pre class="highlight ruby"><code><span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
-  <span class="nb">puts</span> <span class="s2">"Oh, hello!"</span>
-<span class="k">end</span>
+<p>Its name is short for &ldquo;Interactive Ruby Shell&rdquo;, and yes, it is another kind of
+shell: Just like the shell running in your terminal <code>irb</code> is also a program
+that interactively waits for you to type something, and hit enter. However,
+since this is a Ruby shell, it will expect that you type Ruby code instead of
+system commands.</p>
 
-<span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s2">"hello!"</span> <span class="p">}</span>
+<p>IRB is pretty handy for quickly trying something out, and it is a great tool
+for exploring the language Ruby, and things that come built in.</p>
+
+<p>For example:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="nb">puts</span> <span class="s2">"Hello world!"</span>
+<span class="no">Hello</span> <span class="n">world!</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="o">&gt;</span>
 </code></pre>
 
-<p>Both statements define a block, which is passed to the method <code>times</code>. And
-both blocks contain a single line of code.</p>
+<p>The first line starts the IRB program. Notice how the &ldquo;prompt&rdquo; indicator
+changes. The prompt will look a little different depending on your system and
+shell configuration, but often <code>$</code> is used to indicate that this is a
+system shell prompt, while <code>&gt;</code> is used by IRB to indicate that this is an
+interactive Ruby shell.</p>
 
-<p>So, when do you use one or the other syntax?</p>
+<p>The second line is a piece of Ruby code. When you type this line and hit enter
+then Ruby will execute the code, and print out the text &ldquo;Hello world!&rdquo;.</p>
 
-<p>In the Ruby community there&rsquo;s the convention to use curly braces if you have a
-single line block and it fits nicely on the same line (as, in our example, it
-does).</p>
+<p>It will then also print out the return value for this statement, which in this
+case is <code>nil</code>. This is something that you can simply ignore for the time being.</p>
 
-<p>Whenever you need to have more than one line in your block, then you use the
-syntax using <code>do</code> and <code>end</code>. Sometimes people also use the <code>do</code> and <code>end</code>
-syntax when they feel it makes the code more readable.</p>
+<p>On the last line you see IRB again waiting for input with a prompt.</p>
 
-        <nav class="page-nav"><a href="/11-blocks.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/11-blocks/02-block_arguments.html" class="next">Next</a></nav>
+<p>You can exit the IRB session, and get back to your system shell, by typing
+<code>exit</code> and hitting enter. Or you can also just hit <code>ctrl-d</code>, which does the
+same thing.</p>
+
+        <nav class="page-nav"><a href="/04-your_tools/04-workflow.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/05-object_oriented_programming.html" class="next">Next</a></nav>
       </article>
     </div>
 

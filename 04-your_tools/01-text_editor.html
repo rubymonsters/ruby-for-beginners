@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Alternative block syntaxes | Ruby for Beginners</title>
+    <title>Text Editor | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/11-blocks.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/11-blocks/02-block_arguments.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/04-your_tools.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/04-your_tools/02-terminal.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -33,9 +33,9 @@
       <li><a href="/03-learning_to_program/04-error_messages.html">Reading error messages</a></li>
       <li><a href="/03-learning_to_program/05-using_google.html">Using Google</a></li>
   </ul></li>
-  <li class="directory"><a href="/04-your_tools.html">Your tools</a>
+  <li class="directory expanded"><a href="/04-your_tools.html">Your tools</a>
   <ul>
-      <li><a href="/04-your_tools/01-text_editor.html">Text Editor</a></li>
+      <li class="active"><a href="/04-your_tools/01-text_editor.html">Text Editor</a></li>
       <li><a href="/04-your_tools/02-terminal.html">Terminal</a></li>
       <li><a href="/04-your_tools/03-ruby_runtime.html">Ruby runtime</a></li>
       <li><a href="/04-your_tools/04-workflow.html">Programming workflow</a></li>
@@ -66,9 +66,9 @@
       <li><a href="/09-everything_an_object/02-object_methods.html">Calling methods</a></li>
   </ul></li>
   <li><a href="/10-string_interpolation.html">String interpolation</a></li>
-  <li class="directory expanded"><a href="/11-blocks.html">Blocks</a>
+  <li class="directory"><a href="/11-blocks.html">Blocks</a>
   <ul>
-      <li class="active"><a href="/11-blocks/01-block_syntax.html">Alternative block syntaxes</a></li>
+      <li><a href="/11-blocks/01-block_syntax.html">Alternative block syntaxes</a></li>
       <li><a href="/11-blocks/02-block_arguments.html">Block arguments</a></li>
       <li><a href="/11-blocks/03-block_return_values.html">Block return values</a></li>
   </ul></li>
@@ -124,34 +124,59 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Alternative block syntaxes</h1>
+        <h1>Text Editor</h1>
 
-<p>As well as the syntax shown before, using <code>do</code> and <code>end</code>, Ruby comes with an
-alternative syntax, which uses curly braces for defining a block.</p>
+<p>For our study groups we recommend using <a href="http://www.sublimetext.com">Sublime Text</a>
+as a text editor, which you can download and run on Mac OSX, Ubuntu, or
+Windows. This is an editor that has been specifically designed for writing
+code, comes with a lot of great tools, and it can be customized easily.</p>
 
-<p>These two statements do exactly the same:</p>
-<pre class="highlight ruby"><code><span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
-  <span class="nb">puts</span> <span class="s2">"Oh, hello!"</span>
-<span class="k">end</span>
+<p>Other text editors that might be worth looking at are Atom, Textmate 2, and, if
+you like to use some of the powerful oldschool tools from the early times of
+Unix, VIM and Emacs. These are all great editors to use.</p>
 
-<span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s2">"hello!"</span> <span class="p">}</span>
-</code></pre>
+<p>Whatever editor you use, you want it to insert 2 spaces when you hit the &ldquo;tab&rdquo;
+key, i.e. when you want to indent your code. Make sure your editor is
+configured to do this.</p>
 
-<p>Both statements define a block, which is passed to the method <code>times</code>. And
-both blocks contain a single line of code.</p>
+<p>For Sublime Text you can do the following: In the menu item &ldquo;Sublime Text&rdquo; go
+to &ldquo;Preferences&rdquo; and select &ldquo;Settings - User&rdquo;. This opens up a configuration
+file, that you can edit just like any other file. Make sure it looks like this:</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"tab_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"translate_tabs_to_spaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
-<p>So, when do you use one or the other syntax?</p>
+<p>Also, we recommend enabling auto-saving your files. This will automatically
+save your changes when you switch to another application (like your terminal),
+and protect you from the mistake of forgetting to save:</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"tab_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"translate_tabs_to_spaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"save_on_focus_lost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
-<p>In the Ruby community there&rsquo;s the convention to use curly braces if you have a
-single line block and it fits nicely on the same line (as, in our example, it
-does).</p>
+<p>Whenever you open a new file, make sure to save it with a filename that ends
+with <code>.rb</code> first. This will tell the editor that you want this to be a Ruby
+file and it will start highlighting your code as Ruby code, and enable other
+Ruby specific editor features. Alternatively, select &ldquo;Ruby&rdquo; in the extensions
+menu at the bottom right.</p>
 
-<p>Whenever you need to have more than one line in your block, then you use the
-syntax using <code>do</code> and <code>end</code>. Sometimes people also use the <code>do</code> and <code>end</code>
-syntax when they feel it makes the code more readable.</p>
+<p>Some keyboard shortcuts that are extremely useful to know are:</p>
 
-        <nav class="page-nav"><a href="/11-blocks.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/11-blocks/02-block_arguments.html" class="next">Next</a></nav>
+<ul>
+<li>In order to indent or unindent a single, or multiple lines of code, select
+them and hit <code>tab</code> or <code>shift-tab</code> respectively.</li>
+<li>In order to comment a single, or multiple lines of code, select them, and
+hit <code>cmd-/</code> on Mac OSX, or <code>ctrl-/</code> on Linux/Windows.</li>
+<li>Cut out code with <code>cmd-x</code>, copy code with <code>cmd-c</code>, and paste it with
+<code>cmd-v</code> on Mac OSX, on Linux/Windows use the <code>ctrl</code> key instead.</li>
+</ul>
+
+        <nav class="page-nav"><a href="/04-your_tools.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/04-your_tools/02-terminal.html" class="next">Next</a></nav>
       </article>
     </div>
 
