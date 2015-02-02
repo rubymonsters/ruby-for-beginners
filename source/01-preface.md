@@ -4,23 +4,22 @@ Read this book at your own pace, and do exercises at your own pace.
 
 We recommend reading at least a page a day (ideally more), and taking some more
 time at least once a week in addition to the weekly meeting on Mondays. It often
-helps to meet with others, have some coffee and cake, and hang out, reading some
+helps to meet with others, have some coffee and cake, and hang out while reading some
 more of this book, or doing a few exercises together.
 
-Read the book from beginning to end, and do exercises as you like. If you'd
-prefer to jump right in, you can also skip over the introductory
-chapters, jump to the chapter "Your tools", and read the introductory
-chapters later. If you already feel familiar with your editor and terminal, and
-know how to use `ruby` to execute a Ruby file, then you can skip over the
-chapter "Your tools", too.
+Read the book from beginning to end, and do exercises as you like. 
+
+If you'd prefer to jump right in, you can also skip over the introductory
+chapters. Jump to the chapter "Your tools", and read the introductory
+chapters later. If you already feel familiar with your editor and terminal, and know how to use `ruby` to execute a Ruby file, then you can skip over the chapter "Your tools", too.
 
 Take notes about whatever questions come up during the week, things that you
 don't understand, and everything else worth mentioning (for example, epiphanies
-that you have, or things that you found interesting). Bring your notes to the study
+you have, or things you found interesting). Bring your notes to the study
 group so we can talk about them in the group.
 
 Please help us improve this book for others: Whenever you find something
-unclear or missing then please tell us. You can tell us during the study group,
+unclear or missing then please tell us. You do this during the study group,
 email the mailing list, or ideally [file an issue](https://github.com/rubymonsters/learning_ruby/issues/new)
 on this repository. (This also helps you get familiar with GitHub, which we'll
 use a lot, later on.)
