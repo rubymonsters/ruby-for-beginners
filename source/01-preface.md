@@ -18,11 +18,12 @@ don't understand, and everything else worth mentioning (for example, epiphanies
 you have, or things you found interesting). Bring your notes to the study
 group so we can talk about them in the group.
 
-Please help us improve this book for others: Whenever you find something
-unclear or missing then please tell us. You do this during the study group,
-email the mailing list, or ideally [file an issue](https://github.com/rubymonsters/learning_ruby/issues/new)
-on this repository. (This also helps you get familiar with GitHub, which we'll
-use a lot, later on.)
+Please help us improve this book for others: Whenever you find something unclear
+or missing then please tell us. You do this during the study group, email the
+mailing list, or ideally [file an
+issue](https://github.com/rubymonsters/learning_ruby/issues/new) on this
+repository. (This also helps you get familiar with GitHub, which we'll use a
+lot, later on.)
 
 By using the name "Ada" in examples in this book we give credit to Ada
 Lovelace, the world's [first computer programmer](http://en.wikipedia.org/wiki/Ada_Lovelace) :)
