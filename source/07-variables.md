@@ -11,7 +11,7 @@ although in Ruby there are different kinds of variables (which you will learn
 about later).
 
 In the following example the first line calculates the result of the operation
-`2 + 3 * 4` and sticks the name `number` on the result. Doing so it creates
+`2 + 3 * 4` and sticks the name `number` on the result. In doing so it creates
 a variable: a name that refers to something (an object, in our case a number).
 
 Think of it like a post-it note with the name `number` written on it, and stuck
@@ -71,7 +71,7 @@ This, again, would output `14`. Let's walk through it:
 Of course, no one would actually write this exact code in practice since you can
 simply do all this in just one line instead: `puts 2 + 3 * 4`. But sometimes
 you'll find or write code that assigns an initial value to a variable, and then
-keeps working on it on a few more lines. This sometimes is useful to break up
+keeps working on it for a few more lines. This sometimes is useful to break up
 long lines, and make code more readable.
 
 As mentioned earlier, Ruby has different kinds of variables. The kind of

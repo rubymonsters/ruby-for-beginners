@@ -2,7 +2,7 @@
 
 *Symbols are like strings, except they are code.*
 
-Symbols are a rather strange concept, to be honest, and we only introduce them
+Symbols are a rather strange concept to be honest, and we only introduce them
 this early because symbols are used so often and widely that you'll very likely
 find them used in code elsewhere. For your first steps in learning programming
 we won't necessarily need them.

@@ -1,15 +1,15 @@
 # Don't believe everything we say
 
 While you are learning to program you'll talk to seasoned developers, ask
-questions, listen to their advice, tips, and experiences.
+questions, and listen to their advice, tips, and experiences.
 
 That's great! We recommend you listen closely, try to understand, and ask more
 questions.
 
-However.
+However...
 
-Also always try to put things into perspective. Whatever you hear, try to
-understand, compare to other opinions, and judge for yourself.
+Always try to put things into perspective. Whatever you hear, try to
+understand, compare with other opinions, and judge for yourself.
 
 As in any other field, developers, as much as any other person, will always
 give answers based on *their* own perspective, based on *their* own experience,
@@ -37,21 +37,21 @@ particular solution and sticks with it for a while.
 On top of this, whatever is considered a "good" solution by the community at
 any point of time, is always the conclusion of a decades-long evolutionary learning
 process. Often it makes sense to start practicing with an older and
-simpler solution that worked well enough a couple years ago, experience some of
-the problems that it caused, and only then try using the latest, more modern
+simpler solution that worked well enough a couple of years ago, and experience some of
+the problems it caused, and only then try using the latest, more modern
 solution.
 
-Developers often tend to be excited about their current preferences, about
-things they've learned just recently, and will happily explain at lengths why
+Developers often tend to be excited about their current preferences, and 
+things they've learned just recently, and will happily explain at length why
 one solution works better for them than another. Often you can learn a
 lot from listening to these explanations. However, keep in mind that this
-doesn't necessarily mean a tool that's great for day to day work for an
-experienced programmer is also a tool that's great for learning to program.
+doesn't necessarily mean a tool that's great for an experienced programmer 
+is also a tool that's great for learning to program.
 
-On top of all this, there's also the problem that the tools that we use, over
+On top of all this, there's also the problem that the tools we use, over
 time, become more and more optimized for advanced users. New features are being
 added that make our day to day work easier, and over the years, up-to-date
-documentation, and tutorials will focus on these features.
+documentation and tutorials will focus on these features.
 
 While that's great for advanced users, it's sometimes bad for beginners, as you
 now not only need to understand the basic concept, you also need to understand
@@ -64,7 +64,7 @@ Of course, everything said above also applies to ourselves :)
 
 Here are a few examples of decisions we made for our study groups. Don't worry
 if you don't understand what we're talking about at this point. You'll fully
-understand them once we get there in the study group.
+understand them once we get there during study group.
 
 * We use the old syntax for hashes in beginners groups: When you first learn
   what a hash is, and how it is used, this is quite a bit of information to
@@ -74,15 +74,15 @@ understand them once we get there in the study group.
   new syntax, and explain why we do not use it.
 
 * We purposefully ignore tons of language features, such as for and while
-  loops, lambdas, splats, class level methods, class variables, and so on in
-  our beginners groups for quite a while. Our goal is to get to the point where
-  you can write a simple Sinatra application while fully understanding
-  everything you use in terms of Ruby language features. We found this is the
-  point where it starts getting more and more exciting for most students: You
-  can now build their own web applications, and understand what you're doing.
-  For this, many language features simply aren't required.
+  loops, lambdas, splats, class level methods, class variables, and so on. Our
+  goal is to get to the point where you can write a simple Sinatra application
+  while fully understanding everything you use in terms of Ruby language
+  features. We found this is the point where it starts getting more and more
+  exciting for most students: You can now build your own web applications, and
+  understand what you're doing. For this, many language features simply aren't
+  required.
 
-* We use the test framework that is integrated into Ruby on Rails, instead of
+* We use the test framework that is integrated into Ruby on Rails, rather than 
   RSpec, another, more modern framework that is preferred by many (but not all)
   Ruby programmers. Why? It is easier to understand: methods are just methods,
   not method calls that generate other methods that magically do things. You
@@ -92,8 +92,8 @@ understand them once we get there in the study group.
   for a while.
 
 * One example of technology improving, adding features optimized for more
-  advanced users, and thus making it harder to understand for newcomers is the
-  aforementioned new hash syntax, at a rather small scale. Other examples are:
+  advanced users, and thus making it harder to understand for newcomers, is the
+  aforementioned new hash syntax. Other examples are:
   Rails' `resources` macro in routes (it is much easier to understand the whole
   concept if you type out these 7 routes yourself), and Rails' migrations
   (they've gone, for good reasons, from being numbered to being timestamped,

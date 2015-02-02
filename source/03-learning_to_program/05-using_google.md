@@ -1,6 +1,6 @@
 # Using Google
 
-*Someone else already had that question, too*
+*Someone else has already had that question*
 
 Whenever you have a question, and you're not sure where to start looking for an
 answer, simply go ahead and ask Google. Some other person most probably has had
@@ -19,15 +19,15 @@ a hash, then google for "ruby hash get keys". If you are wondering if there's
 a method to align strings so they all have a certain length, then google for
 "ruby string align".
 
-Google results that link to the Ruby documentation on ruby-doc.org often are
+Google results that link to the Ruby documentation on ruby-doc.org are often 
 good ones to look at, but these pages also often are very long. Look at the
 summary of the page on Google, and the highlighted terms, then go to the
 page and use your browser's search feature to find them on the page.
 
 Also, results on Stack Overflow are often very worthwhile to read. This is a
 programming community site where people with all kinds of experience levels
-post questions, which then will be answered by others. People can rank answers
+post questions, which then will be answered by others. People can rank answers,
 and the best ranked answer appears at the top. Often it is worth skimming
 through most of the answers, as sometimes the question asked is just slightly
-different from yours, but still someone suggests a solution that might be
+different from yours, but someone might still suggest a solution that might be 
 similar to the one you are looking for.

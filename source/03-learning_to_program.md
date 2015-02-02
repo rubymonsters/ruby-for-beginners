@@ -3,12 +3,12 @@
 *Brainwashing yourself*
 
 Learning to program means, fundamentally, two things: Learning a new language,
-and learning to solve problems by the way of using this language: writing code,
-and describing your solution to the problem.
+and learning to solve problems by way of using this language. This means writing
+code and describing your solution to the problem.
 
 When this text, the one that you are reading right now, was written, the author
 used the language English trying to come up with an adequate solution to the
-problem "How can I best start learning to program?". Reading this text you also
+problem "How can someone best start learning to program?" Reading this text you also
 use the language English. If you think about what you are doing right now, you
 will notice that you do not *think* about English as a language at all. Right?
 Instead you *use* the language in order to figure out what this author might be
@@ -40,7 +40,7 @@ concepts of the programming language. And you sometimes may feel slightly
 overwhelmed, and wonder how programmers might be able to remember all this
 stuff. The trick is: they don't, consciously. Instead they have assimilated
 these concepts so much that they are able to simply use them, without
-consciously remembering, and thinking about them. Just like you use English,
+consciously remembering or thinking about them. Just like you use English,
 or your ability to walk up the stairs.
 
 That's why learning a programming language, just like learning any other
@@ -60,4 +60,4 @@ keep trying to understand them, you will get it.* from the great book [Learn
 Ruby The Hard Way](http://learnrubythehardway.org/book/intro.html) by Zed Shaw.
 
 TODO add advice to never copy and paste code, instead type it, and format
-it well
+it well.

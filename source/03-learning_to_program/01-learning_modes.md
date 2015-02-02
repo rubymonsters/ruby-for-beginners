@@ -26,13 +26,13 @@ If you find it hard to keep motivated working through a certain online tutorial,
 or if you have a hard time fully understanding what an excercise is about, then
 try to pick a different approach, or talk to your study group.
 
-Consider meeting with others during the week, having some coffee and cake, and
-hanging out, reading some more in this book, or doing a few exercises together.
+Consider meeting with others during the week, have some coffee and cake and
+hang out, read some more of this book, or do a few exercises together.
 
 Also, consider joining local programming events, like meetups, hackdays, or a
 conference once in a while. That gives you a broader perspective, even if you
 might not be able to fully understand everything all the time. Meeting with
-others, and hearing about their experiences can also be a good source for
+others and hearing about their experiences can also be a good source for
 inspiration and motivation.
 
 If you can't put a lot of time into learning programming, then consider

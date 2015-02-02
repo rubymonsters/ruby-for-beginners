@@ -18,14 +18,14 @@ sidewalk. Even if you only see the kid from the corner of your eye your brain
 will immediately process this information and even assign a meaning to it.
 You'll start paying attention, and maybe lower your speed immediately.
 
-Often when you search for something online, and look at a couple
+Often when you search for something online, and look at a couple of 
 websites, your brain will help you recognize things that you are looking
 for without consciously thinking about the structure of the site.
 
 In the same way, as a programmer, when you look at code, you will immediately
 recognize some of its structure, and thereby understand it, without reading it
 thoroughly. This allows you to to grasp the overall picture of what you're
-looking at, and quickly find something that you were looking for, in order to
+looking at, and quickly find something that you're looking for, in order to
 then read this particular part of the code more carefully.
 
 As you can imagine, in order for this kind of pattern recognition to kick in,
@@ -49,6 +49,6 @@ here, and indented that other single line there.
 (One certain aspect of this has been even baked right into the language Ruby.
 For example, by definition, class names must start with an uppercase letter.
 On top of this, the Ruby community has agreed on conventions for how to
-write other names ... we'll get to this once we talk about variables and
+write other names. We'll get to this once we talk about variables and
 classes more.)
 
