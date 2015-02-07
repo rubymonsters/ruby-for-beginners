@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Arithmetical operators | Ruby for Beginners</title>
+    <title>Predicate methods | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/12-bonus_1/06-operators.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/12-bonus_1/08-logical_operators.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/13-bonus_1/01-operator_methods.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/13-bonus_1/03-other_methods.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -66,41 +66,41 @@
       <li><a href="/09-everything_an_object/02-object_methods.html">Calling methods</a></li>
   </ul></li>
   <li><a href="/10-string_interpolation.html">String interpolation</a></li>
-  <li class="directory"><a href="/11-blocks.html">Blocks</a>
+  <li><a href="/11-nothing_and_truth.html">Nothingness and the truth</a></li>
+  <li class="directory"><a href="/12-blocks.html">Blocks</a>
   <ul>
-      <li><a href="/11-blocks/01-block_syntax.html">Alternative block syntaxes</a></li>
-      <li><a href="/11-blocks/02-block_arguments.html">Block arguments</a></li>
-      <li><a href="/11-blocks/03-block_return_values.html">Block return values</a></li>
+      <li><a href="/12-blocks/01-block_syntax.html">Alternative block syntaxes</a></li>
+      <li><a href="/12-blocks/02-block_arguments.html">Block arguments</a></li>
+      <li><a href="/12-blocks/03-block_return_values.html">Block return values</a></li>
   </ul></li>
-  <li class="directory expanded"><a href="/12-bonus_1.html">Bonus: Methods &amp; Operators</a>
+  <li class="directory expanded"><a href="/13-bonus_1.html">Bonus: Methods &amp; Operators</a>
   <ul>
-      <li><a href="/12-bonus_1/01-operator_methods.html">Operators are methods</a></li>
-      <li><a href="/12-bonus_1/02-predicate_methods.html">Predicate methods</a></li>
-      <li><a href="/12-bonus_1/03-other_methods.html">Lots of other methods</a></li>
-      <li><a href="/12-bonus_1/04-questions_commands.html">Questions and commands</a></li>
-      <li><a href="/12-bonus_1/05-conditionals.html">Conditionals</a></li>
-      <li><a href="/12-bonus_1/06-operators.html">Operators</a></li>
-      <li class="active"><a href="/12-bonus_1/07-arithmetical_operators.html">Arithmetical operators</a></li>
-      <li><a href="/12-bonus_1/08-logical_operators.html">Logical operators</a></li>
-      <li><a href="/12-bonus_1/09-comparison_operators.html">Comparison operators</a></li>
-      <li><a href="/12-bonus_1/10-nothing_and_truth.html">Nothingness and the truth</a></li>
+      <li><a href="/13-bonus_1/01-operator_methods.html">Operators are methods</a></li>
+      <li class="active"><a href="/13-bonus_1/02-predicate_methods.html">Predicate methods</a></li>
+      <li><a href="/13-bonus_1/03-other_methods.html">Lots of other methods</a></li>
+      <li><a href="/13-bonus_1/04-questions_commands.html">Questions and commands</a></li>
+      <li><a href="/13-bonus_1/05-conditionals.html">Conditionals</a></li>
+      <li><a href="/13-bonus_1/06-operators.html">Operators</a></li>
+      <li><a href="/13-bonus_1/07-arithmetical_operators.html">Arithmetical operators</a></li>
+      <li><a href="/13-bonus_1/08-logical_operators.html">Logical operators</a></li>
+      <li><a href="/13-bonus_1/09-comparison_operators.html">Comparison operators</a></li>
   </ul></li>
-  <li class="directory"><a href="/13-writing_classes.html">Writing classes</a>
-  <ul>
-      <li><a href="/13-writing_classes/01-initializing_objects.html">Initializing objects</a></li>
-      <li><a href="/13-writing_classes/02-instance_variables.html">Instance variables</a></li>
-      <li><a href="/13-writing_classes/03-attribute_readers.html">Attribute readers</a></li>
-      <li><a href="/13-writing_classes/04-attribute_writers.html">Attribute writers</a></li>
-      <li><a href="/13-writing_classes/05-state_and_behaviour.html">State and behaviour</a></li>
-  </ul></li>
-  <li class="directory"><a href="/14-bonus_2.html">Bonus: Advanced Topics</a>
+  <li class="directory">Bonus 2
   <ul>
       <li><a href="/14-bonus_2/01-libraries.html">Bonus: Using Libraries</a></li>
       <li><a href="/14-bonus_2/02-modules.html">Bonus: Modules</a></li>
       <li><a href="/14-bonus_2/03-private_methods.html">Bonus: Private methods</a></li>
   </ul></li>
-  <li><a href="/15-good_names.html">Using the right words</a></li>
-  <li class="directory"><a href="/16-exercises.html">Exercises</a>
+  <li class="directory"><a href="/14-writing_classes.html">Writing classes</a>
+  <ul>
+      <li><a href="/14-writing_classes/01-initializing_objects.html">Initializing objects</a></li>
+      <li><a href="/14-writing_classes/02-instance_variables.html">Instance variables</a></li>
+      <li><a href="/14-writing_classes/03-attribute_readers.html">Attribute readers</a></li>
+      <li><a href="/14-writing_classes/04-attribute_writers.html">Attribute writers</a></li>
+      <li><a href="/14-writing_classes/05-state_and_behaviour.html">State and behaviour</a></li>
+  </ul></li>
+  <li><a href="/15-bonus_2.html">Bonus: Advanced Topics</a></li>
+  <li class="directory">Exercises
   <ul>
       <li><a href="/16-exercises/01-numbers.html">Working with Numbers</a></li>
       <li><a href="/16-exercises/02-strings.html">Working with Strings</a></li>
@@ -120,59 +120,39 @@
       <li><a href="/16-exercises/16-mailbox_erb.html">Generating HTML using ERB</a></li>
       <li><a href="/16-exercises/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
   </ul></li>
+  <li><a href="/16-good_names.html">Using the right words</a></li>
+  <li><a href="/17-exercises.html">Exercises</a></li>
 </ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Arithmetical operators</h1>
+        <h1>Predicate methods</h1>
 
-<p>For numbers, the operators <code>+</code> and <code>*</code> obviously mean the mathematical
-operations of adding and multiplying two numbers. Of course there are other
-arithmetical operators. Here&rsquo;s a full list:</p>
+<p>In the list of method names for numbers you have seen that in Ruby we can have
+methods that end with a question mark <code>?</code>. This makes them read like a question.</p>
 
-<ul>
-<li><code>+</code> - addition</li>
-<li><code>-</code> - subtraction</li>
-<li><code>*</code> - multiplication</li>
-<li><code>/</code> - division</li>
-<li><code>**</code> - exponentiation</li>
-<li><code>%</code> - modulus (the rest of a division, e.g. <code>5 % 2</code> returns <code>1</code>)</li>
-</ul>
-
-<p>However, some of these methods are also defined on other objects, like strings
-and arrays.</p>
-
-<p>Try it yourself in IRB:</p>
+<p>For example, we can ask a number if it is even or odd:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="s2">"&lt;3"</span> <span class="o">+</span> <span class="s2">"!"</span>
-<span class="o">=&gt;</span> <span class="s2">"&lt;3!"</span>
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">odd?</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
 
-<span class="o">&gt;</span> <span class="s2">"&lt;3"</span> <span class="o">*</span> <span class="mi">3</span>
-<span class="o">=&gt;</span> <span class="s2">"&lt;3&lt;3&lt;3"</span>
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">even?</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
-<p>As you can see, these operators mean something different for strings. But they
-also make sense, don&rsquo;t they?</p>
+<p>Or you can ask the number if it&rsquo;s between two other numbers:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
 
-<p>Adding one string to another just means that they will be concatenated into one
-longer string. And multiplying a string by a number means repeating it as many
-times.</p>
-
-<p>The same works for arrays:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-
-<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
-<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
-<p>Again, adding two arrays means combining them into one big array. And
-multiplying an array with a number means getting a big array with the original
-elements repeated.</p>
+<p>Methods that end with a question mark are called &ldquo;predicate methods&rdquo;. And they
+return either <code>true</code> or <code>false</code>.</p>
 
-        <nav class="page-nav"><a href="/12-bonus_1/06-operators.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/12-bonus_1/08-logical_operators.html" class="next">Next</a></nav>
+        <nav class="page-nav"><a href="/13-bonus_1/01-operator_methods.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/13-bonus_1/03-other_methods.html" class="next">Next</a></nav>
       </article>
     </div>
 
