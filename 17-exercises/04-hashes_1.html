@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>The Mailbox Text Formatter | Ruby for Beginners</title>
+    <title>Working with Hashes (1) | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/17-exercisees/11-mailbox.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/17-exercisees/13-mailbox_html.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/17-exercises/03-arrays_1.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/17-exercises/05-methods_1.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -100,100 +100,100 @@
       <li><a href="/15-bonus_2/03-private_methods.html">Bonus: Private methods</a></li>
   </ul></li>
   <li><a href="/16-good_names.html">Using the right words</a></li>
-  <li class="directory expanded">Exercisees
+  <li class="directory expanded"><a href="/17-exercises.html">Exercises</a>
   <ul>
-      <li><a href="/17-exercisees/01-numbers.html">Working with Numbers</a></li>
-      <li><a href="/17-exercisees/02-strings.html">Working with Strings</a></li>
-      <li><a href="/17-exercisees/03-arrays_1.html">Working with Arrays (1)</a></li>
-      <li><a href="/17-exercisees/04-hashes_1.html">Working with Hashes (1)</a></li>
-      <li><a href="/17-exercisees/05-methods_1.html">Defining methods</a></li>
-      <li><a href="/17-exercisees/06-arrays_2.html">Working with Arrays (2)</a></li>
-      <li><a href="/17-exercisees/07-nested_arrays.html">Working with Nested Arrays</a></li>
-      <li><a href="/17-exercisees/08-hashes_2.html">Working with Hashes (2)</a></li>
-      <li><a href="/17-exercisees/09-truthiness.html">Truthiness</a></li>
-      <li><a href="/17-exercisees/10-email.html">The Email Class</a></li>
-      <li><a href="/17-exercisees/11-mailbox.html">The Mailbox Class</a></li>
-      <li class="active"><a href="/17-exercisees/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
-      <li><a href="/17-exercisees/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
-      <li><a href="/17-exercisees/14-mailbox_file.html">Storing our HTML to a File</a></li>
-      <li><a href="/17-exercisees/15-mailbox_csv.html">Reading from a CSV File</a></li>
-      <li><a href="/17-exercisees/16-mailbox_erb.html">Generating HTML using ERB</a></li>
-      <li><a href="/17-exercisees/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
+      <li><a href="/17-exercises/01-numbers.html">Working with Numbers</a></li>
+      <li><a href="/17-exercises/02-strings.html">Working with Strings</a></li>
+      <li><a href="/17-exercises/03-arrays_1.html">Working with Arrays (1)</a></li>
+      <li class="active"><a href="/17-exercises/04-hashes_1.html">Working with Hashes (1)</a></li>
+      <li><a href="/17-exercises/05-methods_1.html">Defining methods</a></li>
+      <li><a href="/17-exercises/06-arrays_2.html">Working with Arrays (2)</a></li>
+      <li><a href="/17-exercises/07-nested_arrays.html">Working with Nested Arrays</a></li>
+      <li><a href="/17-exercises/08-hashes_2.html">Working with Hashes (2)</a></li>
+      <li><a href="/17-exercises/09-truthiness.html">Truthiness</a></li>
+      <li><a href="/17-exercises/10-email.html">The Email Class</a></li>
+      <li><a href="/17-exercises/11-mailbox.html">The Mailbox Class</a></li>
+      <li><a href="/17-exercises/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
+      <li><a href="/17-exercises/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
+      <li><a href="/17-exercises/14-mailbox_file.html">Storing our HTML to a File</a></li>
+      <li><a href="/17-exercises/15-mailbox_csv.html">Reading from a CSV File</a></li>
+      <li><a href="/17-exercises/16-mailbox_erb.html">Generating HTML using ERB</a></li>
+      <li><a href="/17-exercises/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
   </ul></li>
-  <li><a href="/17-exercises.html">Exercises</a></li>
 </ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>The Mailbox Text Formatter</h1>
+        <h1>Working with Hashes (1)</h1>
 
-<p>The mailbox text formatter exercise is a milestone in the beginners group
-curriculum, and it may take a little bit longer to complete it. That is fine,
-and, to some extent, the point :)</p>
+<p>Before you get started, make sure you have your text editor and terminal open,
+and you have navigated to your exercises directory in the terminal. E.g. <code>cd
+~/ruby-for-beginners/exercises</code>.</p>
 
-<h2>Exercise 12.1</h2>
+<h2>Exercise 4.1</h2>
 
-<p>Make a new file <code>12-mailbox_text-1.rb</code>. Fill in and complete the following
-class definitions:</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Email</span>
-  <span class="c1"># your class from the last exercise</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Mailbox</span>
-  <span class="c1"># your class from the last exercise</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">MailboxTextFormatter</span>
-  <span class="c1"># fill in this class body</span>
-<span class="k">end</span>
-
-<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ferdous"</span> <span class="p">}),</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Keep on coding! :)"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Dajana"</span> <span class="p">}),</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Re: Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-02"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ariane"</span> <span class="p">})</span>
-<span class="p">]</span>
-<span class="n">mailbox</span> <span class="o">=</span> <span class="no">Mailbox</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ruby Study Group"</span><span class="p">,</span> <span class="n">emails</span><span class="p">)</span>
-<span class="n">formatter</span> <span class="o">=</span> <span class="no">MailboxTextFormatter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">mailbox</span><span class="p">)</span>
-
-<span class="nb">puts</span> <span class="n">formatter</span><span class="p">.</span><span class="nf">format</span>
+<p>Make a new file <code>04-hashes_1-1.rb</code>, and fill in the following line:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'uno'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'dos'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'tres'</span> <span class="p">}</span>
+<span class="c1"># your code goes here</span>
 </code></pre>
 
-<p>Your goal is to complete the code in a way so it outputs the following:</p>
-<pre class="highlight plaintext"><code>Mailbox: Ruby Study Group
+<p>So that it prints out <code>dos</code>.</p>
 
-+------------+---------+------------------------+
-| Date       | From    | Subject                |
-+------------+---------+------------------------+
-| 2014-12-01 | Ferdous | Homework this week     |
-| 2014-12-01 | Dajana  | Keep on coding! :)     |
-| 2014-12-02 | Ariane  | Re: Homework this week |
-+------------+---------+------------------------+
+<p><a href="/solutions/04-hashes_1-1.rb" class="solution">Show solution</a></p>
+
+<h2>Exercise 4.2</h2>
+
+<p>Make a new file <code>04-hashes_1-2.rb</code>, and fill in the following line:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'uno'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'dos'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'tres'</span> <span class="p">}</span>
+<span class="c1"># your code goes here</span>
+<span class="nb">puts</span> <span class="n">dictionary</span><span class="p">[</span><span class="ss">:four</span><span class="p">]</span>
 </code></pre>
 
-<p>You are allowed to add as many methods to the classes <code>Email</code>, <code>Mailbox</code> and
-<code>MailboxTextFormatter</code> as you deem useful. In your final solution you are not
-allowed to change any of the code outside (after) the class definitions. For
-debugging purposes, you can, of course, change all the code you want :)</p>
+<p>So that it prints out <code>cuatro</code>.</p>
 
-<p>If you do this exercise in one of our study groups then best do it together
-with someone else. We found pairs to work best, and a three person team would
-be better than doing it on your own.</p>
+<p><a href="/solutions/04-hashes_1-1.rb" class="solution">Show solution</a></p>
 
-<p>Try to come up with a working solution first. It doesn&rsquo;t matter how elegant,
-generic, or pretty it is. Whatever produces the required output is fine for a
-first solution.</p>
+<h2>Exercise 4.3</h2>
 
-<p>Then, later, look at your code, and try to improve it by cleaning up everything
-that you don&rsquo;t like, or deam ugly.</p>
+<p>Copy that file to a new file <code>cp 04-hashes_1-2.rb 04-hashes_1-3.rb</code>, and change your
+code so that it prints out the following.</p>
+<pre class="highlight plaintext"><code>Cuatro
+</code></pre>
 
-<p>Eventually, one goal to aim for would be: Adding another column to the table
-only requires mimimal changes, e.g. changes to one or two places in your
-formatter class.</p>
+<p>Hint: There&rsquo;s a method that upcases the first letter of a string. Find it by
+googling for &ldquo;ruby string upcase first letter&rdquo;.</p>
 
-<p><a href="/solutions/12-mailbox_text-1.rb" class="solution">Show solution</a></p>
+<p><a href="/solutions/04-hashes_1-2.rb" class="solution">Show solution</a></p>
 
-        <nav class="page-nav"><a href="/17-exercisees/11-mailbox.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/17-exercisees/13-mailbox_html.html" class="next">Next</a></nav>
+<h2>Exercise 4.4</h2>
+
+<p>There is a method on hashes that allows to check if a certain key is defined on
+the hash.  Find that method by googling for &ldquo;ruby hash key defined&rdquo;.</p>
+
+<p>Try this method in <code>irb</code> by creating a hash like the one above, calling the
+method and passing keys like <code>:one</code>, <code>:two</code>, <code>:four</code>, and <code>:ten</code>.</p>
+
+<p><a href="/solutions/04-hashes_1-3.rb" class="solution">Show solution</a></p>
+
+<h2>Exercise 4.5</h2>
+
+<p>There is a method on hashes that flips keys and values. Find that method on the
+<a href="http://www.ruby-doc.org/core-2.2.0/Hash.html">Ruby documentation about hashes</a></p>
+
+<p>Make a new file <code>04-hashes_1-5.rb</code>, and fill in the following line using that
+method:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'uno'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'dos'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'tres'</span> <span class="p">}</span>
+<span class="c1"># your code goes here</span>
+</code></pre>
+
+<p>This should then output:</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> </span><span class="err">'uno'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">one</span><span class="p">,</span><span class="w"> </span><span class="err">'dos'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">two</span><span class="p">,</span><span class="w"> </span><span class="err">'tres'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">three</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><a href="/solutions/04-hashes_1-4.rb" class="solution">Show solution</a></p>
+
+        <nav class="page-nav"><a href="/17-exercises/03-arrays_1.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/17-exercises/05-methods_1.html" class="next">Next</a></nav>
       </article>
     </div>
 

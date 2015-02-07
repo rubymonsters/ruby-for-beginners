@@ -238,71 +238,71 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/01-numbers.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/01-numbers.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/02-strings.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/02-strings.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/03-arrays_1.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/03-arrays_1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/04-hashes_1.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/04-hashes_1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/05-methods_1.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/05-methods_1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/06-arrays_2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/06-arrays_2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/07-nested_arrays.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/07-nested_arrays.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/08-hashes_2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/08-hashes_2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/09-truthiness.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/09-truthiness.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/10-email.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/10-email.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/11-mailbox.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/11-mailbox.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/12-mailbox_text.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/12-mailbox_text.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/13-mailbox_html.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/13-mailbox_html.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/14-mailbox_file.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/14-mailbox_file.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/15-mailbox_csv.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/15-mailbox_csv.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/16-mailbox_erb.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/16-mailbox_erb.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercisees/17-mailbox_sinatra.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/17-mailbox_sinatra.html</loc>
       <priority>0.5</priority>
     </url>
     <url>

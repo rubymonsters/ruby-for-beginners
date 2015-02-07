@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Working with Arrays (2) | Ruby for Beginners</title>
+    <title>Working with Strings | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/17-exercisees/05-methods_1.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/17-exercisees/07-nested_arrays.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/17-exercises/01-numbers.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/17-exercises/03-arrays_1.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -100,136 +100,98 @@
       <li><a href="/15-bonus_2/03-private_methods.html">Bonus: Private methods</a></li>
   </ul></li>
   <li><a href="/16-good_names.html">Using the right words</a></li>
-  <li class="directory expanded">Exercisees
+  <li class="directory expanded"><a href="/17-exercises.html">Exercises</a>
   <ul>
-      <li><a href="/17-exercisees/01-numbers.html">Working with Numbers</a></li>
-      <li><a href="/17-exercisees/02-strings.html">Working with Strings</a></li>
-      <li><a href="/17-exercisees/03-arrays_1.html">Working with Arrays (1)</a></li>
-      <li><a href="/17-exercisees/04-hashes_1.html">Working with Hashes (1)</a></li>
-      <li><a href="/17-exercisees/05-methods_1.html">Defining methods</a></li>
-      <li class="active"><a href="/17-exercisees/06-arrays_2.html">Working with Arrays (2)</a></li>
-      <li><a href="/17-exercisees/07-nested_arrays.html">Working with Nested Arrays</a></li>
-      <li><a href="/17-exercisees/08-hashes_2.html">Working with Hashes (2)</a></li>
-      <li><a href="/17-exercisees/09-truthiness.html">Truthiness</a></li>
-      <li><a href="/17-exercisees/10-email.html">The Email Class</a></li>
-      <li><a href="/17-exercisees/11-mailbox.html">The Mailbox Class</a></li>
-      <li><a href="/17-exercisees/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
-      <li><a href="/17-exercisees/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
-      <li><a href="/17-exercisees/14-mailbox_file.html">Storing our HTML to a File</a></li>
-      <li><a href="/17-exercisees/15-mailbox_csv.html">Reading from a CSV File</a></li>
-      <li><a href="/17-exercisees/16-mailbox_erb.html">Generating HTML using ERB</a></li>
-      <li><a href="/17-exercisees/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
+      <li><a href="/17-exercises/01-numbers.html">Working with Numbers</a></li>
+      <li class="active"><a href="/17-exercises/02-strings.html">Working with Strings</a></li>
+      <li><a href="/17-exercises/03-arrays_1.html">Working with Arrays (1)</a></li>
+      <li><a href="/17-exercises/04-hashes_1.html">Working with Hashes (1)</a></li>
+      <li><a href="/17-exercises/05-methods_1.html">Defining methods</a></li>
+      <li><a href="/17-exercises/06-arrays_2.html">Working with Arrays (2)</a></li>
+      <li><a href="/17-exercises/07-nested_arrays.html">Working with Nested Arrays</a></li>
+      <li><a href="/17-exercises/08-hashes_2.html">Working with Hashes (2)</a></li>
+      <li><a href="/17-exercises/09-truthiness.html">Truthiness</a></li>
+      <li><a href="/17-exercises/10-email.html">The Email Class</a></li>
+      <li><a href="/17-exercises/11-mailbox.html">The Mailbox Class</a></li>
+      <li><a href="/17-exercises/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
+      <li><a href="/17-exercises/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
+      <li><a href="/17-exercises/14-mailbox_file.html">Storing our HTML to a File</a></li>
+      <li><a href="/17-exercises/15-mailbox_csv.html">Reading from a CSV File</a></li>
+      <li><a href="/17-exercises/16-mailbox_erb.html">Generating HTML using ERB</a></li>
+      <li><a href="/17-exercises/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
   </ul></li>
-  <li><a href="/17-exercises.html">Exercises</a></li>
 </ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Working with Arrays (2)</h1>
+        <h1>Working with Strings</h1>
 
-<p>Note: At the moment these exercises require reading up until &ldquo;Block return values&rdquo;.
-You should know how to use the method <code>collect</code> on arrays.</p>
+<p>In order to start <code>irb</code> open your terminal and type <code>irb</code>, then hit the
+<code>return</code> key (<code>enter</code>). In order to quit <code>irb</code> again (and get back to your
+system shell prompt) you can type <code>exit</code> or press <code>ctrl-d</code>, which does the
+same.</p>
 
-<p>Before you get started, make sure you have your text editor and terminal open, and
-you have navigated to your exercises directory in the terminal. E.g. <code>cd
-~/ruby-for-beginners/exercises</code>.</p>
+<h2>Exercise 2.1</h2>
 
-<h2>Exercise 6.1</h2>
-
-<p>Create a new, empty file. Save it as <code>06-arrays_2-1.rb</code>. Fill in the following line:</p>
-<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">,</span> <span class="s2">"five"</span><span class="p">]</span>
-<span class="c1"># your code goes here</span>
-<span class="nb">p</span> <span class="n">words</span>
+<p>What do you think this will do?</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"hello"</span><span class="p">.</span><span class="nf">length</span> <span class="o">+</span> <span class="s2">"world"</span><span class="p">.</span><span class="nf">length</span>
 </code></pre>
 
-<p>So that you get the following output:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"five"</span><span class="p">]</span>
+<p>Try it yourself.</p>
+
+<h2>Exercise 2.3</h2>
+
+<p>Skim through the <a href="http://www.ruby-doc.org/core-2.1.4/String.html">documentation for strings</a>
+in the Ruby documentation, and look for a method that prepends one string
+to another string.</p>
+
+<p>Using that method prepend the string <code>&quot;Learning &quot;</code> to the string <code>&quot;Ruby&quot;</code></p>
+
+<p><a href="/solutions/02-strings-3.rb" class="solution">Show solution</a></p>
+
+<h2>Exercise 2.4</h2>
+
+<p>Skim through the <a href="http://www.ruby-doc.org/core-2.1.4/String.html">documentation for strings</a>
+in the Ruby documentation, and look for a method that removes characters
+from a string.</p>
+
+<p>Using that method turn the string <code>&quot;Learning Ruby&quot;</code> into the string <code>&quot;Lrnng Rb&quot;</code>.</p>
+
+<p><a href="/solutions/02-strings-4.rb" class="solution">Show solution</a></p>
+
+<h2>Exercise 2.5</h2>
+
+<p>Find out how to convert the string <code>&quot;1.23&quot;</code> into the number <code>1.23</code>.</p>
+
+<p>You can either, again, skim the documentation page for strings, or google for
+&ldquo;ruby convert string to number&rdquo;.</p>
+
+<p>Then also find out what method can be used to turn the string <code>&quot;1&quot;</code> into the
+number <code>1</code> (remember floats and integers are different kinds of numbers).</p>
+
+<p>Confirm that you have found the right methods by trying them in <code>irb</code>.</p>
+
+<p><a href="/solutions/02-strings-5.rb" class="solution">Show solution</a></p>
+
+<h2>Exercise 2.6</h2>
+
+<p>There is a method that allows to justify a string, and padding it with another
+string.</p>
+
+<p>Find that method and use it on the string <code>&quot;Ruby&quot;</code> together with <code>&quot;&lt;3&quot;</code> so that
+you get the following string back:</p>
+<pre class="highlight ruby"><code><span class="s2">"Ruby&lt;3&lt;3&lt;3"</span>
 </code></pre>
 
-<p><a href="/solutions/06-arrays_2-1.rb" class="solution">Show solution</a></p>
+<p>We&rsquo;ll admit that this is a rather creative usage of this method. Normally you&rsquo;d
+use it to align strings to columns (e.g. so that they line up nicely when you
+format a table). You&rsquo;ll use this method in other exercises later on.</p>
 
-<h2>Exercise 6.2</h2>
+<p><a href="/solutions/02-strings-6.rb" class="solution">Show solution</a></p>
 
-<p>Copy your file to a new file: <code>cp 06-arrays_2-1.rb 06-arrays_2-2.rb</code>, then open this
-new file.</p>
-
-<p>Now change your code so that you get the following output:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"One"</span><span class="p">,</span> <span class="s2">"Three"</span><span class="p">,</span> <span class="s2">"Five"</span><span class="p">]</span>
-</code></pre>
-
-<p>Hint: Google for <code>ruby string uppercase first letter</code></p>
-
-<p><a href="/solutions/06-arrays_2-2.rb" class="solution">Show solution</a></p>
-
-<h2>Exercise 6.3</h2>
-
-<p>Copy your file to a new file: <code>cp 06-arrays_2-2.rb 06-arrays_2-3.rb</code>, then open this
-new file.</p>
-
-<p>Now change your code so that you get the following output:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"One &lt;3"</span><span class="p">,</span> <span class="s2">"Three &lt;3"</span><span class="p">,</span> <span class="s2">"Five &lt;3"</span><span class="p">]</span>
-</code></pre>
-
-<p>Hint: Use string interpolation for this.</p>
-
-<p><a href="/solutions/06-arrays_2-3.rb" class="solution">Show solution</a></p>
-
-<h2>Exercise 6.4</h2>
-
-<p>Copy your file to a new file: <code>cp 06-arrays_2-3.rb 06-arrays_2-4.rb</code>, then open this
-new file.</p>
-
-<p>Now change your code so that you get the following output:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"One &lt;3"</span><span class="p">,</span> <span class="s2">"Three &lt;3&lt;3&lt;3"</span><span class="p">,</span> <span class="s2">"Five &lt;3&lt;3&lt;3&lt;3&lt;3"</span><span class="p">]</span>
-</code></pre>
-
-<p><a href="/solutions/06-arrays_2-4.rb" class="solution">Show solution</a></p>
-
-<h2>Exercise 6.5</h2>
-
-<p>Copy your file to a new file: <code>cp 06-arrays_2-4.rb 06-arrays_2-5.rb</code>, then open this
-new file.</p>
-
-<p>Now change your code so that you get the following output (hint: again, that&rsquo;s
-now a string, not an array):</p>
-<pre class="highlight plaintext"><code>One &lt;3, Three &lt;3&lt;3&lt;3, Five &lt;3&lt;3&lt;3&lt;3&lt;3
-</code></pre>
-
-<p><a href="/solutions/06-arrays_2-5.rb" class="solution">Show solution</a></p>
-
-<h2>Exercise 6.6</h2>
-
-<p>Copy your file to a new file: <code>cp 06-arrays_2-5.rb 06-arrays_2-6.rb</code>, then open this
-new file.</p>
-
-<p>Now change your code so that you get the following output, using the newline
-character <code>&quot;\n&quot;</code>:</p>
-<pre class="highlight plaintext"><code>One &lt;3
-Three &lt;3&lt;3&lt;3
-Five &lt;3&lt;3&lt;3&lt;3&lt;3
-</code></pre>
-
-<p><a href="/solutions/06-arrays_2-6.rb" class="solution">Show solution</a></p>
-
-<h2>Exercise 6.7</h2>
-
-<p>Copy your file to a new file: <code>cp 06-arrays_2-6.rb 06-arrays_2-7.rb</code>, then open this
-new file.</p>
-
-<p>Now change your code so that you get the following output, aligning the second
-column:</p>
-<pre class="highlight plaintext"><code>One   &lt;3
-Three &lt;3&lt;3&lt;3
-Five  &lt;3&lt;3&lt;3&lt;3&lt;3
-</code></pre>
-
-<p>Hint: As you may guess, strings have a method that is helpful for this. Ask
-Google: &ldquo;ruby string align&rdquo;.</p>
-
-<p><a href="/solutions/06-arrays_2-7.rb" class="solution">Show solution</a></p>
-
-        <nav class="page-nav"><a href="/17-exercisees/05-methods_1.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/17-exercisees/07-nested_arrays.html" class="next">Next</a></nav>
+        <nav class="page-nav"><a href="/17-exercises/01-numbers.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/17-exercises/03-arrays_1.html" class="next">Next</a></nav>
       </article>
     </div>
 

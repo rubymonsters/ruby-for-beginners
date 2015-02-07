@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Working with Numbers | Ruby for Beginners</title>
+    <title>Generating HTML using ERB | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/17-exercisees.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/17-exercisees/02-strings.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/17-exercises/15-mailbox_csv.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/17-exercises/17-mailbox_sinatra.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -100,85 +100,41 @@
       <li><a href="/15-bonus_2/03-private_methods.html">Bonus: Private methods</a></li>
   </ul></li>
   <li><a href="/16-good_names.html">Using the right words</a></li>
-  <li class="directory expanded">Exercisees
+  <li class="directory expanded"><a href="/17-exercises.html">Exercises</a>
   <ul>
-      <li class="active"><a href="/17-exercisees/01-numbers.html">Working with Numbers</a></li>
-      <li><a href="/17-exercisees/02-strings.html">Working with Strings</a></li>
-      <li><a href="/17-exercisees/03-arrays_1.html">Working with Arrays (1)</a></li>
-      <li><a href="/17-exercisees/04-hashes_1.html">Working with Hashes (1)</a></li>
-      <li><a href="/17-exercisees/05-methods_1.html">Defining methods</a></li>
-      <li><a href="/17-exercisees/06-arrays_2.html">Working with Arrays (2)</a></li>
-      <li><a href="/17-exercisees/07-nested_arrays.html">Working with Nested Arrays</a></li>
-      <li><a href="/17-exercisees/08-hashes_2.html">Working with Hashes (2)</a></li>
-      <li><a href="/17-exercisees/09-truthiness.html">Truthiness</a></li>
-      <li><a href="/17-exercisees/10-email.html">The Email Class</a></li>
-      <li><a href="/17-exercisees/11-mailbox.html">The Mailbox Class</a></li>
-      <li><a href="/17-exercisees/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
-      <li><a href="/17-exercisees/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
-      <li><a href="/17-exercisees/14-mailbox_file.html">Storing our HTML to a File</a></li>
-      <li><a href="/17-exercisees/15-mailbox_csv.html">Reading from a CSV File</a></li>
-      <li><a href="/17-exercisees/16-mailbox_erb.html">Generating HTML using ERB</a></li>
-      <li><a href="/17-exercisees/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
+      <li><a href="/17-exercises/01-numbers.html">Working with Numbers</a></li>
+      <li><a href="/17-exercises/02-strings.html">Working with Strings</a></li>
+      <li><a href="/17-exercises/03-arrays_1.html">Working with Arrays (1)</a></li>
+      <li><a href="/17-exercises/04-hashes_1.html">Working with Hashes (1)</a></li>
+      <li><a href="/17-exercises/05-methods_1.html">Defining methods</a></li>
+      <li><a href="/17-exercises/06-arrays_2.html">Working with Arrays (2)</a></li>
+      <li><a href="/17-exercises/07-nested_arrays.html">Working with Nested Arrays</a></li>
+      <li><a href="/17-exercises/08-hashes_2.html">Working with Hashes (2)</a></li>
+      <li><a href="/17-exercises/09-truthiness.html">Truthiness</a></li>
+      <li><a href="/17-exercises/10-email.html">The Email Class</a></li>
+      <li><a href="/17-exercises/11-mailbox.html">The Mailbox Class</a></li>
+      <li><a href="/17-exercises/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
+      <li><a href="/17-exercises/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
+      <li><a href="/17-exercises/14-mailbox_file.html">Storing our HTML to a File</a></li>
+      <li><a href="/17-exercises/15-mailbox_csv.html">Reading from a CSV File</a></li>
+      <li class="active"><a href="/17-exercises/16-mailbox_erb.html">Generating HTML using ERB</a></li>
+      <li><a href="/17-exercises/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
   </ul></li>
-  <li><a href="/17-exercises.html">Exercises</a></li>
 </ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Working with Numbers</h1>
+        <h1>Generating HTML using ERB</h1>
 
-<p>In order to start <code>irb</code> open your terminal and type <code>irb</code>, then hit the
-<code>return</code> key (<code>enter</code>). In order to quit <code>irb</code> again (and get back to your
-system shell prompt) you can type <code>exit</code> or press <code>ctrl-d</code>, which does the
-same.</p>
+<p>ERB stands for &ldquo;Embedded Ruby&rdquo;, and it is a templating library. &ldquo;Templating&rdquo; in
+this context means that it makes it easy to write views, most of the time that
+is HTML. ERB also is the library that Rails uses for its views, by default, but
+it is possible, and sometimes pretty useful to use ERB outside of Rails, too.</p>
 
-<h2>Exercise 1.1</h2>
+<h2>Exercise 16.1</h2>
 
-<p>In <code>irb</code>, calcluate:</p>
-
-<ul>
-<li>How many hours are in a year.</li>
-<li>How many minutes are in a decade?</li>
-<li>How many seconds old are you?</li>
-</ul>
-
-<h2>Exercise 1.2</h2>
-
-<p>What do you think happens when you combine the following floats and integers?</p>
-
-<p>Try computing these in <code>irb</code>:</p>
-
-<ul>
-<li><code>3.0 / 2</code></li>
-<li><code>3 / 2.0</code></li>
-<li><code>4 ** 2.0</code></li>
-<li><code>4.1 % 2</code></li>
-</ul>
-
-<p>Is the result a float or an integer?</p>
-
-<h2>Exercise 1.3</h2>
-
-<p>Methods are a way of &ldquo;doing something with an object&rdquo;. E.g. in Ruby, numbers
-have two methods that allow you to check whether the number is odd or even.</p>
-
-<p>Look through the <a href="http://ruby-doc.org/core-2.1.5/Fixnum.html">documentation for integer</a>
-numbers (called <code>Fixnum</code>) and find the methods that tell if a number is odd or
-even.</p>
-
-<h2>Exercise 1.4</h2>
-
-<p>In <code>irb</code>, use these methods to find out if certain numbers are odd or even.
-Numbers like <code>0, 1, 2, 99, -502</code> etc.</p>
-
-<p>Hint: You can use a method by appending a dot <code>.</code> and then the method name
-to the object. E.g. <code>-99.abs</code> uses (we also say: &ldquo;calls&rdquo;) the method <code>abs</code> on
-the number <code>-99</code>.  Try for yourself what it does, and google for &ldquo;ruby abs&rdquo; to
-find <a href="http://ruby-doc.org/core-2.0/Numeric.html#method-i-abs">the documentation</a>
-for this method.</p>
-
-        <nav class="page-nav"><a href="/17-exercisees.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/17-exercisees/02-strings.html" class="next">Next</a></nav>
+        <nav class="page-nav"><a href="/17-exercises/15-mailbox_csv.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/17-exercises/17-mailbox_sinatra.html" class="next">Next</a></nav>
       </article>
     </div>
 

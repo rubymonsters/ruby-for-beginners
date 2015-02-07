@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>The Email Class | Ruby for Beginners</title>
+    <title>The Mailbox Text Formatter | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8dc24db3.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a href="/17-exercisees/09-truthiness.html" class="prev">Previous</a></nav>
-    <nav class="page-nav"><a href="/17-exercisees/11-mailbox.html" class="next">Next</a></nav>
+    <nav class="page-nav"><a href="/17-exercises/11-mailbox.html" class="prev">Previous</a></nav>
+    <nav class="page-nav"><a href="/17-exercises/13-mailbox_html.html" class="next">Next</a></nav>
 
     <div>
       <nav class="toc">
@@ -100,79 +100,99 @@
       <li><a href="/15-bonus_2/03-private_methods.html">Bonus: Private methods</a></li>
   </ul></li>
   <li><a href="/16-good_names.html">Using the right words</a></li>
-  <li class="directory expanded">Exercisees
+  <li class="directory expanded"><a href="/17-exercises.html">Exercises</a>
   <ul>
-      <li><a href="/17-exercisees/01-numbers.html">Working with Numbers</a></li>
-      <li><a href="/17-exercisees/02-strings.html">Working with Strings</a></li>
-      <li><a href="/17-exercisees/03-arrays_1.html">Working with Arrays (1)</a></li>
-      <li><a href="/17-exercisees/04-hashes_1.html">Working with Hashes (1)</a></li>
-      <li><a href="/17-exercisees/05-methods_1.html">Defining methods</a></li>
-      <li><a href="/17-exercisees/06-arrays_2.html">Working with Arrays (2)</a></li>
-      <li><a href="/17-exercisees/07-nested_arrays.html">Working with Nested Arrays</a></li>
-      <li><a href="/17-exercisees/08-hashes_2.html">Working with Hashes (2)</a></li>
-      <li><a href="/17-exercisees/09-truthiness.html">Truthiness</a></li>
-      <li class="active"><a href="/17-exercisees/10-email.html">The Email Class</a></li>
-      <li><a href="/17-exercisees/11-mailbox.html">The Mailbox Class</a></li>
-      <li><a href="/17-exercisees/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
-      <li><a href="/17-exercisees/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
-      <li><a href="/17-exercisees/14-mailbox_file.html">Storing our HTML to a File</a></li>
-      <li><a href="/17-exercisees/15-mailbox_csv.html">Reading from a CSV File</a></li>
-      <li><a href="/17-exercisees/16-mailbox_erb.html">Generating HTML using ERB</a></li>
-      <li><a href="/17-exercisees/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
+      <li><a href="/17-exercises/01-numbers.html">Working with Numbers</a></li>
+      <li><a href="/17-exercises/02-strings.html">Working with Strings</a></li>
+      <li><a href="/17-exercises/03-arrays_1.html">Working with Arrays (1)</a></li>
+      <li><a href="/17-exercises/04-hashes_1.html">Working with Hashes (1)</a></li>
+      <li><a href="/17-exercises/05-methods_1.html">Defining methods</a></li>
+      <li><a href="/17-exercises/06-arrays_2.html">Working with Arrays (2)</a></li>
+      <li><a href="/17-exercises/07-nested_arrays.html">Working with Nested Arrays</a></li>
+      <li><a href="/17-exercises/08-hashes_2.html">Working with Hashes (2)</a></li>
+      <li><a href="/17-exercises/09-truthiness.html">Truthiness</a></li>
+      <li><a href="/17-exercises/10-email.html">The Email Class</a></li>
+      <li><a href="/17-exercises/11-mailbox.html">The Mailbox Class</a></li>
+      <li class="active"><a href="/17-exercises/12-mailbox_text.html">The Mailbox Text Formatter</a></li>
+      <li><a href="/17-exercises/13-mailbox_html.html">The Mailbox Html Formatter</a></li>
+      <li><a href="/17-exercises/14-mailbox_file.html">Storing our HTML to a File</a></li>
+      <li><a href="/17-exercises/15-mailbox_csv.html">Reading from a CSV File</a></li>
+      <li><a href="/17-exercises/16-mailbox_erb.html">Generating HTML using ERB</a></li>
+      <li><a href="/17-exercises/17-mailbox_sinatra.html">Serving HTML using Sinatra</a></li>
   </ul></li>
-  <li><a href="/17-exercises.html">Exercises</a></li>
 </ul>
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>The Email Class</h1>
+        <h1>The Mailbox Text Formatter</h1>
 
-<h2>Exercise 10.1</h2>
+<p>The mailbox text formatter exercise is a milestone in the beginners group
+curriculum, and it may take a little bit longer to complete it. That is fine,
+and, to some extent, the point :)</p>
 
-<p>In a new file <code>10-email-1.rb</code> write a class <code>Email</code> that has a <code>subject</code>,
-<code>date</code>, and <code>from</code> attribute. Make it so that these attributes can be populated
-through <code>new</code> and <code>initialize</code>.</p>
+<h2>Exercise 12.1</h2>
 
-<p>The following code</p>
+<p>Make a new file <code>12-mailbox_text-1.rb</code>. Fill in and complete the following
+class definitions:</p>
 <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Email</span>
+  <span class="c1"># your class from the last exercise</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Mailbox</span>
+  <span class="c1"># your class from the last exercise</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">MailboxTextFormatter</span>
   <span class="c1"># fill in this class body</span>
 <span class="k">end</span>
 
-<span class="n">email</span> <span class="o">=</span> <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Homework this week"</span><span class="p">,</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="s2">"Ferdous"</span><span class="p">)</span>
+<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ferdous"</span> <span class="p">}),</span>
+  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Keep on coding! :)"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Dajana"</span> <span class="p">}),</span>
+  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Re: Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-02"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ariane"</span> <span class="p">})</span>
+<span class="p">]</span>
+<span class="n">mailbox</span> <span class="o">=</span> <span class="no">Mailbox</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ruby Study Group"</span><span class="p">,</span> <span class="n">emails</span><span class="p">)</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="no">MailboxTextFormatter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">mailbox</span><span class="p">)</span>
 
-<span class="nb">puts</span> <span class="s2">"Date:    </span><span class="si">#{</span><span class="n">email</span><span class="p">.</span><span class="nf">date</span><span class="si">}</span><span class="s2">"</span>
-<span class="nb">puts</span> <span class="s2">"From:    </span><span class="si">#{</span><span class="n">email</span><span class="p">.</span><span class="nf">from</span><span class="si">}</span><span class="s2">"</span>
-<span class="nb">puts</span> <span class="s2">"Subject: </span><span class="si">#{</span><span class="n">email</span><span class="p">.</span><span class="nf">subject</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">puts</span> <span class="n">formatter</span><span class="p">.</span><span class="nf">format</span>
 </code></pre>
 
-<p>should then output the following:</p>
-<pre class="highlight plaintext"><code>Date:    2014-12-01
-From:    Ferdous
-Subject: Homework this week
+<p>Your goal is to complete the code in a way so it outputs the following:</p>
+<pre class="highlight plaintext"><code>Mailbox: Ruby Study Group
+
++------------+---------+------------------------+
+| Date       | From    | Subject                |
++------------+---------+------------------------+
+| 2014-12-01 | Ferdous | Homework this week     |
+| 2014-12-01 | Dajana  | Keep on coding! :)     |
+| 2014-12-02 | Ariane  | Re: Homework this week |
++------------+---------+------------------------+
 </code></pre>
 
-<p><a href="/solutions/10-email-1.rb" class="solution">Show solution</a></p>
+<p>You are allowed to add as many methods to the classes <code>Email</code>, <code>Mailbox</code> and
+<code>MailboxTextFormatter</code> as you deem useful. In your final solution you are not
+allowed to change any of the code outside (after) the class definitions. For
+debugging purposes, you can, of course, change all the code you want :)</p>
 
-<h2>Exercise 10.2</h2>
+<p>If you do this exercise in one of our study groups then best do it together
+with someone else. We found pairs to work best, and a three person team would
+be better than doing it on your own.</p>
 
-<p>Once you have this class, copy your file to <code>09-2_email.rb</code>.</p>
+<p>Try to come up with a working solution first. It doesn&rsquo;t matter how elegant,
+generic, or pretty it is. Whatever produces the required output is fine for a
+first solution.</p>
 
-<p>Change your class so that the <code>initialize</code> method now takes a <code>subject</code> string,
-and a <code>headers</code> hash. This is then more in line with how actual emails are
-stored in the real world: the values <code>date</code> and <code>from</code> are stored on a hash,
-which is called the &ldquo;email headers&rdquo;.</p>
+<p>Then, later, look at your code, and try to improve it by cleaning up everything
+that you don&rsquo;t like, or deam ugly.</p>
 
-<p>Doing so, in the code above the only line you should change is the one that
-instantiates the email object, which should now read:</p>
-<pre class="highlight ruby"><code><span class="n">email</span> <span class="o">=</span> <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Keep on coding! :)"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ferdous"</span> <span class="p">})</span>
-</code></pre>
+<p>Eventually, one goal to aim for would be: Adding another column to the table
+only requires mimimal changes, e.g. changes to one or two places in your
+formatter class.</p>
 
-<p>Your program should now still produce the same output.</p>
+<p><a href="/solutions/12-mailbox_text-1.rb" class="solution">Show solution</a></p>
 
-<p><a href="/solutions/10-email-2.rb" class="solution">Show solution</a></p>
-
-        <nav class="page-nav"><a href="/17-exercisees/09-truthiness.html" class="prev">Previous</a></nav>
-        <nav class="page-nav"><a href="/17-exercisees/11-mailbox.html" class="next">Next</a></nav>
+        <nav class="page-nav"><a href="/17-exercises/11-mailbox.html" class="prev">Previous</a></nav>
+        <nav class="page-nav"><a href="/17-exercises/13-mailbox_html.html" class="next">Next</a></nav>
       </article>
     </div>
 
