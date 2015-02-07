@@ -76,6 +76,8 @@ returns something truthy (something that is "equivalent to true"), the method
 `detect` will return the current object itself. Therefore, this will print out
 `2`: the first number in the array that is even.
 
+#### Inversion of control
+
 In Ruby there are a lot more methods that accept blocks, and they do very
 different things.
 
@@ -90,6 +92,8 @@ single, generic method for arrays: `select`, allowing you to flexibly specify
 the criterion in form of Ruby code: by passing a block to the
 method. That way Ruby lets you, as a programmer, take over control, and specify
 what is used as a criterion to select elements.
+
+#### Iterators
 
 Methods on arrays and hashes that take a block are also called iterators.
 We say they "iterate over the array", meaning that these methods take each

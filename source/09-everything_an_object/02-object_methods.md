@@ -44,6 +44,6 @@ $ irb
 
 If you do this yourself, you'll see that the object `1` actually has a lot more
 methods. We have stripped the array down a little, because we want to talk
-about some of these methods.
+about some of these methods later.
 
 

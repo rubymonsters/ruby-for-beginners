@@ -5,11 +5,11 @@
 Symbols are a rather strange concept to be honest, and we only introduce them
 this early because symbols are used so often and widely that you'll very likely
 find them used in code elsewhere. For your first steps in learning programming
-we won't necessarily need them.
+we would not necessarily need them.
 
 Symbols are written like this: `:something`
 
-i.e. there is a word that is preceded by a colon. This means that normally
+I.e. there is a word that is preceded by a colon. This means that normally
 symbols do not contain spaces. Instead, if we have symbols that consist of
 multiple words we would concatenate them with underscores, like so:
 `:another_funny_symbol`

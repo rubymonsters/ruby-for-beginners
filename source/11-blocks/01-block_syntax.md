@@ -1,6 +1,6 @@
 # Alternative block syntaxes
 
-As well as the syntax shown before, using `do` and `end`, Ruby comes with an
+Next to the syntax shown before, using `do` and `end`, Ruby comes with an
 alternative syntax, which uses curly braces for defining a block.
 
 These two statements do exactly the same:

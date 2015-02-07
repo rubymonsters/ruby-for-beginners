@@ -5,7 +5,7 @@ A string, in programming languages, is text.
 E.g. your name, represented in Ruby, is a string. The title of this text is a
 string, and so is this paragraph, and this full text in its entirety.
 
-In Ruby there are a couple of flexible ways to create strings, but the most simple 
+In Ruby there are a couple of flexible ways to create strings, but the most simple
 and most common way is to simply enclose some characters in quotes:
 
 ```ruby
@@ -42,7 +42,7 @@ $ irb
 > "snow" + "ball"
 => "snowball"
 
-> "hi " + "hi " + "hi"
+> "hi" + "hi" + "hi"
 => "hihihi"
 ```
 

@@ -12,8 +12,7 @@ An incomplete list of what's missing:
 * Add a chapter about Ruby (e.g. optimized for happiness)
 * Add editor tips (shortcuts, syntax highlighting)
 * Add most common exception messages
-
-* Add advice, tips, and recommendations for coaches.
+* Add a chapter about testing
 
 Notes:
 
