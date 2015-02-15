@@ -32,7 +32,7 @@ Add another line *before the line that you just added*, so that, when you run
 your code, you get the following output:
 
 ```ruby
-0
+99
 ```
 
 <a href="/solutions/03-arrays_1-2.rb" class="solution">Show solution</a>
@@ -53,8 +53,10 @@ So that you get the following output:
 [2, 4, 6, 8, 10]
 ```
 
-Hint: Read the documentation for the method `select` that you can use on arrays
-on the [Ruby documentation](http://www.ruby-doc.org/core-2.2.0/Array.html#method-i-select).
+<p class="hint">
+Read the documentation for the method <code>select</code> that you can use on arrays
+on the <a href="http://www.ruby-doc.org/core-2.2.0/Array.html#method-i-select">Ruby documentation</a>
+</p>
 
 <a href="/solutions/03-arrays_1-3.rb" class="solution">Show solution</a>
 
@@ -69,12 +71,16 @@ Now change the code that you just added so that you get the following output:
 [10, 8, 6, 4, 2]
 ```
 
-Hint: The method `select` that you used in the last exercise returns an array.
+<p class="hint">
+The method <code>select</code> that you used in the last exercise returns an array.
 On this array (the return value) you can use another method, by, again, just
-appending a dot `.` and the method name to it, i.e., to the end of the line.
+appending a dot <code>.</code> and the method name to it, i.e., to the end of the line.
+</p>
 
-Hint: There is another method that reverses the order of the array. You can
+<p class="hint">
+There is another method that reverses the order of the array. You can
 find it by googling for "ruby array reverse".
+</p>
 
 <a href="/solutions/03-arrays_1-4.rb" class="solution">Show solution</a>
 

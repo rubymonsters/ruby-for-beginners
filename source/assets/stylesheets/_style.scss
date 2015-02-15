@@ -142,6 +142,25 @@ code:before, code:after {
   display: none;
 }
 
+.hint {
+  position: relative;
+  padding: 1rem 1rem 1rem 3.6rem;
+  background-color: #FFFFE0;
+  &:before {
+    content: "\f0eb";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-family: "FontAwesome";
+    color: #666;
+    background-color: #FFF9D8;
+  }
+}
+
 // overwrite the default from syntax because we want to use bash prompts `$`,
 // but still also highlight as Ruby code
 .highlight .err {

@@ -38,7 +38,9 @@ Now change your code so that you get the following output:
 ["One", "Three", "Five"]
 ```
 
-Hint: Google for `ruby string uppercase first letter`
+<p class="hint">
+Google for <code>ruby string uppercase first letter</code>.
+</p>
 
 <a href="/solutions/06-arrays_2-2.rb" class="solution">Show solution</a>
 
@@ -54,7 +56,9 @@ Now change your code so that you get the following output:
 ["One <3", "Three <3", "Five <3"]
 ```
 
-Hint: Use string interpolation for this.
+<p class="hint">
+Use string interpolation for this.
+</p>
 
 <a href="/solutions/06-arrays_2-3.rb" class="solution">Show solution</a>
 
@@ -119,7 +123,9 @@ Three <3<3<3
 Five  <3<3<3<3<3
 ```
 
-Hint: As you may guess, strings have a method that is helpful for this. Ask
+<p class="hint">
+As you may guess, strings have a method that is helpful for this. Ask
 Google: "ruby string align".
+</p>
 
 <a href="/solutions/06-arrays_2-7.rb" class="solution">Show solution</a>

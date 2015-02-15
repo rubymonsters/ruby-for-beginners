@@ -43,8 +43,10 @@ code so that it prints out the following.
 Cuatro
 ```
 
-Hint: There's a method that upcases the first letter of a string. Find it by
+<p class="hint">
+There's a method that upcases the first letter of a string. Find it by
 googling for "ruby string upcase first letter".
+</p>
 
 <a href="/solutions/04-hashes_1-2.rb" class="solution">Show solution</a>
 

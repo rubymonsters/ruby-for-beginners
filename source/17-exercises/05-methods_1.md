@@ -28,8 +28,10 @@ random string from the array `["Hello", "Hi", "Ohai", "ZOMG"]`.
 Every time you run the program it should print out either `"Hello Ada!"`, `"Hi
 Ada!"`, `"Ohai Ada!"`, or `"ZOMG Ada!"`.
 
-Hint: The method `shuffle` on arrays does, well, shuffle the array :) That
+<p class="hint">
+The method <code>shuffle</code> on arrays does, well, shuffle the array :) That
 means it changes the order of the elements in the array in a random way.
+</p>
 
 <a href="/solutions/05-methods-2.rb" class="solution">Show solution</a>
 
