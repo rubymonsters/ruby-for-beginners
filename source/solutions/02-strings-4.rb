@@ -1,1 +1,0 @@
-"Learning Ruby".delete('aeiuy')

@@ -6,7 +6,8 @@ set :js_dir, 'assets/javascripts'
 set :images_dir, 'images'
 set :source, 'source'
 
-page "/sitemap.xml", layout: false
+page '/sitemap.xml', layout: false
+page '/solutions/*', :layout => false
 
 ignore(/themes\/(?!#{data.book.theme.downcase}).*/)
 config.ignored_sitemap_matchers[:layout] = proc { |file|
