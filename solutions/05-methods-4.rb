@@ -1,9 +1,10 @@
-def leap_year?(year)
-  year % 4 == 0
-end
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">leap_year?</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+  <span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">end</span>
 
-# Bonus:
+<span class="c1"># Bonus:</span>
 
-def leap_year?(year)
-  year % 400 == 0 or year % 100 != 0 and year % 4 == 0
-end
+<span class="k">def</span> <span class="nf">leap_year?</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+  <span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span> <span class="n">or</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span> <span class="n">and</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">end</span>
+</code></pre>

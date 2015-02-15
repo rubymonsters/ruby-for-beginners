@@ -1,7 +1,10 @@
-objects = [true, false, 0, 1, "", [], Object.new, Class.new, Module.new]
-rows = objects.map do |object|
-  representation = object.inspect.sub(/:.*>/, ">").ljust(9)
-  value = object == true
-  [representation, value].join(" | ")
-end
-puts rows.join("\n")
+<pre class="highlight ruby"><code><span class="n">objects</span> <span class="o">=</span> <span class="p">[</span><span class="kp">true</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="p">[],</span> <span class="no">Object</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span><span class="p">]</span>
+
+<span class="n">rows</span> <span class="o">=</span> <span class="n">objects</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">object</span><span class="o">|</span>
+  <span class="n">representation</span> <span class="o">=</span> <span class="n">object</span><span class="p">.</span><span class="nf">inspect</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sr">/:.*&gt;/</span><span class="p">,</span> <span class="s2">"&gt;"</span><span class="p">).</span><span class="nf">ljust</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+  <span class="n">value</span> <span class="o">=</span> <span class="n">object</span> <span class="o">==</span> <span class="kp">true</span>
+  <span class="p">[</span><span class="n">representation</span><span class="p">,</span> <span class="n">value</span><span class="p">].</span><span class="nf">join</span><span class="p">(</span><span class="s2">" | "</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">rows</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</code></pre>
