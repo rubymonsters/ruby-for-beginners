@@ -1,4 +1,2 @@
-<pre class="highlight ruby"><code><span class="sb">```ruby
-"Ruby".prepend("Learning ")
-</span></code></pre>
-<pre class="highlight plaintext"><code></code></pre>
+<pre class="highlight ruby"><code><span class="s2">"Ruby"</span><span class="p">.</span><span class="nf">prepend</span><span class="p">(</span><span class="s2">"Learning "</span><span class="p">)</span>
+</code></pre>
