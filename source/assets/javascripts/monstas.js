@@ -73,11 +73,13 @@ window.onload = function() {
     var solution = ajax('get', link.href);
     var id = link.href.split('/').pop().replace('.rb', '');
     var hide = '<a id="hide-' + id + '" href="#" class="solution">Hide solution</a>';
-    var pre = '<pre id="code-' + id + '" class="hightlight ruby">' + solution + '</pre>';
+    var pre = '<pre id="code-' + id + '" class="hightlight ruby"></pre>';
     link.insertAdjacentHTML('afterend', hide + pre);
 
     hide = document.getElementById('hide-' + id);
     pre = document.getElementById('code-' + id);
+
+    pre.textContent = solution;
 
     addEventListener(hide, 'click', function(event) {
       pre.parentElement.removeChild(pre);
