@@ -34,7 +34,7 @@ write for us: It allows us to write `number = 2 + 3 * 4` instead of `number =
 This is something called "syntax sugar", because it makes the language more
 sweet (no kidding).
 
-By the way, this works the same way for other things, too.
+By the way, this works the same way for other things too.
 
 For example, you have learned about the array and hash syntax that uses square
 brackets `[]` for reading and writing.
