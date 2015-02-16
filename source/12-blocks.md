@@ -4,7 +4,7 @@
 
 Blocks are one of the things programmers absolutely love about Ruby. They are
 an extremely powerful feature that allows us to write very flexible code. At
-the same time, they read very well, and they are used all over the place.
+the same time they read very well, and they are used all over the place.
 
 So, what is a block?
 
