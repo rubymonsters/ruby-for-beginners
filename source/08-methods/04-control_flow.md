@@ -5,7 +5,7 @@ to explain to beginners is how, and in what exact order, Ruby goes through your
 program. This is called the "flow of execution", or "control flow".
 
 When you execute a Ruby file with the `ruby` runtime then it will read your
-Ruby code, and start executing it line by line, from top to bottom.
+Ruby code and start executing it line by line, from top to bottom.
 
 Let's look at our example from above, and how the Ruby control flow goes
 through it under the microscope.
