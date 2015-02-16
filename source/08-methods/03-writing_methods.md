@@ -8,7 +8,7 @@ When you need to add some new functionality to your program you'll often
 find yourself thinking "I should add a method for this": methods add behaviour.
 
 Now, the first thing you should ask yourself is: "What is it that this method
-should do?". The answer to this gives you a hint for a good method name.
+should do?" The answer to this gives you a hint for a good method name.
 
 Let's say you are working on an application that deals with emails, and the
 thing you are trying to accomplish is formatting an email. So your method name
@@ -27,7 +27,7 @@ While this is a pretty useless method, since it does nothing at all, it already
 step.
 
 The next question to ask is: "Does this method need to be given any information
-in order to do it's thing?". The answer to this question specifies the method's
+in order to do its thing?" The answer to this question specifies the method's
 arguments list.
 
 In our example, the answer probably is that, in order to format an email, it
@@ -59,14 +59,14 @@ tasks, and worked on each one of them after another.
 Even though this might seem trivial at first, we recommend you get into this
 habit, too.
 
-Btw, good editors help you formatting things. For example, when you are on a
+Btw, good editors help you format things. For example, when you are on a
 line that starts with `def something`, and at the end of the line hit return,
 Sublime will already indent the next line for you by 2 spaces. If you now type
-`end`, then Sublime will notice that you are closing the method, and dedent
+`end`, then Sublime will notice that you are closing the method, and outdent
 it again, so `def` and `end` sit on the same level. Smart, isn't it?
 
 Also, you'll notice that when you type an opening parenthesis `(`, then Sublime
-will add a closing one `)`, too, but keep your cursor placed between them, so
+will add a closing one `)` too, but keep your cursor placed between them, so
 you can type the argument list where it belongs.
 
 
