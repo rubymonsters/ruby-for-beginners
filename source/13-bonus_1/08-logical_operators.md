@@ -9,7 +9,7 @@ are all about processing whether or not there is current flow: on vs off
 (true vs false).
 
 If you are curious, feel encouraged to google and read up on this online, but
-for now, here, we can simply look at the 3 fundamental boolean operators and
+for now, we can simply look at the 3 fundamental boolean operators and
 what they do: `and`, `or`, and `not`.
 
 The operator `and` returns `true` if, and only if, both values also are `true`.
