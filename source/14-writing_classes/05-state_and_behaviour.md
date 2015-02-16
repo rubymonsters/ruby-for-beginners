@@ -30,7 +30,7 @@ ask for it.
 
 If you think about it, that makes sense, doesn't it?
 
-If join our Ruby beginners study group for the first time, and we ask you for
+If you join our Ruby beginners study group for the first time, and we ask you for
 your name, you'll happily tell it. But if we ask for your Gmail password, you
 will probably just laugh at us, or stare at us quizzically, or show some other
 error message. ;) In any case, you won't tell us your email password, because
