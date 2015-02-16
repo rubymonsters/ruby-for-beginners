@@ -39,7 +39,7 @@ following message.*
 
 The method `each` is defined on arrays, and it does just this:
 
-It takes each of the elements in the array, and calls the block, passing the
-element as an argument. The block can then do whatever you like it to do with
+It takes each of the elements in the array and calls the block, passing the
+element as an argument. The block can then do whatever you want it to do with
 the element. In our case we interpolate it into a string and print it out to
 the screen.
