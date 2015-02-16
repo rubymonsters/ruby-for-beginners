@@ -22,7 +22,7 @@ just want the pizza. All the exact steps involved are something that I keep
 private to me, and maybe they've been our family's best kept secret for
 generations.
 
-This is pretty much how objects work, too. The italian restaurant object
+This is pretty much how objects work, too. The Italian restaurant object
 exposes some stuff to the outer world (you), and keeps other things private.
 They'll let you order a pizza, and other things. But they won't tell you the
 exact ingredients of their tomato souce, or how they manage to make this damn
