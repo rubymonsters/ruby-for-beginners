@@ -8,7 +8,7 @@ bit already.
 We've created numbers, strings, arrays, and hashes. We have also looked at
 their class names by calling, e.g. `"a string".class`, and we have explored
 some other methods that these objects have. We have also talked about how you
-can define your own methods, and how you can call them, passing arguments, and
+can define your own methods, and how you can call them, passing arguments and
 blocks.
 
 That means we now have all the tools that we need to finally learn how to
@@ -78,7 +78,6 @@ number, string, or array. Instead, it just tells you the name of the class,
 `Person`, and the internal id that Ruby has assigned to this object.
 
 Every object has its own, unique, internal object id, and when I ran this code
-on my computer, Ruby has assigned the id `0x007fb2fbe50910`. If you run it,
+on my computer, Ruby assigned the id `0x007fb2fbe50910`. If you run it,
 you'll get a different one. In practice, most of the time, you can simply ignore
 this id.
-
