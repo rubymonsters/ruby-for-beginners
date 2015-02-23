@@ -135,8 +135,8 @@ password, and thus, others cannot ask for and retrieve it.</p>
 <p>Actually, this is pretty similar to how authentication often works in
 real web applications:</p>
 
-<p>Applications do not store your actual password in plain text (hopefully!). That
-way, if, for some reason, they get hacked, attackers wouldn&rsquo;t have your actual
+<p>Applications do not store your actual password in plain text (hopefully!) That
+way if, for some reason, they get hacked, attackers wouldn&rsquo;t have your actual
 password. Instead they store an encrypted version of the password.</p>
 
 <p>Anyhow, we now want to add a method <code>encrypted_password</code> to the <code>Person</code> class,
@@ -182,12 +182,12 @@ writer. In order to run this code make sure you keep all the methods.</p>
 <code>Digest::SHA2</code>.</p>
 
 <p>In programming a &ldquo;digest&rdquo; is an algorithm to convert one string into another
-string in a way so the original string cannot be recovered later. However
+in a way that the original string cannot be recovered later. However
 digesting the same string will always result in the same other, unique string.
 There are a good bunch of algorithms that do this, and &ldquo;sha2&rdquo; is the name of
 one of them.</p>
 
-<p>Ok. For our example, here, we only need to understand that, once we have
+<p>Ok. For our example here we only need to understand that, once we have
 required the library <code>digest</code>, we can use the method <code>Digest::SHA2.hexdigest</code>,
 and it will encrypt (&ldquo;digest&rdquo;) the string that we pass to it.</p>
 

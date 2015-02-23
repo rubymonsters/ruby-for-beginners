@@ -131,7 +131,7 @@
 
 <p>In Ruby, modules are somewhat similar to classes: they are things that hold
 methods, just like classes do. However, modules can not be instantiated. I.e.,
-it is not possible to create objects from it. And modules, unlike classes,
+it is not possible to create objects from a module. And modules, unlike classes,
 therefore do not have a method <code>new</code>.</p>
 
 <p>So, what are modules useful for?</p>
@@ -174,18 +174,18 @@ and it will return the value <code>true</code>.</p>
 then make more sense.</p>
 
 <p>Let&rsquo;s assume that our application has other classes that need to encrypt things.
-And we want to keep the exact way <em>how</em> we encrypt things, the <em>implementation</em>
+And we want to keep the exact way of <em>how</em> we encrypt things, the <em>implementation</em>
 in one single place.</p>
 
 <p>Why would we want to do that?</p>
 
 <ul>
-<li>One reason could be that, when we want to switch to a different way of
+<li>One reason could be that when we want to switch to a different way of
 encrypting things (maybe use a stronger encryption algorithm), we would then
 only need to change it in this one place, in our module, and be done with it.</li>
 <li>Another reason could be that we want the encryption algorithm to be somehow
 configurable, for example in a configuration file that our application reads.
-This would then require additional logic, that we would not want to duplicate
+This would then require additional logic that we would not want to duplicate
 across all the places where we need to encrypt something: we&rsquo;d want all this
 to be kept in a central place.</li>
 <li>Another, much simpler, but sometimes also valid reason could be that we
@@ -226,7 +226,7 @@ password: cool, that&rsquo;s what we want.</p>
 then included the module to the class <code>Person</code>. This, at the very least, makes
 the method <code>encrypted_password</code> much easier to read. Doesn&rsquo;t it?</p>
 
-<p>We refer to the process of moving some logic (code) from one method to another,
+<p>We refer to the process of moving some logic (code) from one method to another 
 new method as &ldquo;extracting a method&rdquo;. In our case we have extracted the method
 <code>encrypt</code> from the method <code>encrypt_password</code>. When we do this, methods usually become
 shorter and more readable.</p>
