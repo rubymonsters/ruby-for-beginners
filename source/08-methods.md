@@ -3,7 +3,7 @@
 *A named block of code that takes input and returns output*
 
 Everything in programming is about data, and doing interesting things with it.
-If you think about Twitter, it essentially takes some 140 characters of text
+If you think about Twitter, it essentially takes 140 characters of text
 (which is data) from users and displays it to other users.
 
 You have already learned about some of the most important types of data in
@@ -11,8 +11,8 @@ Ruby: numbers and strings, as well as two structures that can be used to store
 them: arrays and hashes. That's about the "data" part.
 
 Methods are about the "doing interesting things" part. Methods are all about
-encapsulating some bits of behaviour, so that it can be applied to different
-bits of data easily. For example there methods that do things like: sorting an
+encapsulating bits of behaviour, so that they can be applied to different
+bits of data easily. For example, there are methods that do things like: sorting an
 array, reading a CSV file, sending an email, signing in to Facebook, sending
 a Tweet.
 
@@ -20,7 +20,7 @@ There are four things that constitute a method:
 
 * a name
 * a block of code
-* potentially accept some input
+* potentially accepting some input
 * returning some output
 
 Not all methods actually want any input (because they don't need any), and not
@@ -66,7 +66,7 @@ Let's walk through this method definition step by step:
   know as `number`.
 * The next line (indented by two spaces) is the block of code that the
   method encapsulates, also referred to as the "method body".
-* And the keyword `end` tells Ruby that we"re done with the method body.
+* And the keyword `end` tells Ruby that we're done with the method body.
 
 Now we can use (we say "call") this method like so:
 

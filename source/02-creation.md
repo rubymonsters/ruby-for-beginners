@@ -14,6 +14,7 @@ tweets, and they can follow each other". And from now on, every time new users
 are created in the little universe that is your application, these users will
 have the ability to tweet and follow each other.
 
+<!---
 TODO Talk about:
 
 * Writing code is creative. It is close to art, design, architecture and philosophy. 
@@ -25,4 +26,6 @@ TODO Talk about:
 programmers. I tried to make people enjoy programming and concentrate on the
 fun and creative part of programming when they use Ruby.* - Yukihiro Matsumoto
 http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html
+
+-->
 

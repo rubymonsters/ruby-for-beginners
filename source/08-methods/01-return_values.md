@@ -1,6 +1,6 @@
 # Return values
 
-In Ruby, methods always return exactly one single thing (object).
+In Ruby, methods always return exactly one single thing (an object).
 
 The returned object can be anything, but a method can only return one thing,
 and it also *always returns something*. In order to return a bunch of things

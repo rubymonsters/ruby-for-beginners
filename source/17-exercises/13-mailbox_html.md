@@ -134,7 +134,7 @@ Your goal is to complete the code in a way so it outputs the following:
 ```
 
 Does that look scary? A little bit, maybe. It's probably fair
-to say that manually writing HTML isn't very popular amonst most programmers.
+to say that manually writing HTML isn't very popular amongst most programmers.
 Therefore there are quite a few tools that make our lives easier. And your task
 is to write such a tool.
 

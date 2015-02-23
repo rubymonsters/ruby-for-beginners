@@ -60,7 +60,7 @@ So, why do people prefer string interpolation?
 First of all, again, it's slightly fewer letters to type. In our example, that's
 just 5 characters, no big deal. However, consider a longer string, which is
 constructed using three, four, or more variables. Now this extra space quickly
-adds up, and things wouldn't nicely fit on a single line anymore.
+adds up, and things wouldn't fit nicely on a single line anymore.
 
 Also, many people find that the syntax reads a bit better. There's a little bit
 less clutter, making it a little bit easier to see what's going on.

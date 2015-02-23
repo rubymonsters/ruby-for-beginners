@@ -59,5 +59,7 @@ will snap and you will suddenly "get it." If you keep doing the exercises and
 keep trying to understand them, you will get it.* from the great book [Learn
 Ruby The Hard Way](http://learnrubythehardway.org/book/intro.html) by Zed Shaw.
 
+<!---
 TODO add advice to never copy and paste code, instead type it, and format
 it well.
+-->

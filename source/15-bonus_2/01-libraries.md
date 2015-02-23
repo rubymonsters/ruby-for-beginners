@@ -8,8 +8,8 @@ However, our person object could freely give them an encrypted version of it.
 Actually, this is pretty similar to how authentication often works in
 real web applications:
 
-Applications do not store your actual password in plain text (hopefully!). That
-way, if, for some reason, they get hacked, attackers wouldn't have your actual
+Applications do not store your actual password in plain text (hopefully!) That
+way if, for some reason, they get hacked, attackers wouldn't have your actual
 password. Instead they store an encrypted version of the password.
 
 Anyhow, we now want to add a method `encrypted_password` to the `Person` class,
@@ -59,12 +59,12 @@ The library `digest` that we required includes a something called
 `Digest::SHA2`.
 
 In programming a "digest" is an algorithm to convert one string into another
-string in a way so the original string cannot be recovered later. However
+in a way that the original string cannot be recovered later. However
 digesting the same string will always result in the same other, unique string.
 There are a good bunch of algorithms that do this, and "sha2" is the name of
 one of them.
 
-Ok. For our example, here, we only need to understand that, once we have
+Ok. For our example here we only need to understand that, once we have
 required the library `digest`, we can use the method `Digest::SHA2.hexdigest`,
 and it will encrypt ("digest") the string that we pass to it.
 

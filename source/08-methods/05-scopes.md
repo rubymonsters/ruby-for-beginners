@@ -111,7 +111,7 @@ variable than the one on the very first line, in the outer scope.
 
 We found the following a good metaphor for scopes:
 
-When Ruby enters a method, then it's like she enters a shiny, new room in a
+When Ruby enters a method, it's like she enters a shiny new room in a
 house. With her, she brings the objects that are passed as arguments to the
 method call. In the example above she brings an object that is the number `3`.
 
