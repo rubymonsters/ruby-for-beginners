@@ -7,6 +7,8 @@ it is possible, and sometimes pretty useful to use ERB outside of Rails, too.
 
 ## Exercise 16.1
 
+Coming Soon
+
 
 
 
