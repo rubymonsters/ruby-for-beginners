@@ -7,7 +7,7 @@ time at least once a week in addition to the weekly meeting on Mondays. It often
 helps to meet with others, have some coffee and cake, and hang out while reading some
 more of this book, or doing a few exercises together.
 
-Read the book from beginning to end, and do exercises as you like. 
+Read the book from beginning to end, and do exercises as you like.
 
 If you'd prefer to jump right in, you can also skip over the introductory
 chapters. Jump to the chapter "Your tools", and read the introductory
@@ -60,6 +60,11 @@ different order, and from a different angle.
 * [Codecademy](http://www.codecademy.com)
 * [Code School](http://www.codeschool.com)
 * [Odin Project](http://www.theodinproject.com/ruby-programming)
+
+#### Role model stories
+
+* [It Takes a Village to Make a Programmer ](https://www.youtube.com/watch?v=FHNrw7aiKOE) by Michele Guido
+* [Rails Girls Berlin Success Stories](http://railsgirlsberlin.de/category/success-stories)
 
 #### Resources for coaches
 
