@@ -31,7 +31,7 @@ puts dictionary[:four]
 
 So that it prints out `cuatro`.
 
-<a href="/solutions/04-hashes_1-1.rb" class="solution">Show solution</a>
+<a href="/solutions/04-hashes_1-2.rb" class="solution">Show solution</a>
 
 
 ## Exercise 4.3
@@ -48,7 +48,7 @@ There's a method that upcases the first letter of a string. Find it by
 googling for "ruby string upcase first letter".
 </p>
 
-<a href="/solutions/04-hashes_1-2.rb" class="solution">Show solution</a>
+<a href="/solutions/04-hashes_1-3.rb" class="solution">Show solution</a>
 
 
 ## Exercise 4.4
@@ -59,7 +59,7 @@ the hash.  Find that method by googling for "ruby hash key defined".
 Try this method in `irb` by creating a hash like the one above, calling the
 method and passing keys like `:one`, `:two`, `:four`, and `:ten`.
 
-<a href="/solutions/04-hashes_1-3.rb" class="solution">Show solution</a>
+<a href="/solutions/04-hashes_1-4.rb" class="solution">Show solution</a>
 
 
 ## Exercise 4.5
@@ -81,4 +81,4 @@ This should then output:
 { 'uno' => :one, 'dos' => :two, 'tres' => :three }
 ```
 
-<a href="/solutions/04-hashes_1-4.rb" class="solution">Show solution</a>
+<a href="/solutions/04-hashes_1-5.rb" class="solution">Show solution</a>
