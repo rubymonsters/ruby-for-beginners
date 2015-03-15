@@ -1,4 +1,4 @@
 ```ruby
 dictionary = { :one => 'uno', :two => 'dos', :three => 'tres' }
-puts dictionary[:one]
+puts dictionary[:two]
 ```
