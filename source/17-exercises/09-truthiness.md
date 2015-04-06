@@ -13,13 +13,14 @@ objects = [true, false, 0, 1, "", [], Object.new, Class.new, Module.new]
 ```
 
 Add some code that outputs the following table. The last column should be
-filled in with by either `true` or `false` depending what the comparison (using
-`==`) with each value returns:
+filled in with by either `true` or `false` depending what the operation
+`!!object`` (`not not object`) for each of the objects returns:
 
 ```
-object                     | true == value
+object                     | !!object
 true                       | [true|false]
 false                      | [true|false]
+nil                        | [true|false]
 0                          | [true|false]
 1                          | [true|false]
 ""                         | [true|false]
@@ -41,9 +42,10 @@ calling `sub(/:.*>/, ">")` on whatever `inspect` returns.
 Your table should now look like this:
 
 ```
-object    | true == value
+object    | !!object
 true      | true
 false     | false
+nil       | false
 0         | true
 1         | true
 ""        | true
