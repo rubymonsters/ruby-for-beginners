@@ -14,7 +14,8 @@ objects = [true, false, 0, 1, "", [], Object.new, Class.new, Module.new]
 
 Add some code that outputs the following table. The last column should be
 filled in with by either `true` or `false` depending what the operation
-`!!object`` (`not not object`) for each of the objects returns:
+`!!object``, which is the same as `not not object` for each of the objects
+returns:
 
 ```
 object                     | !!object
