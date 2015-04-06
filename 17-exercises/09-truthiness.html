@@ -138,11 +138,12 @@
 </code></pre>
 
 <p>Add some code that outputs the following table. The last column should be
-filled in with by either <code>true</code> or <code>false</code> depending what the comparison (using
-<code>==</code>) with each value returns:</p>
-<pre class="highlight plaintext"><code>object                     | true == value
+filled in with by either <code>true</code> or <code>false</code> depending what the operation
+<code>!!object</code><code>(</code>not not object`) for each of the objects returns:</p>
+<pre class="highlight plaintext"><code>object                     | !!object
 true                       | [true|false]
 false                      | [true|false]
+nil                        | [true|false]
 0                          | [true|false]
 1                          | [true|false]
 ""                         | [true|false]
@@ -162,9 +163,10 @@ instances everytime you run your code.</p>
 calling <code>sub(/:.*&gt;/, &quot;&gt;&quot;)</code> on whatever <code>inspect</code> returns.</p>
 
 <p>Your table should now look like this:</p>
-<pre class="highlight plaintext"><code>object    | true == value
+<pre class="highlight plaintext"><code>object    | !!object
 true      | true
 false     | false
+nil       | false
 0         | true
 1         | true
 ""        | true
