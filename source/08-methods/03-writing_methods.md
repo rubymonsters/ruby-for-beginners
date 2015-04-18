@@ -71,4 +71,4 @@ you can type the argument list where it belongs.
 
 
 Exercises: Now would be a good time to do some of the [exercises on
-methods](/16-exercises/05-methods_1.html).
+methods](/17-exercises/05-methods_1.html).
