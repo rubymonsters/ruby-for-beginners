@@ -97,4 +97,4 @@ what it means. Simply remember that these two hashes are exactly the same:
 ```
 
 Exercises: Now would be a good time to do some of the [exercises on
-arrays](/17-exercises/04-hashes_1.html).
+hashes](/17-exercises/04-hashes_1.html).
