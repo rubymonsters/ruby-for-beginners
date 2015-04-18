@@ -63,7 +63,7 @@ Let's walk through this method definition step by step:
 * The next word `add_two` is the name that we want this method to have.
 * The parentheses tell Ruby that we are about to define an argument list.
 * The arguments list, in our case contains one argument which we'd like to be
-  know as `number`.
+  known as `number`.
 * The next line (indented by two spaces) is the block of code that the
   method encapsulates, also referred to as the "method body".
 * And the keyword `end` tells Ruby that we're done with the method body.
