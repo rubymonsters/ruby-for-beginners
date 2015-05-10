@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Bonus: Private methods | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -23,7 +23,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -314,7 +314,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/bonus_2.html">
       Bonus: Advanced Topics
     </a>
@@ -329,7 +329,7 @@
           Bonus: Modules
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/bonus_2/private_methods.html">
           Bonus: Private methods
         </a>
@@ -437,15 +437,73 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Bonus: Private methods</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p>Remember how we said that instance variables store data that is &ldquo;private&rdquo; to
+the object? Instance variables are only made accessible to the outside world
+(we say &ldquo;it is exposed&rdquo;) if we add attribute accessors to the class.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>In the same way classes sometimes want to keep certain methods private: methods
+that aren&rsquo;t supposed to be called from outside of the object. Only the object
+itself is supposed to use them internally, from other methods.</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>Imagine I am an instance of a class <code>ItalianRestaurant</code>, and I have a method
+<code>pizza</code>, which is supposed to return an instance of the class <code>Pizza</code>.</p>
+
+<p>When you approach me, and call the method <code>pizza</code> (i.e. ask me to bring a
+pizza) then I&rsquo;ll know what to do, and how to do it. I&rsquo;ll get some prepared
+pizza dough from somewhere, some tomato sauce, vegetables and other stuff from
+somewhere else, prepare the pizza, bake it, put it on a nice plate, and finally
+give (return) it to you.</p>
+
+<p>However, you don&rsquo;t really care about any of these details. You are hungry, and
+just want the pizza. All the exact steps involved are something that I keep
+private to me, and maybe they&rsquo;ve been our family&rsquo;s best kept secret for
+generations.</p>
+
+<p>This is pretty much how objects work, too. The Italian restaurant object
+exposes some stuff to the outer world (you), and keeps other things private.
+They&rsquo;ll let you order a pizza, and other things. But they won&rsquo;t tell you the
+exact ingredients of their tomato souce, or how they manage to make this damn
+great pizza dough.</p>
+
+<p>In our <code>Person</code> example it makes sense to make the method <code>encrypt</code> private.</p>
+
+<p>Currently, if you run the following code it will execute just fine, even though
+it makes little sense:</p>
+<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">person</span><span class="p">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="s2">"some other secret"</span><span class="p">)</span>
+</code></pre>
+
+<p>Why would a person encrypt some arbitrary string for someone else, and return
+it? This is something that the person object should keep private. The
+restaurant wouldn&rsquo;t turn flour, water, olive oil and other ingredients into
+pizza dough for everyone else either.</p>
+
+<p>We can make the method <code>encrypt</code> private like so:</p>
+<pre class="highlight ruby"><code><span class="k">module</span> <span class="nn">Encryption</span>
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+    <span class="no">Digest</span><span class="o">::</span><span class="no">SHA2</span><span class="p">.</span><span class="nf">hexdigest</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>The keyword <code>private</code> tells Ruby that all methods defined from now on, are
+supposed to be private. They can be called from within the object (from other
+methods that the class defines), but not from outside.</p>
+
+<p>If you now try to call the method it will raise an error:</p>
+<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">person</span><span class="p">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="s2">"super secret"</span><span class="p">)</span>
+</code></pre>
+
+<p>This will print the error message:</p>
+<pre class="highlight plaintext"><code>private method `encrypt' called for #&lt;Person:0x007fa179863770 @name="Ada"&gt;
+</code></pre>
+
+<p>Nice. Does this make sense?</p>
 
         <nav class="page-nav"></nav>
         <nav class="page-nav"></nav>
@@ -463,7 +521,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
   </body>
 </html>

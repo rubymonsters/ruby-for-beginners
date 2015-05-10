@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Writing classes | Ruby for Beginners</title>
 
     <link href="assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
@@ -23,7 +23,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -282,7 +282,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="active directory expanded">
     <a href="/writing_classes.html">
       Writing classes
     </a>
@@ -437,15 +437,81 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Writing classes</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p><em>Finally, our first own class</em></p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>Since in Ruby &ldquo;everything is an object&rdquo;, we have worked with objects quite a
+bit already.</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>We&rsquo;ve created numbers, strings, arrays, and hashes. We have also looked at
+their class names by calling, e.g. <code>&quot;a string&quot;.class</code>, and we have explored
+some other methods that these objects have. We have also talked about how you
+can define your own methods, and how you can call them, passing arguments and
+blocks.</p>
+
+<p>That means we now have all the tools that we need to finally learn how to
+define and use your own classes. And this is where things suddenly become even
+more fun!</p>
+
+<p>You can think of objects as having two things: They know <em>stuff</em>, and they can
+<em>do something</em> with stuff (their own stuff, as well as the stuff that gets
+passed to them).</p>
+
+<p>Imagine you were an object that is an instance of the class <code>Person</code>. Well, in
+a certain way, you actually are :)</p>
+
+<p>Since you are a <code>Person</code>, you are able to remember your own name. And you are
+able to do something with it: When asked, you can tell your name to others,
+that is, you can return it to the &ldquo;caller&rdquo;, to whoever asked.</p>
+
+<p>Let&rsquo;s start creating this class, step by step.</p>
+
+<p>In Ruby, you define a class like this:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>That&rsquo;s all. It&rsquo;s not a very useful class, since it&rsquo;s completely empty, but
+it&rsquo;s a class.</p>
+
+<p>Also, you see that the class has the name <code>Person</code>, which starts with an
+uppercase letter. In Ruby, this is required, and you&rsquo;d get an error if you
+tried to define a class <code>person</code>.</p>
+
+<p>Also, for class names that consist of several words the Ruby community has the
+convention to separate these words by uppercase letters, as in
+<code>RubyStudyGroup</code>.  This is called CamelCase, because of the humps. Whereas for
+variable and method names we use underscores, and keep everything lowercase:
+<code>local_variable</code> and <code>method_name</code>. This is called snake_case.</p>
+
+<p>Ok, back to our class <code>Person</code>.</p>
+
+<p>Since we&rsquo;ve defined a full, valid class, we can now already use it to create a
+new, concrete person instance, an object from it. Like so:</p>
+<pre class="highlight ruby"><code><span class="no">Person</span><span class="p">.</span><span class="nf">new</span>
+</code></pre>
+
+<p>That&rsquo;s right. <code>new</code> is a method, and it is defined on the <em>class</em> itself
+(which, as you might remember, is also an object). This method creates a new
+instance of the class, and returns it.</p>
+
+<p>Let&rsquo;s have a look at that object:</p>
+<pre class="highlight ruby"><code><span class="nb">p</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span>
+</code></pre>
+
+<p>The output will seem a little bit weird, and technical at first:</p>
+<pre class="highlight plaintext"><code>#&lt;Person:0x007fb2fbe50910&gt;
+</code></pre>
+
+<p>The format <code>#&lt;...&gt;</code> tells you that this object is not a simple thing like a
+number, string, or array. Instead, it just tells you the name of the class,
+<code>Person</code>, and the internal id that Ruby has assigned to this object.</p>
+
+<p>Every object has its own, unique, internal object id, and when I ran this code
+on my computer, Ruby assigned the id <code>0x007fb2fbe50910</code>. If you run it,
+you&rsquo;ll get a different one. In practice, most of the time, you can simply ignore
+this id.</p>
 
         <nav class="page-nav"></nav>
         <nav class="page-nav"></nav>

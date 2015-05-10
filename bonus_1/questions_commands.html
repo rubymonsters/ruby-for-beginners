@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Questions and commands | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -23,7 +23,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -230,7 +230,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/bonus_1.html">
       Bonus: Methods &amp; Operators
     </a>
@@ -250,7 +250,7 @@
           Lots of other methods
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/bonus_1/questions_commands.html">
           Questions and commands
         </a>
@@ -437,15 +437,58 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Questions and commands</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p>Generally speaking, methods play one of two roles: They either answer a question,
+or they perform a command.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>For example, if we have a <code>user</code> object, and users have a name, then we would
+ask the user object for its name by calling the method <code>name</code>: <code>user.name</code>
+would return the user&rsquo;s name. Arrays know their size (how many elements they
+have), so we can ask an array: <code>[1, 2, 3].size</code> will return <code>3</code>.</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>Another example is the method <code>sort</code> on arrays. This method does not actually
+sort the array that it is called on. Instead it returns a <em>new</em> array with the
+same values, but in a sorted order:</p>
+<pre class="highlight ruby"><code><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="nb">p</span> <span class="n">array</span><span class="p">.</span><span class="nf">sort</span>
+<span class="nb">p</span> <span class="n">array</span>
+</code></pre>
+
+<p>This will output <code>[1, 2, 3]</code> and then <code>[3, 2, 1]</code>. So we see that the original
+array is still the same.</p>
+
+<p>Often questions need another bit of information passed. E.g., we can ask
+a string <em>Do you start with this character?</em>, and we&rsquo;ll need to pass the
+character that we are talking about: <code>&quot;a string&quot;.start_with?(&quot;a&quot;)</code>. The answer
+to this question will be <code>true</code>. Or if we ask an array if it includes a certain
+element, then of course we need to pass that element, as in <code>[1, 2,
+3].include?(1)</code></p>
+
+<p>The other role that a method can play is being responsible for executing a
+certain command.</p>
+
+<p>For example in Rails objects that can be stored to the database have a method
+<code>save</code>. Of course, the purpose of this method is to save the object to the
+database. E.g. <code>user.save</code> would save some changes that we&rsquo;ve made to the user
+before, like, maybe we have given them a new password.</p>
+
+<p>Another example is the method <code>sort!</code> on arrays. Different from the method
+<code>sort</code> (without an exclamation mark), this method tells the array to sort
+itself:</p>
+<pre class="highlight ruby"><code><span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">array</span><span class="p">.</span><span class="nf">sort!</span>
+<span class="nb">p</span> <span class="n">array</span>
+</code></pre>
+
+<p>If you run this code, then it will print out <code>[1, 2, 3]</code>: the array is now
+sorted.</p>
+
+<p>Another example for a method that is a command is the method <code>puts</code>. All it
+does is print something to the screen, and it always returns <code>nil</code>.</p>
+
+<p>Whenever you think about adding a new method to your code it makes sense to
+think about the role the method should have. Is it a question? Or a command?</p>
 
         <nav class="page-nav"></nav>
         <nav class="page-nav"></nav>
@@ -463,7 +506,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
   </body>
 </html>

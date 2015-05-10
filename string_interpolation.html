@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>String interpolation | Ruby for Beginners</title>
 
     <link href="assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
@@ -23,7 +23,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -198,7 +198,7 @@
       </li>
     </ul>
   </li>
-  <li>
+  <li class="active">
     <a href="/string_interpolation.html">
       String interpolation
     </a>
@@ -437,15 +437,129 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>String interpolation</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p>As mentioned above you can stick strings together by using the <code>+</code> operator.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>Consider the following code:</p>
+<pre class="highlight ruby"><code><span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ada"</span>
+<span class="nb">puts</span> <span class="s2">"Hello, "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"!"</span>
+</code></pre>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>This, of course, will output the message <code>Hello, Ada!</code>.</p>
+
+<p>Glueing strings together like this works, and you can do it. However, there is
+another method of accomplishing the same, and it is widely used, and usually
+preferred over concatenating strings with <code>+</code>.</p>
+
+<p>This method is called &ldquo;string interpolation&rdquo;, and this is how it looks:</p>
+<pre class="highlight ruby"><code><span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ada"</span>
+<span class="nb">puts</span> <span class="s2">"Hello, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!"</span>
+</code></pre>
+
+<p>Using this syntax everything between the opening <code>#{</code> and closing <code>}</code> bits is
+evaluated as Ruby code, and the result of this evaluation will be <em>embedded
+into</em> the string surrounding it.</p>
+
+<p>In other words, when Ruby finds <code>#{name}</code> in this string, then it will
+evaluate the piece of Ruby code <code>name</code>. It finds that this is a variable, so it
+returns the value of the variable, which is the string <code>&quot;Ada&quot;</code>. So it embeds it
+into the surrounding string <code>&quot;Hello, #{name}!&quot;</code>, by replacing <code>#{name}</code>.</p>
+
+<p>Now we can also finally explain the difference between strings created with
+single and double quotes:</p>
+
+<p>String interpolation only works with double quotes.</p>
+
+<p>That means that:</p>
+<pre class="highlight ruby"><code><span class="nb">puts</span> <span class="s2">"Interpolation works in double quoted strings: </span><span class="si">#{</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="si">}</span><span class="s2">."</span>
+<span class="nb">puts</span> <span class="s1">'And it does not work in single quoted strings: #{1 + 2}.'</span>
+</code></pre>
+
+<p>will print out:</p>
+<pre class="highlight plaintext"><code>Interpolation works in double quoted strings: 3.
+And it does not work in single quoted strings: #{1 + 2}.
+</code></pre>
+
+<p>If you type the code above in your editor, and syntax highlighting for Ruby
+code is used, it should highlight the code in the double quoted string, so it
+gives you a visual clue about the interpolation.</p>
+
+<p>So, why do people prefer string interpolation?</p>
+
+<p>First of all, again, it&rsquo;s slightly fewer letters to type. In our example, that&rsquo;s
+just 5 characters, no big deal. However, consider a longer string, which is
+constructed using three, four, or more variables. Now this extra space quickly
+adds up, and things wouldn&rsquo;t fit nicely on a single line anymore.</p>
+
+<p>Also, many people find that the syntax reads a bit better. There&rsquo;s a little bit
+less clutter, making it a little bit easier to see what&rsquo;s going on.</p>
+
+<p>One other, albeit pretty negligible reason is, that string interpolation
+actually uses less resources:</p>
+
+<ul>
+<li><p>The code <code>&quot;Hello, #{name}!&quot;</code> creates one single new string object, and then
+embeds the existing string <code>&quot;Ada&quot;</code> into it.</p></li>
+<li><p>The code <code>&quot;Hello, &quot; + name + &quot;!&quot;</code> on the other hand creates 3 new string
+objects: first it creates the string <code>&quot;!&quot;</code>, and passes it to the method <code>+</code>
+on the existing string <code>&quot;Ada&quot;</code>.  The operator <code>+</code> returns a <em>new</em> string,
+which now is <code>&quot;Ada!&quot;</code>.  Now this string is passed to the method <code>+</code> on
+<code>&quot;Hello, &quot;</code>, which again, creates a <em>new</em> string, <code>&quot;Hello, Ada!&quot;</code>.</p></li>
+</ul>
+
+<p>So, string concatenation creates 2 more string objects even in our simple
+example. These intermediate objects are immediately discarded, because they&rsquo;re
+not used any more. We&rsquo;re only interested in the final result <code>&quot;Hello, Ada!&quot;</code>.</p>
+
+<p>We recommend you get used to using string interpolation, just because this
+is what most developers use.</p>
+
+<h4>Escape sequences</h4>
+
+<p>There&rsquo;s one other little difference between single and double-quoted string
+that we should mention while we&rsquo;re at it.</p>
+
+<p>In programming, strings can not only contain text as we normally think about
+it. They can also contain <a href="http://www.wikiwand.com/en/Control_character">control characters</a>.
+Control characters are also called &ldquo;non-printing&rdquo; characters, even though
+they can have visual effects.</p>
+
+<p>Control characters can represent all sorts of things, such as removing
+the last character (&ldquo;backspace&rdquo;), the next one (&ldquo;delete&rdquo;), or even causing
+an auditable alert (&ldquo;bell&rdquo;).</p>
+
+<p>The one most typically used in Ruby programs is the &ldquo;newline&rdquo; character.</p>
+
+<p>Because there&rsquo;s no way to represent a &ldquo;newline&rdquo; character using any of the
+keys on your keyboard programmers have come up with the idea of <a href="http://www.wikiwand.com/en/Escape_sequences_in_C">escape
+sequences</a>: An escape
+sequence is a code that consists of a backslash and another character,
+and this combination is used in place of control characters.</p>
+
+<p>For example, <code>\n</code> is the escape sequence that stands for the &ldquo;newline&rdquo;
+character.</p>
+
+<p>So this code:</p>
+<pre class="highlight ruby"><code><span class="nb">puts</span> <span class="s2">"one</span><span class="se">\n</span><span class="s2">two</span><span class="se">\n</span><span class="s2">three"</span>
+</code></pre>
+
+<p>Will print out:</p>
+<pre class="highlight plaintext"><code>one
+two
+three
+</code></pre>
+
+<p>Now, escape sequences also only work in double quoted strings. If you
+try to use them in a single quoted string like so:</p>
+<pre class="highlight ruby"><code><span class="nb">puts</span> <span class="s1">'one\ntwo\nthree'</span>
+</code></pre>
+
+<p>then that will print out the string literally:</p>
+<pre class="highlight plaintext"><code>one\ntwo\nthree
+</code></pre>
+
+<p>Which means that escape sequences are not replaced in single quoted strings.</p>
 
         <nav class="page-nav"></nav>
         <nav class="page-nav"></nav>

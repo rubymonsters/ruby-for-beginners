@@ -2,315 +2,471 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/01-preface.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/preface.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/02-creation.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/creation.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/03-learning_to_program/01-learning_modes.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/learning_to_program/learning_modes.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/03-learning_to_program/02-dont_believe.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/learning_to_program/dont_believe.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/03-learning_to_program/03-formatting_code.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/learning_to_program/formatting_code.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/03-learning_to_program/04-error_messages.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/learning_to_program/error_messages.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/03-learning_to_program/05-using_google.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/learning_to_program/using_google.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/03-learning_to_program.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/learning_to_program.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/04-your_tools/01-text_editor.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/your_tools/text_editor.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/04-your_tools/02-terminal.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/your_tools/terminal.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/04-your_tools/03-ruby_runtime.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/your_tools/ruby_runtime.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/04-your_tools/04-workflow.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/your_tools/workflow.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/04-your_tools/05-irb.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/your_tools/irb.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/04-your_tools.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/your_tools.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/05-object_oriented_programming.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/object_oriented_programming.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/06-built_in_classes/01-numbers.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/built_in_classes/numbers.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/06-built_in_classes/02-strings.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/built_in_classes/strings.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/06-built_in_classes/03-symbols.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/built_in_classes/symbols.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/06-built_in_classes/04-arrays.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/built_in_classes/arrays.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/06-built_in_classes/05-hashes.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/built_in_classes/hashes.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/06-built_in_classes.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/built_in_classes.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/07-variables.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/variables.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/08-methods/01-return_values.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/methods/return_values.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/08-methods/02-parentheses.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/methods/parentheses.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/08-methods/03-writing_methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/methods/writing_methods.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/08-methods/04-control_flow.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/methods/control_flow.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/08-methods/05-scopes.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/methods/scopes.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/08-methods/06-printing.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/methods/printing.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/08-methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/methods.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/09-everything_an_object/01-object_classes.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/everything_an_object/object_classes.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/09-everything_an_object/02-object_methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/everything_an_object/object_methods.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/09-everything_an_object.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/everything_an_object.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/10-string_interpolation.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/string_interpolation.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/11-nothing_and_truth.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/nothing_and_truth.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/12-blocks/01-block_syntax.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/blocks/block_syntax.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/12-blocks/02-block_arguments.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/blocks/block_arguments.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/12-blocks/03-block_return_values.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/blocks/block_return_values.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/12-blocks.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/blocks.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/13-bonus_1/01-operator_methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_1/operator_methods.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/13-bonus_1/02-predicate_methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_1/predicate_methods.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/13-bonus_1/03-other_methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_1/other_methods.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/13-bonus_1/04-questions_commands.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_1/questions_commands.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/13-bonus_1/05-conditionals.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_1/conditionals.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/13-bonus_1/06-operators.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_1/operators.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/13-bonus_1/07-arithmetical_operators.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_1/arithmetical_operators.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/13-bonus_1/08-logical_operators.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_1/logical_operators.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/13-bonus_1/09-comparison_operators.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_1/comparison_operators.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/13-bonus_1.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/14-writing_classes/01-initializing_objects.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/initializing_objects.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/14-writing_classes/02-instance_variables.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/instance_variables.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/14-writing_classes/03-attribute_readers.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/attribute_readers.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/14-writing_classes/04-attribute_writers.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/attribute_writers.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/14-writing_classes/05-state_and_behaviour.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/state_and_behaviour.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/14-writing_classes.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/15-bonus_2/01-libraries.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2/libraries.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/15-bonus_2/02-modules.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2/modules.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/15-bonus_2/03-private_methods.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2/private_methods.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/15-bonus_2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/16-good_names.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/good_names.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/01-numbers.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/numbers.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/02-strings.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/strings.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/03-arrays_1.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/arrays_1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/04-hashes_1.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/hashes_1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/05-methods_1.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/methods_1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/06-arrays_2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/arrays_2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/07-nested_arrays.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/nested_arrays.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/08-hashes_2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/hashes_2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/09-truthiness.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/truthiness.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/10-email.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/email.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/11-mailbox.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/mailbox.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/12-mailbox_text.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/mailbox_text.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/13-mailbox_html.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/mailbox_html.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/14-mailbox_file.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/mailbox_file.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/15-mailbox_csv.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/mailbox_csv.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/16-mailbox_erb.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/mailbox_erb.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises/17-mailbox_sinatra.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/mailbox_sinatra.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/17-exercises.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/exercises.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/mailbox_csv-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/mailbox_file-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/mailbox_html-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/mailbox_text-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/mailbox-1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/strings-3.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/strings-4.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/strings-5.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/strings-6.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-2.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/email-2.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-4.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-5.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/hashes_1-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/hashes_1-2.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/hashes_1-3.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/hashes_1-4.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/methods-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/methods-2.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/methods-3.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/methods-4.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_2-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_2-2.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_2-3.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_2-4.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_2-5.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_2-6.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_2-7.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/nested_arrays-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/nested_arrays-2.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/hashes_2-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/hashes_2-2.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/hashes_2-3.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/hashes_2-4.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/truthiness-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/truthiness-2.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/email-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-3.html</loc>
       <priority>0.5</priority>
     </url>
 </urlset>

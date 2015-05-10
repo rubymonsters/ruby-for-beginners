@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Object-oriented programming | Ruby for Beginners</title>
 
     <link href="assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
@@ -23,7 +23,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -102,7 +102,7 @@
       </li>
     </ul>
   </li>
-  <li>
+  <li class="active">
     <a href="/object_oriented_programming.html">
       Object-oriented programming
     </a>
@@ -437,15 +437,55 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Object-oriented programming</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p><em>Classes and objects</em></p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>Ruby is, like many other popular languages, an object-oriented programming
+language. Other object-oriented languages that you might have heard of, are
+C++, Java, Python, PHP, and Javascript. At some point in the 1990s this
+paradigm started to become more and more popular and nowadays it is the
+most prevalent one.</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>One reason for this is that object-oriented programming very much fits the way
+we perceive and think about the world, at least in occidental culture. 
+Our way of thinking was, historically, very much influenced by Plato,
+and the philosophers who followed him:</p>
+
+<p>We somehow tend to think about the world as if there are abstract &ldquo;ideas&rdquo; (or
+concepts) and concrete &ldquo;things&rdquo;, which are entities of the ideas, or
+implementations of the concepts. So, &ldquo;ideas&rdquo; are like blueprints for &ldquo;things&rdquo;.
+For example there&rsquo;s the idea of a human being, and then there are actual human
+beings: you, and me. Our idea of a human being includes the ability to, for
+example, remember our own name, and tell it to others when asked. We know
+that we can ask people for their name, and they&rsquo;ll know it.</p>
+
+<p>Now, object-oriented programming languages allow you to describe things exactly
+this way: In object-oriented programming languages &ldquo;ideas&rdquo; are called classes.
+And actual &ldquo;things&rdquo; are called objects. As a programmer you would define
+classes, like a class &ldquo;User&rdquo; and a class &ldquo;Tweet&rdquo;, and then create actual
+instances of these classes: an actual concrete user with a name, email
+address, a password and actual tweets. You would also define that users have
+the ability to remember their own name, and the ability to tell it to others 
+when asked.</p>
+
+<p>Every object-oriented programming language comes with some &ldquo;ideas&rdquo;, that is,
+classes, already baked in, and so does Ruby. For example Ruby has classes for
+numbers, strings (text), and other useful things. You therefore can, without any
+further effort, do number calculations, or text transformations.</p>
+
+<p>In your first excercises you will do just that. Later on you will learn to
+define your own &ldquo;ideas&rdquo; as classes, and then use them by the way of creating
+actual instances or objects, from these classes, and then make them interact with 
+each other and do interesting stuff.</p>
+
+<p>(There is, today, some debate about the paradigm of object-oriented
+programming, and whether we should move on to another one, called &ldquo;functional
+programming&rdquo;. You might hear about this if you talk to developers. Some
+functional languages are Haskell, Go, and Clojure, and they have recently
+started gaining some traction. Don&rsquo;t let yourself be distracted by this too
+much, unless you really want to. Ruby is a very good language to start learning
+programming for lots of reasons.)</p>
 
         <nav class="page-nav"></nav>
         <nav class="page-nav"></nav>

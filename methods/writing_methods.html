@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Writing a new method | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -23,7 +23,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -144,7 +144,7 @@
       Variables
     </a>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/methods.html">
       Methods
     </a>
@@ -159,7 +159,7 @@
           Parentheses
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/methods/writing_methods.html">
           Writing a new method
         </a>
@@ -437,15 +437,73 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Writing a new method</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p>As programmers we like to split up our tasks, and do one thing after another.
+This allows us to focus on one small task, and once we&rsquo;ve solved it, we move on
+to the next one.</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<p>When you need to add some new functionality to your program you&rsquo;ll often
+find yourself thinking &ldquo;I should add a method for this&rdquo;: methods add behaviour.</p>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>Now, the first thing you should ask yourself is: &ldquo;What is it that this method
+should do?&rdquo; The answer to this gives you a hint for a good method name.</p>
+
+<p>Let&rsquo;s say you are working on an application that deals with emails, and the
+thing you are trying to accomplish is formatting an email. So your method name
+can be <code>format_email</code>.</p>
+
+<p>With this first task solved, knowing the method name, you can already go ahead
+and write down the method definition:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">format_email</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>While this is a pretty useless method, since it does nothing at all, it already
+<em>is</em> a valid method. So that&rsquo;s good progress already: you&rsquo;ve made the first
+step.</p>
+
+<p>The next question to ask is: &ldquo;Does this method need to be given any information
+in order to do its thing?&rdquo; The answer to this question specifies the method&rsquo;s
+arguments list.</p>
+
+<p>In our example, the answer probably is that, in order to format an email, it
+needs the email.</p>
+
+<p>So you can now add the argument list to the method:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">format_email</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>With these two things solved you can now start thinking about implementing
+the method body. How can you transform the email into some formatted text?</p>
+
+<p>You&rsquo;d add a new line between <code>def</code> and <code>end</code>, and make sure it&rsquo;s indented by
+two spaces (hit <code>tab</code>, unless your editor does it for you), and start focussing
+on the code that makes up the method body:</p>
+<pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">format_email</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+<span class="nf">end</span>
+</code></pre>
+
+<p>You see how we&rsquo;ve split up the task of writing a new method into three smaller
+tasks, and worked on each one of them after another.</p>
+
+<p>Even though this might seem trivial at first, we recommend you get into this
+habit, too.</p>
+
+<p>Btw, good editors help you format things. For example, when you are on a
+line that starts with <code>def something</code>, and at the end of the line hit return,
+Sublime will already indent the next line for you by 2 spaces. If you now type
+<code>end</code>, then Sublime will notice that you are closing the method, and outdent
+it again, so <code>def</code> and <code>end</code> sit on the same level. Smart, isn&rsquo;t it?</p>
+
+<p>Also, you&rsquo;ll notice that when you type an opening parenthesis <code>(</code>, then Sublime
+will add a closing one <code>)</code> too, but keep your cursor placed between them, so
+you can type the argument list where it belongs.</p>
+
+<p>Exercises: Now would be a good time to do some of the <a href="../exercises/methods_1.html">exercises on
+methods</a>.</p>
 
         <nav class="page-nav"></nav>
         <nav class="page-nav"></nav>
@@ -463,7 +521,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
   </body>
 </html>

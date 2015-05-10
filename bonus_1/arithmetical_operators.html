@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Ruby for Beginners</title>
+    <title>Arithmetical operators | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -23,7 +23,7 @@
       <nav class="toc">
         <h1>Contents</h1>
         <ul>
-  <li class="active">
+  <li>
     <a href="/index.html">
       Ruby For Beginners
     </a>
@@ -230,7 +230,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/bonus_1.html">
       Bonus: Methods &amp; Operators
     </a>
@@ -265,7 +265,7 @@
           Operators
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/bonus_1/arithmetical_operators.html">
           Arithmetical operators
         </a>
@@ -437,15 +437,52 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Ruby For Beginners</h1>
+        <h1>Arithmetical operators</h1>
 
-<p><em>Ruby Monday Study Group curriculum for beginners</em></p>
+<p>For numbers, the operators <code>+</code> and <code>*</code> obviously mean the mathematical
+operations of adding and multiplying two numbers. Of course there are other
+arithmetical operators. Here&rsquo;s a full list:</p>
 
-<p>This book has been written after we have run 4 beginners groups at our <a href="http://rubymonstas.org">Ruby
-Monstas</a> groups in Berlin. It outlines the current
-state of our beginner groups curriculum.</p>
+<ul>
+<li><code>+</code> - addition</li>
+<li><code>-</code> - subtraction</li>
+<li><code>*</code> - multiplication</li>
+<li><code>/</code> - division</li>
+<li><code>**</code> - exponentiation</li>
+<li><code>%</code> - modulus (the rest of a division, e.g. <code>5 % 2</code> returns <code>1</code>)</li>
+</ul>
 
-<p>You can <a href="https://github.com/rubymonsters/ruby-for-beginners">find the source code here</a>.</p>
+<p>However, some of these methods are also defined on other objects, like strings
+and arrays.</p>
+
+<p>Try it yourself in IRB:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"&lt;3"</span> <span class="o">+</span> <span class="s2">"!"</span>
+<span class="o">=&gt;</span> <span class="s2">"&lt;3!"</span>
+
+<span class="o">&gt;</span> <span class="s2">"&lt;3"</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="s2">"&lt;3&lt;3&lt;3"</span>
+</code></pre>
+
+<p>As you can see, these operators mean something different for strings. But they
+also make sense, don&rsquo;t they?</p>
+
+<p>Adding one string to another just means that they will be concatenated into one
+longer string. And multiplying a string by a number means repeating it as many
+times.</p>
+
+<p>The same works for arrays:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre>
+
+<p>Again, adding two arrays means combining them into one big array. And
+multiplying an array with a number means getting a big array with the original
+elements repeated.</p>
 
         <nav class="page-nav"></nav>
         <nav class="page-nav"></nav>
@@ -463,7 +500,7 @@ state of our beginner groups curriculum.</p>
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
   </body>
 </html>
