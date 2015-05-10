@@ -88,4 +88,4 @@ formatter = MailboxHtmlFormatter.new(mailbox)
 # your code from the last exercise, writing the file
 ```
 
-<a href="/solutions/15-mailbox_csv-1.rb" class="solution">Show solution</a>
+<a href="/solutions/mailbox_csv-1.html" class="solution">Show solution</a>

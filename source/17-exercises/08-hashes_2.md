@@ -2,7 +2,7 @@
 
 ## Exercise 8.1
 
-Make a new file `08-hashes_2-1.rb`, and dd the following lines:
+Make a new file `hashes_2-1.rb`, and dd the following lines:
 
 ```ruby
 languages = {
@@ -24,12 +24,12 @@ In German, eins means one, zwei means two, drei means three.
 In Spanish, uno means one, duo means two, tres means three.
 ```
 
-<a href="/solutions/08-hashes_2-1.rb" class="solution">Show solution</a>
+<a href="/solutions/hashes_2-1.html" class="solution">Show solution</a>
 
 
 ## Exercise 8.2
 
-Now, in a new file `08-hashes_2-2.rb`, with the same hashes from above, add code
+Now, in a new file `hashes_2-2.rb`, with the same hashes from above, add code
 that prints out the following table:
 
 ```
@@ -38,12 +38,12 @@ en one two three
 es uno dos tres
 ```
 
-<a href="/solutions/08-hashes_2-2.rb" class="solution">Show solution</a>
+<a href="/solutions/hashes_2-2.html" class="solution">Show solution</a>
 
 
 ## Exercise 8.3
 
-Copy your file to a new file `cp 08-hashes_2-2.rb 08-hashes_2-3.rb` and change your
+Copy your file to a new file `cp hashes_2-2.rb hashes_2-3.rb` and change your
 code so that it aligns the table columns:
 
 ```
@@ -52,12 +52,12 @@ en one  two  three
 es uno  dos  tres
 ```
 
-<a href="/solutions/08-hashes_2-3.rb" class="solution">Show solution</a>
+<a href="/solutions/hashes_2-3.html" class="solution">Show solution</a>
 
 
 ## Exercise 8.4
 
-Copy your file to a new file `cp 08-hashes_2-3.rb 08-hashes_2-4.rb` and change your
+Copy your file to a new file `cp hashes_2-3.rb hashes_2-4.rb` and change your
 code so that it adds delimiters:
 
 ```
@@ -66,5 +66,5 @@ code so that it adds delimiters:
 | es | uno  | dos  | tres  |
 ```
 
-<a href="/solutions/08-hashes_2-4.rb" class="solution">Show solution</a>
+<a href="/solutions/hashes_2-4.html" class="solution">Show solution</a>
 

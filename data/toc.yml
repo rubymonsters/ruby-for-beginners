@@ -1,0 +1,88 @@
+- index
+- preface
+- creation
+- path: learning_to_program
+  children:
+  - learning_modes
+  - dont_believe
+  - formatting_code
+  - error_messages
+  - using_google
+- path: your_tools
+  children:
+  - text_editor
+  - terminal
+  - ruby_runtime
+  - workflow
+  - irb
+- object_oriented_programming
+- path: built_in_classes
+  children:
+  - numbers
+  - strings
+  - symbols
+  - arrays
+  - hashes
+- variables
+- path: methods
+  children:
+  - return_values
+  - parentheses
+  - writing_methods
+  - control_flow
+  - scopes
+  - printing
+- path: everything_an_object
+  children:
+  - object_classes
+  - object_methods
+- string_interpolation
+- nothing_and_truth
+- path: blocks
+  children:
+  - block_syntax
+  - block_arguments
+  - block_return_values
+- path: bonus_1
+  children:
+  - operator_methods
+  - predicate_methods
+  - other_methods
+  - questions_commands
+  - conditionals
+  - operators
+  - arithmetical_operators
+  - logical_operators
+  - comparison_operators
+- path: writing_classes
+  children:
+  - initializing_objects
+  - instance_variables
+  - attribute_readers
+  - attribute_writers
+  - state_and_behaviour
+- path: bonus_2
+  children:
+  - libraries
+  - modules
+  - private_methods
+- good_names
+- path: exercises
+  children:
+  - numbers
+  - strings
+  - arrays_1
+  - hashes_1
+  - methods_1
+  - arrays_2
+  - nested_arrays
+  - hashes_2
+  - truthiness
+  - email
+  - mailbox
+  - mailbox_text
+  - mailbox_html
+  - mailbox_file
+  - mailbox_csv
+  - mailbox_erb
+  - mailbox_sinatra

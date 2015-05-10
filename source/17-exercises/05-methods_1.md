@@ -15,7 +15,7 @@ puts greet("Ada")
 
 This should print out `Hello Ada!`.
 
-<a href="/solutions/05-methods-1.rb" class="solution">Show solution</a>
+<a href="/solutions/methods-1.html" class="solution">Show solution</a>
 
 
 ## Exercise 5.2
@@ -33,7 +33,7 @@ The method <code>shuffle</code> on arrays does, well, shuffle the array :) That
 means it changes the order of the elements in the array in a random way.
 </p>
 
-<a href="/solutions/05-methods-2.rb" class="solution">Show solution</a>
+<a href="/solutions/methods-2.html" class="solution">Show solution</a>
 
 
 ## Exercise 5.3
@@ -54,7 +54,7 @@ This should print out:
 40.2336
 ```
 
-<a href="/solutions/05-methods-3.rb" class="solution">Show solution</a>
+<a href="/solutions/methods-3.html" class="solution">Show solution</a>
 
 
 ## Exercise 5.4
@@ -84,5 +84,5 @@ Hint: The operator `%` returns the rest of a division. E.g. `14 % 3` returns `2`
 Bonus: Also make it so that the method returns `true` for the year `2000` and
 `false` for `1900` ... because that's really the definition of leap years.
 
-<a href="/solutions/05-methods-4.rb" class="solution">Show solution</a>
+<a href="/solutions/methods-4.html" class="solution">Show solution</a>
 

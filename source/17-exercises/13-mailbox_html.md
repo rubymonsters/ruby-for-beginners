@@ -59,7 +59,7 @@ You'll understand it more once we build our first Rails application.
 Ok, now to our exercise. We will  start over with the same code again, except
 that our formatter class now will be called `MailboxHtmlFormatter`.
 
-Copy your file `12-mailbox_text-1.rb` to `13-mailbox_html-1.rb` and change it
+Copy your file `mailbox_text-1.rb` to `mailbox_html-1.rb` and change it
 like so. Then fill in the `MailboxHtmlFormatter` class.
 
 ```ruby
@@ -144,5 +144,5 @@ and working with arrays and strings. And this time, you don't need to deal with
 the maximum length of strings per column. You can just interpolate things
 together.
 
-<a href="/solutions/13-mailbox_html-1.rb" class="solution">Show solution</a>
+<a href="/solutions/mailbox_html-1.html" class="solution">Show solution</a>
 

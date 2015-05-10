@@ -6,7 +6,7 @@ and, to some extent, the point :)
 
 ## Exercise 12.1
 
-Make a new file `12-mailbox_text-1.rb`. Fill in and complete the following
+Make a new file `mailbox_text-1.rb`. Fill in and complete the following
 class definitions:
 
 ```ruby
@@ -67,4 +67,4 @@ Eventually, one goal to aim for would be: Adding another column to the table
 only requires mimimal changes, e.g. changes to one or two places in your
 formatter class.
 
-<a href="/solutions/12-mailbox_text-1.rb" class="solution">Show solution</a>
+<a href="/solutions/mailbox_text-1.html" class="solution">Show solution</a>

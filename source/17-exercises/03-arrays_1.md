@@ -6,7 +6,7 @@ and you have navigated to your exercises directory in the terminal. E.g. `cd
 
 ## Exercise 3.1
 
-Create a new, empty file. Save it as `03-arrays_1-1.rb`. Fill in the following
+Create a new, empty file. Save it as `arrays_1-1.rb`. Fill in the following
 line:
 
 ```ruby
@@ -14,18 +14,18 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # your code goes here
 ```
 
-So that, when you run your code (run `ruby 03-arrays_1-1.rb`), you get the
+So that, when you run your code (run `ruby arrays_1-1.rb`), you get the
 following output:
 
 ```ruby
 5
 ```
 
-<a href="/solutions/03-arrays_1-1.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_1-1.html" class="solution">Show solution</a>
 
 ## Exercise 3.2
 
-Copy your file to a new file: `cp 03-arrays_1-1.rb 03-arrays_1-2.rb`, then open this
+Copy your file to a new file: `cp arrays_1-1.rb arrays_1-2.rb`, then open this
 new file.
 
 Add another line *before the line that you just added*, so that, when you run
@@ -35,11 +35,11 @@ your code, you get the following output:
 99
 ```
 
-<a href="/solutions/03-arrays_1-2.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_1-2.html" class="solution">Show solution</a>
 
 ## Exercise 3.3
 
-Make a new file `03-arrays_1-3.rb`, and fill in the following line:
+Make a new file `arrays_1-3.rb`, and fill in the following line:
 
 ```ruby
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -58,11 +58,11 @@ Read the documentation for the method <code>select</code> that you can use on ar
 on the <a href="http://www.ruby-doc.org/core-2.2.0/Array.html#method-i-select">Ruby documentation</a>
 </p>
 
-<a href="/solutions/03-arrays_1-3.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_1-3.html" class="solution">Show solution</a>
 
 ## Exercise 3.4
 
-Again, copy your last file to a new file: `cp 03-arrays_1-3.rb 03-arrays_1-4.rb`,
+Again, copy your last file to a new file: `cp arrays_1-3.rb arrays_1-4.rb`,
 then open this new file.
 
 Now change the code that you just added so that you get the following output:
@@ -82,11 +82,11 @@ There is another method that reverses the order of the array. You can
 find it by googling for "ruby array reverse".
 </p>
 
-<a href="/solutions/03-arrays_1-4.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_1-4.html" class="solution">Show solution</a>
 
 ## Exercise 3.5
 
-Again, copy your last file to a new file: `cp 03-arrays_1-4.rb 03-arrays_1-5.rb`,
+Again, copy your last file to a new file: `cp arrays_1-4.rb arrays_1-5.rb`,
 then open this new file.
 
 Now change your code so that you get the following output:
@@ -97,6 +97,6 @@ Now change your code so that you get the following output:
 
 Bonus: Find at least three different solutions for this last change.
 
-<a href="/solutions/03-arrays_1-5.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_1-5.html" class="solution">Show solution</a>
 
 

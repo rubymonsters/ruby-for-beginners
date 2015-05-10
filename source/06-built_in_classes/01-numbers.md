@@ -50,5 +50,5 @@ $irb
 => 1.5
 ```
 
-Exercises: How about doing some of the [exercises on numbers](/17-exercises/01-numbers.html)
+Exercises: How about doing some of the [exercises on numbers](/exercises/numbers.html)
 next?

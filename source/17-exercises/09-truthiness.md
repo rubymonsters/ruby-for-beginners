@@ -2,7 +2,7 @@
 
 ## Exercise 9.1
 
-Make a new file `09-truthiness-1.rb`, and add the following lines:
+Make a new file `truthiness-1.rb`, and add the following lines:
 
 This exercise is about validating what we've learned about truthiness.
 
@@ -56,12 +56,12 @@ nil       | false
 #<Module> | true
 ```
 
-<a href="/solutions/09-truthiness-1.rb" class="solution">Show solution</a>
+<a href="/solutions/truthiness-1.html" class="solution">Show solution</a>
 
 
 ## Bonus: Exercise 9.2
 
-Copy your file to a new file `09-truthiness-2.rb`, and change your code so that
+Copy your file to a new file `truthiness-2.rb`, and change your code so that
 it outputs the following table. Fill each cell with the result that `==`
 returns for each combination.
 
@@ -89,5 +89,5 @@ Tip: Break this up in sub-tasks:
 5. Add the table headers row.
 6. Join all rows with the string `"\n"` (newline), and output the result.
 
-<a href="/solutions/09-truthiness-2.rb" class="solution">Show solution</a>
+<a href="/solutions/truthiness-2.html" class="solution">Show solution</a>
 

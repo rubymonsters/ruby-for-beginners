@@ -10,7 +10,7 @@ you have navigated to your exercises directory in the terminal. E.g. `cd
 
 ## Exercise 6.1
 
-Create a new, empty file. Save it as `06-arrays_2-1.rb`. Fill in the following line:
+Create a new, empty file. Save it as `arrays_2-1.rb`. Fill in the following line:
 
 ```ruby
 words = ["one", "two", "three", "four", "five"]
@@ -24,12 +24,12 @@ So that you get the following output:
 ["one", "three", "five"]
 ```
 
-<a href="/solutions/06-arrays_2-1.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_2-1.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.2
 
-Copy your file to a new file: `cp 06-arrays_2-1.rb 06-arrays_2-2.rb`, then open this
+Copy your file to a new file: `cp arrays_2-1.rb arrays_2-2.rb`, then open this
 new file.
 
 Now change your code so that you get the following output:
@@ -42,12 +42,12 @@ Now change your code so that you get the following output:
 Google for <code>ruby string uppercase first letter</code>.
 </p>
 
-<a href="/solutions/06-arrays_2-2.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_2-2.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.3
 
-Copy your file to a new file: `cp 06-arrays_2-2.rb 06-arrays_2-3.rb`, then open this
+Copy your file to a new file: `cp arrays_2-2.rb arrays_2-3.rb`, then open this
 new file.
 
 Now change your code so that you get the following output:
@@ -60,12 +60,12 @@ Now change your code so that you get the following output:
 Use string interpolation for this.
 </p>
 
-<a href="/solutions/06-arrays_2-3.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_2-3.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.4
 
-Copy your file to a new file: `cp 06-arrays_2-3.rb 06-arrays_2-4.rb`, then open this
+Copy your file to a new file: `cp arrays_2-3.rb arrays_2-4.rb`, then open this
 new file.
 
 Now change your code so that you get the following output:
@@ -74,12 +74,12 @@ Now change your code so that you get the following output:
 ["One <3", "Three <3<3<3", "Five <3<3<3<3<3"]
 ```
 
-<a href="/solutions/06-arrays_2-4.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_2-4.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.5
 
-Copy your file to a new file: `cp 06-arrays_2-4.rb 06-arrays_2-5.rb`, then open this
+Copy your file to a new file: `cp arrays_2-4.rb arrays_2-5.rb`, then open this
 new file.
 
 Now change your code so that you get the following output (hint: again, that's
@@ -89,12 +89,12 @@ now a string, not an array):
 One <3, Three <3<3<3, Five <3<3<3<3<3
 ```
 
-<a href="/solutions/06-arrays_2-5.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_2-5.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.6
 
-Copy your file to a new file: `cp 06-arrays_2-5.rb 06-arrays_2-6.rb`, then open this
+Copy your file to a new file: `cp arrays_2-5.rb arrays_2-6.rb`, then open this
 new file.
 
 Now change your code so that you get the following output, using the newline
@@ -106,12 +106,12 @@ Three <3<3<3
 Five <3<3<3<3<3
 ```
 
-<a href="/solutions/06-arrays_2-6.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_2-6.html" class="solution">Show solution</a>
 
 
 ## Exercise 6.7
 
-Copy your file to a new file: `cp 06-arrays_2-6.rb 06-arrays_2-7.rb`, then open this
+Copy your file to a new file: `cp arrays_2-6.rb arrays_2-7.rb`, then open this
 new file.
 
 Now change your code so that you get the following output, aligning the second
@@ -128,4 +128,4 @@ As you may guess, strings have a method that is helpful for this. Ask
 Google: "ruby string align".
 </p>
 
-<a href="/solutions/06-arrays_2-7.rb" class="solution">Show solution</a>
+<a href="/solutions/arrays_2-7.html" class="solution">Show solution</a>

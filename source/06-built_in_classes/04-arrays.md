@@ -83,4 +83,4 @@ On formatting: Note that there are no spaces inside the square brackets,
 and there's one space after each comma.
 
 Exercises: Now would be a good time to do some of the [exercises on
-arrays](/17-exercises/03-arrays_1.html).
+arrays](/exercises/arrays_1.html).

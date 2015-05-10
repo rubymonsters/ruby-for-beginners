@@ -24,7 +24,7 @@ to another string.
 
 Using that method prepend the string `"Learning "` to the string `"Ruby"`
 
-<a href="/solutions/02-strings-3.rb" class="solution">Show solution</a>
+<a href="/solutions/strings-3.html" class="solution">Show solution</a>
 
 ## Exercise 2.4
 
@@ -34,7 +34,7 @@ from a string.
 
 Using that method turn the string `"Learning Ruby"` into the string `"Lrnng Rb"`.
 
-<a href="/solutions/02-strings-4.rb" class="solution">Show solution</a>
+<a href="/solutions/strings-4.html" class="solution">Show solution</a>
 
 ## Exercise 2.5
 
@@ -48,7 +48,7 @@ number `1` (remember floats and integers are different kinds of numbers).
 
 Confirm that you have found the right methods by trying them in `irb`.
 
-<a href="/solutions/02-strings-5.rb" class="solution">Show solution</a>
+<a href="/solutions/strings-5.html" class="solution">Show solution</a>
 
 ## Exercise 2.6
 
@@ -66,5 +66,5 @@ We'll admit that this is a rather creative usage of this method. Normally you'd
 use it to align strings to columns (e.g. so that they line up nicely when you
 format a table). You'll use this method in other exercises later on.
 
-<a href="/solutions/02-strings-6.rb" class="solution">Show solution</a>
+<a href="/solutions/strings-6.html" class="solution">Show solution</a>
 
