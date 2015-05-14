@@ -70,6 +70,7 @@
   - private_methods
   - libraries_2
   - html
+  - erb
 - path: exercises
   children:
   - numbers
