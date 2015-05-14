@@ -54,6 +54,7 @@
   - arithmetical_operators
   - logical_operators
   - comparison_operators
+  - alternative-syntax
 - path: writing_classes
   children:
   - initializing_objects
@@ -61,12 +62,14 @@
   - attribute_readers
   - attribute_writers
   - state_and_behaviour
+- good_names
 - path: bonus_2
   children:
   - libraries
   - modules
   - private_methods
-- good_names
+  - libraries_2
+  - html
 - path: exercises
   children:
   - numbers
@@ -86,3 +89,5 @@
   - mailbox_csv
   - mailbox_erb
   - mailbox_sinatra
+  - rubygems
+  - bundler
