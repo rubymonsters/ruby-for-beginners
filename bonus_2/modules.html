@@ -452,15 +452,15 @@ therefore do not have a method <code>new</code>.</p>
 
 <p>So, what are modules useful for?</p>
 
-<p>Modules can be included into classes, and this makes their methods available on
-the class, just as if we&rsquo;d copied and pasted these methods over to the class
-definition.</p>
+<p>With modules you can share methods between classes: Modules can be included
+into classes, and this makes their methods available on the class, just as if
+we&rsquo;d copied and pasted these methods over to the class definition.</p>
 
 <p>This is useful if we have methods that we want to reuse in certain classes, but
 also want to keep them in a central place, so we do not have to repeat them
 everywhere.</p>
 
-<p>Let&rsquo;s have a look at this pretty artificial code:</p>
+<p>Let&rsquo;s have a look at this pretty contrived code:</p>
 <pre class="highlight ruby"><code><span class="k">module</span> <span class="nn">Cream</span>
   <span class="k">def</span> <span class="nf">cream?</span>
     <span class="kp">true</span>
@@ -542,7 +542,7 @@ password: cool, that&rsquo;s what we want.</p>
 then included the module to the class <code>Person</code>. This, at the very least, makes
 the method <code>encrypted_password</code> much easier to read. Doesn&rsquo;t it?</p>
 
-<p>We refer to the process of moving some logic (code) from one method to another 
+<p>We refer to the process of moving some logic (code) from one method to another
 new method as &ldquo;extracting a method&rdquo;. In our case we have extracted the method
 <code>encrypt</code> from the method <code>encrypt_password</code>. When we do this, methods usually become
 shorter and more readable.</p>
