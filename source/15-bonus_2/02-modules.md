@@ -9,15 +9,15 @@ therefore do not have a method `new`.
 
 So, what are modules useful for?
 
-Modules can be included into classes, and this makes their methods available on
-the class, just as if we'd copied and pasted these methods over to the class
-definition.
+With modules you can share methods between classes: Modules can be included
+into classes, and this makes their methods available on the class, just as if
+we'd copied and pasted these methods over to the class definition.
 
 This is useful if we have methods that we want to reuse in certain classes, but
 also want to keep them in a central place, so we do not have to repeat them
 everywhere.
 
-Let's have a look at this pretty artificial code:
+Let's have a look at this pretty contrived code:
 
 ```ruby
 module Cream
@@ -101,7 +101,7 @@ We have moved the noisy details of the encryption algorithm to a module, and
 then included the module to the class `Person`. This, at the very least, makes
 the method `encrypted_password` much easier to read. Doesn't it?
 
-We refer to the process of moving some logic (code) from one method to another 
+We refer to the process of moving some logic (code) from one method to another
 new method as "extracting a method". In our case we have extracted the method
 `encrypt` from the method `encrypt_password`. When we do this, methods usually become
 shorter and more readable.
