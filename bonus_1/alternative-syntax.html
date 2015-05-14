@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Exercises | Ruby for Beginners</title>
+    <title>Alternative Syntax | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/bonus_2/erb.html">
+    <nav class="page-nav"><a class="prev" href="/bonus_1/comparison_operators.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
+    <nav class="page-nav"><a class="next" href="/writing_classes.html">
   Next
 </a></nav>
 
@@ -234,7 +234,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/bonus_1.html">
       Bonus: Methods &amp; Operators
     </a>
@@ -284,7 +284,7 @@
           Comparison operators
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/bonus_1/alternative-syntax.html">
           Alternative Syntax
         </a>
@@ -365,7 +365,7 @@
       </li>
     </ul>
   </li>
-  <li class="active directory expanded">
+  <li class="directory">
     <a href="/exercises.html">
       Exercises
     </a>
@@ -471,40 +471,153 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Exercises</h1>
+        <h1>Alternative Syntax</h1>
 
-<p>If you haven&rsquo;t done the <a href="http://tryruby.org">try ruby</a> course already, we
-recommend you do at least a couple of lessons over there too.</p>
+<p>You have, so far, learned that Strings are defined using single or double
+quotes, like so:</p>
+<pre class="highlight ruby"><code><span class="s2">"A String"</span>
+<span class="s1">'Another String'</span>
+</code></pre>
 
-<p>Whenever you sit down to do some of the exercises in this book make sure you
-have your text editor and terminal open. In your terminal:</p>
+<p>And Arrays are defined using square brackes, with a comma separated list of
+objects, like so:</p>
+<pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"One"</span><span class="p">,</span> <span class="s2">"Two"</span><span class="p">,</span> <span class="s2">"Three"</span><span class="p">]</span>
+</code></pre>
 
-<ul>
-<li><p>Create a new directory where you want to keep Ruby files for our exercises. For
-example: <code>~/ruby-for-beginners/exercises</code>. In
-order to create that directory in the terminal you can run: <code>mkdir
-~/ruby-for-beginners/exercises</code>.</p></li>
-<li><p>Then navigate to this directory: <code>cd ~/ruby-for-beginners/exercises</code></p></li>
-<li><p>In order to check if you are in the right directory you can always run:
-<code>pwd</code>. (That&rsquo;s short for <em>print working directory</em>, meaning, it prints the name
-of the current directory.)</p></li>
-<li><p>In order to see all the files and subdirectories contained in the current
-directory you can run <code>ls</code>.</p></li>
-</ul>
+<p>We&rsquo;d like to quickly mention two alternative syntaxes for defining the same
+objects, even though they&rsquo;re not used very often. However, you may sometimes
+find them in other people&rsquo;s code, so it&rsquo;s useful to know they exist.</p>
 
-<!---
-TODO: check these instructions for Windows.
--->
+<h2>Strings</h2>
 
-<p><p class='credits'>
-  Credits: The exercises 1.1, 1.2, and 2.1 are taken from
-  <a href="http://www.ruby-doc.org/docs/Tutorial/part_01/first_steps.html">Introduction to Ruby</a>.
-<p></p>
+<p>First, Ruby has an alternative syntax for defining strings that goes like so:</p>
 
-        <nav class="page-nav"><a class="prev" href="/bonus_2/erb.html">
+<p><code>%[any-character]The actual string[the same character]</code></p>
+
+<p>Meaning, that when there&rsquo;s a percentage character <code>%</code> followed by any other
+character, which also closes the whole thing, then this defines a string, too.</p>
+
+<p>For examples these definitions all mean exactly the same:</p>
+<pre class="highlight ruby"><code><span class="s2">"A String"</span>
+<span class="s1">'A String'</span>
+<span class="sx">%(A String)</span>
+<span class="sx">%{A String}</span>
+<span class="sx">%|A String|</span>
+</code></pre>
+
+<p>Which character is used to open and close the string is a matter of style, and
+preference. The author of this text prefers round paratheses for readability,
+but others prefer curly braces or pipes. There&rsquo;s no very clear convention in
+the Ruby community.</p>
+
+<p>When would you use this alternative syntax?</p>
+
+<p>Sometimes you need to define a string that itself contains (or may contain, in
+future versions) the same quote character that you&rsquo;ve used to define the string.
+For example, if you have a string that contains the string <code>&quot;Name&quot;</code>, including
+the quotes, but in the same string you&rsquo;d also like to use
+<a href="/string_interpolation.html">String interpolation</a>, so you&rsquo;d normally
+use double quotes to define the string. In that case you&rsquo;d need to escape the
+double quotes that are contained in your string.</p>
+
+<p>It probably helps to look at an example. Imagine you&rsquo;re working on an
+application that asks the user for an email address, validates the format of
+the given address, and then displays an error message if the format looks
+invalid:</p>
+<pre class="highlight plaintext"><code>The given email address "ruby@monstas" does not look like a valid email address.
+</code></pre>
+
+<p>Using double quotes your code might look like this:</p>
+<pre class="highlight ruby"><code><span class="n">address</span> <span class="o">=</span> <span class="s2">"ruby@monstas"</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s2">"The given email address </span><span class="se">\"</span><span class="si">#{</span><span class="n">address</span><span class="si">}</span><span class="se">\"</span><span class="s2"> does not look like a valid email address."</span>
+<span class="nb">puts</span> <span class="n">message</span>
+</code></pre>
+
+<p>Try running this code, and then also try removing the backslashes, and running
+it again. You&rsquo;ll get a syntax error message because Ruby thinks the second
+double quote (after <code>address</code>) closes the first one, so it would look at
+<code>#{...}</code> outside of a string, which is not valid Ruby.</p>
+
+<p>While the above code, including the backslash characters, is valid Ruby code,
+it looks a little ugly. Typing this stuff is kinda cumbersome, and programmers
+usually hate it.</p>
+
+<p>So Ruby gives us another, nicer way to express the same:</p>
+<pre class="highlight ruby"><code><span class="n">message</span> <span class="o">=</span> <span class="sx">%(The given email address "#{address}" does not look like a valid email address.)</span>
+</code></pre>
+
+<p>Also, this allows us to freely change the message later, without having to
+change the quotes. For example, if our original message would have looked like
+so:</p>
+<pre class="highlight ruby"><code><span class="n">message</span> <span class="o">=</span> <span class="sx">%(The given email address does not look like a valid email address.)</span>
+</code></pre>
+
+<p>We could now change it to say the following without changing the quotes:</p>
+<pre class="highlight ruby"><code><span class="n">message</span> <span class="o">=</span> <span class="sx">%(The given email address doesn't look like a valid email address.)</span>
+</code></pre>
+
+<h2>Arrays</h2>
+
+<p>Imagine you are running a programming study group, and you want to quickly
+write a piece of code that runs a little raffle to assign people to pairs
+randomly.</p>
+<pre class="highlight ruby"><code><span class="n">people</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"Anne"</span><span class="p">,</span>
+  <span class="s2">"Elizabeth"</span><span class="p">,</span>
+  <span class="s2">"Erica"</span><span class="p">,</span>
+  <span class="s2">"Iryna"</span><span class="p">,</span>
+  <span class="s2">"Johanna"</span><span class="p">,</span>
+  <span class="s2">"Juliane"</span><span class="p">,</span>
+  <span class="s2">"Katja"</span><span class="p">,</span>
+  <span class="s2">"Katrin"</span><span class="p">,</span>
+  <span class="s2">"Maria"</span><span class="p">,</span>
+  <span class="s2">"Renate"</span><span class="p">,</span>
+  <span class="s2">"Sureka"</span><span class="p">,</span>
+  <span class="s2">"Miriam"</span><span class="p">,</span>
+  <span class="s2">"Zazie"</span><span class="p">,</span>
+  <span class="s2">"Anja"</span>
+<span class="p">]</span>
+<span class="n">people</span><span class="p">.</span><span class="nf">shuffle</span><span class="p">.</span><span class="nf">each_slice</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">pair</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">pair</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Well, this code works. But wouldn&rsquo;t it be cool to be able to define the array
+without having to write out all those quotes and commas? They&rsquo;re quite
+cumbersome to type, aren&rsquo;t they? Also, if we could omit them then we could just
+copy and paste that list of names from some where else, without modifying it
+further.</p>
+
+<p>Luckily, Ruby provides us with a piece of syntax that does exactly this:</p>
+<pre class="highlight ruby"><code><span class="n">people</span> <span class="o">=</span> <span class="sx">%w(
+  Anne
+  Elizabeth
+  Erica
+  Iryna
+  Johanna
+  Juliane
+  Katja
+  Katrin
+  Maria
+  Renate
+  Sureka
+  Miriam
+  Zazie
+  Anja
+)</span>
+<span class="n">people</span><span class="p">.</span><span class="nf">shuffle</span><span class="p">.</span><span class="nf">each_slice</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">pair</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">pair</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>The <code>w</code> in <code>%w(...)</code> stands for &ldquo;words&rdquo;, which means an array defined like this
+will always only contain strings. So, <code>%w(1 2 3 4)</code> would result in the same
+array as <code>[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;]</code>.</p>
+
+        <nav class="page-nav"><a class="prev" href="/bonus_1/comparison_operators.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
+        <nav class="page-nav"><a class="next" href="/writing_classes.html">
   Next
 </a></nav>
       </article>
@@ -521,7 +634,7 @@ TODO: check these instructions for Windows.
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
   </body>
 </html>

@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>The Mailbox Html Formatter | Ruby for Beginners</title>
+    <title>Bonus: Embedded Ruby | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/exercises/mailbox_text.html">
+    <nav class="page-nav"><a class="prev" href="/bonus_2/html.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/exercises/mailbox_file.html">
+    <nav class="page-nav"><a class="next" href="/exercises.html">
   Next
 </a></nav>
 
@@ -328,7 +328,7 @@
       Using the right words
     </a>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/bonus_2.html">
       Bonus: Advanced Topics
     </a>
@@ -358,14 +358,14 @@
           Bonus: HTML
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/bonus_2/erb.html">
           Bonus: Embedded Ruby
         </a>
       </li>
     </ul>
   </li>
-  <li class="directory expanded">
+  <li class="directory">
     <a href="/exercises.html">
       Exercises
     </a>
@@ -430,7 +430,7 @@
           The Mailbox Text Formatter
         </a>
       </li>
-      <li class="active">
+      <li>
         <a href="/exercises/mailbox_html.html">
           The Mailbox Html Formatter
         </a>
@@ -471,156 +471,210 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>The Mailbox Html Formatter</h1>
+        <h1>Bonus: Embedded Ruby</h1>
 
-<h2>Separation of concerns</h2>
+<p>HTML is the main format that fuels the world wide web, i.e. the part of the
+internet that we use most often.</p>
 
-<p>One question that may have come up while working on the mailbox text formatter
-exercise is:</p>
+<p>Web applications are applications that run somewhere on the internet, and that
+web browsers talk to. E.g. if you check your Twitter, or Facebook feed your browner
+talks to the respective applications that are run by these companies.</p>
 
-<p>Why would we have a separate class for formatting the ASCII table (that is, a
-plain text table that uses characters like <code>+</code>, <code>-</code>, and <code>|</code>)?</p>
+<p>Since generating HTML (so it can be send to web browsers) dynamically based on
+some data (e.g. the current user&rsquo;s name, and their tweets, or emails) is the
+one main concern of many web applications Ruby has some builtin support for
+making this easier: a library called ERB, short for &ldquo;embedded Ruby&rdquo;.</p>
 
-<p>The reason is: We want each one of our classes to encapsulate one concept that
-is useful in our application. We also say: each one of our classes should be
-<em>concerned</em> with one responsibility.</p>
+<p>The main idea behind ERB is to embed some Ruby code <em>into</em> an HTML document
+(also called a template). This idea actually predates Ruby&rsquo;s ERB library and
+became popular with PHP, a language that originally was meant to be used
+exactly this way: by embedding some code into an HTML template file.</p>
 
-<p>An email vaguely resembles the concept of an analog letter, written on paper:
-some message is being sent from one person to another. Nowadays everyone knows
-what an email is: it stores all information about this particular message. The
-same is true for mailboxes, which are used to store a bunch of emails.
-Formatting a number of emails in order to be displayed on a text based terminal
-is a very different concept, and concern.</p>
-
-<p>Therefore it makes a lot of sense to have three different classes implement each
-one of these concepts, or concerns. And it even makes <em>so</em> much sense that it is
-called a design principle in programming: The principle of <a href="http://www.wikiwand.com/en/Separation_of_concerns">separation of
-concerns</a>.</p>
-
-<p>Aside from being comprehensible and mapping to concepts that we already know,
-one other advantage is: We can now easily implement other formatter classes
-that format our emails in a different way, suitable to be displayed in other
-media.</p>
-
-<p>And that&rsquo;s what this exercise is about: We want to display our mailbox contents
-in HTML, the format that browsers like to use. This will be our first step
-towards learning how to build a web application.</p>
-
-<h2>Model, View, Controller</h2>
-
-<p>Before we get to that, we&rsquo;d like to point out one other aspect, that you&rsquo;ll
-remember when we get to talk about the architecture that Rails use to structure
-and separate concerns, called &ldquo;model, view, controller&rdquo;.</p>
-
-<ul>
-<li>The two classes <code>Email</code> and <code>Mailbox</code> in your application are <em>models</em>: they
-are concerned with modelling those &ldquo;real-world&rdquo; things that your users are
-interested in: they want to work with emails.</li>
-<li>The class <code>MailboxTextFormatter</code> on the other hand is a <em>view</em>: It is used in
-order to generate a certain representation, in a format that is suitable to a
-certain medium (the terminal, in our case).</li>
-<li>You don&rsquo;t have a <em>controller</em> class so far, but the little bit of code at the
-end of the file does what a controller usually would do: it generates some
-models (the emails, and the mailbox objects) and passes them to the view (the
-formatter) in order to be rendered into something that can then be returned
-and displayed.</li>
-</ul>
-
-<p>If this doesn&rsquo;t make a whole lot of sense to you at the moment, don&rsquo;t worry.
-You&rsquo;ll understand it more once we build our first Rails application.</p>
-
-<h2>Exercise 13.1</h2>
-
-<p>Ok, now to our exercise. We will  start over with the same code again, except
-that our formatter class now will be called <code>MailboxHtmlFormatter</code>.</p>
-
-<p>Copy your file <code>mailbox_text-1.rb</code> to <code>mailbox_html-1.rb</code> and change it
-like so. Then fill in the <code>MailboxHtmlFormatter</code> class.</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Email</span>
-  <span class="c1"># your class from the last exercise</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">Mailbox</span>
-  <span class="c1"># your class from the last exercise</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">MailboxHtmlFormatter</span>
-  <span class="c1"># fill in this class body</span>
-<span class="k">end</span>
-
-<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ferdous"</span> <span class="p">}),</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Keep on coding! :)"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Dajana"</span> <span class="p">}),</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Re: Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-02"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ariane"</span> <span class="p">})</span>
-<span class="p">]</span>
-<span class="n">mailbox</span> <span class="o">=</span> <span class="no">Mailbox</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ruby Study Group"</span><span class="p">,</span> <span class="n">emails</span><span class="p">)</span>
-<span class="n">formatter</span> <span class="o">=</span> <span class="no">MailboxHtmlFormatter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">mailbox</span><span class="p">)</span>
-
-<span class="nb">puts</span> <span class="n">formatter</span><span class="p">.</span><span class="nf">format</span>
-</code></pre>
-
-<p>Your goal is to complete the code in a way so it outputs the following:</p>
-<pre class="highlight html"><code><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;style&gt;</span>
-      <span class="nt">table</span> <span class="p">{</span>
-        <span class="nl">border-collapse</span><span class="p">:</span> <span class="nb">collapse</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="nt">td</span><span class="o">,</span> <span class="nt">th</span> <span class="p">{</span>
-        <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
-        <span class="nl">padding</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="nt">&lt;/style&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
+<p>Here&rsquo;s an example:</p>
+<pre class="highlight erb"><code><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;h1&gt;</span>Ruby Study Group<span class="nt">&lt;/h1&gt;</span>
-    <span class="nt">&lt;table&gt;</span>
-      <span class="nt">&lt;thead&gt;</span>
-        <span class="nt">&lt;tr&gt;</span>
-          <span class="nt">&lt;th&gt;</span>Date<span class="nt">&lt;/th&gt;</span>
-          <span class="nt">&lt;th&gt;</span>From<span class="nt">&lt;/th&gt;</span>
-          <span class="nt">&lt;th&gt;</span>Subject<span class="nt">&lt;/th&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
-      <span class="nt">&lt;/thead&gt;</span>
-      <span class="nt">&lt;tbody&gt;</span>
-        <span class="nt">&lt;tr&gt;</span>
-          <span class="nt">&lt;td&gt;</span>2014-12-01<span class="nt">&lt;/td&gt;</span>
-          <span class="nt">&lt;td&gt;</span>Ferdous<span class="nt">&lt;/td&gt;</span>
-          <span class="nt">&lt;td&gt;</span>Homework this week<span class="nt">&lt;/td&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
-        <span class="nt">&lt;tr&gt;</span>
-          <span class="nt">&lt;td&gt;</span>2014-12-01<span class="nt">&lt;/td&gt;</span>
-          <span class="nt">&lt;td&gt;</span>Dajana<span class="nt">&lt;/td&gt;</span>
-          <span class="nt">&lt;td&gt;</span>Keep on coding! :)<span class="nt">&lt;/td&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
-        <span class="nt">&lt;tr&gt;</span>
-          <span class="nt">&lt;td&gt;</span>2014-12-02<span class="nt">&lt;/td&gt;</span>
-          <span class="nt">&lt;td&gt;</span>Ariane<span class="nt">&lt;/td&gt;</span>
-          <span class="nt">&lt;td&gt;</span>Re: Homework this week<span class="nt">&lt;/td&gt;</span>
-        <span class="nt">&lt;/tr&gt;</span>
-      <span class="nt">&lt;/tbody&gt;</span>
-    <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Messages for <span class="cp">&lt;%=</span> <span class="nb">name</span> <span class="cp">%&gt;</span><span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="cp">&lt;%</span> <span class="n">messages</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">message</span><span class="o">|</span> <span class="cp">%&gt;</span>
+        <span class="nt">&lt;li&gt;</span><span class="cp">&lt;%=</span> <span class="n">message</span> <span class="cp">%&gt;</span><span class="nt">&lt;/li&gt;</span>
+      <span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
   <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre>
 
-<p>Does that look scary? A little bit, maybe. It&rsquo;s probably fair
-to say that manually writing HTML isn&rsquo;t very popular amongst most programmers.
-Therefore there are quite a few tools that make our lives easier. And your task
-is to write such a tool.</p>
+<p>Can you guess what this means?</p>
 
-<p>Also, this exercise should actually be easier for you to complete than the
-previous one. You already have a bunch of practice in iterating over emails,
-and working with arrays and strings. And this time, you don&rsquo;t need to deal with
-the maximum length of strings per column. You can just interpolate things
-together.</p>
+<p>Everything inside the so called ERB tags <code>&lt;% ... %&gt;</code> is considered Ruby code.
+Everything outside of them is just some text, in our case HTML code, into
+which the results of the Ruby code will be embedded whenever the ERB tag also
+has an equals sign, as in <code>&lt;%= ... %&gt;</code>.</p>
 
-<p><a href="/solutions/mailbox_html-1.html" class="solution">Show solution</a></p>
+<p>Imagine stripping everything outside the ERB tags, and the tags themselves
+from the code above. And imagine replacing the <code>=</code> equals sign with <code>puts</code>
+statements. You&rsquo;d then end up with this code:</p>
+<pre class="highlight ruby"><code><span class="nb">puts</span> <span class="nb">name</span>
 
-        <nav class="page-nav"><a class="prev" href="/exercises/mailbox_text.html">
+<span class="n">messages</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">message</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="n">message</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>That&rsquo;s some code you understand, right? ERB, when executed, does exactly this,
+except that <code>=</code> as part of the ERB tag <code>&lt;%= ... %&gt;</code> will not output things to
+the terminal, but capture it, and insert it to the surounding text (HTML code,
+in our case) in place of this tag.</p>
+
+<p>Ruby code in ERB tags that do not have an equal sign, such as <code>&lt;% ... %&gt;</code> will
+be executed, but the output will not be captured, but just discarded.</p>
+
+<p>Now the above Ruby code uses two local variables, or methods with the names
+<code>name</code> as well as <code>messages</code> (where <code>each</code> is called on <code>messages</code>, so this
+should probably be an array).</p>
+
+<p>So how do we provide these objects to the ERB template? And how do we execute
+the whole thing?</p>
+
+<p>It&rsquo;s probably best to look at a simple example:</p>
+<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s2">"erb"</span>
+
+<span class="n">template</span> <span class="o">=</span> <span class="sx">%(
+  &lt;html&gt;
+    &lt;body&gt;
+      &lt;h1&gt;Messages for &lt;%= name %&gt;&lt;/h1&gt;
+      &lt;ul&gt;
+        &lt;% messages.each do |message| %&gt;
+          &lt;li&gt;&lt;%= message %&gt;&lt;/li&gt;
+        &lt;% end %&gt;
+      &lt;/ul&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+)</span>
+
+<span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"We meet every Monday night at 7pm"</span><span class="p">,</span>
+  <span class="s2">"We've almost completed the beginners course!"</span><span class="p">,</span>
+  <span class="s2">"Feel free to come by and join us!"</span>
+<span class="p">]</span>
+
+<span class="n">html</span> <span class="o">=</span> <span class="no">ERB</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">template</span><span class="p">).</span><span class="nf">result</span><span class="p">(</span><span class="nb">binding</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">html</span>
+</code></pre>
+
+<p>Does this code make sense to you?</p>
+
+<p>On the first line we require the erb from the
+<a href="http://ruby-doc.org/stdlib-2.2.2/libdoc/erb/rdoc/ERB.html">Ruby Standard Library</a>.</p>
+
+<p>Also, as you&rsquo;ve learned in <a href="/bonus_1/alternative-syntax.html">this chapter</a>
+the syntax <code>%(something)</code> defines a string. So, <code>template</code> is just one, long
+string that contains our HTML code including ERB tags (the same as discussed above).</p>
+
+<p>Next we define two local variables <code>name</code> and <code>messages</code>, which hold a simple
+string, as well as an array with 3 strings.</p>
+
+<p>Now on the next line we create an instace of the class <code>ERB</code> and pass our
+<code>template</code> (the string defined earlier) to it. On this instance we then call
+the method <code>result</code> with something that is called <code>binding</code>.</p>
+
+<p>This method call to <code>result</code> returns something that we assign to the variable
+<code>html</code>, so, as you might guess, this should be the HTML we were after.</p>
+
+<p>Let&rsquo;s just output it to the terminal on the last line, using <code>puts</code>.</p>
+
+<p>If you run this code it will output something like this:</p>
+<pre class="highlight html"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Messages for Ruby Monstas<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>We meet every Monday night at 7pm<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>We've almost completed the beginners course!<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Feel free to come by and join us!<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+
+<p>&hellip; which is a valid HTML document that a browser would render (display) like
+this:</p>
+
+<p><img src="/assets/images/erb_1-2093b8b6.png"></p>
+
+<p>Looks good?</p>
+
+<p>So, basically, all that our code above does is the following:</p>
+
+<ul>
+<li>Define an template with some HTML and some embedded ERB tags.</li>
+<li>Define a couple variables that contain things that our template wants (<code>name</code> and <code>messages</code>).</li>
+<li>Create an instance of the class ERB, passing this template.</li>
+<li>On this instance, call the method <code>result</code>.</li>
+</ul>
+
+<p>This executes (we say &ldquo;renders&rdquo;) the ERB template using the <code>name</code> and
+<code>messages</code> objects, and returns the HTML as a result.</p>
+
+<p>Now, what&rsquo;s this <code>binding</code> thing? Obviously we do not define a local variable,
+so it needs to be a method.</p>
+
+<p>Let&rsquo;s google that: <a href="">Ruby binding</a></p>
+
+<p>The first result goes to the <a
+href="http://ruby-doc.org/core-2.2.0/Binding.html">Ruby documentation</a>,
+saying (some rather cryptic stuff stripped for our purpose):</p>
+
+<p><em>&ldquo;Objects of class Binding encapsulate the execution context at some particular
+place in the code and retain this context for future use. The variables,
+methods, [&hellip;] that can be accessed in this context are all retained. Binding
+objects can be created using Kernel#binding [&hellip;]. These binding objects can be
+passed [around].&rdquo;</em></p>
+
+<p>Hmmmmm, let&rsquo;s re-read that, and think about it.</p>
+
+<p>First of all, <a href="http://ruby-doc.org/core-2.2.2/Kernel.html">Kernel</a>
+is something we have never mentioned so far. It is a
+<a href="/bonus_2/modules">Ruby module</a> that is included to each and every
+object in Ruby: whenever you create any object, this module, and thus all of
+its methods will be included. This is the secret reason to why methods like
+<code>p</code>, <code>puts</code>, and so on are available everywhere, and it is also the reason
+why we do not have to define the method <code>binding</code>. It&rsquo;s just already there.</p>
+
+<p>Now, what&rsquo;s this execution context the documentation is talking about?</p>
+
+<p>Remember when we talked about <a href="/methods/scopes.html">scopes</a> in the
+context of methods? That&rsquo;s the same as the Ruby documentation means by
+&ldquo;execution context&rdquo;.  It is that empty room or space that Ruby enters whenever
+it starts your program, or enters a method. If you define a <em>local</em> variable,
+then this variable will be visible within this scope, or room, but not outside
+of it.</p>
+
+<p>Now the <code>binding</code> is exactly <em>this knowledge</em>: which variables are defined,
+and what objects they are referring to. And the <code>binding</code> itself is an object
+that can be passed around.</p>
+
+<p>If you find this puzzling and confusing don&rsquo;t worry. This is, seriously, a
+piece of knowledge few Ruby programmers know about, or at least they very
+rarely use this themselves. Putting very advanced programming techniques
+(called &ldquo;meta programming&rdquo;) aside rendering ERB templates is the one single use
+case where you ever need it. (And, on top of this, as a developer who builds
+Sinatra or Rails applications you also never use it yourself because both
+Sinatra and Rails ship with tools that hide this weird stuff from you).</p>
+
+<p>For now, the one thing you can remember is that, by calling <code>binding</code> and
+passing the result to the ERB instance, you simply pass <em>access</em> to the
+two local variables <code>name</code> and <code>messages</code>, so they can be used inside your
+ERB template.</p>
+
+<p>Does this make sense?</p>
+
+<p>Then maybe it&rsquo;s a good time for an
+<a href="/exercises/mailbox_erb.html">exercise on ERB</a>.</p>
+
+        <nav class="page-nav"><a class="prev" href="/bonus_2/html.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/exercises/mailbox_file.html">
+        <nav class="page-nav"><a class="next" href="/exercises.html">
   Next
 </a></nav>
       </article>

@@ -10,18 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Exercises | Ruby for Beginners</title>
+    <title>Using Bundler | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/bonus_2/erb.html">
+    <nav class="page-nav"><a class="prev" href="/exercises/rubygems.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
-  Next
-</a></nav>
+    <nav class="page-nav"></nav>
 
     <div>
       <nav class="toc">
@@ -365,7 +363,7 @@
       </li>
     </ul>
   </li>
-  <li class="active directory expanded">
+  <li class="directory expanded">
     <a href="/exercises.html">
       Exercises
     </a>
@@ -460,7 +458,7 @@
           Using Rubygems
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/exercises/bundler.html">
           Using Bundler
         </a>
@@ -471,42 +469,139 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Exercises</h1>
+        <h1>Using Bundler</h1>
 
-<p>If you haven&rsquo;t done the <a href="http://tryruby.org">try ruby</a> course already, we
-recommend you do at least a couple of lessons over there too.</p>
+<p>Imagine you&rsquo;d want, for some reason, use an older version of a particular gem,
+rather than the latest one.</p>
 
-<p>Whenever you sit down to do some of the exercises in this book make sure you
-have your text editor and terminal open. In your terminal:</p>
+<p>Maybe the authors of this gem have made a change that breaks your application.
+Of course they&rsquo;d normally try to avoid this at all costs, but sometimes it
+still happens. (Another, maybe more common, case is that you are working on a
+Rails application that has been started a year ago, or is even older than that.
+Now a new major version of Rails comes out, and ships lots of changes that
+would break this application. So you want to stick to the older version of
+Rails until you get around making it ready for the newer one.)</p>
 
-<ul>
-<li><p>Create a new directory where you want to keep Ruby files for our exercises. For
-example: <code>~/ruby-for-beginners/exercises</code>. In
-order to create that directory in the terminal you can run: <code>mkdir
-~/ruby-for-beginners/exercises</code>.</p></li>
-<li><p>Then navigate to this directory: <code>cd ~/ruby-for-beginners/exercises</code></p></li>
-<li><p>In order to check if you are in the right directory you can always run:
-<code>pwd</code>. (That&rsquo;s short for <em>print working directory</em>, meaning, it prints the name
-of the current directory.)</p></li>
-<li><p>In order to see all the files and subdirectories contained in the current
-directory you can run <code>ls</code>.</p></li>
-</ul>
+<p>One way to use an older version of a particular gem is to simply uninstall
+any newer versions from your system. E.g. you could run:</p>
+<pre class="highlight plaintext"><code>gem uninstall rails
+gem install rails --version '~&gt; 3'
+</code></pre>
 
-<!---
-TODO: check these instructions for Windows.
--->
+<p>This would uninstall all rails gems, and then install the latest version of
+Rails that still starts with a <code>3</code> (i.e. ignoring all the newer versions that,
+as time of this writing, start with a <code>4</code>).</p>
 
-<p><p class='credits'>
-  Credits: The exercises 1.1, 1.2, and 2.1 are taken from
-  <a href="http://www.ruby-doc.org/docs/Tutorial/part_01/first_steps.html">Introduction to Ruby</a>.
-<p></p>
+<p>However, this is quite cumbersome. You&rsquo;d need to figure out what versions of
+all the gems that you want to use are compatible with each other. And if you
+ever switch from one application to another you&rsquo;d have to uninstall and
+reinstall all those gems over and over.</p>
 
-        <nav class="page-nav"><a class="prev" href="/bonus_2/erb.html">
+<p>Instead, Bundler provides a much better way of picking certain gem versions
+out of the plethora of gems that might be installed on your computer.</p>
+
+<p>In this example we are going to use the Chronic gem, which provides a great
+way to convert natural language date formats to Ruby <code>Time</code> objects.</p>
+
+<p>Inside a new directory <code>chronic</code> create a file <code>Gemfile</code>, and add the following
+lines:</p>
+<pre class="highlight plaintext"><code>source "https://rubygems.org"
+
+gem "chronic", "~&gt; 0.9.0"
+</code></pre>
+
+<p>The <code>source</code> directive says that we&rsquo;d like to use the standard RubyGems.org
+as a source for our gems. There are other sources, such as private Rubygems
+servers run by companies to host their own, internal gems, or Rubygems servers
+that people run in order to sell paid versions of their gems.</p>
+
+<p>The <code>gem</code> directive declares that we&rsquo;d like to use the gem <code>chronic</code>, and
+we&rsquo;d like to use any version that starts with <code>0.9</code> (for whatever reason).</p>
+
+<p>Now, make sure you have <code>cd</code>ed to that directory, and run:</p>
+<pre class="highlight plaintext"><code>bundle install
+</code></pre>
+
+<p>You&rsquo;ll see that Bundler first fetches some meta data from RubyGems.org. This
+means it checks what versions of the Chronic gem are available, what dependencies
+it has, and what dependencies these might have.</p>
+
+<p>In our case Chronic doesn&rsquo;t have any other dependencies, and so Bundler just
+installs it. You will see that it installs a version starting with <code>0.9</code> (as
+time of this writing that would be <code>0.9.1</code>).</p>
+
+<p>In order to check what gems are part of your bundle you can run <code>bundle show</code>.
+You can also open the file <code>Gemfile.lock</code> that Bundler has created.</p>
+
+<p>With this we&rsquo;ve created a little gems sandbox that makes, no matter what other
+gems are available on your system, just two gems available to our Ruby code:
+Chronic, and Bundler itself.</p>
+
+<p>Lets have a look at the load path to confirm that:</p>
+<pre class="highlight plaintext"><code>bundle exec ruby -e 'puts $LOAD_PATH'
+</code></pre>
+
+<p>You&rsquo;ll se a bunch of directories that belong to your Ruby installation, and make
+its standard library available. But you&rsquo;ll also see two directories that end with
+something similar to this:</p>
+<pre class="highlight plaintext"><code>gems/chronic-0.9.1/lib
+gems/bundler-1.9.6/lib
+</code></pre>
+
+<p>This means that any code that we run using our bundle (i.e. standing in this
+directory, and using <code>bundle exec</code> as a prefix) will be able to require, and
+use the Chronic library.</p>
+
+<p>Let&rsquo;s try that. Create a new file <code>19-bundler.rb</code> in this directory, and add the
+following lines:</p>
+<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s2">"chronic"</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="no">Chronic</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s1">'tomorrow'</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">time</span><span class="p">.</span><span class="nf">class</span>
+<span class="nb">p</span> <span class="n">time</span>
+</code></pre>
+
+<p>This will output something like this:</p>
+<pre class="highlight plaintext"><code>Time
+2015-05-15 12:00:00 +0200
+</code></pre>
+
+<p>You can see that the method <code>parse</code> takes a natural language string, and converts
+it into an instance of the Ruby class <code>Time</code> (see here for the
+<a href="http://ruby-doc.org/core-2.2.0/Time.html">documentation</a>), so we can
+now use this object&rsquo;s methods to do more interesting stuff. E.g. let&rsquo;s look up
+which month that is:</p>
+<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s2">"chronic"</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="no">Chronic</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s1">'tomorrow'</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">time</span><span class="p">.</span><span class="nf">month</span>
+</code></pre>
+
+<p>Let&rsquo;s say for some reason we&rsquo;d now want to upgrade the Chronic gem, and use the
+latest version in the newer <code>0.10</code> series. Maybe the authors have added some
+new functionality that we&rsquo;d like to use, or they&rsquo;ve fixed a certain bug.</p>
+
+<p>In order to do this we need to allow Bundler using the <code>0.10</code> series of versions.
+So in your Gemfile change <code>~&gt; 0.9.0</code> to <code>~&gt; 0.10.0</code>.</p>
+
+<p>If you now run:</p>
+<pre class="highlight plaintext"><code>bundle udpate chronic
+</code></pre>
+
+<p>You&rsquo;ll see that it now installs a newer version of this gem. Also, it has changed
+the version number in the <code>Gemfile.lock</code> file.</p>
+
+<p>Bundler is a really cool piece of software. It is one of those things that,
+once you&rsquo;ve used it for a while, wonder how life was possible before it existed
+(<em>&ldquo;How on earth did people meet before there were cellphones?!?&rdquo;</em>). If you ask
+any seasoned Ruby developer how their life was before Bundler, they&rsquo;ll probably
+respond <em>&ldquo;Quite miserable&rdquo;</em>, or maybe give you a blank stare and say <em>&ldquo;Ummm, I
+forgot&rdquo;</em>.</p>
+
+        <nav class="page-nav"><a class="prev" href="/exercises/rubygems.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
-  Next
-</a></nav>
+        <nav class="page-nav"></nav>
       </article>
     </div>
 
@@ -521,7 +616,7 @@ TODO: check these instructions for Windows.
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
   </body>
 </html>

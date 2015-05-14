@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Exercises | Ruby for Beginners</title>
+    <title>Bonus: HTML | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/bonus_2/erb.html">
+    <nav class="page-nav"><a class="prev" href="/bonus_2/libraries_2.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
+    <nav class="page-nav"><a class="next" href="/bonus_2/erb.html">
   Next
 </a></nav>
 
@@ -328,7 +328,7 @@
       Using the right words
     </a>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/bonus_2.html">
       Bonus: Advanced Topics
     </a>
@@ -353,7 +353,7 @@
           Bonus: Using Libraries (2)
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/bonus_2/html.html">
           Bonus: HTML
         </a>
@@ -365,7 +365,7 @@
       </li>
     </ul>
   </li>
-  <li class="active directory expanded">
+  <li class="directory">
     <a href="/exercises.html">
       Exercises
     </a>
@@ -471,40 +471,144 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Exercises</h1>
+        <h1>Bonus: HTML</h1>
 
-<p>If you haven&rsquo;t done the <a href="http://tryruby.org">try ruby</a> course already, we
-recommend you do at least a couple of lessons over there too.</p>
+<p><a href="http://en.wikipedia.org/wiki/HTML">HTML</a>, meaning &ldquo;HyperText Markup
+Language&rdquo;, is a document format used for defining the semantic structure of a
+single web page.</p>
 
-<p>Whenever you sit down to do some of the exercises in this book make sure you
-have your text editor and terminal open. In your terminal:</p>
+<p>HTML was first proposed by <a href="http://en.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners-Lee</a>
+in 1989, and layed grounds for the World Wide Web&rsquo;s huge breakthrough during
+the 1990s.</p>
+
+<p>The fundamental, primary feature of any web browser, such as Firefox, Chrome,
+Safari, is to render (display) HTML documents. Whenever you type a URL into the
+browser&rsquo;s address bar (or click a link, such as
+<a href="http://rubymonstas.org"><a href="http://rubymonstas.org">http://rubymonstas.org</a></a>) then the browser
+will send a request to this address (i.e. to some application running on some
+computer that responds to this address), and it will (in most cases) get an
+HTML document back as a response. It will then display this HTML document to
+you.</p>
+
+<p>What does &ldquo;semantic structure&rdquo; mean?</p>
+
+<p>Maybe it is best to look at an example first. This is a fairly simple HTML
+document:</p>
+<pre class="highlight html"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Ruby Monstas HTML Example<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Ruby Monstas HTML Example<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>One paragraph of text.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Another paragraph of text, containing an emphasized <span class="nt">&lt;em&gt;</span>word<span class="nt">&lt;/em&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>A list of items<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>First item<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Second item<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Third item<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+
+<p>If you look at this document you&rsquo;ll notice the recurring pattern of &ldquo;tags&rdquo; that
+start with <code>&lt;something&gt;</code> and then are closed with <code>&lt;/something&gt;</code>. E.g. the
+entire document starts with an opening <code>&lt;html&gt;</code> tag, and ends with a closing
+<code>&lt;/html&gt;</code> tag.</p>
+
+<p>HTML entirely consists of these tags that have a certain meaning, can be nested,
+and contain content.</p>
+
+<p>Here&rsquo;s what the HTML tags used in this example mean:</p>
 
 <ul>
-<li><p>Create a new directory where you want to keep Ruby files for our exercises. For
-example: <code>~/ruby-for-beginners/exercises</code>. In
-order to create that directory in the terminal you can run: <code>mkdir
-~/ruby-for-beginners/exercises</code>.</p></li>
-<li><p>Then navigate to this directory: <code>cd ~/ruby-for-beginners/exercises</code></p></li>
-<li><p>In order to check if you are in the right directory you can always run:
-<code>pwd</code>. (That&rsquo;s short for <em>print working directory</em>, meaning, it prints the name
-of the current directory.)</p></li>
-<li><p>In order to see all the files and subdirectories contained in the current
-directory you can run <code>ls</code>.</p></li>
+<li><code>&lt;html&gt;...&lt;/html&gt;</code> - the HTML document as a whole</li>
+<li><code>&lt;head&gt;...&lt;/head&gt;</code> - the header of the document, containing meta information (i.e. information <em>about</em> the document, not <em>part of</em> the document itself)</li>
+<li><code>&lt;title&gt;...&lt;/title&gt;</code> - an example of one bit of meta information, the title of the page as displayed in your browser history, and the browser window title (or tab)</li>
+<li><code>&lt;body&gt;...&lt;/body&gt;</code> - the body of the document itself, i.e. the whole of its content</li>
+<li><code>&lt;h1&gt;...&lt;/h1&gt;</code>, <code>&lt;h2&gt;...&lt;/h2&gt;</code> - a headline level 1, and level 2, containing the headline&rsquo;s text. HTML defines heading levels 1-6, which should be enough to define the structure even of large documents.</li>
+<li><code>&lt;p&gt;...&lt;/p&gt;</code> - a single paragraph, containing the paragraph&rsquo;s text.</li>
+<li><code>&lt;ul&gt;...&lt;/ul&gt;</code> - an unordered list (i.e. a list that uses bullet points, as opposed to, e.g., a numbered list)</li>
+<li><code>&lt;li&gt;...&lt;/li&gt;</code> - a single list item, must be contained in either a <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> tag</li>
 </ul>
 
-<!---
-TODO: check these instructions for Windows.
--->
+<p>You can read <code>&lt;html&gt;</code> as <em>&ldquo;Ok, let&rsquo;s start an HTML document!&rdquo;</em>.
+Then <code>&lt;head&gt;</code> says: <em>&ldquo;Oh, btw, here&rsquo;s some extra meta information about the document &hellip;&rdquo;</em>
+and <code>&lt;title&gt;</code> says: <em>&ldquo;The title of this document is: [&hellip;]&rdquo;</em>.
+<code>&lt;/title&gt;</code> meaning <em>&ldquo;Ok, we&rsquo;re done with the title&rdquo;</em>,
+just like <code>&lt;/head&gt;</code> meaning <em>&ldquo;Ok, we&rsquo;re done with the meta information part.&rdquo;</em></p>
 
-<p><p class='credits'>
-  Credits: The exercises 1.1, 1.2, and 2.1 are taken from
-  <a href="http://www.ruby-doc.org/docs/Tutorial/part_01/first_steps.html">Introduction to Ruby</a>.
-<p></p>
+<p>When the browser sees <code>&lt;body&gt;</code> it reads that as <em>&ldquo;Ok, now here comes the real content part of the document.&rdquo;</em></p>
 
-        <nav class="page-nav"><a class="prev" href="/bonus_2/erb.html">
+<p>Inside that content section it first finds an <code>&lt;h1&gt;</code> tag, and reads <em>&ldquo;Aha, the
+main headline is [&hellip;]&rdquo;</em>, so it will display this as a headline to you. It then
+finds two <code>&lt;p&gt;</code> tags containing a few bits of plain text, so it displays two
+paragraphs. The last paragraph has an emphasized word, so it makes that one
+cursive (or something else, depending on style definitions defined elsewhere).</p>
+
+<p>Next it finds a 2nd level headline, and then an &ldquo;unordered list&rdquo;, i.e. a list
+with bullet points.</p>
+
+<p>It is important to understand that HTML only defines the <strong>semantic structure</strong>
+of a document. It does, as such, say nothing about the visual representation of,
+for example, a headline, the spacing between paragraphs, the font family and size
+used, any colors, borders, or even element placement: The visual representation
+is defined in a different language called <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a>
+(or by the browser&rsquo;s defaults, should there not be any custom style definition
+for this web page, as in our example).</p>
+
+<p>Why is the semantic structure of a document useful at all, even disregarding
+its visual styling when presented in the browser window?</p>
+
+<p>Maybe the simplest example is a link. In order to describe a link in text (HTML
+is just plain text, too, right?) we&rsquo;ll need to tell three pieces of information
+to the browser:</p>
+
+<ul>
+<li>That we&rsquo;d like to define a link,</li>
+<li>what text to display for the link, and</li>
+<li>what other web address to link to.</li>
+</ul>
+
+<p>This is a valid example of a link in HTML, using the tag <code>a</code> (which means
+&ldquo;anchor&rdquo;):</p>
+<pre class="highlight html"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://rubymonstas.org"</span><span class="nt">&gt;</span>Ruby Monstas Homepage<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+
+<p>This HTML, when rendered in a web browser, looks like this:
+<a href="http://rubymonstas.org">Ruby Monstas Homepage</a>, i.e. there&rsquo;s a link
+with the text &ldquo;Ruby Montas Homepage&rdquo; and it links to the target URL (&ldquo;href&rdquo;)
+<a href="http://rubymonstas.org">http://rubymonstas.org</a>.</p>
+
+<p>Does this make sense?</p>
+
+<p>This is why HTML is called a &ldquo;markup language&rdquo;. It is a language that &ldquo;marks
+up&rdquo; certain each part of the content with its structural meaning, such as
+<em>&ldquo;This is a link, with this target URL&rdquo;</em>, or <em>&ldquo;This is a heading with this
+level&rdquo;</em>, <em>&ldquo;This is a simple paragraph&rdquo;</em>, and so on.</p>
+
+<p>If you think about it, there are lots of useful applications, that leverage
+the information that is provided by defining the <strong>semantic structure</strong> of a
+document (as opposed to its visual representation).</p>
+
+<p>For example, the entire success of Google as a search engine relied on the fact
+that the semantic structure of a document provides clues about the relevance of
+certain search terms in this document: If a word is contained in the URL, the
+document title, the toplevel headlines, then it&rsquo;s probably important. Even more
+so, if other pages link to this document using link texts that also contain
+that word, then this adds social proof to the mix, and search results should
+probably list this page rather high up on the page.</p>
+
+<p>Another example is that, by inspecting the headline tags in an HTML document,
+we can auto-generate a table of contents for this document quite easily,
+without having authors to maintain this manually. Many content management
+systems (CMS) do this, including Wikipedia.</p>
+
+        <nav class="page-nav"><a class="prev" href="/bonus_2/libraries_2.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
+        <nav class="page-nav"><a class="next" href="/bonus_2/erb.html">
   Next
 </a></nav>
       </article>
@@ -521,7 +625,7 @@ TODO: check these instructions for Windows.
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
   </body>
 </html>

@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Bonus: Using Libraries (1) | Ruby for Beginners</title>
+    <title>Bonus: Using Libraries (2) | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/bonus_2.html">
+    <nav class="page-nav"><a class="prev" href="/bonus_2/private_methods.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/bonus_2/modules.html">
+    <nav class="page-nav"><a class="next" href="/bonus_2/html.html">
   Next
 </a></nav>
 
@@ -333,7 +333,7 @@
       Bonus: Advanced Topics
     </a>
     <ul>
-      <li class="active">
+      <li>
         <a href="/bonus_2/libraries.html">
           Bonus: Using Libraries (1)
         </a>
@@ -348,7 +348,7 @@
           Bonus: Private methods
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/bonus_2/libraries_2.html">
           Bonus: Using Libraries (2)
         </a>
@@ -471,89 +471,210 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Bonus: Using Libraries (1)</h1>
+        <h1>Bonus: Using Libraries (2)</h1>
 
-<p>Our <code>Person</code> class does not define an attribute accessor method for its
-password, and thus, others cannot ask for and retrieve it.</p>
+<p>Being able to stand on the shoulder of giants is one of the great advantages
+when we pick a programming language that has a great ecosystem, and an even
+more awesome community:</p>
 
-<p>However, our person object could freely give them an encrypted version of it.</p>
+<p>Being faced with a certain task that we want to accomplish we can often look
+for other people&rsquo;s solutions, and simply re-use and build on their code.</p>
 
-<p>Actually, this is pretty similar to how authentication often works in
-real web applications:</p>
+<p>In the chapter <a href="/bonus_2/libraries.html">Using Libraries</a> you have
+learned that Ruby comes with lots of things available as soon as your program
+starts, but others need to be loaded using the method <code>require</code>. For example
+we <code>require &quot;digest&quot;</code> and from then on there&rsquo;s a class <code>Digest::Sha2</code> defined,
+which provides handy tools (methods) that we wouldn&rsquo;t want to write ourselves.</p>
 
-<p>Applications do not store your actual password in plain text (hopefully!) That
-way if, for some reason, they get hacked, attackers wouldn&rsquo;t have your actual
-password. Instead they store an encrypted version of the password.</p>
+<p>But how exactly does that work?</p>
 
-<p>Anyhow, we now want to add a method <code>encrypted_password</code> to the <code>Person</code> class,
-which should return an <em>encrypted version</em> of the password that is stored in
-the instance variable <code>@password</code>.</p>
+<p>In order to understand how external code is loaded in maybe 99% of all Ruby
+applications out there nowadays you&rsquo;ll need to understand the following concepts
+which we&rsquo;ll walk through:</p>
 
-<p>Encryption is one of the things in programming that require very deep expert
-knowledge, and it is one of the things we definitely wouldn&rsquo;t want to implement
-ourselves.</p>
+<ul>
+<li>The Ruby Standard Library</li>
+<li>Rubygems and Bundler</li>
+<li>The Ruby load path</li>
+</ul>
 
-<p>So far, all the Ruby features and methods that we have used are available right
-away when the Ruby runtime <code>ruby</code> executes your code. However, Ruby also comes
-with a ton of functionality that is not available (loaded) right away. Instead
-it is stored in so called libraries (which are just Ruby files, too), and we
-have to load them manually, in order to make them available.</p>
+<h2>The Ruby Standard Library</h2>
 
-<p>To do this, we use the method <code>require</code>, and pass it the name of the library:</p>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'digest'</span>
+<p>Basically every programming language that you&rsquo;ll use in praxis has some kind
+of standard library that is shipped with the language itself. When you install
+Ruby on your computer this will also install the
+<a href="http://ruby-doc.org/stdlib-2.2.2/">Ruby Standard Library</a>.</p>
+
+<p>It&rsquo;s documentation isn&rsquo;t the most pretty website on earth, but if you look at
+the &ldquo;package&rdquo; (library) names on the left you see things mentioned like:</p>
+
+<ul>
+<li>benchmark: tools to test how performant your code is</li>
+<li>debug: tools to make debugging code easier</li>
+<li>digest, openssl, securerandom: tools for encryption and security</li>
+<li>erb: Ruby&rsquo;s standard templating system (used in one of our exercises)</li>
+<li>net/imap, net/pop, net/smtp: stuff for sending and receiving emails</li>
+<li>zlib: tools for compressing files (you know <code>zip</code> files, don&rsquo;t you?)</li>
+</ul>
+
+<p>And a lot of other things. These are fairly low-level tools, of course. You do
+not see a library for &ldquo;logging in via Twitter or Google&rdquo;. They&rsquo;re more like
+nuts and bolts, rather than bicycles or cars, but they&rsquo;re super useful
+nonetheless.</p>
+
+<p>In order to make one of these libraries available in your code you don&rsquo;t have
+to do anything else than use <code>require</code>. E.g. <code>require &quot;zlib&quot;</code> would make the
+<a href="http://ruby-doc.org/stdlib-2.2.2/libdoc/zlib/rdoc/Zlib.html">zlib
+library</a> available, which means you could now use the methods <code>deflate</code> and
+<code>inflate</code> in order to compress and decompress files.</p>
+
+<h2>Rubygems</h2>
+
+<p>Rubygems is Ruby&rsquo;s package manager. A gem is a library that has been prepared
+in a way so it can be distributed (published and downloaded) via the internet.
+Such libraries are commonly refered to as &ldquo;packages&rdquo;, and there are many different
+package managers for different purposes. You can think of it as an app store
+that can be used to download specific versions of libraries, which you can then
+use.</p>
+
+<p>In order to do that Ruby has a built-in command line tool <code>gem</code>, which also is
+installed alongside your Ruby installation.</p>
+
+<p>When you run <code>gem --list</code> in your terminal you should see a list of all the
+gems that are installed on your computer (for the currently selected Ruby
+version if you use a Ruby version manager, such as RVM).</p>
+
+<p>In order to install a certain gem you can type <code>gem install [the-gem-name]</code>.
+E.g. <code>gem install middleman</code> would install the
+<a href="https://middlemanapp.com/">Middleman</a> library, which is a super
+handy tool for generating static web pages. This book is published using
+Middleman.</p>
+
+<p>Where does <code>gem</code> fetch all these gems (packages) from though?</p>
+
+<p>Ruby gems are centrally hosted on <a href="https://rubygems.org">RubyGems.org</a>,
+and Middleman, for example, has
+<a href="https://rubygems.org/gems/middleman">entry on this site</a>, too.
+You can see the latest version number of this gem (which is <code>4.0.0.beta.2</code> as
+of this writing), who the authors are, useful links to their homepage, source
+code, documentation, and so on.</p>
+
+<p>You can also see that the gem middleman depends on a variety of other gems,
+such as coffee-script, compass, execjs, and haml. This means that the authors
+of Middleman themselves make use of code which in turn is packages as other
+gems. This is very common. We say &ldquo;Middlemans dependencies are coffee-script,
+compass, &hellip;&rdquo;.</p>
+
+<p>When you run <code>gem install middleman</code> you&rsquo;ll see that this not only installs
+the Middleman gem, but also all of its dependencies, and all dependencies
+that any of the dependencies might have. This means, when you install one
+gem you&rsquo;ll get all the other stuff that this gem needs, too.</p>
+
+<p>Also, each of these dependencies comes with a specification of a version number
+or range of version numbers. For example <code>~&gt; 2.2.0</code> means &ldquo;allow any version
+of this gem that starts with 2.2&rdquo;.</p>
+
+<p>Once installed on your computer you can use a gem in your code in just the same
+way as you use something from the Ruby Standard Library. You <code>require</code> it.
+For example, in order to configure Middleman to generate this book we require
+a gem called <code>middleman-toc</code>
+<a href="https://github.com/rubymonsters/ruby-for-beginners/blob/master/config.rb#L1">here</a>.
+This is an extension to Middleman that allows to add a table of contents, and
+we need to <code>require</code> it before Middleman can use it.</p>
+
+<h2>Bundler</h2>
+
+<p>Consider an application that relies on lots and lots of gems. For example,
+a new, generated Rails application comes with a whopping 42 gems, and this
+number usually grows pretty quickly with typical Rails applications.</p>
+
+<p>Imagine working on an application like this over years, and there are new
+versions of gems being published all the time. Often they&rsquo;ll update the version
+numbers of their dependencies when new versions come out, or add new gems as
+dependencies, and remove old ones.</p>
+
+<p>How likely do you think it is that any of the version number ranges specified
+for all of these gems would conflict with any other version number range? In
+praxis it is very likely. Rubygems itself (the library <code>rubygems</code> that is part
+of your Ruby installation) is not very smart at figuring out which versions
+of certain gems play well with each other.</p>
+
+<p>On top of this, with plain Ruby and Rubygems, when you <code>require</code> any gem in your
+code, you&rsquo;ll simply get the latest version of this gem that is already installed
+on your computer. Assuming these versions do not conflict with each other, you
+still don&rsquo;t know if these are the exact same versions as the ones your
+co-workers have installed. And in praxis, again, this is pretty unlikely. This
+can be a source of many, often subtle, bugs that you don&rsquo;t really want to deal
+with.</p>
+
+<p>This is where Bundler comes into play.</p>
+
+<p>Bundler allows you to define which gems your application depends on (in a file
+called <code>Gemfile</code>), and then run <code>bundle install</code>. This will figure out which
+gem versions work well with each other (a task that Bundler is <em>great</em> at), and
+store the solution to this riddle to a separate file (called <code>Gemfile.lock</code>).</p>
+
+<p>These files are part of your code, and can be shared with other developers.
+When they now run <code>bundle install</code> themselves they&rsquo;ll get exactly the same gem
+versions that you also have.</p>
+
+<p>You can think of Rubygems of a tool to install gems on your computer. Over time
+this may result in a collection of lots and lots of gems in various versions
+that all sit somewhere on your filesystem.</p>
+
+<p>Bundler on the other hand is a tool for picking <em>some</em> of these gem versions,
+and restricting access to only these. You can think of it as a sandbox of the
+few gems that your application really should use. Like a looking glass that
+restricts the vision of your application to only see these few gem versions,
+even though there maybe tons of other gem versions installed on your computer.</p>
+
+<p>In order to use your application with Bundler you&rsquo;d prepend the command <code>bundle
+exec</code> to whatever other command you execute in your terminal, as follows.</p>
+
+<p>Imagine you&rsquo;d normally execute your program like this:</p>
+<pre class="highlight plaintext"><code>ruby my_amazing_app.rb
 </code></pre>
 
-<p>Normally <code>require</code> statements should be placed at the very top of the file, so
-it is easy to see what libraries a particular piece of code (class) uses.</p>
-
-<p>We are going to omit the <code>initialize</code> and <code>name</code> methods here, indicate the
-omission with the comment <code># ...</code>, and just keep the <code>password=</code> attribute
-writer. In order to run this code make sure you keep all the methods.</p>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'digest'</span>
-
-<span class="k">class</span> <span class="nc">Person</span>
-  <span class="c1"># ...</span>
-
-  <span class="k">def</span> <span class="nf">password</span><span class="o">=</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
-    <span class="vi">@password</span> <span class="o">=</span> <span class="n">password</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">encrypted_password</span>
-    <span class="no">Digest</span><span class="o">::</span><span class="no">SHA2</span><span class="p">.</span><span class="nf">hexdigest</span><span class="p">(</span><span class="vi">@password</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<p>In order to use it with Bundler, and restrict the visible gem versions to the
+ones defined in your <code>Gemfile.lock</code> file you would run this instead:</p>
+<pre class="highlight plaintext"><code>bundle exec ruby my_amazing_app.rb
 </code></pre>
 
-<p>The library <code>digest</code> that we required includes a something called
-<code>Digest::SHA2</code>.</p>
+<p>(For Rails applications, btw, you do not have to prepend <code>bundle exec</code> by the
+way. Rails does all of this itself, under the hood.)</p>
 
-<p>In programming a &ldquo;digest&rdquo; is an algorithm to convert one string into another
-in a way that the original string cannot be recovered later. However
-digesting the same string will always result in the same other, unique string.
-There are a good bunch of algorithms that do this, and &ldquo;sha2&rdquo; is the name of
-one of them.</p>
+<h2>The Ruby load path</h2>
 
-<p>Ok. For our example here we only need to understand that, once we have
-required the library <code>digest</code>, we can use the method <code>Digest::SHA2.hexdigest</code>,
-and it will encrypt (&ldquo;digest&rdquo;) the string that we pass to it.</p>
+<p>Ruby is software, and software stores things somewhere on your file system.
+In order to define places on your computer, where interesting stuff is stored
+software often has the concept of a &ldquo;load path&rdquo;.</p>
 
-<p>If now run the following code:</p>
-<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
-<span class="n">person</span><span class="p">.</span><span class="nf">password</span> <span class="o">=</span> <span class="s2">"super secret"</span>
-<span class="nb">puts</span> <span class="n">person</span><span class="p">.</span><span class="nf">encrypted_password</span>
+<p>If you are using a Unix based operating system, such as Linux or Mac OSX you
+may have seen the environment variable <code>$PATH</code> in installation instructions.
+This variable defines all the directories where executable files are stored.</p>
+
+<p>Ruby has a load path, too. Inside your Ruby program you can print it out using:</p>
+<pre class="highlight ruby"><code><span class="nb">puts</span> <span class="vg">$LOAD_PATH</span>
 </code></pre>
 
-<p>it will output</p>
-<pre class="highlight plaintext"><code>eabd522910ccdd77aef079feff0c7bb6486f6ab207ae6d3ed9e671208c92ab0f
-</code></pre>
+<p>This will print out the array that is defined as the <code>$LOAD_PATH</code> when Ruby
+starts your program. <code>puts</code> is smart enough to put each string in that array
+on a separate line.</p>
 
-<p>which is the digested form of the string <code>&quot;super secret&quot;</code>. Every time you run
-the program you will see the same, unique string.</p>
+<p>Each of these lines represents a directory on your computer where Ruby files
+are stored. If you use <code>require</code> anywhere in your application (e.g. <code>ruby
+&quot;digest&quot;</code>) then Ruby will look for a Ruby file with the same name (e.g.
+<code>digest.rb</code>) in each of these directories. It will load the first file with
+this name that it can find.</p>
 
-        <nav class="page-nav"><a class="prev" href="/bonus_2.html">
+<p>Would now be a good time to do a few exercises on
+<a href="/exercises/rubygems.html">Rubygems</a> and
+<a href="/exercises/bundler.html">Bundler</a>?</p>
+
+        <nav class="page-nav"><a class="prev" href="/bonus_2/private_methods.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/bonus_2/modules.html">
+        <nav class="page-nav"><a class="next" href="/bonus_2/html.html">
   Next
 </a></nav>
       </article>
