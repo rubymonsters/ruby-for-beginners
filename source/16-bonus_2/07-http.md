@@ -53,6 +53,17 @@ means just that: *"Get me this thing, please."* The "thing" we're looking for
 is defined by the second bit on this line: the **resource**, also called the
 path. In our case that's a web page, i.e. some HTML.
 
+Other common verbs are <a href="#footnote-1">[1]</a>
+
+* `POST` means (in modern web applications, such as Rails applications):
+  *"Create a new instance of the resource, using this data."* (E.g. `POST` to
+  `/users` means: create a new user.)
+* `PUT` means: update the instance with this new data. E.g. `PUT` to `/users/1`
+  means: for the user (with the id) `1`, update their attributes with the given
+  data.
+* And `DELETE` means what you think it does. E.g. `DELETE` to `/users/1` means:
+  Delete the user (with the id) `1`.
+
 HTTP also defines that after this first line there may come any number of
 headers, i.e. key/value pairs, containing meta information about the request.
 In our example these are the hostname that was used in the URL, and the
@@ -114,4 +125,20 @@ that Konstantin Haase, maintainer of Sinatra, gave for Ruby Monstas in early
 2015. Also, the
 <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Wikipedia page about HTTP</a>
 is an interesting read.
+
+Footnotes:
+
+<a name="footnote-1">[1]</a> There's a lot more to be said about HTTP verbs than
+this, and some developers might argue that these explanations are wrong. Let's
+say these verbs mean these things in applications like Rails applications.
+The HTTP standard defines these verbs in more abstract, and generic terms,
+while Rails has its own, and more practical definition of these HTTP verbs.
+
+E.g. `POST` actually means more "do whatevery you think is right" in terms
+of the HTTP specification, while in the context of Rails it means "create this
+thing".
+
+For us, in praxis, for the time being, it is enough to remember that `GET`
+means "get", `POST` means "create", `PUT` means "update", and `DELETE` means
+"delete".
 
