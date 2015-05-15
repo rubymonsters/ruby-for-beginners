@@ -71,6 +71,7 @@
   - libraries_2
   - html
   - erb
+  - http
 - path: exercises
   children:
   - numbers
