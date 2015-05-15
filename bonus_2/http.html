@@ -19,7 +19,7 @@
     <nav class="page-nav"><a class="prev" href="/bonus_2/erb.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/exercises.html">
+    <nav class="page-nav"><a class="next" href="/bonus_2/rack.html">
   Next
 </a></nav>
 
@@ -368,6 +368,11 @@
           Bonus: HTTP
         </a>
       </li>
+      <li>
+        <a href="/bonus_2/rack.html">
+          Bonus: Rack
+        </a>
+      </li>
     </ul>
   </li>
   <li class="directory">
@@ -527,6 +532,19 @@ means just that: <em>&ldquo;Get me this thing, please.&rdquo;</em> The &ldquo;th
 is defined by the second bit on this line: the <strong>resource</strong>, also called the
 path. In our case that&rsquo;s a web page, i.e. some HTML.</p>
 
+<p>Other common verbs are <a href="#footnote-1">[1]</a></p>
+
+<ul>
+<li><code>POST</code> means (in modern web applications, such as Rails applications):
+<em>&ldquo;Create a new instance of the resource, using this data.&rdquo;</em> (E.g. <code>POST</code> to
+<code>/users</code> means: create a new user.)</li>
+<li><code>PUT</code> means: update the instance with this new data. E.g. <code>PUT</code> to <code>/users/1</code>
+means: for the user (with the id) <code>1</code>, update their attributes with the given
+data.</li>
+<li>And <code>DELETE</code> means what you think it does. E.g. <code>DELETE</code> to <code>/users/1</code> means:
+Delete the user (with the id) <code>1</code>.</li>
+</ul>
+
 <p>HTTP also defines that after this first line there may come any number of
 headers, i.e. key/value pairs, containing meta information about the request.
 In our example these are the hostname that was used in the URL, and the
@@ -593,10 +611,26 @@ that Konstantin Haase, maintainer of Sinatra, gave for Ruby Monstas in early
 <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Wikipedia page about HTTP</a>
 is an interesting read.</p>
 
+<p>Footnotes:</p>
+
+<p><a name="footnote-1">[1]</a> There&rsquo;s a lot more to be said about HTTP verbs than
+this, and some developers might argue that these explanations are wrong. Let&rsquo;s
+say these verbs mean these things in applications like Rails applications.
+The HTTP standard defines these verbs in more abstract, and generic terms,
+while Rails has its own, and more practical definition of these HTTP verbs.</p>
+
+<p>E.g. <code>POST</code> actually means more &ldquo;do whatevery you think is right&rdquo; in terms
+of the HTTP specification, while in the context of Rails it means &ldquo;create this
+thing&rdquo;.</p>
+
+<p>For us, in praxis, for the time being, it is enough to remember that <code>GET</code>
+means &ldquo;get&rdquo;, <code>POST</code> means &ldquo;create&rdquo;, <code>PUT</code> means &ldquo;update&rdquo;, and <code>DELETE</code> means
+&ldquo;delete&rdquo;.</p>
+
         <nav class="page-nav"><a class="prev" href="/bonus_2/erb.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/exercises.html">
+        <nav class="page-nav"><a class="next" href="/bonus_2/rack.html">
   Next
 </a></nav>
       </article>
