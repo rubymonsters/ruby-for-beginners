@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function run() {
+  cmd=$@
+  echo $cmd
+  eval "$cmd"
+}
+
+msg=$1
+
+run "git add ."
+run "git commit -am '$msg'"
+run "git push"
+run "bundle exec middleman build --verbose"
+run "cd builds"
+run "git add ."
+run "git commit -am 'build'"
+run "git push origin HEAD:gh-pages"
