@@ -73,6 +73,7 @@
   - erb
   - http
   - rack
+  - sinatra
 - path: exercises
   children:
   - numbers
