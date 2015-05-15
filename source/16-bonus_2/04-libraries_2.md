@@ -60,8 +60,14 @@ package managers for different purposes. You can think of it as an app store
 that can be used to download specific versions of libraries, which you can then
 use.
 
-In order to do that Ruby has a built-in command line tool `gem`, which also is
-installed alongside your Ruby installation.
+Gems are libraries, often quite small, sometimes big (such as Rails), that
+provide certain tools for solving certain problems, just like the libraries
+contained in the Ruby Standard Library. If you found the example of a library
+that helps with signing in to a web application via Google hilarious, there's
+actually a <a href="https://rubygems.org/gems/google-oauth/versions/0.0.2">gem for that</a> :)
+
+Ruby has a built-in command line tool `gem`, which also is installed alongside
+your Ruby installation, and it allows you to manage gems on your computer.
 
 When you run `gem --list` in your terminal you should see a list of all the
 gems that are installed on your computer (for the currently selected Ruby
@@ -84,8 +90,8 @@ code, documentation, and so on.
 
 You can also see that the gem middleman depends on a variety of other gems,
 such as coffee-script, compass, execjs, and haml. This means that the authors
-of Middleman themselves make use of code which in turn is packages as other
-gems. This is very common. We say "Middlemans dependencies are coffee-script,
+of Middleman themselves make use of code which in turn is packaged as gems,
+too. This is very common. We say "Middleman's dependencies are coffee-script,
 compass, ...".
 
 When you run `gem install middleman` you'll see that this not only installs
@@ -98,7 +104,8 @@ or range of version numbers. For example `~> 2.2.0` means "allow any version
 of this gem that starts with 2.2".
 
 Once installed on your computer you can use a gem in your code in just the same
-way as you use something from the Ruby Standard Library. You `require` it.
+way as you use something from the Ruby Standard Library: You `require` it.
+
 For example, in order to configure Middleman to generate this book we require
 a gem called `middleman-toc`
 <a href="https://github.com/rubymonsters/ruby-for-beginners/blob/master/config.rb#L1">here</a>.
@@ -133,7 +140,9 @@ with.
 This is where Bundler comes into play.
 
 Bundler allows you to define which gems your application depends on (in a file
-called `Gemfile`), and then run `bundle install`. This will figure out which
+called `Gemfile`, here's the one we're using for
+<a href="https://github.com/rubymonsters/ruby-for-beginners/blob/master/Gemfile">this book</a>),
+and then run `bundle install`. This will figure out which
 gem versions work well with each other (a task that Bundler is *great* at), and
 store the solution to this riddle to a separate file (called `Gemfile.lock`).
 
@@ -167,8 +176,8 @@ ones defined in your `Gemfile.lock` file you would run this instead:
 bundle exec ruby my_amazing_app.rb
 ```
 
-(For Rails applications, btw, you do not have to prepend `bundle exec` by the
-way. Rails does all of this itself, under the hood.)
+(For Rails applications you do not have to prepend `bundle exec` by the way, as
+Rails does this itself, under the hood.)
 
 ## The Ruby load path
 
