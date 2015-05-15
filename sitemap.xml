@@ -258,6 +258,10 @@
       <priority>0.5</priority>
     </url>
     <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2/sinatra.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2.html</loc>
       <priority>0.5</priority>
     </url>
@@ -374,7 +378,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/strings-5.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/email-2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -382,7 +386,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/email-2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -498,7 +502,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-1.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/strings-5.html</loc>
       <priority>0.5</priority>
     </url>
 </urlset>
