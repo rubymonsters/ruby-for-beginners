@@ -1,9 +1,14 @@
 # Bonus: HTTP
 
-When computers talk to each other all they do is send around messages. You can
-think of these as simple text messages, most of the time. They may be
-encrypted, they may have some binary content attached to them (such as an
-image, or a movie), but essentially they're just text messages.
+When computers talk to each other via the internet all they do is send around
+messages. You can think of these as simple text messages, most of the time.
+They may be encrypted, they may have some binary content attached to them (such
+as an image, or a movie), but essentially they're just text messages.
+
+HTTP is the protocol that browsers and web applications speak in order to
+know how exactly to formulate these messages. If you're not familiar with the
+term protocol, it means a clearly specified language, a set of formal rules for
+how to talk to each other.
 
 When you open your browser, type a URL into the addressbar, and hit return,
 your browser will send a text message to another computer, which is associated
