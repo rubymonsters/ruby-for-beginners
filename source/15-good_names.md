@@ -68,10 +68,10 @@ email = Email.new("Hi there, Ruby Monstas!", "2015-01-02", { :from => "Ferdous" 
 Also, the first argument name `str` in the first example is an abbreviation,
 which is something that isn't very common in the Ruby world. People used to use
 abbreviated variable names back when memory was extremely sparse, and
-expensive. Nowadays there's just no reason any more to make your fellow
-developers think about abbreviations. Consider `var`, `var1`, `var_2` bad
-names, and instead use names that reveal (talk about) your intentions, and
-their purpose.
+expensive: longer variable names would consume more memory. Nowadays there's
+just no reason any more to make your fellow developers puzzle over abbreviated
+names. Consider `var`, `var1`, `var_2` bad names, and instead use names that
+reveal (talk about) your intentions, and their purpose.
 
 Did you notice the local variable name `an_email` in the first example? The
 name `email` in the second example also is much better in most situations. The
