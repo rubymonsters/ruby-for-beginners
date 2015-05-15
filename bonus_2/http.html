@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Parentheses | Ruby for Beginners</title>
+    <title>Bonus: HTTP | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-29ea5021.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/methods/return_values.html">
+    <nav class="page-nav"><a class="prev" href="/bonus_2/erb.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/methods/writing_methods.html">
+    <nav class="page-nav"><a class="next" href="/exercises.html">
   Next
 </a></nav>
 
@@ -148,7 +148,7 @@
       Variables
     </a>
   </li>
-  <li class="directory expanded">
+  <li class="directory">
     <a href="/methods.html">
       Methods
     </a>
@@ -158,7 +158,7 @@
           Return values
         </a>
       </li>
-      <li class="active">
+      <li>
         <a href="/methods/parentheses.html">
           Parentheses
         </a>
@@ -328,7 +328,7 @@
       Using the right words
     </a>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/bonus_2.html">
       Bonus: Advanced Topics
     </a>
@@ -363,7 +363,7 @@
           Bonus: Embedded Ruby
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/bonus_2/http.html">
           Bonus: HTTP
         </a>
@@ -476,49 +476,127 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Parentheses</h1>
+        <h1>Bonus: HTTP</h1>
 
-<p>If you have read carefully, you may have noticed that we said on the line
-<code>puts number</code> above that <code>puts</code> is a method call. And then later we&rsquo;ve enclosed the
-value <code>3</code> in parentheses when calling the method: <code>add_two(3)</code>.</p>
+<p>When computers talk to each other all they do is send around messages. You can
+think of these as simple text messages, most of the time. They may be
+encrypted, they may have some binary content attached to them (such as an
+image, or a movie), but essentially they&rsquo;re just text messages.</p>
 
-<p>That&rsquo;s right: In Ruby, when you call (use) a method, you can omit the parentheses.</p>
+<p>When you open your browser, type a URL into the addressbar, and hit return,
+your browser will send a text message to another computer, which is associated
+with the hostname that is part of your URL. The computer on the other side
+will receive this message (called the request), and send another message back
+(called the response).</p>
 
-<p>So these lines do exactly the same:</p>
-<pre class="highlight ruby"><code><span class="nb">puts</span> <span class="s2">"Hello!"</span>
-<span class="nb">puts</span><span class="p">(</span><span class="s2">"Hello!"</span><span class="p">)</span>
+<p>For example, when you go to
+<a href="http://rubymonstas.org/location.html"><a href="http://rubymonstas.org/location.html">http://rubymonstas.org/location.html</a></a>
+this is (a simplified version of) the request that is going to be sent by your
+browser:</p>
+<pre class="highlight http"><code><span class="nf">GET</span> <span class="nn">/location.html</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">rubymonstas.org</span>
+<span class="na">User-Agent</span><span class="p">:</span> <span class="s">Mozilla/5.0</span>
 </code></pre>
 
-<p>And so do these:</p>
-<pre class="highlight ruby"><code><span class="n">add_two</span> <span class="mi">2</span>
-<span class="n">add_two</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<p>The webserver that hosts our homepage then looks up the content of that web
+page, and sends another message back to your browser, containing this content:</p>
+<pre class="highlight http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">text/html</span>
+
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Ruby Monstas - Where we meet<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  ...
+<span class="nt">&lt;/html&gt;</span>
 </code></pre>
 
-<p>And all of these:</p>
-<pre class="highlight ruby"><code><span class="nb">puts</span> <span class="n">add_two</span> <span class="mi">2</span>
-<span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">puts</span><span class="p">(</span><span class="n">add_two</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">puts</span><span class="p">(</span><span class="n">add_two</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-</code></pre>
+<p>That&rsquo;s it, essentially. Your browser will extract the HTML that is sent as the
+body of the message, and display it.</p>
 
-<p>So when do you use parentheses, and when do you omit them?</p>
+<p>Let&rsquo;s look at the request and response in more detail. What does all of this
+stuff mean, exactly?</p>
 
-<p>There is no clear rule about this, but there are some conventions. For now,
-you can just stick with the convention we are using at our study groups, which
-is:</p>
+<p>HTTP defines that the first line of a request must contain three bits: a
+<strong>verb</strong>, a <strong>resource</strong>, and the version of the protocol. Out of these, we
+only really care about the first two bits, the version is only relevant in way
+more advanced contexts.</p>
 
-<p>Use parentheses for all method calls that take arguments, except for the
-methods <code>puts</code> and <code>p</code> (and later: <code>require</code> and <code>include</code>). Also: if a method
-does not take any arguments, then do not add empty parentheses, omit them.</p>
+<p>The <strong>verb</strong>, also called the &ldquo;method&rdquo;, defines an operation. <code>GET</code> of course
+means just that: <em>&ldquo;Get me this thing, please.&rdquo;</em> The &ldquo;thing&rdquo; we&rsquo;re looking for
+is defined by the second bit on this line: the <strong>resource</strong>, also called the
+path. In our case that&rsquo;s a web page, i.e. some HTML.</p>
 
-<p>So the idiomatic way to write the line above is:</p>
-<pre class="highlight ruby"><code><span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
+<p>HTTP also defines that after this first line there may come any number of
+headers, i.e. key/value pairs, containing meta information about the request.
+In our example these are the hostname that was used in the URL, and the
+(simplified) name of the browser that was used to send the request. Both of
+these actually are mostly for information, and not a core part of the request.</p>
 
-        <nav class="page-nav"><a class="prev" href="/methods/return_values.html">
+<p>Now, let&rsquo;s have a look at the response.</p>
+
+<p>Again, HTTP defines that on the first line there need to be three bits of
+information: The HTTP version number, a status code number, and a status
+description. And again, we can just ignore the version number.</p>
+
+<p>The status code is a way for the responding server to tell our browser what
+<em>type of response</em> this is. Here are some common examples:</p>
+
+<ul>
+<li><code>200 OK</code> means: Everything&rsquo;s cool, here&rsquo;s the thing you were looking for.</li>
+<li><code>301 Moved Permanently</code> means: The thing you are looking for does not exist
+here any more. Here&rsquo;s the place where it has been moved to, look over there.</li>
+<li><code>404 Not Found</code> means: Dunno, this thing does not exist.</li>
+<li><code>500 Internal Server Error</code> means: Ouch, I have run into an internal error on
+my side.</li>
+</ul>
+
+<p>There are lots of other status codes that servers can respond with, here&rsquo;s
+<a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">a list</a>.
+Many of them are very rarely used, and maybe the funniest one is <code>418 I&#39;m a
+teapot</code>.</p>
+
+<p>Anyhow. The status code indicates the type of response, and most of the time,
+for most <code>GET</code> requests, it will be <code>200 OK</code>.</p>
+
+<p>On the following lines, again, there can be key/value pairs that contain
+meta information about the response. In our case it says that the content
+type of the body is <code>text/html</code> (which just means it&rsquo;s HTML).</p>
+
+<p>Now, when there&rsquo;s a body on a request (sometimes requests come with a body,
+too) or response (as in our example), then it needs to be separated from
+the header with an extra, blank line. This tells the browser that we&rsquo;re
+done with the headers, and the rest of the message is the response body
+(the actual content).</p>
+
+<p>To summarize:</p>
+
+<ul>
+<li>A request has, on its first line, a verb (method) and a resource (path). A
+response has, on its first line, a status code and description.</li>
+<li>Both requests and responses can have any number of header key/value pairs
+that contain meta information.</li>
+<li>And both requests and responses can include a body, which needs to be
+separated from the headers with an extra, blank line.</li>
+</ul>
+
+<p>There is, of course, a <em>lot</em> more to say about HTTP, but these are the
+essentials of how computers talk to each other when they speak HTTP, as
+browsers and webservers do. And these also are the basics of what you need
+to know in order to build a simple web application, receive requests, and
+send back responses.</p>
+
+<p>If you are interested in more details, here is a
+<a href="https://speakerdeck.com/rkh/http-rubymonsters-edition">presentation</a>
+that Konstantin Haase, maintainer of Sinatra, gave for Ruby Monstas in early
+2015. Also, the
+<a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Wikipedia page about HTTP</a>
+is an interesting read.</p>
+
+        <nav class="page-nav"><a class="prev" href="/bonus_2/erb.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/methods/writing_methods.html">
+        <nav class="page-nav"><a class="next" href="/exercises.html">
   Next
 </a></nav>
       </article>
