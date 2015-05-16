@@ -74,6 +74,11 @@
   - http
   - rack
   - sinatra
+  - forms
+  - storing_data
+  - sessions
+  - validations
+  - resources
 - path: exercises
   children:
   - numbers
