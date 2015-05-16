@@ -262,6 +262,26 @@
       <priority>0.5</priority>
     </url>
     <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2/forms.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2/storing_data.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2/sessions.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2/validations.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2/resources.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2.html</loc>
       <priority>0.5</priority>
     </url>
@@ -370,6 +390,10 @@
       <priority>0.5</priority>
     </url>
     <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/email-2.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/solutions/strings-3.html</loc>
       <priority>0.5</priority>
     </url>
@@ -378,7 +402,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/email-2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/strings-5.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -499,10 +523,6 @@
     </url>
     <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/solutions/email-1.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/strings-5.html</loc>
       <priority>0.5</priority>
     </url>
 </urlset>
