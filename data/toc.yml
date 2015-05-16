@@ -68,17 +68,6 @@
   - libraries
   - modules
   - private_methods
-  - libraries_2
-  - html
-  - erb
-  - http
-  - rack
-  - sinatra
-  - forms
-  - storing_data
-  - sessions
-  - validations
-  - resources
 - path: exercises
   children:
   - numbers
