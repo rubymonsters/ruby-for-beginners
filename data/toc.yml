@@ -85,7 +85,3 @@
   - mailbox_html
   - mailbox_file
   - mailbox_csv
-  - mailbox_erb
-  - mailbox_sinatra
-  - rubygems
-  - bundler

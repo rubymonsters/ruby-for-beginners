@@ -10,11 +10,15 @@ function run() {
 
 msg=$1
 
-run "git add ."
-run "git commit -am '$msg'"
-run "git push"
+if [ -n "$1" ]; then
+  run "git add -A ."
+  run "git commit -am '$msg'"
+  run "git push"
+fi
+
 run "bundle exec middleman build --verbose"
 run "cd build"
-run "git add ."
+run "git add -A ."
 run "git commit -am 'build'"
 run "git push origin HEAD:gh-pages"
+
