@@ -10,18 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Using Rubygems | Ruby for Beginners</title>
+    <title>Yield | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-8ef2dc26.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/exercises/mailbox_sinatra.html">
-  Previous
-</a></nav>
-    <nav class="page-nav"><a class="next" href="/exercises/bundler.html">
-  Next
-</a></nav>
+    <nav class="page-nav"></nav>
+    <nav class="page-nav"></nav>
 
     <div>
       <nav class="toc">
@@ -350,7 +346,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory expanded">
+  <li class="directory">
     <a href="/exercises.html">
       Exercises
     </a>
@@ -432,22 +428,22 @@
       </li>
       <li>
         <a href="/exercises/mailbox_erb.html">
-          Generating HTML using ERB
+          Mailbox Erb
         </a>
       </li>
       <li>
         <a href="/exercises/mailbox_sinatra.html">
-          Serving HTML using Sinatra
+          Mailbox Sinatra
         </a>
       </li>
-      <li class="active">
+      <li>
         <a href="/exercises/rubygems.html">
-          Using Rubygems
+          Rubygems
         </a>
       </li>
       <li>
         <a href="/exercises/bundler.html">
-          Using Bundler
+          Bundler
         </a>
       </li>
     </ul>
@@ -456,126 +452,18 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Using Rubygems</h1>
+        <h1>Yield</h1>
 
-<p>A data format is a way to represent rich data types (such as Strings, Numbers,
-Arrays, Hashes, and so on) in form of a simple text document that can be stored
-on the local file system, or transferred over the internet.</p>
+<p>TBD</p>
 
-<p><a href="http://en.wikipedia.org/wiki/JSON">JSON</a> is a data format that is
-very common in modern web application development, and it is useful for
-computers to talk to each other, and pass around data. JSON is human readable,
-and pretty similar to, for example, Javascript and Ruby code.</p>
-
-<p>For example, this is a valid piece of JSON:</p>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hi there, Ruby Monstas!"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-02"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ferdous"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Keep on coding!"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-03"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dajana"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-<p>As you can see the syntax is similar to Ruby hashes and arrays: There is an
-outer hash that has a single key <code>&quot;emails&quot;</code>, which is a string. This key&rsquo;s
-value is an array that has two elements, each of which is another hash with the
-keys <code>&quot;subject&quot;</code>, <code>&quot;date&quot;</code>, and <code>&quot;from&quot;</code>.</p>
-
-<p>So, this piece of JSON represents data for a collection of two emails.</p>
-
-<p>In order to read (we say &ldquo;parse&rdquo;) this piece of JSON data in a Ruby application
-we can use the <code>json</code> gem. (You can find it on
-<a href="https://rubygems.org/gems/json">Rubygems.org</a>, too).</p>
-
-<p>You can run <code>gem list json</code> in order to check if this gem is already installed
-on your system. <code>gem install json</code> will install it, and <code>gem update json</code> will
-look for a newer version and install that one if there&rsquo;s one.</p>
-
-<p>Make a new file <code>libraries-1.rb</code>, and add the following lines:</p>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s2">"json"</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="s1">'{
-  "emails": [
-    {
-      "subject": "Hi there, Ruby Monstas!",
-      "date": "2015-01-02",
-      "from": "Ferdous"
-    },
-    {
-      "subject": "Keep on coding!",
-      "date": "2015-01-03",
-      "from": "Dajana"
-    }
-  ]
-}'</span>
-<span class="n">data</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-<span class="nb">p</span> <span class="n">data</span><span class="p">.</span><span class="nf">keys</span>
-
-</code></pre>
-
-<p>If you then run <code>ruby libaries-1.rb</code> you&rsquo;ll see that the method <code>JSON.parse</code> converts
-the string that is stored in the variable <code>data</code> to a Ruby hash, so we can call <code>keys</code>
-on it, and it will output an array with the single key defined on the outer hash:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"emails"</span><span class="p">]</span>
-</code></pre>
-
-<p>Likewise, if you add another line at the end, as follows:</p>
-<pre class="highlight ruby"><code><span class="nb">p</span> <span class="n">data</span><span class="p">[</span><span class="s2">"emails"</span><span class="p">].</span><span class="nf">first</span><span class="p">[</span><span class="s2">"subject"</span><span class="p">]</span>
-
-</code></pre>
-
-<p>You see that <code>data[&quot;emails&quot;]</code> returns the array stored on that key, so we can call <code>first</code>
-on it, which returns the first hash in that array, and we can finally fetch the value
-for the key <code>&quot;subject&quot;</code> stored on that hash.</p>
-
-<p>So this prints out <code>&quot;Hi there, Ruby Monstas!&quot;</code>.</p>
-
-<p>By the way, if you&rsquo;ve read the bonus chapter on
-<a href="/bonus_1/alternative-syntax.html">Alternative Syntax</a> then you may
-have notices that we also have a perfect example of a usecase for the <code>%(..)</code>
-string syntax here:</p>
-
-<p>JSON data will often contain double quotes (for any string), and often contain
-single quotes. Since JSON data, as a whole, needs to be a plain Ruby string
-when defined inside of your Ruby code, this is a great usecase for this syntax.</p>
-
-<p>Like this:</p>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s2">"json"</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="sx">%({
-  "emails": [
-    {
-      "subject": "Here's this week's homework!!",
-      "date": "2015-01-04",
-      "from": "Ariane"
-    }
-  ]
-})</span>
-<span class="n">data</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-<span class="nb">p</span> <span class="n">data</span><span class="p">[</span><span class="s2">"emails"</span><span class="p">].</span><span class="nf">first</span><span class="p">[</span><span class="s2">"subject"</span><span class="p">]</span>
-</code></pre>
-
-        <nav class="page-nav"><a class="prev" href="/exercises/mailbox_sinatra.html">
-  Previous
-</a></nav>
-        <nav class="page-nav"><a class="next" href="/exercises/bundler.html">
-  Next
-</a></nav>
+        <nav class="page-nav"></nav>
+        <nav class="page-nav"></nav>
       </article>
     </div>
 
     <footer>
       <ul>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
         <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
         <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
         <li><a href="https://twitter.com/rubymonsters">Twitter</a></li>

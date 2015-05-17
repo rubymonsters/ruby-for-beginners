@@ -238,6 +238,14 @@
       <priority>0.5</priority>
     </url>
     <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2/procs.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2/yield.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/bonus_2.html</loc>
       <priority>0.5</priority>
     </url>
@@ -302,22 +310,6 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/mailbox_erb.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/mailbox_sinatra.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/rubygems.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/exercises/bundler.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/exercises.html</loc>
       <priority>0.5</priority>
     </url>
@@ -358,7 +350,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/email-2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/strings-6.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -370,7 +362,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-3.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/email-2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -478,7 +470,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/strings-6.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-3.html</loc>
       <priority>0.5</priority>
     </url>
 </urlset>
