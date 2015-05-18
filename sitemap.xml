@@ -362,19 +362,15 @@
       <priority>0.5</priority>
     </url>
     <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-3.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/solutions/email-2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-4.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-5.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/hashes_1-1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -470,7 +466,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-3.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions/arrays_1-4.html</loc>
       <priority>0.5</priority>
     </url>
 </urlset>

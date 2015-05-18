@@ -14,13 +14,13 @@
 
 <span class="c1"># Using inject is a better, because more succinct:</span>
 <span class="c1">#</span>
-<span class="c1"># numbers = numbers.map do |row|</span>
-<span class="c1">#   row.inject(0) { |result, number| sum + number }</span>
+<span class="c1"># sums = numbers.map do |row|</span>
+<span class="c1">#   row.inject(0) { |sum, number| sum + number }</span>
 <span class="c1"># end</span>
 <span class="c1">#</span>
 <span class="c1"># And you can even do:</span>
 <span class="c1">#</span>
-<span class="c1"># numbers = numbers.map { |row| row.inject(&amp;:+) }</span>
+<span class="c1"># sums = numbers.map { |row| row.inject(&amp;:+) }</span>
 <span class="c1">#</span>
 <span class="c1"># This last solution is pretty "magical", and hard to explain at this point.</span>
 <span class="c1"># But we thought we'd show it :)</span>
