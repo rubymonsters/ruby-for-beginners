@@ -7,7 +7,7 @@ If you think about this, it makes sense: If everything is an object then
 numbers are objects. If "doing things" means operating with methods by the way
 of calling them, then what would `+` be? A method of course.
 
-But if we call methods on objects using that dot `.` notation, then were are
+But if we call methods on objects using that dot `.` notation, then where are
 the dots in `2 + 3 * 4`?
 
 The trick is: Ruby adds them for you, silently. If you write the following code:

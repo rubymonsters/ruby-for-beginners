@@ -7,7 +7,7 @@ ask a string or array for their class:
 $ irb
 > "this is a string".class
 => String
-> ["an", "arrray"].class
+> ["an", "array"].class
 => Array
 ```
 

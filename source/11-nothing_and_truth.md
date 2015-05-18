@@ -48,9 +48,9 @@ These predicate methods always return either `true` or `false`.
 The objects `true` and `false` also have classes, and you can check that in
 IRB yourself: `nil.class`, `true.class` and `false.class`.
 
-For a reason that we don't know Matz has decided to call these classes
-`NilClass`, `TrueClass` and `FalseClass`, instead of just `Nil`, `True` and
-`False`. If you ever meet him at a conference you can ask him :)
+For a reason that we don't know Matz (the creator of Ruby) has decided to call
+these classes `NilClass`, `TrueClass` and `FalseClass`, instead of just `Nil`,
+`True` and `False`. If you ever meet him at a conference you can ask him :)
 
 
 #### Truthiness and falsiness
