@@ -15,13 +15,13 @@ p sums
 
 # Using inject is a better, because more succinct:
 #
-# numbers = numbers.map do |row|
-#   row.inject(0) { |result, number| sum + number }
+# sums = numbers.map do |row|
+#   row.inject(0) { |sum, number| sum + number }
 # end
 #
 # And you can even do:
 #
-# numbers = numbers.map { |row| row.inject(&:+) }
+# sums = numbers.map { |row| row.inject(&:+) }
 #
 # This last solution is pretty "magical", and hard to explain at this point.
 # But we thought we'd show it :)
