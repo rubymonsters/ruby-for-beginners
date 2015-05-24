@@ -61,6 +61,10 @@ different order, and from a different angle.
 * [Code School](http://www.codeschool.com)
 * [Odin Project](http://www.theodinproject.com/ruby-programming)
 
+#### Puzzles
+
+* [Ruby Warrior](https://www.bloc.io/ruby-warrior) by Ryan Bates and Bloc.io
+
 #### Role model stories
 
 * [It Takes a Village to Make a Programmer ](https://www.youtube.com/watch?v=FHNrw7aiKOE) by Michele Guido
