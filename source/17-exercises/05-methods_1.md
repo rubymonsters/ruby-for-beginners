@@ -74,8 +74,6 @@ This should print out:
 
 ```
 true
-true
-false
 false
 ```
 
