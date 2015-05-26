@@ -30,8 +30,10 @@ that format our emails in a different way, suitable to be displayed in other
 media.
 
 And that's what this exercise is about: We want to display our mailbox contents
-in HTML, the format that browsers like to use (http://webapps-for-beginners.rubymonstas.org/html.html). This will be our first step
-towards learning how to build a web application.
+in HTML, the format that browsers like to use. If you are unfamiliar with what
+HTML is, and how it looks like, you can read up on it
+[here](http://webapps-for-beginners.rubymonstas.org/html.html).
+This will be our first step towards learning how to build a web application.
 
 ## Model, View, Controller
 
