@@ -68,6 +68,9 @@
   - libraries
   - modules
   - private_methods
+  - procs
+  - yield
+  - regular_expressions
 - path: exercises
   children:
   - numbers
