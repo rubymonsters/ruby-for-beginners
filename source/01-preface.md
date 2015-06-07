@@ -3,11 +3,13 @@
 Read this book at your own pace, and do exercises at your own pace.
 
 We recommend reading at least a page a day (ideally more), and taking some more
-time at least once a week in addition to the weekly meeting on Mondays. It often
+time, at least once a week, in addition to the weekly meeting on Mondays. It often
 helps to meet with others, have some coffee and cake, and hang out while reading some
 more of this book, or doing a few exercises together.
 
-Read the book from beginning to end, and do exercises as you like.
+We suggest that you read the book from beginning to end, and do exercises as you go.
+If you come across chapters that you feel are too theoretical you can skip them for
+the time being and come back to them later, if needed.
 
 If you'd prefer to jump right in, you can also skip over the introductory
 chapters. Jump to the chapter "Your tools", and read the introductory
@@ -22,17 +24,16 @@ group so we can talk about them in the group.
 
 Please help us improve this book for others: Whenever you find something unclear
 or missing then please tell us. You can do this during the study group, email the
-mailing list, or ideally
-[file an issue here](https://github.com/rubymonsters/learning_ruby/issues/new).
-(This also helps you get familiar with GitHub, which we'll use a lot, later on.)
+mailing list, or ideally file an issue [here](https://github.com/rubymonsters/learning_ruby/issues/new).
+(This also helps you get familiar with GitHub, which we will use a lot later on.)
 
 By using the name "Ada" in examples in this book we give credit to Ada
 Lovelace, the world's [first computer programmer](http://en.wikipedia.org/wiki/Ada_Lovelace) :)
 
 ## Resources
 
-We recommend looking at, reading, and working through other resources as well,
-as much as you can. Every beginners book puts things a little differently, in a
+We also recommend looking at, reading, and working through other resources,
+as much as you can. Every beginners book expresses things a little bit differently, in a
 different order, and from a different angle.
 
 ### Overview
@@ -68,7 +69,7 @@ different order, and from a different angle.
 
 ### Role model stories
 
-* [It Takes a Village to Make a Programmer ](https://www.youtube.com/watch?v=FHNrw7aiKOE) by Michele Guido
+* [It Takes a Village to Make a Programmer](https://www.youtube.com/watch?v=FHNrw7aiKOE) by Michele Guido
 * [Rails Girls Berlin Success Stories](http://railsgirlsberlin.de/category/success-stories)
 
 ### Resources for coaches
