@@ -7,7 +7,7 @@ same.
 
 ## Exercise 1.1
 
-In `irb`, calcluate:
+In `irb`, calculate:
 
 * How many hours are in a year.
 * How many minutes are in a decade?

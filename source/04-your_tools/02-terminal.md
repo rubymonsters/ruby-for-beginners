@@ -4,7 +4,7 @@ Every operating system comes with some kind of terminal application built in,
 and they'll be fine to use for us.
 
 A terminal is an application that doesn't do much more but provide a window to
-run another program, called a "shell". A shell is a text based program, so it
+run another program, called a "shell". A shell is a text-based program, so it
 does not have a window, and thus needs the terminal to be run on your graphical
 user interface.
 
