@@ -50,7 +50,7 @@ is also a tool that's great for learning to program.
 
 On top of all this, there's also the problem that the tools we use, over
 time, become more and more optimized for advanced users. New features are being
-added that make our day to day work easier, and over the years, up-to-date
+added that make our day-to-day work easier, and over the years, up-to-date
 documentation and tutorials will focus on these features.
 
 While that's great for advanced users, it's sometimes bad for beginners, as you
@@ -99,4 +99,4 @@ understand them once we get there during study group.
   (they've gone, for good reasons, from being numbered to being timestamped,
   making the naming choice `migrate:up` and `migrate:down` harder to
   understand; and they've introduced the method `change`, replacing the methods
-  `up` and `down`)
+  `up` and `down`).
