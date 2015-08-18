@@ -19,3 +19,5 @@ walk you through the basics of building an actual
 
 You can [find the source code here](https://github.com/rubymonsters/ruby-for-beginners).
 
+If you'd like to print this book, or export it as a PDF try using [this page](/print.html),
+which is a single-page version of the entire book.

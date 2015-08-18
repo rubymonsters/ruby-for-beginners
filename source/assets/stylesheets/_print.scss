@@ -1,0 +1,30 @@
+@media print {
+  nav, .menu {
+    display: none
+  }
+  @page {
+    /* margin: 2em; */
+  }
+  h1, h2, h3 {
+     page-break-after: avoid;
+  }
+  article {
+     page-break-before: always;
+  }
+  ul, ol {
+     page-break-before: avoid;
+  }
+  body > div {
+    padding: 0;
+  }
+  body, a {
+    color: #000;
+  }
+  a {
+    word-wrap: break-word;
+  }
+  a[href^="http://"]:after, a[href^="https://"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+}
