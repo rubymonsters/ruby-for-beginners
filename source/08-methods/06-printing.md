@@ -4,7 +4,7 @@ Many of the exercises that you do while doing your first steps with Ruby
 basics include running a short Ruby program that outputs something to the
 terminal.
 
-So far, we have used the method `puts` to do that.
+So far, we have mostly used the method `puts` to do that.
 
 However, there's another method that is even more useful when we are trying
 to figure out what a program is doing, why it is doing it, and what a certain

@@ -46,17 +46,26 @@ from 1993. It has been written by Alan C. Kay, one of the designers of
 1970s, and can be considered the first fully object oriented programming
 language:
 
-"[Smalltalk's] way of making objects is quite Platonic in that some of them act
+*"[Smalltalk's] way of making objects is quite Platonic in that some of them act
 as idealizations of concepts—Ideas—from which manifestations can be created.
 That the Ideas are themselves manifestations (of the Idea-Idea) and that the
 Idea-Idea is a-kind-of Manifestation-Idea—which is a-kind-of itself, so that
 the system is completely self-describing— would have been appreciated by Plato
-as an extremely practical joke." -- Alan C. Kay
+as an extremely practical joke." -- Alan C. Kay*
 
-(There is, today, some debate about the paradigm of object-oriented
+So, the basic idea of Ruby's design, when it comes to its object orientation,
+dates back to Alan C. Kay's ideas in the 1970s.
+
+Anyhow, you can take away from all of this that those universes that we create
+when we write programs will be populated by objects ("things"), which
+characteristics are defined by classes ("types of things", or "ideas").
+
+<p class="hint">
+There is, today, some debate about the paradigm of object-oriented
 programming, and whether we should move on to another one, called "functional
 programming". You might hear about this if you talk to developers. Some
 functional languages are Haskell, Go, and Clojure, and they have recently
 started gaining some traction. Don't let yourself be distracted by this too
 much, unless you really want to. Ruby is a very good language to start learning
-programming for lots of reasons.)
+programming for lots of reasons.
+</p>

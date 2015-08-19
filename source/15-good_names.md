@@ -119,3 +119,8 @@ reasoning applies to method names, class names, ... basically any name that you 
 Great names reveal your intention while you write this code. They talk about
 the purpose of your code, and explain things to your fellow developers.
 
+Oh, and if you're curious to read more about this, here is an interesting presentation on
+[How to name things](http://www.slideshare.net/pirhilton/how-to-name-things-the-hardest-problem-in-programming)
+as well as a blog post on what programmers find the
+[hardest tasks](http://www.itworld.com/article/2833265/cloud-computing/don-t-go-into-programming-if-you-don-t-have-a-good-thesaurus.html)
+they face (guess what, it's naming things ...).

@@ -16,14 +16,18 @@
   - workflow
   - irb
 - object_oriented_programming
-- path: built_in_classes
+- path: built_in_classes_1
   children:
   - numbers
   - strings
-  - symbols
+- variables_1
+- path: built_in_classes_2
+  children:
   - arrays
   - hashes
-- variables
+  - symbols
+  - true_false_nil
+- variables_2
 - path: methods
   children:
   - return_values

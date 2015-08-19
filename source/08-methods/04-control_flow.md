@@ -1,8 +1,9 @@
 # Flow of execution
 
-One of the things we, as programmers, have assimilated so much that we forget
-to explain to beginners is how, and in what exact order, Ruby goes through your
-program. This is called the "flow of execution", or "control flow".
+One of the things that we, as programmers, have assimilated so much that we
+forget to explain to beginners is how, and in what exact order, Ruby goes
+through your program. This is called the "flow of execution", or "control
+flow".
 
 When you execute a Ruby file with the `ruby` runtime then it will read your
 Ruby code and start executing it line by line, from top to bottom.
