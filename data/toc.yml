@@ -15,59 +15,65 @@
   - ruby_runtime
   - workflow
   - irb
+- roadmap
 - object_oriented_programming
-- path: built_in_classes_1
+- path: built_in_classes
   children:
   - numbers
   - strings
-- variables_1
-- path: built_in_classes_2
-  children:
-  - arrays
-  - hashes
-  - symbols
   - true_false_nil
-- variables_2
-- path: methods
+- path: variables
+  children:
+  - reusing_names
+  - right_goes_first
+- path: objects
+  children:
+  - classes
+  - methods
+- path: writing_methods
   children:
   - return_values
+  - scopes
+  - control_flow
+  - printing
   - parentheses
   - writing_methods
-  - control_flow
-  - scopes
-  - printing
-- path: everything_an_object
+- path: writing_classes
   children:
-  - object_classes
-  - object_methods
-- string_interpolation
-- nothing_and_truth
+  - initializers
+  - instance_variables
+  - attribute_readers
+  - attribute_writers
+  - state_and_behaviour
+  - interaction
+- path: more_built_in_classes
+  children:
+  - symbols
+  - arrays
+  - hashes
 - path: blocks
   children:
   - block_syntax
   - block_arguments
   - block_return_values
-- path: bonus_1
+- path: conditionals
   children:
-  - operator_methods
+  - nothing_and_truth
+- path: operators
+  children:
+  - arithmetical
+  - logical
+  - comparison
+  - methods
+- path: bonus
+  children:
+  - string_interpolation
   - predicate_methods
   - other_methods
   - questions_commands
-  - conditionals
-  - operators
-  - arithmetical_operators
-  - logical_operators
-  - comparison_operators
   - alternative-syntax
-- path: writing_classes
-  children:
-  - initializing_objects
-  - instance_variables
-  - attribute_readers
-  - attribute_writers
-  - state_and_behaviour
-- good_names
-- path: bonus_2
+  - good_names
+- path: advanced
   children:
   - libraries
   - modules

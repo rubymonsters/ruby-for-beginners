@@ -17,7 +17,7 @@ talking about. And you can start working on our next curriculum which will
 walk you through the basics of building an actual
 [web application](http://webapps-for-beginners.rubymonstas.org).
 
-You can [find the source code here](https://github.com/rubymonsters/ruby-for-beginners).
-
 If you'd like to print this book, or export it as a PDF try using [this page](/print.html),
 which is a single-page version of the entire book.
+
+You can find the [source code of this book here](https://github.com/rubymonsters/ruby-for-beginners).

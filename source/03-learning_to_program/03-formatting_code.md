@@ -17,16 +17,17 @@ end
 ```
 
 Even without understanding what these few lines of code do at all, from just
-looking at it once can recognize a certain structure: things are somehow
+looking at it one can recognize a certain structure: things are somehow
 nested, and stuff that sits on the same horizontal indentation relates to
 each other visually.
 
 On the other hand the following code also is perfectly valid Ruby code, in the
 sense that Ruby will happily run it, and it does exactly the same. However,
-we'd clearly feel this code is not formatted well at all:
+it is not formatted very well at all (in fact it's quite a mess, isn't it?):
 
 ```ruby
-  def widths (row )
+  def widths (     row
+)
  row.map do | cell| cell.width
 end
      end
