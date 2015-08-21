@@ -24,7 +24,14 @@ just see how it works in Ruby.
 The object <code>nil</code> represents "nothing".
 </p>
 
-For example, remember our code example from the chapter about [Arrays](/built_in_classes/arrays.html):
+You'll see later that every operation ("method") in Ruby always returns
+exactly one thing (i.e. one object), and that's why there needs to be a
+"thing" that represents "nothing".
+
+This will start to feel pretty natural to you pretty soon.
+
+<!--
+For example, remember our code example from the chapter about [Arrays](/more_built_in_classes/arrays.html):
 
 ```ruby
 $ irb
@@ -56,3 +63,4 @@ exactly one thing (i.e. one object), and that's why there needs to be a
 "thing" that represents "nothing".
 
 This will start to feel pretty natural to you pretty soon.
+-->

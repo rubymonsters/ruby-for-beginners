@@ -42,7 +42,7 @@ Using the "type" of an object as a variable name, or part of a variable name,
 usually is not a very good idea: `string`, `array`, `hash` often are bad names,
 except in contexts where the type of the object is all that matters. One example
 for such a context is the method definition `def encrypt(string)` in the
-<a href="/bonus_2/modules.html">Modules</a> chapter.
+<a href="/advanced/modules.html">Modules</a> chapter.
 
 In our case it makes sense to name these arguments `subject` and `date` in the
 first place, in order to make it easier for others to understand the purpose of

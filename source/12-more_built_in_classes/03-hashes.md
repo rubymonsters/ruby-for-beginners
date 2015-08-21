@@ -114,7 +114,7 @@ Hashes](/exercises/hashes_1.html).
 
 ## Hash syntax confusion
 
-You can skip the following and jump right to the chapter [Symbols](/built_in_classes_2/symbols.html),
+You can skip the following and jump right to the chapter [Blocks](/blocks.html),
 or you can keep reading if you're curious.
 
 We've found it's important for us to explain the following somewhere in our

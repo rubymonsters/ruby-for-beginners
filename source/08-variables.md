@@ -52,7 +52,7 @@ notes stuck onto actual objects.
 </p>
 
 However, also note that it makes sense to try and pick names that reveal your
-intention. The chapter <a href="/good_names.html">Using the right words</a> at
+intention. The chapter <a href="/bonus/good_names.html">Using the right words</a> at
 the end of this book will talk more about this. Feel free to jump ahead if you
 are curious.
 

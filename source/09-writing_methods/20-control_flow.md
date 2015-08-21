@@ -3,7 +3,7 @@
 Feel free to skip this chapter if you feel you understand the flow of
 how Ruby goes through a program, defines a method, then calls it, returns
 from it, maybe calls another method and so on. We've discussed this
-[before](/methods.html). But since this is a confusing topic
+[before](/writing_methods.html). But since this is a confusing topic
 to some, we'll also go over it again.
 
 One of the things that we, as programmers, have assimilated so much that we

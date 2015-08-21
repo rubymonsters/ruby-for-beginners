@@ -28,7 +28,7 @@ Strings can be defined by enclosing any text with single or double quotes.
 
 Both of these are good to use. Technically they are *almost* the same, except
 for one important feature called "String interpolation", which we'll [explain
-later](/string_interpolation.html).
+later](/bonus/string_interpolation.html).
 
 ### Things you can do with Strings
 

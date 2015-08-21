@@ -49,7 +49,7 @@ Sometimes you need to define a string that itself contains (or may contain, in
 future versions) the same quote character that you've used to define the string.
 For example, if you have a string that contains the string `"Name"`, including
 the quotes, but in the same string you'd also like to use
-<a href="/string_interpolation.html">String interpolation</a>, so you'd normally
+[String interpolation](/bonus/string_interpolation.html), so you'd normally
 use double quotes to define the string. In that case you'd need to escape the
 double quotes that are contained in your string.
 

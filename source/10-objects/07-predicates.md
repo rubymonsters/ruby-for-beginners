@@ -83,7 +83,7 @@ Let's try `zero?` as a last example.
 Oh, by the way, if you're curious why these method names all start with a colon,
 check the chapter about [Symbols](/more_built_in_classes/symbols.html). And if
 you're curious why operators like `*`, `+`, `-` and so on are also listed here,
-check the chapter that explains that [operators are methods, too](/13-operators/methods.html).
+check the chapter that explains that [operators are methods, too](/operators/methods.html).
 
 Alright, we now have discussed how objects, classes, and methods relate to each other.
 And we've learned how to call (use) methods on objects like Strings and numbers.
