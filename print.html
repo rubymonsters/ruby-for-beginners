@@ -1575,7 +1575,7 @@ Strings can be defined by enclosing any text with single or double quotes.
 </p>
 
 <p>Both of these are good to use. Technically they are <em>almost</em> the same, except
-for one important feature called &ldquo;String interpolation&rdquo;, which we&rsquo;ll <a href="/string_interpolation.html">explain
+for one important feature called &ldquo;String interpolation&rdquo;, which we&rsquo;ll <a href="../bonus/string_interpolation.html">explain
 later</a>.</p>
 
 <h3>Things you can do with Strings</h3>
@@ -1685,34 +1685,46 @@ just see how it works in Ruby.</p>
 The object <code>nil</code> represents &ldquo;nothing&rdquo;.
 </p>
 
-<p>For example, remember our code example from the chapter about <a href="/built_in_classes/arrays.html">Arrays</a>:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="s2">"one"</span>
-<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="s2">"two"</span>
-</code></pre>
-
-<p>This lookups return <code>&quot;one&quot;</code>, and <code>&quot;two&quot;</code>, because the array contains elements
-on these positions.</p>
-
-<p>What if we print out the element on <code>3</code> (the fourth position) though, or <code>4</code>,
-which do not exist not exist?</p>
-
-<p>Right, we get back <code>nil</code>, meaning &ldquo;nothing&rdquo;:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="kp">nil</span>
-<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="kp">nil</span>
-</code></pre>
-
-<p>You&rsquo;ll learn later that every operation (&ldquo;method&rdquo;) in Ruby always returns
+<p>You&rsquo;ll see later that every operation (&ldquo;method&rdquo;) in Ruby always returns
 exactly one thing (i.e. one object), and that&rsquo;s why there needs to be a
 &ldquo;thing&rdquo; that represents &ldquo;nothing&rdquo;.</p>
 
 <p>This will start to feel pretty natural to you pretty soon.</p>
+
+<!--
+For example, remember our code example from the chapter about [Arrays](/more_built_in_classes/arrays.html):
+
+```ruby
+$ irb
+> words = [&ldquo;one&rdquo;, &ldquo;two&rdquo;, &ldquo;three&rdquo;]
+> words[0]
+=> &ldquo;one&rdquo;
+> words[1]
+=> &ldquo;two&rdquo;
+&ldquo;`
+
+This lookups return `&quot;one&rdquo;`, and `&ldquo;two&rdquo;`, because the array contains elements
+on these positions.
+
+What if we print out the element on `3` (the fourth position) though, or `4`,
+which do not exist not exist?
+
+Right, we get back `nil`, meaning &ldquo;nothing&rdquo;:
+
+&ldquo;`ruby
+> words = [&quot;one&rdquo;, &ldquo;two&rdquo;, &ldquo;three&rdquo;]
+> words[3]
+=> nil
+> words[4]
+=> nil
+&ldquo;`
+
+You&rsquo;ll learn later that every operation (&quot;method&rdquo;) in Ruby always returns
+exactly one thing (i.e. one object), and that&rsquo;s why there needs to be a
+&ldquo;thing&rdquo; that represents &ldquo;nothing&rdquo;.
+
+This will start to feel pretty natural to you pretty soon.
+&ndash;>
 
   <h1>Variables</h1>
 
@@ -1764,7 +1776,7 @@ notes stuck onto actual objects.
 </p>
 
 <p>However, also note that it makes sense to try and pick names that reveal your
-intention. The chapter <a href="/good_names.html">Using the right words</a> at
+intention. The chapter <a href="/bonus/good_names.html">Using the right words</a> at
 the end of this book will talk more about this. Feel free to jump ahead if you
 are curious.</p>
 
@@ -2819,7 +2831,7 @@ same name, but also different ones:</p>
 <p>Oh, by the way, if you&rsquo;re curious why these method names all start with a colon,
 check the chapter about <a href="../more_built_in_classes/symbols.html">Symbols</a>. And if
 you&rsquo;re curious why operators like <code>*</code>, <code>+</code>, <code>-</code> and so on are also listed here,
-check the chapter that explains that <a href="/13-operators/methods.html">operators are methods, too</a>.</p>
+check the chapter that explains that <a href="../operators/methods.html">operators are methods, too</a>.</p>
 
 <p>Alright, we now have discussed how objects, classes, and methods relate to each other.
 And we&rsquo;ve learned how to call (use) methods on objects like Strings and numbers.</p>
@@ -3715,7 +3727,7 @@ one is to retrieve a certain element by the way of referring to its position:
 <span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </code></pre>
 
-<p>Do you reckognize how we use a <a href="/variables_1.html">variable</a> to assign a name
+<p>Do you reckognize how we use a <a href="../variables.html">variable</a> to assign a name
 to our Array here?</p>
 
 <p><code>words[1]</code> means: from the Array <code>words</code> get the element at position
@@ -3900,7 +3912,7 @@ Hashes</a>.</p>
 
 <h2>Hash syntax confusion</h2>
 
-<p>You can skip the following and jump right to the chapter <a href="/built_in_classes_2/symbols.html">Symbols</a>,
+<p>You can skip the following and jump right to the chapter <a href="../blocks.html">Blocks</a>,
 or you can keep reading if you&rsquo;re curious.</p>
 
 <p>We&rsquo;ve found it&rsquo;s important for us to explain the following somewhere in our
@@ -4898,7 +4910,7 @@ the Ruby community.</p>
 future versions) the same quote character that you&rsquo;ve used to define the string.
 For example, if you have a string that contains the string <code>&quot;Name&quot;</code>, including
 the quotes, but in the same string you&rsquo;d also like to use
-<a href="/string_interpolation.html">String interpolation</a>, so you&rsquo;d normally
+<a href="string_interpolation.html">String interpolation</a>, so you&rsquo;d normally
 use double quotes to define the string. In that case you&rsquo;d need to escape the
 double quotes that are contained in your string.</p>
 
@@ -5038,7 +5050,7 @@ a date.</p>
 usually is not a very good idea: <code>string</code>, <code>array</code>, <code>hash</code> often are bad names,
 except in contexts where the type of the object is all that matters. One example
 for such a context is the method definition <code>def encrypt(string)</code> in the
-<a href="/bonus_2/modules.html">Modules</a> chapter.</p>
+<a href="/advanced/modules.html">Modules</a> chapter.</p>
 
 <p>In our case it makes sense to name these arguments <code>subject</code> and <code>date</code> in the
 first place, in order to make it easier for others to understand the purpose of

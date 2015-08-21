@@ -565,34 +565,46 @@ just see how it works in Ruby.</p>
 The object <code>nil</code> represents &ldquo;nothing&rdquo;.
 </p>
 
-<p>For example, remember our code example from the chapter about <a href="/built_in_classes/arrays.html">Arrays</a>:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="s2">"one"</span>
-<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="s2">"two"</span>
-</code></pre>
-
-<p>This lookups return <code>&quot;one&quot;</code>, and <code>&quot;two&quot;</code>, because the array contains elements
-on these positions.</p>
-
-<p>What if we print out the element on <code>3</code> (the fourth position) though, or <code>4</code>,
-which do not exist not exist?</p>
-
-<p>Right, we get back <code>nil</code>, meaning &ldquo;nothing&rdquo;:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="kp">nil</span>
-<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-<span class="o">=&gt;</span> <span class="kp">nil</span>
-</code></pre>
-
-<p>You&rsquo;ll learn later that every operation (&ldquo;method&rdquo;) in Ruby always returns
+<p>You&rsquo;ll see later that every operation (&ldquo;method&rdquo;) in Ruby always returns
 exactly one thing (i.e. one object), and that&rsquo;s why there needs to be a
 &ldquo;thing&rdquo; that represents &ldquo;nothing&rdquo;.</p>
 
 <p>This will start to feel pretty natural to you pretty soon.</p>
+
+<!--
+For example, remember our code example from the chapter about [Arrays](/more_built_in_classes/arrays.html):
+
+```ruby
+$ irb
+> words = [&ldquo;one&rdquo;, &ldquo;two&rdquo;, &ldquo;three&rdquo;]
+> words[0]
+=> &ldquo;one&rdquo;
+> words[1]
+=> &ldquo;two&rdquo;
+&ldquo;`
+
+This lookups return `&quot;one&rdquo;`, and `&ldquo;two&rdquo;`, because the array contains elements
+on these positions.
+
+What if we print out the element on `3` (the fourth position) though, or `4`,
+which do not exist not exist?
+
+Right, we get back `nil`, meaning &ldquo;nothing&rdquo;:
+
+&ldquo;`ruby
+> words = [&quot;one&rdquo;, &ldquo;two&rdquo;, &ldquo;three&rdquo;]
+> words[3]
+=> nil
+> words[4]
+=> nil
+&ldquo;`
+
+You&rsquo;ll learn later that every operation (&quot;method&rdquo;) in Ruby always returns
+exactly one thing (i.e. one object), and that&rsquo;s why there needs to be a
+&ldquo;thing&rdquo; that represents &ldquo;nothing&rdquo;.
+
+This will start to feel pretty natural to you pretty soon.
+&ndash;>
 
         <nav class="page-nav"><a class="prev" href="/built_in_classes/strings.html">
   Previous
