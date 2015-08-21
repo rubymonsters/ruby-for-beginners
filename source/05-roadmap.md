@@ -48,26 +48,25 @@ In order to do things with objects, and form readable sentences (code) we
 need to be able to assign names to them. This chapter explains variables in
 Ruby.
 
-### 4. Objects, Classes, Methods
+### 4. Writing Methods
 
-This chapter explores how objects and classes relate to each other, how
-methods can be called on objects, how to create new objects from classes,
-and what's up with that magic, so-called top-level object in Ruby.
+While variables give names to things, methods give names to behaviour.  Methods
+are like the swiss-army knife of programming.  We'll have a look at the anatomy
+of a method, and learn how we can define our own ones.
 
-### 5. Writing Methods
+### 5. Objects, Classes, Methods
 
-Now that we know how existing methods can be used on built-in objects, it
-is time to look at the anatomy of a method, and learn how we can define
-our own ones.
+This chapter discusses how objects and classes relate to each other, how
+methods can be called on objects, and explores a number of different methods.
+It also has a quick look to see what's up with that magic, so-called top-level
+object in Ruby.
 
 ### 6. Writing Classes
 
 With this knowledge at hand we can now go ahead and define our first class
-(kind of thing) ourselves (instead of using the ones that Ruby predefines):
-
-We'll define the class `Person`, create some "people" (objects), and let
-them interact. We'll learn how to make our objects "know" things, and how
-to give them "behaviour".
+(kind of thing) ourselves: We'll define the class `Person`, create some
+"people" (objects), and let them interact. We'll learn how to make our objects
+"know" things, and how to give them "behaviour".
 
 ### 7. More Built-in Classes: Symbols, Arrays, and Hashes
 
@@ -108,6 +107,8 @@ and the assignment operator `=`).
 
 We'll look at a few more, and also reveal that operators, in fact, are ...
 methods in disguise!
+
+### Bonus and advanced topics
 
 This concludes the core of our "Ruby For Beginners" curriculum. With this
 knowledge you'll have all the tools you need in order to play with things, read

@@ -3,9 +3,9 @@
 *Symbols are like strings, except they are code.*
 
 Symbols are a rather strange concept to be honest, and we only introduce them
-this early because symbols are used so often and widely that you'll very likely
-find them used in code elsewhere. For your first steps in learning programming
-we would not necessarily need them.
+because symbols are used so often and widely that you'll very likely find them
+used in code elsewhere. For your first steps in learning programming we would
+not necessarily need them.
 
 A symbol is written like this: `:something`
 

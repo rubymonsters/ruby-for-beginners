@@ -21,11 +21,16 @@ You see that we add a method called `initialize` to the class, and this method
 accepts a single argument, which is called `name`. At the moment, this method
 is still empty. We'll add some code to it in a bit.
 
-On formatting: the method definition is indented by one level, that is, 2
+The method definition is indented by one level, that is, 2
 spaces. We do this in order to signal that the method `initialize` belongs
 to the class `Person`. Everything between the line `class Person` and the
 final line `end` is called the "class body", and just like method bodies we
 indent them by one more level.
+
+<p class="hint formatting">
+On formatting: the keywords <code>class</code> and <code>end</code> sit on
+the same level. The class body is indented by one level.
+</p>
 
 The important bit to learn for you is: the method `initialize` is a special
 method with a special meaning in Ruby:
@@ -43,6 +48,11 @@ Person.new("Ada")
 
 ... and the string `"Ada"` will be passed on to our `initialize` method, and
 end up being assigned to the local variable `name`.
+
+<p class="hint">
+The special method <code>initialize</code> is called under the hood when the
+object has been created by the class method <code>new</code>.
+</p>
 
 Obviously, our `initialize` method does not *do* anything with the String
 passed, yet. That's right. We'll get to that in the next chapter.

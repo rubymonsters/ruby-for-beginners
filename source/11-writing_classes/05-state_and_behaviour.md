@@ -46,16 +46,13 @@ there's a method `name`, which is an attribute reader, so we can ask our person
 object for their name. But there's no way for others to give a new name to the
 person, because there's no method for that, no attribute writer `name=`.
 
-This concept is called encapsulation, and it is one of the main motivations
+This concept is called *encapsulation*, and it is one of the main motivations
 behind the whole paradigm of object-oriented programing:
 
-We can say that an object encapsulates state, which is private to the object,
-and exposes behaviour by the way of having publicly accessible methods.
+We can say that an object encapsulates state (data, knowledge), which is
+private to the object, and exposes behaviour by the way of having publicly
+accessible methods.
 
 So, we have now created our first little class, and it's one that you could
 actually see in real applications.
 
-Congratulations on making it this far!
-
-With this you now have all the knowledge that you need in order to write your
-own Ruby programs and tools in an object-oriented way.

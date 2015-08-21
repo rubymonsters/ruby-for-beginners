@@ -59,6 +59,10 @@ So, yeah, we can see that, after calling `person.password=("super secret")`
 the object now has an instance variable defined, i.e., the person now knows
 their password, too.
 
+<p class="hint">
+An attribute writer allows setting an instance variable.
+</p>
+
 That method call looks a little odd though, doesn't it?
 
 Remember what we've said above about the syntax sugar that Ruby adds for the

@@ -5,11 +5,11 @@
 Since in Ruby "everything is an object", we have worked with objects quite a
 bit already.
 
-We've created numbers, strings, arrays, and hashes. We have also looked at
-their class names by calling, e.g. `"a string".class`, and we have explored
-some other methods that these objects have. We have also talked about how you
-can define your own methods, and how you can call them, passing arguments and
-blocks.
+We've created numbers, Strings, and seen objects like `true`, `false`, and
+`nil`. We have also looked at their class names by calling, e.g. `"a
+string".class`, and we have explored some other methods that these objects
+have. We have also talked about how you can define your own methods, and how
+you can call them, passing arguments as required.
 
 That means we now have all the tools that we need to finally learn how to
 define and use your own classes. And this is where things suddenly become even
@@ -38,6 +38,10 @@ end
 That's all. It's not a very useful class, since it's completely empty, but
 it's a class.
 
+<p class="hint">
+A class is defined using the keyword <code>class</code>, a name, and the keyword <code>end</code>.
+</p>
+
 Also, you see that the class has the name `Person`, which starts with an
 uppercase letter. In Ruby, this is required, and you'd get an error if you
 tried to define a class `person`.
@@ -47,6 +51,10 @@ convention to separate these words by uppercase letters, as in
 `RubyStudyGroup`.  This is called CamelCase, because of the humps. Whereas for
 variable and method names we use underscores, and keep everything lowercase:
 `local_variable` and `method_name`. This is called snake_case.
+
+<p class="hint">
+Class names must start with an uppercase letter, and usually use CamelCase.
+</p>
 
 Ok, back to our class `Person`.
 
@@ -61,7 +69,11 @@ That's right. `new` is a method, and it is defined on the *class* itself
 (which, as you might remember, is also an object). This method creates a new
 instance of the class, and returns it.
 
-Let's have a look at that object:
+<p class="hint">
+The method <code>new</code> is defined on any class, and returns a new instance of the class.
+</p>
+
+Cool. Let's have a look at that object:
 
 ```ruby
 p Person.new

@@ -4,7 +4,8 @@
 
 Now that you understand how the string that we pass to the method `new`
 ends up being passed to the new object's `initialize` method, we can start
-improving `initialize`, so it actually does something with the string:
+improving `initialize`, so it does something with the string, and actually
+*initializes* our new object:
 
 ```ruby
 class Person
@@ -25,7 +26,7 @@ created when the method is called, and populated with local variables from the
 arguments list. You have also learned that this scope is erased, and thrown
 away when Ruby exits the method body and returns from the method. And that
 local variables that are visible in one method are not visible in other
-methods: they are local.
+methods: that's why they are called local.
 
 Now, the thing is: Every *object* also has its own scope.
 
@@ -33,17 +34,27 @@ An object's scope is populated with instance variables, in the moment we assign
 something to them. And they are visible *everywhere* in the object, that is, in
 every method that the object has.
 
-You can think of the object's scope as your own knowledge, or memories. For
-example, you know your name, your email address, and your email password.
-You keep this knowledge around, and you can use it. Likewise, an object keeps
-its instance variables around, as long as the object exists.
+<p class="hint">
+Instance variables live in, and are visible everywhere in the object's scope.
+</p>
 
-On top of this, the object's scope also contains the object's method names.
-That is to say, the object knows about its own methods, and it can call them,
-internally from other methods, if that's useful.
+You can think of the object's scope as your own knowledge, or memories.
 
-If you now create, and output a person instance, you'll see that Ruby now
-prints out the instance variable, too:
+For example, you know your name, your email address, and your email password.
+You keep this knowledge around, and you can use it when you do things (such as
+responding to another person). Likewise, an object keeps its instance variables
+around, as long as the object exists.
+
+<!--
+Next to its instance variables, the object's scope also contains the object's
+method names. That is to say, the object knows about its own methods, and it
+can call them, internally from other methods, if that's useful.
+-->
+
+Ok, let's see how that works in practise.
+
+If you create, and output an instance of our class `Person`, you'll see that
+Ruby now prints out the instance variable, too:
 
 ```ruby
 person = Person.new("Ada")

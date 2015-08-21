@@ -67,6 +67,19 @@ In fact they are so common that there's a word for them: they are called
 "attribute readers". By "attribute" the Ruby community means an instance
 variable, so an attribute reader is a method that reads an instance variable.
 
+Another way of looking at this is that an attribute reader is a method that
+"exposes" an instance variable. It makes it accessible for others. I.e. it
+allows you to ask for the value of an instance variable with the same name, and
+does nothing but return its value. Once defined others can ask this object for
+knowledge that otherwise would be private, and unaccessible.
+
+In our case the attribute reader `name` exposes the instance variable `@name`,
+so others can ask for it.
+
+<p class="hint">
+An attribute reader exposes an instance variable.
+</p>
+
 We don't know why the community has chosen to use the term "attribute" here:
 It would be much less confusing to use the term "instance variable reader"
 instead. Maybe the simple reason is that programmers don't like to type more

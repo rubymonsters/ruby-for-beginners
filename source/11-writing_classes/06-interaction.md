@@ -1,8 +1,7 @@
 # Interacting Objects
 
-We're now able to create our own objects. However, they don't do a whole lot, yet, right?
-
-Why not create two people, and let them greet each other.
+We're now able to create our own objects. However, they don't do a whole lot,
+yet, right? Why not create two people, and let them greet each other.
 
 Let's see.
 
@@ -178,6 +177,13 @@ friend = Person.new("Carla")
 
 person.greet(friend)
 friend.greet(person)
+```
+
+And this outputs:
+
+```
+Hi Carla! My name is Anja.
+Hi Anja! My name is Carla.
 ```
 
 What do you think?

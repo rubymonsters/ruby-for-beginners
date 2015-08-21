@@ -26,18 +26,26 @@
   children:
   - reusing_names
   - right_goes_first
+- path: writing_methods
+  children:
+  - constituents
+  - definition
+  - usage
+  - return_values
+  - scopes
+  - combining
+  - printing
 - path: objects
   children:
   - classes
+  - instances
   - methods
-- path: writing_methods
-  children:
-  - return_values
-  - scopes
-  - control_flow
-  - printing
-  - parentheses
-  - writing_methods
+  - calling
+  - arguments
+  - listing
+  - predicates
+  - bangs
+  - top-level
 - path: writing_classes
   children:
   - initializers
@@ -68,11 +76,13 @@
 - path: bonus
   children:
   - string_interpolation
-  - predicate_methods
   - other_methods
   - questions_commands
   - alternative-syntax
   - good_names
+  - parentheses
+  - arguments_parameters
+  - write_new_method
 - path: advanced
   children:
   - libraries
