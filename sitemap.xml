@@ -194,6 +194,10 @@
       <priority>0.5</priority>
     </url>
     <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/self.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes.html</loc>
       <priority>0.5</priority>
     </url>
@@ -214,15 +218,23 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/blocks/block_syntax.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/blocks/syntax.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/blocks/block_arguments.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/blocks/arguments.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/blocks/block_return_values.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/blocks/return_values.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/blocks/ioc.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/blocks/iterators.html</loc>
       <priority>0.5</priority>
     </url>
     <url>

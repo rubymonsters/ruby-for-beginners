@@ -280,6 +280,11 @@
           Interacting Objects
         </a>
       </li>
+      <li>
+        <a href="/writing_classes/self.html">
+          Object Scope and Self
+        </a>
+      </li>
     </ul>
   </li>
   <li class="directory">
@@ -310,18 +315,28 @@
     </a>
     <ul>
       <li>
-        <a href="/blocks/block_syntax.html">
+        <a href="/blocks/syntax.html">
           Alternative block syntaxes
         </a>
       </li>
       <li>
-        <a href="/blocks/block_arguments.html">
+        <a href="/blocks/arguments.html">
           Block arguments
         </a>
       </li>
       <li>
-        <a href="/blocks/block_return_values.html">
+        <a href="/blocks/return_values.html">
           Block return values
+        </a>
+      </li>
+      <li>
+        <a href="/blocks/ioc.html">
+          Inversion of control
+        </a>
+      </li>
+      <li>
+        <a href="/blocks/iterators.html">
+          Iterators
         </a>
       </li>
     </ul>
@@ -3437,8 +3452,7 @@ yet, right? Why not create two people, and let them greet each other.</p>
 </code></pre>
 
 <p>Right, how would one person greet another without knowing who that other person is?
-All they could do is say &ldquo;Hi&rdquo; to the group. So we need to make our method accept
-an argument:</p>
+So we need to make our method accept an argument:</p>
 <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
   <span class="c1"># methods from above ...</span>
 
@@ -3462,8 +3476,9 @@ does not print anything so far - our method does not do anything, yet.</p>
 
 <p>What happens when you run that? It works, right. This should output <code>Hi!</code> to the screen.</p>
 
-<p>However, how can Anja greet Carla? Well, she knows the person to greet (she has
-been passed as an argument to the method) so she can ask her for her name:</p>
+<p>However, how can Anja greet Carla, specifically? How can any person greet any
+other person? Well, the method knows the person to greet (she has been passed
+as an argument to the method) so she can ask her for her name:</p>
 <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
   <span class="c1"># methods from above ...</span>
 
@@ -3523,7 +3538,13 @@ too:</p>
 <pre class="highlight plaintext"><code>Hi Carla! My name is Anja.
 </code></pre>
 
-<p>And now we can add another line at the end, and let Carla greet Anja back.</p>
+<p>Remember how you could call the method <code>add_one</code> from another method <code>add_two</code>
+<a href="../writing_methods/combining.html">before</a>? The same works here, too: We can
+call the person&rsquo;s own method <code>name</code> by just using it, since this method is
+defined on the same class, and thus every instance of <code>Person</code>. We&rsquo;ll look
+at this a little more in the <a href="../writing_classes.html">next chapter</a>.</p>
+
+<p>For now let&rsquo;s add another line at the end, and let Carla greet Anja back.</p>
 
 <p>Again, here&rsquo;s the full code:</p>
 <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
@@ -3561,6 +3582,156 @@ it, and let it interact with another thing.</p>
 <p>By the way if you&rsquo;d like to see how to make the method <code>greet</code> more pretty,
 and a little bit easier to read, check out the chapter on
 <a href="../bonus/string_interpolation.html">String interpolation</a>.</p>
+
+  <h1>Object Scope and Self</h1>
+
+<p>Remember how we said that when Ruby finds a method call she then deviates from
+the normal control flow which goes from top to bottom? Instead she jumps into
+the method body.</p>
+
+<p>We also said that this method body has its own <em>scope</em>, like a shiny, new room
+where local variables from other scopes are not visible. Instead it has its own
+local variables, some of which might be defined via the method&rsquo;s arguments.</p>
+
+<p>And we also said that inside any object&rsquo;s method all instance variables of
+this object, and all other methods of this object are also visible.</p>
+
+<p>We also briefly talked about that mysterious top-level object that Ruby enters
+when she starts executing a program, or IRB.</p>
+
+<p>We are now finally ready to put all these things together a little more, and
+introduce a new keyword: <code>self</code>.</p>
+
+<h2>The Object Scope</h2>
+
+<p>In fact, in Ruby, there are even more scopes than just the local method&rsquo;s
+scope:</p>
+
+<p>There&rsquo;s the method&rsquo;s local scope, which holds all local variables. And there&rsquo;s
+the object&rsquo;s scope which holds all instance variables and method names.</p>
+
+<p>When Ruby&rsquo;s control flow jumps into a method then both of these scopes are
+visible at the same time. For any given name Ruby will first check the local
+scope, and then the object scope.</p>
+
+<p>In practise this most importantly means that from any method on an object,
+you can access:</p>
+
+<ul>
+<li>all local variables</li>
+<li>all instance variables</li>
+<li>all of the object&rsquo;s methods</li>
+</ul>
+
+<p>It also means that one can overwrite, sometimes accidentally, method names
+with variable names. Remember they read just the same in Ruby? While this
+is a really cool feature, it also means we need to be aware of it.</p>
+
+<p>Consider this code:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="c1"># ...</span>
+
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="nb">name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span>
+    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"! My name is "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"."</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>As you can see this defines a new local variable <code>name</code>. The code is very
+similar to what we had <a href="writing_classes/interaction.html">before</a>, except
+that we store the <code>other</code> person&rsquo;s name to a local variable <code>name</code> first,
+and then use this variable on the next line when we put together our String.</p>
+
+<p>This breaks our code, of course, in the sense that we don&rsquo;t get the expected
+greeting any more. Instead it contains the same name twice:</p>
+<pre class="highlight plaintext"><code>Hi Carla! My name is Carla.
+</code></pre>
+
+<p>That is because, on the last line of the method <code>greet</code>, when Ruby looks at the
+word <code>name</code> she first checks the local scope of the method, and finds a local
+variable defined, so she uses it. Only if there was no local variable defined
+she would check the object&rsquo;s scope, and find the method with the same name
+<code>name</code>, and call it.</p>
+
+<p>Luckily, there&rsquo;s a way to still access the object&rsquo;s scope:</p>
+
+<h2>Self</h2>
+
+<p>Every object knows itself, in every method, by the way of calling <code>self</code>.
+This is a special keyword in Ruby, that means just that: The object itself.</p>
+
+<p>Let&rsquo;s try that, and output <code>self</code>. In order to do that we need to add it
+somewhere inside the object. Any method would be good for that, but let&rsquo;s
+just use the <code>initialize</code> method:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+    <span class="nb">p</span> <span class="nb">self</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Anja"</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">person</span>
+</code></pre>
+
+<p>This should output something like this:</p>
+<pre class="highlight ruby"><code><span class="c1">#&lt;Person:0x007f9994972428 @name="Anja"&gt;</span>
+<span class="c1">#&lt;Person:0x007f9994972428 @name="Anja"&gt;</span>
+</code></pre>
+
+<p>As you can see we output the same object twice. Once in the <code>initialize</code> method
+using <code>p self</code>, and once in the outer scope using <code>p person</code>. You can also see
+that the cryptic looking object id is the same for both instances. So we can
+know it&rsquo;s indeed the very same object.</p>
+
+<p class="hint">
+Inside any method the object can be referred to using the keyword <code>self</code>.
+</p>
+
+<p>So we can fix our code from above like this:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="nb">name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span>
+    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"! My name is "</span> <span class="o">+</span> <span class="nb">self</span><span class="p">.</span><span class="nf">name</span> <span class="o">+</span> <span class="s2">"."</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Now we call the method <code>name</code> on two different objects again. When Ruby sees
+<code>self</code> she knows that we&rsquo;re referring to the person object, and she calls the
+method <code>name</code> on it.</p>
+
+<p>This fixes our greeting:</p>
+<pre class="highlight plaintext"><code>Hi Carla! My name is Anja.
+</code></pre>
+
+<h2>Keywords</h2>
+
+<p>Why do we keep saying that <code>self</code> is a keyword? Well, because is not a method.
+It&rsquo;s a &ldquo;special thing&rdquo; in Ruby. For example this means that the following will
+raise an error:</p>
+<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Anja"</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">person</span><span class="p">.</span><span class="nf">self</span>
+</code></pre>
+
+<p>This raises the error:</p>
+<pre class="highlight plaintext"><code>NoMethodError: undefined method `self' for #&lt;Person:0x007f9994972428 @name="Anja"&gt;
+</code></pre>
+
+<p>It&rsquo;s not a method, it&rsquo;s a special thing.</p>
+
+<p>Other keywords that also aren&rsquo;t methods (or objects, or classes) are, for
+example, <code>def</code>, <code>class</code>, and <code>end</code>. You&rsquo;ll also learn about <code>do</code>, <code>if</code>, <code>elsif</code>
+and <code>else</code> a little later.</p>
 
   <h1>More Built-In Classes</h1>
 
@@ -3982,15 +4153,22 @@ the same time they read very well, and they are used all over the place.</p>
 
 <p>So, what is a block?</p>
 
-<p>A block, essentially, is the same thing as a method, except they do not have a
-name: That means a block is a piece of code, it can accept input in form of
+<p>A block, essentially, is the same thing as a method, except it does not have a
+name, and does not belong to an object.</p>
+
+<p>I.e. a block is an anonymous piece of code, it can accept input in form of
 arguments (if it needs any), and it will return a value, but it does not have a
 name.</p>
 
 <p>Moreover, blocks can only be created by the way of passing them to a method
 when the method is called.</p>
 
-<p>Let&rsquo;s have a look at an example:</p>
+<p class="hint">
+A block is a piece of code that accepts arguments, and returns a value. A block
+is always passed to a method call.
+</p>
+
+<p>Let&rsquo;s jump right in:</p>
 <pre class="highlight ruby"><code><span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
   <span class="nb">puts</span> <span class="s2">"Oh, hello from inside a block!"</span>
 <span class="k">end</span>
@@ -4059,6 +4237,11 @@ alternative syntax, which uses curly braces for defining a block.</p>
 <p>Both statements define a block, which is passed to the method <code>times</code>. And
 both blocks contain a single line of code.</p>
 
+<p class="hint">
+Blocks can be defined enclosing code in <code>do</code> and <code>end</code>,
+or curly braces <code>{}</code>.
+</p>
+
 <p>So, when do you use one or the other syntax?</p>
 
 <p>In the Ruby community there&rsquo;s the convention to use curly braces if you have a
@@ -4069,9 +4252,13 @@ does).</p>
 syntax using <code>do</code> and <code>end</code>. Sometimes people also use the <code>do</code> and <code>end</code>
 syntax when they feel it makes the code more readable.</p>
 
+<p class="hint">
+Use curly braces <code>{}</code> for blocks, when the code fits on one line.
+</p>
+
   <h1>Block arguments</h1>
 
-<p>Blocks make even more sense on methods that are defined on collections like
+<p>Blocks make a lot of sense on methods that are defined on collections like
 arrays and hashes.</p>
 
 <p>Let&rsquo;s have a look at some examples with arrays.</p>
@@ -4095,6 +4282,10 @@ wants us to use vertical bars (we call them &ldquo;pipes&rdquo;).</p>
 method definition, except that the method wants a name while a block is
 anonymous: <code>|number|</code> and <code>(number)</code> both are argument lists. The first one
 is used for blocks, the second one for methods.</p>
+
+<p class="hint">
+Block arguments are listed between pipes <code>|</code>, instead of parentheses.
+</p>
 
 <p>Now, when you run the code example above, you&rsquo;ll see the message printed out
 for each of the numbers contained in the array.</p>
@@ -4139,6 +4330,10 @@ shorter, and also more commonly used in other languages. However, in our study
 groups we use <code>collect</code> more often, because it simply expresses more clearly
 what the method does.</p>
 
+<p class="hint">
+Use the method <code>collect</code> to transform an array into another array.
+</p>
+
 <p>Here&rsquo;s another example that uses the return value of the block, can you guess
 what it does?</p>
 <pre class="highlight ruby"><code><span class="nb">p</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span> <span class="n">number</span><span class="p">.</span><span class="nf">odd?</span> <span class="p">}</span>
@@ -4175,6 +4370,10 @@ method <code>p</code>, which prints the array out to the screen.</li>
 
 <p>Thus, the code above prints out <code>[1, 3, 5]</code>.</p>
 
+<p class="hint">
+Use the method <code>select</code> to select a new array with values that match a criteria defined by the block.
+</p>
+
 <p>Here&rsquo;s another example of a method that uses the block as a criterion:</p>
 <pre class="highlight ruby"><code><span class="nb">p</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">detect</span> <span class="p">{</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span> <span class="n">number</span><span class="p">.</span><span class="nf">even?</span> <span class="p">}</span>
 </code></pre>
@@ -4185,32 +4384,60 @@ returns something truthy (something that is &ldquo;equivalent to true&rdquo;), t
 <code>detect</code> will return the current object itself. Therefore, this will print out
 <code>2</code>: the first number in the array that is even.</p>
 
-<h4>Inversion of control</h4>
+  <h1>Inversion of control</h1>
 
 <p>In Ruby there are a lot more methods that accept blocks, and they do very
-different things.</p>
+different things. However, they have one thing in common:</p>
 
-<p>However, they have one thing in common: By accepting a block, from
-you as a programmer, the method can pass control to you. This principle is
-called &ldquo;inversion of control&rdquo;.</p>
+<p>By accepting a block, from you as a programmer, the method can pass control to
+you.</p>
 
-<p>For example, instead of having to define lots of methods like <code>select_odd</code>,
-<code>select_even</code>, <code>select_lesser_than</code>, <code>select_greater_than</code> and so on, defining
-one method per potentially useful criterion, Ruby only has to implement one
-single, generic method for arrays: <code>select</code>, allowing you to flexibly specify
-the criterion in form of Ruby code: by passing a block to the
-method. That way Ruby lets you, as a programmer, take over control, and specify
-what is used as a criterion to select elements.</p>
+<p>This design is an example for the principle of <em>inversion of control</em>, and
+it&rsquo;s the real reason why Rubyists love blocks so much.</p>
 
-<h4>Iterators</h4>
+<p>What does that mean?</p>
 
-<p>Methods on arrays and hashes that take a block are also called iterators.
-We say they &ldquo;iterate over the array&rdquo;, meaning that these methods take each
+<p>In short it means that Matz, the creator of Ruby, put a tool in place that can
+be used to allow methods to pass control to its users (i.e. you as a
+programmer).</p>
+
+<p>&ldquo;Control&rdquo; in this context refers to the question who gets to decide how things
+work.</p>
+
+<p>In older languages, where there was no such tool, people either had to
+implement lots of very specific methods, and <em>guess</em> what users might need in
+the future. Or they&rsquo;d decide to just not implement any of these methods at all.</p>
+
+<p>For example, in Ruby, we don&rsquo;t have to define lots of methods like <code>select_odd</code>,
+<code>select_even</code>, <code>select_lesser_than</code>, <code>select_greater_than</code> and so on, &hellip; where
+each of these methods would be useful for one very specific usecase.</p>
+
+<p>Instead, the class <code>Array</code> only has to implement one single, very generic
+method for arrays: <code>select</code>. Since Ruby has blocks, the method can allow you
+(as a programmer) to specify the criterion yourself: by passing a piece of
+code, in the form of block to the method.</p>
+
+<p>That way Ruby lets you, as a programmer, take over control, and specify what is
+used as a criterion to select elements.</p>
+
+<p>One of the reasons we mention this is because we think this is a nice example
+of a pretty abstract principle applied to software design. There are lots of
+other principles like these, and they&rsquo;ll make more and more sense to you over
+time. Programming languages and code, from this perspective, is a subject of
+design, and thus art, as well as social and cultural questions &hellip; much rather
+than strictly logical or technical ones.</p>
+
+  <h1>Iterators</h1>
+
+<p>Methods on arrays and hashes that take a block are also called iterators.</p>
+
+<p>We say they <em>iterate over the array</em>, meaning that these methods take each
 element of the array and do something with it.</p>
 
-<p>In Ruby iterators are &ldquo;chainable&rdquo;, adding functionality on top of each other.
-That means that, if you do not pass a block to an iterator method, such as
-<code>each</code>, <code>collect</code>, <code>select</code>, then you&rsquo;ll get an iterator object back. You can
+<p>In Ruby iterators are &ldquo;chainable&rdquo;, adding functionality on top of each other.</p>
+
+<p>That means that, if you do not pass a block to an iterator method, such as
+<code>each</code>, <code>collect</code>, <code>select</code>, then you&rsquo;ll get an <em>iterator object</em> back. You can
 then call more methods on these iterator objects, and finally pass a block.
 Like so:</p>
 <pre class="highlight ruby"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">collect</span><span class="p">.</span><span class="nf">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">number</span><span class="p">,</span> <span class="n">index</span><span class="o">|</span>
@@ -4231,9 +4458,15 @@ argument, in addition to the element itself.</p>
 
 <p>Inside of the block we can then use it, and add the index to the number itself.</p>
 
-<p>For the first iteration it will call the block with <code>1</code> and <code>0</code>, since <code>0</code> is
+<p>So for the first iteration it will call the block with <code>1</code> and <code>0</code>, since <code>0</code> is
 the first &ldquo;position&rdquo;, that is, index. It therefore returns <code>1</code>. For the second
 iteration it calls the block with <code>2</code> and <code>1</code>, and returns <code>3</code>, and so on.</p>
+
+<p>Therefor the method call eventually returns the array <code>[1, 3, 5, 7, 9]</code>.</p>
+
+<p class="hint">
+Iterators in Ruby are chainable.
+</p>
 
   <h1>Conditionals</h1>
 

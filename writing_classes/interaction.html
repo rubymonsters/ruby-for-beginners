@@ -19,7 +19,7 @@
     <nav class="page-nav"><a class="prev" href="/writing_classes/state_and_behaviour.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/more_built_in_classes.html">
+    <nav class="page-nav"><a class="next" href="/writing_classes/self.html">
   Next
 </a></nav>
 
@@ -284,6 +284,11 @@
           Interacting Objects
         </a>
       </li>
+      <li>
+        <a href="/writing_classes/self.html">
+          Object Scope and Self
+        </a>
+      </li>
     </ul>
   </li>
   <li class="directory">
@@ -314,18 +319,28 @@
     </a>
     <ul>
       <li>
-        <a href="/blocks/block_syntax.html">
+        <a href="/blocks/syntax.html">
           Alternative block syntaxes
         </a>
       </li>
       <li>
-        <a href="/blocks/block_arguments.html">
+        <a href="/blocks/arguments.html">
           Block arguments
         </a>
       </li>
       <li>
-        <a href="/blocks/block_return_values.html">
+        <a href="/blocks/return_values.html">
           Block return values
+        </a>
+      </li>
+      <li>
+        <a href="/blocks/ioc.html">
+          Inversion of control
+        </a>
+      </li>
+      <li>
+        <a href="/blocks/iterators.html">
+          Iterators
         </a>
       </li>
     </ul>
@@ -585,8 +600,7 @@ yet, right? Why not create two people, and let them greet each other.</p>
 </code></pre>
 
 <p>Right, how would one person greet another without knowing who that other person is?
-All they could do is say &ldquo;Hi&rdquo; to the group. So we need to make our method accept
-an argument:</p>
+So we need to make our method accept an argument:</p>
 <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
   <span class="c1"># methods from above ...</span>
 
@@ -610,8 +624,9 @@ does not print anything so far - our method does not do anything, yet.</p>
 
 <p>What happens when you run that? It works, right. This should output <code>Hi!</code> to the screen.</p>
 
-<p>However, how can Anja greet Carla? Well, she knows the person to greet (she has
-been passed as an argument to the method) so she can ask her for her name:</p>
+<p>However, how can Anja greet Carla, specifically? How can any person greet any
+other person? Well, the method knows the person to greet (she has been passed
+as an argument to the method) so she can ask her for her name:</p>
 <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
   <span class="c1"># methods from above ...</span>
 
@@ -671,7 +686,13 @@ too:</p>
 <pre class="highlight plaintext"><code>Hi Carla! My name is Anja.
 </code></pre>
 
-<p>And now we can add another line at the end, and let Carla greet Anja back.</p>
+<p>Remember how you could call the method <code>add_one</code> from another method <code>add_two</code>
+<a href="../writing_methods/combining.html">before</a>? The same works here, too: We can
+call the person&rsquo;s own method <code>name</code> by just using it, since this method is
+defined on the same class, and thus every instance of <code>Person</code>. We&rsquo;ll look
+at this a little more in the <a href="../writing_classes.html">next chapter</a>.</p>
+
+<p>For now let&rsquo;s add another line at the end, and let Carla greet Anja back.</p>
 
 <p>Again, here&rsquo;s the full code:</p>
 <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
@@ -713,7 +734,7 @@ and a little bit easier to read, check out the chapter on
         <nav class="page-nav"><a class="prev" href="/writing_classes/state_and_behaviour.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/more_built_in_classes.html">
+        <nav class="page-nav"><a class="next" href="/writing_classes/self.html">
   Next
 </a></nav>
       </article>

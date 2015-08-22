@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Exercises | Ruby for Beginners</title>
+    <title>Alternative block syntaxes | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-230024d9.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-230024d9.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/advanced/regular_expressions.html">
+    <nav class="page-nav"><a class="prev" href="/blocks.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
+    <nav class="page-nav"><a class="next" href="/blocks/arguments.html">
   Next
 </a></nav>
 
@@ -313,12 +313,12 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/blocks.html">
       Blocks
     </a>
     <ul>
-      <li>
+      <li class="active">
         <a href="/blocks/syntax.html">
           Alternative block syntaxes
         </a>
@@ -468,7 +468,7 @@
       </li>
     </ul>
   </li>
-  <li class="active directory expanded">
+  <li class="directory">
     <a href="/exercises.html">
       Exercises
     </a>
@@ -554,40 +554,45 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Exercises</h1>
+        <h1>Alternative block syntaxes</h1>
 
-<p>If you haven&rsquo;t done the <a href="http://tryruby.org">try ruby</a> course already, we
-recommend you do at least a couple of lessons over there too.</p>
+<p>Next to the syntax shown before, using <code>do</code> and <code>end</code>, Ruby comes with an
+alternative syntax, which uses curly braces for defining a block.</p>
 
-<p>Whenever you sit down to do some of the exercises in this book make sure you
-have your text editor and terminal open. In your terminal:</p>
+<p>These two statements do exactly the same:</p>
+<pre class="highlight ruby"><code><span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+  <span class="nb">puts</span> <span class="s2">"Oh, hello!"</span>
+<span class="k">end</span>
 
-<ul>
-<li><p>Create a new directory where you want to keep Ruby files for our exercises. For
-example: <code>~/ruby-for-beginners/exercises</code>. In
-order to create that directory in the terminal you can run: <code>mkdir
-~/ruby-for-beginners/exercises</code>.</p></li>
-<li><p>Then navigate to this directory: <code>cd ~/ruby-for-beginners/exercises</code></p></li>
-<li><p>In order to check if you are in the right directory you can always run:
-<code>pwd</code>. (That&rsquo;s short for <em>print working directory</em>, meaning, it prints the name
-of the current directory.)</p></li>
-<li><p>In order to see all the files and subdirectories contained in the current
-directory you can run <code>ls</code>.</p></li>
-</ul>
+<span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s2">"hello!"</span> <span class="p">}</span>
+</code></pre>
 
-<!---
-TODO: check these instructions for Windows.
--->
+<p>Both statements define a block, which is passed to the method <code>times</code>. And
+both blocks contain a single line of code.</p>
 
-<p><p class='credits'>
-  Credits: The exercises 1.1, 1.2, and 2.1 are taken from
-  <a href="http://www.ruby-doc.org/docs/Tutorial/part_01/first_steps.html">Introduction to Ruby</a>.
-<p></p>
+<p class="hint">
+Blocks can be defined enclosing code in <code>do</code> and <code>end</code>,
+or curly braces <code>{}</code>.
+</p>
 
-        <nav class="page-nav"><a class="prev" href="/advanced/regular_expressions.html">
+<p>So, when do you use one or the other syntax?</p>
+
+<p>In the Ruby community there&rsquo;s the convention to use curly braces if you have a
+single line block and it fits nicely on the same line (as, in our example, it
+does).</p>
+
+<p>Whenever you need to have more than one line in your block, then you use the
+syntax using <code>do</code> and <code>end</code>. Sometimes people also use the <code>do</code> and <code>end</code>
+syntax when they feel it makes the code more readable.</p>
+
+<p class="hint">
+Use curly braces <code>{}</code> for blocks, when the code fits on one line.
+</p>
+
+        <nav class="page-nav"><a class="prev" href="/blocks.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
+        <nav class="page-nav"><a class="next" href="/blocks/arguments.html">
   Next
 </a></nav>
       </article>
@@ -605,7 +610,7 @@ TODO: check these instructions for Windows.
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
   </body>
 </html>

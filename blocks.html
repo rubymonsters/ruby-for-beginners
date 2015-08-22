@@ -19,7 +19,7 @@
     <nav class="page-nav"><a class="prev" href="/more_built_in_classes/hashes.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/blocks/block_syntax.html">
+    <nav class="page-nav"><a class="next" href="/blocks/syntax.html">
   Next
 </a></nav>
 
@@ -284,6 +284,11 @@
           Interacting Objects
         </a>
       </li>
+      <li>
+        <a href="/writing_classes/self.html">
+          Object Scope and Self
+        </a>
+      </li>
     </ul>
   </li>
   <li class="directory">
@@ -314,18 +319,28 @@
     </a>
     <ul>
       <li>
-        <a href="/blocks/block_syntax.html">
+        <a href="/blocks/syntax.html">
           Alternative block syntaxes
         </a>
       </li>
       <li>
-        <a href="/blocks/block_arguments.html">
+        <a href="/blocks/arguments.html">
           Block arguments
         </a>
       </li>
       <li>
-        <a href="/blocks/block_return_values.html">
+        <a href="/blocks/return_values.html">
           Block return values
+        </a>
+      </li>
+      <li>
+        <a href="/blocks/ioc.html">
+          Inversion of control
+        </a>
+      </li>
+      <li>
+        <a href="/blocks/iterators.html">
+          Iterators
         </a>
       </li>
     </ul>
@@ -549,15 +564,22 @@ the same time they read very well, and they are used all over the place.</p>
 
 <p>So, what is a block?</p>
 
-<p>A block, essentially, is the same thing as a method, except they do not have a
-name: That means a block is a piece of code, it can accept input in form of
+<p>A block, essentially, is the same thing as a method, except it does not have a
+name, and does not belong to an object.</p>
+
+<p>I.e. a block is an anonymous piece of code, it can accept input in form of
 arguments (if it needs any), and it will return a value, but it does not have a
 name.</p>
 
 <p>Moreover, blocks can only be created by the way of passing them to a method
 when the method is called.</p>
 
-<p>Let&rsquo;s have a look at an example:</p>
+<p class="hint">
+A block is a piece of code that accepts arguments, and returns a value. A block
+is always passed to a method call.
+</p>
+
+<p>Let&rsquo;s jump right in:</p>
 <pre class="highlight ruby"><code><span class="mi">5</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
   <span class="nb">puts</span> <span class="s2">"Oh, hello from inside a block!"</span>
 <span class="k">end</span>
@@ -613,7 +635,7 @@ in order to do useful things with it.</p>
         <nav class="page-nav"><a class="prev" href="/more_built_in_classes/hashes.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/blocks/block_syntax.html">
+        <nav class="page-nav"><a class="next" href="/blocks/syntax.html">
   Next
 </a></nav>
       </article>

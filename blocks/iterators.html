@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Block arguments | Ruby for Beginners</title>
+    <title>Iterators | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-230024d9.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/blocks/block_syntax.html">
+    <nav class="page-nav"><a class="prev" href="/blocks/ioc.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/blocks/block_return_values.html">
+    <nav class="page-nav"><a class="next" href="/conditionals.html">
   Next
 </a></nav>
 
@@ -284,6 +284,11 @@
           Interacting Objects
         </a>
       </li>
+      <li>
+        <a href="/writing_classes/self.html">
+          Object Scope and Self
+        </a>
+      </li>
     </ul>
   </li>
   <li class="directory">
@@ -314,18 +319,28 @@
     </a>
     <ul>
       <li>
-        <a href="/blocks/block_syntax.html">
+        <a href="/blocks/syntax.html">
           Alternative block syntaxes
         </a>
       </li>
-      <li class="active">
-        <a href="/blocks/block_arguments.html">
+      <li>
+        <a href="/blocks/arguments.html">
           Block arguments
         </a>
       </li>
       <li>
-        <a href="/blocks/block_return_values.html">
+        <a href="/blocks/return_values.html">
           Block return values
+        </a>
+      </li>
+      <li>
+        <a href="/blocks/ioc.html">
+          Inversion of control
+        </a>
+      </li>
+      <li class="active">
+        <a href="/blocks/iterators.html">
+          Iterators
         </a>
       </li>
     </ul>
@@ -539,52 +554,51 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Block arguments</h1>
+        <h1>Iterators</h1>
 
-<p>Blocks make even more sense on methods that are defined on collections like
-arrays and hashes.</p>
+<p>Methods on arrays and hashes that take a block are also called iterators.</p>
 
-<p>Let&rsquo;s have a look at some examples with arrays.</p>
+<p>We say they <em>iterate over the array</em>, meaning that these methods take each
+element of the array and do something with it.</p>
 
-<p>In our previous example that used the method <code>times</code> our block did not accept
-an argument. A block that accepts an argument looks like this:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">number</span><span class="si">}</span><span class="s2"> was passed to the block"</span>
+<p>In Ruby iterators are &ldquo;chainable&rdquo;, adding functionality on top of each other.</p>
+
+<p>That means that, if you do not pass a block to an iterator method, such as
+<code>each</code>, <code>collect</code>, <code>select</code>, then you&rsquo;ll get an <em>iterator object</em> back. You can
+then call more methods on these iterator objects, and finally pass a block.
+Like so:</p>
+<pre class="highlight ruby"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">collect</span><span class="p">.</span><span class="nf">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">number</span><span class="p">,</span> <span class="n">index</span><span class="o">|</span>
+  <span class="n">number</span> <span class="o">+</span> <span class="n">index</span>
 <span class="k">end</span>
+<span class="nb">p</span> <span class="n">numbers</span>
 </code></pre>
 
-<p>And, again, this is the same as:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span> <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">number</span><span class="si">}</span><span class="s2"> was passed to the block"</span> <span class="p">}</span>
+<p>This will print out:</p>
+<pre class="highlight plaintext"><code>[1, 3, 5, 7, 9]
 </code></pre>
 
-<p>It is unknown to us why Matz has chosen to not enclose the argument list of
-a block with round parentheses just like method argument lists. Instead, Ruby
-wants us to use vertical bars (we call them &ldquo;pipes&rdquo;).</p>
+<p>What&rsquo;s going on here?</p>
 
-<p>So, for blocks, <code>do |number|</code> is the same that is <code>def add_two (number)</code> for a
-method definition, except that the method wants a name while a block is
-anonymous: <code>|number|</code> and <code>(number)</code> both are argument lists. The first one
-is used for blocks, the second one for methods.</p>
+<p>The method <code>with_index</code> can be called on any iterator object. All it does is
+pass the index of the element within the array to the block, as a second block
+argument, in addition to the element itself.</p>
 
-<p>Now, when you run the code example above, you&rsquo;ll see the message printed out
-for each of the numbers contained in the array.</p>
+<p>Inside of the block we can then use it, and add the index to the number itself.</p>
 
-<p>Does that make sense? Again, our code almost reads like an English sentence:</p>
+<p>So for the first iteration it will call the block with <code>1</code> and <code>0</code>, since <code>0</code> is
+the first &ldquo;position&rdquo;, that is, index. It therefore returns <code>1</code>. For the second
+iteration it calls the block with <code>2</code> and <code>1</code>, and returns <code>3</code>, and so on.</p>
 
-<p><em>With this array for each of its elements, naming it <code>number</code>, output the
-following message.</em></p>
+<p>Therefor the method call eventually returns the array <code>[1, 3, 5, 7, 9]</code>.</p>
 
-<p>The method <code>each</code> is defined on arrays, and it does just this:</p>
+<p class="hint">
+Iterators in Ruby are chainable.
+</p>
 
-<p>It takes each of the elements in the array and calls the block, passing the
-element as an argument. The block can then do whatever you want it to do with
-the element. In our case we interpolate it into a string and print it out to
-the screen.</p>
-
-        <nav class="page-nav"><a class="prev" href="/blocks/block_syntax.html">
+        <nav class="page-nav"><a class="prev" href="/blocks/ioc.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/blocks/block_return_values.html">
+        <nav class="page-nav"><a class="next" href="/conditionals.html">
   Next
 </a></nav>
       </article>

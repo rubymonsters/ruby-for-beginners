@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Exercises | Ruby for Beginners</title>
+    <title>Object Scope and Self | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-230024d9.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-230024d9.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/advanced/regular_expressions.html">
+    <nav class="page-nav"><a class="prev" href="/writing_classes/interaction.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
+    <nav class="page-nav"><a class="next" href="/more_built_in_classes.html">
   Next
 </a></nav>
 
@@ -249,7 +249,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/writing_classes.html">
       Writing classes
     </a>
@@ -284,7 +284,7 @@
           Interacting Objects
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/writing_classes/self.html">
           Object Scope and Self
         </a>
@@ -468,7 +468,7 @@
       </li>
     </ul>
   </li>
-  <li class="active directory expanded">
+  <li class="directory">
     <a href="/exercises.html">
       Exercises
     </a>
@@ -554,40 +554,160 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Exercises</h1>
+        <h1>Object Scope and Self</h1>
 
-<p>If you haven&rsquo;t done the <a href="http://tryruby.org">try ruby</a> course already, we
-recommend you do at least a couple of lessons over there too.</p>
+<p>Remember how we said that when Ruby finds a method call she then deviates from
+the normal control flow which goes from top to bottom? Instead she jumps into
+the method body.</p>
 
-<p>Whenever you sit down to do some of the exercises in this book make sure you
-have your text editor and terminal open. In your terminal:</p>
+<p>We also said that this method body has its own <em>scope</em>, like a shiny, new room
+where local variables from other scopes are not visible. Instead it has its own
+local variables, some of which might be defined via the method&rsquo;s arguments.</p>
+
+<p>And we also said that inside any object&rsquo;s method all instance variables of
+this object, and all other methods of this object are also visible.</p>
+
+<p>We also briefly talked about that mysterious top-level object that Ruby enters
+when she starts executing a program, or IRB.</p>
+
+<p>We are now finally ready to put all these things together a little more, and
+introduce a new keyword: <code>self</code>.</p>
+
+<h2>The Object Scope</h2>
+
+<p>In fact, in Ruby, there are even more scopes than just the local method&rsquo;s
+scope:</p>
+
+<p>There&rsquo;s the method&rsquo;s local scope, which holds all local variables. And there&rsquo;s
+the object&rsquo;s scope which holds all instance variables and method names.</p>
+
+<p>When Ruby&rsquo;s control flow jumps into a method then both of these scopes are
+visible at the same time. For any given name Ruby will first check the local
+scope, and then the object scope.</p>
+
+<p>In practise this most importantly means that from any method on an object,
+you can access:</p>
 
 <ul>
-<li><p>Create a new directory where you want to keep Ruby files for our exercises. For
-example: <code>~/ruby-for-beginners/exercises</code>. In
-order to create that directory in the terminal you can run: <code>mkdir
-~/ruby-for-beginners/exercises</code>.</p></li>
-<li><p>Then navigate to this directory: <code>cd ~/ruby-for-beginners/exercises</code></p></li>
-<li><p>In order to check if you are in the right directory you can always run:
-<code>pwd</code>. (That&rsquo;s short for <em>print working directory</em>, meaning, it prints the name
-of the current directory.)</p></li>
-<li><p>In order to see all the files and subdirectories contained in the current
-directory you can run <code>ls</code>.</p></li>
+<li>all local variables</li>
+<li>all instance variables</li>
+<li>all of the object&rsquo;s methods</li>
 </ul>
 
-<!---
-TODO: check these instructions for Windows.
--->
+<p>It also means that one can overwrite, sometimes accidentally, method names
+with variable names. Remember they read just the same in Ruby? While this
+is a really cool feature, it also means we need to be aware of it.</p>
 
-<p><p class='credits'>
-  Credits: The exercises 1.1, 1.2, and 2.1 are taken from
-  <a href="http://www.ruby-doc.org/docs/Tutorial/part_01/first_steps.html">Introduction to Ruby</a>.
-<p></p>
+<p>Consider this code:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="c1"># ...</span>
 
-        <nav class="page-nav"><a class="prev" href="/advanced/regular_expressions.html">
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="nb">name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span>
+    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"! My name is "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"."</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>As you can see this defines a new local variable <code>name</code>. The code is very
+similar to what we had <a href="writing_classes/interaction.html">before</a>, except
+that we store the <code>other</code> person&rsquo;s name to a local variable <code>name</code> first,
+and then use this variable on the next line when we put together our String.</p>
+
+<p>This breaks our code, of course, in the sense that we don&rsquo;t get the expected
+greeting any more. Instead it contains the same name twice:</p>
+<pre class="highlight plaintext"><code>Hi Carla! My name is Carla.
+</code></pre>
+
+<p>That is because, on the last line of the method <code>greet</code>, when Ruby looks at the
+word <code>name</code> she first checks the local scope of the method, and finds a local
+variable defined, so she uses it. Only if there was no local variable defined
+she would check the object&rsquo;s scope, and find the method with the same name
+<code>name</code>, and call it.</p>
+
+<p>Luckily, there&rsquo;s a way to still access the object&rsquo;s scope:</p>
+
+<h2>Self</h2>
+
+<p>Every object knows itself, in every method, by the way of calling <code>self</code>.
+This is a special keyword in Ruby, that means just that: The object itself.</p>
+
+<p>Let&rsquo;s try that, and output <code>self</code>. In order to do that we need to add it
+somewhere inside the object. Any method would be good for that, but let&rsquo;s
+just use the <code>initialize</code> method:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+    <span class="nb">p</span> <span class="nb">self</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Anja"</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">person</span>
+</code></pre>
+
+<p>This should output something like this:</p>
+<pre class="highlight ruby"><code><span class="c1">#&lt;Person:0x007f9994972428 @name="Anja"&gt;</span>
+<span class="c1">#&lt;Person:0x007f9994972428 @name="Anja"&gt;</span>
+</code></pre>
+
+<p>As you can see we output the same object twice. Once in the <code>initialize</code> method
+using <code>p self</code>, and once in the outer scope using <code>p person</code>. You can also see
+that the cryptic looking object id is the same for both instances. So we can
+know it&rsquo;s indeed the very same object.</p>
+
+<p class="hint">
+Inside any method the object can be referred to using the keyword <code>self</code>.
+</p>
+
+<p>So we can fix our code from above like this:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">name</span>
+    <span class="vi">@name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="nb">name</span> <span class="o">=</span> <span class="n">other</span><span class="p">.</span><span class="nf">name</span>
+    <span class="nb">puts</span> <span class="s2">"Hi "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"! My name is "</span> <span class="o">+</span> <span class="nb">self</span><span class="p">.</span><span class="nf">name</span> <span class="o">+</span> <span class="s2">"."</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Now we call the method <code>name</code> on two different objects again. When Ruby sees
+<code>self</code> she knows that we&rsquo;re referring to the person object, and she calls the
+method <code>name</code> on it.</p>
+
+<p>This fixes our greeting:</p>
+<pre class="highlight plaintext"><code>Hi Carla! My name is Anja.
+</code></pre>
+
+<h2>Keywords</h2>
+
+<p>Why do we keep saying that <code>self</code> is a keyword? Well, because is not a method.
+It&rsquo;s a &ldquo;special thing&rdquo; in Ruby. For example this means that the following will
+raise an error:</p>
+<pre class="highlight ruby"><code><span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Anja"</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">person</span><span class="p">.</span><span class="nf">self</span>
+</code></pre>
+
+<p>This raises the error:</p>
+<pre class="highlight plaintext"><code>NoMethodError: undefined method `self' for #&lt;Person:0x007f9994972428 @name="Anja"&gt;
+</code></pre>
+
+<p>It&rsquo;s not a method, it&rsquo;s a special thing.</p>
+
+<p>Other keywords that also aren&rsquo;t methods (or objects, or classes) are, for
+example, <code>def</code>, <code>class</code>, and <code>end</code>. You&rsquo;ll also learn about <code>do</code>, <code>if</code>, <code>elsif</code>
+and <code>else</code> a little later.</p>
+
+        <nav class="page-nav"><a class="prev" href="/writing_classes/interaction.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
+        <nav class="page-nav"><a class="next" href="/more_built_in_classes.html">
   Next
 </a></nav>
       </article>
@@ -605,7 +725,7 @@ TODO: check these instructions for Windows.
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
   </body>
 </html>

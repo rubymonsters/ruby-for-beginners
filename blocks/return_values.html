@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Exercises | Ruby for Beginners</title>
+    <title>Block return values | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-230024d9.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-230024d9.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/advanced/regular_expressions.html">
+    <nav class="page-nav"><a class="prev" href="/blocks/arguments.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
+    <nav class="page-nav"><a class="next" href="/blocks/ioc.html">
   Next
 </a></nav>
 
@@ -313,7 +313,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/blocks.html">
       Blocks
     </a>
@@ -328,7 +328,7 @@
           Block arguments
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="/blocks/return_values.html">
           Block return values
         </a>
@@ -468,7 +468,7 @@
       </li>
     </ul>
   </li>
-  <li class="active directory expanded">
+  <li class="directory">
     <a href="/exercises.html">
       Exercises
     </a>
@@ -554,40 +554,92 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Exercises</h1>
+        <h1>Block return values</h1>
 
-<p>If you haven&rsquo;t done the <a href="http://tryruby.org">try ruby</a> course already, we
-recommend you do at least a couple of lessons over there too.</p>
+<p>Remember that we said a block returns a value just like methods do?  So far, in
+our two examples above, we did not do anything with the return values of the
+block.</p>
 
-<p>Whenever you sit down to do some of the exercises in this book make sure you
-have your text editor and terminal open. In your terminal:</p>
+<p>Here&rsquo;s an example that does that:</p>
+<pre class="highlight ruby"><code><span class="nb">p</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">collect</span> <span class="p">{</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">}</span>
+</code></pre>
+
+<p>This will take the array of numbers, and transform it into <em>another</em> array.</p>
+
+<p>It does this by calling the method <code>collect</code> on the original array, which calls
+the given block for each of the elements, and collects each of the return
+values returned by the block. The resulting array is then returned by the
+method <code>collect</code>, and printed to the screen.</p>
+
+<p>In other words, the method <code>collect</code> uses the block as a transformer. It takes
+each element of the array, passes it to the block in order to transform it
+to something else, and then keeps all the transformed values in a <em>new</em> array
+that the method <code>collect</code> then eventually returns.</p>
+
+<p>Note that the method <code>collect</code> has an alias, which is <code>map</code>. These are exactly
+the same methods. Many programmers prefer <code>map</code> over <code>collect</code> because it is
+shorter, and also more commonly used in other languages. However, in our study
+groups we use <code>collect</code> more often, because it simply expresses more clearly
+what the method does.</p>
+
+<p class="hint">
+Use the method <code>collect</code> to transform an array into another array.
+</p>
+
+<p>Here&rsquo;s another example that uses the return value of the block, can you guess
+what it does?</p>
+<pre class="highlight ruby"><code><span class="nb">p</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span> <span class="n">number</span><span class="p">.</span><span class="nf">odd?</span> <span class="p">}</span>
+</code></pre>
+
+<p>In this case, the method <code>select</code> uses the block in a different way: as a
+filter, or criterion, to select values out of the array, and then return a new
+array with the selected values.</p>
+
+<p>Let&rsquo;s walk through this step by step, under the microscope:</p>
 
 <ul>
-<li><p>Create a new directory where you want to keep Ruby files for our exercises. For
-example: <code>~/ruby-for-beginners/exercises</code>. In
-order to create that directory in the terminal you can run: <code>mkdir
-~/ruby-for-beginners/exercises</code>.</p></li>
-<li><p>Then navigate to this directory: <code>cd ~/ruby-for-beginners/exercises</code></p></li>
-<li><p>In order to check if you are in the right directory you can always run:
-<code>pwd</code>. (That&rsquo;s short for <em>print working directory</em>, meaning, it prints the name
-of the current directory.)</p></li>
-<li><p>In order to see all the files and subdirectories contained in the current
-directory you can run <code>ls</code>.</p></li>
+<li>We create an array <code>[1, 2, 3, 4, 5]</code>.</li>
+<li>We then call the method <code>select</code> on it, and pass our block as a filter
+criterion.</li>
+<li>Now, the method <code>select</code> calls our block for each of the numbers.</li>
+<li>It first calls the block passing the number <code>1</code>.</li>
+<li>We now are inside the block, and a local variable <code>number</code> is assigned the
+object that was passed as an argument, which is the number <code>1</code>.</li>
+<li>Inside our block we now call the method <code>odd?</code> on this number, and of course,
+because <code>1</code> is odd, this will return <code>true</code>.</li>
+<li>Since this is the only, and thus, last statement in the body of our block,
+our block also returns <code>true</code> to the method <code>select</code>. <code>select</code> therefore will
+<em>keep</em> (&ldquo;select&rdquo;) the number <code>1</code>.</li>
+<li>It then calls the block again, this time passing the number <code>2</code>. Of course,
+because this is not an odd number, the method <code>odd?</code> and therfore our block
+will return <code>false</code> back the the method <code>select</code>. Therefore it <em>discards</em> this
+element.</li>
+<li>It keeps doing this for each of the remaining elements in the array, and
+eventually has this array: <code>[1, 3, 5]</code></li>
+<li>The method <code>select</code> then returns this array and Ruby will pass it to the
+method <code>p</code>, which prints the array out to the screen.</li>
 </ul>
 
-<!---
-TODO: check these instructions for Windows.
--->
+<p>Thus, the code above prints out <code>[1, 3, 5]</code>.</p>
 
-<p><p class='credits'>
-  Credits: The exercises 1.1, 1.2, and 2.1 are taken from
-  <a href="http://www.ruby-doc.org/docs/Tutorial/part_01/first_steps.html">Introduction to Ruby</a>.
-<p></p>
+<p class="hint">
+Use the method <code>select</code> to select a new array with values that match a criteria defined by the block.
+</p>
 
-        <nav class="page-nav"><a class="prev" href="/advanced/regular_expressions.html">
+<p>Here&rsquo;s another example of a method that uses the block as a criterion:</p>
+<pre class="highlight ruby"><code><span class="nb">p</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">].</span><span class="nf">detect</span> <span class="p">{</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span> <span class="n">number</span><span class="p">.</span><span class="nf">even?</span> <span class="p">}</span>
+</code></pre>
+
+<p>Again, <code>detect</code> will pass each of the elements of the array to the block, one
+by one, and check the return value of the block. However, as soon as the block
+returns something truthy (something that is &ldquo;equivalent to true&rdquo;), the method
+<code>detect</code> will return the current object itself. Therefore, this will print out
+<code>2</code>: the first number in the array that is even.</p>
+
+        <nav class="page-nav"><a class="prev" href="/blocks/arguments.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/exercises/numbers.html">
+        <nav class="page-nav"><a class="next" href="/blocks/ioc.html">
   Next
 </a></nav>
       </article>
@@ -605,7 +657,7 @@ TODO: check these instructions for Windows.
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
   </body>
 </html>
