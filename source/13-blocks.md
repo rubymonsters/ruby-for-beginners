@@ -8,15 +8,22 @@ the same time they read very well, and they are used all over the place.
 
 So, what is a block?
 
-A block, essentially, is the same thing as a method, except they do not have a
-name: That means a block is a piece of code, it can accept input in form of
+A block, essentially, is the same thing as a method, except it does not have a
+name, and does not belong to an object.
+
+I.e. a block is an anonymous piece of code, it can accept input in form of
 arguments (if it needs any), and it will return a value, but it does not have a
 name.
 
 Moreover, blocks can only be created by the way of passing them to a method
 when the method is called.
 
-Let's have a look at an example:
+<p class="hint">
+A block is a piece of code that accepts arguments, and returns a value. A block
+is always passed to a method call.
+</p>
+
+Let's jump right in:
 
 ```ruby
 5.times do

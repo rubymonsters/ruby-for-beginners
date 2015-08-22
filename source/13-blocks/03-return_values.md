@@ -28,6 +28,10 @@ shorter, and also more commonly used in other languages. However, in our study
 groups we use `collect` more often, because it simply expresses more clearly
 what the method does.
 
+<p class="hint">
+Use the method <code>collect</code> to transform an array into another array.
+</p>
+
 Here's another example that uses the return value of the block, can you guess
 what it does?
 
@@ -64,6 +68,10 @@ Let's walk through this step by step, under the microscope:
 
 Thus, the code above prints out `[1, 3, 5]`.
 
+<p class="hint">
+Use the method <code>select</code> to select a new array with values that match a criteria defined by the block.
+</p>
+
 Here's another example of a method that uses the block as a criterion:
 
 ```ruby
@@ -75,61 +83,4 @@ by one, and check the return value of the block. However, as soon as the block
 returns something truthy (something that is "equivalent to true"), the method
 `detect` will return the current object itself. Therefore, this will print out
 `2`: the first number in the array that is even.
-
-#### Inversion of control
-
-In Ruby there are a lot more methods that accept blocks, and they do very
-different things.
-
-However, they have one thing in common: By accepting a block, from
-you as a programmer, the method can pass control to you. This principle is
-called "inversion of control".
-
-For example, instead of having to define lots of methods like `select_odd`,
-`select_even`, `select_lesser_than`, `select_greater_than` and so on, defining
-one method per potentially useful criterion, Ruby only has to implement one
-single, generic method for arrays: `select`, allowing you to flexibly specify
-the criterion in form of Ruby code: by passing a block to the
-method. That way Ruby lets you, as a programmer, take over control, and specify
-what is used as a criterion to select elements.
-
-#### Iterators
-
-Methods on arrays and hashes that take a block are also called iterators.
-We say they "iterate over the array", meaning that these methods take each
-element of the array and do something with it.
-
-In Ruby iterators are "chainable", adding functionality on top of each other.
-That means that, if you do not pass a block to an iterator method, such as
-`each`, `collect`, `select`, then you'll get an iterator object back. You can
-then call more methods on these iterator objects, and finally pass a block.
-Like so:
-
-```ruby
-numbers = [1, 2, 3, 4, 5].collect.with_index do |number, index|
-  number + index
-end
-p numbers
-```
-
-This will print out:
-
-```
-[1, 3, 5, 7, 9]
-```
-
-What's going on here?
-
-The method `with_index` can be called on any iterator object. All it does is
-pass the index of the element within the array to the block, as a second block
-argument, in addition to the element itself.
-
-Inside of the block we can then use it, and add the index to the number itself.
-
-For the first iteration it will call the block with `1` and `0`, since `0` is
-the first "position", that is, index. It therefore returns `1`. For the second
-iteration it calls the block with `2` and `1`, and returns `3`, and so on.
-
-
-
 

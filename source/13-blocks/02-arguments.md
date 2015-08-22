@@ -1,6 +1,6 @@
 # Block arguments
 
-Blocks make even more sense on methods that are defined on collections like
+Blocks make a lot of sense on methods that are defined on collections like
 arrays and hashes.
 
 Let's have a look at some examples with arrays.
@@ -28,6 +28,10 @@ So, for blocks, `do |number|` is the same that is `def add_two (number)` for a
 method definition, except that the method wants a name while a block is
 anonymous: `|number|` and `(number)` both are argument lists. The first one
 is used for blocks, the second one for methods.
+
+<p class="hint">
+Block arguments are listed between pipes <code>|</code>, instead of parentheses.
+</p>
 
 Now, when you run the code example above, you'll see the message printed out
 for each of the numbers contained in the array.

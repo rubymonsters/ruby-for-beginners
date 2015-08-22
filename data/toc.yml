@@ -62,9 +62,11 @@
   - hashes
 - path: blocks
   children:
-  - block_syntax
-  - block_arguments
-  - block_return_values
+  - syntax
+  - arguments
+  - return_values
+  - ioc
+  - iterators
 - path: conditionals
   children:
   - nothing_and_truth
