@@ -45,12 +45,6 @@ You keep this knowledge around, and you can use it when you do things (such as
 responding to another person). Likewise, an object keeps its instance variables
 around, as long as the object exists.
 
-<!--
-Next to its instance variables, the object's scope also contains the object's
-method names. That is to say, the object knows about its own methods, and it
-can call them, internally from other methods, if that's useful.
--->
-
 Ok, let's see how that works in practise.
 
 If you create, and output an instance of our class `Person`, you'll see that

@@ -7,8 +7,8 @@ we'll cover.
 
 This curriculumn is built on top of two main ideas:
 
-* We introduce one concept after another. Doing so we make sure not to assume
-  any knowledge but things that already were explained.
+* We introduce one concept after another. Doing so we try to make sure not to
+  assume any knowledge but things that already were explained.
 * We get you to a point where you can create your own classes, objects, and
   methods as quickly as possible: We found that's the point where it starts to
   be most fun for most people.

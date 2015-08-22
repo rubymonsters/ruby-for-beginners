@@ -6,7 +6,7 @@
     margin: 4em;
   }
   body {
-    font-size: 0.8em;
+    font-size: 1em;
   }
   body > div {
     display: block;
@@ -18,7 +18,7 @@
     max-width: 100%;
   }
   h1 {
-    page-break-before: always;
+    /* page-break-before: always; */
   }
   h1, h2, h3, h4 {
     page-break-after: avoid;
