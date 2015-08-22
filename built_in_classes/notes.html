@@ -10,18 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>The Mailbox Text Formatter | Ruby for Beginners</title>
+    <title>Notes | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/exercises/mailbox.html">
-  Previous
-</a></nav>
-    <nav class="page-nav"><a class="next" href="/exercises/mailbox_html.html">
-  Next
-</a></nav>
+    <nav class="page-nav"></nav>
+    <nav class="page-nav"></nav>
 
     <div>
       <nav class="toc">
@@ -468,7 +464,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory expanded">
+  <li class="directory">
     <a href="/exercises.html">
       Exercises
     </a>
@@ -528,7 +524,7 @@
           The Mailbox Class
         </a>
       </li>
-      <li class="active">
+      <li>
         <a href="/exercises/mailbox_text.html">
           The Mailbox Text Formatter
         </a>
@@ -554,79 +550,43 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>The Mailbox Text Formatter</h1>
+        <!---
+For example, remember our code example from the chapter about [Arrays](/more_built_in_classes/arrays.html):
 
-<p>The mailbox text formatter exercise is a milestone in the beginners group
-curriculum, and it may take a little bit longer to complete it. That is fine,
-and, to some extent, the point :)</p>
+```ruby
+$ irb
+> words = [&ldquo;one&rdquo;, &ldquo;two&rdquo;, &ldquo;three&rdquo;]
+> words[0]
+=> &ldquo;one&rdquo;
+> words[1]
+=> &ldquo;two&rdquo;
+&ldquo;`
 
-<h2>Exercise 12.1</h2>
+This lookups return `&quot;one&rdquo;`, and `&ldquo;two&rdquo;`, because the array contains elements
+on these positions.
 
-<p>Make a new file <code>mailbox_text-1.rb</code>. Fill in and complete the following
-class definitions:</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Email</span>
-  <span class="c1"># your class from the last exercise</span>
-<span class="k">end</span>
+What if we print out the element on `3` (the fourth position) though, or `4`,
+which do not exist not exist?
 
-<span class="k">class</span> <span class="nc">Mailbox</span>
-  <span class="c1"># your class from the last exercise</span>
-<span class="k">end</span>
+Right, we get back `nil`, meaning &ldquo;nothing&rdquo;:
 
-<span class="k">class</span> <span class="nc">MailboxTextFormatter</span>
-  <span class="c1"># fill in this class body</span>
-<span class="k">end</span>
+&ldquo;`ruby
+> words = [&quot;one&rdquo;, &ldquo;two&rdquo;, &ldquo;three&rdquo;]
+> words[3]
+=> nil
+> words[4]
+=> nil
+&ldquo;`
 
-<span class="n">emails</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ferdous"</span> <span class="p">}),</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Keep on coding! :)"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-01"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Dajana"</span> <span class="p">}),</span>
-  <span class="no">Email</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Re: Homework this week"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="s2">"2014-12-02"</span><span class="p">,</span> <span class="ss">:from</span> <span class="o">=&gt;</span> <span class="s2">"Ariane"</span> <span class="p">})</span>
-<span class="p">]</span>
-<span class="n">mailbox</span> <span class="o">=</span> <span class="no">Mailbox</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ruby Study Group"</span><span class="p">,</span> <span class="n">emails</span><span class="p">)</span>
-<span class="n">formatter</span> <span class="o">=</span> <span class="no">MailboxTextFormatter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">mailbox</span><span class="p">)</span>
+You&rsquo;ll learn later that every operation (&quot;method&rdquo;) in Ruby always returns
+exactly one thing (i.e. one object), and that&rsquo;s why there needs to be a
+&ldquo;thing&rdquo; that represents &ldquo;nothing&rdquo;.
 
-<span class="nb">puts</span> <span class="n">formatter</span><span class="p">.</span><span class="nf">format</span>
-</code></pre>
+This will start to feel pretty natural to you pretty soon.
+&ndash;>
 
-<p>Your goal is to complete the code in a way so it outputs the following:</p>
-<pre class="highlight plaintext"><code>Mailbox: Ruby Study Group
-
-+------------+---------+------------------------+
-| Date       | From    | Subject                |
-+------------+---------+------------------------+
-| 2014-12-01 | Ferdous | Homework this week     |
-| 2014-12-01 | Dajana  | Keep on coding! :)     |
-| 2014-12-02 | Ariane  | Re: Homework this week |
-+------------+---------+------------------------+
-</code></pre>
-
-<p>You are allowed to add as many methods to the classes <code>Email</code>, <code>Mailbox</code> and
-<code>MailboxTextFormatter</code> as you deem useful. In your final solution you are not
-allowed to change any of the code outside (after) the class definitions. For
-debugging purposes, you can, of course, change all the code you want :)</p>
-
-<p>If you do this exercise in one of our study groups then best do it together
-with someone else. We found pairs to work best, and a three person team would
-be better than doing it on your own.</p>
-
-<p>Try to come up with a working solution first. It doesn&rsquo;t matter how elegant,
-generic, or pretty it is. Whatever produces the required output is fine for a
-first solution.</p>
-
-<p>Then, later, look at your code, and try to improve it by cleaning up everything
-that you don&rsquo;t like, or deam ugly.</p>
-
-<p>Eventually, one goal to aim for would be: Adding another column to the table
-only requires mimimal changes, e.g. changes to one or two places in your
-formatter class.</p>
-
-<p><a href="/solutions/mailbox_text-1.html" class="solution">Show solution</a></p>
-
-        <nav class="page-nav"><a class="prev" href="/exercises/mailbox.html">
-  Previous
-</a></nav>
-        <nav class="page-nav"><a class="next" href="/exercises/mailbox_html.html">
-  Next
-</a></nav>
+        <nav class="page-nav"></nav>
+        <nav class="page-nav"></nav>
       </article>
     </div>
 

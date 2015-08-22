@@ -12,7 +12,7 @@
 
     <title>Ruby For Beginners | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-230024d9.css" rel="stylesheet" type="text/css" />
+    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
@@ -679,21 +679,6 @@ tweets, and they can follow each other&rdquo;. And from now on, every time new u
 are created in the little universe that is your application, these users will
 have the ability to tweet and follow each other.</p>
 
-<!---
-TODO Talk about:
-
-* Writing code is creative. It is close to art, design, architecture and philosophy. 
-* Heidegger: "language is the house of being" 
-* all you need is a computer, internet connection and time
-* Building fun applications, or useful little tools (Debbie's lunch roulette)
-
-*I believe people want to express themselves when they program. They don’t want to fight with the language. Programming languages must feel natural to
-programmers. I tried to make people enjoy programming and concentrate on the
-fun and creative part of programming when they use Ruby.* - Yukihiro Matsumoto
-http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html
-
--->
-
   <h1>Learning to program</h1>
 
 <p><em>Brainwashing yourself</em></p>
@@ -754,11 +739,6 @@ symbols are what, and it&rsquo;ll all be very confusing. Then one day BANG your 
 will snap and you will suddenly &ldquo;get it.&rdquo; If you keep doing the exercises and
 keep trying to understand them, you will get it.</em> from the great book <a href="http://learnrubythehardway.org/book/intro.html">Learn
 Ruby The Hard Way</a> by Zed Shaw.</p>
-
-<!---
-TODO add advice to never copy and paste code, instead type it, and format
-it well.
--->
 
   <h1>Learning modes</h1>
 
@@ -1277,8 +1257,8 @@ we&rsquo;ll cover.</p>
 <p>This curriculumn is built on top of two main ideas:</p>
 
 <ul>
-<li>We introduce one concept after another. Doing so we make sure not to assume
-any knowledge but things that already were explained.</li>
+<li>We introduce one concept after another. Doing so we try to make sure not to
+assume any knowledge but things that already were explained.</li>
 <li>We get you to a point where you can create your own classes, objects, and
 methods as quickly as possible: We found that&rsquo;s the point where it starts to
 be most fun for most people.</li>
@@ -1705,41 +1685,6 @@ exactly one thing (i.e. one object), and that&rsquo;s why there needs to be a
 &ldquo;thing&rdquo; that represents &ldquo;nothing&rdquo;.</p>
 
 <p>This will start to feel pretty natural to you pretty soon.</p>
-
-<!--
-For example, remember our code example from the chapter about [Arrays](/more_built_in_classes/arrays.html):
-
-```ruby
-$ irb
-> words = [&ldquo;one&rdquo;, &ldquo;two&rdquo;, &ldquo;three&rdquo;]
-> words[0]
-=> &ldquo;one&rdquo;
-> words[1]
-=> &ldquo;two&rdquo;
-&ldquo;`
-
-This lookups return `&quot;one&rdquo;`, and `&ldquo;two&rdquo;`, because the array contains elements
-on these positions.
-
-What if we print out the element on `3` (the fourth position) though, or `4`,
-which do not exist not exist?
-
-Right, we get back `nil`, meaning &ldquo;nothing&rdquo;:
-
-&ldquo;`ruby
-> words = [&quot;one&rdquo;, &ldquo;two&rdquo;, &ldquo;three&rdquo;]
-> words[3]
-=> nil
-> words[4]
-=> nil
-&ldquo;`
-
-You&rsquo;ll learn later that every operation (&quot;method&rdquo;) in Ruby always returns
-exactly one thing (i.e. one object), and that&rsquo;s why there needs to be a
-&ldquo;thing&rdquo; that represents &ldquo;nothing&rdquo;.
-
-This will start to feel pretty natural to you pretty soon.
-&ndash;>
 
   <h1>Variables</h1>
 
@@ -2515,58 +2460,6 @@ it is an instance of the class <code>String</code>. You can do this for any obje
 <p>We also say that an object is an <em>instance</em> of its class. Let&rsquo;s see what that
 means.</p>
 
-<!--
-## Lift off to mindblow
-
-Even more interesting, you can also ask a *class* for its class:
-
-```ruby
-$ irb
-> String.class
-=> Class
-&ldquo;`
-
-There&rsquo;s a class named `Class`, and the class `String` is an object that *is a*
-`Class`.
-
-Funnily, the class `String` is not only a class, but also, at the same time, an
-object:
-
-&rdquo;`ruby
-$ irb
-> String.is_a?(Object)
-=> true
-&ldquo;`
-
-And even more interesting, the class `Class` also is an object, the class of
-the class `Class` is `Class` (i.e. itself), and the class `Object` is an
-object, too:
-
-&rdquo;`ruby
-$ irb
-> Class.is_a?(Object)
-=> true
-> Class.class
-=> Class
-> Object.is_a?(Object)
-=> true
-&ldquo;`
-
-Wow.
-
-Ok, this might get a little confusing, when you think about it too hard.
-
-To be honest, none of this is super useful knowledge in practice, most of the
-time (unless you&rsquo;re working with pretty advanced programming techniques such
-as [meta programming](http://ola-bini.blogspot.de/search/label/metaprogramming),
-i.e. code that, when run, defines other code).
-
-However, it is kinda cool to see how in Ruby, where everything is an object,
-even classes are objects, and have their own class.
-
-Anyhow. Let&rsquo;s move back to more practical things.
-&ndash;>
-
   <h1>Classes create objects</h1>
 
 <p>Every object is an <em>instance</em> of a class.</p>
@@ -3159,12 +3052,6 @@ Instance variables live in, and are visible everywhere in the object&rsquo;s sco
 You keep this knowledge around, and you can use it when you do things (such as
 responding to another person). Likewise, an object keeps its instance variables
 around, as long as the object exists.</p>
-
-<!--
-Next to its instance variables, the object's scope also contains the object's
-method names. That is to say, the object knows about its own methods, and it
-can call them, internally from other methods, if that's useful.
--->
 
 <p>Ok, let&rsquo;s see how that works in practise.</p>
 
@@ -6233,10 +6120,6 @@ of the current directory.)</p></li>
 <li><p>In order to see all the files and subdirectories contained in the current
 directory you can run <code>ls</code>.</p></li>
 </ul>
-
-<!---
-TODO: check these instructions for Windows.
--->
 
 <p><p class='credits'>
   Credits: The exercises 1.1, 1.2, and 2.1 are taken from
