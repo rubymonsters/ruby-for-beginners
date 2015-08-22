@@ -54,8 +54,7 @@ ArgumentError: wrong number of arguments (1 for 0)
 ```
 
 Right, how would one person greet another without knowing who that other person is?
-All they could do is say "Hi" to the group. So we need to make our method accept
-an argument:
+So we need to make our method accept an argument:
 
 ```ruby
 class Person
@@ -83,8 +82,9 @@ end
 
 What happens when you run that? It works, right. This should output `Hi!` to the screen.
 
-However, how can Anja greet Carla? Well, she knows the person to greet (she has
-been passed as an argument to the method) so she can ask her for her name:
+However, how can Anja greet Carla, specifically? How can any person greet any
+other person? Well, the method knows the person to greet (she has been passed
+as an argument to the method) so she can ask her for her name:
 
 ```ruby
 class Person
@@ -153,7 +153,13 @@ Nice. This now outputs:
 Hi Carla! My name is Anja.
 ```
 
-And now we can add another line at the end, and let Carla greet Anja back.
+Remember how you could call the method `add_one` from another method `add_two`
+[before](/writing_methods/combining.html)? The same works here, too: We can
+call the person's own method `name` by just using it, since this method is
+defined on the same class, and thus every instance of `Person`. We'll look
+at this a little more in the [next chapter](/writing_classes.html).
+
+For now let's add another line at the end, and let Carla greet Anja back.
 
 Again, here's the full code:
 

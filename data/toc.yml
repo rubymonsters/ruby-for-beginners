@@ -54,6 +54,7 @@
   - attribute_writers
   - state_and_behaviour
   - interaction
+  - self
 - path: more_built_in_classes
   children:
   - symbols
