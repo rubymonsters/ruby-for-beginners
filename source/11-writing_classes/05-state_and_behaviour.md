@@ -53,6 +53,10 @@ We can say that an object encapsulates state (data, knowledge), which is
 private to the object, and exposes behaviour by the way of having publicly
 accessible methods.
 
+<p class="hint">
+Objects have state (instance variables) and behaviour (methods).
+</p>
+
 So, we have now created our first little class, and it's one that you could
 actually see in real applications.
 

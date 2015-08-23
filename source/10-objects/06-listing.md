@@ -2,8 +2,8 @@
 
 As said above, if you are curious what methods are defined on a certain object,
 then you can check the [Ruby documentation](http://ruby-doc.org/core-2.2.0/)
-for this class (usually shows up at the top when you google for "ruby" and the
-class name).
+for this class. (Usually the right page conveniently shows up at the top when
+you google for "ruby" and the class name.)
 
 However, you can also quickly pop into IRB and ask the object for its methods.
 That's right, `methods` is a method defined on all objects (just like `class`,
@@ -22,11 +22,12 @@ $ irb
 ```
 
 If you do this yourself, you'll see that the String actually has a lot more
-methods. We have stripped the list down a little, because we want to talk
-about some of these methods more.
+methods. Many of these actually aren't used very often, but some are quite
+useful. We have stripped the list down a little, because we want to talk about
+some of these methods more.
 
-This example also demonstrates that methods can be "chained": When we call a
-method on an object it will return another object to us. We can then
+Btw the code above also demonstrates that methods can be "chained": When we
+call a method on an object it will return another object to us. We can then
 immediately call another method on that new object, and so on.
 
 In our example above the method `methods` returns a list of names. And this
@@ -50,6 +51,6 @@ Pretty handy.
 
 As you can see Ruby will first evaluate the bit `name.prepend("Oh, hello, ")`.
 It needs to do that so it knows the object (the new String) that is going
-to be returned from this, so it can then call the method `upcase on it`.
+to be returned from this, so it can then call the method `upcase` on it.
 
 Does this make sense?

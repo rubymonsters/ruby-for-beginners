@@ -88,7 +88,7 @@ everywhere. Many built-in methods use them, too. So it's good to introduce
 them now.
 
 Blocks are like methods that don't have a name, and they are passed when
-calling methods. We'll discuss why this is cool, and how it works.
+calling actual methods. We'll discuss why this is cool, and how it works.
 
 ### 9. Conditionals, Truthiness, and Nothing
 
@@ -114,7 +114,9 @@ This concludes the core of our "Ruby For Beginners" curriculum. With this
 knowledge you'll have all the tools you need in order to play with things, read
 (most of) other people's code, and write your own useful things.
 
-There are a couple bonus chapters that you might want to skim through.
+There are a couple bonus chapters that you might want to skim through. Some of
+these are still waiting to find their place somewhere else in the book. Some
+will probably be marked as optional.
 
 Also there are some extra chapters about advanced topics, some of which are
 relevant to the more advanced exercises, and for the next curriculum about

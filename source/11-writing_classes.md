@@ -39,7 +39,8 @@ That's all. It's not a very useful class, since it's completely empty, but
 it's a class.
 
 <p class="hint">
-A class is defined using the keyword <code>class</code>, a name, and the keyword <code>end</code>.
+A class is defined using the keyword <code>class</code>, a name, and the
+keyword <code>end</code>.
 </p>
 
 Also, you see that the class has the name `Person`, which starts with an
@@ -53,7 +54,8 @@ variable and method names we use underscores, and keep everything lowercase:
 `local_variable` and `method_name`. This is called snake_case.
 
 <p class="hint">
-Class names must start with an uppercase letter, and usually use CamelCase.
+Class names must start with an uppercase letter, and should use CamelCase.
+Variable and methods names should use snake_case.
 </p>
 
 Ok, back to our class `Person`.
@@ -70,7 +72,8 @@ That's right. `new` is a method, and it is defined on the *class* itself
 instance of the class, and returns it.
 
 <p class="hint">
-The method <code>new</code> is defined on any class, and returns a new instance of the class.
+The method <code>new</code> is defined on any class, and returns a new instance
+of the class.
 </p>
 
 Cool. Let's have a look at that object:

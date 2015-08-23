@@ -34,4 +34,9 @@ that a method accepts a number of *arguments* (pieces of input). And instead of
 "output" we use the term *return value*: the thing that we get back from the
 method.
 
+<p class="hint">
+A method's input is referred to as "arguments", while its output is called a
+"return value".
+</p>
+
 This will become more clear in the following chapters. Let's define a method next.

@@ -1,9 +1,7 @@
 # Predicate methods
 
 If you check the list of methods on our String above you see that in Ruby we
-can have methods that end with a question mark `?`.
-
-This makes them read like a question, which is pretty awesome.
+can have methods that end with a question mark `?`. What's up with that?
 
 By convention, in Ruby, these methods return either `true` or `false`. For
 example, we can ask a number if it is even or odd:
@@ -16,6 +14,8 @@ $ irb
 > 5.odd?
 => true
 ```
+
+This makes them read like a question, which is pretty cool.
 
 Or you can ask the number if it's between two other numbers. Obviously this
 methods needs us to pass those two other numbers. So now we also have an example

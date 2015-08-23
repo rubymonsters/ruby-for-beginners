@@ -114,7 +114,7 @@ return value of the method call `greet`: We don't assign it to a variable. And
 we don't pass it to another method call. In fact, we simply discard it since
 we're not interested it in.
 
-In our example that's just fine. In praxis you should always be aware *why*
+In our example that's just fine. In practice you should always be aware *why*
 you are calling a certain method. Is it a command like *Please print this*?
 Then you probably aren't interested in the return value and you can discard
 it as we've done above. Or is it a more like a question *What's the result

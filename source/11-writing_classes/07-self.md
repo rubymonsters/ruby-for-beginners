@@ -4,15 +4,16 @@ Remember how we said that when Ruby finds a method call she then deviates from
 the normal control flow which goes from top to bottom? Instead she jumps into
 the method body.
 
-We also said that this method body has its own *scope*, like a shiny, new room
-where local variables from other scopes are not visible. Instead it has its own
-local variables, some of which might be defined via the method's arguments.
+We also said that this method body has its own [scope](/writing_methods/scope.html),
+like a shiny, new room where local variables from other scopes are not visible.
+Instead it has its own local variables, some of which might be defined via the
+method's arguments.
 
 And we also said that inside any object's method all instance variables of
 this object, and all other methods of this object are also visible.
 
-We also briefly talked about that mysterious top-level object that Ruby enters
-when she starts executing a program, or IRB.
+We also briefly talked about that mysterious [top-level object](/objects/top-level.html)
+that Ruby enters when she starts executing a program, or IRB.
 
 We are now finally ready to put all these things together a little more, and
 introduce a new keyword: `self`.
@@ -29,8 +30,8 @@ When Ruby's control flow jumps into a method then both of these scopes are
 visible at the same time. For any given name Ruby will first check the local
 scope, and then the object scope.
 
-In practise this most importantly means that from any method on an object,
-you can access:
+In reality this most importantly means that from any method on an object, you
+can access:
 
 * all local variables
 * all instance variables
@@ -70,10 +71,14 @@ Hi Carla! My name is Carla.
 ```
 
 That is because, on the last line of the method `greet`, when Ruby looks at the
-word `name` she first checks the local scope of the method, and finds a local
-variable defined, so she uses it. Only if there was no local variable defined
-she would check the object's scope, and find the method with the same name
-`name`, and call it.
+word (identifier) `name` she first checks the local scope of the method, and
+finds a local variable defined, so she uses it. Only if there was no local
+variable defined she would check the object's scope, and find the method with
+the same name `name`, and call it.
+
+<p class="hint">
+When she finds an identifier, Ruby looks for a local variable first, and then for a method.
+</p>
 
 Luckily, there's a way to still access the object's scope:
 
@@ -161,3 +166,8 @@ It's not a method, it's a special thing.
 Other keywords that also aren't methods (or objects, or classes) are, for
 example, `def`, `class`, and `end`. You'll also learn about `do`, `if`, `elsif`
 and `else` a little later.
+
+<p class="hint">
+Keywords are words that have a special meaning in Ruby, such as
+<code>class</code>, <code>def</code>, <code>end</code>, and <code>self</code>.
+</p>

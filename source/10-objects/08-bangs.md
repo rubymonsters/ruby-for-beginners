@@ -1,7 +1,8 @@
 # Bang Methods
 
-All of the examples that we've discussed before do not modify the object
-they are called on.
+All of the examples that we've discussed before have one thing in common:
+
+They are questions, and do not modify the object they are called on.
 
 For example:
 
@@ -49,7 +50,8 @@ ruby monstas
 ```
 
 As you can see calling the method `downcase!` on the second line has modified
-the String itself, and *also* returned the new downcased version.
+the String itself (the object that `name` refers to), and *also* returned the
+new downcased version.
 
 Nowadays programmers have learned that using these methods has a number of
 disadvantages, and usually should be avoided, unless there are very good

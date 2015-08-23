@@ -2,7 +2,7 @@
 
 Once defined we can use our method.
 
-As programmers we usually say that we "call" a method. This means we tell Ruby
+As programmers we usually say that we "call" a method. This means we ask Ruby
 to execute the code that the method body has, with some given arguments
 (input), if any.
 
@@ -16,7 +16,7 @@ end
 puts add_two(3)
 ```
 
-Let's inspect what's happening here at this under the microscope. If you don't
+Let's inspect what's happening here under the microscope. If you don't
 understand each part of this just yet, don't worry, we'll get back to all of
 this.
 
@@ -25,16 +25,17 @@ On the first three lines Ruby defines the method `add_two` as discussed above.
 * On the next line Ruby will look at the bit `add_two(3)` first. She recognizes
   that we are referring to a method defined earlier, and this will tell her we
   want to call (execute, use) this method.
-* In order to do so she first needs to look at what's inside the parantheses `()`.
-  She finds the `3` and creates a new object (number) for it.
+* In order to do so she first needs to look at what's inside the parantheses
+  `()` so she can pass it on. She finds the `3` and creates a new object
+  (number) for it.
 * Now Ruby is ready to actually call (execute, use) the method, passing the
   number `3`.
 
 So Ruby now deviates from the normal flow, which just goes from top to bottom
 in our file. Instead she now jumps into the method body.
 
-Doing so she now *assigns* the number `3` to a local variable `number` before
-she starts executing the method body.
+In this moment she now *assigns* the number `3` to a local variable `number`
+before she starts executing the method body.
 
 That's right. This is how method *arguments* work:
 
@@ -72,5 +73,5 @@ puts 5
 
 And that will now print the number `5` to the screen.
 
-Let's have another look at that concept with the return value ("output"), as we
-just rushed over that a little.
+Let's have a closer look at that thing with the return value ("output"), as
+we just rushed over that a little.

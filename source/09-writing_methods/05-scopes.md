@@ -135,8 +135,8 @@ method call. In the example above she brings an object that is the number `3`.
 Now, as soon as Ruby enters the method, she sticks post-it notes on the
 objects, according to the argument list from the method definition. In our
 example that is the name `number`. So from now on, in this room, there's a
-known local variable that has a value assigned: The number `3` with the post-it
-note `number` on it.
+known local variable that has a value assigned: The object (number) `3` with
+the post-it note `number` on it.
 
 In our example, the outer scope and the scope of the method `add_two`, are
 two different rooms, and there are two different post-it notes stuck on

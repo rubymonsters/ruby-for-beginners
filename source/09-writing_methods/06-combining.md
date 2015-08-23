@@ -2,12 +2,13 @@
 
 We've discussed how to define a method, and how to call (use) it.
 
-What if one method is not enough?
+What if one method is not enough? What if methods need to do more complicated
+things?
 
-We can, of course, call methods from other methods.
+Easy. We can call methods from other methods.
 
-For example, we could re-implement our method `add_two` using another method
-`add_one`, and simply call it twice:
+For example, we could re-write ("re-implement") our method `add_two` using
+another method `add_one`, and simply call it twice:
 
 ```ruby
 def add_one(number)
@@ -70,7 +71,7 @@ puts add_two(3)
 ```
 
 Again, these examples are not super realistic, as we'd probably just use the
-`+` operator in the first place, in practise.
+`+` operator in the first place, in practice.
 
 However, we think this nicely demostrates how you can use one method from
 another ... and how different methods require different numbers of arguments.

@@ -24,4 +24,5 @@ In Ruby almost everything is an object :)
 </p>
 
 (Just in case you want to out-smart people at your local Ruby user group
-though, remember to ask *"Really? Is an `if` statement an object in Ruby, too?"*)
+though, remember to ask "Really? Is an [if](conditionals.html) statement an
+object or a method?  How about [self](/writing_classes/self.html)?")

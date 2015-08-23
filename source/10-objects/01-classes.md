@@ -17,11 +17,15 @@ $ irb
 => String
 ```
 
+<p class="note">
+Objects are concrete instances (manifestations) of classes.
+</p>
+
 That means that the following sentence is true: In Ruby, `"a string"` *is a*
 `String`.
 
-Yeah, we kinda knew that already, right. However, you can also ask the same
-question in Ruby:
+Hmmmm, yeah, we kinda knew that already, right. However, you can also ask the
+same question in Ruby:
 
 ```ruby
 $ irb

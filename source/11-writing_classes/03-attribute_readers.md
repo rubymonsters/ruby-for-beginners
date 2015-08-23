@@ -67,6 +67,10 @@ In fact they are so common that there's a word for them: they are called
 "attribute readers". By "attribute" the Ruby community means an instance
 variable, so an attribute reader is a method that reads an instance variable.
 
+<p class="hint">
+An attribute reader returns the value of an instance variable.
+</p>
+
 Another way of looking at this is that an attribute reader is a method that
 "exposes" an instance variable. It makes it accessible for others. I.e. it
 allows you to ask for the value of an instance variable with the same name, and

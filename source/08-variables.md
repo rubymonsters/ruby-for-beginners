@@ -42,9 +42,19 @@ Imagine you were in the middle of learning some Spanish, and sticked post-its
 onto things in your apartment: the name "nevara" onto the refridgerator, "cama"
 onto your bed, and "puerta del baño" onto the bathroom door.
 
+Now, whenever you use one of these terms, as in "abrir la nevera" (open the
+refridgerator) in order to learn the language and rehearse vocabulary, you'll
+obviously refer to the object, and open its actual, physical door.
+
 That's pretty much how variable assignment works in Ruby. There's a "thing",
 the object on the right side of the assignment operator `=`, and the name on
 the left side is being assigned to it.
+
+Whenever we use a variable name that has been defined before we refer to the
+actual object that it has been assigned to. E.g. on the second line of the
+code example above `number` refers to the actual object, the number `1` that
+it has been assigned to on the first line. Therefore `puts number` outputs
+the number.
 
 <p class="hint">
 You can pick whatever variable names you want, they're just names, like post-it

@@ -3,7 +3,7 @@
 *Classes and objects*
 
 Ruby is, like many other popular languages, an object-oriented programming
-language. Other object-oriented languages that you might have heard of, are
+language. Other object-oriented languages that you might have heard of are
 C++, Java, Python, PHP, and Javascript. At some point in the 1990s this
 paradigm started to become more and more popular and nowadays it is the
 most prevalent one.
@@ -11,7 +11,7 @@ most prevalent one.
 One reason for this is that object-oriented programming very much fits the way
 we perceive and think about the world, at least in the occidental culture.
 Our way of thinking was, historically, very much influenced by Plato,
-and the philosophers who followed him:
+and philosophers who followed him:
 
 We somehow tend to think about the world as if there are abstract "ideas" (or
 concepts) and concrete "things", which are entities of the ideas, or
@@ -31,6 +31,10 @@ As a programmer you would define classes, like a class "User" and a class
 user with a name, email address, a password and actual tweets. You would also
 define that users have the ability to remember their own name, and the ability
 to tell it to others when asked.
+
+<p class="hint">
+Classes are like ideas, objects are concrete things, manifestations of their ideas.
+</p>
 
 Every object-oriented programming language comes with some "ideas", that is,
 classes, already baked in, and so does Ruby. For example Ruby has classes for
@@ -62,7 +66,7 @@ characteristics are defined by classes ("types of things", or "ideas").
 
 This will start to make a lot more sense to you once you write your own classes.
 
-<p class="hint">
+<p class="hint sidenote">
 There is, today, some debate about the paradigm of object-oriented
 programming, and whether we should move on to another one, called "functional
 programming". You might hear about this if you talk to developers. Some

@@ -78,8 +78,8 @@ $ irb
 123
 ```
 
-From the output of `puts` it often times is not clear whether the object that
-you are looking it is an array that contains numbers, or an array that contains
+From the output of `puts` it often is not clear whether the object that you are
+looking it is an array that contains numbers, or an array that contains
 strings, or just a long string that contains linebreaks.
 
 In short, `puts` is useful when you are writing a program that is supposed to

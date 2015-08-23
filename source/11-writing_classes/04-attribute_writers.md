@@ -4,7 +4,7 @@
 
 Imagine in our application a person not only needs a name, but also a password.
 However, let's also imagine that, at the time of the creation of a new person
-object, this password is not yet known. (Who would give a toddler an email
+instance, this password is not yet known. (Who would give a toddler an email
 password anyway?)
 
 Instead we want to be able to tell the person object about its email password

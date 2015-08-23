@@ -63,9 +63,12 @@ will then print it out:
 #<Person:0x007fd8947aa868 @name="Ada">
 ```
 
-As you can see that includes the instance variable `@name` with the value
-`"Ada"`.
+As you can see this includes the instance variable `@name` with the value
+`"Ada"`: This specific, concrete instance of the class `Person` knows their
+name.
 
 You can think of this as you, as a programmer, creating this new person, and
 in the moment of its creation, its birth, you also give it a name. Which kind
 of how it works with real people, too, isn't it?
+
+Hmm, well ... Yeah, sort of. Anyhow, let's move on.

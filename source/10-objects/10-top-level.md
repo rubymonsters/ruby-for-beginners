@@ -15,7 +15,7 @@ So what's up with that?
 This is something that pretty much blows some people's minds, confuses the heck
 out of others, while yet others don't even notice or think about it at all. It
 is also something, that, when you ask around on your local Ruby meetup, very
-few people can explain in a satisfying, and clear way. And neither do we.
+few people can explain in a satisfying, and clear way. And neither do we, yet.
 
 Let's still try.
 

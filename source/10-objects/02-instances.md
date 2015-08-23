@@ -16,6 +16,10 @@ String).
 Now, every time a new object is created ("instantiated") from this class this
 new object get ("inherits") all of these methods.
 
+<p class="note">
+Objects inherit methods from their classes.
+</p>
+
 That's right. Objects have their own methods attached to them.
 
 We'll explain more about methods that belong to objects in the next chapter.

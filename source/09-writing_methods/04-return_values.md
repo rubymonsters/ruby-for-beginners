@@ -3,16 +3,16 @@
 In Ruby, a method always return exactly one single thing (an object).
 
 The returned object can be anything, but a method can only return one thing,
-and it also *always returns something* (an object, which could be the object
-`nil`).
+and it also *always returns something*.
 
 <p class="hint">
 Every method always returns exactly one object.
 </p>
 
-In order to return a bunch of things at once we could return an Array that holds
-the things that we are interested in, but the array itself is just one object.
-(Or a Hash, also holding a bunch of things, and also being just one object.)
+The object returned could be the object `nil`, meaning "nothing", but it still
+is an object.  Also, in order to return a bunch of things at once we could
+return an Array that holds the things that we are interested in, but the Array
+itself is just one object.
 
 Also note that in Ruby we do not have to use the statement `return`, as in
 other languages. In fact, most Ruby code does not use the keyword `return` at

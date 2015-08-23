@@ -47,6 +47,10 @@ $ irb
 => 3.0
 ```
 
+<p class="hint">
+Mathmatical operations result in a number of the same type as they start with.
+</p>
+
 This is, for example, important when you do a division (`/` means "divide by"):
 
 ```ruby
@@ -65,6 +69,10 @@ $ irb
 > 3.0 / 2
 => 1.5
 ```
+
+<p class="hint">
+Use floating point (decimal) numbers when doing devisions.
+</p>
 
 Exercises: How about doing some of the [exercises on numbers](/exercises/numbers.html)
 next?
