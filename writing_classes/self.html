@@ -560,15 +560,16 @@
 the normal control flow which goes from top to bottom? Instead she jumps into
 the method body.</p>
 
-<p>We also said that this method body has its own <em>scope</em>, like a shiny, new room
-where local variables from other scopes are not visible. Instead it has its own
-local variables, some of which might be defined via the method&rsquo;s arguments.</p>
+<p>We also said that this method body has its own <a href="/writing_methods/scope.html">scope</a>,
+like a shiny, new room where local variables from other scopes are not visible.
+Instead it has its own local variables, some of which might be defined via the
+method&rsquo;s arguments.</p>
 
 <p>And we also said that inside any object&rsquo;s method all instance variables of
 this object, and all other methods of this object are also visible.</p>
 
-<p>We also briefly talked about that mysterious top-level object that Ruby enters
-when she starts executing a program, or IRB.</p>
+<p>We also briefly talked about that mysterious <a href="../objects/top-level.html">top-level object</a>
+that Ruby enters when she starts executing a program, or IRB.</p>
 
 <p>We are now finally ready to put all these things together a little more, and
 introduce a new keyword: <code>self</code>.</p>
@@ -624,10 +625,14 @@ greeting any more. Instead it contains the same name twice:</p>
 </code></pre>
 
 <p>That is because, on the last line of the method <code>greet</code>, when Ruby looks at the
-word <code>name</code> she first checks the local scope of the method, and finds a local
-variable defined, so she uses it. Only if there was no local variable defined
-she would check the object&rsquo;s scope, and find the method with the same name
-<code>name</code>, and call it.</p>
+word (identifier) <code>name</code> she first checks the local scope of the method, and
+finds a local variable defined, so she uses it. Only if there was no local
+variable defined she would check the object&rsquo;s scope, and find the method with
+the same name <code>name</code>, and call it.</p>
+
+<p class="hint">
+When she finds an identifier, Ruby looks for a local variable first, and then for a method.
+</p>
 
 <p>Luckily, there&rsquo;s a way to still access the object&rsquo;s scope:</p>
 
@@ -703,6 +708,11 @@ raise an error:</p>
 <p>Other keywords that also aren&rsquo;t methods (or objects, or classes) are, for
 example, <code>def</code>, <code>class</code>, and <code>end</code>. You&rsquo;ll also learn about <code>do</code>, <code>if</code>, <code>elsif</code>
 and <code>else</code> a little later.</p>
+
+<p class="hint">
+Keywords are words that have a special meaning in Ruby, such as
+<code>class</code>, <code>def</code>, <code>end</code>, and <code>self</code>.
+</p>
 
         <nav class="page-nav"><a class="prev" href="/writing_classes/interaction.html">
   Previous
