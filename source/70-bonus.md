@@ -1,1 +1,1 @@
-# Bonus: Methods & Operators
+# Bonus Chapters

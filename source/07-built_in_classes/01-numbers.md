@@ -1,7 +1,15 @@
 # Numbers
 
-Numbers are simply numbers. You create one by writing it: `12.34` is Ruby code
-and it represents the number twelve-point-three-four.
+Numbers are simply numbers.
+
+You can create one by writing it: `123` is Ruby code and it represents the
+number one-hundred-twenty-three.
+
+Negative numbers are created by prepending a minus `-`: This is the number
+minus-ninety-nine: `-99`.
+
+And of course there are decimal numbers, too. Again, you create one by writing
+it: `12.34`.
 
 You can also use a comma to separate thousands places: E.g. `1,234.56` is the
 number one-thousand-two-hundred-thirty-four-point-five-six.  However, this is

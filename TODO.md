@@ -44,3 +44,5 @@ http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html
 
 
 Recommend to never copy and paste code, instead type it, and format it well.
+
+Move "String interpolation" up

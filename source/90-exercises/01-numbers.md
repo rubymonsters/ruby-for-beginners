@@ -41,9 +41,11 @@ In `irb`, use these methods to find out if certain numbers are odd or even.
 Numbers like `0, 1, 2, 99, -502` etc.
 
 <p class="hint">
-You can use a method by appending a dot `.` and then the method name
-to the object. E.g. `-99.abs` uses (we also say: "calls") the method `abs` on
-the number `-99`.  Try for yourself what it does, and google for "ruby abs" to
-find [the documentation](http://ruby-doc.org/core-2.0/Numeric.html#method-i-abs)
-for this method.
+You can use a method by appending a dot <code>.</code> and then the method name
+to the object. E.g. <code>-99.abs</code> uses (we also say: "calls") the method
+<code>abs</code> on the number <code>-99</code>.
 </p>
+
+Try for yourself what it does, and google for "ruby abs" to find
+[the documentation](http://ruby-doc.org/core-2.0/Numeric.html#method-i-abs)
+for this method.
