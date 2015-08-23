@@ -219,7 +219,7 @@
       </li>
       <li>
         <a href="/objects/calling.html">
-          Using methods
+          Calling methods
         </a>
       </li>
       <li>
@@ -558,8 +558,8 @@
 
 <p>As said above, if you are curious what methods are defined on a certain object,
 then you can check the <a href="http://ruby-doc.org/core-2.2.0/">Ruby documentation</a>
-for this class (usually shows up at the top when you google for &ldquo;ruby&rdquo; and the
-class name).</p>
+for this class. (Usually the right page conveniently shows up at the top when
+you google for &ldquo;ruby&rdquo; and the class name.)</p>
 
 <p>However, you can also quickly pop into IRB and ask the object for its methods.
 That&rsquo;s right, <code>methods</code> is a method defined on all objects (just like <code>class</code>,
@@ -576,11 +576,12 @@ the object has (more precisely, an Array, which you&rsquo;ll learn about
 </code></pre>
 
 <p>If you do this yourself, you&rsquo;ll see that the String actually has a lot more
-methods. We have stripped the list down a little, because we want to talk
-about some of these methods more.</p>
+methods. Many of these actually aren&rsquo;t used very often, but some are quite
+useful. We have stripped the list down a little, because we want to talk about
+some of these methods more.</p>
 
-<p>This example also demonstrates that methods can be &ldquo;chained&rdquo;: When we call a
-method on an object it will return another object to us. We can then
+<p>Btw the code above also demonstrates that methods can be &ldquo;chained&rdquo;: When we
+call a method on an object it will return another object to us. We can then
 immediately call another method on that new object, and so on.</p>
 
 <p>In our example above the method <code>methods</code> returns a list of names. And this
@@ -602,7 +603,7 @@ the method upcase.</p>
 
 <p>As you can see Ruby will first evaluate the bit <code>name.prepend(&quot;Oh, hello, &quot;)</code>.
 It needs to do that so it knows the object (the new String) that is going
-to be returned from this, so it can then call the method <code>upcase on it</code>.</p>
+to be returned from this, so it can then call the method <code>upcase</code> on it.</p>
 
 <p>Does this make sense?</p>
 

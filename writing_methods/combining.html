@@ -219,7 +219,7 @@
       </li>
       <li>
         <a href="/objects/calling.html">
-          Using methods
+          Calling methods
         </a>
       </li>
       <li>
@@ -558,12 +558,13 @@
 
 <p>We&rsquo;ve discussed how to define a method, and how to call (use) it.</p>
 
-<p>What if one method is not enough?</p>
+<p>What if one method is not enough? What if methods need to do more complicated
+things?</p>
 
-<p>We can, of course, call methods from other methods.</p>
+<p>Easy. We can call methods from other methods.</p>
 
-<p>For example, we could re-implement our method <code>add_two</code> using another method
-<code>add_one</code>, and simply call it twice:</p>
+<p>For example, we could re-write (&ldquo;re-implement&rdquo;) our method <code>add_two</code> using
+another method <code>add_one</code>, and simply call it twice:</p>
 <pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
   <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="k">end</span>
@@ -618,7 +619,7 @@ to use it:</p>
 </code></pre>
 
 <p>Again, these examples are not super realistic, as we&rsquo;d probably just use the
-<code>+</code> operator in the first place, in practise.</p>
+<code>+</code> operator in the first place, in practice.</p>
 
 <p>However, we think this nicely demostrates how you can use one method from
 another &hellip; and how different methods require different numbers of arguments.</p>

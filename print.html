@@ -215,7 +215,7 @@
       </li>
       <li>
         <a href="/objects/calling.html">
-          Using methods
+          Calling methods
         </a>
       </li>
       <li>
@@ -1339,7 +1339,7 @@ everywhere. Many built-in methods use them, too. So it&rsquo;s good to introduce
 them now.</p>
 
 <p>Blocks are like methods that don&rsquo;t have a name, and they are passed when
-calling methods. We&rsquo;ll discuss why this is cool, and how it works.</p>
+calling actual methods. We&rsquo;ll discuss why this is cool, and how it works.</p>
 
 <h3>9. Conditionals, Truthiness, and Nothing</h3>
 
@@ -1365,7 +1365,9 @@ methods in disguise!</p>
 knowledge you&rsquo;ll have all the tools you need in order to play with things, read
 (most of) other people&rsquo;s code, and write your own useful things.</p>
 
-<p>There are a couple bonus chapters that you might want to skim through.</p>
+<p>There are a couple bonus chapters that you might want to skim through. Some of
+these are still waiting to find their place somewhere else in the book. Some
+will probably be marked as optional.</p>
 
 <p>Also there are some extra chapters about advanced topics, some of which are
 relevant to the more advanced exercises, and for the next curriculum about
@@ -1376,7 +1378,7 @@ relevant to the more advanced exercises, and for the next curriculum about
 <p><em>Classes and objects</em></p>
 
 <p>Ruby is, like many other popular languages, an object-oriented programming
-language. Other object-oriented languages that you might have heard of, are
+language. Other object-oriented languages that you might have heard of are
 C++, Java, Python, PHP, and Javascript. At some point in the 1990s this
 paradigm started to become more and more popular and nowadays it is the
 most prevalent one.</p>
@@ -1384,7 +1386,7 @@ most prevalent one.</p>
 <p>One reason for this is that object-oriented programming very much fits the way
 we perceive and think about the world, at least in the occidental culture.
 Our way of thinking was, historically, very much influenced by Plato,
-and the philosophers who followed him:</p>
+and philosophers who followed him:</p>
 
 <p>We somehow tend to think about the world as if there are abstract &ldquo;ideas&rdquo; (or
 concepts) and concrete &ldquo;things&rdquo;, which are entities of the ideas, or
@@ -1404,6 +1406,10 @@ And actual &ldquo;things&rdquo; are called objects.</p>
 user with a name, email address, a password and actual tweets. You would also
 define that users have the ability to remember their own name, and the ability
 to tell it to others when asked.</p>
+
+<p class="hint">
+Classes are like ideas, objects are concrete things, manifestations of their ideas.
+</p>
 
 <p>Every object-oriented programming language comes with some &ldquo;ideas&rdquo;, that is,
 classes, already baked in, and so does Ruby. For example Ruby has classes for
@@ -1435,7 +1441,7 @@ characteristics are defined by classes (&ldquo;types of things&rdquo;, or &ldquo
 
 <p>This will start to make a lot more sense to you once you write your own classes.</p>
 
-<p class="hint">
+<p class="hint sidenote">
 There is, today, some debate about the paradigm of object-oriented
 programming, and whether we should move on to another one, called &ldquo;functional
 programming&rdquo;. You might hear about this if you talk to developers. Some
@@ -1489,41 +1495,49 @@ and it represents the number twelve-point-three-four.</p>
 number one-thousand-two-hundred-thirty-four-point-five-six.  However, this is
 optional. This is the exact same number in Ruby: <code>1234.56</code>.</p>
 
-<p><p class="hint">
+<p class="hint">
 A number is defined by a series of digits, using a dot as a decimal mark, and
 optinally a comma as a thousands separator.
-<p></p>
+<p>
 
-<p>Note that different countries use different punctuation for decimal and
+Note that different countries use different punctuation for decimal and
 thousands separators. Ruby is using the same notation used in the USA, which
-happens to be the exact opposite of what&rsquo;s used in Germany.</p>
+happens to be the exact opposite of what&rsquo;s used in Germany.
 
-<h2>Kinds of numbers</h2>
+## Kinds of numbers
 
-<p>Under the hood, for reasons that are mostly technical, there are actually
-different kinds of numbers:</p>
+Under the hood, for reasons that are mostly technical, there are actually
+different kinds of numbers:
 
-<p>For example there are integer numbers (those without a fraction, i.e. a dot and
+For example there are integer numbers (those without a fraction, i.e. a dot and
 decimal places), and depending on their size there are two kinds of them. For
 floating point numbers there are even more. Unless you are super curious, you
-can perfectly ignore all of that for now, and just think of numbers as numbers.</p>
+can perfectly ignore all of that for now, and just think of numbers as numbers.
 
-<p>However, when you do calculations with numbers, keep in mind that integer
+However, when you do calculations with numbers, keep in mind that integer
 numbers (&ldquo;integers&rdquo;) and decimal point numbers (floating point numbers, aka
-&ldquo;floats&rdquo;) are different.</p>
+&ldquo;floats&rdquo;) are different.
 
-<p>If you do a calculation that starts with an integer you&rsquo;ll eventually always
-get an integer back:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
-<span class="o">=&gt;</span> <span class="mi">3</span>
-</code></pre>
+If you do a calculation that starts with an integer you&rsquo;ll eventually always
+get an integer back:
 
-<p>And if you start the expression with a float then you&rsquo;ll get a float back:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span>
-<span class="o">=&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
-</code></pre>
+&ldquo;`ruby
+$ irb
+> 1 + 2.0
+=> 3
+&rdquo;`
+
+And if you start the expression with a float then you&rsquo;ll get a float back:
+
+&ldquo;`ruby
+$ irb
+> 1.0 + 2
+=> 3.0
+&rdquo;`
+
+<p class="hint">
+Mathmatical operations result in a number of the same type as they start with.
+</p>
 
 <p>This is, for example, important when you do a division (<code>/</code> means &ldquo;divide by&rdquo;):</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
@@ -1539,6 +1553,10 @@ to be an integer number.</p>
 <span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="o">=&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">5</span>
 </code></pre>
+
+<p class="hint">
+Use floating point (decimal) numbers when doing devisions.
+</p>
 
 <p>Exercises: How about doing some of the <a href="../exercises/numbers.html">exercises on numbers</a>
 next?</p>
@@ -1726,9 +1744,19 @@ and stuck on the actual thing, which is an object (in this case, a number).</p>
 onto things in your apartment: the name &ldquo;nevara&rdquo; onto the refridgerator, &ldquo;cama&rdquo;
 onto your bed, and &ldquo;puerta del baño&rdquo; onto the bathroom door.</p>
 
+<p>Now, whenever you use one of these terms, as in &ldquo;abrir la nevera&rdquo; (open the
+refridgerator) in order to learn the language and rehearse vocabulary, you&rsquo;ll
+obviously refer to the object, and open its actual, physical door.</p>
+
 <p>That&rsquo;s pretty much how variable assignment works in Ruby. There&rsquo;s a &ldquo;thing&rdquo;,
 the object on the right side of the assignment operator <code>=</code>, and the name on
 the left side is being assigned to it.</p>
+
+<p>Whenever we use a variable name that has been defined before we refer to the
+actual object that it has been assigned to. E.g. on the second line of the
+code example above <code>number</code> refers to the actual object, the number <code>1</code> that
+it has been assigned to on the first line. Therefore <code>puts number</code> outputs
+the number.</p>
 
 <p class="hint">
 You can pick whatever variable names you want, they&rsquo;re just names, like post-it
@@ -1852,7 +1880,7 @@ Ruby evaluates the expression on the right first.
 
 <p>Everything in programming is about data, and doing interesting things with it.
 If you think about Twitter, it essentially takes 140 characters of text
-(which is data) from users and displays it to other users.</p>
+(which is data) from their users and displays it to others.</p>
 
 <p>You have already learned about the most important primitive (simple) types of
 data in Ruby: numbers, strings, true, false and nil. And we&rsquo;ll have a look at
@@ -1868,8 +1896,8 @@ the two most common data structures, Arrays and Hashes, in a few
 different bits of data in different contexts easily.</p>
 
 <p>For example, there are methods that do things like: transforming a String,
-sorting a list, reading a CSV file, sending an email, signing in to Facebook,
-sending a Tweet.</p>
+sorting a list, reading a CSV or Excel file, sending an email, signing in to
+Facebook, sending a Tweet.</p>
 
 <p>Another way of putting this is: Methods are a way of assigning a name to a
 certain piece of code. Just like a variable allows to &ldquo;look up&rdquo; or refer to
@@ -1877,15 +1905,17 @@ the object that the name was assigned to &hellip; methods allow to execute their
 code.</p>
 
 <p class="hint">
-Variables name things, methods name behaviour.
+Variables name things, methods name behaviour (code).
 </p>
 
-<p>This way methods bring code that you can re-use. Ruby comes with lots of
-methods predefined - written by experienced programmers. So, unless you&rsquo;re
-studying computer science and you&rsquo;re faced with the exercise of implementing
-your own, complicated sorting algorithms for data collections, &hellip; you&rsquo;ll just
-use the method <code>sort</code> that already comes defined for lists in Ruby out of the
-box.</p>
+<p>Methods make code re-usable, by the way of packaging (&ldquo;encapsulating&rdquo;) code and
+sticking a name on it.</p>
+
+<p>E.g. Ruby comes with lots of methods predefined - written by experienced
+programmers. So, unless you&rsquo;re studying computer science and you&rsquo;re faced with
+the exercise of implementing your own, complicated sorting algorithms for data
+collections, &hellip; you&rsquo;ll just use the method <code>sort</code> that already comes defined
+for lists in Ruby out of the box.</p>
 
 <p>Ok, let&rsquo;s see what makes up a method, and how we can define our own ones.</p>
 
@@ -1926,6 +1956,11 @@ Methods have a name, take some input, do something with it, and return a result.
 that a method accepts a number of <em>arguments</em> (pieces of input). And instead of
 &ldquo;output&rdquo; we use the term <em>return value</em>: the thing that we get back from the
 method.</p>
+
+<p class="hint">
+A method&rsquo;s input is referred to as &ldquo;arguments&rdquo;, while its output is called a
+&ldquo;return value&rdquo;.
+</p>
 
 <p>This will become more clear in the following chapters. Let&rsquo;s define a method next.</p>
 
@@ -1984,7 +2019,7 @@ parentheses.
 
 <p>Once defined we can use our method.</p>
 
-<p>As programmers we usually say that we &ldquo;call&rdquo; a method. This means we tell Ruby
+<p>As programmers we usually say that we &ldquo;call&rdquo; a method. This means we ask Ruby
 to execute the code that the method body has, with some given arguments
 (input), if any.</p>
 
@@ -1996,7 +2031,7 @@ to execute the code that the method body has, with some given arguments
 <span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </code></pre>
 
-<p>Let&rsquo;s inspect what&rsquo;s happening here at this under the microscope. If you don&rsquo;t
+<p>Let&rsquo;s inspect what&rsquo;s happening here under the microscope. If you don&rsquo;t
 understand each part of this just yet, don&rsquo;t worry, we&rsquo;ll get back to all of
 this.</p>
 
@@ -2006,8 +2041,9 @@ this.</p>
 <li>On the next line Ruby will look at the bit <code>add_two(3)</code> first. She recognizes
 that we are referring to a method defined earlier, and this will tell her we
 want to call (execute, use) this method.</li>
-<li>In order to do so she first needs to look at what&rsquo;s inside the parantheses <code>()</code>.
-She finds the <code>3</code> and creates a new object (number) for it.</li>
+<li>In order to do so she first needs to look at what&rsquo;s inside the parantheses
+<code>()</code> so she can pass it on. She finds the <code>3</code> and creates a new object
+(number) for it.</li>
 <li>Now Ruby is ready to actually call (execute, use) the method, passing the
 number <code>3</code>.</li>
 </ul>
@@ -2015,8 +2051,8 @@ number <code>3</code>.</li>
 <p>So Ruby now deviates from the normal flow, which just goes from top to bottom
 in our file. Instead she now jumps into the method body.</p>
 
-<p>Doing so she now <em>assigns</em> the number <code>3</code> to a local variable <code>number</code> before
-she starts executing the method body.</p>
+<p>In this moment she now <em>assigns</em> the number <code>3</code> to a local variable <code>number</code>
+before she starts executing the method body.</p>
 
 <p>That&rsquo;s right. This is how method <em>arguments</em> work:</p>
 
@@ -2052,24 +2088,24 @@ returned the object <code>5</code>. Imagine the last line now reads like this in
 
 <p>And that will now print the number <code>5</code> to the screen.</p>
 
-<p>Let&rsquo;s have another look at that concept with the return value (&ldquo;output&rdquo;), as we
-just rushed over that a little.</p>
+<p>Let&rsquo;s have a closer look at that thing with the return value (&ldquo;output&rdquo;), as
+we just rushed over that a little.</p>
 
   <h1>Return values</h1>
 
 <p>In Ruby, a method always return exactly one single thing (an object).</p>
 
 <p>The returned object can be anything, but a method can only return one thing,
-and it also <em>always returns something</em> (an object, which could be the object
-<code>nil</code>).</p>
+and it also <em>always returns something</em>.</p>
 
 <p class="hint">
 Every method always returns exactly one object.
 </p>
 
-<p>In order to return a bunch of things at once we could return an Array that holds
-the things that we are interested in, but the array itself is just one object.
-(Or a Hash, also holding a bunch of things, and also being just one object.)</p>
+<p>The object returned could be the object <code>nil</code>, meaning &ldquo;nothing&rdquo;, but it still
+is an object.  Also, in order to return a bunch of things at once we could
+return an Array that holds the things that we are interested in, but the Array
+itself is just one object.</p>
 
 <p>Also note that in Ruby we do not have to use the statement <code>return</code>, as in
 other languages. In fact, most Ruby code does not use the keyword <code>return</code> at
@@ -2235,8 +2271,8 @@ method call. In the example above she brings an object that is the number <code>
 <p>Now, as soon as Ruby enters the method, she sticks post-it notes on the
 objects, according to the argument list from the method definition. In our
 example that is the name <code>number</code>. So from now on, in this room, there&rsquo;s a
-known local variable that has a value assigned: The number <code>3</code> with the post-it
-note <code>number</code> on it.</p>
+known local variable that has a value assigned: The object (number) <code>3</code> with
+the post-it note <code>number</code> on it.</p>
 
 <p>In our example, the outer scope and the scope of the method <code>add_two</code>, are
 two different rooms, and there are two different post-it notes stuck on
@@ -2246,12 +2282,13 @@ two different numbers, which just happen to have the same name on them.</p>
 
 <p>We&rsquo;ve discussed how to define a method, and how to call (use) it.</p>
 
-<p>What if one method is not enough?</p>
+<p>What if one method is not enough? What if methods need to do more complicated
+things?</p>
 
-<p>We can, of course, call methods from other methods.</p>
+<p>Easy. We can call methods from other methods.</p>
 
-<p>For example, we could re-implement our method <code>add_two</code> using another method
-<code>add_one</code>, and simply call it twice:</p>
+<p>For example, we could re-write (&ldquo;re-implement&rdquo;) our method <code>add_two</code> using
+another method <code>add_one</code>, and simply call it twice:</p>
 <pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
   <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="k">end</span>
@@ -2306,7 +2343,7 @@ to use it:</p>
 </code></pre>
 
 <p>Again, these examples are not super realistic, as we&rsquo;d probably just use the
-<code>+</code> operator in the first place, in practise.</p>
+<code>+</code> operator in the first place, in practice.</p>
 
 <p>However, we think this nicely demostrates how you can use one method from
 another &hellip; and how different methods require different numbers of arguments.</p>
@@ -2385,8 +2422,8 @@ same when you use <code>puts</code>:</p>
 <span class="mi">123</span>
 </code></pre>
 
-<p>From the output of <code>puts</code> it often times is not clear whether the object that
-you are looking it is an array that contains numbers, or an array that contains
+<p>From the output of <code>puts</code> it often is not clear whether the object that you are
+looking it is an array that contains numbers, or an array that contains
 strings, or just a long string that contains linebreaks.</p>
 
 <p>In short, <code>puts</code> is useful when you are writing a program that is supposed to
@@ -2424,7 +2461,8 @@ In Ruby almost everything is an object :)
 </p>
 
 <p>(Just in case you want to out-smart people at your local Ruby user group
-though, remember to ask <em>&ldquo;Really? Is an <code>if</code> statement an object in Ruby, too?&rdquo;</em>)</p>
+though, remember to ask &ldquo;Really? Is an <a href="conditionals.html">if</a> statement an
+object or a method?  How about <a href="writing_classes/self.html">self</a>?&rdquo;)</p>
 
   <h1>Objects have classes</h1>
 
@@ -2443,11 +2481,15 @@ ask an object for its class:</p>
 <span class="o">=&gt;</span> <span class="no">String</span>
 </code></pre>
 
+<p class="note">
+Objects are concrete instances (manifestations) of classes.
+</p>
+
 <p>That means that the following sentence is true: In Ruby, <code>&quot;a string&quot;</code> <em>is a</em>
 <code>String</code>.</p>
 
-<p>Yeah, we kinda knew that already, right. However, you can also ask the same
-question in Ruby:</p>
+<p>Hmmmm, yeah, we kinda knew that already, right. However, you can also ask the
+same question in Ruby:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="s2">"this is a string"</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
@@ -2478,6 +2520,10 @@ String).</p>
 <p>Now, every time a new object is created (&ldquo;instantiated&rdquo;) from this class this
 new object get (&ldquo;inherits&rdquo;) all of these methods.</p>
 
+<p class="note">
+Objects inherit methods from their classes.
+</p>
+
 <p>That&rsquo;s right. Objects have their own methods attached to them.</p>
 
 <p>We&rsquo;ll explain more about methods that belong to objects in the next chapter.
@@ -2503,10 +2549,13 @@ class.</p>
 object&rsquo;s methods are things that the object can <em>do</em>.</p>
 
 <p>These methods have exactly the same characteristics as those &ldquo;stand-alone&rdquo;
-methods that we&rsquo;ve discussed above. But on top of that they also &ldquo;belong&rdquo; to a
-particular object, and kind of &ldquo;know&rdquo; the object they belong to.</p>
+methods that we&rsquo;ve discussed above: They (optionally) take arguments (input),
+return something, and encapsulate (have) some code.</p>
 
-<p>Think about a person, like, a friend of you&#39;rs. You can ask this person for
+<p>But on top of that they also &ldquo;belong&rdquo; to a particular object, and kind of
+&ldquo;know&rdquo; the object they belong to.</p>
+
+<p>Think about a person, like, a friend of yours. You can ask this person for
 their name (call a method), and they&rsquo;ll tell you (return it to you). Their name
 is a piece of knowledge that this person has, and the ability to tell it to you
 (respond to your question) is a piece of behaviour (a method) they have.</p>
@@ -2519,11 +2568,15 @@ them: We do so by using (calling) methods that they respond to.</p>
 
 <p>And we&rsquo;ve already silently skipped over the fact that we&rsquo;ve used some methods
 in the previous chapter: <code>class</code> and <code>is_a?</code> are methods defined on all objects
-in Ruby, e.g. defined on the String <code>&quot;this is a string&quot;</code>.</p>
+in Ruby, and therefore also defined on the String <code>&quot;this is a string&quot;</code>.</p>
+
+<p class="note">
+Some methods, such as <code>class</code>, <code>is_a?</code>, are defined on all objects.
+</p>
 
 <p>Let&rsquo;s move on to see how we can use (call) these methods though.</p>
 
-  <h1>Using methods</h1>
+  <h1>Calling methods</h1>
 
 <p>In Ruby, methods that belong to (are defined on) objects can be used (called)
 by adding a dot, and then the method name, like so:</p>
@@ -2552,6 +2605,10 @@ of yours</em>), <code>downcase</code> (<em>What&rsquo;s the downcased version of
 <p>In other words, you first address, or mention, the object that you want to talk
 to, and then, with the dot <code>.</code>, send a message by specifying the method name.</p>
 
+<p class="hint">
+A dot is used to called a method on an object.
+</p>
+
 <p>Imagine the string <code>name</code> is a person you can talk to. You can ask questions by
 &ldquo;sending a message&rdquo; to them, and they&rsquo;ll respond by sending (or returning)
 something back. The term &ldquo;sending messages&rdquo; actually is used instead of
@@ -2569,10 +2626,18 @@ by returning the number <code>12</code> to you.</p>
 information about itself (such as a String&rsquo;s length), or a modified
 (transformed) version of itself (such as a downcased version of the String).</p>
 
+<p class="hint">
+Most methods are questions, and return a relevant value.
+</p>
+
 <p>Others modify the object itself, and some have so called side-effects, and
 modify something else, e.g. <code>puts</code> and <code>p</code> both output something to the
 screen. Other methods might save files, send emails, or store things to
 a database.</p>
+
+<p class="hint">
+Some methods are command, and change the object, or the system.
+</p>
 
   <h1>Passing arguments</h1>
 
@@ -2580,9 +2645,9 @@ a database.</p>
 little bit of extra information in order to do what you ask for. In other
 words, we might need to pass arguments to these methods, too.</p>
 
-<p>For example the class String defines the method <code>delete</code> which returns another
-String with some of the characters deleted. In order to do so, of course, it
-needs to know which characters we&rsquo;d like to remove.</p>
+<p>For example the class <code>String</code> defines the method <code>delete</code> which returns
+another String with some of the characters deleted. In order to do so, of
+course, it needs to know which characters we&rsquo;d like to remove.</p>
 
 <p>Again, we can pass these by appending parentheses <code>()</code> to the method call (the
 name). We can then include the extra bit of information needed (in our case
@@ -2593,7 +2658,7 @@ another string) inside the parentheses like so:</p>
 <span class="o">=&gt;</span> <span class="s2">"runstas"</span>
 </code></pre>
 
-<p>Hm. Not sure what &ldquo;runstas&rdquo; means.</p>
+<p>Hm. Not sure what &ldquo;runstas&rdquo; means. Ideas?</p>
 
 <p>Anyhow, another example for a method that needs an argument is the method
 <code>prepend</code> on Strings. This method returns a new String with the given String
@@ -2605,7 +2670,8 @@ prepended:</p>
 
 <p>Again, not all methods need arguments (extra bits of information) in order to
 do their job. E.g. the method <code>length</code> on Strings can know the length of their
-String just so. Sometimes they need one or more arguments.</p>
+String just so (because it knows its String). Sometimes they need one or more
+arguments though.</p>
 
 <p>So how do you know?</p>
 
@@ -2618,8 +2684,8 @@ expected.</p>
 
 <p>As said above, if you are curious what methods are defined on a certain object,
 then you can check the <a href="http://ruby-doc.org/core-2.2.0/">Ruby documentation</a>
-for this class (usually shows up at the top when you google for &ldquo;ruby&rdquo; and the
-class name).</p>
+for this class. (Usually the right page conveniently shows up at the top when
+you google for &ldquo;ruby&rdquo; and the class name.)</p>
 
 <p>However, you can also quickly pop into IRB and ask the object for its methods.
 That&rsquo;s right, <code>methods</code> is a method defined on all objects (just like <code>class</code>,
@@ -2636,11 +2702,12 @@ the object has (more precisely, an Array, which you&rsquo;ll learn about
 </code></pre>
 
 <p>If you do this yourself, you&rsquo;ll see that the String actually has a lot more
-methods. We have stripped the list down a little, because we want to talk
-about some of these methods more.</p>
+methods. Many of these actually aren&rsquo;t used very often, but some are quite
+useful. We have stripped the list down a little, because we want to talk about
+some of these methods more.</p>
 
-<p>This example also demonstrates that methods can be &ldquo;chained&rdquo;: When we call a
-method on an object it will return another object to us. We can then
+<p>Btw the code above also demonstrates that methods can be &ldquo;chained&rdquo;: When we
+call a method on an object it will return another object to us. We can then
 immediately call another method on that new object, and so on.</p>
 
 <p>In our example above the method <code>methods</code> returns a list of names. And this
@@ -2662,16 +2729,14 @@ the method upcase.</p>
 
 <p>As you can see Ruby will first evaluate the bit <code>name.prepend(&quot;Oh, hello, &quot;)</code>.
 It needs to do that so it knows the object (the new String) that is going
-to be returned from this, so it can then call the method <code>upcase on it</code>.</p>
+to be returned from this, so it can then call the method <code>upcase</code> on it.</p>
 
 <p>Does this make sense?</p>
 
   <h1>Predicate methods</h1>
 
 <p>If you check the list of methods on our String above you see that in Ruby we
-can have methods that end with a question mark <code>?</code>.</p>
-
-<p>This makes them read like a question, which is pretty awesome.</p>
+can have methods that end with a question mark <code>?</code>. What&rsquo;s up with that?</p>
 
 <p>By convention, in Ruby, these methods return either <code>true</code> or <code>false</code>. For
 example, we can ask a number if it is even or odd:</p>
@@ -2682,6 +2747,8 @@ example, we can ask a number if it is even or odd:</p>
 <span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">odd?</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
 </code></pre>
+
+<p>This makes them read like a question, which is pretty cool.</p>
 
 <p>Or you can ask the number if it&rsquo;s between two other numbers. Obviously this
 methods needs us to pass those two other numbers. So now we also have an example
@@ -2754,8 +2821,9 @@ create our own classes, and instantiate objects from them.</p>
 
   <h1>Bang Methods</h1>
 
-<p>All of the examples that we&rsquo;ve discussed before do not modify the object
-they are called on.</p>
+<p>All of the examples that we&rsquo;ve discussed before have one thing in common:</p>
+
+<p>They are questions, and do not modify the object they are called on.</p>
 
 <p>For example:</p>
 <pre class="highlight ruby"><code><span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
@@ -2795,7 +2863,8 @@ Bang methods end with an exlamation mark, and often modify the object they are c
 </code></pre>
 
 <p>As you can see calling the method <code>downcase!</code> on the second line has modified
-the String itself, and <em>also</em> returned the new downcased version.</p>
+the String itself (the object that <code>name</code> refers to), and <em>also</em> returned the
+new downcased version.</p>
 
 <p>Nowadays programmers have learned that using these methods has a number of
 disadvantages, and usually should be avoided, unless there are very good
@@ -2824,7 +2893,7 @@ called them &ldquo;stand-alone&rdquo; methods.</p>
 <p>This is something that pretty much blows some people&rsquo;s minds, confuses the heck
 out of others, while yet others don&rsquo;t even notice or think about it at all. It
 is also something, that, when you ask around on your local Ruby meetup, very
-few people can explain in a satisfying, and clear way. And neither do we.</p>
+few people can explain in a satisfying, and clear way. And neither do we, yet.</p>
 
 <p>Let&rsquo;s still try.</p>
 
@@ -2895,7 +2964,8 @@ that is, you can return it to the &ldquo;caller&rdquo;, to whoever asked.</p>
 it&rsquo;s a class.</p>
 
 <p class="hint">
-A class is defined using the keyword <code>class</code>, a name, and the keyword <code>end</code>.
+A class is defined using the keyword <code>class</code>, a name, and the
+keyword <code>end</code>.
 </p>
 
 <p>Also, you see that the class has the name <code>Person</code>, which starts with an
@@ -2909,7 +2979,8 @@ variable and method names we use underscores, and keep everything lowercase:
 <code>local_variable</code> and <code>method_name</code>. This is called snake_case.</p>
 
 <p class="hint">
-Class names must start with an uppercase letter, and usually use CamelCase.
+Class names must start with an uppercase letter, and should use CamelCase.
+Variable and methods names should use snake_case.
 </p>
 
 <p>Ok, back to our class <code>Person</code>.</p>
@@ -2924,7 +2995,8 @@ new, concrete person instance, an object from it. Like so:</p>
 instance of the class, and returns it.</p>
 
 <p class="hint">
-The method <code>new</code> is defined on any class, and returns a new instance of the class.
+The method <code>new</code> is defined on any class, and returns a new instance
+of the class.
 </p>
 
 <p>Cool. Let&rsquo;s have a look at that object:</p>
@@ -3067,12 +3139,15 @@ will then print it out:</p>
 <pre class="highlight plaintext"><code>#&lt;Person:0x007fd8947aa868 @name="Ada"&gt;
 </code></pre>
 
-<p>As you can see that includes the instance variable <code>@name</code> with the value
-<code>&quot;Ada&quot;</code>.</p>
+<p>As you can see this includes the instance variable <code>@name</code> with the value
+<code>&quot;Ada&quot;</code>: This specific, concrete instance of the class <code>Person</code> knows their
+name.</p>
 
 <p>You can think of this as you, as a programmer, creating this new person, and
 in the moment of its creation, its birth, you also give it a name. Which kind
 of how it works with real people, too, isn&rsquo;t it?</p>
+
+<p>Hmm, well &hellip; Yeah, sort of. Anyhow, let&rsquo;s move on.</p>
 
   <h1>Attribute readers</h1>
 
@@ -3138,6 +3213,10 @@ variable with the same name are very common.</p>
 &ldquo;attribute readers&rdquo;. By &ldquo;attribute&rdquo; the Ruby community means an instance
 variable, so an attribute reader is a method that reads an instance variable.</p>
 
+<p class="hint">
+An attribute reader returns the value of an instance variable.
+</p>
+
 <p>Another way of looking at this is that an attribute reader is a method that
 &ldquo;exposes&rdquo; an instance variable. It makes it accessible for others. I.e. it
 allows you to ask for the value of an instance variable with the same name, and
@@ -3162,7 +3241,7 @@ than necessary, and this saves 8 characters. Who knows :)</p>
 
 <p>Imagine in our application a person not only needs a name, but also a password.
 However, let&rsquo;s also imagine that, at the time of the creation of a new person
-object, this password is not yet known. (Who would give a toddler an email
+instance, this password is not yet known. (Who would give a toddler an email
 password anyway?)</p>
 
 <p>Instead we want to be able to tell the person object about its email password
@@ -3289,6 +3368,10 @@ behind the whole paradigm of object-oriented programing:</p>
 <p>We can say that an object encapsulates state (data, knowledge), which is
 private to the object, and exposes behaviour by the way of having publicly
 accessible methods.</p>
+
+<p class="hint">
+Objects have state (instance variables) and behaviour (methods).
+</p>
 
 <p>So, we have now created our first little class, and it&rsquo;s one that you could
 actually see in real applications.</p>
@@ -3501,8 +3584,8 @@ the object&rsquo;s scope which holds all instance variables and method names.</p
 visible at the same time. For any given name Ruby will first check the local
 scope, and then the object scope.</p>
 
-<p>In practise this most importantly means that from any method on an object,
-you can access:</p>
+<p>In reality this most importantly means that from any method on an object, you
+can access:</p>
 
 <ul>
 <li>all local variables</li>
@@ -5353,7 +5436,7 @@ return value of the method call <code>greet</code>: We don&rsquo;t assign it to 
 we don&rsquo;t pass it to another method call. In fact, we simply discard it since
 we&rsquo;re not interested it in.</p>
 
-<p>In our example that&rsquo;s just fine. In praxis you should always be aware <em>why</em>
+<p>In our example that&rsquo;s just fine. In practice you should always be aware <em>why</em>
 you are calling a certain method. Is it a command like <em>Please print this</em>?
 Then you probably aren&rsquo;t interested in the return value and you can discard
 it as we&rsquo;ve done above. Or is it a more like a question <em>What&rsquo;s the result

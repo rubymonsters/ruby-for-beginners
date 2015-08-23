@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Using methods | Ruby for Beginners</title>
+    <title>Calling methods | Ruby for Beginners</title>
 
     <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
   </head>
@@ -219,7 +219,7 @@
       </li>
       <li class="active">
         <a href="/objects/calling.html">
-          Using methods
+          Calling methods
         </a>
       </li>
       <li>
@@ -554,7 +554,7 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Using methods</h1>
+        <h1>Calling methods</h1>
 
 <p>In Ruby, methods that belong to (are defined on) objects can be used (called)
 by adding a dot, and then the method name, like so:</p>
@@ -583,6 +583,10 @@ of yours</em>), <code>downcase</code> (<em>What&rsquo;s the downcased version of
 <p>In other words, you first address, or mention, the object that you want to talk
 to, and then, with the dot <code>.</code>, send a message by specifying the method name.</p>
 
+<p class="hint">
+A dot is used to called a method on an object.
+</p>
+
 <p>Imagine the string <code>name</code> is a person you can talk to. You can ask questions by
 &ldquo;sending a message&rdquo; to them, and they&rsquo;ll respond by sending (or returning)
 something back. The term &ldquo;sending messages&rdquo; actually is used instead of
@@ -600,10 +604,18 @@ by returning the number <code>12</code> to you.</p>
 information about itself (such as a String&rsquo;s length), or a modified
 (transformed) version of itself (such as a downcased version of the String).</p>
 
+<p class="hint">
+Most methods are questions, and return a relevant value.
+</p>
+
 <p>Others modify the object itself, and some have so called side-effects, and
 modify something else, e.g. <code>puts</code> and <code>p</code> both output something to the
 screen. Other methods might save files, send emails, or store things to
 a database.</p>
+
+<p class="hint">
+Some methods are command, and change the object, or the system.
+</p>
 
         <nav class="page-nav"><a class="prev" href="/objects/methods.html">
   Previous

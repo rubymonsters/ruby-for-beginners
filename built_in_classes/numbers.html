@@ -219,7 +219,7 @@
       </li>
       <li>
         <a href="/objects/calling.html">
-          Using methods
+          Calling methods
         </a>
       </li>
       <li>
@@ -563,41 +563,49 @@ and it represents the number twelve-point-three-four.</p>
 number one-thousand-two-hundred-thirty-four-point-five-six.  However, this is
 optional. This is the exact same number in Ruby: <code>1234.56</code>.</p>
 
-<p><p class="hint">
+<p class="hint">
 A number is defined by a series of digits, using a dot as a decimal mark, and
 optinally a comma as a thousands separator.
-<p></p>
+<p>
 
-<p>Note that different countries use different punctuation for decimal and
+Note that different countries use different punctuation for decimal and
 thousands separators. Ruby is using the same notation used in the USA, which
-happens to be the exact opposite of what&rsquo;s used in Germany.</p>
+happens to be the exact opposite of what&rsquo;s used in Germany.
 
-<h2>Kinds of numbers</h2>
+## Kinds of numbers
 
-<p>Under the hood, for reasons that are mostly technical, there are actually
-different kinds of numbers:</p>
+Under the hood, for reasons that are mostly technical, there are actually
+different kinds of numbers:
 
-<p>For example there are integer numbers (those without a fraction, i.e. a dot and
+For example there are integer numbers (those without a fraction, i.e. a dot and
 decimal places), and depending on their size there are two kinds of them. For
 floating point numbers there are even more. Unless you are super curious, you
-can perfectly ignore all of that for now, and just think of numbers as numbers.</p>
+can perfectly ignore all of that for now, and just think of numbers as numbers.
 
-<p>However, when you do calculations with numbers, keep in mind that integer
+However, when you do calculations with numbers, keep in mind that integer
 numbers (&ldquo;integers&rdquo;) and decimal point numbers (floating point numbers, aka
-&ldquo;floats&rdquo;) are different.</p>
+&ldquo;floats&rdquo;) are different.
 
-<p>If you do a calculation that starts with an integer you&rsquo;ll eventually always
-get an integer back:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
-<span class="o">=&gt;</span> <span class="mi">3</span>
-</code></pre>
+If you do a calculation that starts with an integer you&rsquo;ll eventually always
+get an integer back:
 
-<p>And if you start the expression with a float then you&rsquo;ll get a float back:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span>
-<span class="o">=&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
-</code></pre>
+&ldquo;`ruby
+$ irb
+> 1 + 2.0
+=> 3
+&rdquo;`
+
+And if you start the expression with a float then you&rsquo;ll get a float back:
+
+&ldquo;`ruby
+$ irb
+> 1.0 + 2
+=> 3.0
+&rdquo;`
+
+<p class="hint">
+Mathmatical operations result in a number of the same type as they start with.
+</p>
 
 <p>This is, for example, important when you do a division (<code>/</code> means &ldquo;divide by&rdquo;):</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
@@ -613,6 +621,10 @@ to be an integer number.</p>
 <span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="o">=&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">5</span>
 </code></pre>
+
+<p class="hint">
+Use floating point (decimal) numbers when doing devisions.
+</p>
 
 <p>Exercises: How about doing some of the <a href="../exercises/numbers.html">exercises on numbers</a>
 next?</p>

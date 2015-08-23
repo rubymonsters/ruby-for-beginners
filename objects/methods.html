@@ -219,7 +219,7 @@
       </li>
       <li>
         <a href="/objects/calling.html">
-          Using methods
+          Calling methods
         </a>
       </li>
       <li>
@@ -562,10 +562,13 @@
 object&rsquo;s methods are things that the object can <em>do</em>.</p>
 
 <p>These methods have exactly the same characteristics as those &ldquo;stand-alone&rdquo;
-methods that we&rsquo;ve discussed above. But on top of that they also &ldquo;belong&rdquo; to a
-particular object, and kind of &ldquo;know&rdquo; the object they belong to.</p>
+methods that we&rsquo;ve discussed above: They (optionally) take arguments (input),
+return something, and encapsulate (have) some code.</p>
 
-<p>Think about a person, like, a friend of you&#39;rs. You can ask this person for
+<p>But on top of that they also &ldquo;belong&rdquo; to a particular object, and kind of
+&ldquo;know&rdquo; the object they belong to.</p>
+
+<p>Think about a person, like, a friend of yours. You can ask this person for
 their name (call a method), and they&rsquo;ll tell you (return it to you). Their name
 is a piece of knowledge that this person has, and the ability to tell it to you
 (respond to your question) is a piece of behaviour (a method) they have.</p>
@@ -578,7 +581,11 @@ them: We do so by using (calling) methods that they respond to.</p>
 
 <p>And we&rsquo;ve already silently skipped over the fact that we&rsquo;ve used some methods
 in the previous chapter: <code>class</code> and <code>is_a?</code> are methods defined on all objects
-in Ruby, e.g. defined on the String <code>&quot;this is a string&quot;</code>.</p>
+in Ruby, and therefore also defined on the String <code>&quot;this is a string&quot;</code>.</p>
+
+<p class="note">
+Some methods, such as <code>class</code>, <code>is_a?</code>, are defined on all objects.
+</p>
 
 <p>Let&rsquo;s move on to see how we can use (call) these methods though.</p>
 

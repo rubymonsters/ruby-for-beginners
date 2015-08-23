@@ -219,7 +219,7 @@
       </li>
       <li>
         <a href="/objects/calling.html">
-          Using methods
+          Calling methods
         </a>
       </li>
       <li>
@@ -558,7 +558,7 @@
 
 <p>Once defined we can use our method.</p>
 
-<p>As programmers we usually say that we &ldquo;call&rdquo; a method. This means we tell Ruby
+<p>As programmers we usually say that we &ldquo;call&rdquo; a method. This means we ask Ruby
 to execute the code that the method body has, with some given arguments
 (input), if any.</p>
 
@@ -570,7 +570,7 @@ to execute the code that the method body has, with some given arguments
 <span class="nb">puts</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </code></pre>
 
-<p>Let&rsquo;s inspect what&rsquo;s happening here at this under the microscope. If you don&rsquo;t
+<p>Let&rsquo;s inspect what&rsquo;s happening here under the microscope. If you don&rsquo;t
 understand each part of this just yet, don&rsquo;t worry, we&rsquo;ll get back to all of
 this.</p>
 
@@ -580,8 +580,9 @@ this.</p>
 <li>On the next line Ruby will look at the bit <code>add_two(3)</code> first. She recognizes
 that we are referring to a method defined earlier, and this will tell her we
 want to call (execute, use) this method.</li>
-<li>In order to do so she first needs to look at what&rsquo;s inside the parantheses <code>()</code>.
-She finds the <code>3</code> and creates a new object (number) for it.</li>
+<li>In order to do so she first needs to look at what&rsquo;s inside the parantheses
+<code>()</code> so she can pass it on. She finds the <code>3</code> and creates a new object
+(number) for it.</li>
 <li>Now Ruby is ready to actually call (execute, use) the method, passing the
 number <code>3</code>.</li>
 </ul>
@@ -589,8 +590,8 @@ number <code>3</code>.</li>
 <p>So Ruby now deviates from the normal flow, which just goes from top to bottom
 in our file. Instead she now jumps into the method body.</p>
 
-<p>Doing so she now <em>assigns</em> the number <code>3</code> to a local variable <code>number</code> before
-she starts executing the method body.</p>
+<p>In this moment she now <em>assigns</em> the number <code>3</code> to a local variable <code>number</code>
+before she starts executing the method body.</p>
 
 <p>That&rsquo;s right. This is how method <em>arguments</em> work:</p>
 
@@ -626,8 +627,8 @@ returned the object <code>5</code>. Imagine the last line now reads like this in
 
 <p>And that will now print the number <code>5</code> to the screen.</p>
 
-<p>Let&rsquo;s have another look at that concept with the return value (&ldquo;output&rdquo;), as we
-just rushed over that a little.</p>
+<p>Let&rsquo;s have a closer look at that thing with the return value (&ldquo;output&rdquo;), as
+we just rushed over that a little.</p>
 
         <nav class="page-nav"><a class="prev" href="/writing_methods/definition.html">
   Previous

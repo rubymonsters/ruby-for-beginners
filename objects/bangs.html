@@ -219,7 +219,7 @@
       </li>
       <li>
         <a href="/objects/calling.html">
-          Using methods
+          Calling methods
         </a>
       </li>
       <li>
@@ -556,8 +556,9 @@
         <nav class="menu"><a href="#"></a></nav>
         <h1>Bang Methods</h1>
 
-<p>All of the examples that we&rsquo;ve discussed before do not modify the object
-they are called on.</p>
+<p>All of the examples that we&rsquo;ve discussed before have one thing in common:</p>
+
+<p>They are questions, and do not modify the object they are called on.</p>
 
 <p>For example:</p>
 <pre class="highlight ruby"><code><span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
@@ -597,7 +598,8 @@ Bang methods end with an exlamation mark, and often modify the object they are c
 </code></pre>
 
 <p>As you can see calling the method <code>downcase!</code> on the second line has modified
-the String itself, and <em>also</em> returned the new downcased version.</p>
+the String itself (the object that <code>name</code> refers to), and <em>also</em> returned the
+new downcased version.</p>
 
 <p>Nowadays programmers have learned that using these methods has a number of
 disadvantages, and usually should be avoided, unless there are very good
