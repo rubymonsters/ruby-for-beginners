@@ -8,11 +8,11 @@ example, we can ask a number if it is even or odd:
 
 ```ruby
 $ irb
-> 5.even?
-=> false
-
 > 5.odd?
 => true
+
+> 5.even?
+=> false
 ```
 
 This makes them read like a question, which is pretty cool.
@@ -22,11 +22,11 @@ methods needs us to pass those two other numbers. So now we also have an example
 of a method that takes two arguments:
 
 ```ruby
-> 5.between?(11, 20)
-=> false
-
 > 5.between?(1, 10)
 => true
+
+> 5.between?(11, 20)
+=> false
 ```
 
 These methods are called *predicate methods* in Ruby. Not quite sure why, maybe
@@ -40,10 +40,10 @@ Strings also define some predicate methods:
 
 ```ruby
 > name = "Ruby Monstas"
-> name.start_with?("a")
-=> false
 > name.start_with?("R")
 => true
+> name.start_with?("a")
+=> false
 ```
 
 Do you also think it's kinda odd that `name.start_with?("a")` reads almost like
@@ -56,10 +56,11 @@ Also:
 
 ```ruby
 > name = "Ruby Monstas"
-> name.include?("r")
-=> false
 > name.include?("by")
 => true
+
+> name.include?("r")
+=> false
 ```
 
 When we check what methods there are defined on a number, we find some with the
@@ -71,27 +72,33 @@ $ irb
 => [:*, :+, :-, :/, :between?, :even?, :odd?, :zero?]
 ```
 
-Let's try `zero?` as a last example.
+Let's try `zero?`:
 
 ```ruby
-> 1.zero?
-=> false
 > 0.zero?
 => true
+
+> 1.zero?
+=> false
 ```
 
-Oh, by the way, if you're curious why these method names all start with a colon,
-check the chapter about [Symbols](/more_built_in_classes/symbols.html). And if
-you're curious why operators like `*`, `+`, `-` and so on are also listed here,
-check the chapter that explains that [operators are methods, too](/operators/methods.html).
+Arrays have the methods `include?`, and Hashes respond to `key?`:
 
-Alright, we now have discussed how objects, classes, and methods relate to each other.
-And we've learned how to call (use) methods on objects like Strings and numbers.
+```ruby
+> [1, 2].include?(1)
+=> true
 
-With this knowledge we can now look at implementing (defining, creating) our
-very own methods. This will help you understand better how exactly methods "take"
-arguments, and how they can work with them. And you'll understand why we keep
-saying a method "returns" an object.
+> [1, 2].include?(3)
+=> false
 
-After that section we'll then finally be able to define new "things", i.e.
-create our own classes, and instantiate objects from them.
+> { "eins" => "one" }.key?("eins")
+=> true
+
+> { "eins" => "one" }.key?("zwei")
+=> false
+```
+
+Oh by the way, if you're curious why operators like `*`, `+`, `-` and so on are
+also listed here, check the chapter that explains that [operators are methods,
+too](/operators/methods.html).
+

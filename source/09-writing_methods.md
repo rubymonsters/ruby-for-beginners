@@ -39,7 +39,7 @@ E.g. Ruby comes with lots of methods predefined - written by experienced
 programmers. So, unless you're studying computer science and you're faced with
 the exercise of implementing your own, complicated sorting algorithms for data
 collections, ... you'll just use the method `sort` that already comes defined
-for lists in Ruby out of the box.
+for Arrays in Ruby out of the box.
 
 Ok, let's see what makes up a method, and how we can define our own ones.
 

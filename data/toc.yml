@@ -22,6 +22,9 @@
   - numbers
   - strings
   - true_false_nil
+  - symbols
+  - arrays
+  - hashes
 - path: variables
   children:
   - reusing_names
@@ -55,11 +58,6 @@
   - state_and_behaviour
   - interaction
   - self
-- path: more_built_in_classes
-  children:
-  - symbols
-  - arrays
-  - hashes
 - path: blocks
   children:
   - syntax

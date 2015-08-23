@@ -52,8 +52,10 @@ Symbols are a special, limited variation of Strings.
 
 ## The technical difference
 
-If you're really curious about the underlying technical difference, then you
-can try this:
+Skip the following unless you're really curious about the underlying technical
+difference between Strings and Symbols.
+
+Try this in IRB:
 
 ```ruby
 $ irb

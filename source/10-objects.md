@@ -2,9 +2,11 @@
 
 We've talked about objects quite a bit now, merely *using* that term as a
 synomym for "things". You've learned to do stuff with simple objects such as
-numbers and Strings, pass them to methods, and get others back.
+numbers and Strings, and the data structures Arrays and Hashes. You've also
+learned what a method is, how to define and use them, and how to pass things to
+thme, and get others back.
 
-But we're also prepared well enough to have a closer look at objects, classes
+We're also prepared well enough to have a closer look at objects, classes
 (types of things) and methods, and how they relate to each other.
 
 As a sidenote, you may have heard the following. Rubyist love saying it:

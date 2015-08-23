@@ -2,8 +2,8 @@
 
 *Arrays are like bags that contain things*
 
-While numbers, Strings, Symbols, `true`, `false`, and `nil` all represent
-simple, primitive things, Arrays are more interesting, and very useful.
+While numbers, Strings, `true`, `false`, and `nil` all represent simple,
+primitive things, Arrays are more interesting, and very useful.
 
 Arrays are things that store (or "hold") other things. You can think of an
 Array as a collection or list of things. Or better yet, as a bag that you can
@@ -20,17 +20,23 @@ with square brackets, like so:
 [1, 2, 3]
 ```
 
-Or:
-
-```ruby
-["A string", 1, :some_symbol, 2]
-```
-
-This creates an Array with 4 elements, i.e. a bag that contains 4 things: a
-string, a number, a symbol, and another number.
+This is a simple Array that holds three numbers.
 
 <p class="hint">
 An Array is created by listing objects, separated by commas, and enclosed by square brackets.
+</p>
+
+Arrays can contain all kinds of things:
+
+```ruby
+["A string", 1, true, :symbol, 2]
+```
+
+This creates an Array with 4 elements, i.e. a bag that contains 5 things: a
+string, a number, `true`, a symbol, and another number.
+
+<p class="hint">
+Arrays can contain all kinds of objects.
 </p>
 
 Note that in Ruby Arrays always keep their order: Unlike a real bag, where,
@@ -136,6 +142,131 @@ So, this would now output `uno`.
 On formatting: Note that there are no spaces inside the square brackets,
 and there's one space after each comma.
 </p>
+
+## Missing elements
+
+What if we try to retrieve an element that does not exist, for example
+the element at the fourth, or fifth position (index)?
+
+Right, we get back `nil`, meaning "nothing":
+
+```ruby
+> words = ["one", "two", "three"]
+> words[3]
+=> nil
+> words[4]
+=> nil
+```
+
+You'll learn later that every operation ("method") in Ruby always
+[returns exactly one thing](/writing_methods/return_values.html)
+(i.e. one object), and that's why there needs to be a "thing" that represents
+"nothing".
+
+This will start to feel pretty natural to you pretty soon.
+
+## Nested Arrays
+
+As said before, Arrays can contain all sorts of things. So, they can also
+contain more Arrays.
+
+This is quite a common thing to use when you need to represent some data that
+has the characteristics of a table, like an spreadsheet.
+
+The outer Array represents the table, and each inner Array represents one
+row. Each value then represents a cell. For example:
+
+```ruby
+[
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [0]
+]
+```
+
+This is a nested Array that represents the structure of number keys on a phone.
+
+## Things you can do with Arrays
+
+Here are a few things you can do with Arrays.
+
+Look at them, and play with them in `irb`. Don't necessarily try to memorize
+all of them ... you can always look things up in the documentation when you
+actually need these. It might be useful if you've seen some of them before
+though.
+
+Funnily, you can "calculate" with Arrays. Remember set theory from your math
+classes? This is pretty similar.
+
+You can add Arrays:
+
+```ruby
+$ irb
+> [1, 2] + [3, 4]
+=> [1, 2, 3, 4]
+```
+
+Subtract them from each other:
+
+```ruby
+$ irb
+> [:one, :two, :three, :four] - [:three, :four]
+=> [:one, :two]
+```
+
+Multiply with a number:
+
+```ruby
+$ irb
+> ["Ruby", "Monstas"] * 3
+=> ["Ruby", "Monstas", "Ruby", "Monstas", "Ruby", "Monstas"]
+```
+
+And find the intersection:
+
+```ruby
+$ irb
+> [1, 2, 3] & [2, 3, 4]
+=> [2, 3]
+```
+
+`first` and `last` are alternative ways to retrieve the first and last element:
+
+```ruby
+$ irb
+> [1, 2, 3].first
+1
+> [1, 2, 3].last
+3
+```
+
+Some other things that you can do with Arrays that you can try yourself in
+`irb`:
+
+```ruby
+> [1, 2, 3].length
+=> 3
+
+> [3, 1, 2].sort
+=> [1, 2, 3]
+
+> [1, nil, 2, 3, nil].compact
+=> [1, 2, 3]
+
+> [1, 2, 3].index(3)
+=> 2
+
+> [1, 2, 3, 4].rotate(2)
+=> [3, 4, 1, 2]
+
+> [[1, 2, 3], [4, 5, 6], [7, 8, 9]].transpose
+=> [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+```
+
+In these examples `compact` removes all `nil` values from the Array.
+`transpose` works with a nested Array and "flips" the table, i.e. turns columns
+into rows, and rows into columns.
 
 Exercises: Now would be a good time to do some of the [exercises on
 Arrays](/exercises/arrays_1.html).

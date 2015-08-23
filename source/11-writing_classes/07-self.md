@@ -4,7 +4,7 @@ Remember how we said that when Ruby finds a method call she then deviates from
 the normal control flow which goes from top to bottom? Instead she jumps into
 the method body.
 
-We also said that this method body has its own [scope](/writing_methods/scope.html),
+We also said that this method body has its own [scope](/writing_methods/scopes.html),
 like a shiny, new room where local variables from other scopes are not visible.
 Instead it has its own local variables, some of which might be defined via the
 method's arguments.

@@ -109,12 +109,79 @@ are, again, no spaces inside that curly braces <code>{}</code> that define the
 Arrays on the third line.
 </p>
 
+## Missing values
+
+What happens if we try to look up a key that does not exist?
+
+Again, just as with Arrays, we'll get back `nil`, meaning "nothing":
+
+```ruby
+$ irb
+> dictionary = { "one" => "eins", "two" => "zwei", "three" => "drei" }
+> dictionary["four"]
+=> nil
+```
+
+Does this make sense?
+
+## Things you can do with Hashes
+
+The main purpose of a Hash is being able to lookup a value by a key.
+
+However, here are a few other things you can do with Hashes, too.
+
+Again, look at them, and play with them in `irb`. Don't necessarily put too
+much effort into memorizing all of them ...
+
+Funnily, you can "calculate" with Arrays. Remember set theory from your math
+classes? This is pretty similar.
+
+You can merge two Hashes:
+
+```ruby
+$ irb
+> { "one" => "eins" }.merge({ "two" => "zwei" })
+=> { "one" => "eins", "two" => "zwei" }
+```
+
+`fetch` does just the same as the square bracket lookup `[]` discussed before,
+but it will raise an error if the key is not defined:
+
+```ruby
+$ irb
+> dictionary = { "one" => "eins" }
+> dictionary.fetch("one")
+=> "eins"
+> dictionary.fetch("two")
+KeyError: key not found: "two"
+```
+
+`keys` returns an Array with all the keys that a Hash knows:
+
+```ruby
+$ irb
+> dictionary = { "one" => "eins", "two" => "zwei" }
+> dictionary.keys
+=> ["one", "two"]
+```
+
+`length` and `size` both tell how many key/value pairs the Hash has:
+
+```ruby
+$ irb
+> dictionary = { "one" => "eins", "two" => "zwei" }
+> dictionary.length
+=> 2
+> dictionary.size
+=> 2
+```
+
 Exercises: Now would be a good time to do some of the [exercises on
 Hashes](/exercises/hashes_1.html).
 
 ## Hash syntax confusion
 
-You can skip the following and jump right to the chapter [Blocks](/blocks.html),
+You can skip the following and jump right to the chapter [Variables](/variables.html),
 or you can keep reading if you're curious.
 
 We've found it's important for us to explain the following somewhere in our

@@ -1,13 +1,24 @@
-# Built-In Classes
+# Built-In Data Types
 
 As mentioned before, Ruby comes with lots of things already baked in, and
 provides you with tons of tools to use and hit the road running.
 
-We will have a quick look at the following ones for starters:
+We'll start by looking at some of the most common data types in Ruby.  Data
+types are "things" that are mainly used to represent data, such as numbers,
+text, and other values.
+
+We will have a quick look at each the following ones:
 
 * Numbers
 * Strings (texts)
 * True, False, and Nil
+* Symbols
+* Arrays
+* Hashes
+
+These "kinds of things" (objects) cover like 98% of all built-in data types
+that you'll be using on a day to day basis, i.e. these are being used all over
+the place. There are more, but those are rather exotic, and rarely used.
 
 Numbers and Strings (which is just a strange name for "texts") are some of the
 most basic "things" that you deal with in Ruby on a regular basis. The are also
@@ -19,13 +30,10 @@ Before we do so we will also briefly mention the "things" `true`, `false`, and
 `nil`, just because these are things that we'll come across along the way
 anyway.
 
-Later we will come back to this topic, and explain a few more built-in things,
-which are:
+Symbols also are very commonly used, but quite an odd concept. You normally
+wouldn't need to understand Symbols in order to write your own code. We'll
+still cover them briefly, and use them once in a while, just in case you find
+them elsewhere.
 
-* Arrays
-* Hashes
-* Symbols
-
-Together these kinds of object types make up for more than 95% of all built-in
-objects that you'll be using on a day to day basis.
-
+Arrays and Hashes are "things" (objects) that are used to store other things,
+and they're super useful, and widely used.

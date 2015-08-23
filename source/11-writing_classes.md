@@ -96,3 +96,15 @@ Every object has its own, unique, internal object id, and when I ran this code
 on my computer, Ruby assigned the id `0x007fb2fbe50910`. If you run it,
 you'll get a different one. In practice, most of the time, you can simply ignore
 this id.
+
+Also, we can check that our new person instance indeed is an instance of the
+class `Person`:
+
+```ruby
+$ irb
+> person = Person.new
+> person.class
+=> Person
+> person.is_a?(Person)
+=> true
+```
