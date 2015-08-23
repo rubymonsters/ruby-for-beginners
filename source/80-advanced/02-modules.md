@@ -1,4 +1,4 @@
-# Bonus: Modules
+# Modules
 
 It now makes sense to introduce another language feature in Ruby: modules.
 

@@ -1,14 +1,15 @@
-# Bonus: Regular Expressions
+# Regular Expressions
 
 *Some people, when confronted with a problem, think "I know, I'll use regular
 expressions."<br> Now they have two problems.*
 
 That's a pretty famous joke, and it refers to the fact that
 [regular expressions](http://en.wikipedia.org/wiki/Regular_expression)
-can be quite a pain to figure out. However, once you know some basics about
-them, they're also extremely powerful, and you can do amazing things with them,
-not only in Ruby, but also, for example, in your editor, and command line
-tools.
+can be quite a pain to figure out.
+
+However, once you know some basics about them, they're also extremely powerful,
+and you can do amazing things with them, not only in Ruby, but also, for
+example, in your editor, and command line tools.
 
 Regular expressions are sort of a swiss army knife for finding things in
 strings (text), extracting parts of them, or mass replacing certain bits with

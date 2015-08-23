@@ -1,4 +1,4 @@
-# Bonus: Private methods
+# Private methods
 
 Remember how we said that instance variables store data that is "private" to
 the object? Instance variables are only made accessible to the outside world

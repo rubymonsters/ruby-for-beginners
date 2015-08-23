@@ -1,3 +1,3 @@
-# Bonus: Yield
+# Yield
 
 TBD
