@@ -8,6 +8,7 @@ set :source, 'source'
 
 page '/sitemap.xml', layout: false
 page '/solutions/*', :layout => false
+page '/solutions_2/*', :layout => false
 
 ignore(/themes\/(?!#{data.book.theme.downcase}).*/)
 config.ignored_sitemap_matchers[:layout] = proc { |file|

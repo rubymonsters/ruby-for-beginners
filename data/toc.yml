@@ -109,3 +109,9 @@
   - mailbox_html
   - mailbox_file
   - mailbox_csv
+- path: exercises_2
+  children:
+  - numbers
+  - strings
+  - arrays_1
+  - hashes_1
