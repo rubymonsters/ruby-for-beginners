@@ -16,10 +16,10 @@
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/more_built_in_classes/arrays.html">
+    <nav class="page-nav"><a class="prev" href="/built_in_classes/arrays.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/blocks.html">
+    <nav class="page-nav"><a class="next" href="/variables.html">
   Next
 </a></nav>
 
@@ -116,9 +116,9 @@
       Object-oriented programming
     </a>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/built_in_classes.html">
-      Built-In Classes
+      Built-In Data Types
     </a>
     <ul>
       <li>
@@ -134,6 +134,21 @@
       <li>
         <a href="/built_in_classes/true_false_nil.html">
           True, False, and Nil
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/symbols.html">
+          Symbols
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/arrays.html">
+          Arrays
+        </a>
+      </li>
+      <li class="active">
+        <a href="/built_in_classes/hashes.html">
+          Hashes
         </a>
       </li>
     </ul>
@@ -287,28 +302,6 @@
       <li>
         <a href="/writing_classes/self.html">
           Object Scope and Self
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory expanded">
-    <a href="/more_built_in_classes.html">
-      More Built-In Classes
-    </a>
-    <ul>
-      <li>
-        <a href="/more_built_in_classes/symbols.html">
-          Symbols
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/arrays.html">
-          Arrays
-        </a>
-      </li>
-      <li class="active">
-        <a href="/more_built_in_classes/hashes.html">
-          Hashes
         </a>
       </li>
     </ul>
@@ -659,12 +652,69 @@ are, again, no spaces inside that curly braces <code>{}</code> that define the
 Arrays on the third line.
 </p>
 
+<h2>Missing values</h2>
+
+<p>What happens if we try to look up a key that does not exist?</p>
+
+<p>Again, just as with Arrays, we&rsquo;ll get back <code>nil</code>, meaning &ldquo;nothing&rdquo;:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">[</span><span class="s2">"four"</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</code></pre>
+
+<p>Does this make sense?</p>
+
+<h2>Things you can do with Hashes</h2>
+
+<p>The main purpose of a Hash is being able to lookup a value by a key.</p>
+
+<p>However, here are a few other things you can do with Hashes, too.</p>
+
+<p>Again, look at them, and play with them in <code>irb</code>. Don&rsquo;t necessarily put too
+much effort into memorizing all of them &hellip;</p>
+
+<p>Funnily, you can &ldquo;calculate&rdquo; with Arrays. Remember set theory from your math
+classes? This is pretty similar.</p>
+
+<p>You can merge two Hashes:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span> <span class="p">}.</span><span class="nf">merge</span><span class="p">({</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span> <span class="p">})</span>
+<span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span> <span class="p">}</span>
+</code></pre>
+
+<p><code>fetch</code> does just the same as the square bracket lookup <code>[]</code> discussed before,
+but it will raise an error if the key is not defined:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span> <span class="p">}</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"one"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="s2">"eins"</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"two"</span><span class="p">)</span>
+<span class="no">KeyError</span><span class="p">:</span> <span class="n">key</span> <span class="n">not</span> <span class="ss">found: </span><span class="s2">"two"</span>
+</code></pre>
+
+<p><code>keys</code> returns an Array with all the keys that a Hash knows:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span> <span class="p">}</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">.</span><span class="nf">keys</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">]</span>
+</code></pre>
+
+<p><code>length</code> and <code>size</code> both tell how many key/value pairs the Hash has:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span> <span class="p">}</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">.</span><span class="nf">length</span>
+<span class="o">=&gt;</span> <span class="mi">2</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">.</span><span class="nf">size</span>
+<span class="o">=&gt;</span> <span class="mi">2</span>
+</code></pre>
+
 <p>Exercises: Now would be a good time to do some of the <a href="../exercises/hashes_1.html">exercises on
 Hashes</a>.</p>
 
 <h2>Hash syntax confusion</h2>
 
-<p>You can skip the following and jump right to the chapter <a href="../blocks.html">Blocks</a>,
+<p>You can skip the following and jump right to the chapter <a href="../variables.html">Variables</a>,
 or you can keep reading if you&rsquo;re curious.</p>
 
 <p>We&rsquo;ve found it&rsquo;s important for us to explain the following somewhere in our
@@ -724,10 +774,10 @@ two Hashes are exactly the same:</p>
 <span class="p">{</span> <span class="ss">one: </span><span class="s2">"eins"</span><span class="p">,</span> <span class="ss">two: </span><span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">three: </span><span class="s2">"drei"</span> <span class="p">}</span>
 </code></pre>
 
-        <nav class="page-nav"><a class="prev" href="/more_built_in_classes/arrays.html">
+        <nav class="page-nav"><a class="prev" href="/built_in_classes/arrays.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/blocks.html">
+        <nav class="page-nav"><a class="next" href="/variables.html">
   Next
 </a></nav>
       </article>

@@ -118,7 +118,7 @@
   </li>
   <li class="directory">
     <a href="/built_in_classes.html">
-      Built-In Classes
+      Built-In Data Types
     </a>
     <ul>
       <li>
@@ -134,6 +134,21 @@
       <li>
         <a href="/built_in_classes/true_false_nil.html">
           True, False, and Nil
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/symbols.html">
+          Symbols
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/arrays.html">
+          Arrays
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/hashes.html">
+          Hashes
         </a>
       </li>
     </ul>
@@ -287,28 +302,6 @@
       <li>
         <a href="/writing_classes/self.html">
           Object Scope and Self
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/more_built_in_classes.html">
-      More Built-In Classes
-    </a>
-    <ul>
-      <li>
-        <a href="/more_built_in_classes/symbols.html">
-          Symbols
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/arrays.html">
-          Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/hashes.html">
-          Hashes
         </a>
       </li>
     </ul>
@@ -565,27 +558,28 @@ you google for &ldquo;ruby&rdquo; and the class name.)</p>
 That&rsquo;s right, <code>methods</code> is a method defined on all objects (just like <code>class</code>,
 and <code>is_a?</code>).</p>
 
-<p>When you call it then it will <em>return</em> a list of all of the method names that
-the object has (more precisely, an Array, which you&rsquo;ll learn about
-<a href="../more_built_in_classes/arrays.html">in a bit</a>).</p>
+<p>When you call it then it will <em>return</em> an Array with all the method names that
+the object has.</p>
 
-<p>It makes sense to sort this list, so it is easier to read. Like so:</p>
+<p>It makes sense to sort the Array, so it is easier to read. Like so:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="s2">"Ruby Monstas"</span><span class="p">.</span><span class="nf">methods</span><span class="p">.</span><span class="nf">sort</span>
 <span class="o">=&gt;</span> <span class="p">[:</span><span class="o">*</span><span class="p">,</span> <span class="p">:</span><span class="o">+</span><span class="p">,</span> <span class="ss">:&lt;</span><span class="p">,</span> <span class="p">:</span><span class="o">&gt;</span><span class="p">,</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:class</span><span class="p">,</span> <span class="ss">:downcase</span><span class="p">,</span> <span class="ss">:delete</span><span class="p">,</span> <span class="ss">:include?</span><span class="p">,</span> <span class="ss">:is_a?</span><span class="p">,</span> <span class="ss">:length</span><span class="p">,</span> <span class="ss">:prepend</span><span class="p">,</span> <span class="ss">:start_with?</span><span class="p">]</span>
 </code></pre>
 
+<p>Yep, the method names come as Symbols, because they&rsquo;re considered code.</p>
+
 <p>If you do this yourself, you&rsquo;ll see that the String actually has a lot more
 methods. Many of these actually aren&rsquo;t used very often, but some are quite
-useful. We have stripped the list down a little, because we want to talk about
+useful. We have stripped the Array down a little, because we want to talk about
 some of these methods more.</p>
 
 <p>Btw the code above also demonstrates that methods can be &ldquo;chained&rdquo;: When we
 call a method on an object it will return another object to us. We can then
 immediately call another method on that new object, and so on.</p>
 
-<p>In our example above the method <code>methods</code> returns a list of names. And this
-list responds to (has) the method <code>sort</code>, so we can call this method
+<p>In our example above the method <code>methods</code> returns a Array of names. And
+Arrays respond to (have) the method <code>sort</code>, so we can call this method
 immediately, by using another dot.</p>
 
 <p>We could chain some of the method calls from our String example above like so:</p>

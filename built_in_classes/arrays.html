@@ -16,10 +16,10 @@
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/more_built_in_classes/symbols.html">
+    <nav class="page-nav"><a class="prev" href="/built_in_classes/symbols.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/more_built_in_classes/hashes.html">
+    <nav class="page-nav"><a class="next" href="/built_in_classes/hashes.html">
   Next
 </a></nav>
 
@@ -116,9 +116,9 @@
       Object-oriented programming
     </a>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/built_in_classes.html">
-      Built-In Classes
+      Built-In Data Types
     </a>
     <ul>
       <li>
@@ -134,6 +134,21 @@
       <li>
         <a href="/built_in_classes/true_false_nil.html">
           True, False, and Nil
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/symbols.html">
+          Symbols
+        </a>
+      </li>
+      <li class="active">
+        <a href="/built_in_classes/arrays.html">
+          Arrays
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/hashes.html">
+          Hashes
         </a>
       </li>
     </ul>
@@ -287,28 +302,6 @@
       <li>
         <a href="/writing_classes/self.html">
           Object Scope and Self
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory expanded">
-    <a href="/more_built_in_classes.html">
-      More Built-In Classes
-    </a>
-    <ul>
-      <li>
-        <a href="/more_built_in_classes/symbols.html">
-          Symbols
-        </a>
-      </li>
-      <li class="active">
-        <a href="/more_built_in_classes/arrays.html">
-          Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/hashes.html">
-          Hashes
         </a>
       </li>
     </ul>
@@ -558,8 +551,8 @@
 
 <p><em>Arrays are like bags that contain things</em></p>
 
-<p>While numbers, Strings, Symbols, <code>true</code>, <code>false</code>, and <code>nil</code> all represent
-simple, primitive things, Arrays are more interesting, and very useful.</p>
+<p>While numbers, Strings, <code>true</code>, <code>false</code>, and <code>nil</code> all represent simple,
+primitive things, Arrays are more interesting, and very useful.</p>
 
 <p>Arrays are things that store (or &ldquo;hold&rdquo;) other things. You can think of an
 Array as a collection or list of things. Or better yet, as a bag that you can
@@ -574,15 +567,21 @@ with square brackets, like so:</p>
 <pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </code></pre>
 
-<p>Or:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"A string"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:some_symbol</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-</code></pre>
-
-<p>This creates an Array with 4 elements, i.e. a bag that contains 4 things: a
-string, a number, a symbol, and another number.</p>
+<p>This is a simple Array that holds three numbers.</p>
 
 <p class="hint">
 An Array is created by listing objects, separated by commas, and enclosed by square brackets.
+</p>
+
+<p>Arrays can contain all kinds of things:</p>
+<pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"A string"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kp">true</span><span class="p">,</span> <span class="ss">:symbol</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre>
+
+<p>This creates an Array with 4 elements, i.e. a bag that contains 5 things: a
+string, a number, <code>true</code>, a symbol, and another number.</p>
+
+<p class="hint">
+Arrays can contain all kinds of objects.
 </p>
 
 <p>Note that in Ruby Arrays always keep their order: Unlike a real bag, where,
@@ -681,13 +680,122 @@ On formatting: Note that there are no spaces inside the square brackets,
 and there&rsquo;s one space after each comma.
 </p>
 
+<h2>Missing elements</h2>
+
+<p>What if we try to retrieve an element that does not exist, for example
+the element at the fourth, or fifth position (index)?</p>
+
+<p>Right, we get back <code>nil</code>, meaning &ldquo;nothing&rdquo;:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</code></pre>
+
+<p>You&rsquo;ll learn later that every operation (&ldquo;method&rdquo;) in Ruby always
+<a href="../writing_methods/return_values.html">returns exactly one thing</a>
+(i.e. one object), and that&rsquo;s why there needs to be a &ldquo;thing&rdquo; that represents
+&ldquo;nothing&rdquo;.</p>
+
+<p>This will start to feel pretty natural to you pretty soon.</p>
+
+<h2>Nested Arrays</h2>
+
+<p>As said before, Arrays can contain all sorts of things. So, they can also
+contain more Arrays.</p>
+
+<p>This is quite a common thing to use when you need to represent some data that
+has the characteristics of a table, like an spreadsheet.</p>
+
+<p>The outer Array represents the table, and each inner Array represents one
+row. Each value then represents a cell. For example:</p>
+<pre class="highlight ruby"><code><span class="p">[</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+</code></pre>
+
+<p>This is a nested Array that represents the structure of number keys on a phone.</p>
+
+<h2>Things you can do with Arrays</h2>
+
+<p>Here are a few things you can do with Arrays.</p>
+
+<p>Look at them, and play with them in <code>irb</code>. Don&rsquo;t necessarily try to memorize
+all of them &hellip; you can always look things up in the documentation when you
+actually need these. It might be useful if you&rsquo;ve seen some of them before
+though.</p>
+
+<p>Funnily, you can &ldquo;calculate&rdquo; with Arrays. Remember set theory from your math
+classes? This is pretty similar.</p>
+
+<p>You can add Arrays:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</code></pre>
+
+<p>Subtract them from each other:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="ss">:one</span><span class="p">,</span> <span class="ss">:two</span><span class="p">,</span> <span class="ss">:three</span><span class="p">,</span> <span class="ss">:four</span><span class="p">]</span> <span class="o">-</span> <span class="p">[</span><span class="ss">:three</span><span class="p">,</span> <span class="ss">:four</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:one</span><span class="p">,</span> <span class="ss">:two</span><span class="p">]</span>
+</code></pre>
+
+<p>Multiply with a number:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">,</span> <span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">,</span> <span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">]</span>
+</code></pre>
+
+<p>And find the intersection:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">&amp;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre>
+
+<p><code>first</code> and <code>last</code> are alternative ways to retrieve the first and last element:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">first</span>
+<span class="mi">1</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">last</span>
+<span class="mi">3</span>
+</code></pre>
+
+<p>Some other things that you can do with Arrays that you can try yourself in
+<code>irb</code>:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">length</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">sort</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kp">nil</span><span class="p">].</span><span class="nf">compact</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">index</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="mi">2</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="o">&gt;</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]].</span><span class="nf">transpose</span>
+<span class="o">=&gt;</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+</code></pre>
+
+<p>In these examples <code>compact</code> removes all <code>nil</code> values from the Array.
+<code>transpose</code> works with a nested Array and &ldquo;flips&rdquo; the table, i.e. turns columns
+into rows, and rows into columns.</p>
+
 <p>Exercises: Now would be a good time to do some of the <a href="../exercises/arrays_1.html">exercises on
 Arrays</a>.</p>
 
-        <nav class="page-nav"><a class="prev" href="/more_built_in_classes/symbols.html">
+        <nav class="page-nav"><a class="prev" href="/built_in_classes/symbols.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/more_built_in_classes/hashes.html">
+        <nav class="page-nav"><a class="next" href="/built_in_classes/hashes.html">
   Next
 </a></nav>
       </article>

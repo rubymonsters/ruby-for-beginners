@@ -118,7 +118,7 @@
   </li>
   <li class="directory">
     <a href="/built_in_classes.html">
-      Built-In Classes
+      Built-In Data Types
     </a>
     <ul>
       <li>
@@ -134,6 +134,21 @@
       <li>
         <a href="/built_in_classes/true_false_nil.html">
           True, False, and Nil
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/symbols.html">
+          Symbols
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/arrays.html">
+          Arrays
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/hashes.html">
+          Hashes
         </a>
       </li>
     </ul>
@@ -287,28 +302,6 @@
       <li>
         <a href="/writing_classes/self.html">
           Object Scope and Self
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/more_built_in_classes.html">
-      More Built-In Classes
-    </a>
-    <ul>
-      <li>
-        <a href="/more_built_in_classes/symbols.html">
-          Symbols
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/arrays.html">
-          Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/hashes.html">
-          Hashes
         </a>
       </li>
     </ul>
@@ -586,19 +579,29 @@ from a little bit of a philosophical perspective. We do this to set a little
 bit of a context for the terms <em>object</em>, <em>class</em>, and <em>method</em> which will
 be used quite frequently from then on.</p>
 
-<h3>2. Built-In Classes: Numbers and Strings (text)</h3>
+<h3>2. Built-In Data Types</h3>
 
 <p>Ruby comes with lots of batteries included. Things that are built-in, and
 ready for you to be used when you open an empty Ruby file, or IRB.</p>
 
-<p>We&rsquo;ll look the two most basic, and most widely used ones: Numbers, and
-Strings (text). These will be good enough for us to introduce other concepts
-without spending too much time on talking about all the other things that
-Ruby has built-in (we&rsquo;ll look at the most important ones later).</p>
+<p>We&rsquo;ll look the two most basic, and most widely used ones:</p>
 
-<p>We&rsquo;ll also quickly mention 3 other things that are widely used in Ruby:
-<code>true</code>, <code>false</code>, and `nil, so you&rsquo;ve already heard of them when we come
-across them later.</p>
+<p>Numbers, and Strings (text). These will be good enough for us to introduce
+other concepts without spending too much time on talking about all the other
+things that Ruby has built-in (we&rsquo;ll look at the most important ones later).</p>
+
+<p>We&rsquo;ll quickly mention 3 primitive things that are widely used in Ruby: <code>true</code>,
+<code>false</code>, and `nil, so you&rsquo;ve already heard of them when we come across them
+later.</p>
+
+<p>Then we discuss Arrays and Hashes, which are data structures. I.e. these are
+things that you can use to store other things. They&rsquo;re pretty powerful, and
+widely used.</p>
+
+<p>Symbols are quite an odd beast, and you normally wouldn&rsquo;t even need to know
+them in order to write your own, working code. However, they&rsquo;re very widely
+used and many (many!) examples out there use them. So we introduce them
+briefly, too.</p>
 
 <h3>3. Variables</h3>
 
@@ -626,20 +629,7 @@ object in Ruby.</p>
 &ldquo;people&rdquo; (objects), and let them interact. We&rsquo;ll learn how to make our objects
 &ldquo;know&rdquo; things, and how to give them &ldquo;behaviour&rdquo;.</p>
 
-<h3>7. More Built-in Classes: Symbols, Arrays, and Hashes</h3>
-
-<p>We&rsquo;ll now go back, and learn about a few more things that Ruby ships with
-out of the box.</p>
-
-<p>Symbols are quite an odd beast, and you normally wouldn&rsquo;t need to know them
-in order to write your own, working code. However, we found it&rsquo;s useful to
-quickly introduce them, just because they&rsquo;re so widely used and many (many!)
-examples out there use them.</p>
-
-<p>Arrays and Hashes are data structures. I.e. these are things that you
-can use to store other things. They&rsquo;re pretty powerful, and widely used.</p>
-
-<h3>8. Blocks</h3>
+<h3>7. Blocks</h3>
 
 <p>Blocks are a super powerful feature in Ruby. We love them, and use them
 everywhere. Many built-in methods use them, too. So it&rsquo;s good to introduce
@@ -648,7 +638,7 @@ them now.</p>
 <p>Blocks are like methods that don&rsquo;t have a name, and they are passed when
 calling actual methods. We&rsquo;ll discuss why this is cool, and how it works.</p>
 
-<h3>9. Conditionals, Truthiness, and Nothing</h3>
+<h3>8. Conditionals, Truthiness, and Nothing</h3>
 
 <p>Sometimes you want to run some part of your code only if a certain condition
 applies (e.g. you only want to allow users to login if the supplied password
@@ -657,7 +647,7 @@ is correct).</p>
 <p>Conditionals allow you to do that. Ruby comes with some pretty cool features
 included, and we&rsquo;ll quickly look at them.</p>
 
-<h3>10. Operators</h3>
+<h3>9. Operators</h3>
 
 <p>There are lots of different operators built into Ruby, and at this point
 you&rsquo;ve already used a number of them (such as the arithmetical operator <code>+</code>,

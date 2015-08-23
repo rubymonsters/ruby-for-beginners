@@ -114,7 +114,7 @@
   </li>
   <li class="directory">
     <a href="/built_in_classes.html">
-      Built-In Classes
+      Built-In Data Types
     </a>
     <ul>
       <li>
@@ -130,6 +130,21 @@
       <li>
         <a href="/built_in_classes/true_false_nil.html">
           True, False, and Nil
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/symbols.html">
+          Symbols
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/arrays.html">
+          Arrays
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/hashes.html">
+          Hashes
         </a>
       </li>
     </ul>
@@ -283,28 +298,6 @@
       <li>
         <a href="/writing_classes/self.html">
           Object Scope and Self
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/more_built_in_classes.html">
-      More Built-In Classes
-    </a>
-    <ul>
-      <li>
-        <a href="/more_built_in_classes/symbols.html">
-          Symbols
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/arrays.html">
-          Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/hashes.html">
-          Hashes
         </a>
       </li>
     </ul>
@@ -1279,19 +1272,29 @@ from a little bit of a philosophical perspective. We do this to set a little
 bit of a context for the terms <em>object</em>, <em>class</em>, and <em>method</em> which will
 be used quite frequently from then on.</p>
 
-<h3>2. Built-In Classes: Numbers and Strings (text)</h3>
+<h3>2. Built-In Data Types</h3>
 
 <p>Ruby comes with lots of batteries included. Things that are built-in, and
 ready for you to be used when you open an empty Ruby file, or IRB.</p>
 
-<p>We&rsquo;ll look the two most basic, and most widely used ones: Numbers, and
-Strings (text). These will be good enough for us to introduce other concepts
-without spending too much time on talking about all the other things that
-Ruby has built-in (we&rsquo;ll look at the most important ones later).</p>
+<p>We&rsquo;ll look the two most basic, and most widely used ones:</p>
 
-<p>We&rsquo;ll also quickly mention 3 other things that are widely used in Ruby:
-<code>true</code>, <code>false</code>, and `nil, so you&rsquo;ve already heard of them when we come
-across them later.</p>
+<p>Numbers, and Strings (text). These will be good enough for us to introduce
+other concepts without spending too much time on talking about all the other
+things that Ruby has built-in (we&rsquo;ll look at the most important ones later).</p>
+
+<p>We&rsquo;ll quickly mention 3 primitive things that are widely used in Ruby: <code>true</code>,
+<code>false</code>, and `nil, so you&rsquo;ve already heard of them when we come across them
+later.</p>
+
+<p>Then we discuss Arrays and Hashes, which are data structures. I.e. these are
+things that you can use to store other things. They&rsquo;re pretty powerful, and
+widely used.</p>
+
+<p>Symbols are quite an odd beast, and you normally wouldn&rsquo;t even need to know
+them in order to write your own, working code. However, they&rsquo;re very widely
+used and many (many!) examples out there use them. So we introduce them
+briefly, too.</p>
 
 <h3>3. Variables</h3>
 
@@ -1319,20 +1322,7 @@ object in Ruby.</p>
 &ldquo;people&rdquo; (objects), and let them interact. We&rsquo;ll learn how to make our objects
 &ldquo;know&rdquo; things, and how to give them &ldquo;behaviour&rdquo;.</p>
 
-<h3>7. More Built-in Classes: Symbols, Arrays, and Hashes</h3>
-
-<p>We&rsquo;ll now go back, and learn about a few more things that Ruby ships with
-out of the box.</p>
-
-<p>Symbols are quite an odd beast, and you normally wouldn&rsquo;t need to know them
-in order to write your own, working code. However, we found it&rsquo;s useful to
-quickly introduce them, just because they&rsquo;re so widely used and many (many!)
-examples out there use them.</p>
-
-<p>Arrays and Hashes are data structures. I.e. these are things that you
-can use to store other things. They&rsquo;re pretty powerful, and widely used.</p>
-
-<h3>8. Blocks</h3>
+<h3>7. Blocks</h3>
 
 <p>Blocks are a super powerful feature in Ruby. We love them, and use them
 everywhere. Many built-in methods use them, too. So it&rsquo;s good to introduce
@@ -1341,7 +1331,7 @@ them now.</p>
 <p>Blocks are like methods that don&rsquo;t have a name, and they are passed when
 calling actual methods. We&rsquo;ll discuss why this is cool, and how it works.</p>
 
-<h3>9. Conditionals, Truthiness, and Nothing</h3>
+<h3>8. Conditionals, Truthiness, and Nothing</h3>
 
 <p>Sometimes you want to run some part of your code only if a certain condition
 applies (e.g. you only want to allow users to login if the supplied password
@@ -1350,7 +1340,7 @@ is correct).</p>
 <p>Conditionals allow you to do that. Ruby comes with some pretty cool features
 included, and we&rsquo;ll quickly look at them.</p>
 
-<h3>10. Operators</h3>
+<h3>9. Operators</h3>
 
 <p>There are lots of different operators built into Ruby, and at this point
 you&rsquo;ve already used a number of them (such as the arithmetical operator <code>+</code>,
@@ -1451,18 +1441,29 @@ much, unless you really want to. Ruby is a very good language to start learning
 programming for lots of reasons.
 </p>
 
-  <h1>Built-In Classes</h1>
+  <h1>Built-In Data Types</h1>
 
 <p>As mentioned before, Ruby comes with lots of things already baked in, and
 provides you with tons of tools to use and hit the road running.</p>
 
-<p>We will have a quick look at the following ones for starters:</p>
+<p>We&rsquo;ll start by looking at some of the most common data types in Ruby.  Data
+types are &ldquo;things&rdquo; that are mainly used to represent data, such as numbers,
+text, and other values.</p>
+
+<p>We will have a quick look at each the following ones:</p>
 
 <ul>
 <li>Numbers</li>
 <li>Strings (texts)</li>
 <li>True, False, and Nil</li>
+<li>Symbols</li>
+<li>Arrays</li>
+<li>Hashes</li>
 </ul>
+
+<p>These &ldquo;kinds of things&rdquo; (objects) cover like 98% of all built-in data types
+that you&rsquo;ll be using on a day to day basis, i.e. these are being used all over
+the place. There are more, but those are rather exotic, and rarely used.</p>
 
 <p>Numbers and Strings (which is just a strange name for &ldquo;texts&rdquo;) are some of the
 most basic &ldquo;things&rdquo; that you deal with in Ruby on a regular basis. The are also
@@ -1474,17 +1475,13 @@ your own ones.</p>
 <code>nil</code>, just because these are things that we&rsquo;ll come across along the way
 anyway.</p>
 
-<p>Later we will come back to this topic, and explain a few more built-in things,
-which are:</p>
+<p>Symbols also are very commonly used, but quite an odd concept. You normally
+wouldn&rsquo;t need to understand Symbols in order to write your own code. We&rsquo;ll
+still cover them briefly, and use them once in a while, just in case you find
+them elsewhere.</p>
 
-<ul>
-<li>Arrays</li>
-<li>Hashes</li>
-<li>Symbols</li>
-</ul>
-
-<p>Together these kinds of object types make up for more than 95% of all built-in
-objects that you&rsquo;ll be using on a day to day basis.</p>
+<p>Arrays and Hashes are &ldquo;things&rdquo; (objects) that are used to store other things,
+and they&rsquo;re super useful, and widely used.</p>
 
   <h1>Numbers</h1>
 
@@ -1704,6 +1701,574 @@ exactly one thing (i.e. one object), and that&rsquo;s why there needs to be a
 
 <p>This will start to feel pretty natural to you pretty soon.</p>
 
+  <h1>Symbols</h1>
+
+<p><em>Symbols are like strings, except they are code.</em></p>
+
+<p>Symbols are a rather strange concept to be honest, and we only introduce them
+because symbols are used so often and widely that you&rsquo;ll very likely find them
+used in code elsewhere. For your first steps in learning programming we would
+not necessarily need them.</p>
+
+<p>A symbol is written like this: <code>:something</code></p>
+
+<p>I.e. there is a word that is preceded by a colon. This means that normally
+symbols do not contain spaces. Instead, if we have symbols that consist of
+multiple words we would concatenate them with underscores, like so:
+<code>:another_funny_symbol</code></p>
+
+<p class="hint">
+A symbol is created by adding a colon in front of a word.
+</p>
+
+<p>So when to use strings, and when to use symbols?</p>
+
+<p>There&rsquo;s actually no perfectly clear line or simple definition.</p>
+
+<ul>
+<li><p>One rule of thumb is that if the text at hand is &ldquo;data&rdquo;, then use a string.
+If it&rsquo;s <em>code</em>, then use a symbol, especially when used as keys in hashes (see
+below).</p></li>
+<li><p>Another way of looking at symbols is that they aren&rsquo;t really text, even though
+they read well. Instead they are <em>unique identifiers</em>, like numbers, or bar
+codes. While strings represent data that can change, symbols represent unique
+values, which are static.</p></li>
+<li><p>And more technically, if you use strings that contain the same text in your
+code multiple times, then a new string object will be created every time. E.g.
+if you do <code>puts &quot;Hello!&quot;</code> 10 times then 10 actual string objects will be
+created (and then discarded, because they&rsquo;re not being used any longer). On the
+other hand, if you&rsquo;d use a symbol for this and do <code>puts :hello</code> 10 times, then
+only <em>one single object</em> will be created, and <em>re-used</em>.</p></li>
+</ul>
+
+<p class="hint">
+Symbols are unique identifiers that are considered code, not data.
+</p>
+
+<p>If you find all of this confusing, don&rsquo;t worry, many people do. You&rsquo;ll
+understand symbols better once you get to use some of them in your code. For
+now you can think of them as a special, limited variation of Strings (text).</p>
+
+<p class="hint">
+Symbols are a special, limited variation of Strings.
+</p>
+
+<h2>The technical difference</h2>
+
+<p>Skip the following unless you&rsquo;re really curious about the underlying technical
+difference between Strings and Symbols.</p>
+
+<p>Try this in IRB:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"a string"</span><span class="p">.</span><span class="nf">object_id</span>
+<span class="o">=&gt;</span> <span class="mi">70358630335100</span>
+<span class="o">&gt;</span> <span class="s2">"a string"</span><span class="p">.</span><span class="nf">object_id</span>
+<span class="o">=&gt;</span> <span class="mi">70358640625960</span>
+<span class="o">&gt;</span> <span class="s2">"a string"</span><span class="p">.</span><span class="nf">object_id</span>
+<span class="o">=&gt;</span> <span class="mi">70358644379620</span>
+</code></pre>
+
+<p>As you can see, even though the 3 Strings created are exactly the same, every
+new String created has a different <code>object_id</code>: They&rsquo;re actually different
+objects, even though they contain the same text.</p>
+
+<p>With Symbols however:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="ss">:a_symbol</span><span class="p">.</span><span class="nf">object_id</span>
+<span class="o">=&gt;</span> <span class="mi">1086748</span>
+<span class="o">&gt;</span> <span class="ss">:a_symbol</span><span class="p">.</span><span class="nf">object_id</span>
+<span class="o">=&gt;</span> <span class="mi">1086748</span>
+<span class="o">&gt;</span> <span class="ss">:a_symbol</span><span class="p">.</span><span class="nf">object_id</span>
+<span class="o">=&gt;</span> <span class="mi">1086748</span>
+</code></pre>
+
+<p>We now get the same <code>object_id</code> for each of the Symbols, meaning they&rsquo;re
+referring to the exact same object.</p>
+
+<p>The <code>object_id</code> is a unique id that Ruby uses internally in order to keep track
+of all the objects that are flying around in the universe that makes up your
+program. E.g. Ruby needs to know which objects are still being useful, and
+which ones can be cleaned up and thrown away. The <code>object_id</code> is a way to
+identify each and any object by a unique id.</p>
+
+<p>By <code>true</code>, <code>false</code>, and <code>nil</code> (as well as all numbers) also behave this way:
+Whenever you use these in your code you&rsquo;ll get the same object. Try it in IRB
+and check their <code>object_id</code>.</p>
+
+<p>Let&rsquo;s move on though.</p>
+
+  <h1>Arrays</h1>
+
+<p><em>Arrays are like bags that contain things</em></p>
+
+<p>While numbers, Strings, <code>true</code>, <code>false</code>, and <code>nil</code> all represent simple,
+primitive things, Arrays are more interesting, and very useful.</p>
+
+<p>Arrays are things that store (or &ldquo;hold&rdquo;) other things. You can think of an
+Array as a collection or list of things. Or better yet, as a bag that you can
+throw things in: <em>The bag itself is a thing (an object), too</em>.</p>
+
+<p class="hint">
+An Array is an object that stores other objects.
+</p>
+
+<p>An Array is created by separating values by commas, and enclosing this list
+with square brackets, like so:</p>
+<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre>
+
+<p>This is a simple Array that holds three numbers.</p>
+
+<p class="hint">
+An Array is created by listing objects, separated by commas, and enclosed by square brackets.
+</p>
+
+<p>Arrays can contain all kinds of things:</p>
+<pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"A string"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kp">true</span><span class="p">,</span> <span class="ss">:symbol</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre>
+
+<p>This creates an Array with 4 elements, i.e. a bag that contains 5 things: a
+string, a number, <code>true</code>, a symbol, and another number.</p>
+
+<p class="hint">
+Arrays can contain all kinds of objects.
+</p>
+
+<p>Note that in Ruby Arrays always keep their order: Unlike a real bag, where,
+when you throw in a bunch of apples, they might come out in a different order,
+an Array always keeps its objects in the same defined order (unless you do
+something to change the order).</p>
+
+<p>Also note that in Ruby you can store any kind of object in an Array. For
+example, you can also store Arrays in an Array: that&rsquo;s a 2-dimensional Array,
+like a table that has many rows, and each row has many cells (&ldquo;things&rdquo;).</p>
+
+<p class="hint">
+Arrays have a defined order, and can store all kinds of objects.
+</p>
+
+<h2>Retrieving an element from an Array</h2>
+
+<p>Arrays can be used in a lot of different, and useful ways, but the most basic
+one is to retrieve a certain element by the way of referring to its position:
+<em>Please get me the element at position 1!</em></p>
+
+<p>In Ruby, you can do this with square brackets like so:</p>
+<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
+<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre>
+
+<p>Do you reckognize how we use a <a href="../variables.html">variable</a> to assign a name
+to our Array here?</p>
+
+<p><code>words[1]</code> means: from the Array <code>words</code> get the element at position
+<code>1</code>. <code>puts</code> will then print this value out to the screen. (By the way<code>puts</code>
+stands for &ldquo;(out-) put string&rdquo;.)</p>
+
+<p>So, as you can see square brackets <code>[]</code> mean different things when used in
+different contexts. The same is true for other punctuation, too.</p>
+
+<p>In our case here the square brackets on the first line are used to create an
+Array object with the given elements. On the second line the square brackets
+are now appended to a variable name. This means we want look up an element from
+the Array that (at this moment) is called <code>words</code> (i.e. assigned to the
+variable <code>words</code>).</p>
+
+<p class="hint">
+Punctuation (such as square brackets) has different meanings in different contexts.
+</p>
+
+<h2>Arrays are zero based</h2>
+
+<p>What do you think our example code will print out to the terminal? Funnily,
+it&rsquo;s <code>two</code>, and not <code>one</code>. Huh?</p>
+
+<p>The reason for this is: The first position in an Array is 0, not 1. So the
+position 1 refers to the second element, not the first one.</p>
+
+<p>In programming books and the Ruby documentation you&rsquo;ll often find the word
+&ldquo;index&rdquo; to be used instead of &ldquo;position&rdquo; in this context.</p>
+
+<p class="hint">
+Arrays start with the index 0, not 1.
+</p>
+
+<h2>Appending an element to an Array</h2>
+
+<p>In order to add an element to the end of an existing Array you can use the
+operator <code>&lt;&lt;</code>, called &ldquo;shovel operator&rdquo;, like so:</p>
+<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
+<span class="n">words</span> <span class="o">&lt;&lt;</span> <span class="s2">"four"</span>
+<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</code></pre>
+
+<p>This prints out <code>four</code>: The string <code>&quot;four&quot;</code> has been &ldquo;shoveled&rdquo; into, that
+means, appended to the Array. And since it now sits at position <code>3</code> we can
+access it using <code>words[3]</code>.</p>
+
+<h2>Setting an element to a position</h2>
+
+<p>You can also set an element to a specific index, like so:</p>
+<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
+<span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"four"</span>
+<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</code></pre>
+
+<p>This also prints out <code>four</code>.</p>
+
+<p>You could also overwrite existing elements the same way. For example this
+would set the word <code>&quot;uno&quot;</code> to the position <code>0</code> (i.e. overwrite <code>&quot;one&quot;</code>):</p>
+<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
+<span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"uno"</span>
+<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre>
+
+<p>So, this would now output <code>uno</code>.</p>
+
+<p class="hint formatting">
+On formatting: Note that there are no spaces inside the square brackets,
+and there&rsquo;s one space after each comma.
+</p>
+
+<h2>Missing elements</h2>
+
+<p>What if we try to retrieve an element that does not exist, for example
+the element at the fourth, or fifth position (index)?</p>
+
+<p>Right, we get back <code>nil</code>, meaning &ldquo;nothing&rdquo;:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="o">&gt;</span> <span class="n">words</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</code></pre>
+
+<p>You&rsquo;ll learn later that every operation (&ldquo;method&rdquo;) in Ruby always
+<a href="../writing_methods/return_values.html">returns exactly one thing</a>
+(i.e. one object), and that&rsquo;s why there needs to be a &ldquo;thing&rdquo; that represents
+&ldquo;nothing&rdquo;.</p>
+
+<p>This will start to feel pretty natural to you pretty soon.</p>
+
+<h2>Nested Arrays</h2>
+
+<p>As said before, Arrays can contain all sorts of things. So, they can also
+contain more Arrays.</p>
+
+<p>This is quite a common thing to use when you need to represent some data that
+has the characteristics of a table, like an spreadsheet.</p>
+
+<p>The outer Array represents the table, and each inner Array represents one
+row. Each value then represents a cell. For example:</p>
+<pre class="highlight ruby"><code><span class="p">[</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+</code></pre>
+
+<p>This is a nested Array that represents the structure of number keys on a phone.</p>
+
+<h2>Things you can do with Arrays</h2>
+
+<p>Here are a few things you can do with Arrays.</p>
+
+<p>Look at them, and play with them in <code>irb</code>. Don&rsquo;t necessarily try to memorize
+all of them &hellip; you can always look things up in the documentation when you
+actually need these. It might be useful if you&rsquo;ve seen some of them before
+though.</p>
+
+<p>Funnily, you can &ldquo;calculate&rdquo; with Arrays. Remember set theory from your math
+classes? This is pretty similar.</p>
+
+<p>You can add Arrays:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</code></pre>
+
+<p>Subtract them from each other:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="ss">:one</span><span class="p">,</span> <span class="ss">:two</span><span class="p">,</span> <span class="ss">:three</span><span class="p">,</span> <span class="ss">:four</span><span class="p">]</span> <span class="o">-</span> <span class="p">[</span><span class="ss">:three</span><span class="p">,</span> <span class="ss">:four</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:one</span><span class="p">,</span> <span class="ss">:two</span><span class="p">]</span>
+</code></pre>
+
+<p>Multiply with a number:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">,</span> <span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">,</span> <span class="s2">"Ruby"</span><span class="p">,</span> <span class="s2">"Monstas"</span><span class="p">]</span>
+</code></pre>
+
+<p>And find the intersection:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">&amp;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre>
+
+<p><code>first</code> and <code>last</code> are alternative ways to retrieve the first and last element:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">first</span>
+<span class="mi">1</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">last</span>
+<span class="mi">3</span>
+</code></pre>
+
+<p>Some other things that you can do with Arrays that you can try yourself in
+<code>irb</code>:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">length</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">sort</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kp">nil</span><span class="p">].</span><span class="nf">compact</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nf">index</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="mi">2</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nf">rotate</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="o">&gt;</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]].</span><span class="nf">transpose</span>
+<span class="o">=&gt;</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+</code></pre>
+
+<p>In these examples <code>compact</code> removes all <code>nil</code> values from the Array.
+<code>transpose</code> works with a nested Array and &ldquo;flips&rdquo; the table, i.e. turns columns
+into rows, and rows into columns.</p>
+
+<p>Exercises: Now would be a good time to do some of the <a href="../exercises/arrays_1.html">exercises on
+Arrays</a>.</p>
+
+  <h1>Hashes</h1>
+
+<p><em>Dictionaries: look up one thing by another</em></p>
+
+<p>Hashes are another very useful, and widely used kind of thing that can be used
+to store other objects.</p>
+
+<p>Unlike arrays which are mere lists, Hashes are like dictionaries:</p>
+
+<p>You can use them to look up one thing by another thing. We say: we look up a
+value from a Hash using a key. Or one could say: <em>Please get me the value that
+is associated with this key.</em></p>
+
+<p>Imagine a real dictionary that translates from English to German. When you
+look up the English word &ldquo;hello&rdquo; then you&rsquo;ll find the German &ldquo;Hallo&rdquo;. When
+you look up &ldquo;one&rdquo; then you&rsquo;ll find &ldquo;eins&rdquo;, and so on. The authors of this
+dictionary have assigned a German word (a value) to an English word (the key).</p>
+
+<p>Hashes work pretty much like this.</p>
+
+<p class="hint">
+A Hash assigns values to keys, so that values can be looked up by their key.
+</p>
+
+<p>We also refer to a value that is assigned to a key as <em>key/value pairs</em>. A
+Hash can have as many key/value pairs as you like.</p>
+
+<h2>Creating a Hash</h2>
+
+<p>In Ruby you can create a Hash by assigning a key to a value with <code>=&gt;</code>, separate
+these key/value pairs with commas, and enclose the whole thing with curly
+braces.</p>
+
+<p>This is how it looks:</p>
+<pre class="highlight ruby"><code><span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+</code></pre>
+
+<p>This defines a Hash that contains 3 key/value pairs, meaning that we can look
+up three values (the strings <code>&quot;eins&quot;</code>, <code>&quot;zwei&quot;</code>, and <code>&quot;drei&quot;</code>) using three
+different keys (the strings <code>&quot;one&quot;</code>, <code>&quot;two&quot;</code>, and <code>&quot;three&quot;</code>).</p>
+
+<p>By the way, the Ruby community has come up with the name <em>hash rocket</em> for the
+bit of syntax <code>=&gt;</code> which separates a key from a value, &hellip; we think that is
+pretty cool to know :)</p>
+
+<p class="hint">
+A Hash is created by listing key/value pairs, separated by hash rockets, and enclosed by curly braces.
+</p>
+
+<h2>Looking up a value</h2>
+
+<p>Now, how do you actually look up the value that is associated with the key
+<code>&quot;one&quot;</code>?</p>
+
+<p>Just like with arrays you use sqare brackets, but instead of passing
+a number indicating the position you now pass the key. Like so:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="nb">puts</span> <span class="n">dictionary</span><span class="p">[</span><span class="s2">"one"</span><span class="p">]</span>
+</code></pre>
+
+<p>Do you reckognize how we, on the second line, use a variable name to
+refer to the Hash defined on the first line?</p>
+
+<p>In this example, <code>dictionary</code> is a Hash defined on the first line. <code>[&quot;one&quot;]</code>
+looks up the value associated to the key <code>&quot;one&quot;</code>, which is <code>&quot;eins&quot;</code>. This value
+will be passed to <code>puts</code> which outputs it to the screen.</p>
+
+<h2>Any kind of objects</h2>
+
+<p>You can use any kind of object as keys, and you can store any kind of object
+as values.</p>
+
+<p>For example, these are all valid Hashes, too:</p>
+<pre class="highlight ruby"><code><span class="p">{</span> <span class="mi">1</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="mi">2</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="mi">3</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="p">{</span> <span class="s2">"weights"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"pound"</span><span class="p">,</span> <span class="s2">"kilogram"</span><span class="p">],</span> <span class="s2">"lengths"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"meter"</span><span class="p">,</span> <span class="s2">"mile"</span><span class="p">]</span> <span class="p">}</span>
+<span class="p">{</span> <span class="ss">:de</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre>
+
+<p>The first example uses numbers as keys, while the second one uses Symbols,
+which is quite a common thing to do in Ruby.</p>
+
+<p>In the third example you can see that one can use Arrays as values in Hashes.
+So if you&rsquo;d look up the key <code>&quot;weights&quot;</code> you&rsquo;d now get an Array back.</p>
+
+<p>Not quite sure where you&rsquo;d use a Hash like the third line in real code, but the
+last line is actually pretty darn close to what Rails uses for translating
+strings to different languages:</p>
+
+<p>It is also an example of a nested Hash. There&rsquo;s another Hash associated
+(stored) as a value for the key <code>:de</code> (representing the language German). And
+this other Hash now has three key/value pairs. So a Rails programmer could look
+up how to translate &ldquo;one&rdquo; to German, and get &ldquo;eins&rdquo; back.</p>
+
+<p class="hint">
+Hashes can use any kind of objects as keys and values.
+</p>
+
+<p class="hint formatting">
+On formatting: Note that there&rsquo;s one space inside the curly braces on both
+sides, around the <code>=></code> Hash rocket, and after each comma. But there
+are, again, no spaces inside that curly braces <code>{}</code> that define the
+Arrays on the third line.
+</p>
+
+<h2>Missing values</h2>
+
+<p>What happens if we try to look up a key that does not exist?</p>
+
+<p>Again, just as with Arrays, we&rsquo;ll get back <code>nil</code>, meaning &ldquo;nothing&rdquo;:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">[</span><span class="s2">"four"</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</code></pre>
+
+<p>Does this make sense?</p>
+
+<h2>Things you can do with Hashes</h2>
+
+<p>The main purpose of a Hash is being able to lookup a value by a key.</p>
+
+<p>However, here are a few other things you can do with Hashes, too.</p>
+
+<p>Again, look at them, and play with them in <code>irb</code>. Don&rsquo;t necessarily put too
+much effort into memorizing all of them &hellip;</p>
+
+<p>Funnily, you can &ldquo;calculate&rdquo; with Arrays. Remember set theory from your math
+classes? This is pretty similar.</p>
+
+<p>You can merge two Hashes:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span> <span class="p">}.</span><span class="nf">merge</span><span class="p">({</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span> <span class="p">})</span>
+<span class="o">=&gt;</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span> <span class="p">}</span>
+</code></pre>
+
+<p><code>fetch</code> does just the same as the square bracket lookup <code>[]</code> discussed before,
+but it will raise an error if the key is not defined:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span> <span class="p">}</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"one"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="s2">"eins"</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s2">"two"</span><span class="p">)</span>
+<span class="no">KeyError</span><span class="p">:</span> <span class="n">key</span> <span class="n">not</span> <span class="ss">found: </span><span class="s2">"two"</span>
+</code></pre>
+
+<p><code>keys</code> returns an Array with all the keys that a Hash knows:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span> <span class="p">}</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">.</span><span class="nf">keys</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">]</span>
+</code></pre>
+
+<p><code>length</code> and <code>size</code> both tell how many key/value pairs the Hash has:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span> <span class="p">}</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">.</span><span class="nf">length</span>
+<span class="o">=&gt;</span> <span class="mi">2</span>
+<span class="o">&gt;</span> <span class="n">dictionary</span><span class="p">.</span><span class="nf">size</span>
+<span class="o">=&gt;</span> <span class="mi">2</span>
+</code></pre>
+
+<p>Exercises: Now would be a good time to do some of the <a href="../exercises/hashes_1.html">exercises on
+Hashes</a>.</p>
+
+<h2>Hash syntax confusion</h2>
+
+<p>You can skip the following and jump right to the chapter <a href="../variables.html">Variables</a>,
+or you can keep reading if you&rsquo;re curious.</p>
+
+<p>We&rsquo;ve found it&rsquo;s important for us to explain the following somewhere in our
+book, because many online resources use another, alternative syntax for
+defining Hashes.</p>
+
+<p>The term <em>syntax</em>, in programming, refers to ways to use punctuation in order
+to (amongst other things) create objects.</p>
+
+<p>E.g. the fact that we can use square brackets <code>[]</code> and commas <code>,</code> in order to
+define Arrays, and curly braces <code>{}</code> and hash rockets <code>=&gt;</code> in order to define
+Hashes, is part of Ruby&rsquo;s <em>syntax</em>.</p>
+
+<p>Today, there are two different syntaxes for defining Hashes with curly braces,
+and they have the potential to confuse newcomers a lot.</p>
+
+<p>There&rsquo;s an old-style one, and a new, modern one.</p>
+
+<p class="hint">
+We use the old syntax, and ignore the new one, for now.
+</p>
+
+<p>Here&rsquo;s why:</p>
+
+<p>Up to a certain version of Ruby the syntax that uses hash rockets was the only
+syntax to create Hashes, and it works the same for all Hashes no matter what
+kinds of objects you use as keys.</p>
+
+<p>Then, a few years back, a new syntax was introduced. Many Ruby programmers love
+to use it, because it takes a little less space, and it also looks a lot like
+JSON, which is a data format that is widely used in web applications.</p>
+
+<p>The new Hash syntax looks like this:</p>
+<pre class="highlight ruby"><code><span class="p">{</span> <span class="ss">one: </span><span class="s2">"eins"</span><span class="p">,</span> <span class="ss">two: </span><span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">three: </span><span class="s2">"drei"</span> <span class="p">}</span>
+</code></pre>
+
+<p>Using this syntax we tell Ruby that we want the keys to be symbols.</p>
+
+<p>Hmmmm? We just learned that Symbols are defined by prepending a word with a
+colon like <code>:one</code>, right?</p>
+
+<p>Well, yes, correct, but that&rsquo;s just how it works: If you define a Hash using
+this syntax, then you&rsquo;ll get <em>a Hash that has Symbols as keys</em>.</p>
+
+<p>We found the new syntax pretty confusing for beginners: It is slightly less
+explicit and obvious, and you have to learn another piece of information.
+That&rsquo;s why we simply ignore it in our study groups while we learn what Hashes
+are and how you can use them.</p>
+
+<p>Once you feel comfortable using Hashes, you can make your own decision, and
+start using the modern syntax if you like it better.</p>
+
+<p>In the meanwhile, whenever you see a Hash using the new syntax somewhere else,
+you now know what it means, and where to look it up. Simply remember that these
+two Hashes are exactly the same:</p>
+<pre class="highlight ruby"><code><span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="p">{</span> <span class="ss">one: </span><span class="s2">"eins"</span><span class="p">,</span> <span class="ss">two: </span><span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">three: </span><span class="s2">"drei"</span> <span class="p">}</span>
+</code></pre>
+
   <h1>Variables</h1>
 
 <p><em>Naming things</em></p>
@@ -1885,7 +2450,7 @@ If you think about Twitter, it essentially takes 140 characters of text
 <p>You have already learned about the most important primitive (simple) types of
 data in Ruby: numbers, strings, true, false and nil. And we&rsquo;ll have a look at
 the two most common data structures, Arrays and Hashes, in a few
-<a href="more_built_in_classes.html">chapters</a>.</p>
+<a href="/more_built_in_classes.html">chapters</a>.</p>
 
 <p>All of this is about the <em>data</em> part. Methods on the other hand are about the
 <em>doing interesting things</em> part.</p>
@@ -1915,7 +2480,7 @@ sticking a name on it.</p>
 programmers. So, unless you&rsquo;re studying computer science and you&rsquo;re faced with
 the exercise of implementing your own, complicated sorting algorithms for data
 collections, &hellip; you&rsquo;ll just use the method <code>sort</code> that already comes defined
-for lists in Ruby out of the box.</p>
+for Arrays in Ruby out of the box.</p>
 
 <p>Ok, let&rsquo;s see what makes up a method, and how we can define our own ones.</p>
 
@@ -2439,9 +3004,11 @@ code does, e.g. when you are trying to figure out a certain error.</p>
 
 <p>We&rsquo;ve talked about objects quite a bit now, merely <em>using</em> that term as a
 synomym for &ldquo;things&rdquo;. You&rsquo;ve learned to do stuff with simple objects such as
-numbers and Strings, pass them to methods, and get others back.</p>
+numbers and Strings, and the data structures Arrays and Hashes. You&rsquo;ve also
+learned what a method is, how to define and use them, and how to pass things to
+thme, and get others back.</p>
 
-<p>But we&rsquo;re also prepared well enough to have a closer look at objects, classes
+<p>We&rsquo;re also prepared well enough to have a closer look at objects, classes
 (types of things) and methods, and how they relate to each other.</p>
 
 <p>As a sidenote, you may have heard the following. Rubyist love saying it:</p>
@@ -2691,27 +3258,28 @@ you google for &ldquo;ruby&rdquo; and the class name.)</p>
 That&rsquo;s right, <code>methods</code> is a method defined on all objects (just like <code>class</code>,
 and <code>is_a?</code>).</p>
 
-<p>When you call it then it will <em>return</em> a list of all of the method names that
-the object has (more precisely, an Array, which you&rsquo;ll learn about
-<a href="../more_built_in_classes/arrays.html">in a bit</a>).</p>
+<p>When you call it then it will <em>return</em> an Array with all the method names that
+the object has.</p>
 
-<p>It makes sense to sort this list, so it is easier to read. Like so:</p>
+<p>It makes sense to sort the Array, so it is easier to read. Like so:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="s2">"Ruby Monstas"</span><span class="p">.</span><span class="nf">methods</span><span class="p">.</span><span class="nf">sort</span>
 <span class="o">=&gt;</span> <span class="p">[:</span><span class="o">*</span><span class="p">,</span> <span class="p">:</span><span class="o">+</span><span class="p">,</span> <span class="ss">:&lt;</span><span class="p">,</span> <span class="p">:</span><span class="o">&gt;</span><span class="p">,</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:class</span><span class="p">,</span> <span class="ss">:downcase</span><span class="p">,</span> <span class="ss">:delete</span><span class="p">,</span> <span class="ss">:include?</span><span class="p">,</span> <span class="ss">:is_a?</span><span class="p">,</span> <span class="ss">:length</span><span class="p">,</span> <span class="ss">:prepend</span><span class="p">,</span> <span class="ss">:start_with?</span><span class="p">]</span>
 </code></pre>
 
+<p>Yep, the method names come as Symbols, because they&rsquo;re considered code.</p>
+
 <p>If you do this yourself, you&rsquo;ll see that the String actually has a lot more
 methods. Many of these actually aren&rsquo;t used very often, but some are quite
-useful. We have stripped the list down a little, because we want to talk about
+useful. We have stripped the Array down a little, because we want to talk about
 some of these methods more.</p>
 
 <p>Btw the code above also demonstrates that methods can be &ldquo;chained&rdquo;: When we
 call a method on an object it will return another object to us. We can then
 immediately call another method on that new object, and so on.</p>
 
-<p>In our example above the method <code>methods</code> returns a list of names. And this
-list responds to (has) the method <code>sort</code>, so we can call this method
+<p>In our example above the method <code>methods</code> returns a Array of names. And
+Arrays respond to (have) the method <code>sort</code>, so we can call this method
 immediately, by using another dot.</p>
 
 <p>We could chain some of the method calls from our String example above like so:</p>
@@ -2741,11 +3309,11 @@ can have methods that end with a question mark <code>?</code>. What&rsquo;s up w
 <p>By convention, in Ruby, these methods return either <code>true</code> or <code>false</code>. For
 example, we can ask a number if it is even or odd:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">even?</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-
 <span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">odd?</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">even?</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
 <p>This makes them read like a question, which is pretty cool.</p>
@@ -2753,11 +3321,11 @@ example, we can ask a number if it is even or odd:</p>
 <p>Or you can ask the number if it&rsquo;s between two other numbers. Obviously this
 methods needs us to pass those two other numbers. So now we also have an example
 of a method that takes two arguments:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-
-<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
 <p>These methods are called <em>predicate methods</em> in Ruby. Not quite sure why, maybe
@@ -2769,10 +3337,10 @@ Predicate methods that end with a question mark <code>?</code> return either <co
 
 <p>Strings also define some predicate methods:</p>
 <pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
 <span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s2">"R"</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
 <p>Do you also think it&rsquo;s kinda odd that <code>name.start_with?(&quot;a&quot;)</code> reads almost like
@@ -2783,10 +3351,11 @@ translated literally.</p>
 
 <p>Also:</p>
 <pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"r"</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
 <span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"by"</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"r"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
 <p>When we check what methods there are defined on a number, we find some with the
@@ -2796,28 +3365,31 @@ same name, but also different ones:</p>
 <span class="o">=&gt;</span> <span class="p">[:</span><span class="o">*</span><span class="p">,</span> <span class="p">:</span><span class="o">+</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="p">,</span> <span class="ss">:/</span><span class="p">,</span> <span class="ss">:between?</span><span class="p">,</span> <span class="ss">:even?</span><span class="p">,</span> <span class="ss">:odd?</span><span class="p">,</span> <span class="ss">:zero?</span><span class="p">]</span>
 </code></pre>
 
-<p>Let&rsquo;s try <code>zero?</code> as a last example.</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="nf">zero?</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-<span class="o">&gt;</span> <span class="mi">0</span><span class="p">.</span><span class="nf">zero?</span>
+<p>Let&rsquo;s try <code>zero?</code>:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">0</span><span class="p">.</span><span class="nf">zero?</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="nf">zero?</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
-<p>Oh, by the way, if you&rsquo;re curious why these method names all start with a colon,
-check the chapter about <a href="../more_built_in_classes/symbols.html">Symbols</a>. And if
-you&rsquo;re curious why operators like <code>*</code>, <code>+</code>, <code>-</code> and so on are also listed here,
-check the chapter that explains that <a href="../operators/methods.html">operators are methods, too</a>.</p>
+<p>Arrays have the methods <code>include?</code>, and Hashes respond to <code>key?</code>:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">include?</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
 
-<p>Alright, we now have discussed how objects, classes, and methods relate to each other.
-And we&rsquo;ve learned how to call (use) methods on objects like Strings and numbers.</p>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">include?</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 
-<p>With this knowledge we can now look at implementing (defining, creating) our
-very own methods. This will help you understand better how exactly methods &ldquo;take&rdquo;
-arguments, and how they can work with them. And you&rsquo;ll understand why we keep
-saying a method &ldquo;returns&rdquo; an object.</p>
+<span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"eins"</span> <span class="o">=&gt;</span> <span class="s2">"one"</span> <span class="p">}.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"eins"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
 
-<p>After that section we&rsquo;ll then finally be able to define new &ldquo;things&rdquo;, i.e.
-create our own classes, and instantiate objects from them.</p>
+<span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"eins"</span> <span class="o">=&gt;</span> <span class="s2">"one"</span> <span class="p">}.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"zwei"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+</code></pre>
+
+<p>Oh by the way, if you&rsquo;re curious why operators like <code>*</code>, <code>+</code>, <code>-</code> and so on are
+also listed here, check the chapter that explains that <a href="../operators/methods.html">operators are methods,
+too</a>.</p>
 
   <h1>Bang Methods</h1>
 
@@ -3015,6 +3587,16 @@ number, string, or array. Instead, it just tells you the name of the class,
 on my computer, Ruby assigned the id <code>0x007fb2fbe50910</code>. If you run it,
 you&rsquo;ll get a different one. In practice, most of the time, you can simply ignore
 this id.</p>
+
+<p>Also, we can check that our new person instance indeed is an instance of the
+class <code>Person</code>:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span>
+<span class="o">&gt;</span> <span class="n">person</span><span class="p">.</span><span class="nf">class</span>
+<span class="o">=&gt;</span> <span class="no">Person</span>
+<span class="o">&gt;</span> <span class="n">person</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">Person</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+</code></pre>
 
   <h1>Initializing objects</h1>
 
@@ -3559,7 +4141,7 @@ and a little bit easier to read, check out the chapter on
 the normal control flow which goes from top to bottom? Instead she jumps into
 the method body.</p>
 
-<p>We also said that this method body has its own <a href="/writing_methods/scope.html">scope</a>,
+<p>We also said that this method body has its own <a href="../writing_methods/scopes.html">scope</a>,
 like a shiny, new room where local variables from other scopes are not visible.
 Instead it has its own local variables, some of which might be defined via the
 method&rsquo;s arguments.</p>
@@ -3712,416 +4294,6 @@ and <code>else</code> a little later.</p>
 Keywords are words that have a special meaning in Ruby, such as
 <code>class</code>, <code>def</code>, <code>end</code>, and <code>self</code>.
 </p>
-
-  <h1>More Built-In Classes</h1>
-
-<p>Before we move on and discuss one of the most exciting, and powerful feature
-of Ruby (blocks), let&rsquo;s step back for a moment and have a look at some of
-the remaining, most commonly used data types in Ruby.</p>
-
-<p>These are:</p>
-
-<ul>
-<li>Symbols</li>
-<li>Arrays</li>
-<li>Hashes</li>
-</ul>
-
-<p>Ok, let&rsquo;s go.</p>
-
-  <h1>Symbols</h1>
-
-<p><em>Symbols are like strings, except they are code.</em></p>
-
-<p>Symbols are a rather strange concept to be honest, and we only introduce them
-because symbols are used so often and widely that you&rsquo;ll very likely find them
-used in code elsewhere. For your first steps in learning programming we would
-not necessarily need them.</p>
-
-<p>A symbol is written like this: <code>:something</code></p>
-
-<p>I.e. there is a word that is preceded by a colon. This means that normally
-symbols do not contain spaces. Instead, if we have symbols that consist of
-multiple words we would concatenate them with underscores, like so:
-<code>:another_funny_symbol</code></p>
-
-<p class="hint">
-A symbol is created by adding a colon in front of a word.
-</p>
-
-<p>So when to use strings, and when to use symbols?</p>
-
-<p>There&rsquo;s actually no perfectly clear line or simple definition.</p>
-
-<ul>
-<li><p>One rule of thumb is that if the text at hand is &ldquo;data&rdquo;, then use a string.
-If it&rsquo;s <em>code</em>, then use a symbol, especially when used as keys in hashes (see
-below).</p></li>
-<li><p>Another way of looking at symbols is that they aren&rsquo;t really text, even though
-they read well. Instead they are <em>unique identifiers</em>, like numbers, or bar
-codes. While strings represent data that can change, symbols represent unique
-values, which are static.</p></li>
-<li><p>And more technically, if you use strings that contain the same text in your
-code multiple times, then a new string object will be created every time. E.g.
-if you do <code>puts &quot;Hello!&quot;</code> 10 times then 10 actual string objects will be
-created (and then discarded, because they&rsquo;re not being used any longer). On the
-other hand, if you&rsquo;d use a symbol for this and do <code>puts :hello</code> 10 times, then
-only <em>one single object</em> will be created, and <em>re-used</em>.</p></li>
-</ul>
-
-<p class="hint">
-Symbols are unique identifiers that are considered code, not data.
-</p>
-
-<p>If you find all of this confusing, don&rsquo;t worry, many people do. You&rsquo;ll
-understand symbols better once you get to use some of them in your code. For
-now you can think of them as a special, limited variation of Strings (text).</p>
-
-<p class="hint">
-Symbols are a special, limited variation of Strings.
-</p>
-
-<h2>The technical difference</h2>
-
-<p>If you&rsquo;re really curious about the underlying technical difference, then you
-can try this:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="s2">"a string"</span><span class="p">.</span><span class="nf">object_id</span>
-<span class="o">=&gt;</span> <span class="mi">70358630335100</span>
-<span class="o">&gt;</span> <span class="s2">"a string"</span><span class="p">.</span><span class="nf">object_id</span>
-<span class="o">=&gt;</span> <span class="mi">70358640625960</span>
-<span class="o">&gt;</span> <span class="s2">"a string"</span><span class="p">.</span><span class="nf">object_id</span>
-<span class="o">=&gt;</span> <span class="mi">70358644379620</span>
-</code></pre>
-
-<p>As you can see, even though the 3 Strings created are exactly the same, every
-new String created has a different <code>object_id</code>: They&rsquo;re actually different
-objects, even though they contain the same text.</p>
-
-<p>With Symbols however:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="ss">:a_symbol</span><span class="p">.</span><span class="nf">object_id</span>
-<span class="o">=&gt;</span> <span class="mi">1086748</span>
-<span class="o">&gt;</span> <span class="ss">:a_symbol</span><span class="p">.</span><span class="nf">object_id</span>
-<span class="o">=&gt;</span> <span class="mi">1086748</span>
-<span class="o">&gt;</span> <span class="ss">:a_symbol</span><span class="p">.</span><span class="nf">object_id</span>
-<span class="o">=&gt;</span> <span class="mi">1086748</span>
-</code></pre>
-
-<p>We now get the same <code>object_id</code> for each of the Symbols, meaning they&rsquo;re
-referring to the exact same object.</p>
-
-<p>The <code>object_id</code> is a unique id that Ruby uses internally in order to keep track
-of all the objects that are flying around in the universe that makes up your
-program. E.g. Ruby needs to know which objects are still being useful, and
-which ones can be cleaned up and thrown away. The <code>object_id</code> is a way to
-identify each and any object by a unique id.</p>
-
-<p>By <code>true</code>, <code>false</code>, and <code>nil</code> (as well as all numbers) also behave this way:
-Whenever you use these in your code you&rsquo;ll get the same object. Try it in IRB
-and check their <code>object_id</code>.</p>
-
-<p>Let&rsquo;s move on though.</p>
-
-  <h1>Arrays</h1>
-
-<p><em>Arrays are like bags that contain things</em></p>
-
-<p>While numbers, Strings, Symbols, <code>true</code>, <code>false</code>, and <code>nil</code> all represent
-simple, primitive things, Arrays are more interesting, and very useful.</p>
-
-<p>Arrays are things that store (or &ldquo;hold&rdquo;) other things. You can think of an
-Array as a collection or list of things. Or better yet, as a bag that you can
-throw things in: <em>The bag itself is a thing (an object), too</em>.</p>
-
-<p class="hint">
-An Array is an object that stores other objects.
-</p>
-
-<p>An Array is created by separating values by commas, and enclosing this list
-with square brackets, like so:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</code></pre>
-
-<p>Or:</p>
-<pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"A string"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:some_symbol</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-</code></pre>
-
-<p>This creates an Array with 4 elements, i.e. a bag that contains 4 things: a
-string, a number, a symbol, and another number.</p>
-
-<p class="hint">
-An Array is created by listing objects, separated by commas, and enclosed by square brackets.
-</p>
-
-<p>Note that in Ruby Arrays always keep their order: Unlike a real bag, where,
-when you throw in a bunch of apples, they might come out in a different order,
-an Array always keeps its objects in the same defined order (unless you do
-something to change the order).</p>
-
-<p>Also note that in Ruby you can store any kind of object in an Array. For
-example, you can also store Arrays in an Array: that&rsquo;s a 2-dimensional Array,
-like a table that has many rows, and each row has many cells (&ldquo;things&rdquo;).</p>
-
-<p class="hint">
-Arrays have a defined order, and can store all kinds of objects.
-</p>
-
-<h2>Retrieving an element from an Array</h2>
-
-<p>Arrays can be used in a lot of different, and useful ways, but the most basic
-one is to retrieve a certain element by the way of referring to its position:
-<em>Please get me the element at position 1!</em></p>
-
-<p>In Ruby, you can do this with square brackets like so:</p>
-<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</code></pre>
-
-<p>Do you reckognize how we use a <a href="../variables.html">variable</a> to assign a name
-to our Array here?</p>
-
-<p><code>words[1]</code> means: from the Array <code>words</code> get the element at position
-<code>1</code>. <code>puts</code> will then print this value out to the screen. (By the way<code>puts</code>
-stands for &ldquo;(out-) put string&rdquo;.)</p>
-
-<p>So, as you can see square brackets <code>[]</code> mean different things when used in
-different contexts. The same is true for other punctuation, too.</p>
-
-<p>In our case here the square brackets on the first line are used to create an
-Array object with the given elements. On the second line the square brackets
-are now appended to a variable name. This means we want look up an element from
-the Array that (at this moment) is called <code>words</code> (i.e. assigned to the
-variable <code>words</code>).</p>
-
-<p class="hint">
-Punctuation (such as square brackets) has different meanings in different contexts.
-</p>
-
-<h2>Arrays are zero based</h2>
-
-<p>What do you think our example code will print out to the terminal? Funnily,
-it&rsquo;s <code>two</code>, and not <code>one</code>. Huh?</p>
-
-<p>The reason for this is: The first position in an Array is 0, not 1. So the
-position 1 refers to the second element, not the first one.</p>
-
-<p>In programming books and the Ruby documentation you&rsquo;ll often find the word
-&ldquo;index&rdquo; to be used instead of &ldquo;position&rdquo; in this context.</p>
-
-<p class="hint">
-Arrays start with the index 0, not 1.
-</p>
-
-<h2>Appending an element to an Array</h2>
-
-<p>In order to add an element to the end of an existing Array you can use the
-operator <code>&lt;&lt;</code>, called &ldquo;shovel operator&rdquo;, like so:</p>
-<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="n">words</span> <span class="o">&lt;&lt;</span> <span class="s2">"four"</span>
-<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-</code></pre>
-
-<p>This prints out <code>four</code>: The string <code>&quot;four&quot;</code> has been &ldquo;shoveled&rdquo; into, that
-means, appended to the Array. And since it now sits at position <code>3</code> we can
-access it using <code>words[3]</code>.</p>
-
-<h2>Setting an element to a position</h2>
-
-<p>You can also set an element to a specific index, like so:</p>
-<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"four"</span>
-<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-</code></pre>
-
-<p>This also prints out <code>four</code>.</p>
-
-<p>You could also overwrite existing elements the same way. For example this
-would set the word <code>&quot;uno&quot;</code> to the position <code>0</code> (i.e. overwrite <code>&quot;one&quot;</code>):</p>
-<pre class="highlight ruby"><code><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">]</span>
-<span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"uno"</span>
-<span class="nb">puts</span> <span class="n">words</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</code></pre>
-
-<p>So, this would now output <code>uno</code>.</p>
-
-<p class="hint formatting">
-On formatting: Note that there are no spaces inside the square brackets,
-and there&rsquo;s one space after each comma.
-</p>
-
-<p>Exercises: Now would be a good time to do some of the <a href="../exercises/arrays_1.html">exercises on
-Arrays</a>.</p>
-
-  <h1>Hashes</h1>
-
-<p><em>Dictionaries: look up one thing by another</em></p>
-
-<p>Hashes are another very useful, and widely used kind of thing that can be used
-to store other objects.</p>
-
-<p>Unlike arrays which are mere lists, Hashes are like dictionaries:</p>
-
-<p>You can use them to look up one thing by another thing. We say: we look up a
-value from a Hash using a key. Or one could say: <em>Please get me the value that
-is associated with this key.</em></p>
-
-<p>Imagine a real dictionary that translates from English to German. When you
-look up the English word &ldquo;hello&rdquo; then you&rsquo;ll find the German &ldquo;Hallo&rdquo;. When
-you look up &ldquo;one&rdquo; then you&rsquo;ll find &ldquo;eins&rdquo;, and so on. The authors of this
-dictionary have assigned a German word (a value) to an English word (the key).</p>
-
-<p>Hashes work pretty much like this.</p>
-
-<p class="hint">
-A Hash assigns values to keys, so that values can be looked up by their key.
-</p>
-
-<p>We also refer to a value that is assigned to a key as <em>key/value pairs</em>. A
-Hash can have as many key/value pairs as you like.</p>
-
-<h2>Creating a Hash</h2>
-
-<p>In Ruby you can create a Hash by assigning a key to a value with <code>=&gt;</code>, separate
-these key/value pairs with commas, and enclose the whole thing with curly
-braces.</p>
-
-<p>This is how it looks:</p>
-<pre class="highlight ruby"><code><span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
-</code></pre>
-
-<p>This defines a Hash that contains 3 key/value pairs, meaning that we can look
-up three values (the strings <code>&quot;eins&quot;</code>, <code>&quot;zwei&quot;</code>, and <code>&quot;drei&quot;</code>) using three
-different keys (the strings <code>&quot;one&quot;</code>, <code>&quot;two&quot;</code>, and <code>&quot;three&quot;</code>).</p>
-
-<p>By the way, the Ruby community has come up with the name <em>hash rocket</em> for the
-bit of syntax <code>=&gt;</code> which separates a key from a value, &hellip; we think that is
-pretty cool to know :)</p>
-
-<p class="hint">
-A Hash is created by listing key/value pairs, separated by hash rockets, and enclosed by curly braces.
-</p>
-
-<h2>Looking up a value</h2>
-
-<p>Now, how do you actually look up the value that is associated with the key
-<code>&quot;one&quot;</code>?</p>
-
-<p>Just like with arrays you use sqare brackets, but instead of passing
-a number indicating the position you now pass the key. Like so:</p>
-<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
-<span class="nb">puts</span> <span class="n">dictionary</span><span class="p">[</span><span class="s2">"one"</span><span class="p">]</span>
-</code></pre>
-
-<p>Do you reckognize how we, on the second line, use a variable name to
-refer to the Hash defined on the first line?</p>
-
-<p>In this example, <code>dictionary</code> is a Hash defined on the first line. <code>[&quot;one&quot;]</code>
-looks up the value associated to the key <code>&quot;one&quot;</code>, which is <code>&quot;eins&quot;</code>. This value
-will be passed to <code>puts</code> which outputs it to the screen.</p>
-
-<h2>Any kind of objects</h2>
-
-<p>You can use any kind of object as keys, and you can store any kind of object
-as values.</p>
-
-<p>For example, these are all valid Hashes, too:</p>
-<pre class="highlight ruby"><code><span class="p">{</span> <span class="mi">1</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="mi">2</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="mi">3</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
-<span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
-<span class="p">{</span> <span class="s2">"weights"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"pound"</span><span class="p">,</span> <span class="s2">"kilogram"</span><span class="p">],</span> <span class="s2">"lengths"</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"meter"</span><span class="p">,</span> <span class="s2">"mile"</span><span class="p">]</span> <span class="p">}</span>
-<span class="p">{</span> <span class="ss">:de</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span> <span class="p">}</span>
-</code></pre>
-
-<p>The first example uses numbers as keys, while the second one uses Symbols,
-which is quite a common thing to do in Ruby.</p>
-
-<p>In the third example you can see that one can use Arrays as values in Hashes.
-So if you&rsquo;d look up the key <code>&quot;weights&quot;</code> you&rsquo;d now get an Array back.</p>
-
-<p>Not quite sure where you&rsquo;d use a Hash like the third line in real code, but the
-last line is actually pretty darn close to what Rails uses for translating
-strings to different languages:</p>
-
-<p>It is also an example of a nested Hash. There&rsquo;s another Hash associated
-(stored) as a value for the key <code>:de</code> (representing the language German). And
-this other Hash now has three key/value pairs. So a Rails programmer could look
-up how to translate &ldquo;one&rdquo; to German, and get &ldquo;eins&rdquo; back.</p>
-
-<p class="hint">
-Hashes can use any kind of objects as keys and values.
-</p>
-
-<p class="hint formatting">
-On formatting: Note that there&rsquo;s one space inside the curly braces on both
-sides, around the <code>=></code> Hash rocket, and after each comma. But there
-are, again, no spaces inside that curly braces <code>{}</code> that define the
-Arrays on the third line.
-</p>
-
-<p>Exercises: Now would be a good time to do some of the <a href="../exercises/hashes_1.html">exercises on
-Hashes</a>.</p>
-
-<h2>Hash syntax confusion</h2>
-
-<p>You can skip the following and jump right to the chapter <a href="../blocks.html">Blocks</a>,
-or you can keep reading if you&rsquo;re curious.</p>
-
-<p>We&rsquo;ve found it&rsquo;s important for us to explain the following somewhere in our
-book, because many online resources use another, alternative syntax for
-defining Hashes.</p>
-
-<p>The term <em>syntax</em>, in programming, refers to ways to use punctuation in order
-to (amongst other things) create objects.</p>
-
-<p>E.g. the fact that we can use square brackets <code>[]</code> and commas <code>,</code> in order to
-define Arrays, and curly braces <code>{}</code> and hash rockets <code>=&gt;</code> in order to define
-Hashes, is part of Ruby&rsquo;s <em>syntax</em>.</p>
-
-<p>Today, there are two different syntaxes for defining Hashes with curly braces,
-and they have the potential to confuse newcomers a lot.</p>
-
-<p>There&rsquo;s an old-style one, and a new, modern one.</p>
-
-<p class="hint">
-We use the old syntax, and ignore the new one, for now.
-</p>
-
-<p>Here&rsquo;s why:</p>
-
-<p>Up to a certain version of Ruby the syntax that uses hash rockets was the only
-syntax to create Hashes, and it works the same for all Hashes no matter what
-kinds of objects you use as keys.</p>
-
-<p>Then, a few years back, a new syntax was introduced. Many Ruby programmers love
-to use it, because it takes a little less space, and it also looks a lot like
-JSON, which is a data format that is widely used in web applications.</p>
-
-<p>The new Hash syntax looks like this:</p>
-<pre class="highlight ruby"><code><span class="p">{</span> <span class="ss">one: </span><span class="s2">"eins"</span><span class="p">,</span> <span class="ss">two: </span><span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">three: </span><span class="s2">"drei"</span> <span class="p">}</span>
-</code></pre>
-
-<p>Using this syntax we tell Ruby that we want the keys to be symbols.</p>
-
-<p>Hmmmm? We just learned that Symbols are defined by prepending a word with a
-colon like <code>:one</code>, right?</p>
-
-<p>Well, yes, correct, but that&rsquo;s just how it works: If you define a Hash using
-this syntax, then you&rsquo;ll get <em>a Hash that has Symbols as keys</em>.</p>
-
-<p>We found the new syntax pretty confusing for beginners: It is slightly less
-explicit and obvious, and you have to learn another piece of information.
-That&rsquo;s why we simply ignore it in our study groups while we learn what Hashes
-are and how you can use them.</p>
-
-<p>Once you feel comfortable using Hashes, you can make your own decision, and
-start using the modern syntax if you like it better.</p>
-
-<p>In the meanwhile, whenever you see a Hash using the new syntax somewhere else,
-you now know what it means, and where to look it up. Simply remember that these
-two Hashes are exactly the same:</p>
-<pre class="highlight ruby"><code><span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
-<span class="p">{</span> <span class="ss">one: </span><span class="s2">"eins"</span><span class="p">,</span> <span class="ss">two: </span><span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">three: </span><span class="s2">"drei"</span> <span class="p">}</span>
-</code></pre>
 
   <h1>Blocks</h1>
 

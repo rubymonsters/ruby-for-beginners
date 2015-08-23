@@ -118,7 +118,7 @@
   </li>
   <li class="directory">
     <a href="/built_in_classes.html">
-      Built-In Classes
+      Built-In Data Types
     </a>
     <ul>
       <li>
@@ -134,6 +134,21 @@
       <li>
         <a href="/built_in_classes/true_false_nil.html">
           True, False, and Nil
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/symbols.html">
+          Symbols
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/arrays.html">
+          Arrays
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/hashes.html">
+          Hashes
         </a>
       </li>
     </ul>
@@ -287,28 +302,6 @@
       <li>
         <a href="/writing_classes/self.html">
           Object Scope and Self
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/more_built_in_classes.html">
-      More Built-In Classes
-    </a>
-    <ul>
-      <li>
-        <a href="/more_built_in_classes/symbols.html">
-          Symbols
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/arrays.html">
-          Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/hashes.html">
-          Hashes
         </a>
       </li>
     </ul>
@@ -562,11 +555,11 @@ can have methods that end with a question mark <code>?</code>. What&rsquo;s up w
 <p>By convention, in Ruby, these methods return either <code>true</code> or <code>false</code>. For
 example, we can ask a number if it is even or odd:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">even?</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-
 <span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">odd?</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">even?</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
 <p>This makes them read like a question, which is pretty cool.</p>
@@ -574,11 +567,11 @@ example, we can ask a number if it is even or odd:</p>
 <p>Or you can ask the number if it&rsquo;s between two other numbers. Obviously this
 methods needs us to pass those two other numbers. So now we also have an example
 of a method that takes two arguments:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-
-<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
 <p>These methods are called <em>predicate methods</em> in Ruby. Not quite sure why, maybe
@@ -590,10 +583,10 @@ Predicate methods that end with a question mark <code>?</code> return either <co
 
 <p>Strings also define some predicate methods:</p>
 <pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
 <span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s2">"R"</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
 <p>Do you also think it&rsquo;s kinda odd that <code>name.start_with?(&quot;a&quot;)</code> reads almost like
@@ -604,10 +597,11 @@ translated literally.</p>
 
 <p>Also:</p>
 <pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"r"</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
 <span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"by"</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"r"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
 <p>When we check what methods there are defined on a number, we find some with the
@@ -617,28 +611,31 @@ same name, but also different ones:</p>
 <span class="o">=&gt;</span> <span class="p">[:</span><span class="o">*</span><span class="p">,</span> <span class="p">:</span><span class="o">+</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="p">,</span> <span class="ss">:/</span><span class="p">,</span> <span class="ss">:between?</span><span class="p">,</span> <span class="ss">:even?</span><span class="p">,</span> <span class="ss">:odd?</span><span class="p">,</span> <span class="ss">:zero?</span><span class="p">]</span>
 </code></pre>
 
-<p>Let&rsquo;s try <code>zero?</code> as a last example.</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="nf">zero?</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-<span class="o">&gt;</span> <span class="mi">0</span><span class="p">.</span><span class="nf">zero?</span>
+<p>Let&rsquo;s try <code>zero?</code>:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">0</span><span class="p">.</span><span class="nf">zero?</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="nf">zero?</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 </code></pre>
 
-<p>Oh, by the way, if you&rsquo;re curious why these method names all start with a colon,
-check the chapter about <a href="../more_built_in_classes/symbols.html">Symbols</a>. And if
-you&rsquo;re curious why operators like <code>*</code>, <code>+</code>, <code>-</code> and so on are also listed here,
-check the chapter that explains that <a href="../operators/methods.html">operators are methods, too</a>.</p>
+<p>Arrays have the methods <code>include?</code>, and Hashes respond to <code>key?</code>:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">include?</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
 
-<p>Alright, we now have discussed how objects, classes, and methods relate to each other.
-And we&rsquo;ve learned how to call (use) methods on objects like Strings and numbers.</p>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">include?</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
 
-<p>With this knowledge we can now look at implementing (defining, creating) our
-very own methods. This will help you understand better how exactly methods &ldquo;take&rdquo;
-arguments, and how they can work with them. And you&rsquo;ll understand why we keep
-saying a method &ldquo;returns&rdquo; an object.</p>
+<span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"eins"</span> <span class="o">=&gt;</span> <span class="s2">"one"</span> <span class="p">}.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"eins"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
 
-<p>After that section we&rsquo;ll then finally be able to define new &ldquo;things&rdquo;, i.e.
-create our own classes, and instantiate objects from them.</p>
+<span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"eins"</span> <span class="o">=&gt;</span> <span class="s2">"one"</span> <span class="p">}.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"zwei"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+</code></pre>
+
+<p>Oh by the way, if you&rsquo;re curious why operators like <code>*</code>, <code>+</code>, <code>-</code> and so on are
+also listed here, check the chapter that explains that <a href="../operators/methods.html">operators are methods,
+too</a>.</p>
 
         <nav class="page-nav"><a class="prev" href="/objects/listing.html">
   Previous

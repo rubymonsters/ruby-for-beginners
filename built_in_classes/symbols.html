@@ -16,10 +16,10 @@
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/more_built_in_classes.html">
+    <nav class="page-nav"><a class="prev" href="/built_in_classes/true_false_nil.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/more_built_in_classes/arrays.html">
+    <nav class="page-nav"><a class="next" href="/built_in_classes/arrays.html">
   Next
 </a></nav>
 
@@ -116,9 +116,9 @@
       Object-oriented programming
     </a>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/built_in_classes.html">
-      Built-In Classes
+      Built-In Data Types
     </a>
     <ul>
       <li>
@@ -134,6 +134,21 @@
       <li>
         <a href="/built_in_classes/true_false_nil.html">
           True, False, and Nil
+        </a>
+      </li>
+      <li class="active">
+        <a href="/built_in_classes/symbols.html">
+          Symbols
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/arrays.html">
+          Arrays
+        </a>
+      </li>
+      <li>
+        <a href="/built_in_classes/hashes.html">
+          Hashes
         </a>
       </li>
     </ul>
@@ -287,28 +302,6 @@
       <li>
         <a href="/writing_classes/self.html">
           Object Scope and Self
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory expanded">
-    <a href="/more_built_in_classes.html">
-      More Built-In Classes
-    </a>
-    <ul>
-      <li class="active">
-        <a href="/more_built_in_classes/symbols.html">
-          Symbols
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/arrays.html">
-          Arrays
-        </a>
-      </li>
-      <li>
-        <a href="/more_built_in_classes/hashes.html">
-          Hashes
         </a>
       </li>
     </ul>
@@ -608,8 +601,10 @@ Symbols are a special, limited variation of Strings.
 
 <h2>The technical difference</h2>
 
-<p>If you&rsquo;re really curious about the underlying technical difference, then you
-can try this:</p>
+<p>Skip the following unless you&rsquo;re really curious about the underlying technical
+difference between Strings and Symbols.</p>
+
+<p>Try this in IRB:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="s2">"a string"</span><span class="p">.</span><span class="nf">object_id</span>
 <span class="o">=&gt;</span> <span class="mi">70358630335100</span>
@@ -648,10 +643,10 @@ and check their <code>object_id</code>.</p>
 
 <p>Let&rsquo;s move on though.</p>
 
-        <nav class="page-nav"><a class="prev" href="/more_built_in_classes.html">
+        <nav class="page-nav"><a class="prev" href="/built_in_classes/true_false_nil.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/more_built_in_classes/arrays.html">
+        <nav class="page-nav"><a class="next" href="/built_in_classes/arrays.html">
   Next
 </a></nav>
       </article>
