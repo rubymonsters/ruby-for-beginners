@@ -1,0 +1,23 @@
+<pre class="highlight ruby"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">]]</span>
+<span class="nb">p</span> <span class="n">numbers</span>
+
+<span class="c1"># This solution isn't terribly elegant, but at least it shows how</span>
+<span class="c1"># you can use the value returned from an array lookup, and create</span>
+<span class="c1"># a new array from it right away.</span>
+<span class="c1">#</span>
+<span class="c1"># Also possible, but not much better:</span>
+
+<span class="n">second</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">fourth</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">sixth</span>  <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">second</span><span class="p">,</span> <span class="n">fourth</span><span class="p">,</span> <span class="n">sixth</span><span class="p">]</span>
+
+<span class="c1"># In case you're curious, a way more elegant (and better) solution</span>
+<span class="c1"># to this would be the following:</span>
+
+<span class="n">numbers</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span> <span class="n">number</span><span class="p">.</span><span class="nf">even?</span> <span class="p">}</span>
+
+<span class="c1"># However, we'll need to learn more about methods and blocks before</span>
+<span class="c1"># we'll be able to fully understand it.</span>
+</code></pre>

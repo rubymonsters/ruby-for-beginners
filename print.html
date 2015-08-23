@@ -459,7 +459,7 @@
   </li>
   <li class="directory">
     <a href="/exercises.html">
-      Exercises
+      Exercises (old)
     </a>
     <ul>
       <li>
@@ -535,6 +535,33 @@
       <li>
         <a href="/exercises/mailbox_csv.html">
           Reading from a CSV File
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li class="directory">
+    <a href="/exercises_2.html">
+      Exercises
+    </a>
+    <ul>
+      <li>
+        <a href="/exercises_2/numbers.html">
+          Working with Numbers
+        </a>
+      </li>
+      <li>
+        <a href="/exercises_2/strings.html">
+          Working with Strings
+        </a>
+      </li>
+      <li>
+        <a href="/exercises_2/arrays_1.html">
+          Working with Arrays (1)
+        </a>
+      </li>
+      <li>
+        <a href="/exercises_2/hashes_1.html">
+          Working with Hashes (1)
         </a>
       </li>
     </ul>
@@ -1503,42 +1530,38 @@ optional. This is the exact same number in Ruby: <code>1234.56</code>.</p>
 <p class="hint">
 A number is defined by a series of digits, using a dot as a decimal mark, and
 optinally a comma as a thousands separator.
-<p>
+</p>
 
-Note that different countries use different punctuation for decimal and
+<p>Note that different countries use different punctuation for decimal and
 thousands separators. Ruby is using the same notation used in the USA, which
-happens to be the exact opposite of what&rsquo;s used in Germany.
+happens to be the exact opposite of what&rsquo;s used in Germany.</p>
 
-## Kinds of numbers
+<h2>Kinds of numbers</h2>
 
-Under the hood, for reasons that are mostly technical, there are actually
-different kinds of numbers:
+<p>Under the hood, for reasons that are mostly technical, there are actually
+different kinds of numbers:</p>
 
-For example there are integer numbers (those without a fraction, i.e. a dot and
+<p>For example there are integer numbers (those without a fraction, i.e. a dot and
 decimal places), and depending on their size there are two kinds of them. For
 floating point numbers there are even more. Unless you are super curious, you
-can perfectly ignore all of that for now, and just think of numbers as numbers.
+can perfectly ignore all of that for now, and just think of numbers as numbers.</p>
 
-However, when you do calculations with numbers, keep in mind that integer
+<p>However, when you do calculations with numbers, keep in mind that integer
 numbers (&ldquo;integers&rdquo;) and decimal point numbers (floating point numbers, aka
-&ldquo;floats&rdquo;) are different.
+&ldquo;floats&rdquo;) are different.</p>
 
-If you do a calculation that starts with an integer you&rsquo;ll eventually always
-get an integer back:
+<p>If you do a calculation that starts with an integer you&rsquo;ll eventually always
+get an integer back:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+</code></pre>
 
-&ldquo;`ruby
-$ irb
-> 1 + 2.0
-=> 3
-&rdquo;`
-
-And if you start the expression with a float then you&rsquo;ll get a float back:
-
-&ldquo;`ruby
-$ irb
-> 1.0 + 2
-=> 3.0
-&rdquo;`
+<p>And if you start the expression with a float then you&rsquo;ll get a float back:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
+</code></pre>
 
 <p class="hint">
 Mathmatical operations result in a number of the same type as they start with.
@@ -6374,31 +6397,13 @@ for that. Enter some text to the &ldquo;test string&rdquo; text area, and then s
 writing a regular expression, one bit after another. The app will display the
 parts that match, and your captures if you define some.</p>
 
-  <h1>Exercises</h1>
+  <h1>Exercises (old)</h1>
 
-<p>If you haven&rsquo;t done the <a href="http://tryruby.org">try ruby</a> course already, we
-recommend you do at least a couple of lessons over there too.</p>
+<p>These exercises are an outdated set of exercises that need to be ported and
+adjusted in order to reflect the current order of topics in our book.</p>
 
-<p>Whenever you sit down to do some of the exercises in this book make sure you
-have your text editor and terminal open. In your terminal:</p>
-
-<ul>
-<li><p>Create a new directory where you want to keep Ruby files for our exercises. For
-example: <code>~/ruby-for-beginners/exercises</code>. In
-order to create that directory in the terminal you can run: <code>mkdir
-~/ruby-for-beginners/exercises</code>.</p></li>
-<li><p>Then navigate to this directory: <code>cd ~/ruby-for-beginners/exercises</code></p></li>
-<li><p>In order to check if you are in the right directory you can always run:
-<code>pwd</code>. (That&rsquo;s short for <em>print working directory</em>, meaning, it prints the name
-of the current directory.)</p></li>
-<li><p>In order to see all the files and subdirectories contained in the current
-directory you can run <code>ls</code>.</p></li>
-</ul>
-
-<p><p class='credits'>
-  Credits: The exercises 1.1, 1.2, and 2.1 are taken from
-  <a href="http://www.ruby-doc.org/docs/Tutorial/part_01/first_steps.html">Introduction to Ruby</a>.
-<p></p>
+<p>Many of them  at the moment assume things early on that only are explained
+later in the book.</p>
 
   <h1>Working with Numbers</h1>
 
@@ -7475,6 +7480,337 @@ and have a method <code>read</code>, which returns the emails array.</p>
 </code></pre>
 
 <p><a href="/solutions/mailbox_csv-1.html" class="solution">Show solution</a></p>
+
+  <h1>Exercises</h1>
+
+<p>If you haven&rsquo;t done the <a href="http://tryruby.org">try ruby</a> course already, we
+recommend you do at least a couple of lessons over there too.</p>
+
+<p>Whenever you sit down to do some of the exercises in this book make sure you
+have your text editor and terminal open. In your terminal:</p>
+
+<ul>
+<li><p>Create a new directory where you want to keep Ruby files for our exercises. For
+example: <code>~/ruby-for-beginners/exercises</code>. In
+order to create that directory in the terminal you can run: <code>mkdir
+~/ruby-for-beginners/exercises</code>.</p></li>
+<li><p>Then navigate to this directory: <code>cd ~/ruby-for-beginners/exercises</code></p></li>
+<li><p>In order to check if you are in the right directory you can always run:
+<code>pwd</code>. (That&rsquo;s short for <em>print working directory</em>, meaning, it prints the name
+of the current directory.)</p></li>
+<li><p>In order to see all the files and subdirectories contained in the current
+directory you can run <code>ls</code>.</p></li>
+</ul>
+
+<p><p class='credits'>
+  Credits: The exercises 1.1, 1.2, and 2.1 are taken from
+  <a href="http://www.ruby-doc.org/docs/Tutorial/part_01/first_steps.html">Introduction to Ruby</a>.
+<p></p>
+
+  <h1>Working with Numbers</h1>
+
+<p>In order to do these exercises you should have read at least the chapter about
+[built_in_classes/numbers.html].</p>
+
+<h2>Exercise 1.1</h2>
+
+<p>In <code>irb</code>, calcluate:</p>
+
+<ul>
+<li>How many hours are in a year.</li>
+<li>How many minutes are in a decade?</li>
+<li>How many seconds old are you?</li>
+</ul>
+
+<p class="hint">
+To start <code>irb</code> open your terminal and type <code>irb</code>, then
+hit the <code>return</code> key (<code>enter</code>). To quit it (and get back
+to your system shell prompt) type <code>exit</code> or press <code>ctrl-d</code>.
+</p>
+
+<h2>Exercise 1.2</h2>
+
+<p>What do you think happens when you combine floats and integers the following
+in the following calculations?</p>
+
+<p>Try computing these in <code>irb</code>:</p>
+
+<ul>
+<li><code>3.0 / 2</code></li>
+<li><code>3 / 2.0</code></li>
+<li><code>4 ** 2.0</code></li>
+</ul>
+
+<p>Is the result a float or an integer?</p>
+
+<h2>Exercise 1.3</h2>
+
+<p>Try finding out what &ldquo;modulo&rdquo; means by asking Google.</p>
+
+<p>In Ruby (and many other languages) the operator for modulo is <code>%</code>.</p>
+
+<p>Try the following in <code>irb</code>:</p>
+
+<ul>
+<li><code>5 % 2</code></li>
+</ul>
+
+<h2>Exercise 1.4</h2>
+
+<p>Methods are a way of &ldquo;doing something with an object&rdquo;, and you&rsquo;ll learn a lot
+more about them in a few chapters.</p>
+
+<p>In Ruby, numbers have methods that allow you to check whether the number is odd
+or even.</p>
+
+<p>Look through the <a href="http://ruby-doc.org/core-2.1.5/Fixnum.html">documentation for integer</a>
+numbers (called <code>Fixnum</code>) and find the methods that tell if a number is odd or
+even.</p>
+
+<p>Look at the examples for some of the other methods on that page.</p>
+
+<p class="hint">
+You can use a method by appending a dot <code>.</code> and then the method name
+to the object. E.g. <code>-99.abs</code> uses (we also say: &ldquo;calls&rdquo;) the method
+<code>abs</code> on the number <code>-99</code>.
+</p>
+
+<h2>Exercise 1.5</h2>
+
+<p>In <code>irb</code>, use these methods to find out if certain numbers are odd or even.</p>
+
+<p>Try a bunch of numbers like <code>0, 1, 2, 99, -502</code> etc.</p>
+
+<p><a href="/solutions_2/numbers-4.html" class="solution">Show solution</a></p>
+
+<p>Try for yourself what it does, and google for &ldquo;ruby abs&rdquo; to find
+<a href="http://ruby-doc.org/core-2.0/Numeric.html#method-i-abs">the documentation</a>
+for this method.</p>
+
+  <h1>Working with Strings</h1>
+
+<p>In order to do these exercises you should have read at least the chapter about
+[built_in_classes/strings.html].</p>
+
+<h2>Exercise 2.1</h2>
+
+<p>In <code>irb</code> try figuring out how to produce the following String: <code>&quot;Ruby&lt;3&lt;3&lt;3&quot;</code>.</p>
+
+<p>Try using no more than two other String objects.</p>
+
+<p><a href="/solutions_2/strings-1.html" class="solution">Show solution</a></p>
+
+<p class="hint">
+To start <code>irb</code> open your terminal and type <code>irb</code>, then
+hit the <code>return</code> key (<code>enter</code>). To quit it (and get back
+to your system shell prompt) type <code>exit</code> or press <code>ctrl-d</code>.
+</p>
+
+<h2>Exercise 2.2</h2>
+
+<p>Look through the <a href="http://ruby-doc.org/core-2.1.5/String.html">documentation for Strings</a>.</p>
+
+<p>Do you spot any interesting methods?</p>
+
+<h2>Exercise 2.3</h2>
+
+<p>What do you think this will do?</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"hello"</span><span class="p">.</span><span class="nf">length</span> <span class="o">+</span> <span class="s2">"world"</span><span class="p">.</span><span class="nf">length</span>
+</code></pre>
+
+<p>Try it yourself in <code>irb</code>.</p>
+
+<p><a href="/solutions_2/strings-3.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 2.4</h2>
+
+<p>Look through the <a href="http://ruby-doc.org/core-2.1.5/String.html">documentation for Strings</a>,
+and find out how to convert the string <code>&quot;1.23&quot;</code> into the number <code>1.23</code>.</p>
+
+<p>If you can&rsquo;t find it, google for &ldquo;ruby convert string to float&rdquo;.</p>
+
+<p>Then also find out what method can be used to turn the string <code>&quot;1&quot;</code> into the
+number <code>1</code> (remember floats and integers are different kinds of numbers).</p>
+
+<p>Confirm that you have found the right methods by trying them in <code>irb</code>.</p>
+
+<p><a href="/solutions_2/strings-4.html" class="solution">Show solution</a></p>
+
+  <h1>Working with Arrays (1)</h1>
+
+<p>In order to do these exercises you should have read at least the chapter about
+[built_in_classes/arrays.html].</p>
+
+<p class="hint">
+Make sure you have your text editor and terminal open, and you have navigated
+to your exercises directory in the terminal. E.g. <code>cd ~/ruby-for-beginners/exercises</code>.
+</p>
+
+<h2>Exercise 3.1</h2>
+
+<p>In the Array <code>[1, 2, 3, 4, 5]</code>, what&rsquo;s the index of the number <code>4</code>?</p>
+
+<p><a href="/solutions_2/arrays_1-1.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 3.2</h2>
+
+<p>In <code>irb</code>, how can you ask the Array, and check if your previous answer was correct?</p>
+
+<p><a href="/solutions_2/arrays_1-2.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 3.3</h2>
+
+<p>In <code>irb</code>, how can you ask the Array for the number of elements it contains?</p>
+
+<p><a href="/solutions_2/arrays_1-3.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 3.1</h2>
+
+<p>Create a new, empty file. Save it as <code>arrays_1-1.rb</code>. Fill in the following
+line:</p>
+<pre class="highlight ruby"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="c1"># your code goes here</span>
+</code></pre>
+
+<p>So that, when you run your code (run <code>ruby arrays_1-1.rb</code>), you get the
+following output:</p>
+<pre class="highlight ruby"><code><span class="mi">5</span>
+</code></pre>
+
+<p><a href="/solutions_2/arrays_1-4.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 3.2</h2>
+
+<p>Copy your file to a new file: <code>cp arrays_1-1.rb arrays_1-2.rb</code>, then open this
+new file.</p>
+
+<p>Add another line <em>before the line that you just added</em>, so that, when you run
+your code, you get the following output:</p>
+<pre class="highlight ruby"><code><span class="mi">99</span>
+</code></pre>
+
+<p><a href="/solutions_2/arrays_1-5.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 3.3</h2>
+
+<p>Make a new file <code>arrays_1-3.rb</code>, and fill in the following line:</p>
+<pre class="highlight ruby"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="c1"># your code goes here</span>
+<span class="nb">p</span> <span class="n">numbers</span>
+</code></pre>
+
+<p>So that you get the following output:</p>
+<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</code></pre>
+
+<p class="hint">
+You know how to get the individual numbers. And you know that you can list
+things separated by comma, and enclosed with square brackets in order to get a
+new Array. Try combining this, and &ldquo;listing&rdquo; the code that gets a number
+from the array.
+</p>
+
+<p><a href="/solutions_2/arrays_1-6.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 3.4</h2>
+
+<p>Again, copy your last file to a new file: <code>cp arrays_1-3.rb arrays_1-4.rb</code>,
+then open this new file.</p>
+
+<p>Now add <em>another</em> line after the one that you just added (i.e. before you
+finally output the array using <code>p</code>).</p>
+
+<p>Try to figure out how to transform your Array so you get the following output:</p>
+<pre class="highlight ruby"><code><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre>
+
+<p class="hint">
+Before you do anything else, try describing the problem in English. What
+verb do you use to describe this transformation?
+</p>
+
+<p class="hint">
+Look through the methods listed on the left side of the
+<a href="http://ruby-doc.org/core-2.1.5/Array.html">documentation for Arrays</a>.
+to see if any of these describes what you&rsquo;re looking for.
+</p>
+
+<p><a href="/solutions_2/arrays_1-7.html" class="solution">Show solution</a></p>
+
+  <h1>Working with Hashes (1)</h1>
+
+<p>In order to do these exercises you should have read at least the chapter about
+[built_in_classes/hashes.html].</p>
+
+<p class="hint">
+Make sure you have your text editor and terminal open, and you have navigated
+to your exercises directory in the terminal. E.g. <code>cd ~/ruby-for-beginners/exercises</code>.
+</p>
+
+<h2>Exercise 4.1</h2>
+
+<p>Make a new file <code>hashes_1-1.rb</code>, and fill in the following line:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'uno'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'dos'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'tres'</span> <span class="p">}</span>
+<span class="c1"># your code goes here</span>
+</code></pre>
+
+<p>So that it prints out <code>dos</code>.</p>
+
+<p><a href="/solutions_2/hashes_1-1.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 4.2</h2>
+
+<p>Make a new file <code>hashes_1-2.rb</code>, and fill in the following line:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'uno'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'dos'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'tres'</span> <span class="p">}</span>
+<span class="c1"># your code goes here</span>
+<span class="nb">puts</span> <span class="n">dictionary</span><span class="p">[</span><span class="ss">:four</span><span class="p">]</span>
+</code></pre>
+
+<p>So that it prints out <code>cuatro</code>.</p>
+
+<p><a href="/solutions_2/hashes_1-2.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 4.3</h2>
+
+<p>Copy that file to a new file <code>cp hashes_1-2.rb hashes_1-3.rb</code>, and change your
+code so that it prints out the following.</p>
+<pre class="highlight plaintext"><code>Cuatro
+</code></pre>
+
+<p class="hint">
+There&rsquo;s a method that upcases the first letter of a string. Find it by
+googling for &ldquo;ruby string upcase first letter&rdquo;.
+</p>
+
+<p><a href="/solutions_2/hashes_1-3.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 4.4</h2>
+
+<p>There is a method on hashes that allows to check if a certain key is defined on
+the hash.  Find that method by googling for &ldquo;ruby hash key defined&rdquo;.</p>
+
+<p>Try this method in <code>irb</code> by creating a hash like the one above, calling the
+method and passing keys like <code>:one</code>, <code>:two</code>, <code>:four</code>, and <code>:ten</code>.</p>
+
+<p><a href="/solutions_2/hashes_1-4.html" class="solution">Show solution</a></p>
+
+<h2>Exercise 4.5</h2>
+
+<p>There is a method on hashes that flips keys and values. Find that method on the
+<a href="http://www.ruby-doc.org/core-2.2.0/Hash.html">Ruby documentation about Hashes</a></p>
+
+<p>Make a new file <code>hashes_1-5.rb</code>, and fill in the following line using that
+method:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s1">'uno'</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s1">'dos'</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s1">'tres'</span> <span class="p">}</span>
+<span class="c1"># your code goes here</span>
+</code></pre>
+
+<p>This should then output:</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> </span><span class="err">'uno'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">one</span><span class="p">,</span><span class="w"> </span><span class="err">'dos'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">two</span><span class="p">,</span><span class="w"> </span><span class="err">'tres'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">three</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><a href="/solutions_2/hashes_1-5.html" class="solution">Show solution</a></p>
 
 
 
