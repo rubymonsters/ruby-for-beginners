@@ -9,8 +9,8 @@ However, you can also quickly pop into IRB and ask the object for its methods.
 That's right, `methods` is a method defined on all objects (just like `class`,
 and `is_a?`).
 
-When you call it then it will *return* an Array with all the method names that
-the object has.
+When you call it then it will return (respond with) an Array with all the
+method names that the object has.
 
 It makes sense to sort the Array, so it is easier to read. Like so:
 
@@ -26,6 +26,8 @@ If you do this yourself, you'll see that the String actually has a lot more
 methods. Many of these actually aren't used very often, but some are quite
 useful. We have stripped the Array down a little, because we want to talk about
 some of these methods more.
+
+## Chaining method calls
 
 Btw the code above also demonstrates that methods can be "chained": When we
 call a method on an object it will return another object to us. We can then

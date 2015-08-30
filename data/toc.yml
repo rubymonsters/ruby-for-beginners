@@ -48,7 +48,6 @@
   - listing
   - predicates
   - bangs
-  - top-level
 - path: writing_classes
   children:
   - initializers

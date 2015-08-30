@@ -11,9 +11,11 @@ That's like saying *Hey object, please do [method]*.
 
 Let's try that out in IRB.
 
-The class `String` defines methods like `upcase` (*Give me an uppercase version
-of yours*), `downcase` (*What's the downcased version of yours*), and `length`
-(*Hey string, what's your length?*). Here's how that works:
+For example, the class `String` defines methods like `upcase` (*Give me an
+uppercase version of yours*), `downcase` (*What's the downcased version of
+yours*), and `length` (*Hey string, what's your length?*).
+
+Here's how we can call them:
 
 ```ruby
 $ irb
@@ -29,18 +31,19 @@ $ irb
 And so on.
 
 In other words, you first address, or mention, the object that you want to talk
-to, and then, with the dot `.`, send a message by specifying the method name.
+to, and then, with the dot `.`, "send a message" to the object by specifying
+the method name. We also say: "you call the method upcase on the string".
 
 <p class="hint">
 A dot is used to call a method on an object.
 </p>
 
 Imagine the string `name` is a person you can talk to. You can ask questions by
-"sending a message" to them, and they'll respond by sending (or returning)
+"sending a message" to them, and they'll respond by sending (returning)
 something back. The term "sending messages" actually is used instead of
 "calling a method" in programming, and specifically in Ruby.
 
-So, you can ask this string to hand you an "upcased" version of itself. And
+So, you can ask the string to hand you an "upcased" version of itself. And
 it responds by doing so. Or you can ask it for its length, and it responds
 by returning the number `12` to you.
 
@@ -62,7 +65,7 @@ screen. Other methods might save files, send emails, or store things to
 a database.
 
 <p class="hint">
-Some methods are commands, and change the object, or the system.
+Some methods are commands, and change the object, or the system (e.g. by saving a file).
 </p>
 
 
