@@ -27,7 +27,7 @@ And we've already silently skipped over the fact that we've used some methods
 in the previous chapter: `class` and `is_a?` are methods defined on all objects
 in Ruby, and therefore also defined on the String `"this is a string"`.
 
-<p class="note">
+<p class="hint">
 Some methods, such as <code>class</code>, <code>is_a?</code>, are defined on all objects.
 </p>
 
