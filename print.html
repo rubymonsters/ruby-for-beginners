@@ -1760,21 +1760,23 @@ can perfectly ignore all of that for now, and just think of numbers as numbers.<
 numbers (&ldquo;integers&rdquo;) and decimal point numbers (floating point numbers, aka
 &ldquo;floats&rdquo;) are different.</p>
 
-<p>If you do a calculation that starts with an integer you&rsquo;ll eventually always
+<p>If you do a calculation that uses integer number you&rsquo;ll eventually always
 get an integer back:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="o">=&gt;</span> <span class="mi">3</span>
 </code></pre>
 
-<p>And if you start the expression with a float then you&rsquo;ll get a float back:</p>
+<p>However, if any of the numbers involved is a float, then you&rsquo;ll get a float back:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
 <span class="o">=&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
 </code></pre>
 
 <p class="hint">
-Mathmatical operations result in a number of the same type as they start with.
+Mathmatical operations result in a floating point number except if all numbers used are integer numbers.
 </p>
 
 <p>This is, for example, important when you do a division (<code>/</code> means &ldquo;divide by&rdquo;):</p>
@@ -1786,9 +1788,11 @@ Mathmatical operations result in a number of the same type as they start with.
 <p>As you can see any decimal places will be just cut off, since the result needs
 to be an integer number.</p>
 
-<p>However, if you start with a float:</p>
+<p>However, if you use floats:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">5</span>
+<span class="o">&gt;</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
 <span class="o">=&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">5</span>
 </code></pre>
 
@@ -2337,7 +2341,7 @@ A Hash is created by listing key/value pairs, separated by hash rockets, and enc
 <p>Now, how do you actually look up the value that is associated with the key
 <code>&quot;one&quot;</code>?</p>
 
-<p>Just like with arrays you use sqare brackets, but instead of passing
+<p>Just like with Arrays you use sqare brackets, but instead of passing
 a number indicating the position you now pass the key. Like so:</p>
 <pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
 <span class="nb">puts</span> <span class="n">dictionary</span><span class="p">[</span><span class="s2">"one"</span><span class="p">]</span>
@@ -2349,6 +2353,27 @@ refer to the Hash defined on the first line?</p>
 <p>In this example, <code>dictionary</code> is a Hash defined on the first line. <code>[&quot;one&quot;]</code>
 looks up the value associated to the key <code>&quot;one&quot;</code>, which is <code>&quot;eins&quot;</code>. This value
 will be passed to <code>puts</code> which outputs it to the screen.</p>
+
+<h2>Setting a key to a value</h2>
+
+<p>Also, just like with Arrays, there&rsquo;s a way to set key/value pairs on an existing
+Hash:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="n">dictionary</span><span class="p">[</span><span class="s2">"zero"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"null"</span>
+<span class="nb">puts</span> <span class="n">dictionary</span><span class="p">[</span><span class="s2">"zero"</span><span class="p">]</span>
+</code></pre>
+
+<p>This prints out <code>null</code>.</p>
+
+<p>You could also overwrite existing key/values the same way. For example this
+would set the word <code>&quot;uno&quot;</code> to the key <code>&quot;one&quot;</code> (i.e. overwrite the existing pair
+with the value <code>&quot;eins&quot;</code>):</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="n">dictionary</span><span class="p">[</span><span class="s2">"one"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"uno"</span>
+<span class="nb">puts</span> <span class="n">dictionary</span><span class="p">[</span><span class="s2">"one"</span><span class="p">]</span>
+</code></pre>
+
+<p>So, this would now output <code>uno</code>.</p>
 
 <h2>Any kind of objects</h2>
 
@@ -2519,9 +2544,8 @@ If you think about Twitter, it essentially takes 140 characters of text
 (which is data) from their users and displays it to others.</p>
 
 <p>You have already learned about the most important primitive (simple) types of
-data in Ruby: numbers, strings, true, false and nil. And we&rsquo;ll have a look at
-the two most common data structures, Arrays and Hashes, in a few
-<a href="/more_built_in_classes.html">chapters</a>.</p>
+data in Ruby: numbers, strings, true, false and nil. And we&rsquo;ve had a look at
+the two most common data structures, Arrays and Hashes.</p>
 
 <p>All of this is about the <em>data</em> part. Methods on the other hand are about the
 <em>doing interesting things</em> part.</p>
@@ -3244,7 +3268,7 @@ of yours</em>), <code>downcase</code> (<em>What&rsquo;s the downcased version of
 to, and then, with the dot <code>.</code>, send a message by specifying the method name.</p>
 
 <p class="hint">
-A dot is used to called a method on an object.
+A dot is used to call a method on an object.
 </p>
 
 <p>Imagine the string <code>name</code> is a person you can talk to. You can ask questions by
@@ -7580,6 +7604,7 @@ in the following calculations?</p>
 <li><code>3.0 / 2</code></li>
 <li><code>3 / 2.0</code></li>
 <li><code>4 * 2.0</code></li>
+<li><code>0 + 1</code></li>
 </ul>
 
 <p>Is the result a float or an integer?</p>
@@ -7594,6 +7619,17 @@ in the following calculations?</p>
 
 <ul>
 <li><code>5 % 2</code></li>
+<li><code>15 % 2</code></li>
+<li><code>505 % 2</code></li>
+</ul>
+
+<p>And:</p>
+
+<ul>
+<li><code>8 % 5</code></li>
+<li><code>9 % 5</code></li>
+<li><code>10 % 5</code></li>
+<li><code>11 % 5</code></li>
 </ul>
 
 <h2>Exercise 1.4</h2>
@@ -7604,9 +7640,8 @@ more about them in a few chapters.</p>
 <p>In Ruby, numbers have methods that allow you to check whether the number is odd
 or even.</p>
 
-<p>Look through the <a href="http://ruby-doc.org/core-2.1.5/Fixnum.html">documentation for integer</a>
-numbers (called <code>Fixnum</code>) and find the methods that tell if a number is odd or
-even.</p>
+<p>Look through the <a href="http://ruby-doc.org/core-2.2.2/Integer.html">documentation for integer</a>
+numbers and find the methods that tell if a number is odd or even.</p>
 
 <p>Look at the examples for some of the other methods on that page.</p>
 
@@ -7622,11 +7657,11 @@ to the object. E.g. <code>-99.abs</code> uses (we also say: &ldquo;calls&rdquo;)
 
 <p>Try a bunch of numbers like <code>0, 1, 2, 99, -502</code> etc.</p>
 
-<p><a href="/solutions_2/numbers-4.html" class="solution">Show solution</a></p>
+<p>Try for yourself what it does, and google for &ldquo;ruby number odd even&rdquo; to find
+<a href="http://ruby-doc.org/core-2.2.2/Integer.html#method-i-odd-3F">the documentation</a>
+for these methods.</p>
 
-<p>Try for yourself what it does, and google for &ldquo;ruby abs&rdquo; to find
-<a href="http://ruby-doc.org/core-2.0/Numeric.html#method-i-abs">the documentation</a>
-for this method.</p>
+<p><a href="/solutions_2/numbers-5.html" class="solution">Show solution</a></p>
 
   <h1>Working with Strings</h1>
 

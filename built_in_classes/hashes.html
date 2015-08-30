@@ -628,7 +628,7 @@ A Hash is created by listing key/value pairs, separated by hash rockets, and enc
 <p>Now, how do you actually look up the value that is associated with the key
 <code>&quot;one&quot;</code>?</p>
 
-<p>Just like with arrays you use sqare brackets, but instead of passing
+<p>Just like with Arrays you use sqare brackets, but instead of passing
 a number indicating the position you now pass the key. Like so:</p>
 <pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
 <span class="nb">puts</span> <span class="n">dictionary</span><span class="p">[</span><span class="s2">"one"</span><span class="p">]</span>
@@ -640,6 +640,27 @@ refer to the Hash defined on the first line?</p>
 <p>In this example, <code>dictionary</code> is a Hash defined on the first line. <code>[&quot;one&quot;]</code>
 looks up the value associated to the key <code>&quot;one&quot;</code>, which is <code>&quot;eins&quot;</code>. This value
 will be passed to <code>puts</code> which outputs it to the screen.</p>
+
+<h2>Setting a key to a value</h2>
+
+<p>Also, just like with Arrays, there&rsquo;s a way to set key/value pairs on an existing
+Hash:</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="n">dictionary</span><span class="p">[</span><span class="s2">"zero"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"null"</span>
+<span class="nb">puts</span> <span class="n">dictionary</span><span class="p">[</span><span class="s2">"zero"</span><span class="p">]</span>
+</code></pre>
+
+<p>This prints out <code>null</code>.</p>
+
+<p>You could also overwrite existing key/values the same way. For example this
+would set the word <code>&quot;uno&quot;</code> to the key <code>&quot;one&quot;</code> (i.e. overwrite the existing pair
+with the value <code>&quot;eins&quot;</code>):</p>
+<pre class="highlight ruby"><code><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"one"</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="s2">"two"</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="s2">"three"</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
+<span class="n">dictionary</span><span class="p">[</span><span class="s2">"one"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"uno"</span>
+<span class="nb">puts</span> <span class="n">dictionary</span><span class="p">[</span><span class="s2">"one"</span><span class="p">]</span>
+</code></pre>
+
+<p>So, this would now output <code>uno</code>.</p>
 
 <h2>Any kind of objects</h2>
 

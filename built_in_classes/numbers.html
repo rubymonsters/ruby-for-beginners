@@ -614,21 +614,23 @@ can perfectly ignore all of that for now, and just think of numbers as numbers.<
 numbers (&ldquo;integers&rdquo;) and decimal point numbers (floating point numbers, aka
 &ldquo;floats&rdquo;) are different.</p>
 
-<p>If you do a calculation that starts with an integer you&rsquo;ll eventually always
+<p>If you do a calculation that uses integer number you&rsquo;ll eventually always
 get an integer back:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="o">=&gt;</span> <span class="mi">3</span>
 </code></pre>
 
-<p>And if you start the expression with a float then you&rsquo;ll get a float back:</p>
+<p>However, if any of the numbers involved is a float, then you&rsquo;ll get a float back:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
 <span class="o">=&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span>
 </code></pre>
 
 <p class="hint">
-Mathmatical operations result in a number of the same type as they start with.
+Mathmatical operations result in a floating point number except if all numbers used are integer numbers.
 </p>
 
 <p>This is, for example, important when you do a division (<code>/</code> means &ldquo;divide by&rdquo;):</p>
@@ -640,9 +642,11 @@ Mathmatical operations result in a number of the same type as they start with.
 <p>As you can see any decimal places will be just cut off, since the result needs
 to be an integer number.</p>
 
-<p>However, if you start with a float:</p>
+<p>However, if you use floats:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="mi">3</span><span class="o">.</span><span class="mi">0</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="o">=&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">5</span>
+<span class="o">&gt;</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
 <span class="o">=&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">5</span>
 </code></pre>
 
