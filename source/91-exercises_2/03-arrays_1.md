@@ -36,7 +36,7 @@ numbers = [1, 2, 3, 4, 5, 6]
 # your code goes here
 ```
 
-So that, when you run your code (run `ruby arrays_1-1.rb`), you get the
+... so that, when you run your code (run `ruby arrays_1-1.rb`), you get the
 following output:
 
 ```ruby
@@ -69,7 +69,7 @@ numbers = [1, 2, 3, 4, 5, 6]
 p numbers
 ```
 
-So that you get the following output:
+... so that you get the following output:
 
 ```ruby
 [2, 4, 6]
@@ -95,7 +95,7 @@ finally output the array using `p`).
 Try to figure out how to transform your Array so you get the following output:
 
 ```ruby
-[10, 8, 6, 4, 2]
+[6, 4, 2]
 ```
 
 <p class="hint">

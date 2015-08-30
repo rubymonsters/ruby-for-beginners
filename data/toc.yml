@@ -17,6 +17,10 @@
   - irb
 - roadmap
 - object_oriented_programming
+- path: variables
+  children:
+  - reusing_names
+  - right_goes_first
 - path: built_in_classes
   children:
   - numbers
@@ -25,10 +29,6 @@
   - symbols
   - arrays
   - hashes
-- path: variables
-  children:
-  - reusing_names
-  - right_goes_first
 - path: writing_methods
   children:
   - constituents

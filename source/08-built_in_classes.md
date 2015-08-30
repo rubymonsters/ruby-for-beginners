@@ -3,11 +3,15 @@
 As mentioned before, Ruby comes with lots of things already baked in, and
 provides you with tons of tools to use and hit the road running.
 
-We'll start by looking at some of the most common data types in Ruby.  Data
-types are "things" that are mainly used to represent data, such as numbers,
-text, and other values.
+We'll look at some of the most common data types in Ruby. Data types are types
+of "things" that are mainly used to represent data, such as numbers, text, and
+other values.
 
-We will have a quick look at each the following ones:
+This is basically the "stuff" that you, as a Ruby programmers will work with,
+when we work with actual data, that is interesting to you, or your users in one
+way or the other.
+
+We will discusss the following data types:
 
 * Numbers
 * Strings (texts)
@@ -18,7 +22,8 @@ We will have a quick look at each the following ones:
 
 These "kinds of things" (objects) cover like 98% of all built-in data types
 that you'll be using on a day to day basis, i.e. these are being used all over
-the place. There are more, but those are rather exotic, and rarely used.
+the place. There are more data types, but those are rather exotic, and used
+much less often.
 
 Numbers and Strings (which is just a strange name for "texts") are some of the
 most basic "things" that you deal with in Ruby on a regular basis. The are also

@@ -24,9 +24,10 @@ in the following calculations?
 
 Try computing these in `irb`:
 
+* `3 / 2`
 * `3.0 / 2`
 * `3 / 2.0`
-* `4 ** 2.0`
+* `4 * 2.0`
 
 Is the result a float or an integer?
 

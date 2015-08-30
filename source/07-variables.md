@@ -10,6 +10,11 @@ variables. This is basically the same concept that you might know from math,
 although in Ruby there are different kinds of variables (you will get to know
 another one in a couple chapters).
 
+We'll discuss this concept quickly because you already need to know it in the
+next chapter, and the respective exercises.
+
+Let's jump right in:
+
 In Ruby you can assign a name to something (an object) by using the so called
 assignment operator `=`. Like so:
 
@@ -17,9 +22,15 @@ assignment operator `=`. Like so:
 number = 1
 ```
 
-This will *assign* the name `number` to the object that is the number `1`. From
-now on we can refer to this object by using the name `number`. For example the
-following code would output the number `1`:
+This will *assign* the name `number` to the "thing" (object) that is the number
+`1`. From now on we can refer to this object by using the name `number`. For
+example the following code would output the number `1`:
+
+<p class="hint">
+A name on the left side of the assignment operator <code>=</code> is assigned
+to the object on the right side.
+</p>
+
 
 ```ruby
 number = 1
@@ -39,10 +50,10 @@ You can think of it like a post-it note with the name `number` written on it,
 and stuck on the actual thing, which is an object (in this case, a number).
 
 Imagine you were in the middle of learning some Spanish, and sticked post-its
-onto things in your apartment: the name "nevara" onto the refridgerator, "cama"
-onto your bed, and "puerta del baño" onto the bathroom door.
+onto things in your apartment: the name *nevara* onto the refridgerator, *cama*
+onto your bed, and *puerta del baño* onto the bathroom door.
 
-Now, whenever you use one of these terms, as in "abrir la nevera" (open the
+Now, whenever you use one of these terms, as in *abrir la nevera* (open the
 refridgerator) in order to learn the language and rehearse vocabulary, you'll
 obviously refer to the object, and open its actual, physical door.
 

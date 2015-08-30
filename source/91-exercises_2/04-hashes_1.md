@@ -17,7 +17,7 @@ dictionary = { :one => 'uno', :two => 'dos', :three => 'tres' }
 # your code goes here
 ```
 
-So that it prints out `dos`.
+... so that it prints out `dos`.
 
 <a href="/solutions_2/hashes_1-1.html" class="solution">Show solution</a>
 
@@ -32,7 +32,7 @@ dictionary = { :one => 'uno', :two => 'dos', :three => 'tres' }
 puts dictionary[:four]
 ```
 
-So that it prints out `cuatro`.
+... so that it prints out `cuatro`.
 
 <a href="/solutions_2/hashes_1-2.html" class="solution">Show solution</a>
 

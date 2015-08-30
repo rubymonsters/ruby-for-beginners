@@ -44,7 +44,7 @@ Let's look at it under the microscope:
   screen.
 
 Of course, no one would actually write this exact code in practice since you can
-simply do all this in just one line instead: `puts 2 + 3 * 4`.
+simply do all this in just one line instead: `puts 4 * 3 + 2`.
 
 However, sometimes you'll find or write code that assigns an initial value to a
 variable, and then keeps working on it for a few more lines. This sometimes is
