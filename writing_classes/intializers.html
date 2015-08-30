@@ -16,12 +16,8 @@
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/writing_classes.html">
-  Previous
-</a></nav>
-    <nav class="page-nav"><a class="next" href="/writing_classes/instance_variables.html">
-  Next
-</a></nav>
+    <nav class="page-nav"></nav>
+    <nav class="page-nav"></nav>
 
     <div>
       <nav class="toc">
@@ -259,14 +255,24 @@
       </li>
     </ul>
   </li>
-  <li class="directory expanded">
+  <li class="directory">
     <a href="/writing_classes.html">
       Writing classes
     </a>
     <ul>
-      <li class="active">
+      <li>
+        <a href="/writing_classes/definition.html">
+          Defining classes
+        </a>
+      </li>
+      <li>
+        <a href="/writing_classes/methods.html">
+          Defining instance methods
+        </a>
+      </li>
+      <li>
         <a href="/writing_classes/initializers.html">
-          Initializing objects
+          Initializers
         </a>
       </li>
       <li>
@@ -578,8 +584,26 @@
 
 <p><em>In the moment of birth</em></p>
 
-<p>In order to make our class a little bit more useful, we want to be able to give
-it some initial data. In our case, we want the person to know its own name.</p>
+<p>Let&rsquo;s start over, and define a new class.</p>
+
+<p>Remember how we said that objects can be thought of as two things: They know
+<em>stuff</em>, and they can <em>do things</em>.</p>
+
+<p>Let&rsquo;s define a class <code>Person</code>. People obviously also know things, and can do things.</p>
+
+<p>Here&rsquo;s how to define a shiny, new, empty class <code>Person</code>:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Again, that&rsquo;s not a very useful class, but we can instantiate it, and create an
+actual, concrete person instance (object) from it:</p>
+<pre class="highlight ruby"><code><span class="nb">p</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span>
+</code></pre>
+
+<p>Now, before we add any behaviour (methods) to our class, we want to be able to
+give it some initial data: In our case, we want the person to know its own
+name.</p>
 
 <p>We can do this like so:</p>
 <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
@@ -588,23 +612,9 @@ it some initial data. In our case, we want the person to know its own name.</p>
 <span class="k">end</span>
 </code></pre>
 
-<p>Now, there are a couple of things going on here. Let&rsquo;s go through them one by
-one.</p>
-
 <p>You see that we add a method called <code>initialize</code> to the class, and this method
 accepts a single argument, which is called <code>name</code>. At the moment, this method
 is still empty. We&rsquo;ll add some code to it in a bit.</p>
-
-<p>The method definition is indented by one level, that is, 2
-spaces. We do this in order to signal that the method <code>initialize</code> belongs
-to the class <code>Person</code>. Everything between the line <code>class Person</code> and the
-final line <code>end</code> is called the &ldquo;class body&rdquo;, and just like method bodies we
-indent them by one more level.</p>
-
-<p class="hint formatting">
-On formatting: the keywords <code>class</code> and <code>end</code> sit on
-the same level. The class body is indented by one level.
-</p>
 
 <p>The important bit to learn for you is: the method <code>initialize</code> is a special
 method with a special meaning in Ruby:</p>
@@ -632,18 +642,14 @@ passed, yet. That&rsquo;s right. We&rsquo;ll get to that in the next chapter.</p
 <p>To recap, when you call <code>new</code> on the class <code>Person</code>, and pass the string
 <code>&quot;Ada&quot;</code> then the method <code>new</code> will create a new instance of the class, and call
 <code>initialize</code> on it, passing the same argument list, which in our case is the
-single string <code>&quot;Ada&quot;</code>: as in <code>object.initialize(&quot;Ada&quot;)</code>.</p>
+single string <code>&quot;Ada&quot;</code>.</p>
 
 <p>When we create a new instance of a class by the way of calling the method <code>new</code>
 on that class, we also say that we &ldquo;instantiate&rdquo; that object: By calling
 <code>Person.new</code> we instantiate a new person object.</p>
 
-        <nav class="page-nav"><a class="prev" href="/writing_classes.html">
-  Previous
-</a></nav>
-        <nav class="page-nav"><a class="next" href="/writing_classes/instance_variables.html">
-  Next
-</a></nav>
+        <nav class="page-nav"></nav>
+        <nav class="page-nav"></nav>
       </article>
     </div>
 

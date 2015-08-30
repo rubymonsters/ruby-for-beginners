@@ -186,7 +186,15 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/initializers.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/definition.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/methods.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_classes/intializers.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -678,11 +686,11 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/hashes_1-3.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/email-2.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/email-2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/hashes_1-4.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -770,7 +778,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/hashes_1-4.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/hashes_1-3.html</loc>
       <priority>0.5</priority>
     </url>
 </urlset>

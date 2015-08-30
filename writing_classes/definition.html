@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="BEd2YAbpSQrRqU2-5wUifTTzvqTMGLLE269b0JZTfCs" />
 
-    <title>Our Roadmap | Ruby for Beginners</title>
+    <title>Defining classes | Ruby for Beginners</title>
 
-    <link href="assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/stylesheets/monstas-6495f720.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/your_tools/irb.html">
+    <nav class="page-nav"><a class="prev" href="/writing_classes.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/object_oriented_programming.html">
+    <nav class="page-nav"><a class="next" href="/writing_classes/methods.html">
   Next
 </a></nav>
 
@@ -106,7 +106,7 @@
       </li>
     </ul>
   </li>
-  <li class="active">
+  <li>
     <a href="/roadmap.html">
       Our Roadmap
     </a>
@@ -259,12 +259,12 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/writing_classes.html">
       Writing classes
     </a>
     <ul>
-      <li>
+      <li class="active">
         <a href="/writing_classes/definition.html">
           Defining classes
         </a>
@@ -584,134 +584,95 @@
       </nav>
       <article>
         <nav class="menu"><a href="#"></a></nav>
-        <h1>Our Roadmap</h1>
+        <h1>Defining classes</h1>
 
-<p>Ok, let&rsquo;s get started.</p>
+<p>Let&rsquo;s start by creating a class <code>Calculator</code>, and adding some methods to it,
+step by step.</p>
 
-<p>Here&rsquo;s a rough overview of the road that lies in front of us, and topics that
-we&rsquo;ll cover.</p>
+<p>In Ruby, you define a class like this:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Calculator</span>
+<span class="k">end</span>
+</code></pre>
 
-<p>This curriculumn is built on top of two main ideas:</p>
+<p>That&rsquo;s all. It&rsquo;s not a very useful class, since it&rsquo;s completely empty, but
+it&rsquo;s a class.</p>
 
-<ul>
-<li>We introduce one concept after another. Doing so we try to make sure not to
-assume any knowledge but things that already were explained.</li>
-<li>We get you to a point where you can create your own classes, objects, and
-methods as quickly as possible: We found that&rsquo;s the point where it starts to
-be most fun for most people.</li>
-</ul>
+<p class="hint">
+A class is defined using the keyword <code>class</code>, a name, and the
+keyword <code>end</code>.
+</p>
 
-<p>Of course you don&rsquo;t have to follow exactly this path. For example, if you&rsquo;re
-curious, after we&rsquo;ve introduced the most basic built-in types of things in
-Ruby, numbers and Strings (text), you might find there&rsquo;s another chapter
-about more such types. Feel free to skip ahead, and read it. Just be aware
-that you might find this chapter assume a couple more things.</p>
+<p>Also, you see that the class has the name <code>Calculator</code>, which starts with an
+uppercase letter. In Ruby, this is required, and you&rsquo;d get an error if you
+tried to define a class <code>calculator</code>.</p>
 
-<p>So, here&rsquo;s our roadmap:</p>
+<p>Also, for class names that consist of several words the Ruby community has the
+convention to separate these words by uppercase letters, as in
+<code>RubyStudyGroup</code>.  This is called CamelCase, because of the humps. Whereas for
+variable and method names we use underscores, and keep everything lowercase:
+<code>local_variable</code> and <code>method_name</code>. This is called snake_case.</p>
 
-<h3>1. Object Oriented Programming</h3>
+<p class="hint">
+Class names must start with an uppercase letter, and should use CamelCase.
+Variable and methods names should use snake_case.
+</p>
 
-<p>We&rsquo;ll look at the main idea (concept, paradigm) behind programming in Ruby
-from a little bit of a philosophical perspective. We do this to set a little
-bit of a context for the terms <em>object</em>, <em>class</em>, and <em>method</em> which will
-be used quite frequently from then on.</p>
+<p>Ok, back to our class <code>Calculator</code>.</p>
 
-<h3>2. Variables</h3>
+<p>Since we&rsquo;ve defined a full, valid class, we can now already use it to create a
+new, concrete calculator instance, an object from it.</p>
 
-<p>In order to do things with objects, and form readable sentences (code) we
-need to be able to assign names to them.</p>
+<p>You can think about the instance as the concrete calculator object that you can
+hold in your hands, and use to do actual calculations. The class on the other
+hand is more like the idea or concept of a calculator, like the idea of it that
+you have when you order a calculator online.</p>
 
-<p>This chapter explains variables in Ruby.</p>
+<p>Ok, here&rsquo;s how to do create a new, concrete instance from our class:</p>
+<pre class="highlight ruby"><code><span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
+</code></pre>
 
-<h3>3. Built-In Data Types</h3>
+<p>That&rsquo;s right. <code>new</code> is a method, and it is defined on the class itself (which,
+as you might remember, is also an object, so it can have methods). This method
+creates a new instance of the class, and returns it.</p>
 
-<p>Ruby comes with lots of batteries included. Things that are built-in, and
-ready for you to be used when you open an empty Ruby file, or IRB.</p>
+<p class="hint">
+The method <code>new</code> is defined on every class, and returns a new
+instance of the class.
+</p>
 
-<p>We&rsquo;ll look the two most basic, and most widely used ones:</p>
+<p>Cool. Let&rsquo;s have a look at that object:</p>
+<pre class="highlight ruby"><code><span class="nb">p</span> <span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
+</code></pre>
 
-<p>Numbers, and Strings (text). These will be good enough for us to introduce
-other concepts without spending too much time on talking about all the other
-things that Ruby has built-in (we&rsquo;ll look at the most important ones later).</p>
+<p>The output will seem a little bit weird, and technical at first:</p>
+<pre class="highlight plaintext"><code>#&lt;Calculator:0x007fb2fbe50910&gt;
+</code></pre>
 
-<p>We&rsquo;ll quickly mention 3 primitive things that are widely used in Ruby: <code>true</code>,
-<code>false</code>, and `nil, so you&rsquo;ve already heard of them when we come across them
-later.</p>
+<p>The format <code>#&lt;...&gt;</code> tells you that this object is not a simple thing like a
+number, string, or array. Instead, it just tells you the name of the class,
+<code>Calculator</code>, and the internal id that Ruby has assigned to this object.</p>
 
-<p>Then we discuss Arrays and Hashes, which are data structures. I.e. these are
-things that you can use to store other things. They&rsquo;re pretty powerful, and
-widely used.</p>
+<p>Every object has its own, unique, internal object id, and when I ran this code
+on my computer, Ruby assigned the id <code>0x007fb2fbe50910</code>. If you run it,
+you&rsquo;ll get a different one. In practice, most of the time, you can simply ignore
+this id.</p>
 
-<p>Symbols are quite an odd beast, and you normally wouldn&rsquo;t even need to know
-them in order to write your own, working code. However, they&rsquo;re very widely
-used and many (many!) examples out there use them. So we introduce them
-briefly, too.</p>
+<p>Also, we can check that our new calculator instance indeed is an instance of
+the class <code>Calculator</code>:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Calculator</span>
+<span class="o">&gt;</span> <span class="k">end</span>
+<span class="o">&gt;</span> <span class="n">calculator</span> <span class="o">=</span> <span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
+<span class="o">&gt;</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">class</span>
+<span class="o">=&gt;</span> <span class="no">Calculator</span>
+<span class="o">&gt;</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">Calculator</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+</code></pre>
 
-<h3>4. Objects, Classes, Methods</h3>
-
-<p>This chapter discusses how objects and classes relate to each other, how
-methods can be called on objects, and explores a number of different methods.
-It also has a quick look to see what&rsquo;s up with that magic, so-called top-level
-object in Ruby.</p>
-
-<h3>5. Writing Methods</h3>
-
-<p>While variables give names to things, methods give names to behaviour.  Methods
-are like the swiss-army knife of programming.  We&rsquo;ll have a look at the anatomy
-of a method, and learn how we can define our own ones.</p>
-
-<h3>6. Writing Classes</h3>
-
-<p>With this knowledge at hand we can now go ahead and define our first class
-(kind of thing) ourselves: We&rsquo;ll define the class <code>Person</code>, create some
-&ldquo;people&rdquo; (objects), and let them interact. We&rsquo;ll learn how to make our objects
-&ldquo;know&rdquo; things, and how to give them &ldquo;behaviour&rdquo;.</p>
-
-<h3>7. Blocks</h3>
-
-<p>Blocks are a super powerful feature in Ruby. We love them, and use them
-everywhere. Many built-in methods use them, too. So it&rsquo;s good to introduce
-them now.</p>
-
-<p>Blocks are like methods that don&rsquo;t have a name, and they are passed when
-calling actual methods. We&rsquo;ll discuss why this is cool, and how it works.</p>
-
-<h3>8. Conditionals, Truthiness, and Nothing</h3>
-
-<p>Sometimes you want to run some part of your code only if a certain condition
-applies (e.g. you only want to allow users to login if the supplied password
-is correct).</p>
-
-<p>Conditionals allow you to do that. Ruby comes with some pretty cool features
-included, and we&rsquo;ll quickly look at them.</p>
-
-<h3>9. Operators</h3>
-
-<p>There are lots of different operators built into Ruby, and at this point
-you&rsquo;ve already used a number of them (such as the arithmetical operator <code>+</code>,
-and the assignment operator <code>=</code>).</p>
-
-<p>We&rsquo;ll look at a few more, and also reveal that operators, in fact, are &hellip;
-methods in disguise!</p>
-
-<h3>Bonus and advanced topics</h3>
-
-<p>This concludes the core of our &ldquo;Ruby For Beginners&rdquo; curriculum. With this
-knowledge you&rsquo;ll have all the tools you need in order to play with things, read
-(most of) other people&rsquo;s code, and write your own useful things.</p>
-
-<p>There are a couple bonus chapters that you might want to skim through. Some of
-these are still waiting to find their place somewhere else in the book. Some
-will probably be marked as optional.</p>
-
-<p>Also there are some extra chapters about advanced topics, some of which are
-relevant to the more advanced exercises, and for the next curriculum about
-<a href="http://webapps-for-beginners.rubymonstas.org/">building your own web applications</a>.</p>
-
-        <nav class="page-nav"><a class="prev" href="/your_tools/irb.html">
+        <nav class="page-nav"><a class="prev" href="/writing_classes.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/object_oriented_programming.html">
+        <nav class="page-nav"><a class="next" href="/writing_classes/methods.html">
   Next
 </a></nav>
       </article>
@@ -729,7 +690,7 @@ relevant to the more advanced exercises, and for the next curriculum about
       </ul>
     </footer>
 
-    <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
   </body>
 </html>

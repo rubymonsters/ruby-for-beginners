@@ -261,8 +261,18 @@
     </a>
     <ul>
       <li>
+        <a href="/writing_classes/definition.html">
+          Defining classes
+        </a>
+      </li>
+      <li>
+        <a href="/writing_classes/methods.html">
+          Defining instance methods
+        </a>
+      </li>
+      <li>
         <a href="/writing_classes/initializers.html">
-          Initializing objects
+          Initializers
         </a>
       </li>
       <li>
@@ -1299,7 +1309,14 @@ from a little bit of a philosophical perspective. We do this to set a little
 bit of a context for the terms <em>object</em>, <em>class</em>, and <em>method</em> which will
 be used quite frequently from then on.</p>
 
-<h3>2. Built-In Data Types</h3>
+<h3>2. Variables</h3>
+
+<p>In order to do things with objects, and form readable sentences (code) we
+need to be able to assign names to them.</p>
+
+<p>This chapter explains variables in Ruby.</p>
+
+<h3>3. Built-In Data Types</h3>
 
 <p>Ruby comes with lots of batteries included. Things that are built-in, and
 ready for you to be used when you open an empty Ruby file, or IRB.</p>
@@ -1323,24 +1340,18 @@ them in order to write your own, working code. However, they&rsquo;re very widel
 used and many (many!) examples out there use them. So we introduce them
 briefly, too.</p>
 
-<h3>3. Variables</h3>
-
-<p>In order to do things with objects, and form readable sentences (code) we
-need to be able to assign names to them. This chapter explains variables in
-Ruby.</p>
-
-<h3>4. Writing Methods</h3>
-
-<p>While variables give names to things, methods give names to behaviour.  Methods
-are like the swiss-army knife of programming.  We&rsquo;ll have a look at the anatomy
-of a method, and learn how we can define our own ones.</p>
-
-<h3>5. Objects, Classes, Methods</h3>
+<h3>4. Objects, Classes, Methods</h3>
 
 <p>This chapter discusses how objects and classes relate to each other, how
 methods can be called on objects, and explores a number of different methods.
 It also has a quick look to see what&rsquo;s up with that magic, so-called top-level
 object in Ruby.</p>
+
+<h3>5. Writing Methods</h3>
+
+<p>While variables give names to things, methods give names to behaviour.  Methods
+are like the swiss-army knife of programming.  We&rsquo;ll have a look at the anatomy
+of a method, and learn how we can define our own ones.</p>
 
 <h3>6. Writing Classes</h3>
 
@@ -3615,10 +3626,18 @@ a certain way, you actually are :)</p>
 able to do something with it: When asked, you can tell your name to others,
 that is, you can return it to the &ldquo;caller&rdquo;, to whoever asked.</p>
 
-<p>Let&rsquo;s start creating this class, step by step.</p>
+<p>We&rsquo;ll define this exact class in just a few chapters. However, before we do
+that, we&rsquo;ll first look at how to define the method <code>add_two</code> to a class
+<code>Calculator</code> &hellip; just because we can, and because you&rsquo;re already familiar with
+these methods.</p>
+
+  <h1>Defining classes</h1>
+
+<p>Let&rsquo;s start by creating a class <code>Calculator</code>, and adding some methods to it,
+step by step.</p>
 
 <p>In Ruby, you define a class like this:</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Calculator</span>
 <span class="k">end</span>
 </code></pre>
 
@@ -3630,9 +3649,9 @@ A class is defined using the keyword <code>class</code>, a name, and the
 keyword <code>end</code>.
 </p>
 
-<p>Also, you see that the class has the name <code>Person</code>, which starts with an
+<p>Also, you see that the class has the name <code>Calculator</code>, which starts with an
 uppercase letter. In Ruby, this is required, and you&rsquo;d get an error if you
-tried to define a class <code>person</code>.</p>
+tried to define a class <code>calculator</code>.</p>
 
 <p>Also, for class names that consist of several words the Ruby community has the
 convention to separate these words by uppercase letters, as in
@@ -3645,112 +3664,215 @@ Class names must start with an uppercase letter, and should use CamelCase.
 Variable and methods names should use snake_case.
 </p>
 
-<p>Ok, back to our class <code>Person</code>.</p>
+<p>Ok, back to our class <code>Calculator</code>.</p>
 
 <p>Since we&rsquo;ve defined a full, valid class, we can now already use it to create a
-new, concrete person instance, an object from it. Like so:</p>
-<pre class="highlight ruby"><code><span class="no">Person</span><span class="p">.</span><span class="nf">new</span>
+new, concrete calculator instance, an object from it.</p>
+
+<p>You can think about the instance as the concrete calculator object that you can
+hold in your hands, and use to do actual calculations. The class on the other
+hand is more like the idea or concept of a calculator, like the idea of it that
+you have when you order a calculator online.</p>
+
+<p>Ok, here&rsquo;s how to do create a new, concrete instance from our class:</p>
+<pre class="highlight ruby"><code><span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
 </code></pre>
 
-<p>That&rsquo;s right. <code>new</code> is a method, and it is defined on the <em>class</em> itself
-(which, as you might remember, is also an object). This method creates a new
-instance of the class, and returns it.</p>
+<p>That&rsquo;s right. <code>new</code> is a method, and it is defined on the class itself (which,
+as you might remember, is also an object, so it can have methods). This method
+creates a new instance of the class, and returns it.</p>
 
 <p class="hint">
-The method <code>new</code> is defined on any class, and returns a new instance
-of the class.
+The method <code>new</code> is defined on every class, and returns a new
+instance of the class.
 </p>
 
 <p>Cool. Let&rsquo;s have a look at that object:</p>
-<pre class="highlight ruby"><code><span class="nb">p</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span>
+<pre class="highlight ruby"><code><span class="nb">p</span> <span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
 </code></pre>
 
 <p>The output will seem a little bit weird, and technical at first:</p>
-<pre class="highlight plaintext"><code>#&lt;Person:0x007fb2fbe50910&gt;
+<pre class="highlight plaintext"><code>#&lt;Calculator:0x007fb2fbe50910&gt;
 </code></pre>
 
 <p>The format <code>#&lt;...&gt;</code> tells you that this object is not a simple thing like a
 number, string, or array. Instead, it just tells you the name of the class,
-<code>Person</code>, and the internal id that Ruby has assigned to this object.</p>
+<code>Calculator</code>, and the internal id that Ruby has assigned to this object.</p>
 
 <p>Every object has its own, unique, internal object id, and when I ran this code
 on my computer, Ruby assigned the id <code>0x007fb2fbe50910</code>. If you run it,
 you&rsquo;ll get a different one. In practice, most of the time, you can simply ignore
 this id.</p>
 
-<p>Also, we can check that our new person instance indeed is an instance of the
-class <code>Person</code>:</p>
+<p>Also, we can check that our new calculator instance indeed is an instance of
+the class <code>Calculator</code>:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span>
-<span class="o">&gt;</span> <span class="n">person</span><span class="p">.</span><span class="nf">class</span>
-<span class="o">=&gt;</span> <span class="no">Person</span>
-<span class="o">&gt;</span> <span class="n">person</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">Person</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Calculator</span>
+<span class="o">&gt;</span> <span class="k">end</span>
+<span class="o">&gt;</span> <span class="n">calculator</span> <span class="o">=</span> <span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
+<span class="o">&gt;</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">class</span>
+<span class="o">=&gt;</span> <span class="no">Calculator</span>
+<span class="o">&gt;</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">Calculator</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
 </code></pre>
 
-  <h1>Initializing objects</h1>
+  <h1>Defining instance methods</h1>
 
-<p><em>In the moment of birth</em></p>
+<p>If you have read closely methods can be defined and called on objects (i.e.
+instances), e.g. <code>1.odd?</code>. And you have just seen that they can also be
+defined on classes, e.g. <code>Calculator.new</code>.</p>
 
-<p>In order to make our class a little bit more useful, we want to be able to give
-it some initial data. In our case, we want the person to know its own name.</p>
+<p>Fairly straightforward, methods that are available on classes are called
+<em>class methods</em>, and methods that are available on instances are called
+<em>instance methods</em>.</p>
 
-<p>We can do this like so:</p>
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+<p>In this chapter we want to add the &ldquo;stand alone&rdquo; methods that we&rsquo;ve learned to
+port (move) in the previous chapters <a href="../writing_methods.html">Writing Methods</a>
+to our class <code>Calculator</code> so that they&rsquo;ll end up as instance methods.</p>
+
+<p>Here&rsquo;s how we can do that.</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Calculator</span>
+  <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">+</span> <span class="n">other</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre>
 
-<p>Now, there are a couple of things going on here. Let&rsquo;s go through them one by
-one.</p>
+<p>That&rsquo;s right. You simply move the method into the class body, so that it&rsquo;s
+enclosed by it.</p>
 
-<p>You see that we add a method called <code>initialize</code> to the class, and this method
-accepts a single argument, which is called <code>name</code>. At the moment, this method
-is still empty. We&rsquo;ll add some code to it in a bit.</p>
+<p class="hint">
+Instance methods are defined inside the class body.
+</p>
 
-<p>The method definition is indented by one level, that is, 2
-spaces. We do this in order to signal that the method <code>initialize</code> belongs
-to the class <code>Person</code>. Everything between the line <code>class Person</code> and the
-final line <code>end</code> is called the &ldquo;class body&rdquo;, and just like method bodies we
-indent them by one more level.</p>
+<p>Also note that the method definition is indented by one level, that is, 2
+spaces. This signals that the method <code>sum</code> belongs to the class <code>Calculator</code>.
+Everything between the line <code>class Calculator</code> and the final line <code>end</code> is
+called the &ldquo;class body&rdquo;, and just like method bodies we indent them by one more
+level.</p>
 
 <p class="hint formatting">
 On formatting: the keywords <code>class</code> and <code>end</code> sit on
 the same level. The class body is indented by one level.
 </p>
 
-<p>The important bit to learn for you is: the method <code>initialize</code> is a special
-method with a special meaning in Ruby:</p>
+<p>Cool.</p>
 
-<p>Whenever you call the method <code>new</code> on a class, as in <code>Person.new</code>, the class
-will create a new instance of itself. It will then, internally, call the method
-<code>initialize</code> on the new object. Doing so it will simply <em>pass all the
-arguments</em> that you passed to <code>new</code> <em>on to</em> the method <code>initialize</code>.</p>
+<p>So, how can we use the new method? That is, how can we <em>call</em> the method <code>sum</code>
+on a calculator?</p>
 
-<p>So we can now create a new person instance by calling &hellip;</p>
-<pre class="highlight ruby"><code><span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
+<p>Before you read more, think about this a little. In theory you have all the bits
+and pieces to answer this question:</p>
+
+<ul>
+<li>You know how to create a new calculator instance (object).</li>
+<li>You know how to call a method on an object.</li>
+<li>You know how to pass arguments (extra bits of information) to the method call.</li>
+</ul>
+
+<p>We can instantiate (&ldquo;order&rdquo;) a new instance from our <code>Calculator</code> class, and
+call the method <code>sum</code> on it like so:</p>
+<pre class="highlight ruby"><code><span class="n">calculator</span> <span class="o">=</span> <span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre>
 
-<p>&hellip; and the string <code>&quot;Ada&quot;</code> will be passed on to our <code>initialize</code> method, and
-end up being assigned to the local variable <code>name</code>.</p>
+<p>This will output <code>5</code>. Success :)</p>
 
-<p class="hint">
-The special method <code>initialize</code> is called under the hood when the
-object has been created by the class method <code>new</code>.
-</p>
+<p>A calculator that cannot do anything but additions is pretty useless. Let&rsquo;s
+spice our class up by adding more operations, i.e. methods. Also, let&rsquo;s rename
+<code>sum</code> to <code>plus</code> so it matches the operator:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Calculator</span>
+  <span class="k">def</span> <span class="nf">plus</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">+</span> <span class="n">other</span>
+  <span class="k">end</span>
 
-<p>Obviously, our <code>initialize</code> method does not <em>do</em> anything with the String
-passed, yet. That&rsquo;s right. We&rsquo;ll get to that in the next chapter.</p>
+  <span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">-</span> <span class="n">other</span>
+  <span class="k">end</span>
 
-<p>To recap, when you call <code>new</code> on the class <code>Person</code>, and pass the string
-<code>&quot;Ada&quot;</code> then the method <code>new</code> will create a new instance of the class, and call
-<code>initialize</code> on it, passing the same argument list, which in our case is the
-single string <code>&quot;Ada&quot;</code>: as in <code>object.initialize(&quot;Ada&quot;)</code>.</p>
+  <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">*</span> <span class="n">other</span>
+  <span class="k">end</span>
 
-<p>When we create a new instance of a class by the way of calling the method <code>new</code>
-on that class, we also say that we &ldquo;instantiate&rdquo; that object: By calling
-<code>Person.new</code> we instantiate a new person object.</p>
+  <span class="k">def</span> <span class="nf">devide</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">/</span> <span class="n">other</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Now our calculator already is slightly more useful: We can do the most basic
+math operations with it.</p>
+<pre class="highlight ruby"><code><span class="n">calculator</span> <span class="o">=</span> <span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">minus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">devide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<p>This will output:</p>
+<pre class="highlight plaintext"><code>5
+-1
+6
+0
+</code></pre>
+
+<p>Whoops!</p>
+
+<p>This looks all good except for the last line, right. Remember why that is?
+Right, deviding one integer number by another returns, again, an integer
+number. And these aren&rsquo;t quite great for calculating devisions.</p>
+
+<p>One thing we could do about this is require the users of our calculator to pass
+(provide) the appropriate types of numbers themselves. So it would be their own
+responsibility if something goes wrong with the devision.</p>
+
+<p>However, we could also think that a calculator should be smart enough to notice
+this.  So we could improve our calculator to always change the type of the
+numbers passed to floating point numbers as part of the method <code>devide</code>. In
+other words, the method <code>devide</code> would take the numbers, makes sure at least
+one of them is a <code>Float</code> (floating point number), and only then do the
+calculation.</p>
+
+<p>The method used to convert an integer to a float is <code>to_f</code>. When called on a
+float it will just return the float:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="nf">to_f</span>
+<span class="mi">1</span><span class="o">.</span><span class="mi">0</span>
+<span class="o">&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">.</span><span class="nf">to_f</span>
+<span class="mi">1</span><span class="o">.</span><span class="mi">0</span>
+</code></pre>
+
+<p>Alright, lets use that knowledge to improve our <code>devide</code> method. It will be
+sufficient to call the method <code>to_f</code> on one of the numbers, because that will
+make sure we get a <code>Float</code> back:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Calculator</span>
+  <span class="c1"># ...</span>
+
+  <span class="k">def</span> <span class="nf">devide</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+    <span class="n">number</span><span class="p">.</span><span class="nf">to_f</span> <span class="sr">/ other
+  end
+end
+</span></code></pre>
+
+<p>With that in place our calculator always returns a <code>Float</code> from the method
+<code>devide</code>:</p>
+<pre class="highlight ruby"><code><span class="n">calculator</span> <span class="o">=</span> <span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">minus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">devide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre>
+
+<p>This will output:</p>
+<pre class="highlight plaintext"><code>5
+-1
+6
+0.666666666666
+</code></pre>
+
+<p>Perfect.</p>
+
+<p>Let&rsquo;s move on, and define a class <code>Person</code>, which should be a even more fun.</p>
 
   <h1>Instance variables</h1>
 
