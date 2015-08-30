@@ -1,7 +1,30 @@
 # Defining a method
 
-Let's define a simple method that takes a number, adds the number `2` to it,
-and returns the result:
+So far you have seen methods that "belong" to objects, or, in other words,
+are defined on objects, and can be called on objects. E.g. you have seen the
+method `downcase` which is defined on every string.
+
+However, Ruby also knows methods that are not defined on any of these objects.
+They're sort of "stand alone" methods.
+
+For example, you can try this in `irb`:
+
+```ruby
+$ irb
+> is_a?(Object)
+true
+```
+
+We'll use this type of methods in this chapter because we want to focus on the
+characteristics of methods. If you're curious what's up with them have a look
+at the bonus chapter about the [top-level object](bonus/top_level.html). Later
+when you learn how to define your own classes we also look at defining methods
+for these.
+
+Ok, let's get started.
+
+Suppose we need to define a simple method that takes a number, adds the number
+`2` to it, and returns the result. Here's how we can do that:
 
 ```ruby
 def add_two(number)
@@ -33,7 +56,10 @@ In our case the argument list has one single argument `number`, which means
 our method can accept one single thing (object).
 
 The next line is the block of code that our method has ("encapsulates"). This
-is also referred to as the *method body*.
+is also referred to as the *method body*. In our case that's just one single
+line because the operation that our method encapsulates is very simple. Other
+methods (think of `sort`, defined on Arrays) would require more code, and are
+longer.
 
 Inside the method body the arguments are known as local variables: You can see
 how the code in our method body uses the variable name `number`.

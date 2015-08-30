@@ -13,6 +13,9 @@ the two most common data structures, Arrays and Hashes.
 All of this is about the *data* part. Methods on the other hand are about the
 *doing interesting things* part.
 
+In this chapter we'll have a closer look at the anatomy of a method, and you'll
+learn how to implement, and use, your own methods.
+
 ## Methods define behaviour
 
 Methods are all about defining *behaviour*, so that they can be applied to
@@ -34,11 +37,11 @@ Variables name things, methods name behaviour (code).
 Methods make code re-usable, by the way of packaging ("encapsulating") code and
 sticking a name on it.
 
-E.g. Ruby comes with lots of methods predefined - written by experienced
-programmers. So, unless you're studying computer science and you're faced with
-the exercise of implementing your own, complicated sorting algorithms for data
-collections, ... you'll just use the method `sort` that already comes defined
-for Arrays in Ruby out of the box.
+As you have seen Ruby comes with lots of methods predefined - written by
+experienced programmers. So, unless you're studying computer science and you're
+faced with the exercise of implementing your own, complicated sorting
+algorithms for data collections, ... you'll just use the method `sort` that
+already comes defined for Arrays in Ruby out of the box.
 
 Ok, let's see what makes up a method, and how we can define our own ones.
 

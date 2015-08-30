@@ -29,15 +29,6 @@
   - symbols
   - arrays
   - hashes
-- path: writing_methods
-  children:
-  - constituents
-  - definition
-  - usage
-  - return_values
-  - scopes
-  - combining
-  - printing
 - path: objects
   children:
   - classes
@@ -48,6 +39,15 @@
   - listing
   - predicates
   - bangs
+- path: writing_methods
+  children:
+  - constituents
+  - definition
+  - usage
+  - return_values
+  - scopes
+  - combining
+  - printing
 - path: writing_classes
   children:
   - initializers
@@ -76,6 +76,7 @@
 - path: bonus
   children:
   - string_interpolation
+  - top_level
   - other_methods
   - questions_commands
   - alternative-syntax

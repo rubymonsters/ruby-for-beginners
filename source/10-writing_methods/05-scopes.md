@@ -3,8 +3,8 @@
 *Spheres of visibility, like rooms in a house*
 
 When we talked about variables we mentioned that the most common type of
-variable is the "local variable", without explaining any further why they are
-local. Local to what? Where?
+variables is the "local variable", without explaining any further why they are
+local. Local to what? Where? We're finally ready to explain that more.
 
 Since we have now talked about methods, we can also discuss another important
 concept: scopes.
