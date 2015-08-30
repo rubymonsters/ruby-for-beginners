@@ -13,7 +13,11 @@ another one in a couple chapters).
 We'll discuss this concept quickly because you already need to know it in the
 next chapter, and the respective exercises.
 
-Let's jump right in:
+If some of this seems rather abstract to you, don't fret. It will become very
+practical, and you won't even think a lot about it any more, as soon as you
+actually work with variables while learning other things.
+
+Alright. Let's jump right in:
 
 In Ruby you can assign a name to something (an object) by using the so called
 assignment operator `=`. Like so:
@@ -72,10 +76,26 @@ You can pick whatever variable names you want, they're just names, like post-it
 notes stuck onto actual objects.
 </p>
 
+Since names are just names, the following examples would do exactly the same:
+
+```ruby
+a = 1
+puts a
+
+large_number = 1
+puts large_number
+
+apples = 1
+puts apples
+```
+
 However, also note that it makes sense to try and pick names that reveal your
-intention. The chapter <a href="/bonus/good_names.html">Using the right words</a> at
-the end of this book will talk more about this. Feel free to jump ahead if you
-are curious.
+intention. The chapter <a href="/bonus/good_names.html">Using the right
+words</a> at the end of this book will talk more about this. Feel free to jump
+ahead if you are curious. In short, the first example using `a` as a name would
+be fowned upon because it's wasting the opportunity to use a meaningful name.
+The second and third examples are just trying to be stupid, and pick names that
+don't match the "thing" (the object, number `1`) at all.
 
 There are a two more things about variable assignments that we'd like to
 point out before we move on.

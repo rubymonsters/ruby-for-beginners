@@ -38,25 +38,27 @@ However, when you do calculations with numbers, keep in mind that integer
 numbers ("integers") and decimal point numbers (floating point numbers, aka
 "floats") are different.
 
-If you do a calculation that starts with an integer you'll eventually always
+If you do a calculation that uses integer number you'll eventually always
 get an integer back:
 
 ```ruby
 $ irb
-> 1 + 2.0
+> 1 + 2
 => 3
 ```
 
-And if you start the expression with a float then you'll get a float back:
+However, if any of the numbers involved is a float, then you'll get a float back:
 
 ```ruby
 $ irb
 > 1.0 + 2
 => 3.0
+> 1 + 2.0
+=> 3.0
 ```
 
 <p class="hint">
-Mathmatical operations result in a number of the same type as they start with.
+Mathmatical operations result in a floating point number except if all numbers used are integer numbers.
 </p>
 
 This is, for example, important when you do a division (`/` means "divide by"):
@@ -70,11 +72,13 @@ $ irb
 As you can see any decimal places will be just cut off, since the result needs
 to be an integer number.
 
-However, if you start with a float:
+However, if you use floats:
 
 ```ruby
 $ irb
 > 3.0 / 2
+=> 1.5
+> 3 / 2.0
 => 1.5
 ```
 

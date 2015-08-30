@@ -28,6 +28,7 @@ Try computing these in `irb`:
 * `3.0 / 2`
 * `3 / 2.0`
 * `4 * 2.0`
+* `0 + 1`
 
 Is the result a float or an integer?
 
@@ -40,6 +41,15 @@ In Ruby (and many other languages) the operator for modulo is `%`.
 Try the following in `irb`:
 
 * `5 % 2`
+* `15 % 2`
+* `505 % 2`
+
+And:
+
+* `8 % 5`
+* `9 % 5`
+* `10 % 5`
+* `11 % 5`
 
 ## Exercise 1.4
 
@@ -49,9 +59,8 @@ more about them in a few chapters.
 In Ruby, numbers have methods that allow you to check whether the number is odd
 or even.
 
-Look through the <a href="http://ruby-doc.org/core-2.1.5/Fixnum.html">documentation for integer</a>
-numbers (called `Fixnum`) and find the methods that tell if a number is odd or
-even.
+Look through the <a href="http://ruby-doc.org/core-2.2.2/Integer.html">documentation for integer</a>
+numbers and find the methods that tell if a number is odd or even.
 
 Look at the examples for some of the other methods on that page.
 
@@ -67,8 +76,8 @@ In `irb`, use these methods to find out if certain numbers are odd or even.
 
 Try a bunch of numbers like `0, 1, 2, 99, -502` etc.
 
-<a href="/solutions_2/numbers-4.html" class="solution">Show solution</a>
+Try for yourself what it does, and google for "ruby number odd even" to find
+[the documentation](http://ruby-doc.org/core-2.2.2/Integer.html#method-i-odd-3F)
+for these methods.
 
-Try for yourself what it does, and google for "ruby abs" to find
-[the documentation](http://ruby-doc.org/core-2.0/Numeric.html#method-i-abs)
-for this method.
+<a href="/solutions_2/numbers-5.html" class="solution">Show solution</a>

@@ -1,11 +1,12 @@
 # Classes create objects
 
-Every object is an *instance* of a class.
+*Objects are instances of classes.*
 
-The class is kind of a blue print for the concrete object. Every time a
-concrete object (such as the String `"one string"`, the String `"another
-string"`, the String `"yet another string"`, and so on ...) is created, we say
-that the class is *instantiated*: an object is created from it.
+Classes are kind of blue prints for the concrete objects. Every time a concrete
+object (such as the String `"one string"`, the String `"another string"`, the
+String `"yet another string"`, and so on ...) is created:
+
+We say that the class is *instantiated*: an object is created from it.
 
 What does that mean?
 

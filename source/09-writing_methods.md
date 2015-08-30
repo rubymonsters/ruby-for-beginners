@@ -7,9 +7,8 @@ If you think about Twitter, it essentially takes 140 characters of text
 (which is data) from their users and displays it to others.
 
 You have already learned about the most important primitive (simple) types of
-data in Ruby: numbers, strings, true, false and nil. And we'll have a look at
-the two most common data structures, Arrays and Hashes, in a few
-[chapters](/more_built_in_classes.html).
+data in Ruby: numbers, strings, true, false and nil. And we've had a look at
+the two most common data structures, Arrays and Hashes.
 
 All of this is about the *data* part. Methods on the other hand are about the
 *doing interesting things* part.

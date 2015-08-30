@@ -54,7 +54,7 @@ A Hash is created by listing key/value pairs, separated by hash rockets, and enc
 Now, how do you actually look up the value that is associated with the key
 `"one"`?
 
-Just like with arrays you use sqare brackets, but instead of passing
+Just like with Arrays you use sqare brackets, but instead of passing
 a number indicating the position you now pass the key. Like so:
 
 ```ruby
@@ -68,6 +68,31 @@ refer to the Hash defined on the first line?
 In this example, `dictionary` is a Hash defined on the first line. `["one"]`
 looks up the value associated to the key `"one"`, which is `"eins"`. This value
 will be passed to `puts` which outputs it to the screen.
+
+## Setting a key to a value
+
+Also, just like with Arrays, there's a way to set key/value pairs on an existing
+Hash:
+
+```ruby
+dictionary = { "one" => "eins", "two" => "zwei", "three" => "drei" }
+dictionary["zero"] = "null"
+puts dictionary["zero"]
+```
+
+This prints out `null`.
+
+You could also overwrite existing key/values the same way. For example this
+would set the word `"uno"` to the key `"one"` (i.e. overwrite the existing pair
+with the value `"eins"`):
+
+```ruby
+dictionary = { "one" => "eins", "two" => "zwei", "three" => "drei" }
+dictionary["one"] = "uno"
+puts dictionary["one"]
+```
+
+So, this would now output `uno`.
 
 ## Any kind of objects
 

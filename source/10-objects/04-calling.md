@@ -32,7 +32,7 @@ In other words, you first address, or mention, the object that you want to talk
 to, and then, with the dot `.`, send a message by specifying the method name.
 
 <p class="hint">
-A dot is used to called a method on an object.
+A dot is used to call a method on an object.
 </p>
 
 Imagine the string `name` is a person you can talk to. You can ask questions by
