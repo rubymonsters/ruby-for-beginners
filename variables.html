@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/built_in_classes/hashes.html">
+    <nav class="page-nav"><a class="prev" href="/object_oriented_programming.html">
   Previous
 </a></nav>
     <nav class="page-nav"><a class="next" href="/variables/reusing_names.html">
@@ -116,6 +116,23 @@
       Object-oriented programming
     </a>
   </li>
+  <li class="active directory expanded">
+    <a href="/variables.html">
+      Variables
+    </a>
+    <ul>
+      <li>
+        <a href="/variables/reusing_names.html">
+          Reusing variable names
+        </a>
+      </li>
+      <li>
+        <a href="/variables/right_goes_first.html">
+          Things on the right go first
+        </a>
+      </li>
+    </ul>
+  </li>
   <li class="directory">
     <a href="/built_in_classes.html">
       Built-In Data Types
@@ -149,23 +166,6 @@
       <li>
         <a href="/built_in_classes/hashes.html">
           Hashes
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="active directory expanded">
-    <a href="/variables.html">
-      Variables
-    </a>
-    <ul>
-      <li>
-        <a href="/variables/reusing_names.html">
-          Reusing variable names
-        </a>
-      </li>
-      <li>
-        <a href="/variables/right_goes_first.html">
-          Things on the right go first
         </a>
       </li>
     </ul>
@@ -586,14 +586,24 @@ variables. This is basically the same concept that you might know from math,
 although in Ruby there are different kinds of variables (you will get to know
 another one in a couple chapters).</p>
 
+<p>We&rsquo;ll discuss this concept quickly because you already need to know it in the
+next chapter, and the respective exercises.</p>
+
+<p>Let&rsquo;s jump right in:</p>
+
 <p>In Ruby you can assign a name to something (an object) by using the so called
 assignment operator <code>=</code>. Like so:</p>
 <pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span>
 </code></pre>
 
-<p>This will <em>assign</em> the name <code>number</code> to the object that is the number <code>1</code>. From
-now on we can refer to this object by using the name <code>number</code>. For example the
-following code would output the number <code>1</code>:</p>
+<p>This will <em>assign</em> the name <code>number</code> to the &ldquo;thing&rdquo; (object) that is the number
+<code>1</code>. From now on we can refer to this object by using the name <code>number</code>. For
+example the following code would output the number <code>1</code>:</p>
+
+<p class="hint">
+A name on the left side of the assignment operator <code>=</code> is assigned
+to the object on the right side.
+</p>
 <pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="nb">puts</span> <span class="n">number</span>
 </code></pre>
@@ -611,10 +621,10 @@ A variable itself is not a &ldquo;thing&rdquo;. It&rsquo;s just a name for a thi
 and stuck on the actual thing, which is an object (in this case, a number).</p>
 
 <p>Imagine you were in the middle of learning some Spanish, and sticked post-its
-onto things in your apartment: the name &ldquo;nevara&rdquo; onto the refridgerator, &ldquo;cama&rdquo;
-onto your bed, and &ldquo;puerta del baño&rdquo; onto the bathroom door.</p>
+onto things in your apartment: the name <em>nevara</em> onto the refridgerator, <em>cama</em>
+onto your bed, and <em>puerta del baño</em> onto the bathroom door.</p>
 
-<p>Now, whenever you use one of these terms, as in &ldquo;abrir la nevera&rdquo; (open the
+<p>Now, whenever you use one of these terms, as in <em>abrir la nevera</em> (open the
 refridgerator) in order to learn the language and rehearse vocabulary, you&rsquo;ll
 obviously refer to the object, and open its actual, physical door.</p>
 
@@ -633,15 +643,29 @@ You can pick whatever variable names you want, they&rsquo;re just names, like po
 notes stuck onto actual objects.
 </p>
 
+<p>Since names are just names, the following examples would do exactly the same:</p>
+<pre class="highlight ruby"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">puts</span> <span class="n">a</span>
+
+<span class="n">large_number</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">puts</span> <span class="n">large_number</span>
+
+<span class="n">apples</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">puts</span> <span class="n">apples</span>
+</code></pre>
+
 <p>However, also note that it makes sense to try and pick names that reveal your
-intention. The chapter <a href="/bonus/good_names.html">Using the right words</a> at
-the end of this book will talk more about this. Feel free to jump ahead if you
-are curious.</p>
+intention. The chapter <a href="/bonus/good_names.html">Using the right
+words</a> at the end of this book will talk more about this. Feel free to jump
+ahead if you are curious. In short, the first example using <code>a</code> as a name would
+be fowned upon because it&rsquo;s wasting the opportunity to use a meaningful name.
+The second and third examples are just trying to be stupid, and pick names that
+don&rsquo;t match the &ldquo;thing&rdquo; (the object, number <code>1</code>) at all.</p>
 
 <p>There are a two more things about variable assignments that we&rsquo;d like to
 point out before we move on.</p>
 
-        <nav class="page-nav"><a class="prev" href="/built_in_classes/hashes.html">
+        <nav class="page-nav"><a class="prev" href="/object_oriented_programming.html">
   Previous
 </a></nav>
         <nav class="page-nav"><a class="next" href="/variables/reusing_names.html">

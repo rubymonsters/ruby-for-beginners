@@ -113,6 +113,23 @@
     </a>
   </li>
   <li class="directory">
+    <a href="/variables.html">
+      Variables
+    </a>
+    <ul>
+      <li>
+        <a href="/variables/reusing_names.html">
+          Reusing variable names
+        </a>
+      </li>
+      <li>
+        <a href="/variables/right_goes_first.html">
+          Things on the right go first
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li class="directory">
     <a href="/built_in_classes.html">
       Built-In Data Types
     </a>
@@ -145,23 +162,6 @@
       <li>
         <a href="/built_in_classes/hashes.html">
           Hashes
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
-    <a href="/variables.html">
-      Variables
-    </a>
-    <ul>
-      <li>
-        <a href="/variables/reusing_names.html">
-          Reusing variable names
-        </a>
-      </li>
-      <li>
-        <a href="/variables/right_goes_first.html">
-          Things on the right go first
         </a>
       </li>
     </ul>
@@ -1468,16 +1468,221 @@ much, unless you really want to. Ruby is a very good language to start learning
 programming for lots of reasons.
 </p>
 
+  <h1>Variables</h1>
+
+<p><em>Naming things</em></p>
+
+<p>In order to refer to the &ldquo;things&rdquo; (objects) that our program deals with we want
+to assign names to them.</p>
+
+<p>Every practical programming language has a feature to do this, called
+variables. This is basically the same concept that you might know from math,
+although in Ruby there are different kinds of variables (you will get to know
+another one in a couple chapters).</p>
+
+<p>We&rsquo;ll discuss this concept quickly because you already need to know it in the
+next chapter, and the respective exercises.</p>
+
+<p>Let&rsquo;s jump right in:</p>
+
+<p>In Ruby you can assign a name to something (an object) by using the so called
+assignment operator <code>=</code>. Like so:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre>
+
+<p>This will <em>assign</em> the name <code>number</code> to the &ldquo;thing&rdquo; (object) that is the number
+<code>1</code>. From now on we can refer to this object by using the name <code>number</code>. For
+example the following code would output the number <code>1</code>:</p>
+
+<p class="hint">
+A name on the left side of the assignment operator <code>=</code> is assigned
+to the object on the right side.
+</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">puts</span> <span class="n">number</span>
+</code></pre>
+
+<p>One important thing to note here is that a variable is not a &ldquo;thing&rdquo; an object
+by itself. Instead it&rsquo;s just a <em>name</em> for an actual object. In our example the
+number <code>1</code> is an object, while <code>number</code> is a name for it because we&rsquo;ve assigned
+it.</p>
+
+<p class="hint">
+A variable itself is not a &ldquo;thing&rdquo;. It&rsquo;s just a name for a thing (an object).
+</p>
+
+<p>You can think of it like a post-it note with the name <code>number</code> written on it,
+and stuck on the actual thing, which is an object (in this case, a number).</p>
+
+<p>Imagine you were in the middle of learning some Spanish, and sticked post-its
+onto things in your apartment: the name <em>nevara</em> onto the refridgerator, <em>cama</em>
+onto your bed, and <em>puerta del baño</em> onto the bathroom door.</p>
+
+<p>Now, whenever you use one of these terms, as in <em>abrir la nevera</em> (open the
+refridgerator) in order to learn the language and rehearse vocabulary, you&rsquo;ll
+obviously refer to the object, and open its actual, physical door.</p>
+
+<p>That&rsquo;s pretty much how variable assignment works in Ruby. There&rsquo;s a &ldquo;thing&rdquo;,
+the object on the right side of the assignment operator <code>=</code>, and the name on
+the left side is being assigned to it.</p>
+
+<p>Whenever we use a variable name that has been defined before we refer to the
+actual object that it has been assigned to. E.g. on the second line of the
+code example above <code>number</code> refers to the actual object, the number <code>1</code> that
+it has been assigned to on the first line. Therefore <code>puts number</code> outputs
+the number.</p>
+
+<p class="hint">
+You can pick whatever variable names you want, they&rsquo;re just names, like post-it
+notes stuck onto actual objects.
+</p>
+
+<p>Since names are just names, the following examples would do exactly the same:</p>
+<pre class="highlight ruby"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">puts</span> <span class="n">a</span>
+
+<span class="n">large_number</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">puts</span> <span class="n">large_number</span>
+
+<span class="n">apples</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">puts</span> <span class="n">apples</span>
+</code></pre>
+
+<p>However, also note that it makes sense to try and pick names that reveal your
+intention. The chapter <a href="/bonus/good_names.html">Using the right
+words</a> at the end of this book will talk more about this. Feel free to jump
+ahead if you are curious. In short, the first example using <code>a</code> as a name would
+be fowned upon because it&rsquo;s wasting the opportunity to use a meaningful name.
+The second and third examples are just trying to be stupid, and pick names that
+don&rsquo;t match the &ldquo;thing&rdquo; (the object, number <code>1</code>) at all.</p>
+
+<p>There are a two more things about variable assignments that we&rsquo;d like to
+point out before we move on.</p>
+
+  <h1>Reusing variable names</h1>
+
+<p>It is also important to keep in mind that a name is unique, in the sense that
+the same name can only be assigned to one value (object) at a time.</p>
+
+<p>In other words, if you assign different values to the same variable, then
+assignments that happen later will simply overwrite previous ones. Like so:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="nb">puts</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+</code></pre>
+
+<p>This, again, would output <code>14</code>.</p>
+
+<p class="hint">
+Variable names can be re-used, and re-assigned.
+</p>
+
+<p>The first line assigns the name <code>number</code> to the number <code>4</code>. The second line
+re-assigns it to another object.</p>
+
+<p>Getting back to our post-its metaphor &hellip; this would stick a post-it with the
+name <code>number</code> on one thing, and then later take it off of it, and stick it on
+something else.</p>
+
+<p>Let&rsquo;s look at it under the microscope:</p>
+
+<ul>
+<li>On the <strong>first line</strong> Ruby creates the number (object) <code>4</code>.</li>
+<li>It then assigns the name <code>number</code> to it (sticks a post-it onto it).</li>
+<li>On the <strong>second line</strong>, Ruby first looks at the stuff on the right side,
+and evaluates the expression <code>number * 3</code>. Doing so it will create
+the number (object) <code>3</code> and multiply it with the object that currently has
+the name <code>number</code>, which is <code>4</code>. This operation results in a new number
+(object) <code>12</code>.</li>
+<li>Now Ruby is finally ready to stick the name <code>number</code> on the result <code>12</code>.
+I.e. <em>from now on</em> the name <code>number</code> refers to a different object, which is
+<code>12</code>.</li>
+<li>On the <strong>third line</strong> Ruby will, again, first look at the expression <code>number + 2</code>
+on the right. It creates the object <code>2</code> and adds it to the object that currently
+has the name <code>number</code>. This results in a new number (object) <code>14</code>.</li>
+<li>Finally Ruby passes this object <code>14</code> to <code>puts</code>, which outputs it to the
+screen.</li>
+</ul>
+
+<p>Of course, you would probably never actually write this exact code in practice
+since you can simply do all this in just one line instead: <code>puts 4 * 3 + 2</code>.</p>
+
+<p>However, sometimes you&rsquo;ll find or write code that assigns an initial value to a
+variable, and then keeps working on it for a few more lines. This sometimes is
+useful to break up long lines, and make code more readable.</p>
+
+<p class="hint">
+Using variable names can be useful to break up long lines and make code more
+expressive and readable.
+</p>
+
+<p>Also, Ruby has different kinds of variables.</p>
+
+<p>The kind of variable that we&rsquo;ve introduced so far is called a <em>local variable</em>,
+and it&rsquo;s the one used most often. You will learn about another type of
+variables later when we talk about classes and objects.</p>
+
+<p class="hint formatting">
+On formatting: Note that there are spaces around the assignment operator `=`
+as well as the arithmetical operators `+` and `*`.
+</p>
+
+  <h1>Things on the right go first</h1>
+
+<p>One last thing that is worth mentioning about variables:</p>
+
+<p>Just as in traffic (well, at least in
+<a href="https://en.wikipedia.org/wiki/Right-_and_left-hand_traffic">most parts of the world</a>),
+things on the right side go first :)</p>
+
+<p>For a variable assignment, in order to assign the thing on the right side to
+the name on the left side, Ruby first needs to figure out the thing on the
+right. As you will see later the same is true for many other expressions in
+Ruby.</p>
+
+<p>In our example above it will first create the object that is the number <code>1</code>,
+and then assign it to the name <code>number</code>. The following example makes that more
+clear:</p>
+<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="nb">puts</span> <span class="n">number</span>
+</code></pre>
+
+<p>When Ruby looks at the first line <code>number = 2 + 3 * 4</code> it notices that this is
+using the assignment operator <code>=</code>. Therefor, before it can assign the name
+<code>number</code> to the &ldquo;thing&rdquo; (object) on the right &hellip; it first needs to know what
+that thing is.</p>
+
+<p>So, before she does anything else, Ruby will first look at the expression <code>2 +
+3 * 4</code>, which will result in the number (object) <code>14</code>. She will <em>then</em> assign
+the name <code>number</code> to this object (i.e. evaluate the assignment operator <code>=</code>).</p>
+
+<p>You can imagine that in this moment, when Ruby starts evaluating the assignment
+<code>=</code> the code temporarily looks like this: <code>number = 14</code> (because the
+calculation has returned the number <code>14</code>).</p>
+
+<p>Does this make sense?</p>
+
+<p>Again, on the second line Ruby will then pass the thing with the name <code>number</code>
+(which is <code>14</code>) to <code>puts</code>, which will output it to the screen.</p>
+
+<p class="hint">
+Ruby evaluates the expression on the right first.
+</p>
+
   <h1>Built-In Data Types</h1>
 
 <p>As mentioned before, Ruby comes with lots of things already baked in, and
 provides you with tons of tools to use and hit the road running.</p>
 
-<p>We&rsquo;ll start by looking at some of the most common data types in Ruby.  Data
-types are &ldquo;things&rdquo; that are mainly used to represent data, such as numbers,
-text, and other values.</p>
+<p>We&rsquo;ll look at some of the most common data types in Ruby. Data types are types
+of &ldquo;things&rdquo; that are mainly used to represent data, such as numbers, text, and
+other values.</p>
 
-<p>We will have a quick look at each the following ones:</p>
+<p>This is basically the &ldquo;stuff&rdquo; that you, as a Ruby programmers will work with,
+when we work with actual data, that is interesting to you, or your users in one
+way or the other.</p>
+
+<p>We will discusss the following data types:</p>
 
 <ul>
 <li>Numbers</li>
@@ -1490,7 +1695,8 @@ text, and other values.</p>
 
 <p>These &ldquo;kinds of things&rdquo; (objects) cover like 98% of all built-in data types
 that you&rsquo;ll be using on a day to day basis, i.e. these are being used all over
-the place. There are more, but those are rather exotic, and rarely used.</p>
+the place. There are more data types, but those are rather exotic, and used
+much less often.</p>
 
 <p>Numbers and Strings (which is just a strange name for &ldquo;texts&rdquo;) are some of the
 most basic &ldquo;things&rdquo; that you deal with in Ruby on a regular basis. The are also
@@ -2299,176 +2505,6 @@ two Hashes are exactly the same:</p>
 <pre class="highlight ruby"><code><span class="p">{</span> <span class="ss">:one</span> <span class="o">=&gt;</span> <span class="s2">"eins"</span><span class="p">,</span> <span class="ss">:two</span> <span class="o">=&gt;</span> <span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">:three</span> <span class="o">=&gt;</span> <span class="s2">"drei"</span> <span class="p">}</span>
 <span class="p">{</span> <span class="ss">one: </span><span class="s2">"eins"</span><span class="p">,</span> <span class="ss">two: </span><span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">three: </span><span class="s2">"drei"</span> <span class="p">}</span>
 </code></pre>
-
-  <h1>Variables</h1>
-
-<p><em>Naming things</em></p>
-
-<p>In order to refer to the &ldquo;things&rdquo; (objects) that our program deals with we want
-to assign names to them.</p>
-
-<p>Every practical programming language has a feature to do this, called
-variables. This is basically the same concept that you might know from math,
-although in Ruby there are different kinds of variables (you will get to know
-another one in a couple chapters).</p>
-
-<p>In Ruby you can assign a name to something (an object) by using the so called
-assignment operator <code>=</code>. Like so:</p>
-<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span>
-</code></pre>
-
-<p>This will <em>assign</em> the name <code>number</code> to the object that is the number <code>1</code>. From
-now on we can refer to this object by using the name <code>number</code>. For example the
-following code would output the number <code>1</code>:</p>
-<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="nb">puts</span> <span class="n">number</span>
-</code></pre>
-
-<p>One important thing to note here is that a variable is not a &ldquo;thing&rdquo; an object
-by itself. Instead it&rsquo;s just a <em>name</em> for an actual object. In our example the
-number <code>1</code> is an object, while <code>number</code> is a name for it because we&rsquo;ve assigned
-it.</p>
-
-<p class="hint">
-A variable itself is not a &ldquo;thing&rdquo;. It&rsquo;s just a name for a thing (an object).
-</p>
-
-<p>You can think of it like a post-it note with the name <code>number</code> written on it,
-and stuck on the actual thing, which is an object (in this case, a number).</p>
-
-<p>Imagine you were in the middle of learning some Spanish, and sticked post-its
-onto things in your apartment: the name &ldquo;nevara&rdquo; onto the refridgerator, &ldquo;cama&rdquo;
-onto your bed, and &ldquo;puerta del baño&rdquo; onto the bathroom door.</p>
-
-<p>Now, whenever you use one of these terms, as in &ldquo;abrir la nevera&rdquo; (open the
-refridgerator) in order to learn the language and rehearse vocabulary, you&rsquo;ll
-obviously refer to the object, and open its actual, physical door.</p>
-
-<p>That&rsquo;s pretty much how variable assignment works in Ruby. There&rsquo;s a &ldquo;thing&rdquo;,
-the object on the right side of the assignment operator <code>=</code>, and the name on
-the left side is being assigned to it.</p>
-
-<p>Whenever we use a variable name that has been defined before we refer to the
-actual object that it has been assigned to. E.g. on the second line of the
-code example above <code>number</code> refers to the actual object, the number <code>1</code> that
-it has been assigned to on the first line. Therefore <code>puts number</code> outputs
-the number.</p>
-
-<p class="hint">
-You can pick whatever variable names you want, they&rsquo;re just names, like post-it
-notes stuck onto actual objects.
-</p>
-
-<p>However, also note that it makes sense to try and pick names that reveal your
-intention. The chapter <a href="/bonus/good_names.html">Using the right words</a> at
-the end of this book will talk more about this. Feel free to jump ahead if you
-are curious.</p>
-
-<p>There are a two more things about variable assignments that we&rsquo;d like to
-point out before we move on.</p>
-
-  <h1>Reusing variable names</h1>
-
-<p>It is also important to keep in mind that a name is unique, in the sense that
-the same name can only be assigned to one value (object) at a time.</p>
-
-<p>In other words, if you assign different values to the same variable, then
-assignments that happen later will simply overwrite previous ones. Like so:</p>
-<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mi">3</span>
-<span class="nb">puts</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
-</code></pre>
-
-<p>This, again, would output <code>14</code>.</p>
-
-<p class="hint">
-Variable names can be re-used, and re-assigned.
-</p>
-
-<p>The first line assigns the name <code>number</code> to the number <code>4</code>. The second line
-re-assigns it to another object.</p>
-
-<p>Getting back to our post-its metaphor &hellip; this would stick a post-it with the
-name <code>number</code> on one thing, and then later take it off of it, and stick it on
-something else.</p>
-
-<p>Let&rsquo;s look at it under the microscope:</p>
-
-<ul>
-<li>On the <strong>first line</strong> Ruby creates the number (object) <code>4</code>.</li>
-<li>It then assigns the name <code>number</code> to it (sticks a post-it onto it).</li>
-<li>On the <strong>second line</strong>, Ruby first looks at the stuff on the right side,
-and evaluates the expression <code>number * 3</code>. Doing so it will create
-the number (object) <code>3</code> and multiply it with the object that currently has
-the name <code>number</code>, which is <code>4</code>. This operation results in a new number
-(object) <code>12</code>.</li>
-<li>Now Ruby is finally ready to stick the name <code>number</code> on the result <code>12</code>.
-I.e. <em>from now on</em> the name <code>number</code> refers to a different object, which is
-<code>12</code>.</li>
-<li>On the <strong>third line</strong> Ruby will, again, first look at the expression <code>number + 2</code>
-on the right. It creates the object <code>2</code> and adds it to the object that currently
-has the name <code>number</code>. This results in a new number (object) <code>14</code>.</li>
-<li>Finally Ruby passes this object <code>14</code> to <code>puts</code>, which outputs it to the
-screen.</li>
-</ul>
-
-<p>Of course, no one would actually write this exact code in practice since you can
-simply do all this in just one line instead: <code>puts 2 + 3 * 4</code>.</p>
-
-<p>However, sometimes you&rsquo;ll find or write code that assigns an initial value to a
-variable, and then keeps working on it for a few more lines. This sometimes is
-useful to break up long lines, and make code more readable.</p>
-
-<p class="hint">
-Using variable names can be useful to break up long lines and make code more
-expressive and readable.
-</p>
-
-<p>Also, Ruby has different kinds of variables.</p>
-
-<p>The kind of variable that we&rsquo;ve introduced so far is called a <em>local variable</em>,
-and it&rsquo;s the one used most often. You will learn about another type of
-variables later when we talk about classes and objects.</p>
-
-<p class="hint formatting">
-On formatting: Note that there are spaces around the assignment operator `=`
-as well as the arithmetical operators `+` and `*`.
-</p>
-
-  <h1>Things on the right go first</h1>
-
-<p>Just as in traffic (well, at least in
-<a href="https://en.wikipedia.org/wiki/Right-_and_left-hand_traffic">most parts of the world</a>),
-things on the right side go first :)</p>
-
-<p>For a variable assignment, in order to assign the thing on the right side to
-the name on the left side, Ruby first needs to figure out the thing on the
-right. As you will see later the same is true for many other expressions in
-Ruby.</p>
-
-<p>In our example above it will first create the object that is the number <code>1</code>,
-and then assign it to the name <code>number</code>. The following example makes that more
-clear:</p>
-<pre class="highlight ruby"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
-<span class="nb">puts</span> <span class="n">number</span>
-</code></pre>
-
-<p>On the first line Ruby will first look at the expression <code>2 + 3 * 4</code>, which
-will result in the number (object) <code>14</code>. Ruby will <em>then</em> assign the name
-<code>number</code> to this object (i.e. evaluate the assignment operator <code>=</code>).</p>
-
-<p>You can imagine that in this moment, when Ruby starts evaluating the assignment
-<code>=</code> the code temporarily looks like this: <code>number = 14</code> (because the
-calculation has returned the number <code>14</code>).</p>
-
-<p>Does this make sense?</p>
-
-<p>Again, on the second line Ruby will then pass the thing with the name <code>number</code>
-(which is <code>14</code>) to <code>puts</code>, which will output it to the screen.</p>
-
-<p class="hint">
-Ruby evaluates the expression on the right first.
-</p>
 
   <h1>Writing Methods</h1>
 
@@ -7536,9 +7572,10 @@ in the following calculations?</p>
 <p>Try computing these in <code>irb</code>:</p>
 
 <ul>
+<li><code>3 / 2</code></li>
 <li><code>3.0 / 2</code></li>
 <li><code>3 / 2.0</code></li>
-<li><code>4 ** 2.0</code></li>
+<li><code>4 * 2.0</code></li>
 </ul>
 
 <p>Is the result a float or an integer?</p>
@@ -7673,7 +7710,7 @@ line:</p>
 <span class="c1"># your code goes here</span>
 </code></pre>
 
-<p>So that, when you run your code (run <code>ruby arrays_1-1.rb</code>), you get the
+<p>&hellip; so that, when you run your code (run <code>ruby arrays_1-1.rb</code>), you get the
 following output:</p>
 <pre class="highlight ruby"><code><span class="mi">5</span>
 </code></pre>
@@ -7700,7 +7737,7 @@ your code, you get the following output:</p>
 <span class="nb">p</span> <span class="n">numbers</span>
 </code></pre>
 
-<p>So that you get the following output:</p>
+<p>&hellip; so that you get the following output:</p>
 <pre class="highlight ruby"><code><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 </code></pre>
 
@@ -7755,7 +7792,7 @@ to your exercises directory in the terminal. E.g. <code>cd ~/ruby-for-beginners/
 <span class="c1"># your code goes here</span>
 </code></pre>
 
-<p>So that it prints out <code>dos</code>.</p>
+<p>&hellip; so that it prints out <code>dos</code>.</p>
 
 <p><a href="/solutions_2/hashes_1-1.html" class="solution">Show solution</a></p>
 
@@ -7767,7 +7804,7 @@ to your exercises directory in the terminal. E.g. <code>cd ~/ruby-for-beginners/
 <span class="nb">puts</span> <span class="n">dictionary</span><span class="p">[</span><span class="ss">:four</span><span class="p">]</span>
 </code></pre>
 
-<p>So that it prints out <code>cuatro</code>.</p>
+<p>&hellip; so that it prints out <code>cuatro</code>.</p>
 
 <p><a href="/solutions_2/hashes_1-2.html" class="solution">Show solution</a></p>
 

@@ -19,7 +19,7 @@
     <nav class="page-nav"><a class="prev" href="/variables/reusing_names.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/writing_methods.html">
+    <nav class="page-nav"><a class="next" href="/built_in_classes.html">
   Next
 </a></nav>
 
@@ -116,6 +116,23 @@
       Object-oriented programming
     </a>
   </li>
+  <li class="directory expanded">
+    <a href="/variables.html">
+      Variables
+    </a>
+    <ul>
+      <li>
+        <a href="/variables/reusing_names.html">
+          Reusing variable names
+        </a>
+      </li>
+      <li class="active">
+        <a href="/variables/right_goes_first.html">
+          Things on the right go first
+        </a>
+      </li>
+    </ul>
+  </li>
   <li class="directory">
     <a href="/built_in_classes.html">
       Built-In Data Types
@@ -149,23 +166,6 @@
       <li>
         <a href="/built_in_classes/hashes.html">
           Hashes
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory expanded">
-    <a href="/variables.html">
-      Variables
-    </a>
-    <ul>
-      <li>
-        <a href="/variables/reusing_names.html">
-          Reusing variable names
-        </a>
-      </li>
-      <li class="active">
-        <a href="/variables/right_goes_first.html">
-          Things on the right go first
         </a>
       </li>
     </ul>
@@ -576,6 +576,8 @@
         <nav class="menu"><a href="#"></a></nav>
         <h1>Things on the right go first</h1>
 
+<p>One last thing that is worth mentioning about variables:</p>
+
 <p>Just as in traffic (well, at least in
 <a href="https://en.wikipedia.org/wiki/Right-_and_left-hand_traffic">most parts of the world</a>),
 things on the right side go first :)</p>
@@ -592,9 +594,14 @@ clear:</p>
 <span class="nb">puts</span> <span class="n">number</span>
 </code></pre>
 
-<p>On the first line Ruby will first look at the expression <code>2 + 3 * 4</code>, which
-will result in the number (object) <code>14</code>. Ruby will <em>then</em> assign the name
-<code>number</code> to this object (i.e. evaluate the assignment operator <code>=</code>).</p>
+<p>When Ruby looks at the first line <code>number = 2 + 3 * 4</code> it notices that this is
+using the assignment operator <code>=</code>. Therefor, before it can assign the name
+<code>number</code> to the &ldquo;thing&rdquo; (object) on the right &hellip; it first needs to know what
+that thing is.</p>
+
+<p>So, before she does anything else, Ruby will first look at the expression <code>2 +
+3 * 4</code>, which will result in the number (object) <code>14</code>. She will <em>then</em> assign
+the name <code>number</code> to this object (i.e. evaluate the assignment operator <code>=</code>).</p>
 
 <p>You can imagine that in this moment, when Ruby starts evaluating the assignment
 <code>=</code> the code temporarily looks like this: <code>number = 14</code> (because the
@@ -612,7 +619,7 @@ Ruby evaluates the expression on the right first.
         <nav class="page-nav"><a class="prev" href="/variables/reusing_names.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/writing_methods.html">
+        <nav class="page-nav"><a class="next" href="/built_in_classes.html">
   Next
 </a></nav>
       </article>

@@ -66,6 +66,18 @@
       <priority>0.5</priority>
     </url>
     <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/variables/reusing_names.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/variables/right_goes_first.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/variables.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/built_in_classes/numbers.html</loc>
       <priority>0.5</priority>
     </url>
@@ -91,18 +103,6 @@
     </url>
     <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/built_in_classes.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/variables/reusing_names.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/variables/right_goes_first.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/variables.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
