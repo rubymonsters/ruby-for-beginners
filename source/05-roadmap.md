@@ -28,7 +28,14 @@ from a little bit of a philosophical perspective. We do this to set a little
 bit of a context for the terms *object*, *class*, and *method* which will
 be used quite frequently from then on.
 
-### 2. Built-In Data Types
+### 2. Variables
+
+In order to do things with objects, and form readable sentences (code) we
+need to be able to assign names to them.
+
+This chapter explains variables in Ruby.
+
+### 3. Built-In Data Types
 
 Ruby comes with lots of batteries included. Things that are built-in, and
 ready for you to be used when you open an empty Ruby file, or IRB.
@@ -52,24 +59,18 @@ them in order to write your own, working code. However, they're very widely
 used and many (many!) examples out there use them. So we introduce them
 briefly, too.
 
-### 3. Variables
-
-In order to do things with objects, and form readable sentences (code) we
-need to be able to assign names to them. This chapter explains variables in
-Ruby.
-
-### 4. Writing Methods
-
-While variables give names to things, methods give names to behaviour.  Methods
-are like the swiss-army knife of programming.  We'll have a look at the anatomy
-of a method, and learn how we can define our own ones.
-
-### 5. Objects, Classes, Methods
+### 4. Objects, Classes, Methods
 
 This chapter discusses how objects and classes relate to each other, how
 methods can be called on objects, and explores a number of different methods.
 It also has a quick look to see what's up with that magic, so-called top-level
 object in Ruby.
+
+### 5. Writing Methods
+
+While variables give names to things, methods give names to behaviour.  Methods
+are like the swiss-army knife of programming.  We'll have a look at the anatomy
+of a method, and learn how we can define our own ones.
 
 ### 6. Writing Classes
 

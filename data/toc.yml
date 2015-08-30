@@ -50,6 +50,8 @@
   - printing
 - path: writing_classes
   children:
+  - definition
+  - methods
   - initializers
   - instance_variables
   - attribute_readers

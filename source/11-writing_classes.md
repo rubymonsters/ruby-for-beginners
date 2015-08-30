@@ -26,85 +26,8 @@ Since you are a `Person`, you are able to remember your own name. And you are
 able to do something with it: When asked, you can tell your name to others,
 that is, you can return it to the "caller", to whoever asked.
 
-Let's start creating this class, step by step.
+We'll define this exact class in just a few chapters. However, before we do
+that, we'll first look at how to define the method `add_two` to a class
+`Calculator` ... just because we can, and because you're already familiar with
+these methods.
 
-In Ruby, you define a class like this:
-
-```ruby
-class Person
-end
-```
-
-That's all. It's not a very useful class, since it's completely empty, but
-it's a class.
-
-<p class="hint">
-A class is defined using the keyword <code>class</code>, a name, and the
-keyword <code>end</code>.
-</p>
-
-Also, you see that the class has the name `Person`, which starts with an
-uppercase letter. In Ruby, this is required, and you'd get an error if you
-tried to define a class `person`.
-
-Also, for class names that consist of several words the Ruby community has the
-convention to separate these words by uppercase letters, as in
-`RubyStudyGroup`.  This is called CamelCase, because of the humps. Whereas for
-variable and method names we use underscores, and keep everything lowercase:
-`local_variable` and `method_name`. This is called snake_case.
-
-<p class="hint">
-Class names must start with an uppercase letter, and should use CamelCase.
-Variable and methods names should use snake_case.
-</p>
-
-Ok, back to our class `Person`.
-
-Since we've defined a full, valid class, we can now already use it to create a
-new, concrete person instance, an object from it. Like so:
-
-```ruby
-Person.new
-```
-
-That's right. `new` is a method, and it is defined on the *class* itself
-(which, as you might remember, is also an object). This method creates a new
-instance of the class, and returns it.
-
-<p class="hint">
-The method <code>new</code> is defined on any class, and returns a new instance
-of the class.
-</p>
-
-Cool. Let's have a look at that object:
-
-```ruby
-p Person.new
-```
-
-The output will seem a little bit weird, and technical at first:
-
-```
-#<Person:0x007fb2fbe50910>
-```
-
-The format `#<...>` tells you that this object is not a simple thing like a
-number, string, or array. Instead, it just tells you the name of the class,
-`Person`, and the internal id that Ruby has assigned to this object.
-
-Every object has its own, unique, internal object id, and when I ran this code
-on my computer, Ruby assigned the id `0x007fb2fbe50910`. If you run it,
-you'll get a different one. In practice, most of the time, you can simply ignore
-this id.
-
-Also, we can check that our new person instance indeed is an instance of the
-class `Person`:
-
-```ruby
-$ irb
-> person = Person.new
-> person.class
-=> Person
-> person.is_a?(Person)
-=> true
-```

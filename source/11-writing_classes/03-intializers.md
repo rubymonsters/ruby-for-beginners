@@ -2,8 +2,30 @@
 
 *In the moment of birth*
 
-In order to make our class a little bit more useful, we want to be able to give
-it some initial data. In our case, we want the person to know its own name.
+Let's start over, and define a new class.
+
+Remember how we said that objects can be thought of as two things: They know
+*stuff*, and they can *do things*.
+
+Let's define a class `Person`. People obviously also know things, and can do things.
+
+Here's how to define a shiny, new, empty class `Person`:
+
+```ruby
+class Person
+end
+```
+
+Again, that's not a very useful class, but we can instantiate it, and create an
+actual, concrete person instance (object) from it:
+
+```ruby
+p Person.new
+```
+
+Now, before we add any behaviour (methods) to our class, we want to be able to
+give it some initial data: In our case, we want the person to know its own
+name.
 
 We can do this like so:
 
@@ -14,23 +36,9 @@ class Person
 end
 ```
 
-Now, there are a couple of things going on here. Let's go through them one by
-one.
-
 You see that we add a method called `initialize` to the class, and this method
 accepts a single argument, which is called `name`. At the moment, this method
 is still empty. We'll add some code to it in a bit.
-
-The method definition is indented by one level, that is, 2
-spaces. We do this in order to signal that the method `initialize` belongs
-to the class `Person`. Everything between the line `class Person` and the
-final line `end` is called the "class body", and just like method bodies we
-indent them by one more level.
-
-<p class="hint formatting">
-On formatting: the keywords <code>class</code> and <code>end</code> sit on
-the same level. The class body is indented by one level.
-</p>
 
 The important bit to learn for you is: the method `initialize` is a special
 method with a special meaning in Ruby:
@@ -60,7 +68,7 @@ passed, yet. That's right. We'll get to that in the next chapter.
 To recap, when you call `new` on the class `Person`, and pass the string
 `"Ada"` then the method `new` will create a new instance of the class, and call
 `initialize` on it, passing the same argument list, which in our case is the
-single string `"Ada"`: as in `object.initialize("Ada")`.
+single string `"Ada"`.
 
 When we create a new instance of a class by the way of calling the method `new`
 on that class, we also say that we "instantiate" that object: By calling
