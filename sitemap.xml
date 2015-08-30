@@ -106,42 +106,6 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/constituents.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/definition.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/usage.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/return_values.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/scopes.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/combining.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/printing.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/control_flow.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/objects/classes.html</loc>
       <priority>0.5</priority>
     </url>
@@ -178,15 +142,47 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/objects/top-level.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/objects/notes.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/objects.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/constituents.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/definition.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/usage.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/return_values.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/scopes.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/combining.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/printing.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods/control_flow.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/writing_methods.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -287,6 +283,10 @@
     </url>
     <url>
       <loc>http://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/bonus/top_level.html</loc>
       <priority>0.5</priority>
     </url>
     <url>

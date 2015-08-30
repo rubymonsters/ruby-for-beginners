@@ -170,48 +170,6 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
-    <a href="/writing_methods.html">
-      Writing Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_methods/constituents.html">
-          What makes a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/definition.html">
-          Defining a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/usage.html">
-          Using (calling) a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/return_values.html">
-          Return values
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/scopes.html">
-          Scopes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/combining.html">
-          Combining Methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/printing.html">
-          Printing things
-        </a>
-      </li>
-    </ul>
-  </li>
   <li class="directory expanded">
     <a href="/objects.html">
       Objects, Classes, Methods
@@ -257,9 +215,46 @@
           Bang Methods
         </a>
       </li>
+    </ul>
+  </li>
+  <li class="directory">
+    <a href="/writing_methods.html">
+      Writing Methods
+    </a>
+    <ul>
       <li>
-        <a href="/objects/top-level.html">
-          Top-level object
+        <a href="/writing_methods/constituents.html">
+          What makes a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/definition.html">
+          Defining a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/usage.html">
+          Using (calling) a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/return_values.html">
+          Return values
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/scopes.html">
+          Scopes
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/combining.html">
+          Combining Methods
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/printing.html">
+          Printing things
         </a>
       </li>
     </ul>
@@ -385,6 +380,11 @@
       <li>
         <a href="/bonus/string_interpolation.html">
           String interpolation
+        </a>
+      </li>
+      <li>
+        <a href="/bonus/top_level.html">
+          Top-level object
         </a>
       </li>
       <li>
@@ -585,9 +585,11 @@ by adding a dot, and then the method name, like so:</p>
 
 <p>Let&rsquo;s try that out in IRB.</p>
 
-<p>The class <code>String</code> defines methods like <code>upcase</code> (<em>Give me an uppercase version
-of yours</em>), <code>downcase</code> (<em>What&rsquo;s the downcased version of yours</em>), and <code>length</code>
-(<em>Hey string, what&rsquo;s your length?</em>). Here&rsquo;s how that works:</p>
+<p>For example, the class <code>String</code> defines methods like <code>upcase</code> (<em>Give me an
+uppercase version of yours</em>), <code>downcase</code> (<em>What&rsquo;s the downcased version of
+yours</em>), and <code>length</code> (<em>Hey string, what&rsquo;s your length?</em>).</p>
+
+<p>Here&rsquo;s how we can call them:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
 <span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">upcase</span>
@@ -601,18 +603,19 @@ of yours</em>), <code>downcase</code> (<em>What&rsquo;s the downcased version of
 <p>And so on.</p>
 
 <p>In other words, you first address, or mention, the object that you want to talk
-to, and then, with the dot <code>.</code>, send a message by specifying the method name.</p>
+to, and then, with the dot <code>.</code>, &ldquo;send a message&rdquo; to the object by specifying
+the method name. We also say: &ldquo;you call the method upcase on the string&rdquo;.</p>
 
 <p class="hint">
 A dot is used to call a method on an object.
 </p>
 
 <p>Imagine the string <code>name</code> is a person you can talk to. You can ask questions by
-&ldquo;sending a message&rdquo; to them, and they&rsquo;ll respond by sending (or returning)
+&ldquo;sending a message&rdquo; to them, and they&rsquo;ll respond by sending (returning)
 something back. The term &ldquo;sending messages&rdquo; actually is used instead of
 &ldquo;calling a method&rdquo; in programming, and specifically in Ruby.</p>
 
-<p>So, you can ask this string to hand you an &ldquo;upcased&rdquo; version of itself. And
+<p>So, you can ask the string to hand you an &ldquo;upcased&rdquo; version of itself. And
 it responds by doing so. Or you can ask it for its length, and it responds
 by returning the number <code>12</code> to you.</p>
 
@@ -634,7 +637,7 @@ screen. Other methods might save files, send emails, or store things to
 a database.</p>
 
 <p class="hint">
-Some methods are commands, and change the object, or the system.
+Some methods are commands, and change the object, or the system (e.g. by saving a file).
 </p>
 
         <nav class="page-nav"><a class="prev" href="/objects/methods.html">

@@ -170,48 +170,6 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
-    <a href="/writing_methods.html">
-      Writing Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_methods/constituents.html">
-          What makes a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/definition.html">
-          Defining a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/usage.html">
-          Using (calling) a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/return_values.html">
-          Return values
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/scopes.html">
-          Scopes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/combining.html">
-          Combining Methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/printing.html">
-          Printing things
-        </a>
-      </li>
-    </ul>
-  </li>
   <li class="directory expanded">
     <a href="/objects.html">
       Objects, Classes, Methods
@@ -257,9 +215,46 @@
           Bang Methods
         </a>
       </li>
+    </ul>
+  </li>
+  <li class="directory">
+    <a href="/writing_methods.html">
+      Writing Methods
+    </a>
+    <ul>
       <li>
-        <a href="/objects/top-level.html">
-          Top-level object
+        <a href="/writing_methods/constituents.html">
+          What makes a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/definition.html">
+          Defining a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/usage.html">
+          Using (calling) a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/return_values.html">
+          Return values
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/scopes.html">
+          Scopes
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/combining.html">
+          Combining Methods
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/printing.html">
+          Printing things
         </a>
       </li>
     </ul>
@@ -385,6 +380,11 @@
       <li>
         <a href="/bonus/string_interpolation.html">
           String interpolation
+        </a>
+      </li>
+      <li>
+        <a href="/bonus/top_level.html">
+          Top-level object
         </a>
       </li>
       <li>
@@ -585,8 +585,8 @@ you google for &ldquo;ruby&rdquo; and the class name.)</p>
 That&rsquo;s right, <code>methods</code> is a method defined on all objects (just like <code>class</code>,
 and <code>is_a?</code>).</p>
 
-<p>When you call it then it will <em>return</em> an Array with all the method names that
-the object has.</p>
+<p>When you call it then it will return (respond with) an Array with all the
+method names that the object has.</p>
 
 <p>It makes sense to sort the Array, so it is easier to read. Like so:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
@@ -600,6 +600,8 @@ the object has.</p>
 methods. Many of these actually aren&rsquo;t used very often, but some are quite
 useful. We have stripped the Array down a little, because we want to talk about
 some of these methods more.</p>
+
+<h2>Chaining method calls</h2>
 
 <p>Btw the code above also demonstrates that methods can be &ldquo;chained&rdquo;: When we
 call a method on an object it will return another object to us. We can then

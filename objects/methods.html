@@ -170,48 +170,6 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
-    <a href="/writing_methods.html">
-      Writing Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_methods/constituents.html">
-          What makes a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/definition.html">
-          Defining a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/usage.html">
-          Using (calling) a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/return_values.html">
-          Return values
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/scopes.html">
-          Scopes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/combining.html">
-          Combining Methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/printing.html">
-          Printing things
-        </a>
-      </li>
-    </ul>
-  </li>
   <li class="directory expanded">
     <a href="/objects.html">
       Objects, Classes, Methods
@@ -257,9 +215,46 @@
           Bang Methods
         </a>
       </li>
+    </ul>
+  </li>
+  <li class="directory">
+    <a href="/writing_methods.html">
+      Writing Methods
+    </a>
+    <ul>
       <li>
-        <a href="/objects/top-level.html">
-          Top-level object
+        <a href="/writing_methods/constituents.html">
+          What makes a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/definition.html">
+          Defining a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/usage.html">
+          Using (calling) a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/return_values.html">
+          Return values
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/scopes.html">
+          Scopes
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/combining.html">
+          Combining Methods
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/printing.html">
+          Printing things
         </a>
       </li>
     </ul>
@@ -385,6 +380,11 @@
       <li>
         <a href="/bonus/string_interpolation.html">
           String interpolation
+        </a>
+      </li>
+      <li>
+        <a href="/bonus/top_level.html">
+          Top-level object
         </a>
       </li>
       <li>
@@ -581,13 +581,6 @@
 <p>Objects have methods, allowing us to do interesting stuff with them. An
 object&rsquo;s methods are things that the object can <em>do</em>.</p>
 
-<p>These methods have exactly the same characteristics as those &ldquo;stand-alone&rdquo;
-methods that we&rsquo;ve discussed above: They (optionally) take arguments (input),
-return something, and encapsulate (have) some code.</p>
-
-<p>But on top of that they also &ldquo;belong&rdquo; to a particular object, and kind of
-&ldquo;know&rdquo; the object they belong to.</p>
-
 <p>Think about a person, like, a friend of yours. You can ask this person for
 their name (call a method), and they&rsquo;ll tell you (return it to you). Their name
 is a piece of knowledge that this person has, and the ability to tell it to you
@@ -599,9 +592,23 @@ them to remember a phone number, or email password.</p>
 <p>As Rubyists we actually say that we &ldquo;talk to objects&rdquo;, or &ldquo;send messages&rdquo; to
 them: We do so by using (calling) methods that they respond to.</p>
 
-<p>And we&rsquo;ve already silently skipped over the fact that we&rsquo;ve used some methods
-in the previous chapter: <code>class</code> and <code>is_a?</code> are methods defined on all objects
-in Ruby, and therefore also defined on the String <code>&quot;this is a string&quot;</code>.</p>
+<p>So, what can an object do?</p>
+
+<p>That depends on their class (type). Numbers can do things that are useful for
+numbers, obviously. You can do math, and ask them about their mathematical
+properties (e.g. &ldquo;Are you an odd number?&rdquo;). Strings (text) come with way more
+methods, and they&rsquo;re often related to text transformations.</p>
+
+<p class="hint">
+Methods add behaviour that is useful to have for a particular type of object.
+</p>
+
+<p>We&rsquo;ve already used some methods in the previous chapters: E.g. <code>&quot;hello&quot;.upcase</code>
+calls the method <code>upcase</code> on the String <code>&quot;hello&quot;</code>.</p>
+
+<p>Also, <code>class</code> and <code>is_a?</code> are methods defined on all objects in Ruby, and
+therefore also defined on the String <code>&quot;a string&quot;</code>: <code>&quot;a string&quot;.is_a?(String)</code>
+answers with <code>true</code>.</p>
 
 <p class="hint">
 Some methods, such as <code>class</code>, <code>is_a?</code>, are defined on all objects.

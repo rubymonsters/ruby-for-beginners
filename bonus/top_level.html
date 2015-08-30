@@ -16,10 +16,10 @@
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/objects/bangs.html">
+    <nav class="page-nav"><a class="prev" href="/bonus/string_interpolation.html">
   Previous
 </a></nav>
-    <nav class="page-nav"><a class="next" href="/writing_classes.html">
+    <nav class="page-nav"><a class="next" href="/bonus/other_methods.html">
   Next
 </a></nav>
 
@@ -171,48 +171,6 @@
     </ul>
   </li>
   <li class="directory">
-    <a href="/writing_methods.html">
-      Writing Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_methods/constituents.html">
-          What makes a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/definition.html">
-          Defining a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/usage.html">
-          Using (calling) a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/return_values.html">
-          Return values
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/scopes.html">
-          Scopes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/combining.html">
-          Combining Methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/printing.html">
-          Printing things
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory expanded">
     <a href="/objects.html">
       Objects, Classes, Methods
     </a>
@@ -257,9 +215,46 @@
           Bang Methods
         </a>
       </li>
-      <li class="active">
-        <a href="/objects/top-level.html">
-          Top-level object
+    </ul>
+  </li>
+  <li class="directory">
+    <a href="/writing_methods.html">
+      Writing Methods
+    </a>
+    <ul>
+      <li>
+        <a href="/writing_methods/constituents.html">
+          What makes a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/definition.html">
+          Defining a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/usage.html">
+          Using (calling) a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/return_values.html">
+          Return values
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/scopes.html">
+          Scopes
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/combining.html">
+          Combining Methods
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/printing.html">
+          Printing things
         </a>
       </li>
     </ul>
@@ -377,7 +372,7 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
+  <li class="directory expanded">
     <a href="/bonus.html">
       Bonus Chapters
     </a>
@@ -385,6 +380,11 @@
       <li>
         <a href="/bonus/string_interpolation.html">
           String interpolation
+        </a>
+      </li>
+      <li class="active">
+        <a href="/bonus/top_level.html">
+          Top-level object
         </a>
       </li>
       <li>
@@ -576,17 +576,24 @@
         <nav class="menu"><a href="#"></a></nav>
         <h1>Top-level object</h1>
 
-<p>So, we&rsquo;ve just learned that objects come with lots of methods attached to them.
-We&rsquo;ve seen how we can use them to do interesting things with the object, by the
+<p>So, we&rsquo;ve learned that objects come with lots of methods attached to them.  And
+we&rsquo;ve seen how we can use them to do interesting things with the object, by the
 way of calling these methods.</p>
 
-<p>But previously we&rsquo;ve also learned how to define our own methods (e.g. <code>add_two</code>),
-and these methods weren&rsquo;t attached to any object, right? We&rsquo;ve just hand-wavingly
-called them &ldquo;stand-alone&rdquo; methods.</p>
+<p>Now, if you pop into <code>irb</code>, or if you write the following code into an otherwise
+empty Ruby file, this works:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="nb">is_a?</span><span class="p">(</span><span class="no">Object</span><span class="p">)</span>
+<span class="kp">true</span>
+<span class="o">&gt;</span> <span class="nb">methods</span>
+<span class="p">[</span><span class="ss">:to_s</span><span class="p">,</span> <span class="ss">:inspect</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span> <span class="p">]</span>
+</code></pre>
 
-<p>On the other hand we&rsquo;ve also heard that &ldquo;In Ruby everything is an object&rdquo;.</p>
+<p>So, as you can see we can use some methods in Ruby without even defining an
+object at all: They&rsquo;re already there. And the method <code>is_a?</code> tells us that this
+already is an object &hellip; whatever &ldquo;this&rdquo; is.</p>
 
-<p>So what&rsquo;s up with that?</p>
+<p>What&rsquo;s up with that?</p>
 
 <p>This is something that pretty much blows some people&rsquo;s minds, confuses the heck
 out of others, while yet others don&rsquo;t even notice or think about it at all. It
@@ -596,11 +603,11 @@ few people can explain in a satisfying, and clear way. And neither do we, yet.</
 <p>Let&rsquo;s still try.</p>
 
 <p>Whenever you open IRB and it presents that prompt to you, or when you create a
-new, empty Ruby file &hellip; Ruby will not only execute your code. Before she does
-that she creates an empty, anonymous Object, and kind of places you inside of
+new, empty Ruby file &hellip; Ruby will not only execute your code: Before she does
+she first creates an empty, anonymous Object, and kind of places you inside of
 it.</p>
 
-<p>This empty Object therefor seems invisible, and it seems that those methods
+<p>This empty Object kind of seems invisible, and it seems that those methods
 that we can define in this scope (space) were somehow &ldquo;standing alone&rdquo;. In fact
 they aren&rsquo;t. They&rsquo;re defined on this empty, anonymous Object that we usually
 don&rsquo;t see.</p>
@@ -614,19 +621,13 @@ The top-level scope is an empty, anonymous object. All Ruby code starts in here.
 <p>Confusing? Yeah. Don&rsquo;t worry. This is something many Ruby programmers do and
 use everyday without ever asking the question why it works, exactly.</p>
 
-<p>In practice you can just remember that you can define and use methods, just
-like variables in the top-level scope. And methods (as well as variables)
-can also be attached to objects, too.</p>
-
 <p>Hopefully some of this will become more clear once you&rsquo;ve written your
-own classes.</p>
+own methods and classes.</p>
 
-<p>So let&rsquo;s do just that.</p>
-
-        <nav class="page-nav"><a class="prev" href="/objects/bangs.html">
+        <nav class="page-nav"><a class="prev" href="/bonus/string_interpolation.html">
   Previous
 </a></nav>
-        <nav class="page-nav"><a class="next" href="/writing_classes.html">
+        <nav class="page-nav"><a class="next" href="/bonus/other_methods.html">
   Next
 </a></nav>
       </article>

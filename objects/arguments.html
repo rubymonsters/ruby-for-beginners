@@ -170,48 +170,6 @@
       </li>
     </ul>
   </li>
-  <li class="directory">
-    <a href="/writing_methods.html">
-      Writing Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_methods/constituents.html">
-          What makes a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/definition.html">
-          Defining a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/usage.html">
-          Using (calling) a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/return_values.html">
-          Return values
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/scopes.html">
-          Scopes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/combining.html">
-          Combining Methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/printing.html">
-          Printing things
-        </a>
-      </li>
-    </ul>
-  </li>
   <li class="directory expanded">
     <a href="/objects.html">
       Objects, Classes, Methods
@@ -257,9 +215,46 @@
           Bang Methods
         </a>
       </li>
+    </ul>
+  </li>
+  <li class="directory">
+    <a href="/writing_methods.html">
+      Writing Methods
+    </a>
+    <ul>
       <li>
-        <a href="/objects/top-level.html">
-          Top-level object
+        <a href="/writing_methods/constituents.html">
+          What makes a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/definition.html">
+          Defining a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/usage.html">
+          Using (calling) a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/return_values.html">
+          Return values
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/scopes.html">
+          Scopes
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/combining.html">
+          Combining Methods
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/printing.html">
+          Printing things
         </a>
       </li>
     </ul>
@@ -385,6 +380,11 @@
       <li>
         <a href="/bonus/string_interpolation.html">
           String interpolation
+        </a>
+      </li>
+      <li>
+        <a href="/bonus/top_level.html">
+          Top-level object
         </a>
       </li>
       <li>
@@ -576,24 +576,25 @@
         <nav class="menu"><a href="#"></a></nav>
         <h1>Passing arguments</h1>
 
-<p>Just like our &ldquo;stand-alone&rdquo; methods from above, sometimes an object needs a
-little bit of extra information in order to do what you ask for. In other
-words, we might need to pass arguments to these methods, too.</p>
+<p><em>Extra information needed</em></p>
+
+<p>Sometimes an object needs a
+little bit of extra information in order to do what you ask for</p>
 
 <p>For example the class <code>String</code> defines the method <code>delete</code> which returns
 another String with some of the characters deleted. In order to do so, of
 course, it needs to know which characters we&rsquo;d like to remove.</p>
 
-<p>Again, we can pass these by appending parentheses <code>()</code> to the method call (the
-name). We can then include the extra bit of information needed (in our case
-another string) inside the parentheses like so:</p>
+<p>We can pass things by appending parentheses <code>()</code> to the method call (the name).
+We can then include the extra bit of information needed (in our case another
+string) inside the parentheses like so:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
 <span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"by Mo"</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="s2">"runstas"</span>
 </code></pre>
 
-<p>Hm. Not sure what &ldquo;runstas&rdquo; means. Ideas?</p>
+<p>Hm. Not sure what &ldquo;runstas&rdquo; means. Ideas? Let us know.</p>
 
 <p>Anyhow, another example for a method that needs an argument is the method
 <code>prepend</code> on Strings. This method returns a new String with the given String
@@ -603,8 +604,11 @@ prepended:</p>
 <span class="o">=&gt;</span> <span class="s2">"Oh, hello, Ruby Monstas"</span>
 </code></pre>
 
-<p>Again, not all methods need arguments (extra bits of information) in order to
-do their job. E.g. the method <code>length</code> on Strings can know the length of their
+<p>These extra bits of information are called <em>arguments</em>. We&rsquo;ll discuss them more
+once we get to define <a href="../writing_methods.html">our own methods</a>.</p>
+
+<p>Not all methods need these extra bits of information (arguments) in order to do
+their job.  E.g. the method <code>length</code> on Strings knows the length of their
 String just so (because it knows its String). Sometimes they need one or more
 arguments though.</p>
 

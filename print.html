@@ -167,48 +167,6 @@
     </ul>
   </li>
   <li class="directory">
-    <a href="/writing_methods.html">
-      Writing Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_methods/constituents.html">
-          What makes a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/definition.html">
-          Defining a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/usage.html">
-          Using (calling) a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/return_values.html">
-          Return values
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/scopes.html">
-          Scopes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/combining.html">
-          Combining Methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/printing.html">
-          Printing things
-        </a>
-      </li>
-    </ul>
-  </li>
-  <li class="directory">
     <a href="/objects.html">
       Objects, Classes, Methods
     </a>
@@ -253,9 +211,46 @@
           Bang Methods
         </a>
       </li>
+    </ul>
+  </li>
+  <li class="directory">
+    <a href="/writing_methods.html">
+      Writing Methods
+    </a>
+    <ul>
       <li>
-        <a href="/objects/top-level.html">
-          Top-level object
+        <a href="/writing_methods/constituents.html">
+          What makes a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/definition.html">
+          Defining a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/usage.html">
+          Using (calling) a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/return_values.html">
+          Return values
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/scopes.html">
+          Scopes
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/combining.html">
+          Combining Methods
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/printing.html">
+          Printing things
         </a>
       </li>
     </ul>
@@ -381,6 +376,11 @@
       <li>
         <a href="/bonus/string_interpolation.html">
           String interpolation
+        </a>
+      </li>
+      <li>
+        <a href="/bonus/top_level.html">
+          Top-level object
         </a>
       </li>
       <li>
@@ -2535,6 +2535,471 @@ two Hashes are exactly the same:</p>
 <span class="p">{</span> <span class="ss">one: </span><span class="s2">"eins"</span><span class="p">,</span> <span class="ss">two: </span><span class="s2">"zwei"</span><span class="p">,</span> <span class="ss">three: </span><span class="s2">"drei"</span> <span class="p">}</span>
 </code></pre>
 
+  <h1>Objects, Classes, Methods</h1>
+
+<p>We&rsquo;ve talked about objects quite a bit now, merely <em>using</em> that term as a
+synomym for &ldquo;things&rdquo;. You&rsquo;ve learned to do stuff with simple objects such as
+numbers and Strings, and the data structures Arrays and Hashes. You&rsquo;ve also
+learned what a method is, how to define and use them, and how to pass things to
+them, and get others back.</p>
+
+<p>We&rsquo;re also prepared well enough to have a closer look at objects, classes
+(types of things) and methods, and how they relate to each other.</p>
+
+<p>As a sidenote, you may have heard the following. Rubyist love saying it:</p>
+
+<p class="hint">
+In Ruby everything is an object.
+</p>
+
+<p>Actually, this is a little bit of a lie. Even though it&rsquo;s being said so often,
+it isn&rsquo;t completely true: not <em>everything</em> is an object. There are a few things
+that are not objects.</p>
+
+<p>But almost everything is, and that&rsquo;s good enough to know for now.</p>
+
+<p class="hint">
+In Ruby almost everything is an object :)
+</p>
+
+<p>(Just in case you want to out-smart people at your local Ruby user group
+though, remember to ask &ldquo;Really? Is an <a href="conditionals.html">if</a> statement an
+object or a method?  How about <a href="writing_classes/self.html">self</a>?&rdquo;)</p>
+
+  <h1>Objects have classes</h1>
+
+<p>As mentioned <a href="../object_oriented_programming.html">before</a> when you run a Ruby
+program a little universe (space, scope) is being created, and populated with
+concrete objects (things) as defined by your program. These things interact,
+and do useful stuff, using certain methods that you call.</p>
+
+<p>Also, each concrete thing (object) is an instance of a general idea or type,
+and these ideas are called <em>classes</em>.</p>
+
+<p>You can see that objects have classes when you open IRB in your terminal and
+ask an object for its class:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"this is a string"</span><span class="p">.</span><span class="nf">class</span>
+<span class="o">=&gt;</span> <span class="no">String</span>
+</code></pre>
+
+<p class="note">
+Objects are concrete instances (manifestations) of classes.
+</p>
+
+<p>That means that the following sentence is true: In Ruby, <code>&quot;a string&quot;</code> <em>is a</em>
+<code>String</code>.</p>
+
+<p>Hmmmm, yeah, we kinda knew that already, right. However, you can also ask the
+same question in Ruby:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"this is a string"</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+</code></pre>
+
+<p>So, the actual string knows that it <em>is a</em> <code>String</code>, which in Ruby means that
+it is an instance of the class <code>String</code>. You can do this for any object. E.g.
+<code>1.is_a?(Numeric)</code>, also returns <code>true</code>. This is pretty cool.</p>
+
+<p>We also say that an object is an <em>instance</em> of its class. Let&rsquo;s see what that
+means.</p>
+
+  <h1>Classes create objects</h1>
+
+<p><em>Objects are instances of classes.</em></p>
+
+<p>Classes are kind of blue prints for the concrete objects. Every time a concrete
+object (such as the String <code>&quot;one string&quot;</code>, the String <code>&quot;another string&quot;</code>, the
+String <code>&quot;yet another string&quot;</code>, and so on &hellip;) is created:</p>
+
+<p>We say that the class is <em>instantiated</em>: an object is created from it.</p>
+
+<p>What does that mean?</p>
+
+<p>Classes have a bunch of characteristics, but most importantly, every class
+defines a number of methods, which are specific to this type of thing (e.g. a
+String).</p>
+
+<p>Now, every time a new object is created (&ldquo;instantiated&rdquo;) from this class this
+new object get (&ldquo;inherits&rdquo;) all of these methods.</p>
+
+<p class="note">
+Objects inherit methods from their classes.
+</p>
+
+<p>That&rsquo;s right. Objects have their own methods attached to them.</p>
+
+<p>We&rsquo;ll explain more about methods that belong to objects in the next chapter.
+And you&rsquo;ll see how you can define methods to your own classes, so they&rsquo;re then
+available on your objects when we start defining our
+<a href="/writing_classes">first, own class</a>.</p>
+
+<p>But for now we can already point out that all concrete Strings that you use in
+your code will all have the same methods defined (attached to them) &hellip; because
+they&rsquo;re all created (instantiated) from the the same class.</p>
+
+<p>You can have a look at all the methods that the class <code>String</code> defines on
+Ruby&rsquo;s <a href="http://ruby-doc.org/core-2.2.0/String.html">documentation page</a> for this
+class.</p>
+
+<p>Let&rsquo;s see how we can use these methods.</p>
+
+  <h1>Objects have methods</h1>
+
+<p><em>Methods are an object&rsquo;s behaviour</em></p>
+
+<p>Objects have methods, allowing us to do interesting stuff with them. An
+object&rsquo;s methods are things that the object can <em>do</em>.</p>
+
+<p>Think about a person, like, a friend of yours. You can ask this person for
+their name (call a method), and they&rsquo;ll tell you (return it to you). Their name
+is a piece of knowledge that this person has, and the ability to tell it to you
+(respond to your question) is a piece of behaviour (a method) they have.</p>
+
+<p>We could also ask them to make, and bring a cup of tea for us. Or we could ask
+them to remember a phone number, or email password.</p>
+
+<p>As Rubyists we actually say that we &ldquo;talk to objects&rdquo;, or &ldquo;send messages&rdquo; to
+them: We do so by using (calling) methods that they respond to.</p>
+
+<p>So, what can an object do?</p>
+
+<p>That depends on their class (type). Numbers can do things that are useful for
+numbers, obviously. You can do math, and ask them about their mathematical
+properties (e.g. &ldquo;Are you an odd number?&rdquo;). Strings (text) come with way more
+methods, and they&rsquo;re often related to text transformations.</p>
+
+<p class="hint">
+Methods add behaviour that is useful to have for a particular type of object.
+</p>
+
+<p>We&rsquo;ve already used some methods in the previous chapters: E.g. <code>&quot;hello&quot;.upcase</code>
+calls the method <code>upcase</code> on the String <code>&quot;hello&quot;</code>.</p>
+
+<p>Also, <code>class</code> and <code>is_a?</code> are methods defined on all objects in Ruby, and
+therefore also defined on the String <code>&quot;a string&quot;</code>: <code>&quot;a string&quot;.is_a?(String)</code>
+answers with <code>true</code>.</p>
+
+<p class="hint">
+Some methods, such as <code>class</code>, <code>is_a?</code>, are defined on all objects.
+</p>
+
+<p>Let&rsquo;s move on to see how we can use (call) these methods though.</p>
+
+  <h1>Calling methods</h1>
+
+<p>In Ruby, methods that belong to (are defined on) objects can be used (called)
+by adding a dot, and then the method name, like so:</p>
+<pre class="highlight ruby"><code><span class="n">object</span><span class="p">.</span><span class="nf">method</span>
+</code></pre>
+
+<p>That&rsquo;s like saying <em>Hey object, please do [method]</em>.</p>
+
+<p>Let&rsquo;s try that out in IRB.</p>
+
+<p>For example, the class <code>String</code> defines methods like <code>upcase</code> (<em>Give me an
+uppercase version of yours</em>), <code>downcase</code> (<em>What&rsquo;s the downcased version of
+yours</em>), and <code>length</code> (<em>Hey string, what&rsquo;s your length?</em>).</p>
+
+<p>Here&rsquo;s how we can call them:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">upcase</span>
+<span class="o">=&gt;</span> <span class="s2">"RUBY MONSTAS"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">downcase</span>
+<span class="o">=&gt;</span> <span class="s2">"ruby monstas"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">length</span>
+<span class="o">=&gt;</span> <span class="mi">12</span>
+</code></pre>
+
+<p>And so on.</p>
+
+<p>In other words, you first address, or mention, the object that you want to talk
+to, and then, with the dot <code>.</code>, &ldquo;send a message&rdquo; to the object by specifying
+the method name. We also say: &ldquo;you call the method upcase on the string&rdquo;.</p>
+
+<p class="hint">
+A dot is used to call a method on an object.
+</p>
+
+<p>Imagine the string <code>name</code> is a person you can talk to. You can ask questions by
+&ldquo;sending a message&rdquo; to them, and they&rsquo;ll respond by sending (returning)
+something back. The term &ldquo;sending messages&rdquo; actually is used instead of
+&ldquo;calling a method&rdquo; in programming, and specifically in Ruby.</p>
+
+<p>So, you can ask the string to hand you an &ldquo;upcased&rdquo; version of itself. And
+it responds by doing so. Or you can ask it for its length, and it responds
+by returning the number <code>12</code> to you.</p>
+
+<p>You can have a look at all the methods that the class <code>String</code> defines
+(responds to) on Ruby&rsquo;s
+<a href="http://ruby-doc.org/core-2.2.0/String.html">documentation page for this class</a>.</p>
+
+<p>Most methods in Ruby work this way: You ask an object to return a bit of
+information about itself (such as a String&rsquo;s length), or a modified
+(transformed) version of itself (such as a downcased version of the String).</p>
+
+<p class="hint">
+Most methods are questions, and return a relevant value.
+</p>
+
+<p>Others modify the object itself, and some have so called side-effects, and
+modify something else, e.g. <code>puts</code> and <code>p</code> both output something to the
+screen. Other methods might save files, send emails, or store things to
+a database.</p>
+
+<p class="hint">
+Some methods are commands, and change the object, or the system (e.g. by saving a file).
+</p>
+
+  <h1>Passing arguments</h1>
+
+<p><em>Extra information needed</em></p>
+
+<p>Sometimes an object needs a
+little bit of extra information in order to do what you ask for</p>
+
+<p>For example the class <code>String</code> defines the method <code>delete</code> which returns
+another String with some of the characters deleted. In order to do so, of
+course, it needs to know which characters we&rsquo;d like to remove.</p>
+
+<p>We can pass things by appending parentheses <code>()</code> to the method call (the name).
+We can then include the extra bit of information needed (in our case another
+string) inside the parentheses like so:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"by Mo"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="s2">"runstas"</span>
+</code></pre>
+
+<p>Hm. Not sure what &ldquo;runstas&rdquo; means. Ideas? Let us know.</p>
+
+<p>Anyhow, another example for a method that needs an argument is the method
+<code>prepend</code> on Strings. This method returns a new String with the given String
+prepended:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">prepend</span><span class="p">(</span><span class="s2">"Oh, hello, "</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="s2">"Oh, hello, Ruby Monstas"</span>
+</code></pre>
+
+<p>These extra bits of information are called <em>arguments</em>. We&rsquo;ll discuss them more
+once we get to define <a href="../writing_methods.html">our own methods</a>.</p>
+
+<p>Not all methods need these extra bits of information (arguments) in order to do
+their job.  E.g. the method <code>length</code> on Strings knows the length of their
+String just so (because it knows its String). Sometimes they need one or more
+arguments though.</p>
+
+<p>So how do you know?</p>
+
+<p>You might remember, over time, for some important methods, but most of us also
+check the documentation quite frequently, too. Some times it&rsquo;s just fine to
+try it out quickly, and only check the documentation if it does not work as
+expected.</p>
+
+  <h1>Listing methods</h1>
+
+<p>As said above, if you are curious what methods are defined on a certain object,
+then you can check the <a href="http://ruby-doc.org/core-2.2.0/">Ruby documentation</a>
+for this class. (Usually the right page conveniently shows up at the top when
+you google for &ldquo;ruby&rdquo; and the class name.)</p>
+
+<p>However, you can also quickly pop into IRB and ask the object for its methods.
+That&rsquo;s right, <code>methods</code> is a method defined on all objects (just like <code>class</code>,
+and <code>is_a?</code>).</p>
+
+<p>When you call it then it will return (respond with) an Array with all the
+method names that the object has.</p>
+
+<p>It makes sense to sort the Array, so it is easier to read. Like so:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="s2">"Ruby Monstas"</span><span class="p">.</span><span class="nf">methods</span><span class="p">.</span><span class="nf">sort</span>
+<span class="o">=&gt;</span> <span class="p">[:</span><span class="o">*</span><span class="p">,</span> <span class="p">:</span><span class="o">+</span><span class="p">,</span> <span class="ss">:&lt;</span><span class="p">,</span> <span class="p">:</span><span class="o">&gt;</span><span class="p">,</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:class</span><span class="p">,</span> <span class="ss">:downcase</span><span class="p">,</span> <span class="ss">:delete</span><span class="p">,</span> <span class="ss">:include?</span><span class="p">,</span> <span class="ss">:is_a?</span><span class="p">,</span> <span class="ss">:length</span><span class="p">,</span> <span class="ss">:prepend</span><span class="p">,</span> <span class="ss">:start_with?</span><span class="p">]</span>
+</code></pre>
+
+<p>Yep, the method names come as Symbols, because they&rsquo;re considered code.</p>
+
+<p>If you do this yourself, you&rsquo;ll see that the String actually has a lot more
+methods. Many of these actually aren&rsquo;t used very often, but some are quite
+useful. We have stripped the Array down a little, because we want to talk about
+some of these methods more.</p>
+
+<h2>Chaining method calls</h2>
+
+<p>Btw the code above also demonstrates that methods can be &ldquo;chained&rdquo;: When we
+call a method on an object it will return another object to us. We can then
+immediately call another method on that new object, and so on.</p>
+
+<p>In our example above the method <code>methods</code> returns a Array of names. And
+Arrays respond to (have) the method <code>sort</code>, so we can call this method
+immediately, by using another dot.</p>
+
+<p>We could chain some of the method calls from our String example above like so:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">prepend</span><span class="p">(</span><span class="s2">"Oh, hello, "</span><span class="p">).</span><span class="nf">upcase</span>
+<span class="o">=&gt;</span> <span class="s2">"OH, HELLO, RUBY MONSTAS"</span>
+</code></pre>
+
+<p>So we have a String <code>&quot;Ruby Monstas&quot;</code>, prepend another String to it, which
+returns a new String <code>&quot;Oh, hello, Ruby Monstas&quot;</code>, on which we immediately call
+the method upcase.</p>
+
+<p>Pretty handy.</p>
+
+<p>As you can see Ruby will first evaluate the bit <code>name.prepend(&quot;Oh, hello, &quot;)</code>.
+It needs to do that so it knows the object (the new String) that is going
+to be returned from this, so it can then call the method <code>upcase</code> on it.</p>
+
+<p>Does this make sense?</p>
+
+  <h1>Predicate methods</h1>
+
+<p>If you check the list of methods on our String above you see that in Ruby we
+can have methods that end with a question mark <code>?</code>. What&rsquo;s up with that?</p>
+
+<p>By convention, in Ruby, these methods return either <code>true</code> or <code>false</code>. For
+example, we can ask a number if it is even or odd:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">odd?</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">even?</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+</code></pre>
+
+<p>This makes them read like a question, which is pretty cool.</p>
+
+<p>Or you can ask the number if it&rsquo;s between two other numbers. Obviously this
+methods needs us to pass those two other numbers. So now we also have an example
+of a method that takes two arguments:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+</code></pre>
+
+<p>These methods are called <em>predicate methods</em> in Ruby. Not quite sure why, maybe
+because of the historical math context of programming.</p>
+
+<p class="hint">
+Predicate methods that end with a question mark <code>?</code> return either <code>true</code> or <code>false</code>.
+</p>
+
+<p>Strings also define some predicate methods:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s2">"R"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+</code></pre>
+
+<p>Do you also think it&rsquo;s kinda odd that <code>name.start_with?(&quot;a&quot;)</code> reads almost like
+English, but not quite? Maybe the method could have been named <code>starts_with?</code>
+instead, right? That&rsquo;s true. This is because Matz, the creator of Ruby, is not
+a native English speaker, and some names sound right in Japanese when
+translated literally.</p>
+
+<p>Also:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"by"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"r"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+</code></pre>
+
+<p>When we check what methods there are defined on a number, we find some with the
+same name, but also different ones:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="nf">methods</span><span class="p">.</span><span class="nf">sort</span>
+<span class="o">=&gt;</span> <span class="p">[:</span><span class="o">*</span><span class="p">,</span> <span class="p">:</span><span class="o">+</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="p">,</span> <span class="ss">:/</span><span class="p">,</span> <span class="ss">:between?</span><span class="p">,</span> <span class="ss">:even?</span><span class="p">,</span> <span class="ss">:odd?</span><span class="p">,</span> <span class="ss">:zero?</span><span class="p">]</span>
+</code></pre>
+
+<p>Let&rsquo;s try <code>zero?</code>:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">0</span><span class="p">.</span><span class="nf">zero?</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="nf">zero?</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+</code></pre>
+
+<p>Arrays have the methods <code>include?</code>, and Hashes respond to <code>key?</code>:</p>
+<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">include?</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">include?</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+
+<span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"eins"</span> <span class="o">=&gt;</span> <span class="s2">"one"</span> <span class="p">}.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"eins"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"eins"</span> <span class="o">=&gt;</span> <span class="s2">"one"</span> <span class="p">}.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"zwei"</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+</code></pre>
+
+<p>Oh by the way, if you&rsquo;re curious why operators like <code>*</code>, <code>+</code>, <code>-</code> and so on are
+also listed here, check the chapter that explains that <a href="../operators/methods.html">operators are methods,
+too</a>.</p>
+
+  <h1>Bang Methods</h1>
+
+<p>All of the examples that we&rsquo;ve discussed before have one thing in common:</p>
+
+<p>They are questions, and do not modify the object they are called on.</p>
+
+<p>For example:</p>
+<pre class="highlight ruby"><code><span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="nb">puts</span> <span class="nb">name</span><span class="p">.</span><span class="nf">downcase</span>
+<span class="nb">puts</span> <span class="nb">name</span>
+</code></pre>
+
+<p>This will output:</p>
+<pre class="highlight ruby"><code><span class="n">ruby</span> <span class="n">monstas</span>
+<span class="no">Ruby</span> <span class="no">Monstas</span>
+</code></pre>
+
+<p>As you can see the method <code>downcase</code> has returned a new String, which is the
+lowercase version of the String that the method is being called on. When we
+output the original String on the next line, we can then see that it&rsquo;s still
+the same: The method <code>downcase</code> does not modify the String.</p>
+
+<p>However, there also are variants of some of these methods, which end in an
+exclamation mark <code>!</code>. These methods are called &ldquo;bang methods&rdquo;, and they usually
+modify the object that they&rsquo;re being called on.</p>
+
+<p class="hint">
+Bang methods end with an exlamation mark, and often modify the object they are called on.
+</p>
+
+<p>For example, next to the method <code>downcase</code> Strings also have a method <code>downcase!</code>.</p>
+
+<p>Let&rsquo;s try that:</p>
+<pre class="highlight ruby"><code><span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
+<span class="nb">puts</span> <span class="nb">name</span><span class="p">.</span><span class="nf">downcase!</span>
+<span class="nb">puts</span> <span class="nb">name</span>
+</code></pre>
+
+<p>This will output:</p>
+<pre class="highlight ruby"><code><span class="n">ruby</span> <span class="n">monstas</span>
+<span class="n">ruby</span> <span class="n">monstas</span>
+</code></pre>
+
+<p>As you can see calling the method <code>downcase!</code> on the second line has modified
+the String itself (the object that <code>name</code> refers to), and <em>also</em> returned the
+new downcased version.</p>
+
+<p>Nowadays programmers have learned that using these methods has a number of
+disadvantages, and usually should be avoided, unless there are very good
+reasons for it (usually, there are none).</p>
+
+<p class="hint">
+Use bang methods with caution.
+</p>
+
+<p>We mostly mention these methods because you might see them used elsewhere.</p>
+
   <h1>Writing Methods</h1>
 
 <p><em>A named block of code that takes input and returns output</em></p>
@@ -2549,6 +3014,9 @@ the two most common data structures, Arrays and Hashes.</p>
 
 <p>All of this is about the <em>data</em> part. Methods on the other hand are about the
 <em>doing interesting things</em> part.</p>
+
+<p>In this chapter we&rsquo;ll have a closer look at the anatomy of a method, and you&rsquo;ll
+learn how to implement, and use, your own methods.</p>
 
 <h2>Methods define behaviour</h2>
 
@@ -2571,11 +3039,11 @@ Variables name things, methods name behaviour (code).
 <p>Methods make code re-usable, by the way of packaging (&ldquo;encapsulating&rdquo;) code and
 sticking a name on it.</p>
 
-<p>E.g. Ruby comes with lots of methods predefined - written by experienced
-programmers. So, unless you&rsquo;re studying computer science and you&rsquo;re faced with
-the exercise of implementing your own, complicated sorting algorithms for data
-collections, &hellip; you&rsquo;ll just use the method <code>sort</code> that already comes defined
-for Arrays in Ruby out of the box.</p>
+<p>As you have seen Ruby comes with lots of methods predefined - written by
+experienced programmers. So, unless you&rsquo;re studying computer science and you&rsquo;re
+faced with the exercise of implementing your own, complicated sorting
+algorithms for data collections, &hellip; you&rsquo;ll just use the method <code>sort</code> that
+already comes defined for Arrays in Ruby out of the box.</p>
 
 <p>Ok, let&rsquo;s see what makes up a method, and how we can define our own ones.</p>
 
@@ -2626,8 +3094,29 @@ A method&rsquo;s input is referred to as &ldquo;arguments&rdquo;, while its outp
 
   <h1>Defining a method</h1>
 
-<p>Let&rsquo;s define a simple method that takes a number, adds the number <code>2</code> to it,
-and returns the result:</p>
+<p>So far you have seen methods that &ldquo;belong&rdquo; to objects, or, in other words,
+are defined on objects, and can be called on objects. E.g. you have seen the
+method <code>downcase</code> which is defined on every string.</p>
+
+<p>However, Ruby also knows methods that are not defined on any of these objects.
+They&rsquo;re sort of &ldquo;stand alone&rdquo; methods.</p>
+
+<p>For example, you can try this in <code>irb</code>:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="nb">is_a?</span><span class="p">(</span><span class="no">Object</span><span class="p">)</span>
+<span class="kp">true</span>
+</code></pre>
+
+<p>We&rsquo;ll use this type of methods in this chapter because we want to focus on the
+characteristics of methods. If you&rsquo;re curious what&rsquo;s up with them have a look
+at the bonus chapter about the <a href="bonus/top_level.html">top-level object</a>. Later
+when you learn how to define your own classes we also look at defining methods
+for these.</p>
+
+<p>Ok, let&rsquo;s get started.</p>
+
+<p>Suppose we need to define a simple method that takes a number, adds the number
+<code>2</code> to it, and returns the result. Here&rsquo;s how we can do that:</p>
 <pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
   <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="k">end</span>
@@ -2657,7 +3146,10 @@ parentheses right after the method name.
 our method can accept one single thing (object).</p>
 
 <p>The next line is the block of code that our method has (&ldquo;encapsulates&rdquo;). This
-is also referred to as the <em>method body</em>.</p>
+is also referred to as the <em>method body</em>. In our case that&rsquo;s just one single
+line because the operation that our method encapsulates is very simple. Other
+methods (think of <code>sort</code>, defined on Arrays) would require more code, and are
+longer.</p>
 
 <p>Inside the method body the arguments are known as local variables: You can see
 how the code in our method body uses the variable name <code>number</code>.</p>
@@ -2807,8 +3299,8 @@ about this case.</p>
 <p><em>Spheres of visibility, like rooms in a house</em></p>
 
 <p>When we talked about variables we mentioned that the most common type of
-variable is the &ldquo;local variable&rdquo;, without explaining any further why they are
-local. Local to what? Where?</p>
+variables is the &ldquo;local variable&rdquo;, without explaining any further why they are
+local. Local to what? Where? We&rsquo;re finally ready to explain that more.</p>
 
 <p>Since we have now talked about methods, we can also discuss another important
 concept: scopes.</p>
@@ -3094,503 +3586,6 @@ programming exercises :)</p>
 
 <p>On the other hand <code>p</code> is useful when you are trying to understand what your
 code does, e.g. when you are trying to figure out a certain error.</p>
-
-  <h1>Objects, Classes, Methods</h1>
-
-<p>We&rsquo;ve talked about objects quite a bit now, merely <em>using</em> that term as a
-synomym for &ldquo;things&rdquo;. You&rsquo;ve learned to do stuff with simple objects such as
-numbers and Strings, and the data structures Arrays and Hashes. You&rsquo;ve also
-learned what a method is, how to define and use them, and how to pass things to
-them, and get others back.</p>
-
-<p>We&rsquo;re also prepared well enough to have a closer look at objects, classes
-(types of things) and methods, and how they relate to each other.</p>
-
-<p>As a sidenote, you may have heard the following. Rubyist love saying it:</p>
-
-<p class="hint">
-In Ruby everything is an object.
-</p>
-
-<p>Actually, this is a little bit of a lie. Even though it&rsquo;s being said so often,
-it isn&rsquo;t completely true: not <em>everything</em> is an object. There are a few things
-that are not objects.</p>
-
-<p>But almost everything is, and that&rsquo;s good enough to know for now.</p>
-
-<p class="hint">
-In Ruby almost everything is an object :)
-</p>
-
-<p>(Just in case you want to out-smart people at your local Ruby user group
-though, remember to ask &ldquo;Really? Is an <a href="conditionals.html">if</a> statement an
-object or a method?  How about <a href="writing_classes/self.html">self</a>?&rdquo;)</p>
-
-  <h1>Objects have classes</h1>
-
-<p>As mentioned <a href="../object_oriented_programming.html">before</a> when you run a Ruby
-program a little universe (space, scope) is being created, and populated with
-concrete objects (things) as defined by your program. These things interact,
-and do useful stuff, using certain methods that you call.</p>
-
-<p>Also, each concrete thing (object) is an instance of a general idea or type,
-and these ideas are called <em>classes</em>.</p>
-
-<p>You can see that objects have classes when you open IRB in your terminal and
-ask an object for its class:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="s2">"this is a string"</span><span class="p">.</span><span class="nf">class</span>
-<span class="o">=&gt;</span> <span class="no">String</span>
-</code></pre>
-
-<p class="note">
-Objects are concrete instances (manifestations) of classes.
-</p>
-
-<p>That means that the following sentence is true: In Ruby, <code>&quot;a string&quot;</code> <em>is a</em>
-<code>String</code>.</p>
-
-<p>Hmmmm, yeah, we kinda knew that already, right. However, you can also ask the
-same question in Ruby:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="s2">"this is a string"</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">true</span>
-</code></pre>
-
-<p>So, the actual string knows that it <em>is a</em> <code>String</code>, which in Ruby means that
-it is an instance of the class <code>String</code>. You can do this for any object. E.g.
-<code>1.is_a?(Numeric)</code>, also returns <code>true</code>. This is pretty cool.</p>
-
-<p>We also say that an object is an <em>instance</em> of its class. Let&rsquo;s see what that
-means.</p>
-
-  <h1>Classes create objects</h1>
-
-<p>Every object is an <em>instance</em> of a class.</p>
-
-<p>The class is kind of a blue print for the concrete object. Every time a
-concrete object (such as the String <code>&quot;one string&quot;</code>, the String <code>&quot;another
-string&quot;</code>, the String <code>&quot;yet another string&quot;</code>, and so on &hellip;) is created, we say
-that the class is <em>instantiated</em>: an object is created from it.</p>
-
-<p>What does that mean?</p>
-
-<p>Classes have a bunch of characteristics, but most importantly, every class
-defines a number of methods, which are specific to this type of thing (e.g. a
-String).</p>
-
-<p>Now, every time a new object is created (&ldquo;instantiated&rdquo;) from this class this
-new object get (&ldquo;inherits&rdquo;) all of these methods.</p>
-
-<p class="note">
-Objects inherit methods from their classes.
-</p>
-
-<p>That&rsquo;s right. Objects have their own methods attached to them.</p>
-
-<p>We&rsquo;ll explain more about methods that belong to objects in the next chapter.
-And you&rsquo;ll see how you can define methods to your own classes, so they&rsquo;re then
-available on your objects when we start defining our
-<a href="/writing_classes">first, own class</a>.</p>
-
-<p>But for now we can already point out that all concrete Strings that you use in
-your code will all have the same methods defined (attached to them) &hellip; because
-they&rsquo;re all created (instantiated) from the the same class.</p>
-
-<p>You can have a look at all the methods that the class <code>String</code> defines on
-Ruby&rsquo;s <a href="http://ruby-doc.org/core-2.2.0/String.html">documentation page</a> for this
-class.</p>
-
-<p>Let&rsquo;s see how we can use these methods.</p>
-
-  <h1>Objects have methods</h1>
-
-<p><em>Methods are an object&rsquo;s behaviour</em></p>
-
-<p>Objects have methods, allowing us to do interesting stuff with them. An
-object&rsquo;s methods are things that the object can <em>do</em>.</p>
-
-<p>These methods have exactly the same characteristics as those &ldquo;stand-alone&rdquo;
-methods that we&rsquo;ve discussed above: They (optionally) take arguments (input),
-return something, and encapsulate (have) some code.</p>
-
-<p>But on top of that they also &ldquo;belong&rdquo; to a particular object, and kind of
-&ldquo;know&rdquo; the object they belong to.</p>
-
-<p>Think about a person, like, a friend of yours. You can ask this person for
-their name (call a method), and they&rsquo;ll tell you (return it to you). Their name
-is a piece of knowledge that this person has, and the ability to tell it to you
-(respond to your question) is a piece of behaviour (a method) they have.</p>
-
-<p>We could also ask them to make, and bring a cup of tea for us. Or we could ask
-them to remember a phone number, or email password.</p>
-
-<p>As Rubyists we actually say that we &ldquo;talk to objects&rdquo;, or &ldquo;send messages&rdquo; to
-them: We do so by using (calling) methods that they respond to.</p>
-
-<p>And we&rsquo;ve already silently skipped over the fact that we&rsquo;ve used some methods
-in the previous chapter: <code>class</code> and <code>is_a?</code> are methods defined on all objects
-in Ruby, and therefore also defined on the String <code>&quot;this is a string&quot;</code>.</p>
-
-<p class="hint">
-Some methods, such as <code>class</code>, <code>is_a?</code>, are defined on all objects.
-</p>
-
-<p>Let&rsquo;s move on to see how we can use (call) these methods though.</p>
-
-  <h1>Calling methods</h1>
-
-<p>In Ruby, methods that belong to (are defined on) objects can be used (called)
-by adding a dot, and then the method name, like so:</p>
-<pre class="highlight ruby"><code><span class="n">object</span><span class="p">.</span><span class="nf">method</span>
-</code></pre>
-
-<p>That&rsquo;s like saying <em>Hey object, please do [method]</em>.</p>
-
-<p>Let&rsquo;s try that out in IRB.</p>
-
-<p>The class <code>String</code> defines methods like <code>upcase</code> (<em>Give me an uppercase version
-of yours</em>), <code>downcase</code> (<em>What&rsquo;s the downcased version of yours</em>), and <code>length</code>
-(<em>Hey string, what&rsquo;s your length?</em>). Here&rsquo;s how that works:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">upcase</span>
-<span class="o">=&gt;</span> <span class="s2">"RUBY MONSTAS"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">downcase</span>
-<span class="o">=&gt;</span> <span class="s2">"ruby monstas"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">length</span>
-<span class="o">=&gt;</span> <span class="mi">12</span>
-</code></pre>
-
-<p>And so on.</p>
-
-<p>In other words, you first address, or mention, the object that you want to talk
-to, and then, with the dot <code>.</code>, send a message by specifying the method name.</p>
-
-<p class="hint">
-A dot is used to call a method on an object.
-</p>
-
-<p>Imagine the string <code>name</code> is a person you can talk to. You can ask questions by
-&ldquo;sending a message&rdquo; to them, and they&rsquo;ll respond by sending (or returning)
-something back. The term &ldquo;sending messages&rdquo; actually is used instead of
-&ldquo;calling a method&rdquo; in programming, and specifically in Ruby.</p>
-
-<p>So, you can ask this string to hand you an &ldquo;upcased&rdquo; version of itself. And
-it responds by doing so. Or you can ask it for its length, and it responds
-by returning the number <code>12</code> to you.</p>
-
-<p>You can have a look at all the methods that the class <code>String</code> defines
-(responds to) on Ruby&rsquo;s
-<a href="http://ruby-doc.org/core-2.2.0/String.html">documentation page for this class</a>.</p>
-
-<p>Most methods in Ruby work this way: You ask an object to return a bit of
-information about itself (such as a String&rsquo;s length), or a modified
-(transformed) version of itself (such as a downcased version of the String).</p>
-
-<p class="hint">
-Most methods are questions, and return a relevant value.
-</p>
-
-<p>Others modify the object itself, and some have so called side-effects, and
-modify something else, e.g. <code>puts</code> and <code>p</code> both output something to the
-screen. Other methods might save files, send emails, or store things to
-a database.</p>
-
-<p class="hint">
-Some methods are commands, and change the object, or the system.
-</p>
-
-  <h1>Passing arguments</h1>
-
-<p>Just like our &ldquo;stand-alone&rdquo; methods from above, sometimes an object needs a
-little bit of extra information in order to do what you ask for. In other
-words, we might need to pass arguments to these methods, too.</p>
-
-<p>For example the class <code>String</code> defines the method <code>delete</code> which returns
-another String with some of the characters deleted. In order to do so, of
-course, it needs to know which characters we&rsquo;d like to remove.</p>
-
-<p>Again, we can pass these by appending parentheses <code>()</code> to the method call (the
-name). We can then include the extra bit of information needed (in our case
-another string) inside the parentheses like so:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"by Mo"</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="s2">"runstas"</span>
-</code></pre>
-
-<p>Hm. Not sure what &ldquo;runstas&rdquo; means. Ideas?</p>
-
-<p>Anyhow, another example for a method that needs an argument is the method
-<code>prepend</code> on Strings. This method returns a new String with the given String
-prepended:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">prepend</span><span class="p">(</span><span class="s2">"Oh, hello, "</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="s2">"Oh, hello, Ruby Monstas"</span>
-</code></pre>
-
-<p>Again, not all methods need arguments (extra bits of information) in order to
-do their job. E.g. the method <code>length</code> on Strings can know the length of their
-String just so (because it knows its String). Sometimes they need one or more
-arguments though.</p>
-
-<p>So how do you know?</p>
-
-<p>You might remember, over time, for some important methods, but most of us also
-check the documentation quite frequently, too. Some times it&rsquo;s just fine to
-try it out quickly, and only check the documentation if it does not work as
-expected.</p>
-
-  <h1>Listing methods</h1>
-
-<p>As said above, if you are curious what methods are defined on a certain object,
-then you can check the <a href="http://ruby-doc.org/core-2.2.0/">Ruby documentation</a>
-for this class. (Usually the right page conveniently shows up at the top when
-you google for &ldquo;ruby&rdquo; and the class name.)</p>
-
-<p>However, you can also quickly pop into IRB and ask the object for its methods.
-That&rsquo;s right, <code>methods</code> is a method defined on all objects (just like <code>class</code>,
-and <code>is_a?</code>).</p>
-
-<p>When you call it then it will <em>return</em> an Array with all the method names that
-the object has.</p>
-
-<p>It makes sense to sort the Array, so it is easier to read. Like so:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="s2">"Ruby Monstas"</span><span class="p">.</span><span class="nf">methods</span><span class="p">.</span><span class="nf">sort</span>
-<span class="o">=&gt;</span> <span class="p">[:</span><span class="o">*</span><span class="p">,</span> <span class="p">:</span><span class="o">+</span><span class="p">,</span> <span class="ss">:&lt;</span><span class="p">,</span> <span class="p">:</span><span class="o">&gt;</span><span class="p">,</span> <span class="ss">:[]</span><span class="p">,</span> <span class="ss">:class</span><span class="p">,</span> <span class="ss">:downcase</span><span class="p">,</span> <span class="ss">:delete</span><span class="p">,</span> <span class="ss">:include?</span><span class="p">,</span> <span class="ss">:is_a?</span><span class="p">,</span> <span class="ss">:length</span><span class="p">,</span> <span class="ss">:prepend</span><span class="p">,</span> <span class="ss">:start_with?</span><span class="p">]</span>
-</code></pre>
-
-<p>Yep, the method names come as Symbols, because they&rsquo;re considered code.</p>
-
-<p>If you do this yourself, you&rsquo;ll see that the String actually has a lot more
-methods. Many of these actually aren&rsquo;t used very often, but some are quite
-useful. We have stripped the Array down a little, because we want to talk about
-some of these methods more.</p>
-
-<p>Btw the code above also demonstrates that methods can be &ldquo;chained&rdquo;: When we
-call a method on an object it will return another object to us. We can then
-immediately call another method on that new object, and so on.</p>
-
-<p>In our example above the method <code>methods</code> returns a Array of names. And
-Arrays respond to (have) the method <code>sort</code>, so we can call this method
-immediately, by using another dot.</p>
-
-<p>We could chain some of the method calls from our String example above like so:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">prepend</span><span class="p">(</span><span class="s2">"Oh, hello, "</span><span class="p">).</span><span class="nf">upcase</span>
-<span class="o">=&gt;</span> <span class="s2">"OH, HELLO, RUBY MONSTAS"</span>
-</code></pre>
-
-<p>So we have a String <code>&quot;Ruby Monstas&quot;</code>, prepend another String to it, which
-returns a new String <code>&quot;Oh, hello, Ruby Monstas&quot;</code>, on which we immediately call
-the method upcase.</p>
-
-<p>Pretty handy.</p>
-
-<p>As you can see Ruby will first evaluate the bit <code>name.prepend(&quot;Oh, hello, &quot;)</code>.
-It needs to do that so it knows the object (the new String) that is going
-to be returned from this, so it can then call the method <code>upcase</code> on it.</p>
-
-<p>Does this make sense?</p>
-
-  <h1>Predicate methods</h1>
-
-<p>If you check the list of methods on our String above you see that in Ruby we
-can have methods that end with a question mark <code>?</code>. What&rsquo;s up with that?</p>
-
-<p>By convention, in Ruby, these methods return either <code>true</code> or <code>false</code>. For
-example, we can ask a number if it is even or odd:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">odd?</span>
-<span class="o">=&gt;</span> <span class="kp">true</span>
-
-<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">even?</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-</code></pre>
-
-<p>This makes them read like a question, which is pretty cool.</p>
-
-<p>Or you can ask the number if it&rsquo;s between two other numbers. Obviously this
-methods needs us to pass those two other numbers. So now we also have an example
-of a method that takes two arguments:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">true</span>
-
-<span class="o">&gt;</span> <span class="mi">5</span><span class="p">.</span><span class="nf">between?</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-</code></pre>
-
-<p>These methods are called <em>predicate methods</em> in Ruby. Not quite sure why, maybe
-because of the historical math context of programming.</p>
-
-<p class="hint">
-Predicate methods that end with a question mark <code>?</code> return either <code>true</code> or <code>false</code>.
-</p>
-
-<p>Strings also define some predicate methods:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s2">"R"</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">true</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-</code></pre>
-
-<p>Do you also think it&rsquo;s kinda odd that <code>name.start_with?(&quot;a&quot;)</code> reads almost like
-English, but not quite? Maybe the method could have been named <code>starts_with?</code>
-instead, right? That&rsquo;s true. This is because Matz, the creator of Ruby, is not
-a native English speaker, and some names sound right in Japanese when
-translated literally.</p>
-
-<p>Also:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"by"</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">true</span>
-
-<span class="o">&gt;</span> <span class="nb">name</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"r"</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-</code></pre>
-
-<p>When we check what methods there are defined on a number, we find some with the
-same name, but also different ones:</p>
-<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
-<span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="nf">methods</span><span class="p">.</span><span class="nf">sort</span>
-<span class="o">=&gt;</span> <span class="p">[:</span><span class="o">*</span><span class="p">,</span> <span class="p">:</span><span class="o">+</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="p">,</span> <span class="ss">:/</span><span class="p">,</span> <span class="ss">:between?</span><span class="p">,</span> <span class="ss">:even?</span><span class="p">,</span> <span class="ss">:odd?</span><span class="p">,</span> <span class="ss">:zero?</span><span class="p">]</span>
-</code></pre>
-
-<p>Let&rsquo;s try <code>zero?</code>:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="mi">0</span><span class="p">.</span><span class="nf">zero?</span>
-<span class="o">=&gt;</span> <span class="kp">true</span>
-
-<span class="o">&gt;</span> <span class="mi">1</span><span class="p">.</span><span class="nf">zero?</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-</code></pre>
-
-<p>Arrays have the methods <code>include?</code>, and Hashes respond to <code>key?</code>:</p>
-<pre class="highlight ruby"><code><span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">include?</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">true</span>
-
-<span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">].</span><span class="nf">include?</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-
-<span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"eins"</span> <span class="o">=&gt;</span> <span class="s2">"one"</span> <span class="p">}.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"eins"</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">true</span>
-
-<span class="o">&gt;</span> <span class="p">{</span> <span class="s2">"eins"</span> <span class="o">=&gt;</span> <span class="s2">"one"</span> <span class="p">}.</span><span class="nf">key?</span><span class="p">(</span><span class="s2">"zwei"</span><span class="p">)</span>
-<span class="o">=&gt;</span> <span class="kp">false</span>
-</code></pre>
-
-<p>Oh by the way, if you&rsquo;re curious why operators like <code>*</code>, <code>+</code>, <code>-</code> and so on are
-also listed here, check the chapter that explains that <a href="../operators/methods.html">operators are methods,
-too</a>.</p>
-
-  <h1>Bang Methods</h1>
-
-<p>All of the examples that we&rsquo;ve discussed before have one thing in common:</p>
-
-<p>They are questions, and do not modify the object they are called on.</p>
-
-<p>For example:</p>
-<pre class="highlight ruby"><code><span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="nb">puts</span> <span class="nb">name</span><span class="p">.</span><span class="nf">downcase</span>
-<span class="nb">puts</span> <span class="nb">name</span>
-</code></pre>
-
-<p>This will output:</p>
-<pre class="highlight ruby"><code><span class="n">ruby</span> <span class="n">monstas</span>
-<span class="no">Ruby</span> <span class="no">Monstas</span>
-</code></pre>
-
-<p>As you can see the method <code>downcase</code> has returned a new String, which is the
-lowercase version of the String that the method is being called on. When we
-output the original String on the next line, we can then see that it&rsquo;s still
-the same: The method <code>downcase</code> does not modify the String.</p>
-
-<p>However, there also are variants of some of these methods, which end in an
-exclamation mark <code>!</code>. These methods are called &ldquo;bang methods&rdquo;, and they usually
-modify the object that they&rsquo;re being called on.</p>
-
-<p class="hint">
-Bang methods end with an exlamation mark, and often modify the object they are called on.
-</p>
-
-<p>For example, next to the method <code>downcase</code> Strings also have a method <code>downcase!</code>.</p>
-
-<p>Let&rsquo;s try that:</p>
-<pre class="highlight ruby"><code><span class="nb">name</span> <span class="o">=</span> <span class="s2">"Ruby Monstas"</span>
-<span class="nb">puts</span> <span class="nb">name</span><span class="p">.</span><span class="nf">downcase!</span>
-<span class="nb">puts</span> <span class="nb">name</span>
-</code></pre>
-
-<p>This will output:</p>
-<pre class="highlight ruby"><code><span class="n">ruby</span> <span class="n">monstas</span>
-<span class="n">ruby</span> <span class="n">monstas</span>
-</code></pre>
-
-<p>As you can see calling the method <code>downcase!</code> on the second line has modified
-the String itself (the object that <code>name</code> refers to), and <em>also</em> returned the
-new downcased version.</p>
-
-<p>Nowadays programmers have learned that using these methods has a number of
-disadvantages, and usually should be avoided, unless there are very good
-reasons for it (usually, there are none).</p>
-
-<p class="hint">
-Use bang methods with caution.
-</p>
-
-<p>We mostly mention these methods because you might see them used elsewhere.</p>
-
-  <h1>Top-level object</h1>
-
-<p>So, we&rsquo;ve just learned that objects come with lots of methods attached to them.
-We&rsquo;ve seen how we can use them to do interesting things with the object, by the
-way of calling these methods.</p>
-
-<p>But previously we&rsquo;ve also learned how to define our own methods (e.g. <code>add_two</code>),
-and these methods weren&rsquo;t attached to any object, right? We&rsquo;ve just hand-wavingly
-called them &ldquo;stand-alone&rdquo; methods.</p>
-
-<p>On the other hand we&rsquo;ve also heard that &ldquo;In Ruby everything is an object&rdquo;.</p>
-
-<p>So what&rsquo;s up with that?</p>
-
-<p>This is something that pretty much blows some people&rsquo;s minds, confuses the heck
-out of others, while yet others don&rsquo;t even notice or think about it at all. It
-is also something, that, when you ask around on your local Ruby meetup, very
-few people can explain in a satisfying, and clear way. And neither do we, yet.</p>
-
-<p>Let&rsquo;s still try.</p>
-
-<p>Whenever you open IRB and it presents that prompt to you, or when you create a
-new, empty Ruby file &hellip; Ruby will not only execute your code. Before she does
-that she creates an empty, anonymous Object, and kind of places you inside of
-it.</p>
-
-<p>This empty Object therefor seems invisible, and it seems that those methods
-that we can define in this scope (space) were somehow &ldquo;standing alone&rdquo;. In fact
-they aren&rsquo;t. They&rsquo;re defined on this empty, anonymous Object that we usually
-don&rsquo;t see.</p>
-
-<p>This Object often is referred to as the <em>top-level scope</em> in Ruby.</p>
-
-<p class="hint">
-The top-level scope is an empty, anonymous object. All Ruby code starts in here.
-</p>
-
-<p>Confusing? Yeah. Don&rsquo;t worry. This is something many Ruby programmers do and
-use everyday without ever asking the question why it works, exactly.</p>
-
-<p>In practice you can just remember that you can define and use methods, just
-like variables in the top-level scope. And methods (as well as variables)
-can also be attached to objects, too.</p>
-
-<p>Hopefully some of this will become more clear once you&rsquo;ve written your
-own classes.</p>
-
-<p>So let&rsquo;s do just that.</p>
 
   <h1>Writing classes</h1>
 
@@ -4244,7 +4239,7 @@ method&rsquo;s arguments.</p>
 <p>And we also said that inside any object&rsquo;s method all instance variables of
 this object, and all other methods of this object are also visible.</p>
 
-<p>We also briefly talked about that mysterious <a href="../objects/top-level.html">top-level object</a>
+<p>We also briefly talked about that mysterious <a href="/objects/top-level.html">top-level object</a>
 that Ruby enters when she starts executing a program, or IRB.</p>
 
 <p>We are now finally ready to put all these things together a little more, and
@@ -5257,6 +5252,56 @@ try to use them in a single quoted string like so:</p>
 </code></pre>
 
 <p>Which means that escape sequences are not replaced in single quoted strings.</p>
+
+  <h1>Top-level object</h1>
+
+<p>So, we&rsquo;ve learned that objects come with lots of methods attached to them.  And
+we&rsquo;ve seen how we can use them to do interesting things with the object, by the
+way of calling these methods.</p>
+
+<p>Now, if you pop into <code>irb</code>, or if you write the following code into an otherwise
+empty Ruby file, this works:</p>
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;</span> <span class="nb">is_a?</span><span class="p">(</span><span class="no">Object</span><span class="p">)</span>
+<span class="kp">true</span>
+<span class="o">&gt;</span> <span class="nb">methods</span>
+<span class="p">[</span><span class="ss">:to_s</span><span class="p">,</span> <span class="ss">:inspect</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span> <span class="p">]</span>
+</code></pre>
+
+<p>So, as you can see we can use some methods in Ruby without even defining an
+object at all: They&rsquo;re already there. And the method <code>is_a?</code> tells us that this
+already is an object &hellip; whatever &ldquo;this&rdquo; is.</p>
+
+<p>What&rsquo;s up with that?</p>
+
+<p>This is something that pretty much blows some people&rsquo;s minds, confuses the heck
+out of others, while yet others don&rsquo;t even notice or think about it at all. It
+is also something, that, when you ask around on your local Ruby meetup, very
+few people can explain in a satisfying, and clear way. And neither do we, yet.</p>
+
+<p>Let&rsquo;s still try.</p>
+
+<p>Whenever you open IRB and it presents that prompt to you, or when you create a
+new, empty Ruby file &hellip; Ruby will not only execute your code: Before she does
+she first creates an empty, anonymous Object, and kind of places you inside of
+it.</p>
+
+<p>This empty Object kind of seems invisible, and it seems that those methods
+that we can define in this scope (space) were somehow &ldquo;standing alone&rdquo;. In fact
+they aren&rsquo;t. They&rsquo;re defined on this empty, anonymous Object that we usually
+don&rsquo;t see.</p>
+
+<p>This Object often is referred to as the <em>top-level scope</em> in Ruby.</p>
+
+<p class="hint">
+The top-level scope is an empty, anonymous object. All Ruby code starts in here.
+</p>
+
+<p>Confusing? Yeah. Don&rsquo;t worry. This is something many Ruby programmers do and
+use everyday without ever asking the question why it works, exactly.</p>
+
+<p>Hopefully some of this will become more clear once you&rsquo;ve written your
+own methods and classes.</p>
 
   <h1>Lots of other methods</h1>
 

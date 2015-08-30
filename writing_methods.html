@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <nav class="page-nav"><a class="prev" href="/built_in_classes/hashes.html">
+    <nav class="page-nav"><a class="prev" href="/objects/bangs.html">
   Previous
 </a></nav>
     <nav class="page-nav"><a class="next" href="/writing_methods/constituents.html">
@@ -170,48 +170,6 @@
       </li>
     </ul>
   </li>
-  <li class="active directory expanded">
-    <a href="/writing_methods.html">
-      Writing Methods
-    </a>
-    <ul>
-      <li>
-        <a href="/writing_methods/constituents.html">
-          What makes a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/definition.html">
-          Defining a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/usage.html">
-          Using (calling) a method
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/return_values.html">
-          Return values
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/scopes.html">
-          Scopes
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/combining.html">
-          Combining Methods
-        </a>
-      </li>
-      <li>
-        <a href="/writing_methods/printing.html">
-          Printing things
-        </a>
-      </li>
-    </ul>
-  </li>
   <li class="directory">
     <a href="/objects.html">
       Objects, Classes, Methods
@@ -257,9 +215,46 @@
           Bang Methods
         </a>
       </li>
+    </ul>
+  </li>
+  <li class="active directory expanded">
+    <a href="/writing_methods.html">
+      Writing Methods
+    </a>
+    <ul>
       <li>
-        <a href="/objects/top-level.html">
-          Top-level object
+        <a href="/writing_methods/constituents.html">
+          What makes a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/definition.html">
+          Defining a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/usage.html">
+          Using (calling) a method
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/return_values.html">
+          Return values
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/scopes.html">
+          Scopes
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/combining.html">
+          Combining Methods
+        </a>
+      </li>
+      <li>
+        <a href="/writing_methods/printing.html">
+          Printing things
         </a>
       </li>
     </ul>
@@ -385,6 +380,11 @@
       <li>
         <a href="/bonus/string_interpolation.html">
           String interpolation
+        </a>
+      </li>
+      <li>
+        <a href="/bonus/top_level.html">
+          Top-level object
         </a>
       </li>
       <li>
@@ -589,6 +589,9 @@ the two most common data structures, Arrays and Hashes.</p>
 <p>All of this is about the <em>data</em> part. Methods on the other hand are about the
 <em>doing interesting things</em> part.</p>
 
+<p>In this chapter we&rsquo;ll have a closer look at the anatomy of a method, and you&rsquo;ll
+learn how to implement, and use, your own methods.</p>
+
 <h2>Methods define behaviour</h2>
 
 <p>Methods are all about defining <em>behaviour</em>, so that they can be applied to
@@ -610,15 +613,15 @@ Variables name things, methods name behaviour (code).
 <p>Methods make code re-usable, by the way of packaging (&ldquo;encapsulating&rdquo;) code and
 sticking a name on it.</p>
 
-<p>E.g. Ruby comes with lots of methods predefined - written by experienced
-programmers. So, unless you&rsquo;re studying computer science and you&rsquo;re faced with
-the exercise of implementing your own, complicated sorting algorithms for data
-collections, &hellip; you&rsquo;ll just use the method <code>sort</code> that already comes defined
-for Arrays in Ruby out of the box.</p>
+<p>As you have seen Ruby comes with lots of methods predefined - written by
+experienced programmers. So, unless you&rsquo;re studying computer science and you&rsquo;re
+faced with the exercise of implementing your own, complicated sorting
+algorithms for data collections, &hellip; you&rsquo;ll just use the method <code>sort</code> that
+already comes defined for Arrays in Ruby out of the box.</p>
 
 <p>Ok, let&rsquo;s see what makes up a method, and how we can define our own ones.</p>
 
-        <nav class="page-nav"><a class="prev" href="/built_in_classes/hashes.html">
+        <nav class="page-nav"><a class="prev" href="/objects/bangs.html">
   Previous
 </a></nav>
         <nav class="page-nav"><a class="next" href="/writing_methods/constituents.html">
