@@ -12,7 +12,7 @@ method's arguments.
 And we also said that inside any object's method all instance variables of
 this object, and all other methods of this object are also visible.
 
-We also briefly talked about that mysterious [top-level object](/objects/top-level.html)
+We also may have a look at that mysterious [top-level object](/bonus/top-level.html)
 that Ruby enters when she starts executing a program, or IRB.
 
 We are now finally ready to put all these things together a little more, and
