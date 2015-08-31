@@ -272,7 +272,7 @@
       </li>
       <li>
         <a href="/writing_classes/initializers.html">
-          Initializers
+          Initializing objects
         </a>
       </li>
       <li>
@@ -3874,6 +3874,74 @@ end
 
 <p>Let&rsquo;s move on, and define a class <code>Person</code>, which should be a even more fun.</p>
 
+  <h1>Initializing objects</h1>
+
+<p><em>In the moment of birth</em></p>
+
+<p>Let&rsquo;s start over, and define a new class.</p>
+
+<p>Remember how we said that objects can be thought of as two things: They know
+<em>stuff</em>, and they can <em>do things</em>.</p>
+
+<p>Let&rsquo;s define a class <code>Person</code>. People obviously also know things, and can do things.</p>
+
+<p>Here&rsquo;s how to define a shiny, new, empty class <code>Person</code>:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Again, that&rsquo;s not a very useful class, but we can instantiate it, and create an
+actual, concrete person instance (object) from it:</p>
+<pre class="highlight ruby"><code><span class="nb">p</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span>
+</code></pre>
+
+<p>Now, before we add any behaviour (methods) to our class, we want to be able to
+give it some initial data: In our case, we want the person to know its own
+name.</p>
+
+<p>We can do this like so:</p>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Person</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>You see that we add a method called <code>initialize</code> to the class, and this method
+accepts a single argument, which is called <code>name</code>. At the moment, this method
+is still empty. We&rsquo;ll add some code to it in a bit.</p>
+
+<p>The important bit to learn for you is: the method <code>initialize</code> is a special
+method with a special meaning in Ruby:</p>
+
+<p>Whenever you call the method <code>new</code> on a class, as in <code>Person.new</code>, the class
+will create a new instance of itself. It will then, internally, call the method
+<code>initialize</code> on the new object. Doing so it will simply <em>pass all the
+arguments</em> that you passed to <code>new</code> <em>on to</em> the method <code>initialize</code>.</p>
+
+<p>So we can now create a new person instance by calling &hellip;</p>
+<pre class="highlight ruby"><code><span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Ada"</span><span class="p">)</span>
+</code></pre>
+
+<p>&hellip; and the string <code>&quot;Ada&quot;</code> will be passed on to our <code>initialize</code> method, and
+end up being assigned to the local variable <code>name</code>.</p>
+
+<p class="hint">
+The special method <code>initialize</code> is called under the hood when the
+object has been created by the class method <code>new</code>.
+</p>
+
+<p>Obviously, our <code>initialize</code> method does not <em>do</em> anything with the String
+passed, yet. That&rsquo;s right. We&rsquo;ll get to that in the next chapter.</p>
+
+<p>To recap, when you call <code>new</code> on the class <code>Person</code>, and pass the string
+<code>&quot;Ada&quot;</code> then the method <code>new</code> will create a new instance of the class, and call
+<code>initialize</code> on it, passing the same argument list, which in our case is the
+single string <code>&quot;Ada&quot;</code>.</p>
+
+<p>When we create a new instance of a class by the way of calling the method <code>new</code>
+on that class, we also say that we &ldquo;instantiate&rdquo; that object: By calling
+<code>Person.new</code> we instantiate a new person object.</p>
+
   <h1>Instance variables</h1>
 
 <p><em>An object&rsquo;s own knowledge</em></p>
@@ -4361,7 +4429,7 @@ method&rsquo;s arguments.</p>
 <p>And we also said that inside any object&rsquo;s method all instance variables of
 this object, and all other methods of this object are also visible.</p>
 
-<p>We also briefly talked about that mysterious <a href="/objects/top-level.html">top-level object</a>
+<p>We also may have a look at that mysterious <a href="/bonus/top-level.html">top-level object</a>
 that Ruby enters when she starts executing a program, or IRB.</p>
 
 <p>We are now finally ready to put all these things together a little more, and
