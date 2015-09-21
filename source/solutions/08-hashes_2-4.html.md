@@ -18,7 +18,7 @@ end
 lines = languages.keys.map do |key|
   words = dictionary[key].values
   words = words.map.with_index { |word, ix| word.ljust(widths[ix]) }
-  "#{key} #{words.join(' | ')}"
+  "#{key} | #{words.join(' | ')}"
 end
 lines = lines.map { |line| "| #{line} |" }
 
