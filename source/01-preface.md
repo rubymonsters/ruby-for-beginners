@@ -11,7 +11,7 @@ We suggest that you read the book from beginning to end, and do exercises as you
 
 If you'd prefer to jump right in, you can also skip over the introductory
 chapters. Jump to the chapter "Your tools", and read the introductory
-chapters later. If you already feel familiar with your editor and terminal, and know how to use `ruby` to execute a Ruby file, then you can skip over that chapter too and head straight to the "Built-in classes" chapter and see if that works for you (suggested for people who have already attended a beginner's workshop).
+chapters later. If you already feel familiar with your editor and terminal, and know how to use `ruby` to execute a Ruby file, then you can skip over that chapter too and head straight to the "Built-in classes" chapter and see if that works for you (suggested for people who have already attended a beginners workshop).
 
 Take notes about whatever questions come up during the week, things that you
 don't understand, and everything else worth mentioning (for example, epiphanies
@@ -31,7 +31,7 @@ Lovelace, the world's [first computer programmer](http://en.wikipedia.org/wiki/A
 ## Resources
 
 We also recommend looking at, reading, and working through other resources,
-as much as you can. Every beginner's book expresses things a little bit differently, in a
+as much as you can. Every beginners book expresses things a little bit differently, in a
 different order, and from a different angle.
 
 #### Overview
