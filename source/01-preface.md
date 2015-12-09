@@ -11,7 +11,9 @@ We suggest that you read the book from beginning to end, and do exercises as you
 
 If you'd prefer to jump right in, you can also skip over the introductory
 chapters. Jump to the chapter "Your tools", and read the introductory
-chapters later. If you already feel familiar with your editor and terminal, and know how to use `ruby` to execute a Ruby file, then you can skip over that chapter too and head straight to the "Built-in classes" chapter and see if that works for you (suggested for people who have already attended a beginners workshop).
+chapters later. If you already feel familiar with your editor and terminal, and
+know how to use `ruby` to execute a Ruby file, then you can skip over the
+chapter "Your tools", too.
 
 Take notes about whatever questions come up during the week, things that you
 don't understand, and everything else worth mentioning (for example, epiphanies
@@ -19,11 +21,10 @@ you have, or things you found interesting). Bring your notes to the study
 group so we can talk about them in the group.
 
 Please help us improve this book for others: Whenever you find something unclear
-or missing then please tell us. You do this during the study group, email the
-mailing list, or ideally [file an
-issue](https://github.com/rubymonsters/learning_ruby/issues/new) on this
-repository. (This also helps you get familiar with GitHub, which we will use a
-lot later on.)
+or missing then please tell us. You can do this during the study group, email the
+mailing list, or ideally
+[file an issue here](https://github.com/rubymonsters/learning_ruby/issues/new).
+(This also helps you get familiar with GitHub, which we'll use a lot, later on.)
 
 By using the name "Ada" in examples in this book we give credit to Ada
 Lovelace, the world's [first computer programmer](http://en.wikipedia.org/wiki/Ada_Lovelace) :)
