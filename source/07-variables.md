@@ -7,77 +7,96 @@ to assign names to them.
 
 Every practical programming language has a feature to do this, called
 variables. This is basically the same concept that you might know from math,
-although in Ruby there are different kinds of variables (which you will learn
-about later).
+although in Ruby there are different kinds of variables (you will get to know
+another one in a couple chapters).
 
-In the following example the first line calculates the result of the operation
-`2 + 3 * 4` and sticks the name `number` on the result. In doing so it creates
-a variable: a name that refers to something (an object, in our case a number).
+We'll discuss this concept quickly because you already need to know it in the
+next chapter, and the respective exercises.
 
-Think of it like a post-it note with the name `number` written on it, and stuck
-on the actual thing, which is an object (in this case, a number).
+If some of this seems rather abstract to you, don't fret. It will become very
+practical, and you won't even think a lot about it any more, as soon as you
+actually work with variables while learning other things.
 
-The second line then refers to the number that was the result of the
-calculation, by using the variable name, and prints the result to the screen:
+Alright. Let's jump right in:
+
+In Ruby you can assign a name to something (an object) by using the so called
+assignment operator `=`. Like so:
 
 ```ruby
-number = 2 + 3 * 4
+number = 1
+```
+
+This will *assign* the name `number` to the "thing" (object) that is the number
+`1`. From now on we can refer to this object by using the name `number`. For
+example the following code would output the number `1`:
+
+<p class="hint">
+A name on the left side of the assignment operator <code>=</code> is assigned
+to the object on the right side.
+</p>
+
+
+```ruby
+number = 1
 puts number
 ```
 
-This will output the number `14`.
+One important thing to note here is that a variable is not a "thing" an object
+by itself. Instead it's just a *name* for an actual object. In our example the
+number `1` is an object, while `number` is a name for it because we've assigned
+it.
 
-In practice, instead of saying that we "give the name `number` to the result",
-we usually say that we "assign the result to the variable `number`". From then
-on we can say that "the variable number is assigned 14" (in our example).
+<p class="hint">
+A variable itself is not a "thing". It's just a name for a thing (an object).
+</p>
 
-The operator `=` is called the assignment operator. It simply does that: It
-assigns the value on the right side to the variable given on the left side.
+You can think of it like a post-it note with the name `number` written on it,
+and stuck on the actual thing, which is an object (in this case, a number).
 
-Note that, in order to assign the value on the right, Ruby needs to evaluate
-the expression `2 + 3 * 4` first. This evaluation will return the value `14`,
-which is then assigned to the variable `number`.
+Imagine you were in the middle of learning some Spanish, and sticked post-its
+onto things in your apartment: the name *nevara* onto the refridgerator, *cama*
+onto your bed, and *puerta del baño* onto the bathroom door.
 
-On the second line something similar happens: `puts` expects to be handed a
-value that it can then actually output to the screen. In order to pass that
-value Ruby will first look at the right hand side, and evaluate the expression
-`number`. Since this is a variable, the expression simply evaluates to the
-value that was assigned to the variable on the first line.
+Now, whenever you use one of these terms, as in *abrir la nevera* (open the
+refridgerator) in order to learn the language and rehearse vocabulary, you'll
+obviously refer to the object, and open its actual, physical door.
 
-In Ruby, variables are created the moment you use them, by way of assigning
-something to them. You don't need to declare them as in other languages, which
-is pretty convenient.
+That's pretty much how variable assignment works in Ruby. There's a "thing",
+the object on the right side of the assignment operator `=`, and the name on
+the left side is being assigned to it.
 
-If you assign different values to the same variable, then assignments that
-happen later will simply overwrite previous ones. Like so:
+Whenever we use a variable name that has been defined before we refer to the
+actual object that it has been assigned to. E.g. on the second line of the
+code example above `number` refers to the actual object, the number `1` that
+it has been assigned to on the first line. Therefore `puts number` outputs
+the number.
+
+<p class="hint">
+You can pick whatever variable names you want, they're just names, like post-it
+notes stuck onto actual objects.
+</p>
+
+Since names are just names, the following examples would do exactly the same:
 
 ```ruby
-number = 4
-number = number * 3
-puts number + 2
+a = 1
+puts a
+
+large_number = 1
+puts large_number
+
+apples = 1
+puts apples
 ```
 
-This, again, would output `14`. Let's walk through it:
+However, also note that it makes sense to try and pick names that reveal your
+intention. The chapter <a href="/bonus/good_names.html">Using the right
+words</a> at the end of this book will talk more about this. Feel free to jump
+ahead if you are curious. In short, the first example using `a` as a name would
+be fowned upon because it's wasting the opportunity to use a meaningful name.
+The second and third examples are just trying to be stupid, and pick names that
+don't match the "thing" (the object, number `1`) at all.
 
-* The first line assigns the number `4` to the variable `number`, creating that
-  variable.
-* The second line multiplies the value that is assigned to the variable
-  `number` (which is `4`) by the number `3`, and then assigns the result (which
-  is `12`) to the variable `number`.
-* The third line adds the value `2` to the value assigned to the variable
-  `number` (which is now `12`). The result of this operation (which is `14`) is
-  then passed to `puts` which prints it out to the screen.
+There are a two more things about variable assignments that we'd like to
+point out before we move on.
 
-Of course, no one would actually write this exact code in practice since you can
-simply do all this in just one line instead: `puts 2 + 3 * 4`. But sometimes
-you'll find or write code that assigns an initial value to a variable, and then
-keeps working on it for a few more lines. This sometimes is useful to break up
-long lines, and make code more readable.
-
-As mentioned earlier, Ruby has different kinds of variables. The kind of
-variable used above is called a "local variable", and it's the one used most
-often. You will learn about another type of variables later when we talk about
-classes and objects.
-
-On formatting: Note that there are spaces around the assignment operator `=`
-as well as the arithmetical operators `+` and `*`.

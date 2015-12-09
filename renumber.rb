@@ -17,9 +17,10 @@ class Paths < Struct.new(:dir)
     end
 
     def find(dir)
-      paths = Dir["#{dir}/*.md"]
+      # paths = Dir["#{dir}/*.md"]
+      paths = Dir["#{dir}/**/*"]
       paths = paths.select { |path| path =~ /[\d]{2}-/ }
-      paths = paths.map { |path| path.sub('.md', '') }.uniq.sort
+      # paths = paths.map { |path| path.sub('.md', '') }.uniq.sort
       paths.map.with_index { |path, ix| [path, ix] }
     end
 end
@@ -34,10 +35,16 @@ class Source < Struct.new(:path, :number)
   end
 
   def move
-    source, target = "#{path}.md", "#{self.target}.md"
-    return if source == target
-    FileUtils.mv(source, target)
-    self.path = self.target
+    # ['md', nil].each do |ext|
+      # source, target = "#{path}.md", "#{self.target}.md"
+      source, target = path, self.target
+      # target = [self.target, ext].compact.join('.')
+      puts "source: #{source}", "target: #{target}"
+      unless source == target
+        # FileUtils.mv(source, target)
+      end
+    # end
+    # self.path = self.target
   end
 
   def exercise?
@@ -130,10 +137,23 @@ end
 
 class Sources < Struct.new(:dir)
   def renumber
-    sources.each do |source|
-      source.validate!
-      fixes.apply(source)
+    sources.reverse.each.with_index do |source, ix|
+      # source.move
+      # source.validate!
+      # fixes.apply(source)
+      path = source.path
       source.move
+      # sources.select { |s| s.path.include?(path) }.each do |s|
+      #   s.path.sub(path, source.path)
+      # end
+      # next_source = sources[ix + 1]
+      # next unless next_source
+      # if next_source.path.include?(path)
+      #   puts path
+      #   puts source.path
+      #   next_source.path.sub(path, source.path)
+      #   puts next_source.path
+      # end
     end
   rescue InvalidFilename => e
     puts e.message
@@ -151,6 +171,8 @@ class Sources < Struct.new(:dir)
       end
     end
 end
+
+fail 'kaputt'
 
 sources = Sources.new('source')
 sources.renumber

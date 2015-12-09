@@ -1,0 +1,48 @@
+@media print {
+  nav, .menu {
+    display: none !important;
+  }
+  @page {
+    margin: 4em;
+  }
+  body {
+    font-size: 1em;
+  }
+  body > div {
+    display: block;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+  }
+  article {
+    max-width: 100%;
+  }
+  h1 {
+    /* page-break-before: always; */
+  }
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+  }
+  article {
+    page-break-before: always;
+  }
+  pre {
+    page-break-inside: avoid;
+  }
+  ul, ol {
+    page-break-inside: avoid;
+  }
+  body > div {
+    padding: 0;
+  }
+  body, a {
+    color: #000;
+  }
+  a {
+    word-wrap: break-word;
+  }
+  a[href^="http://"]:after, a[href^="https://"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+}

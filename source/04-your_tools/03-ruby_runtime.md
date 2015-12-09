@@ -15,3 +15,18 @@ ruby hello.rb
 This will tell the `ruby` runtime to interpret the contents of the file
 `hello.rb` as Ruby code, and execute it.
 
+One can also use this program to do other things. You probably won't need
+these a lot, but we think it's good to know. You can try these by typing
+these commands in your terminal.
+
+E.g. you can print out the version of the program:
+
+```
+ruby --version
+```
+
+Or execute Ruby code without storing it to a file:
+
+```
+ruby -e 'puts 123'
+```

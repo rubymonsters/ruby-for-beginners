@@ -15,7 +15,9 @@ that normally would cost a lot of manual work. You'll be able to jump into
 other tutorials, and have a much easier time understanding what they're
 talking about. And you can start working on our next curriculum which will
 walk you through the basics of building an actual
-[web application](http://web-applications-for-beginners.rubymonstas.org).
+[web application](http://webapps-for-beginners.rubymonstas.org).
 
-You can [find the source code here](https://github.com/rubymonsters/ruby-for-beginners).
+If you'd like to print this book, or export it as a PDF try using [this page](/print.html),
+which is a single-page version of the entire book.
 
+You can find the [source code of this book here](https://github.com/rubymonsters/ruby-for-beginners).

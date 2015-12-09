@@ -15,55 +15,78 @@
   - ruby_runtime
   - workflow
   - irb
+- roadmap
 - object_oriented_programming
+- path: variables
+  children:
+  - reusing_names
+  - right_goes_first
 - path: built_in_classes
   children:
   - numbers
   - strings
+  - true_false_nil
   - symbols
   - arrays
   - hashes
-- variables
-- path: methods
+- path: objects
   children:
+  - classes
+  - instances
+  - methods
+  - calling
+  - arguments
+  - listing
+  - predicates
+  - bangs
+- path: writing_methods
+  children:
+  - constituents
+  - definition
+  - usage
   - return_values
-  - parentheses
-  - writing_methods
-  - control_flow
   - scopes
+  - combining
   - printing
-- path: everything_an_object
-  children:
-  - object_classes
-  - object_methods
-- string_interpolation
-- nothing_and_truth
-- path: blocks
-  children:
-  - block_syntax
-  - block_arguments
-  - block_return_values
-- path: bonus_1
-  children:
-  - operator_methods
-  - predicate_methods
-  - other_methods
-  - questions_commands
-  - conditionals
-  - operators
-  - arithmetical_operators
-  - logical_operators
-  - comparison_operators
-  - alternative-syntax
 - path: writing_classes
   children:
-  - initializing_objects
+  - definition
+  - methods
+  - initializers
   - instance_variables
   - attribute_readers
   - attribute_writers
   - state_and_behaviour
-- good_names
-- path: bonus_2
+  - interaction
+  - self
+- path: blocks
+  children:
+  - syntax
+  - arguments
+  - return_values
+  - ioc
+  - iterators
+- path: conditionals
+  children:
+  - nothing_and_truth
+- path: operators
+  children:
+  - arithmetical
+  - logical
+  - comparison
+  - methods
+- path: bonus
+  children:
+  - string_interpolation
+  - top_level
+  - other_methods
+  - questions_commands
+  - alternative-syntax
+  - good_names
+  - parentheses
+  - arguments_parameters
+  - write_new_method
+- path: advanced
   children:
   - libraries
   - modules
@@ -88,3 +111,9 @@
   - mailbox_html
   - mailbox_file
   - mailbox_csv
+- path: exercises_2
+  children:
+  - numbers
+  - strings
+  - arrays_1
+  - hashes_1

@@ -28,3 +28,21 @@ is completely acceptable.
 
 If local scopes are like rooms in a house, then instance variables are visible
 in every room in the house.
+
+
+In the chapter 02-creation talk about:
+
+* Writing code is creative. It is close to art, design, architecture and philosophy.
+* Heidegger: "language is the house of being"
+* all you need is a computer, internet connection and time
+* Building fun applications, or useful little tools (Debbie's lunch roulette)
+
+*I believe people want to express themselves when they program. They don’t want to fight with the language. Programming languages must feel natural to
+programmers. I tried to make people enjoy programming and concentrate on the
+fun and creative part of programming when they use Ruby.* - Yukihiro Matsumoto
+http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html
+
+
+Recommend to never copy and paste code, instead type it, and format it well.
+
+Move "String interpolation" up

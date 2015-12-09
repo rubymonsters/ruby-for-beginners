@@ -1,6 +1,42 @@
 # Formatting your code
 
-*Pattern recognition*
+*Keeping things pretty*
+
+By "formatting code" we refer to the way code is indented, or not, where and
+how whitespace is being used in order to separate things visually, or not, etc.
+
+For example, even though this code won't mean a lot to you at this point (it
+will, in a few chapters), it is formatted well:
+
+```ruby
+def widths(row)
+  row.map do |cell|
+    cell.width
+  end
+end
+```
+
+Even without understanding what these few lines of code do at all, from just
+looking at it one can recognize a certain structure: things are somehow
+nested, and stuff that sits on the same horizontal indentation relates to
+each other visually.
+
+On the other hand the following code also is perfectly valid Ruby code, in the
+sense that Ruby will happily run it, and it does exactly the same. However,
+it is not formatted very well at all (in fact it's quite a mess, isn't it?):
+
+```ruby
+  def widths (     row
+)
+ row.map do | cell| cell.width
+end
+     end
+```
+
+This *does* the same, technically: Ruby will run it. But it does not *look* and
+*read* the same, simply because of the way it is formatted.
+
+## Pattern recognition
 
 When you talk to developers about your code you will probably notice very
 quickly that we are all obsessed about how exactly we'd like code to be
@@ -18,7 +54,7 @@ sidewalk. Even if you only see the kid from the corner of your eye your brain
 will immediately process this information and even assign a meaning to it.
 You'll start paying attention, and maybe lower your speed immediately.
 
-Often when you search for something online, and look at a couple of 
+Often when you search for something online, and look at a couple of
 websites, your brain will help you recognize things that you are looking
 for without consciously thinking about the structure of the site.
 
