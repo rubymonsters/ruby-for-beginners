@@ -34,14 +34,14 @@ We also recommend looking at, reading, and working through other resources,
 as much as you can. Every beginners book expresses things a little bit differently, in a
 different order, and from a different angle.
 
-#### Overview
+### Overview
 
 * [Codecademy Ruby Glossary](http://www.codecademy.com/glossary/ruby)
 * [Rails Beginner Cheat Sheet](http://www.pragtob.info/rails-beginner-cheatsheet/index.html) by Tobias Pfeiffer
 * [Ruby Docs Cheat Sheet](http://overapi.com/ruby)
 * [Ruby API documentation](http://ruby-doc.org/core-2.2.0)
 
-#### Recommended reading
+### Recommended reading
 
 * [Ruby in 100 minutes](http://tutorials.jumpstartlab.com/projects/ruby_in_100_minutes.html) by JumpstartLab
 * [A Beginner's Guide To Ruby](https://hackhands.com/beginners-guide-ruby) by Marc Gayle
@@ -53,7 +53,7 @@ different order, and from a different angle.
 * [Programming Ruby](https://pragprog.com/book/ruby4/programming-ruby-1-9-2-0), "The pickaxe" by Dave Thomas
 * [Eloquent Ruby](http://www.amazon.com/Eloquent-Ruby-Addison-Wesley-Professional-Series/dp/0321584104) by Russ Olsen
 
-#### Online courses
+### Online courses
 
 * [Try Ruby](http://tryruby.org)
 * [RubyMonk](http://rubymonk.com/learning/books/1)
@@ -61,15 +61,15 @@ different order, and from a different angle.
 * [Code School](http://www.codeschool.com)
 * [Odin Project](http://www.theodinproject.com/ruby-programming)
 
-#### Puzzles
+### Puzzles
 
 * [Ruby Warrior](https://www.bloc.io/ruby-warrior) by Ryan Bates and Bloc.io
 
-#### Role model stories
+### Role model stories
 
 * [It Takes a Village to Make a Programmer](https://www.youtube.com/watch?v=FHNrw7aiKOE) by Michele Guido
 * [Rails Girls Berlin Success Stories](http://railsgirlsberlin.de/category/success-stories)
 
-#### Resources for coaches
+### Resources for coaches
 
 * [Tips for coaching a programming study group](http://coaching.rubymonstas.org)
