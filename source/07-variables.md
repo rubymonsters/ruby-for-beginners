@@ -93,7 +93,7 @@ However, also note that it makes sense to try and pick names that reveal your
 intention. The chapter <a href="/bonus/good_names.html">Using the right
 words</a> at the end of this book will talk more about this. Feel free to jump
 ahead if you are curious. In short, the first example using `a` as a name would
-be fowned upon because it's wasting the opportunity to use a meaningful name.
+be frowned upon because it's wasting the opportunity to use a meaningful name.
 The second and third examples are just trying to be stupid, and pick names that
 don't match the "thing" (the object, number `1`) at all.
 
