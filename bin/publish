@@ -2,23 +2,47 @@
 
 set -e
 
+git="git --git-dir=./build/.git --work-tree=./build"
+
 function run() {
   cmd=$@
   echo $cmd
   eval "$cmd"
 }
 
-msg=$1
+function setup() {
+  run "mkdir -p build"
+  run "$git init"
+  run "$git remote add origin git@github.com:rubymonsters/webapps-for-beginners.git"
+  run "$git fetch"
+  run "$git reset --hard origin/gh-pages"
+}
 
-if [ -n "$1" ]; then
+function commit() {
+  local msg=$1
   run "git add -A ."
   run "git commit -am '$msg'"
   run "git push"
+}
+
+function compile() {
+  run "bundle exec middleman build --verbose"
+}
+
+function push() {
+  run "$git add -A ."
+  run "$git commit -am 'build'"
+  run "$git push origin HEAD:gh-pages"
+}
+
+if [ ! -d build/.git ]; then
+  setup
 fi
 
-run "bundle exec middleman build --verbose"
-run "cd build"
-run "git add -A ."
-run "git commit -am 'build'"
-run "git push origin HEAD:gh-pages"
+if [ -n "$1" ]; then
+  commit "$1"
+fi
+
+compile
+push
 
