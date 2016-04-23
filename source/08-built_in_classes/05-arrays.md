@@ -32,7 +32,7 @@ Arrays can contain all kinds of things:
 ["A string", 1, true, :symbol, 2]
 ```
 
-This creates an Array with 4 elements, i.e. a bag that contains 5 things: a
+This creates an Array with 5 elements, i.e. a bag that contains 5 things: a
 string, a number, `true`, a symbol, and another number.
 
 <p class="hint">

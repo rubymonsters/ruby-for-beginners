@@ -158,9 +158,6 @@ However, here are a few other things you can do with Hashes, too.
 Again, look at them, and play with them in `irb`. Don't necessarily put too
 much effort into memorizing all of them ...
 
-Funnily, you can "calculate" with Arrays. Remember set theory from your math
-classes? This is pretty similar.
-
 You can merge two Hashes:
 
 ```ruby
