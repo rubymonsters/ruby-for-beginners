@@ -38,7 +38,7 @@ However, when you do calculations with numbers, keep in mind that integer
 numbers ("integers") and decimal point numbers (floating point numbers, aka
 "floats") are different.
 
-If you do a calculation that uses integer number you'll eventually always
+If you do a calculation that uses integer number you'll always
 get an integer back:
 
 ```ruby
