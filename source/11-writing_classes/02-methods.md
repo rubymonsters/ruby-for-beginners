@@ -81,7 +81,7 @@ class Calculator
     number * other
   end
 
-  def devide(number, other)
+  def divide(number, other)
     number / other
   end
 end
@@ -95,7 +95,7 @@ calculator = Calculator.new
 puts calculator.plus(2, 3)
 puts calculator.minus(2, 3)
 puts calculator.multiply(2, 3)
-puts calculator.devide(2, 3)
+puts calculator.divide(2, 3)
 ```
 
 This will output:
@@ -110,17 +110,17 @@ This will output:
 Whoops!
 
 This looks all good except for the last line, right. Remember why that is?
-Right, deviding one integer number by another returns, again, an integer
-number. And these aren't quite great for calculating devisions.
+Right, dividing one integer number by another returns, again, an integer
+number. And these aren't quite great for calculating divisions.
 
 One thing we could do about this is require the users of our calculator to pass
 (provide) the appropriate types of numbers themselves. So it would be their own
-responsibility if something goes wrong with the devision.
+responsibility if something goes wrong with the division.
 
 However, we could also think that a calculator should be smart enough to notice
 this.  So we could improve our calculator to always change the type of the
-numbers passed to floating point numbers as part of the method `devide`. In
-other words, the method `devide` would take the numbers, makes sure at least
+numbers passed to floating point numbers as part of the method `divide`. In
+other words, the method `divide` would take the numbers, makes sure at least
 one of them is a `Float` (floating point number), and only then do the
 calculation.
 
@@ -135,7 +135,7 @@ $ irb
 1.0
 ```
 
-Alright, lets use that knowledge to improve our `devide` method. It will be
+Alright, lets use that knowledge to improve our `divide` method. It will be
 sufficient to call the method `to_f` on one of the numbers, because that will
 make sure we get a `Float` back:
 
@@ -143,21 +143,21 @@ make sure we get a `Float` back:
 class Calculator
   # ...
 
-  def devide(number, other)
+  def divide(number, other)
     number.to_f / other
   end
 end
 ```
 
 With that in place our calculator always returns a `Float` from the method
-`devide`:
+`divide`:
 
 ```ruby
 calculator = Calculator.new
 puts calculator.plus(2, 3)
 puts calculator.minus(2, 3)
 puts calculator.multiply(2, 3)
-puts calculator.devide(2, 3)
+puts calculator.divide(2, 3)
 ```
 
 This will output:
@@ -171,4 +171,4 @@ This will output:
 
 Perfect.
 
-Let's move on, and define a class `Person`, which should be a even more fun.
+Let's move on, and define a class `Person`, which should be even more fun.

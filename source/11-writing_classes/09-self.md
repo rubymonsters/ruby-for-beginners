@@ -12,7 +12,7 @@ method's arguments.
 And we also said that inside any object's method all instance variables of
 this object, and all other methods of this object are also visible.
 
-We also may have a look at that mysterious [top-level object](/bonus/top-level.html)
+We also may have a look at that mysterious [top-level object](/bonus/top_level.html)
 that Ruby enters when she starts executing a program, or IRB.
 
 We are now finally ready to put all these things together a little more, and
@@ -59,7 +59,7 @@ end
 ```
 
 As you can see this defines a new local variable `name`. The code is very
-similar to what we had [before](writing_classes/interaction.html), except
+similar to what we had [before](/writing_classes/interaction.html), except
 that we store the `other` person's name to a local variable `name` first,
 and then use this variable on the next line when we put together our String.
 

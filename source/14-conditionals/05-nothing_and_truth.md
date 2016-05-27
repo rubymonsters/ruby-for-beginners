@@ -133,7 +133,7 @@ that is returned by the condition. Everything except `false` and `nil` is
 truthy, including strings, numbers, arrays, hashes, and every other object.
 
 This also includes the number `0`, empty strings `""`, arrays `[]` and hashes
-`{}`. These aren't nothing (`nil`), instead they're something, and therefor,
+`{}`. These aren't nothing (`nil`), instead they're something, and therefore,
 in Ruby, truthy.
 
 Here's a pattern that you  might see used when you look at other people's code:

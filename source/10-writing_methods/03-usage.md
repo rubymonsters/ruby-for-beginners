@@ -45,7 +45,7 @@ passed objects to the variable names that are in the argument list. These local
 variables are then available in the method body.
 
 In our case we have just one argument `number`. So we get one local variable
-`name` with the object `3` assigned (because that's the object passed when we
+`number` with the object `3` assigned (because that's the object passed when we
 called the method).
 
 You can imagine the method body now reads like this:

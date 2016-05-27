@@ -44,7 +44,7 @@ Now, the most commonly used features of this language are the following:
 * String literals: find a particular piece of text
 * Anchors: the beginning and the end of the string, or a word
 * Character classes: define a set of allowed characters
-* Quantifiers: define how often a chacter is expected to occur
+* Quantifiers: define how often a character is expected to occur
 * Captures: once found, capture a particular part of the text, so we can use it
 
 ## String literals
