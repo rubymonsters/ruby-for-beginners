@@ -17,7 +17,7 @@ optional. This is the exact same number in Ruby: `1234.56`.
 
 <p class="hint">
 A number is defined by a series of digits, using a dot as a decimal mark, and
-optinally a comma as a thousands separator.
+optionally a comma as a thousands separator.
 </p>
 
 Note that different countries use different punctuation for decimal and
