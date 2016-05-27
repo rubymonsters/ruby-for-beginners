@@ -65,7 +65,7 @@ words = ["one", "two", "three"]
 puts words[1]
 ```
 
-Do you reckognize how we use a [variable](/variables.html) to assign a name
+Do you recognize how we use a [variable](/variables.html) to assign a name
 to our Array here?
 
 `words[1]` means: from the Array `words` get the element at position
