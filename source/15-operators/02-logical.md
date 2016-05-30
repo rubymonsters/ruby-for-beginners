@@ -30,7 +30,7 @@ coffee, or both. You'd only say *Hell, no!* if you'd like an orange juice
 instead :)
 
 The operator `not` simply returns the negated, opposite value. `not true`
-returns `false`, and `not false` returns `true`. Therefor, the following
+returns `false`, and `not false` returns `true`. Therefore, the following
 lines of code are the same:
 
 ```ruby
