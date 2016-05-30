@@ -3,7 +3,7 @@
 *Extra information needed*
 
 Sometimes an object needs a
-little bit of extra information in order to do what you ask for
+little bit of extra information in order to do what you ask for.
 
 For example the class `String` defines the method `delete` which returns
 another String with some of the characters deleted. In order to do so, of
@@ -17,10 +17,10 @@ string) inside the parentheses like so:
 $ irb
 > name = "Ruby Monstas"
 > name.delete("by Mo")
-=> "runstas"
+=> "Runstas"
 ```
 
-Hm. Not sure what "runstas" means. Ideas? Let us know.
+Hm. Not sure what "Runstas" means. Ideas? Let us know.
 
 Anyhow, another example for a method that needs an argument is the method
 `prepend` on Strings. This method returns a new String with the given String
