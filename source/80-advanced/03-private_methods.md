@@ -25,7 +25,7 @@ generations.
 This is pretty much how objects work, too. The Italian restaurant object
 exposes some stuff to the outer world (you), and keeps other things private.
 They'll let you order a pizza, and other things. But they won't tell you the
-exact ingredients of their tomato souce, or how they manage to make this damn
+exact ingredients of their tomato sauce, or how they manage to make this damn
 great pizza dough.
 
 In our `Person` example it makes sense to make the method `encrypt` private.
