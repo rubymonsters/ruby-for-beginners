@@ -157,7 +157,7 @@ Remember how you could call the method `add_one` from another method `add_two`
 [before](/writing_methods/combining.html)? The same works here, too: We can
 call the person's own method `name` by just using it, since this method is
 defined on the same class, and thus every instance of `Person`. We'll look
-at this a little more in the [next chapter](/writing_classes.html).
+at this a little more in the [next chapter](/writing_classes/self.html).
 
 For now let's add another line at the end, and let Carla greet Anja back.
 
