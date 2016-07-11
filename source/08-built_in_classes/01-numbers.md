@@ -11,13 +11,13 @@ minus-ninety-nine: `-99`.
 And of course there are decimal numbers, too. Again, you create one by writing
 it: `12.34`.
 
-You can also use a comma to separate thousands places: E.g. `1,234.56` is the
+You can also use an underscore to separate thousands places: E.g. `1_234.56` is the
 number one-thousand-two-hundred-thirty-four-point-five-six.  However, this is
 optional. This is the exact same number in Ruby: `1234.56`.
 
 <p class="hint">
 A number is defined by a series of digits, using a dot as a decimal mark, and
-optinally a comma as a thousands separator.
+optinally an underscore as a thousands separator.
 </p>
 
 Note that different countries use different punctuation for decimal and
