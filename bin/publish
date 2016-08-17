@@ -21,7 +21,7 @@ function setup() {
 function commit() {
   local msg=$1
   run "git add -A ."
-  run "git commit -am '$msg'"
+  run "git commit -am '$msg' || true"
   run "git push"
 }
 
