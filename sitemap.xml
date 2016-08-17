@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/preface.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/mailbox_csv-1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -446,15 +446,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/mailbox_csv-1.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/mailbox_file-1.html</loc>
-      <priority>0.5</priority>
-    </url>
-    <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/mailbox_html-1.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/mailbox-1.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -462,7 +454,15 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/mailbox-1.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/mailbox_html-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/mailbox_file-1.html</loc>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>http://ruby-for-beginners.rubymonstas.org/preface.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -686,7 +686,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/email-2.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/hashes_1-3.html</loc>
       <priority>0.5</priority>
     </url>
     <url>
@@ -778,7 +778,7 @@
       <priority>0.5</priority>
     </url>
     <url>
-      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/hashes_1-3.html</loc>
+      <loc>http://ruby-for-beginners.rubymonstas.org/solutions_2/email-2.html</loc>
       <priority>0.5</priority>
     </url>
 </urlset>

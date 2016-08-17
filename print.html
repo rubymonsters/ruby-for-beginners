@@ -909,8 +909,8 @@ for a while.</p></li>
 <li><p>One example of technology improving, adding features optimized for more
 advanced users, and thus making it harder to understand for newcomers, is the
 aforementioned new hash syntax. Other examples are:
-Rails&#39; <code>resources</code> macro in routes (it is much easier to understand the whole
-concept if you type out these 7 routes yourself), and Rails&#39; migrations
+Rails&rsquo; <code>resources</code> macro in routes (it is much easier to understand the whole
+concept if you type out these 7 routes yourself), and Rails&rsquo; migrations
 (they&rsquo;ve gone, for good reasons, from being numbered to being timestamped,
 making the naming choice <code>migrate:up</code> and <code>migrate:down</code> harder to
 understand; and they&rsquo;ve introduced the method <code>change</code>, replacing the methods
@@ -1107,8 +1107,8 @@ configured to do this.</p>
 to &ldquo;Preferences&rdquo; and select &ldquo;Settings - User&rdquo;. This opens up a configuration
 file that you can edit just like any other file. Make sure it looks like this:</p>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"tab_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"translate_tabs_to_spaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="nt">"tab_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"translate_tabs_to_spaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -1116,9 +1116,9 @@ file that you can edit just like any other file. Make sure it looks like this:</
 save your changes when you switch to another application (like your terminal),
 and protect you from the mistake of forgetting to save:</p>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"tab_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"translate_tabs_to_spaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"save_on_focus_lost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="nt">"tab_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"translate_tabs_to_spaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"save_on_focus_lost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -1567,7 +1567,7 @@ notes stuck onto actual objects.
 intention. The chapter <a href="/bonus/good_names.html">Using the right
 words</a> at the end of this book will talk more about this. Feel free to jump
 ahead if you are curious. In short, the first example using <code>a</code> as a name would
-be fowned upon because it&rsquo;s wasting the opportunity to use a meaningful name.
+be frowned upon because it&rsquo;s wasting the opportunity to use a meaningful name.
 The second and third examples are just trying to be stupid, and pick names that
 don&rsquo;t match the &ldquo;thing&rdquo; (the object, number <code>1</code>) at all.</p>
 
@@ -1771,7 +1771,7 @@ can perfectly ignore all of that for now, and just think of numbers as numbers.<
 numbers (&ldquo;integers&rdquo;) and decimal point numbers (floating point numbers, aka
 &ldquo;floats&rdquo;) are different.</p>
 
-<p>If you do a calculation that uses integer number you&rsquo;ll eventually always
+<p>If you do a calculation that uses integer number you&rsquo;ll always
 get an integer back:</p>
 <pre class="highlight ruby"><code><span class="err">$</span> <span class="n">irb</span>
 <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
@@ -3846,10 +3846,10 @@ make sure we get a <code>Float</code> back:</p>
   <span class="c1"># ...</span>
 
   <span class="k">def</span> <span class="nf">devide</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
-    <span class="n">number</span><span class="p">.</span><span class="nf">to_f</span> <span class="sr">/ other
-  end
-end
-</span></code></pre>
+    <span class="n">number</span><span class="p">.</span><span class="nf">to_f</span> <span class="o">/</span> <span class="n">other</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
 
 <p>With that in place our calculator always returns a <code>Float</code> from the method
 <code>devide</code>:</p>
@@ -6975,7 +6975,7 @@ method:</p>
 </code></pre>
 
 <p>This should then output:</p>
-<pre class="highlight json"><code><span class="p">{</span><span class="w"> </span><span class="err">'uno'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">one</span><span class="p">,</span><span class="w"> </span><span class="err">'dos'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">two</span><span class="p">,</span><span class="w"> </span><span class="err">'tres'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">three</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> </span><span class="err">'uno'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="err">:one,</span><span class="w"> </span><span class="err">'dos'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="err">:two,</span><span class="w"> </span><span class="err">'tres'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="err">:three</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p><a href="/solutions/hashes_1-5.html" class="solution">Show solution</a></p>
@@ -8115,7 +8115,7 @@ method:</p>
 </code></pre>
 
 <p>This should then output:</p>
-<pre class="highlight json"><code><span class="p">{</span><span class="w"> </span><span class="err">'uno'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">one</span><span class="p">,</span><span class="w"> </span><span class="err">'dos'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">two</span><span class="p">,</span><span class="w"> </span><span class="err">'tres'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="p">:</span><span class="err">three</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w"> </span><span class="err">'uno'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="err">:one,</span><span class="w"> </span><span class="err">'dos'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="err">:two,</span><span class="w"> </span><span class="err">'tres'</span><span class="w"> </span><span class="err">=&gt;</span><span class="w"> </span><span class="err">:three</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p><a href="/solutions_2/hashes_1-5.html" class="solution">Show solution</a></p>
@@ -8129,8 +8129,10 @@ method:</p>
 
     <footer>
       <ul>
-        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
         <li><a href="http://rubymonstas.org">Ruby Monstas</a></li>
+        <li><a href="http://ruby-for-beginners.rubymonstas.org">Ruby For Beginners</a></li>
+        <li><a href="http://webapps-for-beginners.rubymonstas.org">Webapps For Beginners</a></li>
+        <li><a href="http://testing-for-beginners.rubymonstas.org">Testing For Beginners</a></li>
         <li><a href="mailto:ruby.monsters@gmail.com">Email</a></li>
         <li><a href="https://twitter.com/rubymonstas">Twitter</a></li>
         <li><a href="https://github.com/rubymonsters">GitHub</a></li>
@@ -8140,6 +8142,6 @@ method:</p>
     </footer>
 
     <script src="assets/javascripts/modernizr-4c875d94.js" type="text/javascript"></script>
-    <script src="assets/javascripts/monstas-e84d6217.js" type="text/javascript"></script>
+    <script src="assets/javascripts/monstas-79961449.js" type="text/javascript"></script>
   </body>
 </html>
