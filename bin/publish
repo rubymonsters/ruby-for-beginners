@@ -14,8 +14,8 @@ function setup() {
   run "mkdir -p build"
   run "$git init"
   run "$git remote add origin git@github.com:rubymonsters/webapps-for-beginners.git"
-  run "$git fetch"
-  run "$git reset --hard origin/gh-pages"
+  # run "$git fetch"
+  # run "$git reset --hard origin/gh-pages"
 }
 
 function commit() {
