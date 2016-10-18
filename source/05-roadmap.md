@@ -47,7 +47,7 @@ other concepts without spending too much time on talking about all the other
 things that Ruby has built-in (we'll look at the most important ones later).
 
 We'll quickly mention 3 primitive things that are widely used in Ruby: `true`,
-`false`, and `nil, so you've already heard of them when we come across them
+`false`, and `nil`, so you've already heard of them when we come across them
 later.
 
 Then we discuss Arrays and Hashes, which are data structures. I.e. these are
@@ -119,7 +119,3 @@ will probably be marked as optional.
 Also there are some extra chapters about advanced topics, some of which are
 relevant to the more advanced exercises, and for the next curriculum about
 [building your own web applications](http://webapps-for-beginners.rubymonstas.org/).
-
-
-
-
