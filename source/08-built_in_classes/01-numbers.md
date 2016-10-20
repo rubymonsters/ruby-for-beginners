@@ -58,7 +58,7 @@ $ irb
 ```
 
 <p class="hint">
-Mathmatical operations result in a floating point number except if all numbers used are integer numbers.
+Mathematical operations result in a floating point number except if all numbers used are integer numbers.
 </p>
 
 This is, for example, important when you do a division (`/` means "divide by"):

@@ -19,7 +19,7 @@ activate :syntax
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :no_intra_emphasis => true, :autolink => true, :strikethrough => true, :tables => true
 
-set :relative_links, true
+set :relative_links, false
 activate :relative_assets
 activate :minify_css
 activate :minify_javascript
