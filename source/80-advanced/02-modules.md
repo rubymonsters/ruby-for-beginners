@@ -80,7 +80,7 @@ module Encryption
 end
 
 class Person
-  inclue Encryption
+  include Encryption
 
   # ...
 
