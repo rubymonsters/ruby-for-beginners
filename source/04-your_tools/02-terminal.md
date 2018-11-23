@@ -29,12 +29,21 @@ a bigger font size. As a programmer, the terminal (along with your editor) is
 your new home. You want to be as comfortable reading and writing in your
 terminal as in any other application.
 
-Once you have started the terminal program you will see your shell's prompt,
-and can start typing commands.
+In case you are using Microsoft Windows it is highly recommended to use any
+kind of unix based terminal. One option is Git-Bash (https://gitforwindows.org/).
+However, as Ruby and Microsoft Windows are not best friends, it is even better
+to install the Windows Subsystem for Linux which is available here for
+Windows 10: https://docs.microsoft.com/en-us/windows/wsl/install-win10. With
+this option you can install everything you need for your Ruby development
+under Ubuntu and use Bash as your main shell.
 
-You'll want to learn at least the command `cd` which allows you to navigate to
-a particular directory (where you have stored your code), and the command `ls`
-which lists the contents of a directory.
+All commands in the following texts are unix commands and will not work in a
+Microsoft Windows terminal.
+
+Once you have started the terminal program you will see your shell's prompt,
+and can start typing commands. You'll want to learn at least the command `cd`
+which allows you to navigate to a particular directory (where you have stored
+your code), and the command `ls` which lists the contents of a directory.
 
 Also learn how to use the command line completion using `tab`: For example,
 type `cd`, space, and the first two or so letters of the directory you want to
