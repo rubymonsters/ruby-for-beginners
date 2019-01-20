@@ -58,7 +58,7 @@ onto things in your apartment: the name *nevara* onto the refridgerator, *cama*
 onto your bed, and *puerta del baño* onto the bathroom door.
 
 Now, whenever you use one of these terms, as in *abrir la nevera* (open the
-refridgerator) in order to learn the language and rehearse vocabulary, you'll
+refrigerator) in order to learn the language and rehearse vocabulary, you'll
 obviously refer to the object, and open its actual, physical door.
 
 That's pretty much how variable assignment works in Ruby. There's a "thing",
