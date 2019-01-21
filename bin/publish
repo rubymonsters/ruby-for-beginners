@@ -32,7 +32,7 @@ function compile() {
 function push() {
   run "$git add -A ."
   run "$git commit -am 'build'"
-  run "$git push origin HEAD:gh-pages"
+  run "$git push -f origin HEAD:gh-pages"
 }
 
 if [ ! -d build/.git ]; then
