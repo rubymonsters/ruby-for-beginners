@@ -596,7 +596,7 @@ defined on classes, e.g. <code>Calculator.new</code>.</p>
 <em>instance methods</em>.</p>
 
 <p>In this chapter we want to add the &ldquo;stand alone&rdquo; methods that we&rsquo;ve learned to
-port (move) in the previous chapters <a href="../writing_methods.html">Writing Methods</a>
+port (move) in the previous chapters <a href="/writing_methods.html">Writing Methods</a>
 to our class <code>Calculator</code> so that they&rsquo;ll end up as instance methods.</p>
 
 <p>Here&rsquo;s how we can do that.</p>
@@ -663,7 +663,7 @@ spice our class up by adding more operations, i.e. methods. Also, let&rsquo;s re
     <span class="n">number</span> <span class="o">*</span> <span class="n">other</span>
   <span class="k">end</span>
 
-  <span class="k">def</span> <span class="nf">devide</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
     <span class="n">number</span> <span class="o">/</span> <span class="n">other</span>
   <span class="k">end</span>
 <span class="k">end</span>
@@ -675,7 +675,7 @@ math operations with it.</p>
 <span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">minus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">devide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">divide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre>
 
 <p>This will output:</p>
@@ -688,17 +688,17 @@ math operations with it.</p>
 <p>Whoops!</p>
 
 <p>This looks all good except for the last line, right. Remember why that is?
-Right, deviding one integer number by another returns, again, an integer
-number. And these aren&rsquo;t quite great for calculating devisions.</p>
+Right, dividing one integer number by another returns, again, an integer
+number. And these aren&rsquo;t quite great for calculating divisions.</p>
 
 <p>One thing we could do about this is require the users of our calculator to pass
 (provide) the appropriate types of numbers themselves. So it would be their own
-responsibility if something goes wrong with the devision.</p>
+responsibility if something goes wrong with the division.</p>
 
 <p>However, we could also think that a calculator should be smart enough to notice
 this.  So we could improve our calculator to always change the type of the
-numbers passed to floating point numbers as part of the method <code>devide</code>. In
-other words, the method <code>devide</code> would take the numbers, makes sure at least
+numbers passed to floating point numbers as part of the method <code>divide</code>. In
+other words, the method <code>divide</code> would take the numbers, makes sure at least
 one of them is a <code>Float</code> (floating point number), and only then do the
 calculation.</p>
 
@@ -711,25 +711,25 @@ float it will just return the float:</p>
 <span class="mi">1</span><span class="o">.</span><span class="mi">0</span>
 </code></pre>
 
-<p>Alright, lets use that knowledge to improve our <code>devide</code> method. It will be
+<p>Alright, lets use that knowledge to improve our <code>divide</code> method. It will be
 sufficient to call the method <code>to_f</code> on one of the numbers, because that will
 make sure we get a <code>Float</code> back:</p>
 <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Calculator</span>
   <span class="c1"># ...</span>
 
-  <span class="k">def</span> <span class="nf">devide</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
     <span class="n">number</span><span class="p">.</span><span class="nf">to_f</span> <span class="o">/</span> <span class="n">other</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre>
 
 <p>With that in place our calculator always returns a <code>Float</code> from the method
-<code>devide</code>:</p>
+<code>divide</code>:</p>
 <pre class="highlight ruby"><code><span class="n">calculator</span> <span class="o">=</span> <span class="no">Calculator</span><span class="p">.</span><span class="nf">new</span>
 <span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">minus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">devide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">calculator</span><span class="p">.</span><span class="nf">divide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre>
 
 <p>This will output:</p>
@@ -741,7 +741,7 @@ make sure we get a <code>Float</code> back:</p>
 
 <p>Perfect.</p>
 
-<p>Let&rsquo;s move on, and define a class <code>Person</code>, which should be a even more fun.</p>
+<p>Let&rsquo;s move on, and define a class <code>Person</code>, which should be even more fun.</p>
 
         <nav class="page-nav"><a class="prev" href="/writing_classes/definition.html">
   Previous
