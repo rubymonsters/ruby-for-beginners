@@ -26,7 +26,7 @@ the place. There are more data types, but those are rather exotic, and used
 much less often.
 
 Numbers and Strings (which is just a strange name for "texts") are some of the
-most basic "things" that you deal with in Ruby on a regular basis. The are also
+most basic "things" that you deal with in Ruby on a regular basis. There are also
 just enough lego bricks for us to dive into more interesting topics, such as
 how objects, classes, and methods relate to each other, and how you can create
 your own ones.
