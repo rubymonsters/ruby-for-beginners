@@ -38,7 +38,7 @@ Let's walk through it one by one:
   case Ruby will, again, first check the first condition `number.between?(1,
   10)`, but this time this method call returns `false`. Therefore, Ruby will
   ignore the `if` branch, and check the next condition on the `elsif` line:
-  `number.between?(11, 20)`. Now, this method call returns true, because `5` is
+  `number.between?(11, 20)`. Now, this method call returns true, because `15` is
   between `11` and `20`. Ruby will therefore execute the `elsif` branch, and
   print out this message. Again, once it is done executing the `elsif` branch
   Ruby will ignore the rest of the statement.
