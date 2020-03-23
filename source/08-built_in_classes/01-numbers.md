@@ -17,7 +17,7 @@ optional. This is the exact same number in Ruby: `1234.56`.
 
 <p class="hint">
 A number is defined by a series of digits, using a dot as a decimal mark, and
-optinally an underscore as a thousands separator.
+optionally an underscore as a thousands separator.
 </p>
 
 Note that different countries use different punctuation for decimal and
@@ -83,7 +83,7 @@ $ irb
 ```
 
 <p class="hint">
-Use floating point (decimal) numbers when doing devisions.
+Use floating point (decimal) numbers when doing divisions.
 </p>
 
 Exercises: How about doing some of the [exercises on numbers](/exercises/numbers.html)

@@ -40,7 +40,7 @@ This chapter explains variables in Ruby.
 Ruby comes with lots of batteries included. Things that are built-in, and
 ready for you to be used when you open an empty Ruby file, or IRB.
 
-We'll look the two most basic, and most widely used ones:
+We'll look at the two most basic, most widely used ones:
 
 Numbers, and Strings (text). These will be good enough for us to introduce
 other concepts without spending too much time on talking about all the other
