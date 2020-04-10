@@ -56,7 +56,7 @@ because it tells you exactly what the thing that you are looking at is.
 `puts` on the other hand tries to be smart.
 
 For example when you pass an array to `puts` then it will output each of the
-objects on a separate line:
+objects on a separate line, but `p` shows the array the same way it is declared:
 
 ```ruby
 $ irb
@@ -65,10 +65,12 @@ $ irb
 1
 2
 3
+> p something
+[1, 2, 3]
 ```
 
 Also, the output for numbers and strings that contain numbers is exactly the
-same when you use `puts`:
+same when you use `puts`, but `p` outputs strings surrounded with quotes:
 
 ```ruby
 $ irb
@@ -76,6 +78,8 @@ $ irb
 123
 > puts "123"
 123
+> p "123"
+"123"
 ```
 
 From the output of `puts` it often is not clear whether the object that you are
