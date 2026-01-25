@@ -3,9 +3,8 @@
 Read this book at your own pace, and do exercises at your own pace.
 
 We recommend reading at least a page a day (ideally more), and taking some more
-time, at least once a week, in addition to the weekly meeting on Mondays. It often
-helps to meet with others, have some coffee and cake, and hang out while reading some
-more of this book, or doing a few exercises together.
+time, at least once a week. It often helps to meet with others, have some coffee and cake,
+and hang out while reading some more of this book, or doing a few exercises together.
 
 We suggest that you read the book from beginning to end, and do exercises as you go.
 If you come across chapters that you feel are too theoretical you can skip them for
@@ -16,11 +15,6 @@ chapters. Jump to the chapter "Your tools", and read the introductory
 chapters later. If you already feel familiar with your editor and terminal, and
 know how to use `ruby` to execute a Ruby file, then you can skip over the
 chapter "Your tools", too.
-
-Take notes about whatever questions come up during the week, things that you
-don't understand, and everything else worth mentioning (for example, epiphanies
-you have, or things you found interesting). Bring your notes to the study
-group so we can talk about them in the group.
 
 Please help us improve this book for others: Whenever you find something unclear
 or missing then please tell us. You can do this during the study group, email the
@@ -70,7 +64,7 @@ different order, and from a different angle.
 ### Role model stories
 
 * [It Takes a Village to Make a Programmer](https://www.youtube.com/watch?v=FHNrw7aiKOE) by Michele Guido
-* [Rails Girls Berlin Success Stories](http://railsgirlsberlin.de/category/success-stories)
+
 
 ### Resources for coaches
 
