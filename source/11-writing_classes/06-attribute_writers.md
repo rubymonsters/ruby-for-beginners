@@ -59,6 +59,17 @@ So, yeah, we can see that, after calling `person.password=("super secret")`
 the object now has an instance variable defined, i.e., the person now knows
 their password, too.
 
+Let's take a look at what an attribute writer looks like based on the previous example:
+```ruby
+class Person
+  attr_reader :name
+  attr_writer :password
+
+  def initialize(name)
+    @name = name
+  end
+end
+```
 <p class="hint">
 An attribute writer allows setting an instance variable.
 </p>

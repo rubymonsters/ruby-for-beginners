@@ -67,6 +67,17 @@ In fact they are so common that there's a word for them: they are called
 "attribute readers". By "attribute" the Ruby community means an instance
 variable, so an attribute reader is a method that reads an instance variable.
 
+Let's take a look at what an attribute reader looks like based on the previous example:
+```ruby
+class Person
+ attr_reader :name
+
+ def initialize(name)
+   @name = name
+ end
+end
+```
+
 <p class="hint">
 An attribute reader returns the value of an instance variable.
 </p>
