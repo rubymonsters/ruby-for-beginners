@@ -21,7 +21,7 @@ puts number
 ```
 
 When Ruby looks at the first line `number = 2 + 3 * 4` it notices that this is
-using the assignment operator `=`. Therefor, before it can assign the name
+using the assignment operator `=`. Therefore, before it can assign the name
 `number` to the "thing" (object) on the right ... it first needs to know what
 that thing is.
 
