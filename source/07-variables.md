@@ -41,7 +41,7 @@ number = 1
 puts number
 ```
 
-One important thing to note here is that a variable is not a "thing" an object
+One important thing to note here is that a variable is not a "thing" (an object)
 by itself. Instead it's just a *name* for an actual object. In our example the
 number `1` is an object, while `number` is a name for it because we've assigned
 it.
@@ -54,7 +54,7 @@ You can think of it like a post-it note with the name `number` written on it,
 and stuck on the actual thing, which is an object (in this case, a number).
 
 Imagine you were in the middle of learning some Spanish, and sticked post-its
-onto things in your apartment: the name *nevara* onto the refrigerator, *cama*
+onto things in your apartment: the name *nevera* onto the refrigerator, *cama*
 onto your bed, and *puerta del baño* onto the bathroom door.
 
 Now, whenever you use one of these terms, as in *abrir la nevera* (open the
