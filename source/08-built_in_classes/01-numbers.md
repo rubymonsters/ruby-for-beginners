@@ -83,7 +83,7 @@ $ irb
 ```
 
 <p class="hint">
-Use floating point (decimal) numbers when doing devisions.
+Use floating point (decimal) numbers when doing divisions.
 </p>
 
 Exercises: How about doing some of the [exercises on numbers](/exercises/numbers.html)
